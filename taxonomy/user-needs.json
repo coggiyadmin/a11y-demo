@@ -1,0 +1,164 @@
+{
+  "note": "Functional needs, not medical categories. A fixture names the needs its defect actually blocks, so coverage can be read per need rather than per criterion.",
+  "source": "https://www.w3.org/WAI/people-use-web/abilities-barriers/",
+  "values": [
+    {
+      "id": "vision-blind",
+      "label": "Blindness",
+      "at": [
+        "screen-reader",
+        "braille"
+      ]
+    },
+    {
+      "id": "vision-low",
+      "label": "Low vision",
+      "at": [
+        "magnifier",
+        "zoom",
+        "high-contrast"
+      ]
+    },
+    {
+      "id": "vision-color",
+      "label": "Colour-vision deficiency",
+      "at": []
+    },
+    {
+      "id": "vision-contrast",
+      "label": "Contrast sensitivity",
+      "at": [
+        "high-contrast",
+        "forced-colors"
+      ]
+    },
+    {
+      "id": "hearing-deaf",
+      "label": "Deafness",
+      "at": [
+        "captions",
+        "transcript"
+      ]
+    },
+    {
+      "id": "hearing-hoh",
+      "label": "Hard of hearing",
+      "at": [
+        "captions",
+        "volume-control"
+      ]
+    },
+    {
+      "id": "motor-dexterity",
+      "label": "Limited dexterity",
+      "at": [
+        "keyboard",
+        "switch",
+        "speech"
+      ]
+    },
+    {
+      "id": "motor-tremor",
+      "label": "Tremor",
+      "at": [
+        "large-targets",
+        "pointer-cancellation"
+      ]
+    },
+    {
+      "id": "motor-paralysis",
+      "label": "Paralysis",
+      "at": [
+        "switch",
+        "speech",
+        "eye-tracking"
+      ]
+    },
+    {
+      "id": "motor-fatigue",
+      "label": "Fatigue",
+      "at": [
+        "reduced-steps",
+        "save-progress"
+      ]
+    },
+    {
+      "id": "speech-unable",
+      "label": "Unable to use voice interfaces",
+      "at": []
+    },
+    {
+      "id": "cognitive-memory",
+      "label": "Memory",
+      "at": [
+        "redundant-entry-prevention",
+        "save-progress"
+      ]
+    },
+    {
+      "id": "cognitive-attention",
+      "label": "Attention",
+      "at": [
+        "reduced-motion",
+        "pause-controls"
+      ]
+    },
+    {
+      "id": "cognitive-dyslexia",
+      "label": "Dyslexia",
+      "at": [
+        "text-spacing",
+        "read-aloud"
+      ]
+    },
+    {
+      "id": "cognitive-language",
+      "label": "Language and literacy",
+      "at": [
+        "plain-language"
+      ]
+    },
+    {
+      "id": "cognitive-executive",
+      "label": "Executive function",
+      "at": [
+        "clear-steps",
+        "undo"
+      ]
+    },
+    {
+      "id": "neuro-seizure",
+      "label": "Seizure sensitivity",
+      "at": [
+        "flash-thresholds"
+      ]
+    },
+    {
+      "id": "neuro-vestibular",
+      "label": "Vestibular and motion sensitivity",
+      "at": [
+        "reduced-motion"
+      ]
+    },
+    {
+      "id": "multiple",
+      "label": "Multiple or intersecting disabilities",
+      "at": []
+    },
+    {
+      "id": "age-related",
+      "label": "Age-related impairment",
+      "at": []
+    },
+    {
+      "id": "temporary",
+      "label": "Temporary impairment",
+      "at": []
+    },
+    {
+      "id": "situational",
+      "label": "Situational limitation",
+      "at": []
+    }
+  ]
+}

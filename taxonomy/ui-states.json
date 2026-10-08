@@ -1,0 +1,53 @@
+{
+  "note": "Every important journey should be tested in each of these. Most corpora test only `default`, which is where the easy defects are and the hard ones are not.",
+  "values": [
+    {
+      "id": "default",
+      "label": "default"
+    },
+    {
+      "id": "loading",
+      "label": "loading"
+    },
+    {
+      "id": "empty",
+      "label": "empty"
+    },
+    {
+      "id": "invalid",
+      "label": "invalid"
+    },
+    {
+      "id": "corrected",
+      "label": "corrected"
+    },
+    {
+      "id": "submitted",
+      "label": "submitted"
+    },
+    {
+      "id": "error",
+      "label": "error"
+    },
+    {
+      "id": "offline",
+      "label": "offline"
+    },
+    {
+      "id": "permission-denied",
+      "label": "permission-denied"
+    },
+    {
+      "id": "timed-out",
+      "label": "timed-out"
+    },
+    {
+      "id": "disabled",
+      "label": "disabled"
+    },
+    {
+      "id": "busy",
+      "label": "busy"
+    }
+  ]
+}

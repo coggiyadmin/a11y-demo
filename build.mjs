@@ -374,6 +374,8 @@ for (const g of groups) {
 const EXTRA_GROUPS = [
   { dir: 'delivery', blurb: 'the same defect delivered many different ways — server HTML, '
       + 'client-rendered, iframes, shadow DOM, web components' },
+  { dir: 'patterns', blurb: 'ARIA Authoring Practices component patterns as matched '
+      + 'broken/correct pairs — dialogs, combobox, tabs, menus, tables and more' },
 ];
 
 fs.writeFileSync(path.join(ROOT, 'index.html'), page('Accessibility fixture corpus',

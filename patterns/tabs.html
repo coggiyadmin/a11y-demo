@@ -1,0 +1,26 @@
+<!--
+  tabs — broken
+  WCAG: 4.1.2, 2.1.1, 2.4.3
+  Expectation: a scanner SHOULD report
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/tabs/
+  role=tab asserted on non-focusable divs with no tablist, no tabpanel and no selected state.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>tabs — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>tabs — broken</h1>
+<p>role=tab asserted on non-focusable divs with no tablist, no tabpanel and no selected state.</p>
+<hr>
+<div><div role="tab">Flights</div><div role="tab">Hotels</div></div>
+<div><p>Flight results.</p></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

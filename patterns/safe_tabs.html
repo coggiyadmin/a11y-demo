@@ -1,0 +1,30 @@
+<!--
+  tabs — APG-correct
+  WCAG: 4.1.2, 2.1.1, 2.4.3
+  Expectation: a scanner MUST NOT report — negative control
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/tabs/
+  tablist/tab/tabpanel with roving tabindex, aria-selected and aria-controls.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>tabs — APG-correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>tabs — APG-correct</h1>
+<p>tablist/tab/tabpanel with roving tabindex, aria-selected and aria-controls.</p>
+<hr>
+<div role="tablist" aria-label="Travel modes">
+  <button role="tab" id="tb1" aria-selected="true" aria-controls="tp1" tabindex="0">Flights</button>
+  <button role="tab" id="tb2" aria-selected="false" aria-controls="tp2" tabindex="-1">Hotels</button>
+</div>
+<div role="tabpanel" id="tp1" aria-labelledby="tb1"><p>Flight results.</p></div>
+<div role="tabpanel" id="tp2" aria-labelledby="tb2" hidden><p>Hotel results.</p></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

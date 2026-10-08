@@ -1,0 +1,28 @@
+<!--
+  accordion — APG-correct
+  WCAG: 4.1.2, 1.3.1
+  Expectation: a scanner MUST NOT report — negative control
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/accordion/
+  Heading-wrapped buttons, aria-expanded, aria-controls, region labelled by its trigger.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>accordion — APG-correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>accordion — APG-correct</h1>
+<p>Heading-wrapped buttons, aria-expanded, aria-controls, region labelled by its trigger.</p>
+<hr>
+<h2><button type="button" aria-expanded="true" aria-controls="p1" id="t1">Fares</button></h2>
+<div id="p1" role="region" aria-labelledby="t1"><p>Economy, Premium.</p></div>
+<h2><button type="button" aria-expanded="false" aria-controls="p2" id="t2">Changes</button></h2>
+<div id="p2" role="region" aria-labelledby="t2" hidden><p>Free within 24h.</p></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

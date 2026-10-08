@@ -1,0 +1,32 @@
+{
+  "note": "Five outcomes, not two. `cannot-tell` and `not-tested` are results, not failures to hide: conflating either with `pass` is how a blind scanner looks healthy.",
+  "values": [
+    {
+      "id": "pass",
+      "label": "Requirement met"
+    },
+    {
+      "id": "fail",
+      "label": "Requirement not met"
+    },
+    {
+      "id": "inapplicable",
+      "label": "Requirement does not apply to this content"
+    },
+    {
+      "id": "cannot-tell",
+      "label": "Examined, but the outcome needs human judgement"
+    },
+    {
+      "id": "not-tested",
+      "label": "Not examined — no rule ran, or the content was never reached"
+    }
+  ],
+  "separate_axes": {
+    "conformance": "met / not met / not applicable, per criterion and level",
+    "severity": "user impact if unresolved — blocker, serious, moderate, minor",
+    "confidence": "how certain the result is — definite, probable, possible",
+    "coverage": "how much of the space was actually examined"
+  },
+  "warning": "Keep these four apart. A high automated conformance score over low coverage says almost nothing, and averaging them into one number destroys the information."
+}

@@ -1,0 +1,26 @@
+<!--
+  alert — broken
+  WCAG: 4.1.3
+  Expectation: a scanner SHOULD report
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/alert/
+  A status message injected with no live region, so it is never announced.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>alert — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>alert — broken</h1>
+<p>A status message injected with no live region, so it is never announced.</p>
+<hr>
+<button type="button" onclick="document.getElementById('s1').textContent='Seat saved.'">Save</button>
+<div id="s1"></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

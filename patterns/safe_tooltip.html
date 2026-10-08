@@ -1,0 +1,26 @@
+<!--
+  tooltip — APG-correct
+  WCAG: 4.1.2, 1.4.13
+  Expectation: a scanner MUST NOT report — negative control
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/
+  Focusable control with aria-describedby pointing at a tooltip element.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>tooltip — APG-correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>tooltip — APG-correct</h1>
+<p>Focusable control with aria-describedby pointing at a tooltip element.</p>
+<hr>
+<button type="button" aria-describedby="tt1">Fare info</button>
+<span id="tt1" role="tooltip">Fare rules apply</span>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "description": "The accessibility test space, enumerated. surface x user need x journey x UI state x input/AT x standard. Written down so coverage can be divided by a real denominator rather than a flattering one.",
+  "dimensions": {
+    "user-needs": 22,
+    "surfaces": 18,
+    "journeys": 25,
+    "ui-states": 12,
+    "input-at": 12,
+    "methods": 15,
+    "outcomes": 5,
+    "standards": 13
+  },
+  "generated": "2026-10-08"
+}

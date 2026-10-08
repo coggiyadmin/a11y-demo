@@ -1,0 +1,26 @@
+<!--
+  disclosure — broken
+  WCAG: 4.1.2, 2.1.1
+  Expectation: a scanner SHOULD report
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/
+  A div toggles visibility with no role, no aria-expanded and no keyboard access. A screen reader announces nothing about state; a keyboard cannot reach it.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>disclosure — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>disclosure — broken</h1>
+<p>A div toggles visibility with no role, no aria-expanded and no keyboard access. A screen reader announces nothing about state; a keyboard cannot reach it.</p>
+<hr>
+<div class="btn" onclick="var p=document.getElementById('d1');p.hidden=!p.hidden">Baggage rules</div>
+<div id="d1" hidden><p>One cabin bag up to 7kg.</p></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

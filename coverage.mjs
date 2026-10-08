@@ -12,6 +12,12 @@ const arg = (n, d) => { const i = process.argv.indexOf(n); return i > -1 ? proce
 const wcag = JSON.parse(fs.readFileSync(path.join(ROOT, 'wcag/criteria.json'), 'utf8')).criteria;
 const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog.json'), 'utf8'));
 
+// every local case family
+const EXTRA = ['delivery.json', 'patterns.json']
+  .map((f) => path.join(ROOT, f)).filter((f) => fs.existsSync(f))
+  .flatMap((f) => JSON.parse(fs.readFileSync(f, 'utf8')).cases);
+catalog.cases = [...catalog.cases, ...EXTRA];
+
 const actPath = arg('--act', path.join(ROOT, 'act/testcases.json'));
 let act = [];
 if (fs.existsSync(actPath)) act = JSON.parse(fs.readFileSync(actPath, 'utf8')).testcases;
@@ -62,4 +68,4 @@ const t = rows.reduce((a, r) => { a[r.ground_truth] = (a[r.ground_truth] || 0) +
 console.log(`WCAG 2.2: ${rows.length} live criteria`);
 for (const [k, v] of Object.entries(t).sort((a, b) => b[1] - a[1])) console.log(`  ${k.padEnd(14)} ${v}`);
 console.log(`\nACT cases available: ${rows.reduce((n, r) => n + r.act_failed + r.act_passed + r.act_inapplicable, 0)}`);
-console.log(`local fixtures: ${catalog.cases.length} (${catalog.counts.tp} tp, ${catalog.counts.safe} negative controls)`);
+console.log(`local fixtures: ${catalog.cases.length} (${catalog.cases.filter((c) => c.mode === 'tp').length} tp, ${catalog.cases.filter((c) => c.mode === 'safe').length} negative controls)`);

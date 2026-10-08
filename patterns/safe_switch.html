@@ -1,0 +1,26 @@
+<!--
+  switch — APG-correct
+  WCAG: 4.1.2, 2.1.1
+  Expectation: a scanner MUST NOT report — negative control
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/switch/
+  role=switch with aria-checked, or a native checkbox.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>switch — APG-correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>switch — APG-correct</h1>
+<p>role=switch with aria-checked, or a native checkbox.</p>
+<hr>
+<button type="button" role="switch" aria-checked="false"
+  onclick="this.setAttribute('aria-checked', this.getAttribute('aria-checked')==='true'?'false':'true')">Seat alerts</button>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

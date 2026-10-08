@@ -10,7 +10,7 @@
     "act_failed": 26,
     "act_passed": 27,
     "act_inapplicable": 41,
-    "local_tp": "static/img_no_alt.html",
+    "local_tp": "static/img_no_alt.html delivery/server_html.html delivery/client_js.html delivery/client_js_delayed.html delivery/iframe_same_origin.html delivery/iframe_srcdoc.html delivery/iframe_sandboxed.html delivery/iframe_nested.html delivery/shadow_dom_open.html delivery/shadow_dom_closed.html delivery/web_component.html delivery/progressive_enhancement.html",
     "local_safe": "static/safe_img.html",
     "ground_truth": "ACT + local"
   },
@@ -40,9 +40,9 @@
     "act_failed": 2,
     "act_passed": 2,
     "act_inapplicable": 2,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "ACT"
+    "local_tp": "patterns/media-captions.html",
+    "local_safe": "patterns/safe_media-captions.html",
+    "ground_truth": "ACT + local"
   },
   {
     "sc": "1.2.3",
@@ -55,9 +55,9 @@
     "act_failed": 4,
     "act_passed": 3,
     "act_inapplicable": 2,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "ACT"
+    "local_tp": "patterns/media-captions.html",
+    "local_safe": "patterns/safe_media-captions.html",
+    "ground_truth": "ACT + local"
   },
   {
     "sc": "1.2.4",
@@ -160,8 +160,8 @@
     "act_failed": 52,
     "act_passed": 80,
     "act_inapplicable": 44,
-    "local_tp": "keyboard/div_text_field.html",
-    "local_safe": "keyboard/safe_native_text_field.html",
+    "local_tp": "keyboard/div_text_field.html patterns/accordion.html patterns/table.html patterns/breadcrumb.html patterns/required-fields.html",
+    "local_safe": "keyboard/safe_native_text_field.html patterns/safe_accordion.html patterns/safe_table.html patterns/safe_breadcrumb.html patterns/safe_required-fields.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -430,9 +430,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "patterns/tooltip.html",
+    "local_safe": "patterns/safe_tooltip.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.1.1",
@@ -445,8 +445,8 @@
     "act_failed": 3,
     "act_passed": 6,
     "act_inapplicable": 16,
-    "local_tp": "keyboard/div_button.html keyboard/div_text_field.html keyboard/div_date_fields.html keyboard/div_travellers.html keyboard/div_checkbox.html keyboard/div_fare_cards.html keyboard/role_tab_no_tablist.html capture/client_mounted.html",
-    "local_safe": "keyboard/safe_native_button.html keyboard/safe_native_text_field.html keyboard/safe_native_checkbox.html keyboard/safe_roving_tabindex.html keyboard/safe_custom_button.html capture/safe_server_rendered.html",
+    "local_tp": "keyboard/div_button.html keyboard/div_text_field.html keyboard/div_date_fields.html keyboard/div_travellers.html keyboard/div_checkbox.html keyboard/div_fare_cards.html keyboard/role_tab_no_tablist.html capture/client_mounted.html delivery/server_html.html delivery/client_js.html delivery/client_js_delayed.html delivery/iframe_same_origin.html delivery/iframe_srcdoc.html delivery/iframe_sandboxed.html delivery/iframe_nested.html delivery/shadow_dom_open.html delivery/shadow_dom_closed.html delivery/web_component.html delivery/progressive_enhancement.html patterns/disclosure.html patterns/tabs.html patterns/dialog.html patterns/combobox.html patterns/menu.html patterns/switch.html patterns/slider.html patterns/listbox.html",
+    "local_safe": "keyboard/safe_native_button.html keyboard/safe_native_text_field.html keyboard/safe_native_checkbox.html keyboard/safe_roving_tabindex.html keyboard/safe_custom_button.html capture/safe_server_rendered.html patterns/safe_disclosure.html patterns/safe_tabs.html patterns/safe_dialog.html patterns/safe_combobox.html patterns/safe_menu.html patterns/safe_switch.html patterns/safe_slider.html patterns/safe_listbox.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -670,8 +670,8 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "keyboard/role_tab_no_tablist.html",
-    "local_safe": "keyboard/safe_roving_tabindex.html capture/link_heavy.html",
+    "local_tp": "keyboard/role_tab_no_tablist.html patterns/tabs.html patterns/dialog.html",
+    "local_safe": "keyboard/safe_roving_tabindex.html capture/link_heavy.html patterns/safe_tabs.html patterns/safe_dialog.html",
     "ground_truth": "local only"
   },
   {
@@ -1135,9 +1135,9 @@
     "act_failed": 5,
     "act_passed": 3,
     "act_inapplicable": 1,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "ACT"
+    "local_tp": "patterns/form-errors.html",
+    "local_safe": "patterns/safe_form-errors.html",
+    "ground_truth": "ACT + local"
   },
   {
     "sc": "3.3.2",
@@ -1150,8 +1150,8 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "static/field_no_visible_label.html",
-    "local_safe": "",
+    "local_tp": "static/field_no_visible_label.html patterns/form-errors.html patterns/required-fields.html",
+    "local_safe": "patterns/safe_form-errors.html patterns/safe_required-fields.html",
     "ground_truth": "local only"
   },
   {
@@ -1270,8 +1270,8 @@
     "act_failed": 70,
     "act_passed": 102,
     "act_inapplicable": 61,
-    "local_tp": "keyboard/div_button.html keyboard/div_text_field.html keyboard/div_checkbox.html keyboard/role_tab_no_tablist.html capture/client_mounted.html",
-    "local_safe": "keyboard/safe_native_button.html keyboard/safe_native_text_field.html keyboard/safe_native_checkbox.html keyboard/safe_custom_button.html capture/safe_server_rendered.html",
+    "local_tp": "keyboard/div_button.html keyboard/div_text_field.html keyboard/div_checkbox.html keyboard/role_tab_no_tablist.html capture/client_mounted.html patterns/disclosure.html patterns/accordion.html patterns/tabs.html patterns/dialog.html patterns/combobox.html patterns/menu.html patterns/switch.html patterns/tooltip.html patterns/breadcrumb.html patterns/slider.html patterns/listbox.html patterns/form-errors.html",
+    "local_safe": "keyboard/safe_native_button.html keyboard/safe_native_text_field.html keyboard/safe_native_checkbox.html keyboard/safe_custom_button.html capture/safe_server_rendered.html patterns/safe_disclosure.html patterns/safe_accordion.html patterns/safe_tabs.html patterns/safe_dialog.html patterns/safe_combobox.html patterns/safe_menu.html patterns/safe_switch.html patterns/safe_tooltip.html patterns/safe_breadcrumb.html patterns/safe_slider.html patterns/safe_listbox.html patterns/safe_form-errors.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -1285,8 +1285,8 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "patterns/alert.html",
+    "local_safe": "patterns/safe_alert.html",
+    "ground_truth": "local only"
   }
 ]

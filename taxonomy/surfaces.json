@@ -1,0 +1,95 @@
+{
+  "note": "What is under test. This corpus is HTML-only; every other surface is enumerated so its absence is visible rather than implied.",
+  "values": [
+    {
+      "id": "web",
+      "label": "Website / web application / PWA",
+      "standard": "WCAG 2.2"
+    },
+    {
+      "id": "ios",
+      "label": "iOS / iPadOS native or hybrid",
+      "standard": "WCAG2ICT + Apple HIG"
+    },
+    {
+      "id": "android",
+      "label": "Android native or hybrid",
+      "standard": "WCAG2ICT + Android a11y"
+    },
+    {
+      "id": "desktop",
+      "label": "Windows / macOS / Linux desktop",
+      "standard": "WCAG2ICT"
+    },
+    {
+      "id": "pdf",
+      "label": "PDF",
+      "standard": "PDF/UA-1, PDF/UA-2"
+    },
+    {
+      "id": "word-processing",
+      "label": "Word-processing document",
+      "standard": "WCAG2ICT"
+    },
+    {
+      "id": "presentation",
+      "label": "Presentation",
+      "standard": "WCAG2ICT"
+    },
+    {
+      "id": "spreadsheet",
+      "label": "Spreadsheet",
+      "standard": "WCAG2ICT"
+    },
+    {
+      "id": "epub",
+      "label": "EPUB / e-book",
+      "standard": "EPUB Accessibility 1.1"
+    },
+    {
+      "id": "media",
+      "label": "Video, audio, podcast, live stream",
+      "standard": "WCAG 2.2"
+    },
+    {
+      "id": "email",
+      "label": "Email and messaging content",
+      "standard": "WCAG 2.2"
+    },
+    {
+      "id": "kiosk",
+      "label": "Kiosk, ATM, closed-function device",
+      "standard": "Section 508, EN 301 549"
+    },
+    {
+      "id": "hardware",
+      "label": "Hardware controls and displays",
+      "standard": "Section 508, EN 301 549"
+    },
+    {
+      "id": "authoring",
+      "label": "Authoring tool, CMS, LMS, site builder",
+      "standard": "ATAG 2.0"
+    },
+    {
+      "id": "voice",
+      "label": "Voice interface, conversational AI, chatbot",
+      "standard": "WCAG 2.2 + WCAG2ICT"
+    },
+    {
+      "id": "dataviz",
+      "label": "Maps, charts, dashboards, data visualisation",
+      "standard": "WCAG 2.2"
+    },
+    {
+      "id": "immersive",
+      "label": "AR, VR, games, spatial interfaces",
+      "standard": "XAUR (draft)"
+    },
+    {
+      "id": "support",
+      "label": "Support documentation and services",
+      "standard": "Section 508, EN 301 549"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<!--
+  combobox — broken
+  WCAG: 4.1.2, 2.1.1
+  Expectation: a scanner SHOULD report
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/combobox/
+  A div that opens a div list. No combobox role, no expanded state, no active option, no relationship between input and list.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>combobox — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>combobox — broken</h1>
+<p>A div that opens a div list. No combobox role, no expanded state, no active option, no relationship between input and list.</p>
+<hr>
+<div class="field" onclick="document.getElementById('l1').hidden=false">Choose airport</div>
+<div id="l1" hidden><div onclick="void 0">LHR</div><div onclick="void 0">JFK</div></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

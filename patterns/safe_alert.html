@@ -1,0 +1,26 @@
+<!--
+  alert — APG-correct
+  WCAG: 4.1.3
+  Expectation: a scanner MUST NOT report — negative control
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/alert/
+  role=status (polite) present in the DOM before the text changes.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>alert — APG-correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>alert — APG-correct</h1>
+<p>role=status (polite) present in the DOM before the text changes.</p>
+<hr>
+<button type="button" onclick="document.getElementById('s2').textContent='Seat saved.'">Save</button>
+<div id="s2" role="status" aria-live="polite"></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

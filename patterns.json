@@ -1,0 +1,1021 @@
+{
+  "description": "APG component patterns as correct/broken pairs. Custom widgets are where scanners are weakest and products actually break. The correct half is load-bearing: any scanner can flag everything, only an accurate one leaves APG-conformant markup alone.",
+  "source": "https://www.w3.org/WAI/ARIA/apg/patterns/",
+  "generated": "2026-10-08",
+  "counts": {
+    "patterns": 16,
+    "cases": 32,
+    "tp": 16,
+    "safe": 16
+  },
+  "cases": [
+    {
+      "id": "patterns-disclosure",
+      "mode": "tp",
+      "path": "patterns/disclosure.html",
+      "pattern": "disclosure",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {
+        "4.1.2": 1,
+        "2.1.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A div toggles visibility with no role, no aria-expanded and no keyboard access. A screen reader announces nothing about state; a keyboard cannot reach it."
+    },
+    {
+      "id": "patterns-safe_disclosure",
+      "mode": "safe",
+      "path": "patterns/safe_disclosure.html",
+      "pattern": "disclosure",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.2",
+        "2.1.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Native button, aria-expanded reflecting state, aria-controls to the region."
+    },
+    {
+      "id": "patterns-accordion",
+      "mode": "tp",
+      "path": "patterns/accordion.html",
+      "pattern": "accordion",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/accordion/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-executive"
+      ],
+      "min_criteria": {
+        "4.1.2": 1,
+        "1.3.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Headings are divs, panels have no relationship to their triggers, no expanded state."
+    },
+    {
+      "id": "patterns-safe_accordion",
+      "mode": "safe",
+      "path": "patterns/safe_accordion.html",
+      "pattern": "accordion",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/accordion/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-executive"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.2",
+        "1.3.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Heading-wrapped buttons, aria-expanded, aria-controls, region labelled by its trigger."
+    },
+    {
+      "id": "patterns-tabs",
+      "mode": "tp",
+      "path": "patterns/tabs.html",
+      "pattern": "tabs",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {
+        "4.1.2": 1,
+        "2.1.1": 1,
+        "2.4.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "role=tab asserted on non-focusable divs with no tablist, no tabpanel and no selected state."
+    },
+    {
+      "id": "patterns-safe_tabs",
+      "mode": "safe",
+      "path": "patterns/safe_tabs.html",
+      "pattern": "tabs",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.2",
+        "2.1.1",
+        "2.4.3"
+      ],
+      "expected_outcome": "pass",
+      "notes": "tablist/tab/tabpanel with roving tabindex, aria-selected and aria-controls."
+    },
+    {
+      "id": "patterns-dialog",
+      "mode": "tp",
+      "path": "patterns/dialog.html",
+      "pattern": "dialog",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity",
+        "cognitive-attention"
+      ],
+      "min_criteria": {
+        "4.1.2": 1,
+        "2.1.1": 1,
+        "2.4.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A styled div overlay: no dialog role, no accessible name, background not inert, focus never moved in and never restored on close."
+    },
+    {
+      "id": "patterns-safe_dialog",
+      "mode": "safe",
+      "path": "patterns/safe_dialog.html",
+      "pattern": "dialog",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity",
+        "cognitive-attention"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.2",
+        "2.1.1",
+        "2.4.3"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Native <dialog> with showModal(): dialog role, accessible name, inert background, focus moved in by the platform and restored on close."
+    },
+    {
+      "id": "patterns-combobox",
+      "mode": "tp",
+      "path": "patterns/combobox.html",
+      "pattern": "combobox",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity",
+        "cognitive-memory"
+      ],
+      "min_criteria": {
+        "4.1.2": 1,
+        "2.1.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A div that opens a div list. No combobox role, no expanded state, no active option, no relationship between input and list."
+    },
+    {
+      "id": "patterns-safe_combobox",
+      "mode": "safe",
+      "path": "patterns/safe_combobox.html",
+      "pattern": "combobox",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity",
+        "cognitive-memory"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.2",
+        "2.1.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Input with role=combobox, aria-expanded, aria-controls, and a listbox of options."
+    },
+    {
+      "id": "patterns-menu",
+      "mode": "tp",
+      "path": "patterns/menu.html",
+      "pattern": "menu",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {
+        "4.1.2": 1,
+        "2.1.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Div trigger, div items, no menu semantics and no keyboard model."
+    },
+    {
+      "id": "patterns-safe_menu",
+      "mode": "safe",
+      "path": "patterns/safe_menu.html",
+      "pattern": "menu",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.2",
+        "2.1.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Button with aria-haspopup and aria-expanded, menu with menuitems."
+    },
+    {
+      "id": "patterns-switch",
+      "mode": "tp",
+      "path": "patterns/switch.html",
+      "pattern": "switch",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/switch/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {
+        "4.1.2": 1,
+        "2.1.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A toggle whose on/off state is conveyed only by colour and position."
+    },
+    {
+      "id": "patterns-safe_switch",
+      "mode": "safe",
+      "path": "patterns/safe_switch.html",
+      "pattern": "switch",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/switch/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.2",
+        "2.1.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "role=switch with aria-checked, or a native checkbox."
+    },
+    {
+      "id": "patterns-alert",
+      "mode": "tp",
+      "path": "patterns/alert.html",
+      "pattern": "alert",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/alert/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-attention"
+      ],
+      "min_criteria": {
+        "4.1.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A status message injected with no live region, so it is never announced."
+    },
+    {
+      "id": "patterns-safe_alert",
+      "mode": "safe",
+      "path": "patterns/safe_alert.html",
+      "pattern": "alert",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/alert/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-attention"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.3"
+      ],
+      "expected_outcome": "pass",
+      "notes": "role=status (polite) present in the DOM before the text changes."
+    },
+    {
+      "id": "patterns-table",
+      "mode": "tp",
+      "path": "patterns/table.html",
+      "pattern": "table",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/table/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-memory"
+      ],
+      "min_criteria": {
+        "1.3.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A layout of divs presenting tabular data, with no table semantics or header association."
+    },
+    {
+      "id": "patterns-safe_table",
+      "mode": "safe",
+      "path": "patterns/safe_table.html",
+      "pattern": "table",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/table/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-memory"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.3.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Real table with a caption and scoped headers."
+    },
+    {
+      "id": "patterns-tooltip",
+      "mode": "tp",
+      "path": "patterns/tooltip.html",
+      "pattern": "tooltip",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "vision-low",
+        "motor-tremor"
+      ],
+      "min_criteria": {
+        "4.1.2": 1,
+        "1.4.13": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "title-only hint on a non-focusable div: unreachable by keyboard, not dismissible, and not associated with any control."
+    },
+    {
+      "id": "patterns-safe_tooltip",
+      "mode": "safe",
+      "path": "patterns/safe_tooltip.html",
+      "pattern": "tooltip",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "vision-low",
+        "motor-tremor"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.2",
+        "1.4.13"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Focusable control with aria-describedby pointing at a tooltip element."
+    },
+    {
+      "id": "patterns-breadcrumb",
+      "mode": "tp",
+      "path": "patterns/breadcrumb.html",
+      "pattern": "breadcrumb",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-executive"
+      ],
+      "min_criteria": {
+        "1.3.1": 1,
+        "4.1.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Separator characters as text, no nav landmark, current page not identified."
+    },
+    {
+      "id": "patterns-safe_breadcrumb",
+      "mode": "safe",
+      "path": "patterns/safe_breadcrumb.html",
+      "pattern": "breadcrumb",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-executive"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.3.1",
+        "4.1.2"
+      ],
+      "expected_outcome": "pass",
+      "notes": "nav landmark, ordered list, aria-current on the current page."
+    },
+    {
+      "id": "patterns-slider",
+      "mode": "tp",
+      "path": "patterns/slider.html",
+      "pattern": "slider",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/slider/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity",
+        "motor-tremor"
+      ],
+      "min_criteria": {
+        "4.1.2": 1,
+        "2.1.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A draggable div with no role, no value, and no keyboard alternative to dragging."
+    },
+    {
+      "id": "patterns-safe_slider",
+      "mode": "safe",
+      "path": "patterns/safe_slider.html",
+      "pattern": "slider",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/slider/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity",
+        "motor-tremor"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.2",
+        "2.1.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Native range input: role, value, and arrow-key operation for free."
+    },
+    {
+      "id": "patterns-listbox",
+      "mode": "tp",
+      "path": "patterns/listbox.html",
+      "pattern": "listbox",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/listbox/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {
+        "4.1.2": 1,
+        "2.1.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Selection indicated by background colour only, with no role or selected state."
+    },
+    {
+      "id": "patterns-safe_listbox",
+      "mode": "safe",
+      "path": "patterns/safe_listbox.html",
+      "pattern": "listbox",
+      "apg": "https://www.w3.org/WAI/ARIA/apg/patterns/listbox/",
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.2",
+        "2.1.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "role=listbox with options, aria-selected, and a single tab stop."
+    },
+    {
+      "id": "patterns-form-errors",
+      "mode": "tp",
+      "path": "patterns/form-errors.html",
+      "pattern": "form-errors",
+      "apg": null,
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-language",
+        "cognitive-executive"
+      ],
+      "min_criteria": {
+        "3.3.1": 1,
+        "3.3.2": 1,
+        "4.1.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Error shown as red text near the field: not associated, not announced, and colour is the only cue."
+    },
+    {
+      "id": "patterns-safe_form-errors",
+      "mode": "safe",
+      "path": "patterns/safe_form-errors.html",
+      "pattern": "form-errors",
+      "apg": null,
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-language",
+        "cognitive-executive"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "3.3.1",
+        "3.3.2",
+        "4.1.2"
+      ],
+      "expected_outcome": "pass",
+      "notes": "aria-invalid, aria-describedby to the message, text that says what to do."
+    },
+    {
+      "id": "patterns-required-fields",
+      "mode": "tp",
+      "path": "patterns/required-fields.html",
+      "pattern": "required-fields",
+      "apg": null,
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "vision-color",
+        "cognitive-language"
+      ],
+      "min_criteria": {
+        "3.3.2": 1,
+        "1.3.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Required marked with a red asterisk whose meaning is never stated in text."
+    },
+    {
+      "id": "patterns-safe_required-fields",
+      "mode": "safe",
+      "path": "patterns/safe_required-fields.html",
+      "pattern": "required-fields",
+      "apg": null,
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "vision-color",
+        "cognitive-language"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "3.3.2",
+        "1.3.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "required attribute plus visible text, not colour or glyph alone."
+    },
+    {
+      "id": "patterns-media-captions",
+      "mode": "tp",
+      "path": "patterns/media-captions.html",
+      "pattern": "media-captions",
+      "apg": null,
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "hearing-deaf",
+        "hearing-hoh",
+        "situational"
+      ],
+      "min_criteria": {
+        "1.2.2": 1,
+        "1.2.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Video with no caption track and no transcript. Automation can detect the ABSENCE of a track; it cannot judge caption quality or synchronisation — that is cannot-tell."
+    },
+    {
+      "id": "patterns-safe_media-captions",
+      "mode": "safe",
+      "path": "patterns/safe_media-captions.html",
+      "pattern": "media-captions",
+      "apg": null,
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "component"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "sr-voiceover-safari"
+      ],
+      "user_needs": [
+        "hearing-deaf",
+        "hearing-hoh",
+        "situational"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.2.2",
+        "1.2.3"
+      ],
+      "expected_outcome": "pass",
+      "notes": "A caption track is declared and a transcript is linked."
+    }
+  ]
+}

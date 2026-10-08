@@ -1,0 +1,29 @@
+<!--
+  dialog — APG-correct
+  WCAG: 4.1.2, 2.1.1, 2.4.3
+  Expectation: a scanner MUST NOT report — negative control
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
+  Native <dialog> with showModal(): dialog role, accessible name, inert background, focus moved in by the platform and restored on close.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>dialog — APG-correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>dialog — APG-correct</h1>
+<p>Native <dialog> with showModal(): dialog role, accessible name, inert background, focus moved in by the platform and restored on close.</p>
+<hr>
+<button type="button" onclick="document.getElementById('m2').showModal()">Change seat</button>
+<dialog id="m2" aria-labelledby="m2t">
+  <h2 id="m2t">Select a seat</h2>
+  <form method="dialog"><button type="submit">Close</button></form>
+</dialog>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!--
+  combobox — APG-correct
+  WCAG: 4.1.2, 2.1.1
+  Expectation: a scanner MUST NOT report — negative control
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/combobox/
+  Input with role=combobox, aria-expanded, aria-controls, and a listbox of options.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>combobox — APG-correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>combobox — APG-correct</h1>
+<p>Input with role=combobox, aria-expanded, aria-controls, and a listbox of options.</p>
+<hr>
+<label for="cb">Choose airport</label>
+<input id="cb" role="combobox" aria-expanded="false" aria-controls="l2" aria-autocomplete="list">
+<ul id="l2" role="listbox" aria-label="Airports" hidden>
+  <li role="option" id="o1" aria-selected="false">LHR</li>
+  <li role="option" id="o2" aria-selected="false">JFK</li>
+</ul>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

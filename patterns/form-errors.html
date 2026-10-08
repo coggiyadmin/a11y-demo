@@ -1,0 +1,25 @@
+<!--
+  form-errors — broken
+  WCAG: 3.3.1, 3.3.2, 4.1.2
+  Expectation: a scanner SHOULD report
+  Error shown as red text near the field: not associated, not announced, and colour is the only cue.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>form-errors — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>form-errors — broken</h1>
+<p>Error shown as red text near the field: not associated, not announced, and colour is the only cue.</p>
+<hr>
+<form><label for="e1">Email</label><input id="e1" value="not-an-email">
+<span style="color:#b00">Wrong</span><button type="button">Continue</button></form>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

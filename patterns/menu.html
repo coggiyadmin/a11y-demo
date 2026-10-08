@@ -1,0 +1,26 @@
+<!--
+  menu — broken
+  WCAG: 4.1.2, 2.1.1
+  Expectation: a scanner SHOULD report
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/
+  Div trigger, div items, no menu semantics and no keyboard model.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>menu — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>menu — broken</h1>
+<p>Div trigger, div items, no menu semantics and no keyboard model.</p>
+<hr>
+<div class="btn" onclick="document.getElementById('mn1').hidden=false">Account</div>
+<div id="mn1" hidden><div onclick="void 0">Profile</div><div onclick="void 0">Sign out</div></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

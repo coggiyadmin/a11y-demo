@@ -1,0 +1,28 @@
+<!--
+  dialog — broken
+  WCAG: 4.1.2, 2.1.1, 2.4.3
+  Expectation: a scanner SHOULD report
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
+  A styled div overlay: no dialog role, no accessible name, background not inert, focus never moved in and never restored on close.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>dialog — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>dialog — broken</h1>
+<p>A styled div overlay: no dialog role, no accessible name, background not inert, focus never moved in and never restored on close.</p>
+<hr>
+<div class="btn" onclick="document.getElementById('m1').hidden=false">Change seat</div>
+<div id="m1" hidden style="border:2px solid #30556e;padding:1rem">
+  <p>Select a seat.</p><div class="btn" onclick="document.getElementById('m1').hidden=true">Close</div>
+</div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

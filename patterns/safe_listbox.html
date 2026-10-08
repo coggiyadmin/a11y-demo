@@ -1,0 +1,28 @@
+<!--
+  listbox — APG-correct
+  WCAG: 4.1.2, 2.1.1
+  Expectation: a scanner MUST NOT report — negative control
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/listbox/
+  role=listbox with options, aria-selected, and a single tab stop.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>listbox — APG-correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>listbox — APG-correct</h1>
+<p>role=listbox with options, aria-selected, and a single tab stop.</p>
+<hr>
+<ul role="listbox" aria-label="Cabin class" tabindex="0">
+  <li role="option" aria-selected="true">Economy</li>
+  <li role="option" aria-selected="false">Business</li>
+</ul>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

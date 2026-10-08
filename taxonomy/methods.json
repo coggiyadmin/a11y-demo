@@ -1,0 +1,84 @@
+{
+  "note": "A corpus of static fixtures can host the automatable methods and the prompts for guided ones. It cannot host AT testing or user testing — those need people, and pretending otherwise is how a coverage number becomes a lie.",
+  "values": [
+    {
+      "id": "static-source",
+      "label": "Static source analysis",
+      "automatable": true
+    },
+    {
+      "id": "runtime-dom",
+      "label": "Runtime DOM analysis",
+      "automatable": true
+    },
+    {
+      "id": "ax-tree",
+      "label": "Accessibility-tree inspection",
+      "automatable": true
+    },
+    {
+      "id": "visual",
+      "label": "Rendered visual analysis",
+      "automatable": true
+    },
+    {
+      "id": "interaction",
+      "label": "Interaction automation",
+      "automatable": true
+    },
+    {
+      "id": "state-exploration",
+      "label": "State exploration",
+      "automatable": "partial"
+    },
+    {
+      "id": "crawl",
+      "label": "Site crawling",
+      "automatable": true
+    },
+    {
+      "id": "component",
+      "label": "Component testing",
+      "automatable": true
+    },
+    {
+      "id": "document-parse",
+      "label": "Document parsing",
+      "automatable": true
+    },
+    {
+      "id": "media-analysis",
+      "label": "Media analysis",
+      "automatable": "partial"
+    },
+    {
+      "id": "guided-manual",
+      "label": "Guided manual review",
+      "automatable": false,
+      "needs": "human"
+    },
+    {
+      "id": "at-testing",
+      "label": "Assistive-technology testing",
+      "automatable": false,
+      "needs": "human + AT"
+    },
+    {
+      "id": "user-testing",
+      "label": "User task testing",
+      "automatable": false,
+      "needs": "users with disabilities"
+    },
+    {
+      "id": "regression",
+      "label": "Regression monitoring",
+      "automatable": true
+    },
+    {
+      "id": "ai-assisted",
+      "label": "AI-assisted review",
+      "automatable": "partial",
+      "needs": "human verification"
+    }
+  ]
+}

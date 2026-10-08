@@ -32,8 +32,26 @@ keyboard/            controls that look interactive but are not reachable by key
 capture/             pages that stress capture and hydration rather than rule logic
 static/              single-page defects readable from served HTML
 delivery/            ONE constant defect, delivered eleven different ways
+patterns/            APG component patterns as matched broken/correct pairs
+taxonomy/            the enumerated test space
 delivery.mjs         regenerates the delivery matrix
+patterns.mjs         regenerates the pattern pairs
+taxonomy.mjs         regenerates the taxonomy
+space-coverage.mjs   coverage against the whole space, not just WCAG
 ```
+
+### Component patterns
+
+16 patterns from the [ARIA Authoring Practices
+Guide](https://www.w3.org/WAI/ARIA/apg/patterns/), each as a broken implementation
+and an APG-correct one: disclosure, accordion, tabs, modal dialog, combobox, menu
+button, switch, alert/status, data table, tooltip, breadcrumb, slider, listbox,
+form errors, required fields, media captions.
+
+Custom widgets are where scanners are weakest and where products actually break —
+a native `<button>` is hard to get wrong, a div-based combobox is hard to get
+right. The **correct** half of each pair is the load-bearing one: any scanner can
+flag everything, only an accurate one leaves APG-conformant markup alone.
 
 ### The delivery matrix
 
@@ -56,6 +74,42 @@ delivery blind spot, and the matrix names which one.
 null there, so script cannot see in — but the content is still in the
 accessibility tree and still reaches users, and real design systems ship closed
 roots. It is the hardest row and a fair one.
+
+## The test space
+
+`taxonomy/` enumerates the space this corpus is a slice of:
+
+```
+surface x user need x journey x UI state x input/AT x standard
+```
+
+18 surfaces · 22 functional user needs · 25 journeys · 12 UI states · 12 input/AT
+pairings · 15 validation methods · 5 outcomes · 13 standards.
+
+It is written down so coverage can be divided by a real denominator. Run
+`node space-coverage.mjs` for the current, deliberately unflattering picture:
+
+```
+surfaces      1 / 18     journeys   1 / 25     ui-states  1 / 12
+user-needs   12 / 22     input-at   3 / 12     methods    3 / 15
+```
+
+Two notes that matter more than the numbers:
+
+**Outcomes are five, not two.** `pass`, `fail`, `inapplicable`, `cannot-tell`,
+`not-tested`. `cannot-tell` and `not-tested` are results, not failures to hide —
+collapsing either into `pass` is exactly how a scanner that examined nothing
+looks healthy.
+
+**Conformance, severity, confidence and coverage are separate axes.** A high
+automated conformance score over low coverage says almost nothing, and averaging
+them into one figure destroys the information.
+
+**Three methods cannot be automated at all** — guided manual review, AT testing
+and user task testing. No fixture corpus can cover them; they need people. A
+coverage figure that quietly omits them is not a coverage figure. W3C is explicit
+that [automated tools cannot validate every
+requirement](https://www.w3.org/WAI/test-evaluate/tools/selecting/).
 
 ## Accessible scaffolding
 

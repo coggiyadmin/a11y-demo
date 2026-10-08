@@ -1,0 +1,142 @@
+{
+  "description": "Coverage of this corpus against the enumerated test space. Deliberately unflattering: the denominator is the real space, not the part that happens to be covered.",
+  "generated": "2026-10-08",
+  "cases": 68,
+  "dimensions": [
+    {
+      "dimension": "surfaces",
+      "covered": 1,
+      "total": 18,
+      "missing": [
+        "ios",
+        "android",
+        "desktop",
+        "pdf",
+        "word-processing",
+        "presentation",
+        "spreadsheet",
+        "epub",
+        "media",
+        "email",
+        "kiosk",
+        "hardware",
+        "authoring",
+        "voice",
+        "dataviz",
+        "immersive",
+        "support"
+      ]
+    },
+    {
+      "dimension": "journeys",
+      "covered": 1,
+      "total": 25,
+      "missing": [
+        "auth-signup",
+        "auth-challenge",
+        "consent",
+        "navigate",
+        "form-lifecycle",
+        "commerce",
+        "high-stakes",
+        "overlay",
+        "transfer",
+        "edge-states",
+        "async",
+        "paging",
+        "data",
+        "media-player",
+        "realtime",
+        "display-adapt",
+        "theming",
+        "orientation",
+        "i18n",
+        "session",
+        "destructive",
+        "help",
+        "sr-task",
+        "input-only"
+      ]
+    },
+    {
+      "dimension": "ui-states",
+      "covered": 1,
+      "total": 12,
+      "missing": [
+        "loading",
+        "empty",
+        "invalid",
+        "corrected",
+        "submitted",
+        "error",
+        "offline",
+        "permission-denied",
+        "timed-out",
+        "disabled",
+        "busy"
+      ]
+    },
+    {
+      "dimension": "user-needs",
+      "covered": 12,
+      "total": 22,
+      "missing": [
+        "vision-contrast",
+        "motor-paralysis",
+        "motor-fatigue",
+        "speech-unable",
+        "cognitive-dyslexia",
+        "neuro-seizure",
+        "neuro-vestibular",
+        "multiple",
+        "age-related",
+        "temporary"
+      ]
+    },
+    {
+      "dimension": "input-at",
+      "covered": 3,
+      "total": 12,
+      "missing": [
+        "pointer",
+        "touch",
+        "switch",
+        "speech",
+        "sr-talkback-chrome",
+        "sr-jaws",
+        "sr-narrator-edge",
+        "magnifier",
+        "forced-colors"
+      ]
+    },
+    {
+      "dimension": "methods",
+      "covered": 3,
+      "total": 15,
+      "missing": [
+        "static-source",
+        "visual",
+        "interaction",
+        "state-exploration",
+        "crawl",
+        "document-parse",
+        "media-analysis",
+        "guided-manual",
+        "at-testing",
+        "user-testing",
+        "regression",
+        "ai-assisted"
+      ]
+    }
+  ],
+  "combinations": {
+    "formula": "surface x journey x ui-state x input",
+    "total": 64800,
+    "triples_touched": 2
+  },
+  "not_automatable": [
+    "guided-manual",
+    "at-testing",
+    "user-testing"
+  ]
+}

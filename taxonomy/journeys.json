@@ -1,0 +1,105 @@
+{
+  "note": "Complete tasks, not isolated screens. A component can pass in isolation and still break the task it belongs to — focus lost on a route change, for instance.",
+  "values": [
+    {
+      "id": "auth-signup",
+      "label": "Sign-up, login, logout, account recovery"
+    },
+    {
+      "id": "auth-challenge",
+      "label": "Password, passkeys, MFA, CAPTCHA"
+    },
+    {
+      "id": "consent",
+      "label": "Cookie consent and privacy settings"
+    },
+    {
+      "id": "navigate",
+      "label": "Header nav, menus, search, breadcrumbs"
+    },
+    {
+      "id": "form-lifecycle",
+      "label": "Form: blank, valid, invalid, corrected, submitted"
+    },
+    {
+      "id": "commerce",
+      "label": "Search, filter, cart, checkout, payment, receipt"
+    },
+    {
+      "id": "high-stakes",
+      "label": "Booking, application, healthcare, financial transaction"
+    },
+    {
+      "id": "overlay",
+      "label": "Modal dialogs, popovers, tooltips, notifications"
+    },
+    {
+      "id": "composite-widget",
+      "label": "Tabs, accordions, carousels, trees, grids, comboboxes"
+    },
+    {
+      "id": "transfer",
+      "label": "Drag-and-drop, file upload, file download"
+    },
+    {
+      "id": "edge-states",
+      "label": "Loading, empty, error, offline, permission-denied"
+    },
+    {
+      "id": "async",
+      "label": "Toasts, async validation, background updates"
+    },
+    {
+      "id": "paging",
+      "label": "Infinite scroll, pagination, virtualised content"
+    },
+    {
+      "id": "data",
+      "label": "Data tables, charts, maps, dashboards"
+    },
+    {
+      "id": "media-player",
+      "label": "Video/audio controls and full-screen"
+    },
+    {
+      "id": "realtime",
+      "label": "Live meetings, chat, streaming captions"
+    },
+    {
+      "id": "display-adapt",
+      "label": "Zoom, large text, text spacing, display scaling"
+    },
+    {
+      "id": "theming",
+      "label": "Dark mode, forced colours, custom themes"
+    },
+    {
+      "id": "orientation",
+      "label": "Rotation and small-screen reflow"
+    },
+    {
+      "id": "i18n",
+      "label": "Localisation, RTL, mixed-language content"
+    },
+    {
+      "id": "session",
+      "label": "Timeout, interruption, resume"
+    },
+    {
+      "id": "destructive",
+      "label": "Destructive actions, review, confirmation, undo"
+    },
+    {
+      "id": "help",
+      "label": "Help, feedback, complaints, accessibility contact"
+    },
+    {
+      "id": "sr-task",
+      "label": "Screen-reader use from start to task completion"
+    },
+    {
+      "id": "input-only",
+      "label": "Keyboard-, switch-, touch- or speech-only completion"
+    }
+  ]
+}

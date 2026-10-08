@@ -1,0 +1,29 @@
+<!--
+  menu — APG-correct
+  WCAG: 4.1.2, 2.1.1
+  Expectation: a scanner MUST NOT report — negative control
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/
+  Button with aria-haspopup and aria-expanded, menu with menuitems.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>menu — APG-correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>menu — APG-correct</h1>
+<p>Button with aria-haspopup and aria-expanded, menu with menuitems.</p>
+<hr>
+<button type="button" aria-haspopup="true" aria-expanded="false" aria-controls="mn2">Account</button>
+<ul id="mn2" role="menu" aria-label="Account" hidden>
+  <li role="menuitem" tabindex="-1">Profile</li>
+  <li role="menuitem" tabindex="-1">Sign out</li>
+</ul>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

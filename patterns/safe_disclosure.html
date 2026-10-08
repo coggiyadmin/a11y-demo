@@ -1,0 +1,27 @@
+<!--
+  disclosure — APG-correct
+  WCAG: 4.1.2, 2.1.1
+  Expectation: a scanner MUST NOT report — negative control
+  APG: https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/
+  Native button, aria-expanded reflecting state, aria-controls to the region.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>disclosure — APG-correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>disclosure — APG-correct</h1>
+<p>Native button, aria-expanded reflecting state, aria-controls to the region.</p>
+<hr>
+<button type="button" aria-expanded="false" aria-controls="d2"
+  onclick="var b=this,p=document.getElementById('d2');var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));p.hidden=o">Baggage rules</button>
+<div id="d2" hidden><p>One cabin bag up to 7kg.</p></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

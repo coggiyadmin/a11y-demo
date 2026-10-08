@@ -1,0 +1,65 @@
+{
+  "note": "AT pairings are version- and platform-sensitive; a pass with one pairing does not transfer to another. Only `keyboard` and `pointer` are automatable here.",
+  "values": [
+    {
+      "id": "keyboard",
+      "label": "Keyboard only",
+      "automatable": true
+    },
+    {
+      "id": "pointer",
+      "label": "Mouse / pointer",
+      "automatable": true
+    },
+    {
+      "id": "touch",
+      "label": "Touch",
+      "automatable": "partial"
+    },
+    {
+      "id": "switch",
+      "label": "Switch access",
+      "automatable": false
+    },
+    {
+      "id": "speech",
+      "label": "Speech control (Voice Control, Dragon)",
+      "automatable": false
+    },
+    {
+      "id": "sr-voiceover-safari",
+      "label": "VoiceOver + Safari",
+      "automatable": false
+    },
+    {
+      "id": "sr-talkback-chrome",
+      "label": "TalkBack + Chrome",
+      "automatable": false
+    },
+    {
+      "id": "sr-nvda",
+      "label": "NVDA + Firefox/Chrome",
+      "automatable": false
+    },
+    {
+      "id": "sr-jaws",
+      "label": "JAWS + Chrome/Edge",
+      "automatable": false
+    },
+    {
+      "id": "sr-narrator-edge",
+      "label": "Narrator + Edge",
+      "automatable": false
+    },
+    {
+      "id": "magnifier",
+      "label": "Screen magnifier",
+      "automatable": false
+    },
+    {
+      "id": "forced-colors",
+      "label": "Platform high-contrast / forced colours",
+      "automatable": "partial"
+    }
+  ]
+}

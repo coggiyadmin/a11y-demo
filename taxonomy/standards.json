@@ -1,0 +1,82 @@
+{
+  "note": "Versioned, selectable rule packs. Laws are jurisdictional profiles over these, never a \"legal pass\" badge — conformance evidence is not a legal opinion.",
+  "values": [
+    {
+      "id": "wcag22",
+      "label": "WCAG 2.2 A/AA/AAA",
+      "status": "recommendation",
+      "use": "production baseline"
+    },
+    {
+      "id": "act",
+      "label": "ACT Rules",
+      "status": "maintained",
+      "use": "rule definitions and test cases"
+    },
+    {
+      "id": "aria12",
+      "label": "WAI-ARIA 1.2 + APG",
+      "status": "recommendation",
+      "use": "custom widgets"
+    },
+    {
+      "id": "wcag2ict",
+      "label": "WCAG2ICT",
+      "status": "note",
+      "use": "non-web software, documents, closed ICT"
+    },
+    {
+      "id": "atag20",
+      "label": "ATAG 2.0",
+      "status": "recommendation",
+      "use": "authoring tools and generated content"
+    },
+    {
+      "id": "uaag",
+      "label": "UAAG",
+      "status": "note",
+      "use": "browsers, media players, user agents"
+    },
+    {
+      "id": "section508",
+      "label": "Revised Section 508",
+      "status": "regulation",
+      "jurisdiction": "US federal"
+    },
+    {
+      "id": "en301549",
+      "label": "EN 301 549",
+      "status": "standard",
+      "jurisdiction": "EU"
+    },
+    {
+      "id": "pdfua",
+      "label": "PDF/UA-1, PDF/UA-2",
+      "status": "standard",
+      "use": "accessible PDF"
+    },
+    {
+      "id": "epub-a11y",
+      "label": "EPUB Accessibility 1.1",
+      "status": "standard",
+      "use": "publications"
+    },
+    {
+      "id": "platform",
+      "label": "Apple / Android / Windows platform guidance",
+      "status": "vendor"
+    },
+    {
+      "id": "house",
+      "label": "Organisation design-system and policy rules",
+      "status": "local"
+    },
+    {
+      "id": "wcag3",
+      "label": "WCAG 3",
+      "status": "working draft",
+      "use": "EXPERIMENTAL ONLY — incomplete"
+    }
+  ],
+  "jurisdiction_note": "The European Accessibility Act has applied to covered EU products and services since 2025-06-28. Represent the EAA and ADA as profiles selecting criteria and surfaces, not as a single pass/fail badge."
+}
