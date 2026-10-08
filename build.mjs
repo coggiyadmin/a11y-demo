@@ -289,6 +289,17 @@ fs.writeFileSync(path.join(ROOT, 'fixture.css'),
 
 // index so a crawler reaches every fixture from one entry point
 const groups = [...new Set(FIXTURES.map((f) => f.dir))];
+
+// per-group index too: a server maps /keyboard/ to /keyboard/index.html, and
+// without one that URL 404s — which makes the group un-crawlable as a subject
+// in its own right.
+for (const g of groups) {
+  const list = FIXTURES.filter((f) => f.dir === g);
+  fs.writeFileSync(path.join(ROOT, g, 'index.html'),
+    page(`${g} fixtures`, `<ul>${list.map((f) =>
+      `<li><a href="${f.file}">${f.title}</a> — ${f.sc.join(', ')} — <strong>${
+        f.expect === 'flag' ? 'should flag' : 'must not flag'}</strong></li>`).join('\n')}</ul>`));
+}
 fs.writeFileSync(path.join(ROOT, 'index.html'), page('Accessibility fixture corpus', groups.map((g) => `
 <h2>${g}</h2>
 <ul>${FIXTURES.filter((f) => f.dir === g).map((f) =>
