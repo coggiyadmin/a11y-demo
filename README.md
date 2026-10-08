@@ -148,7 +148,15 @@ way would be wrong.
 ### Media and captions
 
 `media/` covers captions, transcripts, audio description, live captioning and
-sound-only signalling. Two of the eight pairs are deliberately **cannot-tell**
+sound-only signalling. The media files are real — a 1-second black H.264 clip
+and silent MP3s, all under 2KB, emitted by the generator rather than committed
+as loose binaries.
+
+That is not fussiness. They were once references to files that did not exist,
+and a `<video autoplay>` pointing at a missing source makes the browser wait out
+its load timeout on every scan — about 20 seconds per page on one engine, on
+three fixtures, every run. **A fixture must not be pathological for the tools
+under test.** With real files those pages now load in roughly half a second. Two of the eight pairs are deliberately **cannot-tell**
 rather than fail — `captions_present_but_poor` ships a real, parseable caption
 track that says only `[inaudible]` across the whole runtime, identifies no
 speaker and is not synchronised. A presence check passes it. That is the point:
