@@ -1,0 +1,341 @@
+{
+  "description": "Ground truth for the a11y-demo fixture corpus. Each case names the WCAG success criteria a correct scanner should report (min_criteria) or, for a negative control, the criteria it must NOT report (expected-clean). Measured engine behaviour lives in a11y-expected-findings.json, never here.",
+  "version": 1,
+  "generated": "2026-10-08",
+  "scoring": {
+    "recall": "sum(criteria reported on tp cases) / sum(min_criteria) across mode=tp",
+    "fp_rate": "any finding on a mode=safe case is a false positive; the ceiling is 0",
+    "verdict_legend": {
+      "expected-fire": "a control SHOULD report this criterion on this page",
+      "expected-fn": "known miss at the current baseline — a pinned recall gap, NOT a test failure",
+      "expected-clean": "negative control — 0 findings of the listed criteria",
+      "control-absent": "the pack ships no control for this criterion; excluded from recall math"
+    }
+  },
+  "counts": {
+    "total": 25,
+    "tp": 15,
+    "safe": 10
+  },
+  "cases": [
+    {
+      "id": "keyboard-div_button",
+      "mode": "tp",
+      "path": "keyboard/div_button.html",
+      "min_criteria": {
+        "2.1.1": 1,
+        "4.1.2": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [
+        "#18",
+        "#19"
+      ],
+      "notes": "Visually a button, structurally a styled div. No tabindex, no role, no keyboard activation."
+    },
+    {
+      "id": "keyboard-safe_native_button",
+      "mode": "safe",
+      "path": "keyboard/safe_native_button.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1",
+        "4.1.2"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for div_button.html. A control that flags this is a false positive."
+    },
+    {
+      "id": "keyboard-div_text_field",
+      "mode": "tp",
+      "path": "keyboard/div_text_field.html",
+      "min_criteria": {
+        "2.1.1": 1,
+        "1.3.1": 1,
+        "4.1.2": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [
+        "#4",
+        "#5",
+        "#6",
+        "#7",
+        "#8",
+        "#9"
+      ],
+      "notes": "Origin and destination pickers built from nested divs. No input element, no programmatic relationship."
+    },
+    {
+      "id": "keyboard-safe_native_text_field",
+      "mode": "safe",
+      "path": "keyboard/safe_native_text_field.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1",
+        "1.3.1",
+        "4.1.2"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for div_text_field.html."
+    },
+    {
+      "id": "keyboard-div_date_fields",
+      "mode": "tp",
+      "path": "keyboard/div_date_fields.html",
+      "min_criteria": {
+        "2.1.1": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [
+        "#10",
+        "#11"
+      ],
+      "notes": "Departure and return, each a clickable div with no focusable control inside."
+    },
+    {
+      "id": "keyboard-div_travellers",
+      "mode": "tp",
+      "path": "keyboard/div_travellers.html",
+      "min_criteria": {
+        "2.1.1": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [
+        "#12"
+      ],
+      "notes": "A disclosure built from nested divs, none of them focusable."
+    },
+    {
+      "id": "keyboard-div_checkbox",
+      "mode": "tp",
+      "path": "keyboard/div_checkbox.html",
+      "min_criteria": {
+        "2.1.1": 1,
+        "4.1.2": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [
+        "#13",
+        "#14"
+      ],
+      "notes": "No native checkbox, no role, no checked state exposed."
+    },
+    {
+      "id": "keyboard-safe_native_checkbox",
+      "mode": "safe",
+      "path": "keyboard/safe_native_checkbox.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1",
+        "4.1.2"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for div_checkbox.html."
+    },
+    {
+      "id": "keyboard-div_fare_cards",
+      "mode": "tp",
+      "path": "keyboard/div_fare_cards.html",
+      "min_criteria": {
+        "2.1.1": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [
+        "#15",
+        "#16",
+        "#17"
+      ],
+      "notes": "Special-fare options. Pointer-operable, not keyboard reachable."
+    },
+    {
+      "id": "keyboard-role_tab_no_tablist",
+      "mode": "tp",
+      "path": "keyboard/role_tab_no_tablist.html",
+      "min_criteria": {
+        "2.1.1": 1,
+        "2.4.3": 1,
+        "4.1.2": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [
+        "#1",
+        "#2",
+        "#3"
+      ],
+      "notes": "The ARIA role is asserted without the structure or the keyboard behaviour that makes it true."
+    },
+    {
+      "id": "keyboard-safe_roving_tabindex",
+      "mode": "safe",
+      "path": "keyboard/safe_roving_tabindex.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1",
+        "2.4.3"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "tabindex=\"-1\" here is CORRECT authoring: the APG tabs pattern keeps exactly one tab in the tab order and moves between them with arrow keys. A scanner that reports these as \"not keyboard reachable\" is producing a false positive. See WAI-ARIA Authoring Practices, Tabs pattern, and the Keyboard Interaction section of the Grid pattern."
+    },
+    {
+      "id": "keyboard-safe_custom_button",
+      "mode": "safe",
+      "path": "keyboard/safe_custom_button.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1",
+        "4.1.2"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "A div CAN be a button: role, tabindex and key handling all present. Negative control."
+    },
+    {
+      "id": "keyboard-focus_not_visible",
+      "mode": "tp",
+      "path": "keyboard/focus_not_visible.html",
+      "min_criteria": {
+        "2.4.7": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [
+        "#20"
+      ],
+      "notes": "Focusable controls whose focus ring is removed in CSS."
+    },
+    {
+      "id": "keyboard-focus_obscured",
+      "mode": "tp",
+      "path": "keyboard/focus_obscured.html",
+      "min_criteria": {
+        "2.4.11": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [
+        "#21"
+      ],
+      "notes": "The control receives focus but a sticky footer covers it, so the focus indicator is not visible. 2.4.11 is new in WCAG 2.2."
+    },
+    {
+      "id": "capture-client_mounted",
+      "mode": "tp",
+      "path": "capture/client_mounted.html",
+      "min_criteria": {
+        "2.1.1": 1,
+        "4.1.2": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [],
+      "notes": "The served HTML is a shell. Everything testable appears only after JS runs. Exercises whether the capture holds pre- or post-hydration markup."
+    },
+    {
+      "id": "capture-safe_server_rendered",
+      "mode": "safe",
+      "path": "capture/safe_server_rendered.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1",
+        "4.1.2"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for client_mounted.html: identical UI, present in the served bytes."
+    },
+    {
+      "id": "capture-link_heavy",
+      "mode": "safe",
+      "path": "capture/link_heavy.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.4.3"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Every link is natively focusable, so a tab-order walk must report applicable > 0. If it reports 0 here, the walk is broken independently of page scale."
+    },
+    {
+      "id": "static-viewport_no_zoom",
+      "mode": "tp",
+      "path": "static/viewport_no_zoom.html",
+      "min_criteria": {
+        "1.4.4": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [],
+      "notes": "Found by automation, absent from the manual sheet. Flat AA failure."
+    },
+    {
+      "id": "static-safe_viewport",
+      "mode": "safe",
+      "path": "static/safe_viewport.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "1.4.4"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for viewport_no_zoom.html."
+    },
+    {
+      "id": "static-img_no_alt",
+      "mode": "tp",
+      "path": "static/img_no_alt.html",
+      "min_criteria": {
+        "1.1.1": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [],
+      "notes": "No alt, no aria-label, no declared decorative intent."
+    },
+    {
+      "id": "static-safe_img",
+      "mode": "safe",
+      "path": "static/safe_img.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "1.1.1"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for img_no_alt.html."
+    },
+    {
+      "id": "static-anim_no_reduced_motion",
+      "mode": "tp",
+      "path": "static/anim_no_reduced_motion.html",
+      "min_criteria": {
+        "2.2.2": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [],
+      "notes": "2.2.2 allows 5s. These run forever and no prefers-reduced-motion rule turns them off."
+    },
+    {
+      "id": "static-safe_anim_reduced_motion",
+      "mode": "safe",
+      "path": "static/safe_anim_reduced_motion.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.2.2"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for anim_no_reduced_motion.html."
+    },
+    {
+      "id": "static-field_no_visible_label",
+      "mode": "tp",
+      "path": "static/field_no_visible_label.html",
+      "min_criteria": {
+        "3.3.2": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [],
+      "notes": "Placeholder text is not a label."
+    },
+    {
+      "id": "static-lang_missing",
+      "mode": "tp",
+      "path": "static/lang_missing.html",
+      "min_criteria": {
+        "3.1.1": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [],
+      "notes": "The html element carries no lang attribute."
+    }
+  ]
+}

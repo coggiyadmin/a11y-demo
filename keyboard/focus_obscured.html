@@ -1,0 +1,35 @@
+<!--
+  Focused control hidden behind a sticky bar
+  WCAG: 2.4.11
+  Expectation: a control SHOULD report this
+  The control receives focus but a sticky footer covers it, so the focus indicator is not visible. 2.4.11 is new in WCAG 2.2.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Focused control hidden behind a sticky bar</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Focused control hidden behind a sticky bar</h1>
+<style>.sticky{position:fixed;bottom:0;left:0;right:0;height:90px;background:#222;color:#fff}</style>
+<p><button>Control 1</button></p>
+<p><button>Control 2</button></p>
+<p><button>Control 3</button></p>
+<p><button>Control 4</button></p>
+<p><button>Control 5</button></p>
+<p><button>Control 6</button></p>
+<p><button>Control 7</button></p>
+<p><button>Control 8</button></p>
+<p><button>Control 9</button></p>
+<p><button>Control 10</button></p>
+<p><button>Control 11</button></p>
+<p><button>Control 12</button></p>
+<div class="sticky">Sticky footer that covers the last control</div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

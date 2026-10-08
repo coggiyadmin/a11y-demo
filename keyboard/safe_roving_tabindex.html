@@ -1,0 +1,26 @@
+<!--
+  Roving tabindex, APG-correct
+  WCAG: 2.1.1, 2.4.3
+  Expectation: NO control should report this (negative control)
+  tabindex="-1" here is CORRECT authoring: the APG tabs pattern keeps exactly one tab in the tab order and moves between them with arrow keys. A scanner that reports these as "not keyboard reachable" is producing a false positive. See WAI-ARIA Authoring Practices, Tabs pattern, and the Keyboard Interaction section of the Grid pattern.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roving tabindex, APG-correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Roving tabindex, APG-correct</h1>
+<div role="tablist" aria-label="Travel modes">
+  <button role="tab" tabindex="0"  aria-selected="true">Flights</button>
+  <button role="tab" tabindex="-1" aria-selected="false">Hotels</button>
+  <button role="tab" tabindex="-1" aria-selected="false">Buses</button>
+</div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

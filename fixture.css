@@ -1,0 +1,8 @@
+body{font:16px/1.5 system-ui,sans-serif;margin:2rem;max-width:60rem}
+.btn{display:inline-block;background:#30556e;color:#fff;padding:.6rem 1.2rem;border-radius:4px;cursor:pointer}
+.field{border:1px solid #ccc;padding:.6rem;margin:.4rem 0;cursor:pointer}
+.field .lbl{color:#666;font-size:.85em;display:block}
+.card{display:inline-block;border:1px solid #ccc;padding:.8rem;margin:.3rem;cursor:pointer}
+.checkbox{cursor:pointer;margin:.6rem 0}
+.checkbox .box{display:inline-block;width:14px;height:14px;border:1px solid #666;vertical-align:-2px}
+[role=tab]{display:inline-block;padding:.5rem 1rem;border-bottom:2px solid transparent;cursor:pointer}

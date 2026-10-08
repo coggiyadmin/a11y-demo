@@ -1,0 +1,23 @@
+<!--
+  Focus indicator suppressed
+  WCAG: 2.4.7
+  Expectation: a control SHOULD report this
+  Focusable controls whose focus ring is removed in CSS.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Focus indicator suppressed</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Focus indicator suppressed</h1>
+<style>.nofocus:focus{outline:none;box-shadow:none}</style>
+<button class="nofocus">One</button> <button class="nofocus">Two</button>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

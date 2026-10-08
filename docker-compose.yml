@@ -1,0 +1,35 @@
+# Two services:
+#   corpus   serves the fixtures over HTTP (what a scanner points at)
+#   browser  a pinned Playwright image that measures the SAME pages with a real
+#            engine, producing the reference numbers a scanner is judged against
+#
+#   docker compose up -d corpus
+#   docker compose run --rm browser          # writes check/reference.json
+#   docker compose down
+services:
+  corpus:
+    build: .
+    image: a11y-demo-corpus
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/index.html"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  browser:
+    # pinned: a browser version change silently changes focus and layout behaviour,
+    # which would move the reference numbers without any fixture changing
+    image: mcr.microsoft.com/playwright:v1.61.1-noble
+    depends_on:
+      corpus:
+        condition: service_healthy
+    working_dir: /work
+    volumes:
+      - .:/work
+    environment:
+      BASE_URL: http://corpus:8080
+    command: >
+      sh -c "npm --prefix check install --no-audit --no-fund --silent &&
+             node check/reference.mjs"

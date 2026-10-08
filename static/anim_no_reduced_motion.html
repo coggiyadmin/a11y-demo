@@ -1,0 +1,28 @@
+<!--
+  Indefinite animation with no reduced-motion guard
+  WCAG: 2.2.2
+  Expectation: a control SHOULD report this
+  2.2.2 allows 5s. These run forever and no prefers-reduced-motion rule turns them off.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indefinite animation with no reduced-motion guard</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Indefinite animation with no reduced-motion guard</h1>
+<style>
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{animation:spin 1s linear infinite}
+.pulse{animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.4}}
+</style>
+<div class="spinner">spinning</div><div class="pulse">pulsing</div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

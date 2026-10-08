@@ -1,0 +1,24 @@
+<!--
+  Text field that is a div
+  WCAG: 2.1.1, 1.3.1, 4.1.2
+  Expectation: a control SHOULD report this
+  Origin and destination pickers built from nested divs. No input element, no programmatic relationship.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Text field that is a div</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Text field that is a div</h1>
+<div class="field" onclick="void 0"><span class="lbl">From</span><div class="val">Delhi</div></div>
+<div class="field" onclick="void 0"><span class="lbl">To</span><div class="val">Mumbai</div></div>
+<p><a href="./safe_native_text_field.html">The correct version</a></p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

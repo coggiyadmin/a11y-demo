@@ -1,0 +1,27 @@
+<!--
+  role=tab on non-focusable divs, no tablist
+  WCAG: 2.1.1, 2.4.3, 4.1.2
+  Expectation: a control SHOULD report this
+  The ARIA role is asserted without the structure or the keyboard behaviour that makes it true.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>role=tab on non-focusable divs, no tablist</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>role=tab on non-focusable divs, no tablist</h1>
+<div>
+  <div role="tab">Flights</div>
+  <div role="tab">Hotels</div>
+  <div role="tab">Buses</div>
+</div>
+<p><a href="./safe_roving_tabindex.html">The correct version</a></p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "a11y-demo-check",
+  "private": true,
+  "type": "module",
+  "description": "Optional browser harness. The corpus itself has no dependencies; this one does.",
+  "dependencies": { "playwright": "1.61.1" }
+}

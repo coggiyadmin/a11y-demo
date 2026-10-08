@@ -1,0 +1,29 @@
+<!--
+  Widget mounted by script after load
+  WCAG: 2.1.1, 4.1.2
+  Expectation: a control SHOULD report this
+  The served HTML is a shell. Everything testable appears only after JS runs. Exercises whether the capture holds pre- or post-hydration markup.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Widget mounted by script after load</title>
+<link rel="stylesheet" href="../fixture.css">
+<script>
+  addEventListener('DOMContentLoaded', () => {
+    document.getElementById('root').innerHTML =
+      '<div class="btn" onclick="void 0">Search flights</div>' +
+      '<div role="tab">Flights</div>';
+  });
+</script>
+</head>
+<body>
+<main>
+<h1>Widget mounted by script after load</h1>
+<div id="root"><p>Loading…</p></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

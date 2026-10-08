@@ -1,0 +1,27 @@
+<!--
+  Animation guarded by prefers-reduced-motion
+  WCAG: 2.2.2
+  Expectation: NO control should report this (negative control)
+  Negative control for anim_no_reduced_motion.html.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Animation guarded by prefers-reduced-motion</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Animation guarded by prefers-reduced-motion</h1>
+<style>
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{animation:spin 1s linear infinite}
+@media (prefers-reduced-motion: reduce){.spinner{animation:none}}
+</style>
+<div class="spinner">spinning</div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>
