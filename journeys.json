@@ -1,0 +1,423 @@
+{
+  "description": "Multi-page task fixtures. Carries criteria that cannot be expressed on a single page: 3.2.3, 3.2.4, 3.2.6 and 3.3.7 are about the relationship between pages. Each case is a SET of pages with an entry point, not one page.",
+  "generated": "2026-10-08",
+  "counts": {
+    "journeys": 6,
+    "cases": 12,
+    "pages": 50
+  },
+  "cases": [
+    {
+      "id": "journey-booking-broken",
+      "mode": "tp",
+      "path": "journeys/booking/broken/index.html",
+      "entry": "journeys/booking/broken/index.html",
+      "steps": [
+        "journeys/booking/broken/index.html",
+        "journeys/booking/broken/step1.html",
+        "journeys/booking/broken/step2.html",
+        "journeys/booking/broken/step3.html",
+        "journeys/booking/broken/help.html"
+      ],
+      "surface": "web",
+      "journey": "high-stakes",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {
+        "3.2.3": 1,
+        "3.3.4": 1,
+        "3.3.7": 1,
+        "2.4.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "scope": "multi-page",
+      "notes": "Navigation order changes between steps, the email already given in step 1 is asked for again in step 2, there is no review before the booking is committed, and focus is never moved when the step changes."
+    },
+    {
+      "id": "journey-booking-correct",
+      "mode": "safe",
+      "path": "journeys/booking/correct/index.html",
+      "entry": "journeys/booking/correct/index.html",
+      "steps": [
+        "journeys/booking/correct/index.html",
+        "journeys/booking/correct/step1.html",
+        "journeys/booking/correct/step2.html",
+        "journeys/booking/correct/step3.html",
+        "journeys/booking/correct/done.html",
+        "journeys/booking/correct/help.html"
+      ],
+      "surface": "web",
+      "journey": "high-stakes",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "3.2.3",
+        "3.3.4",
+        "3.3.7",
+        "2.4.3"
+      ],
+      "expected_outcome": "pass",
+      "scope": "multi-page",
+      "notes": "Navigation keeps a consistent order, previously entered data is carried forward, a review step precedes submission, and focus moves to the step heading."
+    },
+    {
+      "id": "journey-signin-broken",
+      "mode": "tp",
+      "path": "journeys/signin/broken/index.html",
+      "entry": "journeys/signin/broken/index.html",
+      "steps": [
+        "journeys/signin/broken/index.html",
+        "journeys/signin/broken/step1.html",
+        "journeys/signin/broken/help.html"
+      ],
+      "surface": "web",
+      "journey": "auth-challenge",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {
+        "3.3.8": 1,
+        "3.3.1": 1,
+        "2.1.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "scope": "multi-page",
+      "notes": "Authentication depends on a cognitive function test — transcribing distorted characters — and the password field blocks paste, which breaks password managers. Both are 3.3.8 failures and both hit memory, dyslexia and motor needs hardest."
+    },
+    {
+      "id": "journey-signin-correct",
+      "mode": "safe",
+      "path": "journeys/signin/correct/index.html",
+      "entry": "journeys/signin/correct/index.html",
+      "steps": [
+        "journeys/signin/correct/index.html",
+        "journeys/signin/correct/step1.html",
+        "journeys/signin/correct/done.html",
+        "journeys/signin/correct/help.html"
+      ],
+      "surface": "web",
+      "journey": "auth-challenge",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "3.3.8",
+        "3.3.1",
+        "2.1.1"
+      ],
+      "expected_outcome": "pass",
+      "scope": "multi-page",
+      "notes": "No transcription puzzle, paste permitted, autocomplete tokens present so a password manager can fill the form, and an alternative sign-in route offered."
+    },
+    {
+      "id": "journey-consistent-help-broken",
+      "mode": "tp",
+      "path": "journeys/consistent-help/broken/index.html",
+      "entry": "journeys/consistent-help/broken/index.html",
+      "steps": [
+        "journeys/consistent-help/broken/index.html",
+        "journeys/consistent-help/broken/step1.html",
+        "journeys/consistent-help/broken/step2.html",
+        "journeys/consistent-help/broken/step3.html",
+        "journeys/consistent-help/broken/help.html"
+      ],
+      "surface": "web",
+      "journey": "help",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {
+        "3.2.6": 1,
+        "3.2.3": 1,
+        "3.2.4": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "scope": "multi-page",
+      "notes": "The help link is in a different position on every step and is labelled \"Help\" on one page and \"Support\" on another. Both are single-page-invisible: each page in isolation is fine, and the journey is still a 3.2.6 and 3.2.4 failure."
+    },
+    {
+      "id": "journey-consistent-help-correct",
+      "mode": "safe",
+      "path": "journeys/consistent-help/correct/index.html",
+      "entry": "journeys/consistent-help/correct/index.html",
+      "steps": [
+        "journeys/consistent-help/correct/index.html",
+        "journeys/consistent-help/correct/step1.html",
+        "journeys/consistent-help/correct/step2.html",
+        "journeys/consistent-help/correct/step3.html",
+        "journeys/consistent-help/correct/help.html"
+      ],
+      "surface": "web",
+      "journey": "help",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "3.2.6",
+        "3.2.3",
+        "3.2.4"
+      ],
+      "expected_outcome": "pass",
+      "scope": "multi-page",
+      "notes": "Help appears in the same relative order on every page, with the same label."
+    },
+    {
+      "id": "journey-destructive-broken",
+      "mode": "tp",
+      "path": "journeys/destructive/broken/index.html",
+      "entry": "journeys/destructive/broken/index.html",
+      "steps": [
+        "journeys/destructive/broken/index.html",
+        "journeys/destructive/broken/step1.html",
+        "journeys/destructive/broken/help.html"
+      ],
+      "surface": "web",
+      "journey": "destructive",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {
+        "3.3.4": 1,
+        "4.1.3": 1,
+        "2.4.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "scope": "multi-page",
+      "notes": "A cancel control that acts immediately, with no confirmation, no review of what is about to be lost, no announcement afterwards and no undo."
+    },
+    {
+      "id": "journey-destructive-correct",
+      "mode": "safe",
+      "path": "journeys/destructive/correct/index.html",
+      "entry": "journeys/destructive/correct/index.html",
+      "steps": [
+        "journeys/destructive/correct/index.html",
+        "journeys/destructive/correct/step1.html",
+        "journeys/destructive/correct/step2.html",
+        "journeys/destructive/correct/help.html"
+      ],
+      "surface": "web",
+      "journey": "destructive",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "3.3.4",
+        "4.1.3",
+        "2.4.3"
+      ],
+      "expected_outcome": "pass",
+      "scope": "multi-page",
+      "notes": "Confirmation step naming the consequence, announced result, and a reversal window."
+    },
+    {
+      "id": "journey-consent-broken",
+      "mode": "tp",
+      "path": "journeys/consent/broken/index.html",
+      "entry": "journeys/consent/broken/index.html",
+      "steps": [
+        "journeys/consent/broken/index.html",
+        "journeys/consent/broken/step1.html",
+        "journeys/consent/broken/help.html"
+      ],
+      "surface": "web",
+      "journey": "consent",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {
+        "2.1.1": 1,
+        "2.4.3": 1,
+        "1.3.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "scope": "multi-page",
+      "notes": "A consent banner that covers the page, is not reachable by keyboard, does not receive focus, and whose \"reject\" option is a styled div while \"accept\" is a button."
+    },
+    {
+      "id": "journey-consent-correct",
+      "mode": "safe",
+      "path": "journeys/consent/correct/index.html",
+      "entry": "journeys/consent/correct/index.html",
+      "steps": [
+        "journeys/consent/correct/index.html",
+        "journeys/consent/correct/step1.html",
+        "journeys/consent/correct/help.html"
+      ],
+      "surface": "web",
+      "journey": "consent",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1",
+        "2.4.3",
+        "1.3.1"
+      ],
+      "expected_outcome": "pass",
+      "scope": "multi-page",
+      "notes": "A dialog that takes focus, offers reject and accept as equal native controls, and returns focus to the page when dismissed."
+    },
+    {
+      "id": "journey-navigate-broken",
+      "mode": "tp",
+      "path": "journeys/navigate/broken/index.html",
+      "entry": "journeys/navigate/broken/index.html",
+      "steps": [
+        "journeys/navigate/broken/index.html",
+        "journeys/navigate/broken/step1.html",
+        "journeys/navigate/broken/step2.html",
+        "journeys/navigate/broken/help.html"
+      ],
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {
+        "2.4.5": 1,
+        "3.2.4": 1,
+        "2.4.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "scope": "multi-page",
+      "notes": "Only one route to any page — no search, no sitemap, no breadcrumb — and the same destination is labelled differently in different places. No skip link, so every page starts with the full navigation."
+    },
+    {
+      "id": "journey-navigate-correct",
+      "mode": "safe",
+      "path": "journeys/navigate/correct/index.html",
+      "entry": "journeys/navigate/correct/index.html",
+      "steps": [
+        "journeys/navigate/correct/index.html",
+        "journeys/navigate/correct/step1.html",
+        "journeys/navigate/correct/step2.html",
+        "journeys/navigate/correct/sitemap.html",
+        "journeys/navigate/correct/help.html"
+      ],
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.4.5",
+        "3.2.4",
+        "2.4.1"
+      ],
+      "expected_outcome": "pass",
+      "scope": "multi-page",
+      "notes": "Multiple ways to reach a page, consistent labelling for the same destination, and a skip link."
+    }
+  ]
+}

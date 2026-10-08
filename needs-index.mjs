@@ -13,7 +13,7 @@ const critNeeds = Object.fromEntries(
   JSON.parse(fs.readFileSync(path.join(ROOT, 'taxonomy/criterion-needs.json'), 'utf8'))
     .values.map((v) => [v.sc, v.needs]));
 
-const cases = ['catalog.json', 'delivery.json', 'patterns.json', 'color-vision.json', 'media.json', 'ui-states.json']
+const cases = ['catalog.json', 'delivery.json', 'patterns.json', 'color-vision.json', 'media.json', 'ui-states.json', 'journeys.json']
   .map((f) => path.join(ROOT, f)).filter(fs.existsSync)
   .flatMap((f) => JSON.parse(fs.readFileSync(f, 'utf8')).cases)
   // A case inherits needs from the criteria it exercises. Hand-annotating every

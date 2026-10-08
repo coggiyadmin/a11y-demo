@@ -1,7 +1,7 @@
 {
   "description": "Coverage of this corpus against the enumerated test space. Deliberately unflattering: the denominator is the real space, not the part that happens to be covered.",
   "generated": "2026-10-08",
-  "cases": 120,
+  "cases": 132,
   "dimensions": [
     {
       "dimension": "surfaces",
@@ -28,15 +28,11 @@
     },
     {
       "dimension": "journeys",
-      "covered": 3,
+      "covered": 9,
       "total": 25,
       "missing": [
         "auth-signup",
-        "auth-challenge",
-        "consent",
-        "navigate",
         "commerce",
-        "high-stakes",
         "overlay",
         "transfer",
         "edge-states",
@@ -49,8 +45,6 @@
         "orientation",
         "i18n",
         "session",
-        "destructive",
-        "help",
         "sr-task",
         "input-only"
       ]
@@ -89,10 +83,9 @@
     },
     {
       "dimension": "methods",
-      "covered": 9,
+      "covered": 10,
       "total": 15,
       "missing": [
-        "crawl",
         "document-parse",
         "at-testing",
         "user-testing",
@@ -104,7 +97,7 @@
   "combinations": {
     "formula": "surface x journey x ui-state x input",
     "total": 64800,
-    "triples_touched": 14
+    "triples_touched": 20
   },
   "not_automatable": [
     "guided-manual",

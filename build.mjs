@@ -384,6 +384,8 @@ const EXTRA_GROUPS = [
       + '\u2014 including cases whose honest outcome is cannot-tell, not pass' },
   { dir: 'ui-states', blurb: 'one journey across loading, empty, invalid, corrected, submitted, '
       + 'error, offline, permission-denied, timed-out and busy' },
+  { dir: 'journeys', blurb: 'multi-page tasks \u2014 carrying the criteria that cannot be tested '
+      + 'on a single page at all: consistent navigation, identification, help, redundant entry' },
 ];
 
 fs.writeFileSync(path.join(ROOT, 'index.html'), page('Accessibility fixture corpus',

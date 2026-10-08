@@ -1,0 +1,28 @@
+<!--
+  Sign in — broken — Sign in
+  WCAG: 3.3.8, 3.3.1, 2.1.1
+  JOURNEY-LEVEL: this page in isolation may be clean. The defect is in the
+  relationship between steps.
+  Authentication depends on a cognitive function test — transcribing distorted characters — and the password field blocks paste, which breaks password managers. Both are 3.3.8 failures and both hit memory, dyslexia and motor needs hardest.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign in</title>
+<link rel="stylesheet" href="../../../fixture.css">
+</head>
+<body>
+<header><nav aria-label="Steps"><ul><li><a href="help.html">Help</a></li><li><a href="index.html" aria-current="page">Home</a></li><li><a href="step1.html">Search</a></li><li><a href="step2.html">Details</a></li><li><a href="step3.html">Review</a></li></ul></nav></header>
+<main id="main">
+<h1 tabindex="-1" id="h">Sign in</h1>
+<form action="step1.html"><label for="u">Email</label><input id="u" type="email">
+<label for="p">Password</label>
+<input id="p" type="password" onpaste="return false" oncopy="return false">
+<p>Type the characters you see: <span style="letter-spacing:.4em;font-style:italic">x7Qv2b</span></p>
+<label for="c">Characters</label><input id="c">
+<button type="submit">Sign in</button></form>
+</main>
+</body>
+</html>

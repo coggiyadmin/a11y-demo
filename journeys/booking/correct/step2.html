@@ -1,0 +1,27 @@
+<!--
+  Book a seat — correct — Details
+  WCAG: 3.2.3, 3.3.4, 3.3.7, 2.4.3
+  JOURNEY-LEVEL: this page in isolation may be clean. The defect is in the
+  relationship between steps.
+  Navigation keeps a consistent order, previously entered data is carried forward, a review step precedes submission, and focus moves to the step heading.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Details</title>
+<link rel="stylesheet" href="../../../fixture.css">
+</head>
+<body>
+<header><nav aria-label="Steps"><ul><li><a href="help.html">Help</a></li><li><a href="index.html">Home</a></li><li><a href="step1.html">Search</a></li><li><a href="step2.html" aria-current="page">Details</a></li><li><a href="step3.html">Review</a></li></ul></nav></header>
+<main id="main">
+<h1 tabindex="-1" id="h">Details</h1>
+<p>Step 2 of 3</p><form action="step3.html">
+<p>Booking for <strong>traveller@example.com</strong>. <a href="step1.html">Change</a></p>
+<label for="st">Seat</label><input id="st" value="14A">
+<button type="submit">Continue</button></form>
+</main>
+</body>
+<script>document.getElementById('h').focus();</script>
+</html>

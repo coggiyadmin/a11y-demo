@@ -160,8 +160,8 @@
     "act_failed": 52,
     "act_passed": 80,
     "act_inapplicable": 44,
-    "local_tp": "keyboard/div_text_field.html patterns/accordion.html patterns/table.html patterns/breadcrumb.html patterns/required-fields.html ui-states/empty.html ui-states/permission-denied.html",
-    "local_safe": "keyboard/safe_native_text_field.html patterns/safe_accordion.html patterns/safe_table.html patterns/safe_breadcrumb.html patterns/safe_required-fields.html ui-states/safe_empty.html ui-states/safe_permission-denied.html",
+    "local_tp": "keyboard/div_text_field.html patterns/accordion.html patterns/table.html patterns/breadcrumb.html patterns/required-fields.html ui-states/empty.html ui-states/permission-denied.html journeys/consent/broken/index.html",
+    "local_safe": "keyboard/safe_native_text_field.html patterns/safe_accordion.html patterns/safe_table.html patterns/safe_breadcrumb.html patterns/safe_required-fields.html ui-states/safe_empty.html ui-states/safe_permission-denied.html journeys/consent/correct/index.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -445,8 +445,8 @@
     "act_failed": 3,
     "act_passed": 6,
     "act_inapplicable": 16,
-    "local_tp": "keyboard/div_button.html keyboard/div_text_field.html keyboard/div_date_fields.html keyboard/div_travellers.html keyboard/div_checkbox.html keyboard/div_fare_cards.html keyboard/role_tab_no_tablist.html capture/client_mounted.html delivery/server_html.html delivery/client_js.html delivery/client_js_delayed.html delivery/iframe_same_origin.html delivery/iframe_srcdoc.html delivery/iframe_sandboxed.html delivery/iframe_nested.html delivery/shadow_dom_open.html delivery/shadow_dom_closed.html delivery/web_component.html delivery/progressive_enhancement.html patterns/disclosure.html patterns/tabs.html patterns/dialog.html patterns/combobox.html patterns/menu.html patterns/switch.html patterns/slider.html patterns/listbox.html",
-    "local_safe": "keyboard/safe_native_button.html keyboard/safe_native_text_field.html keyboard/safe_native_checkbox.html keyboard/safe_roving_tabindex.html keyboard/safe_custom_button.html capture/safe_server_rendered.html patterns/safe_disclosure.html patterns/safe_tabs.html patterns/safe_dialog.html patterns/safe_combobox.html patterns/safe_menu.html patterns/safe_switch.html patterns/safe_slider.html patterns/safe_listbox.html",
+    "local_tp": "keyboard/div_button.html keyboard/div_text_field.html keyboard/div_date_fields.html keyboard/div_travellers.html keyboard/div_checkbox.html keyboard/div_fare_cards.html keyboard/role_tab_no_tablist.html capture/client_mounted.html delivery/server_html.html delivery/client_js.html delivery/client_js_delayed.html delivery/iframe_same_origin.html delivery/iframe_srcdoc.html delivery/iframe_sandboxed.html delivery/iframe_nested.html delivery/shadow_dom_open.html delivery/shadow_dom_closed.html delivery/web_component.html delivery/progressive_enhancement.html patterns/disclosure.html patterns/tabs.html patterns/dialog.html patterns/combobox.html patterns/menu.html patterns/switch.html patterns/slider.html patterns/listbox.html journeys/signin/broken/index.html journeys/consent/broken/index.html",
+    "local_safe": "keyboard/safe_native_button.html keyboard/safe_native_text_field.html keyboard/safe_native_checkbox.html keyboard/safe_roving_tabindex.html keyboard/safe_custom_button.html capture/safe_server_rendered.html patterns/safe_disclosure.html patterns/safe_tabs.html patterns/safe_dialog.html patterns/safe_combobox.html patterns/safe_menu.html patterns/safe_switch.html patterns/safe_slider.html patterns/safe_listbox.html journeys/signin/correct/index.html journeys/consent/correct/index.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -640,9 +640,9 @@
     "act_failed": 1,
     "act_passed": 12,
     "act_inapplicable": 1,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "ACT"
+    "local_tp": "journeys/navigate/broken/index.html",
+    "local_safe": "journeys/navigate/correct/index.html",
+    "ground_truth": "ACT + local"
   },
   {
     "sc": "2.4.2",
@@ -670,8 +670,8 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "keyboard/role_tab_no_tablist.html patterns/tabs.html patterns/dialog.html ui-states/submitted.html ui-states/error-page.html",
-    "local_safe": "keyboard/safe_roving_tabindex.html capture/link_heavy.html patterns/safe_tabs.html patterns/safe_dialog.html ui-states/safe_submitted.html ui-states/safe_error-page.html",
+    "local_tp": "keyboard/role_tab_no_tablist.html patterns/tabs.html patterns/dialog.html ui-states/submitted.html ui-states/error.html journeys/booking/broken/index.html journeys/destructive/broken/index.html journeys/consent/broken/index.html",
+    "local_safe": "keyboard/safe_roving_tabindex.html capture/link_heavy.html patterns/safe_tabs.html patterns/safe_dialog.html ui-states/safe_submitted.html ui-states/safe_error.html journeys/booking/correct/index.html journeys/destructive/correct/index.html journeys/consent/correct/index.html",
     "ground_truth": "local only"
   },
   {
@@ -700,9 +700,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "journeys/navigate/broken/index.html",
+    "local_safe": "journeys/navigate/correct/index.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.4.6",
@@ -1075,9 +1075,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "journeys/booking/broken/index.html journeys/consistent-help/broken/index.html",
+    "local_safe": "journeys/booking/correct/index.html journeys/consistent-help/correct/index.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "3.2.4",
@@ -1090,9 +1090,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "journeys/consistent-help/broken/index.html journeys/navigate/broken/index.html",
+    "local_safe": "journeys/consistent-help/correct/index.html journeys/navigate/correct/index.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "3.2.5",
@@ -1120,9 +1120,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "journeys/consistent-help/broken/index.html",
+    "local_safe": "journeys/consistent-help/correct/index.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "3.3.1",
@@ -1135,8 +1135,8 @@
     "act_failed": 5,
     "act_passed": 3,
     "act_inapplicable": 1,
-    "local_tp": "patterns/form-errors.html color-vision/error_color_only.html ui-states/invalid.html ui-states/error-page.html ui-states/offline.html ui-states/permission-denied.html",
-    "local_safe": "patterns/safe_form-errors.html color-vision/safe_error_color_only.html ui-states/safe_invalid.html ui-states/safe_error-page.html ui-states/safe_offline.html ui-states/safe_permission-denied.html",
+    "local_tp": "patterns/form-errors.html color-vision/error_color_only.html ui-states/invalid.html ui-states/error.html ui-states/offline.html ui-states/permission-denied.html journeys/signin/broken/index.html",
+    "local_safe": "patterns/safe_form-errors.html color-vision/safe_error_color_only.html ui-states/safe_invalid.html ui-states/safe_error.html ui-states/safe_offline.html ui-states/safe_permission-denied.html journeys/signin/correct/index.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -1180,9 +1180,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "journeys/booking/broken/index.html journeys/destructive/broken/index.html",
+    "local_safe": "journeys/booking/correct/index.html journeys/destructive/correct/index.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "3.3.5",
@@ -1225,9 +1225,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "journeys/booking/broken/index.html",
+    "local_safe": "journeys/booking/correct/index.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "3.3.8",
@@ -1240,9 +1240,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "journeys/signin/broken/index.html",
+    "local_safe": "journeys/signin/correct/index.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "3.3.9",
@@ -1285,8 +1285,8 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "patterns/alert.html media/alert_by_sound_only.html ui-states/loading.html ui-states/corrected.html ui-states/submitted.html ui-states/offline.html ui-states/timed-out.html ui-states/busy.html",
-    "local_safe": "patterns/safe_alert.html media/safe_alert_by_sound_only.html ui-states/safe_loading.html ui-states/safe_corrected.html ui-states/safe_submitted.html ui-states/safe_offline.html ui-states/safe_timed-out.html ui-states/safe_busy.html",
+    "local_tp": "patterns/alert.html media/alert_by_sound_only.html ui-states/loading.html ui-states/corrected.html ui-states/submitted.html ui-states/offline.html ui-states/timed-out.html ui-states/busy.html journeys/destructive/broken/index.html",
+    "local_safe": "patterns/safe_alert.html media/safe_alert_by_sound_only.html ui-states/safe_loading.html ui-states/safe_corrected.html ui-states/safe_submitted.html ui-states/safe_offline.html ui-states/safe_timed-out.html ui-states/safe_busy.html journeys/destructive/correct/index.html",
     "ground_truth": "local only"
   }
 ]

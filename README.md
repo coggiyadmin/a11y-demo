@@ -96,6 +96,27 @@ cannot show that one fix moves twelve groups; `node needs-index.mjs` can.
 Mapping rules rather than fixtures is deliberate — hand-annotating every case
 drifts, and the rule-level mapping stays the single source of truth.
 
+### Journeys
+
+`journeys/` holds six multi-page tasks — booking, sign-in, consistent help,
+a destructive action, cookie consent and navigation — each as a broken and a
+correct variant of the same task, step for step.
+
+This family exists because **some criteria cannot be tested on a single page by
+definition**. 3.2.3 Consistent Navigation, 3.2.4 Consistent Identification,
+3.2.6 Consistent Help and 3.3.7 Redundant Entry are statements about the
+relationship *between* pages. A corpus of isolated pages cannot express them —
+not because the rule is hard, but because the unit of test is wrong.
+
+Every step is individually clean apart from the journey-level defect. That is
+the point: a page-by-page scan can report every page as fine while the task is
+unusable. In the booking journey the navigation order changes between steps, the
+email given in step 1 is asked for again in step 2, and the card is charged with
+no review — and no single page is wrong.
+
+A journey case is a **set** of pages with an entry point, not one page, so the
+case records `entry` and `steps` rather than a single path.
+
 ### Media and captions
 
 `media/` covers captions, transcripts, audio description, live captioning and
@@ -148,9 +169,13 @@ It is written down so coverage can be divided by a real denominator. Run
 `node space-coverage.mjs` for the current, deliberately unflattering picture:
 
 ```
-surfaces      2 / 18     journeys    3 / 25     ui-states  11 / 12
-user-needs   21 / 23     input-at    4 / 12     methods     9 / 15
+surfaces      2 / 18     journeys    9 / 25     ui-states  11 / 12
+user-needs   21 / 23     input-at    4 / 12     methods    10 / 15
 ```
+
+That `journeys 9 / 25` is the honest headline, and `surfaces 2 / 18` is the
+honest floor — 0.02% of the enumerated combinations have a case. Treat these
+numbers as a description of this corpus, never of WCAG.
 
 Two notes that matter more than the numbers:
 

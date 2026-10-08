@@ -1,0 +1,25 @@
+<!--
+  Book a seat — broken — Search
+  WCAG: 3.2.3, 3.3.4, 3.3.7, 2.4.3
+  JOURNEY-LEVEL: this page in isolation may be clean. The defect is in the
+  relationship between steps.
+  Navigation order changes between steps, the email already given in step 1 is asked for again in step 2, there is no review before the booking is committed, and focus is never moved when the step changes.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Search</title>
+<link rel="stylesheet" href="../../../fixture.css">
+</head>
+<body>
+<header><nav aria-label="Steps"><ul><li><a href="help.html">Help</a></li><li><a href="step2.html">Details</a></li><li><a href="index.html">Home</a></li><li><a href="step3.html">Review</a></li><li><a href="step1.html" aria-current="page">Search</a></li></ul></nav></header>
+<main id="main">
+<h1 tabindex="-1" id="h">Search</h1>
+<form action="step2.html"><label for="em">Email</label><input id="em" type="email" value="traveller@example.com">
+<label for="fl">Flight</label><input id="fl" value="BA117">
+<button type="submit">Continue</button></form>
+</main>
+</body>
+</html>

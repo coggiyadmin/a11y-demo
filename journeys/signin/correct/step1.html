@@ -1,0 +1,27 @@
+<!--
+  Sign in — correct — Verify
+  WCAG: 3.3.8, 3.3.1, 2.1.1
+  JOURNEY-LEVEL: this page in isolation may be clean. The defect is in the
+  relationship between steps.
+  No transcription puzzle, paste permitted, autocomplete tokens present so a password manager can fill the form, and an alternative sign-in route offered.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verify</title>
+<link rel="stylesheet" href="../../../fixture.css">
+</head>
+<body>
+<header><nav aria-label="Steps"><ul><li><a href="help.html">Help</a></li><li><a href="index.html">Home</a></li><li><a href="step1.html" aria-current="page">Search</a></li><li><a href="step2.html">Details</a></li><li><a href="step3.html">Review</a></li></ul></nav></header>
+<main id="main">
+<h1 tabindex="-1" id="h">Verify</h1>
+<form action="done.html"><label for="o">Verification code</label>
+<input id="o" autocomplete="one-time-code" inputmode="numeric">
+<p>The code stays valid for 10 minutes. You can paste it.</p>
+<button type="submit">Verify</button></form>
+</main>
+</body>
+<script>document.getElementById('h').focus();</script>
+</html>
