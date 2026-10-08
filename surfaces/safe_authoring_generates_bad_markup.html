@@ -1,0 +1,24 @@
+<!--
+  authoring_generates_bad_markup — correct
+  surface: authoring
+  standard: ATAG 2.0
+  WCAG: 1.1.1, 1.3.1
+  Keyboard-operable toolbar, and output that uses real headings and prompts the author for a text alternative at insert time.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>authoring_generates_bad_markup — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>authoring_generates_bad_markup — correct</h1>
+<p>Keyboard-operable toolbar, and output that uses real headings and prompts the author for a text alternative at insert time.</p><hr><div role="toolbar" aria-label="Formatting">
+<button type="button" aria-pressed="false">Bold</button>
+<button type="button">Insert image</button></div>
+<h2>Generated output</h2>
+<pre><code>&lt;h2&gt;Baggage&lt;/h2&gt;
+&lt;img src="bag.png" alt="A cabin bag in a size gauge"&gt;</code></pre>
+<p>The editor requires a text alternative before an image can be inserted.</p>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

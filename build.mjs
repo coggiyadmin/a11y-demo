@@ -386,6 +386,12 @@ const EXTRA_GROUPS = [
       + 'error, offline, permission-denied, timed-out and busy' },
   { dir: 'journeys', blurb: 'multi-page tasks \u2014 carrying the criteria that cannot be tested '
       + 'on a single page at all: consistent navigation, identification, help, redundant entry' },
+  { dir: 'scenarios', blurb: 'remaining scenario types at their honest unit \u2014 overlays, async, '
+      + 'paging, theming, orientation, RTL, touch targets, speech input, dragging' },
+  { dir: 'surfaces', blurb: 'beyond a plain web page \u2014 HTML email, EPUB metadata, an authoring '
+      + 'tool and its output (ATAG 2.0), and a conversational interface' },
+  { dir: 'guided', blurb: 'questions automation cannot answer, with the fixture to ask them '
+      + 'against and a slot for evidence \u2014 every one expects cannot-tell' },
 ];
 
 fs.writeFileSync(path.join(ROOT, 'index.html'), page('Accessibility fixture corpus',

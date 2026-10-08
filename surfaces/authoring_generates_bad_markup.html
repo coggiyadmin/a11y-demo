@@ -1,0 +1,22 @@
+<!--
+  authoring_generates_bad_markup — broken
+  surface: authoring
+  standard: ATAG 2.0
+  WCAG: 1.1.1, 1.3.1
+  An editor whose own toolbar is unreachable by keyboard AND whose output uses a styled div as a heading with an unlabelled image. ATAG 2.0 covers BOTH halves: the tool must be accessible (Part A) and must produce accessible content (Part B). Most checkers test only the rendered page and so never see Part B at all.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>authoring_generates_bad_markup — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>authoring_generates_bad_markup — broken</h1>
+<p>An editor whose own toolbar is unreachable by keyboard AND whose output uses a styled div as a heading with an unlabelled image. ATAG 2.0 covers BOTH halves: the tool must be accessible (Part A) and must produce accessible content (Part B). Most checkers test only the rendered page and so never see Part B at all.</p><hr><div class="field"><div class="btn" onclick="void 0">B</div>
+<div class="btn" onclick="void 0">Insert image</div></div>
+<h2>Generated output</h2>
+<pre><code>&lt;div style="font-size:24px;font-weight:bold"&gt;Baggage&lt;/div&gt;
+&lt;img src="bag.png"&gt;</code></pre>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

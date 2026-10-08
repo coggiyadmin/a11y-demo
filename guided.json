@@ -1,0 +1,251 @@
+{
+  "description": "Guided manual, AT and user-testing checks. A corpus cannot perform these; it carries the question, the fixture and an evidence slot so the requirement is visible and trackable rather than silently missing from a coverage figure.",
+  "note": "All cases expect cannot-tell. A scanner reporting pass on these is overclaiming.",
+  "generated": "2026-10-08",
+  "counts": {
+    "checks": 9,
+    "by_method": {
+      "guided-manual": 6,
+      "at-testing": 1,
+      "ai-assisted": 1,
+      "user-testing": 1
+    }
+  },
+  "cases": [
+    {
+      "id": "guided-caption_quality",
+      "mode": "guided",
+      "path": "guided/caption_quality.html",
+      "surface": "web",
+      "journey": "sr-task",
+      "ui_state": "default",
+      "method": [
+        "guided-manual"
+      ],
+      "input_at": [
+        "keyboard"
+      ],
+      "user_needs": [
+        "hearing-deaf",
+        "hearing-hoh"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "expected_outcome": "cannot-tell",
+      "confidence": "possible",
+      "requires_human": true,
+      "question": "Do the captions convey the same information as the audio?",
+      "notes": "A tool can confirm a caption track exists and parses. It cannot judge accuracy, synchronisation, or whether speakers are identified."
+    },
+    {
+      "id": "guided-alt_text_appropriateness",
+      "mode": "guided",
+      "path": "guided/alt_text_appropriateness.html",
+      "surface": "web",
+      "journey": "sr-task",
+      "ui_state": "default",
+      "method": [
+        "guided-manual"
+      ],
+      "input_at": [
+        "keyboard"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "vision-low",
+        "cognitive-language"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "expected_outcome": "cannot-tell",
+      "confidence": "possible",
+      "requires_human": true,
+      "question": "Does each text alternative serve the same purpose as the image?",
+      "notes": "A tool can detect a missing or empty alt. It cannot tell whether \"image1.jpg\" or \"a photo\" conveys what the image is there to convey — the commonest real failure is alt text that is present and useless."
+    },
+    {
+      "id": "guided-reading_order",
+      "mode": "guided",
+      "path": "guided/reading_order.html",
+      "surface": "web",
+      "journey": "sr-task",
+      "ui_state": "default",
+      "method": [
+        "guided-manual"
+      ],
+      "input_at": [
+        "keyboard"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "deafblind",
+        "cognitive-executive"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "expected_outcome": "cannot-tell",
+      "confidence": "possible",
+      "requires_human": true,
+      "question": "Does the DOM order match the meaningful reading order?",
+      "notes": "CSS can reorder content visually while the DOM stays unchanged. A tool sees a valid DOM and a valid layout; only a person can say the two tell different stories."
+    },
+    {
+      "id": "guided-sensory_characteristics",
+      "mode": "guided",
+      "path": "guided/sensory_characteristics.html",
+      "surface": "web",
+      "journey": "sr-task",
+      "ui_state": "default",
+      "method": [
+        "guided-manual"
+      ],
+      "input_at": [
+        "keyboard"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "vision-low",
+        "vision-color",
+        "cognitive-language"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "expected_outcome": "cannot-tell",
+      "confidence": "possible",
+      "requires_human": true,
+      "question": "Do instructions rely on shape, size, position, sound or colour alone?",
+      "notes": "Detecting the phrase \"the button on the right\" is possible; deciding whether it is the ONLY way to identify the control requires understanding the page."
+    },
+    {
+      "id": "guided-plain_language",
+      "mode": "guided",
+      "path": "guided/plain_language.html",
+      "surface": "web",
+      "journey": "sr-task",
+      "ui_state": "default",
+      "method": [
+        "guided-manual"
+      ],
+      "input_at": [
+        "keyboard"
+      ],
+      "user_needs": [
+        "cognitive-language",
+        "cognitive-dyslexia",
+        "cognitive-memory"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "expected_outcome": "cannot-tell",
+      "confidence": "possible",
+      "requires_human": true,
+      "question": "Is the content understandable without specialist knowledge?",
+      "notes": "Readability formulas measure sentence and word length, not comprehensibility. A short sentence of jargon scores well and communicates nothing."
+    },
+    {
+      "id": "guided-focus_order_meaning",
+      "mode": "guided",
+      "path": "guided/focus_order_meaning.html",
+      "surface": "web",
+      "journey": "sr-task",
+      "ui_state": "default",
+      "method": [
+        "guided-manual"
+      ],
+      "input_at": [
+        "keyboard"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "motor-dexterity",
+        "cognitive-attention"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "expected_outcome": "cannot-tell",
+      "confidence": "possible",
+      "requires_human": true,
+      "question": "Does the focus order preserve meaning and operability?",
+      "notes": "A tool can record the tab sequence. Whether that sequence makes SENSE for the task is a judgement about the task, not the DOM."
+    },
+    {
+      "id": "guided-at_screen_reader_task",
+      "mode": "guided",
+      "path": "guided/at_screen_reader_task.html",
+      "surface": "web",
+      "journey": "sr-task",
+      "ui_state": "default",
+      "method": [
+        "at-testing"
+      ],
+      "input_at": [
+        "sr-nvda",
+        "sr-jaws",
+        "sr-voiceover-safari",
+        "sr-talkback-chrome",
+        "sr-narrator-edge"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "deafblind"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "expected_outcome": "cannot-tell",
+      "confidence": "possible",
+      "requires_human": true,
+      "question": "Can a screen-reader user complete the task from start to finish?",
+      "notes": "This is the only check that answers the question the others approximate. It needs a real screen reader and a person who uses one; results do not transfer between pairings, so a pass with one is not a pass with another."
+    },
+    {
+      "id": "guided-ai_suggested_alt_review",
+      "mode": "guided",
+      "path": "guided/ai_suggested_alt_review.html",
+      "surface": "web",
+      "journey": "sr-task",
+      "ui_state": "default",
+      "method": [
+        "ai-assisted"
+      ],
+      "input_at": [
+        "keyboard"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "vision-low",
+        "cognitive-language"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "expected_outcome": "cannot-tell",
+      "confidence": "possible",
+      "requires_human": true,
+      "question": "Is the AI-suggested text alternative correct for THIS context?",
+      "notes": "A model can describe what is in an image. It cannot know why the image is on the page, which is what the alternative has to convey — the same photo needs different alt text in a news story and a checkout page. Suggestions are a starting point and must be verified; shipping them unreviewed replaces a missing alt with a confidently wrong one, which is harder to find."
+    },
+    {
+      "id": "guided-user_task_completion",
+      "mode": "guided",
+      "path": "guided/user_task_completion.html",
+      "surface": "web",
+      "journey": "sr-task",
+      "ui_state": "default",
+      "method": [
+        "user-testing"
+      ],
+      "input_at": [
+        "keyboard"
+      ],
+      "user_needs": [
+        "multiple"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "expected_outcome": "cannot-tell",
+      "confidence": "possible",
+      "requires_human": true,
+      "question": "Can people with disabilities actually complete this task?",
+      "notes": "Conformance is not usability. A page can meet every criterion and still be unusable, and the only way to find that out is to watch people try. No corpus, and no tool, substitutes for this."
+    }
+  ]
+}

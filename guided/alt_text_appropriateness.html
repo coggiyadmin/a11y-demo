@@ -1,0 +1,49 @@
+<!--
+  Guided check: Does each text alternative serve the same purpose as the image?
+  method: guided-manual
+  WCAG: 1.1.1
+  expected automated outcome: cannot-tell — a tool returning pass here is overclaiming
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Does each text alternative serve the same purpose as the image?</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>Does each text alternative serve the same purpose as the image?</h1>
+
+<p><strong>Method:</strong> guided-manual ·
+   <strong>Criteria:</strong> 1.1.1 ·
+   <strong>Automated outcome:</strong> <code>cannot-tell</code></p>
+
+<h2>Why automation cannot decide this</h2>
+<p>A tool can detect a missing or empty alt. It cannot tell whether "image1.jpg" or "a photo" conveys what the image is there to convey — the commonest real failure is alt text that is present and useless.</p>
+
+<h2>How to check it</h2>
+<ol><li>Read the page with images replaced by their alt text.</li>
+<li>Ask whether the page still makes sense and nothing is lost.</li>
+<li>Check decorative images are empty-alt, not described.</li>
+<li>Check complex images have a long description or data equivalent.</li></ol>
+
+<h2>Evidence to capture</h2>
+<p>The page with images disabled, and the alt text listed.</p>
+
+<h2>Fixture to check against</h2>
+<p><a href="../static/img_no_alt.html">static/img_no_alt.html</a></p>
+
+<h2>Result</h2>
+<form>
+  <fieldset><legend>Outcome</legend>
+    <label><input type="radio" name="o" value="pass"> Pass</label>
+    <label><input type="radio" name="o" value="fail"> Fail</label>
+    <label><input type="radio" name="o" value="inapplicable"> Inapplicable</label>
+    <label><input type="radio" name="o" value="cannot-tell"> Cannot tell</label>
+  </fieldset>
+  <label for="who">Checked by</label><input id="who">
+  <label for="at">AT and browser versions, if applicable</label><input id="at">
+  <label for="ev">Evidence location</label><input id="ev">
+  <label for="nt">Notes</label><textarea id="nt" rows="4"></textarea>
+</form>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

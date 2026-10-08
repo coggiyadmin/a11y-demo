@@ -1,0 +1,48 @@
+<!--
+  Guided check: Does the focus order preserve meaning and operability?
+  method: guided-manual
+  WCAG: 2.4.3
+  expected automated outcome: cannot-tell — a tool returning pass here is overclaiming
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Does the focus order preserve meaning and operability?</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>Does the focus order preserve meaning and operability?</h1>
+
+<p><strong>Method:</strong> guided-manual ·
+   <strong>Criteria:</strong> 2.4.3 ·
+   <strong>Automated outcome:</strong> <code>cannot-tell</code></p>
+
+<h2>Why automation cannot decide this</h2>
+<p>A tool can record the tab sequence. Whether that sequence makes SENSE for the task is a judgement about the task, not the DOM.</p>
+
+<h2>How to check it</h2>
+<ol><li>Tab through the page from the top without using a mouse.</li>
+<li>Check the order matches how the task is meant to proceed.</li>
+<li>Check nothing receives focus that should not, and nothing is skipped.</li></ol>
+
+<h2>Evidence to capture</h2>
+<p>Numbered screenshots of each focus stop.</p>
+
+<h2>Fixture to check against</h2>
+<p><a href="../journeys/booking/broken/step1.html">journeys/booking/broken/step1.html</a></p>
+
+<h2>Result</h2>
+<form>
+  <fieldset><legend>Outcome</legend>
+    <label><input type="radio" name="o" value="pass"> Pass</label>
+    <label><input type="radio" name="o" value="fail"> Fail</label>
+    <label><input type="radio" name="o" value="inapplicable"> Inapplicable</label>
+    <label><input type="radio" name="o" value="cannot-tell"> Cannot tell</label>
+  </fieldset>
+  <label for="who">Checked by</label><input id="who">
+  <label for="at">AT and browser versions, if applicable</label><input id="at">
+  <label for="ev">Evidence location</label><input id="ev">
+  <label for="nt">Notes</label><textarea id="nt" rows="4"></textarea>
+</form>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

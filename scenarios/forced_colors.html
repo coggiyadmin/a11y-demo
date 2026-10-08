@@ -1,0 +1,20 @@
+<!--
+  forced_colors — broken
+  WCAG: 1.4.1, 1.4.11
+  journey: theming
+  input/AT most affected: forced-colors
+  State shown with a background image and a hard-coded colour, both discarded in forced-colors mode — so the selected item becomes indistinguishable.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>forced_colors — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>forced_colors — broken</h1>
+<p>State shown with a background image and a hard-coded colour, both discarded in forced-colors mode — so the selected item becomes indistinguishable.</p><hr><style>.sel{background:#30556e;color:#fff}
+@media (forced-colors: active){.sel{background:#30556e}}</style>
+<ul><li class="sel">Economy</li><li>Business</li></ul>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

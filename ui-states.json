@@ -62,7 +62,7 @@
       "mode": "tp",
       "path": "ui-states/empty.html",
       "surface": "web",
-      "journey": "form-lifecycle",
+      "journey": "edge-states",
       "ui_state": "empty",
       "method": [
         "runtime-dom",
@@ -88,7 +88,7 @@
       "mode": "safe",
       "path": "ui-states/safe_empty.html",
       "surface": "web",
-      "journey": "form-lifecycle",
+      "journey": "edge-states",
       "ui_state": "empty",
       "method": [
         "runtime-dom",
@@ -268,7 +268,7 @@
       "mode": "tp",
       "path": "ui-states/error.html",
       "surface": "web",
-      "journey": "form-lifecycle",
+      "journey": "edge-states",
       "ui_state": "error",
       "method": [
         "runtime-dom",
@@ -294,7 +294,7 @@
       "mode": "safe",
       "path": "ui-states/safe_error.html",
       "surface": "web",
-      "journey": "form-lifecycle",
+      "journey": "edge-states",
       "ui_state": "error",
       "method": [
         "runtime-dom",
@@ -320,7 +320,7 @@
       "mode": "tp",
       "path": "ui-states/offline.html",
       "surface": "web",
-      "journey": "form-lifecycle",
+      "journey": "edge-states",
       "ui_state": "offline",
       "method": [
         "runtime-dom",
@@ -346,7 +346,7 @@
       "mode": "safe",
       "path": "ui-states/safe_offline.html",
       "surface": "web",
-      "journey": "form-lifecycle",
+      "journey": "edge-states",
       "ui_state": "offline",
       "method": [
         "runtime-dom",
@@ -372,7 +372,7 @@
       "mode": "tp",
       "path": "ui-states/permission-denied.html",
       "surface": "web",
-      "journey": "form-lifecycle",
+      "journey": "edge-states",
       "ui_state": "permission-denied",
       "method": [
         "runtime-dom",
@@ -398,7 +398,7 @@
       "mode": "safe",
       "path": "ui-states/safe_permission-denied.html",
       "surface": "web",
-      "journey": "form-lifecycle",
+      "journey": "edge-states",
       "ui_state": "permission-denied",
       "method": [
         "runtime-dom",
@@ -424,7 +424,7 @@
       "mode": "tp",
       "path": "ui-states/timed-out.html",
       "surface": "web",
-      "journey": "form-lifecycle",
+      "journey": "edge-states",
       "ui_state": "timed-out",
       "method": [
         "runtime-dom",
@@ -450,7 +450,7 @@
       "mode": "safe",
       "path": "ui-states/safe_timed-out.html",
       "surface": "web",
-      "journey": "form-lifecycle",
+      "journey": "edge-states",
       "ui_state": "timed-out",
       "method": [
         "runtime-dom",

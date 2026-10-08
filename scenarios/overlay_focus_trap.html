@@ -1,0 +1,23 @@
+<!--
+  overlay_focus_trap — broken
+  WCAG: 2.1.2, 2.4.3
+  journey: overlay
+  input/AT most affected: keyboard
+  A popover opens but focus stays behind it, and Tab cycles through the page underneath while the popover covers it. Nothing traps, nothing restores.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>overlay_focus_trap — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>overlay_focus_trap — broken</h1>
+<p>A popover opens but focus stays behind it, and Tab cycles through the page underneath while the popover covers it. Nothing traps, nothing restores.</p><hr><button type="button" onclick="document.getElementById('po').hidden=false">Fare rules</button>
+<div id="po" hidden style="border:2px solid #30556e;padding:1rem">
+  <p>Changes permitted for a fee.</p>
+  <div class="btn" onclick="document.getElementById('po').hidden=true">Close</div>
+</div>
+<p><a href="#after">A link behind the popover</a></p>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

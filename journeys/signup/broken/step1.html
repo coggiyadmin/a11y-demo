@@ -1,0 +1,24 @@
+<!--
+  Create an account — broken — Your details
+  WCAG: 3.3.7, 3.3.4, 3.3.1
+  JOURNEY-LEVEL: this page in isolation may be clean. The defect is in the
+  relationship between steps.
+  Details are re-entered at every step, there is no review before the account is created, and a validation failure on the last step clears everything already typed.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your details</title>
+<link rel="stylesheet" href="../../../fixture.css">
+</head>
+<body>
+<header><nav aria-label="Steps"><ul><li><a href="help.html">Help</a></li><li><a href="index.html">Home</a></li><li><a href="step1.html" aria-current="page">Search</a></li><li><a href="step2.html">Details</a></li><li><a href="step3.html">Review</a></li></ul></nav></header>
+<main id="main">
+<h1 tabindex="-1" id="h">Your details</h1>
+<form action="step2.html"><label for="e2">Email</label><input id="e2" type="email" placeholder="Enter again">
+<label for="n">Name</label><input id="n"><button type="submit">Continue</button></form>
+</main>
+</body>
+</html>

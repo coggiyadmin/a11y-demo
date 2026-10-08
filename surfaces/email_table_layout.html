@@ -1,0 +1,21 @@
+<!--
+  email_table_layout — broken
+  surface: email
+  standard: WCAG 2.2
+  WCAG: 1.3.1, 1.1.1
+  HTML email built on layout tables with no role="presentation", a spacer GIF with no alt, and the only call to action as an image with no text. Email clients strip CSS and block images by default, so an image-only CTA can be literally invisible.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>email_table_layout — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>email_table_layout — broken</h1>
+<p>HTML email built on layout tables with no role="presentation", a spacer GIF with no alt, and the only call to action as an image with no text. Email clients strip CSS and block images by default, so an image-only CTA can be literally invisible.</p><hr><table border="0" cellpadding="0"><tr><td>
+<img src="../pixel.png" width="1" height="1">
+<img src="../pixel.png" alt="" width="120" height="30">
+</td></tr></table>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

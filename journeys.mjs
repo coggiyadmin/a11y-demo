@@ -282,6 +282,123 @@ const JOURNEYS = [
       ],
     },
   },
+  {
+    id: 'signup',
+    label: 'Create an account',
+    journey: 'auth-signup',
+    sc: ['3.3.7', '3.3.4', '3.3.1'],
+    defect: 'Details are re-entered at every step, there is no review before the account is '
+      + 'created, and a validation failure on the last step clears everything already typed.',
+    fixed: 'Entries carried forward, a review step, and preserved values on failure.',
+    steps: {
+      broken: [
+        ['index.html', 'Create an account', nav('index.html'),
+          `<form action="step1.html"><label for="e">Email</label><input id="e" type="email">
+<button type="submit">Continue</button></form>`],
+        ['step1.html', 'Your details', nav('step1.html'),
+          `<form action="step2.html"><label for="e2">Email</label><input id="e2" type="email" placeholder="Enter again">
+<label for="n">Name</label><input id="n"><button type="submit">Continue</button></form>`],
+        ['step2.html', 'Confirm', nav('step2.html'),
+          `<p>Something was wrong. Start again.</p><p><a href="index.html">Start again</a></p>`],
+        ['help.html', 'Help', nav('help.html'), `<p>Contact support.</p>`],
+      ],
+      correct: [
+        ['index.html', 'Create an account', nav('index.html'),
+          `<p>Step 1 of 3</p><form action="step1.html"><label for="e">Email</label>
+<input id="e" type="email" autocomplete="email"><button type="submit">Continue</button></form>`],
+        ['step1.html', 'Your details', nav('step1.html'),
+          `<p>Step 2 of 3</p><form action="step2.html">
+<p>Creating an account for <strong>traveller@example.com</strong>. <a href="index.html">Change</a></p>
+<label for="n">Name</label><input id="n" autocomplete="name" value="A Traveller">
+<button type="submit">Continue</button></form>`],
+        ['step2.html', 'Review', nav('step2.html'),
+          `<p>Step 3 of 3</p><dl><dt>Email</dt><dd>traveller@example.com</dd>
+<dt>Name</dt><dd>A Traveller</dd></dl>
+<p><a href="step1.html">Change details</a></p>
+<form action="done.html"><button type="submit">Create account</button></form>`],
+        ['done.html', 'Account created', nav('index.html'),
+          `<div role="status"><p>Your account is ready.</p></div>`],
+        ['help.html', 'Help', nav('help.html'), `<p>Contact support.</p>`],
+      ],
+    },
+  },
+  {
+    id: 'checkout',
+    label: 'Checkout',
+    journey: 'commerce',
+    sc: ['3.3.4', '3.3.7', '2.4.5', '3.2.3'],
+    defect: 'No order summary before payment, the delivery address is re-typed despite being '
+      + 'on the account, and the only route back to the basket is the browser Back button.',
+    fixed: 'Summary before payment, saved address offered, and in-page routes between steps.',
+    steps: {
+      broken: [
+        ['index.html', 'Basket', nav('index.html'),
+          `<p>1 x seat upgrade — GBP 42.00</p><p><a href="step1.html">Pay now</a></p>`],
+        ['step1.html', 'Payment', nav('step1.html'),
+          `<form action="step2.html"><label for="ad">Billing address</label><input id="ad" placeholder="Type your address">
+<label for="cd">Card number</label><input id="cd" inputmode="numeric">
+<button type="submit">Pay GBP 42.00</button></form>`],
+        ['step2.html', 'Paid', nav('step2.html'), `<p>Paid.</p>`],
+        ['help.html', 'Help', nav('help.html'), `<p>Contact support.</p>`],
+      ],
+      correct: [
+        ['index.html', 'Basket', nav('index.html'),
+          `<p>Step 1 of 3</p><p>1 x seat upgrade — GBP 42.00</p>
+<p><a href="step1.html">Continue to payment</a></p>`],
+        ['step1.html', 'Payment', nav('step1.html'),
+          `<p>Step 2 of 3</p><form action="step2.html">
+<fieldset><legend>Billing address</legend>
+<label><input type="radio" name="ad" checked> Use saved address: 1 Example Street</label>
+<label><input type="radio" name="ad"> Use a different address</label></fieldset>
+<label for="cd">Card number</label><input id="cd" inputmode="numeric" autocomplete="cc-number">
+<button type="submit">Continue</button></form>
+<p><a href="index.html">Back to basket</a></p>`],
+        ['step2.html', 'Review and pay', nav('step2.html'),
+          `<p>Step 3 of 3</p><h2>Check your order</h2>
+<dl><dt>Item</dt><dd>Seat upgrade</dd><dt>Billing</dt><dd>1 Example Street</dd>
+<dt>Total</dt><dd>GBP 42.00</dd></dl>
+<p><a href="step1.html">Change payment details</a></p>
+<form action="done.html"><button type="submit">Pay GBP 42.00</button></form>`],
+        ['done.html', 'Paid', nav('index.html'),
+          `<div role="status"><p>Payment of GBP 42.00 received. Receipt sent by email.</p></div>`],
+        ['help.html', 'Help', nav('help.html'), `<p>Contact support.</p>`],
+      ],
+    },
+  },
+  {
+    id: 'session',
+    label: 'Session timeout',
+    journey: 'session',
+    sc: ['2.2.1', '2.2.6', '3.3.7'],
+    defect: 'The session expires with no warning and the work is lost, with no way to extend '
+      + 'and no indication that data was discarded.',
+    fixed: 'Warned before expiry, able to extend, and entries preserved across the interruption.',
+    steps: {
+      broken: [
+        ['index.html', 'Your details', nav('index.html'),
+          `<form action="step1.html"><label for="n">Name</label><input id="n" value="A Traveller">
+<button type="submit">Continue</button></form>`],
+        ['step1.html', 'Expired', nav('step1.html'),
+          `<p>Your session expired. <a href="index.html">Start again</a>.</p>`],
+        ['help.html', 'Help', nav('help.html'), `<p>Contact support.</p>`],
+      ],
+      correct: [
+        ['index.html', 'Your details', nav('index.html'),
+          `<form action="step1.html"><label for="n">Name</label><input id="n" value="A Traveller">
+<button type="submit">Continue</button></form>
+<p>Your entries are saved as you go.</p>`],
+        ['step1.html', 'Still there?', nav('step1.html'),
+          `<div role="alert"><h2>Your session expires in 2 minutes</h2>
+<p>Your details have been saved and will still be here.</p>
+<button type="button">Give me more time</button></div>
+<form action="done.html"><label for="n2">Name</label><input id="n2" value="A Traveller">
+<button type="submit">Continue</button></form>`],
+        ['done.html', 'Continued', nav('index.html'),
+          `<div role="status"><p>Session extended. Nothing was lost.</p></div>`],
+        ['help.html', 'Help', nav('help.html'), `<p>Contact support.</p>`],
+      ],
+    },
+  },
 ];
 
 fs.rmSync(DIR, { recursive: true, force: true });

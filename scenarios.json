@@ -1,0 +1,782 @@
+{
+  "description": "Remaining scenario types at their honest unit. Several target an input mode rather than a criterion family: label_in_name is the defect speech control is uniquely blocked by, dragging_required the one switch access is.",
+  "generated": "2026-10-08",
+  "counts": {
+    "scenarios": 14,
+    "cases": 28
+  },
+  "cases": [
+    {
+      "id": "scenario-overlay_focus_trap",
+      "mode": "tp",
+      "path": "scenarios/overlay_focus_trap.html",
+      "surface": "web",
+      "journey": "overlay",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard"
+      ],
+      "user_needs": [],
+      "min_criteria": {
+        "2.1.2": 1,
+        "2.4.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A popover opens but focus stays behind it, and Tab cycles through the page underneath while the popover covers it. Nothing traps, nothing restores."
+    },
+    {
+      "id": "scenario-safe_overlay_focus_trap",
+      "mode": "safe",
+      "path": "scenarios/safe_overlay_focus_trap.html",
+      "surface": "web",
+      "journey": "overlay",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard"
+      ],
+      "user_needs": [],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.2",
+        "2.4.3"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Native dialog: focus moves in, the background is inert, Esc closes, and focus returns to the trigger."
+    },
+    {
+      "id": "scenario-async_validation",
+      "mode": "tp",
+      "path": "scenarios/async_validation.html",
+      "surface": "web",
+      "journey": "async",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [],
+      "min_criteria": {
+        "4.1.3": 1,
+        "3.3.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Validation runs after the field loses focus and writes the result into a plain div. Sighted users see it appear; nobody else learns it happened."
+    },
+    {
+      "id": "scenario-safe_async_validation",
+      "mode": "safe",
+      "path": "scenarios/safe_async_validation.html",
+      "surface": "web",
+      "journey": "async",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.3",
+        "3.3.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "The result lands in a live region tied to the field."
+    },
+    {
+      "id": "scenario-infinite_scroll",
+      "mode": "tp",
+      "path": "scenarios/infinite_scroll.html",
+      "surface": "web",
+      "journey": "paging",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [],
+      "min_criteria": {
+        "2.4.3": 1,
+        "4.1.3": 1,
+        "2.4.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Results append on scroll with no announcement and no way to reach anything below the list — a keyboard user can never get past it to the footer."
+    },
+    {
+      "id": "scenario-safe_infinite_scroll",
+      "mode": "safe",
+      "path": "scenarios/safe_infinite_scroll.html",
+      "surface": "web",
+      "journey": "paging",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.4.3",
+        "4.1.3",
+        "2.4.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "An explicit control to load more, the count announced, and the footer always reachable."
+    },
+    {
+      "id": "scenario-data_dashboard",
+      "mode": "tp",
+      "path": "scenarios/data_dashboard.html",
+      "surface": "dataviz",
+      "journey": "data",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [],
+      "min_criteria": {
+        "1.1.1": 1,
+        "1.3.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A chart as a bare SVG with no accessible name and no data equivalent. The numbers exist only as geometry."
+    },
+    {
+      "id": "scenario-safe_data_dashboard",
+      "mode": "safe",
+      "path": "scenarios/safe_data_dashboard.html",
+      "surface": "dataviz",
+      "journey": "data",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.1.1",
+        "1.3.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Named, described, and backed by the same figures as a table."
+    },
+    {
+      "id": "scenario-live_chat",
+      "mode": "tp",
+      "path": "scenarios/live_chat.html",
+      "surface": "web",
+      "journey": "realtime",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "sr-nvda",
+        "keyboard"
+      ],
+      "user_needs": [],
+      "min_criteria": {
+        "4.1.3": 1,
+        "1.3.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Incoming messages append to a div with no live region, so a screen-reader user never learns a reply arrived."
+    },
+    {
+      "id": "scenario-safe_live_chat",
+      "mode": "safe",
+      "path": "scenarios/safe_live_chat.html",
+      "surface": "web",
+      "journey": "realtime",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "sr-nvda",
+        "keyboard"
+      ],
+      "user_needs": [],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.3",
+        "1.3.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "role=log with polite announcement, and each message names its sender."
+    },
+    {
+      "id": "scenario-text_spacing",
+      "mode": "tp",
+      "path": "scenarios/text_spacing.html",
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "magnifier"
+      ],
+      "user_needs": [
+        "cognitive-dyslexia",
+        "vision-low"
+      ],
+      "min_criteria": {
+        "1.4.12": 1,
+        "1.4.4": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Fixed-height boxes with !important line-height. Applying the 1.4.12 text spacing overrides clips the content."
+    },
+    {
+      "id": "scenario-safe_text_spacing",
+      "mode": "safe",
+      "path": "scenarios/safe_text_spacing.html",
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "magnifier"
+      ],
+      "user_needs": [
+        "cognitive-dyslexia",
+        "vision-low"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.4.12",
+        "1.4.4"
+      ],
+      "expected_outcome": "pass",
+      "notes": "No fixed height, no !important on spacing, so user overrides reflow instead of clipping."
+    },
+    {
+      "id": "scenario-forced_colors",
+      "mode": "tp",
+      "path": "scenarios/forced_colors.html",
+      "surface": "web",
+      "journey": "theming",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "forced-colors"
+      ],
+      "user_needs": [
+        "vision-contrast",
+        "vision-low"
+      ],
+      "min_criteria": {
+        "1.4.1": 1,
+        "1.4.11": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "State shown with a background image and a hard-coded colour, both discarded in forced-colors mode — so the selected item becomes indistinguishable."
+    },
+    {
+      "id": "scenario-safe_forced_colors",
+      "mode": "safe",
+      "path": "scenarios/safe_forced_colors.html",
+      "surface": "web",
+      "journey": "theming",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "forced-colors"
+      ],
+      "user_needs": [
+        "vision-contrast",
+        "vision-low"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.4.1",
+        "1.4.11"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Uses system colours and a non-colour cue, so the state survives forced colours."
+    },
+    {
+      "id": "scenario-orientation_lock",
+      "mode": "tp",
+      "path": "scenarios/orientation_lock.html",
+      "surface": "web",
+      "journey": "orientation",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "touch"
+      ],
+      "user_needs": [
+        "motor-dexterity",
+        "motor-paralysis"
+      ],
+      "min_criteria": {
+        "1.3.4": 1,
+        "1.4.10": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Content locked to landscape. Someone whose device is fixed to a wheelchair mount in portrait cannot rotate it."
+    },
+    {
+      "id": "scenario-safe_orientation_lock",
+      "mode": "safe",
+      "path": "scenarios/safe_orientation_lock.html",
+      "surface": "web",
+      "journey": "orientation",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "touch"
+      ],
+      "user_needs": [
+        "motor-dexterity",
+        "motor-paralysis"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.3.4",
+        "1.4.10"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Works in both orientations and reflows to narrow widths."
+    },
+    {
+      "id": "scenario-rtl_mixed_language",
+      "mode": "tp",
+      "path": "scenarios/rtl_mixed_language.html",
+      "surface": "web",
+      "journey": "i18n",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-language"
+      ],
+      "min_criteria": {
+        "3.1.1": 1,
+        "3.1.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A passage in another language with no lang attribute and no dir, so a screen reader pronounces it with the wrong voice and it renders in the wrong direction."
+    },
+    {
+      "id": "scenario-safe_rtl_mixed_language",
+      "mode": "safe",
+      "path": "scenarios/safe_rtl_mixed_language.html",
+      "surface": "web",
+      "journey": "i18n",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-language"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "3.1.1",
+        "3.1.2"
+      ],
+      "expected_outcome": "pass",
+      "notes": "lang and dir on the passage, so pronunciation and direction are correct."
+    },
+    {
+      "id": "scenario-label_in_name",
+      "mode": "tp",
+      "path": "scenarios/label_in_name.html",
+      "surface": "web",
+      "journey": "input-only",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "speech"
+      ],
+      "user_needs": [
+        "speech-unable",
+        "motor-dexterity",
+        "vision-blind"
+      ],
+      "min_criteria": {
+        "2.5.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "The visible label says \"Search flights\" but the accessible name is \"Submit\". A speech-control user saying \"click Search flights\" gets nothing — this is the defect speech input is uniquely blocked by."
+    },
+    {
+      "id": "scenario-safe_label_in_name",
+      "mode": "safe",
+      "path": "scenarios/safe_label_in_name.html",
+      "surface": "web",
+      "journey": "input-only",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "speech"
+      ],
+      "user_needs": [
+        "speech-unable",
+        "motor-dexterity",
+        "vision-blind"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.5.3"
+      ],
+      "expected_outcome": "pass",
+      "notes": "The accessible name contains the visible label."
+    },
+    {
+      "id": "scenario-dragging_required",
+      "mode": "tp",
+      "path": "scenarios/dragging_required.html",
+      "surface": "web",
+      "journey": "transfer",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "touch",
+        "switch"
+      ],
+      "user_needs": [
+        "motor-tremor",
+        "motor-paralysis",
+        "temporary"
+      ],
+      "min_criteria": {
+        "2.5.7": 1,
+        "2.5.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Reordering requires a drag. No single-pointer alternative, so it is impossible with a switch, hard with a tremor, and hard one-handed or with an injured hand."
+    },
+    {
+      "id": "scenario-safe_dragging_required",
+      "mode": "safe",
+      "path": "scenarios/safe_dragging_required.html",
+      "surface": "web",
+      "journey": "transfer",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "touch",
+        "switch"
+      ],
+      "user_needs": [
+        "motor-tremor",
+        "motor-paralysis",
+        "temporary"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.5.7",
+        "2.5.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Buttons provide the same reordering without any dragging."
+    },
+    {
+      "id": "scenario-touch_targets",
+      "mode": "tp",
+      "path": "scenarios/touch_targets.html",
+      "surface": "web",
+      "journey": "input-only",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "touch",
+        "pointer"
+      ],
+      "user_needs": [
+        "motor-tremor",
+        "age-related",
+        "temporary"
+      ],
+      "min_criteria": {
+        "2.5.8": 1,
+        "2.5.5": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Icon controls 16px square and touching, well under the 24px minimum with no spacing exception."
+    },
+    {
+      "id": "scenario-safe_touch_targets",
+      "mode": "safe",
+      "path": "scenarios/safe_touch_targets.html",
+      "surface": "web",
+      "journey": "input-only",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "touch",
+        "pointer"
+      ],
+      "user_needs": [
+        "motor-tremor",
+        "age-related",
+        "temporary"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.5.8",
+        "2.5.5"
+      ],
+      "expected_outcome": "pass",
+      "notes": "At least 24x24 with spacing between targets."
+    },
+    {
+      "id": "scenario-disabled_state",
+      "mode": "tp",
+      "path": "scenarios/disabled_state.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "disabled",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [],
+      "min_criteria": {
+        "4.1.2": 1,
+        "1.4.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A control that looks unavailable but is not marked disabled, so it is still focusable and activatable and its state is conveyed by colour alone."
+    },
+    {
+      "id": "scenario-safe_disabled_state",
+      "mode": "safe",
+      "path": "scenarios/safe_disabled_state.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "disabled",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.2",
+        "1.4.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Genuinely disabled, with the reason available in text."
+    },
+    {
+      "id": "scenario-motion_actuation",
+      "mode": "tp",
+      "path": "scenarios/motion_actuation.html",
+      "surface": "web",
+      "journey": "input-only",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "touch"
+      ],
+      "user_needs": [
+        "motor-tremor",
+        "motor-paralysis",
+        "temporary",
+        "situational"
+      ],
+      "min_criteria": {
+        "2.5.4": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Shake-to-undo with no alternative. Impossible on a mounted device and hard with a tremor."
+    },
+    {
+      "id": "scenario-safe_motion_actuation",
+      "mode": "safe",
+      "path": "scenarios/safe_motion_actuation.html",
+      "surface": "web",
+      "journey": "input-only",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "touch"
+      ],
+      "user_needs": [
+        "motor-tremor",
+        "motor-paralysis",
+        "temporary",
+        "situational"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.5.4"
+      ],
+      "expected_outcome": "pass",
+      "notes": "A control does the same thing, and the motion shortcut can be disabled."
+    }
+  ]
+}

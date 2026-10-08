@@ -1,0 +1,22 @@
+<!--
+  overlay_focus_trap — correct
+  WCAG: 2.1.2, 2.4.3
+  journey: overlay
+  input/AT most affected: keyboard
+  Native dialog: focus moves in, the background is inert, Esc closes, and focus returns to the trigger.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>overlay_focus_trap — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>overlay_focus_trap — correct</h1>
+<p>Native dialog: focus moves in, the background is inert, Esc closes, and focus returns to the trigger.</p><hr><button type="button" onclick="document.getElementById('po2').showModal()">Fare rules</button>
+<dialog id="po2" aria-labelledby="pt"><h2 id="pt">Fare rules</h2>
+<p>Changes permitted for a fee.</p>
+<form method="dialog"><button type="submit">Close</button></form></dialog>
+<p><a href="#after">A link behind the dialog</a></p>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

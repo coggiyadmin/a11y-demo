@@ -1,0 +1,19 @@
+<!--
+  live_chat — broken
+  WCAG: 4.1.3, 1.3.1
+  journey: realtime
+  input/AT most affected: sr-nvda, keyboard
+  Incoming messages append to a div with no live region, so a screen-reader user never learns a reply arrived.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>live_chat — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>live_chat — broken</h1>
+<p>Incoming messages append to a div with no live region, so a screen-reader user never learns a reply arrived.</p><hr><div id="log1"><p>Agent: How can I help?</p></div>
+<label for="m1">Message</label><input id="m1"><button type="button">Send</button>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

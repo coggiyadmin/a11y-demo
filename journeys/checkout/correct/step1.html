@@ -1,0 +1,30 @@
+<!--
+  Checkout — correct — Payment
+  WCAG: 3.3.4, 3.3.7, 2.4.5, 3.2.3
+  JOURNEY-LEVEL: this page in isolation may be clean. The defect is in the
+  relationship between steps.
+  Summary before payment, saved address offered, and in-page routes between steps.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Payment</title>
+<link rel="stylesheet" href="../../../fixture.css">
+</head>
+<body>
+<header><nav aria-label="Steps"><ul><li><a href="help.html">Help</a></li><li><a href="index.html">Home</a></li><li><a href="step1.html" aria-current="page">Search</a></li><li><a href="step2.html">Details</a></li><li><a href="step3.html">Review</a></li></ul></nav></header>
+<main id="main">
+<h1 tabindex="-1" id="h">Payment</h1>
+<p>Step 2 of 3</p><form action="step2.html">
+<fieldset><legend>Billing address</legend>
+<label><input type="radio" name="ad" checked> Use saved address: 1 Example Street</label>
+<label><input type="radio" name="ad"> Use a different address</label></fieldset>
+<label for="cd">Card number</label><input id="cd" inputmode="numeric" autocomplete="cc-number">
+<button type="submit">Continue</button></form>
+<p><a href="index.html">Back to basket</a></p>
+</main>
+</body>
+<script>document.getElementById('h').focus();</script>
+</html>

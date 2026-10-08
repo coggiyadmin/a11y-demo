@@ -1,0 +1,27 @@
+<!--
+  Create an account — correct — Your details
+  WCAG: 3.3.7, 3.3.4, 3.3.1
+  JOURNEY-LEVEL: this page in isolation may be clean. The defect is in the
+  relationship between steps.
+  Entries carried forward, a review step, and preserved values on failure.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your details</title>
+<link rel="stylesheet" href="../../../fixture.css">
+</head>
+<body>
+<header><nav aria-label="Steps"><ul><li><a href="help.html">Help</a></li><li><a href="index.html">Home</a></li><li><a href="step1.html" aria-current="page">Search</a></li><li><a href="step2.html">Details</a></li><li><a href="step3.html">Review</a></li></ul></nav></header>
+<main id="main">
+<h1 tabindex="-1" id="h">Your details</h1>
+<p>Step 2 of 3</p><form action="step2.html">
+<p>Creating an account for <strong>traveller@example.com</strong>. <a href="index.html">Change</a></p>
+<label for="n">Name</label><input id="n" autocomplete="name" value="A Traveller">
+<button type="submit">Continue</button></form>
+</main>
+</body>
+<script>document.getElementById('h').focus();</script>
+</html>

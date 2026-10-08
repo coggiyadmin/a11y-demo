@@ -1,0 +1,49 @@
+<!--
+  Guided check: Do the captions convey the same information as the audio?
+  method: guided-manual
+  WCAG: 1.2.2
+  expected automated outcome: cannot-tell — a tool returning pass here is overclaiming
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Do the captions convey the same information as the audio?</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>Do the captions convey the same information as the audio?</h1>
+
+<p><strong>Method:</strong> guided-manual ·
+   <strong>Criteria:</strong> 1.2.2 ·
+   <strong>Automated outcome:</strong> <code>cannot-tell</code></p>
+
+<h2>Why automation cannot decide this</h2>
+<p>A tool can confirm a caption track exists and parses. It cannot judge accuracy, synchronisation, or whether speakers are identified.</p>
+
+<h2>How to check it</h2>
+<ol><li>Play the media with sound off and captions on.</li>
+<li>Check every speaker is identified when more than one person speaks.</li>
+<li>Check meaningful non-speech sound is described, not just dialogue.</li>
+<li>Check captions stay in sync and are readable at playback speed.</li></ol>
+
+<h2>Evidence to capture</h2>
+<p>Recording of playback with captions on, plus the caption file.</p>
+
+<h2>Fixture to check against</h2>
+<p><a href="../media/captions_present_but_poor.html">media/captions_present_but_poor.html</a></p>
+
+<h2>Result</h2>
+<form>
+  <fieldset><legend>Outcome</legend>
+    <label><input type="radio" name="o" value="pass"> Pass</label>
+    <label><input type="radio" name="o" value="fail"> Fail</label>
+    <label><input type="radio" name="o" value="inapplicable"> Inapplicable</label>
+    <label><input type="radio" name="o" value="cannot-tell"> Cannot tell</label>
+  </fieldset>
+  <label for="who">Checked by</label><input id="who">
+  <label for="at">AT and browser versions, if applicable</label><input id="at">
+  <label for="ev">Evidence location</label><input id="ev">
+  <label for="nt">Notes</label><textarea id="nt" rows="4"></textarea>
+</form>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

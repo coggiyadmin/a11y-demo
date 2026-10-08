@@ -2,9 +2,9 @@
   "description": "Multi-page task fixtures. Carries criteria that cannot be expressed on a single page: 3.2.3, 3.2.4, 3.2.6 and 3.3.7 are about the relationship between pages. Each case is a SET of pages with an entry point, not one page.",
   "generated": "2026-10-08",
   "counts": {
-    "journeys": 6,
-    "cases": 12,
-    "pages": 50
+    "journeys": 9,
+    "cases": 18,
+    "pages": 75
   },
   "cases": [
     {
@@ -418,6 +418,213 @@
       "expected_outcome": "pass",
       "scope": "multi-page",
       "notes": "Multiple ways to reach a page, consistent labelling for the same destination, and a skip link."
+    },
+    {
+      "id": "journey-signup-broken",
+      "mode": "tp",
+      "path": "journeys/signup/broken/index.html",
+      "entry": "journeys/signup/broken/index.html",
+      "steps": [
+        "journeys/signup/broken/index.html",
+        "journeys/signup/broken/step1.html",
+        "journeys/signup/broken/step2.html",
+        "journeys/signup/broken/help.html"
+      ],
+      "surface": "web",
+      "journey": "auth-signup",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {
+        "3.3.7": 1,
+        "3.3.4": 1,
+        "3.3.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "scope": "multi-page",
+      "notes": "Details are re-entered at every step, there is no review before the account is created, and a validation failure on the last step clears everything already typed."
+    },
+    {
+      "id": "journey-signup-correct",
+      "mode": "safe",
+      "path": "journeys/signup/correct/index.html",
+      "entry": "journeys/signup/correct/index.html",
+      "steps": [
+        "journeys/signup/correct/index.html",
+        "journeys/signup/correct/step1.html",
+        "journeys/signup/correct/step2.html",
+        "journeys/signup/correct/done.html",
+        "journeys/signup/correct/help.html"
+      ],
+      "surface": "web",
+      "journey": "auth-signup",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "3.3.7",
+        "3.3.4",
+        "3.3.1"
+      ],
+      "expected_outcome": "pass",
+      "scope": "multi-page",
+      "notes": "Entries carried forward, a review step, and preserved values on failure."
+    },
+    {
+      "id": "journey-checkout-broken",
+      "mode": "tp",
+      "path": "journeys/checkout/broken/index.html",
+      "entry": "journeys/checkout/broken/index.html",
+      "steps": [
+        "journeys/checkout/broken/index.html",
+        "journeys/checkout/broken/step1.html",
+        "journeys/checkout/broken/step2.html",
+        "journeys/checkout/broken/help.html"
+      ],
+      "surface": "web",
+      "journey": "commerce",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {
+        "3.3.4": 1,
+        "3.3.7": 1,
+        "2.4.5": 1,
+        "3.2.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "scope": "multi-page",
+      "notes": "No order summary before payment, the delivery address is re-typed despite being on the account, and the only route back to the basket is the browser Back button."
+    },
+    {
+      "id": "journey-checkout-correct",
+      "mode": "safe",
+      "path": "journeys/checkout/correct/index.html",
+      "entry": "journeys/checkout/correct/index.html",
+      "steps": [
+        "journeys/checkout/correct/index.html",
+        "journeys/checkout/correct/step1.html",
+        "journeys/checkout/correct/step2.html",
+        "journeys/checkout/correct/done.html",
+        "journeys/checkout/correct/help.html"
+      ],
+      "surface": "web",
+      "journey": "commerce",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "3.3.4",
+        "3.3.7",
+        "2.4.5",
+        "3.2.3"
+      ],
+      "expected_outcome": "pass",
+      "scope": "multi-page",
+      "notes": "Summary before payment, saved address offered, and in-page routes between steps."
+    },
+    {
+      "id": "journey-session-broken",
+      "mode": "tp",
+      "path": "journeys/session/broken/index.html",
+      "entry": "journeys/session/broken/index.html",
+      "steps": [
+        "journeys/session/broken/index.html",
+        "journeys/session/broken/step1.html",
+        "journeys/session/broken/help.html"
+      ],
+      "surface": "web",
+      "journey": "session",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {
+        "2.2.1": 1,
+        "2.2.6": 1,
+        "3.3.7": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "scope": "multi-page",
+      "notes": "The session expires with no warning and the work is lost, with no way to extend and no indication that data was discarded."
+    },
+    {
+      "id": "journey-session-correct",
+      "mode": "safe",
+      "path": "journeys/session/correct/index.html",
+      "entry": "journeys/session/correct/index.html",
+      "steps": [
+        "journeys/session/correct/index.html",
+        "journeys/session/correct/step1.html",
+        "journeys/session/correct/done.html",
+        "journeys/session/correct/help.html"
+      ],
+      "surface": "web",
+      "journey": "session",
+      "ui_state": "default",
+      "method": [
+        "crawl",
+        "interaction",
+        "state-exploration",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.2.1",
+        "2.2.6",
+        "3.3.7"
+      ],
+      "expected_outcome": "pass",
+      "scope": "multi-page",
+      "notes": "Warned before expiry, able to extend, and entries preserved across the interruption."
     }
   ]
 }

@@ -169,13 +169,27 @@ It is written down so coverage can be divided by a real denominator. Run
 `node space-coverage.mjs` for the current, deliberately unflattering picture:
 
 ```
-surfaces      2 / 18     journeys    9 / 25     ui-states  11 / 12
-user-needs   21 / 23     input-at    4 / 12     methods    10 / 15
+surfaces      7 / 18     journeys   25 / 25     ui-states  12 / 12
+user-needs   23 / 23     input-at   12 / 12     methods    14 / 15
 ```
 
-That `journeys 9 / 25` is the honest headline, and `surfaces 2 / 18` is the
-honest floor — 0.02% of the enumerated combinations have a case. Treat these
-numbers as a description of this corpus, never of WCAG.
+**Read those with care.** Five dimensions reading full does NOT mean full
+coverage — it means every *value* has at least one case, not that every
+combination does. The multiplicative space is 64,800 combinations and a few
+dozen have a fixture. A dimension at 25/25 with one case each is a thin line
+through a large space, not a filled grid.
+
+Two things are deliberately not complete, and should stay that way:
+
+**`surfaces 7 / 18`.** PDF, native iOS/Android, desktop, office documents,
+kiosk, hardware and immersive surfaces need different artefact formats and
+different parsers. An HTML file pretending to be a PDF measures nothing, so
+they are enumerated as gaps rather than faked.
+
+**`methods 14 / 15` — `regression` is missing on purpose.** Regression is a
+method applied *to* a corpus — pin a baseline, re-run, diff — not a property
+any individual case can have. Tagging a case with it to reach 15/15 would be
+exactly the flattering-denominator problem this report exists to avoid.
 
 Two notes that matter more than the numbers:
 

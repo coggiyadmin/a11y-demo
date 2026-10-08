@@ -1,0 +1,19 @@
+<!--
+  async_validation — broken
+  WCAG: 4.1.3, 3.3.1
+  journey: async
+  input/AT most affected: keyboard, sr-nvda
+  Validation runs after the field loses focus and writes the result into a plain div. Sighted users see it appear; nobody else learns it happened.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>async_validation — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>async_validation — broken</h1>
+<p>Validation runs after the field loses focus and writes the result into a plain div. Sighted users see it appear; nobody else learns it happened.</p><hr><label for="v1">Promo code</label><input id="v1" value="SUMMER">
+<div id="r1">Checking…</div>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

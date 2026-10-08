@@ -1,0 +1,321 @@
+{
+  "description": "Non-plain-web surfaces that are honestly expressible as web content. PDF, native, desktop, office documents, kiosk, hardware and immersive are deliberately absent rather than faked.",
+  "surfaces_covered": [
+    "email",
+    "epub",
+    "authoring",
+    "voice"
+  ],
+  "surfaces_not_expressible": [
+    "pdf",
+    "ios",
+    "android",
+    "desktop",
+    "word-processing",
+    "presentation",
+    "spreadsheet",
+    "kiosk",
+    "hardware",
+    "immersive",
+    "support"
+  ],
+  "generated": "2026-10-08",
+  "counts": {
+    "pairs": 5,
+    "cases": 10
+  },
+  "cases": [
+    {
+      "id": "surface-email_table_layout",
+      "mode": "tp",
+      "path": "surfaces/email_table_layout.html",
+      "surface": "email",
+      "standard": "WCAG 2.2",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "runtime-dom",
+        "document-parse"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-language"
+      ],
+      "min_criteria": {
+        "1.3.1": 1,
+        "1.1.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "HTML email built on layout tables with no role=\"presentation\", a spacer GIF with no alt, and the only call to action as an image with no text. Email clients strip CSS and block images by default, so an image-only CTA can be literally invisible."
+    },
+    {
+      "id": "surface-safe_email_table_layout",
+      "mode": "safe",
+      "path": "surfaces/safe_email_table_layout.html",
+      "surface": "email",
+      "standard": "WCAG 2.2",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "runtime-dom",
+        "document-parse"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-language"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.3.1",
+        "1.1.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Layout tables marked presentational, spacers declared decorative, and the call to action as real text that survives image blocking."
+    },
+    {
+      "id": "surface-email_contrast_darkmode",
+      "mode": "tp",
+      "path": "surfaces/email_contrast_darkmode.html",
+      "surface": "email",
+      "standard": "WCAG 2.2",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "runtime-dom",
+        "document-parse"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-low",
+        "vision-contrast"
+      ],
+      "min_criteria": {
+        "1.4.3": 1,
+        "1.4.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Text colour set but no background colour. In a client that applies a dark background the dark text becomes unreadable — a contrast failure that only exists in combination with the reading environment."
+    },
+    {
+      "id": "surface-safe_email_contrast_darkmode",
+      "mode": "safe",
+      "path": "surfaces/safe_email_contrast_darkmode.html",
+      "surface": "email",
+      "standard": "WCAG 2.2",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "runtime-dom",
+        "document-parse"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-low",
+        "vision-contrast"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.4.3",
+        "1.4.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Foreground and background both set, so the pair is under the author’s control."
+    },
+    {
+      "id": "surface-epub_no_metadata",
+      "mode": "tp",
+      "path": "surfaces/epub_no_metadata.html",
+      "surface": "epub",
+      "standard": "EPUB Accessibility 1.1",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "runtime-dom",
+        "document-parse"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-language"
+      ],
+      "min_criteria": {
+        "1.3.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "An EPUB content document with no accessibility metadata in its package. Discoverability IS the requirement in EPUB Accessibility 1.1 — a reader cannot tell whether the book is usable before buying it. The package fragment is shown as text because that is where the defect lives."
+    },
+    {
+      "id": "surface-safe_epub_no_metadata",
+      "mode": "safe",
+      "path": "surfaces/safe_epub_no_metadata.html",
+      "surface": "epub",
+      "standard": "EPUB Accessibility 1.1",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "runtime-dom",
+        "document-parse"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-language"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.3.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "schema.org accessibility metadata declared, and the content document carries real structure and alternatives."
+    },
+    {
+      "id": "surface-authoring_generates_bad_markup",
+      "mode": "tp",
+      "path": "surfaces/authoring_generates_bad_markup.html",
+      "surface": "authoring",
+      "standard": "ATAG 2.0",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "runtime-dom",
+        "document-parse"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-language"
+      ],
+      "min_criteria": {
+        "1.1.1": 1,
+        "1.3.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "An editor whose own toolbar is unreachable by keyboard AND whose output uses a styled div as a heading with an unlabelled image. ATAG 2.0 covers BOTH halves: the tool must be accessible (Part A) and must produce accessible content (Part B). Most checkers test only the rendered page and so never see Part B at all."
+    },
+    {
+      "id": "surface-safe_authoring_generates_bad_markup",
+      "mode": "safe",
+      "path": "surfaces/safe_authoring_generates_bad_markup.html",
+      "surface": "authoring",
+      "standard": "ATAG 2.0",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "runtime-dom",
+        "document-parse"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-language"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.1.1",
+        "1.3.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Keyboard-operable toolbar, and output that uses real headings and prompts the author for a text alternative at insert time."
+    },
+    {
+      "id": "surface-chatbot_transcript",
+      "mode": "tp",
+      "path": "surfaces/chatbot_transcript.html",
+      "surface": "voice",
+      "standard": "WCAG 2.2",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "runtime-dom",
+        "document-parse"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-memory",
+        "speech-unable"
+      ],
+      "min_criteria": {
+        "4.1.3": 1,
+        "1.3.1": 1,
+        "2.1.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A conversational interface where replies append silently, the quick-reply chips are divs, and there is no written record to scroll back through — so anything missed is simply gone. Voice-only interfaces fail people who cannot speak, so a text route is not an optional extra."
+    },
+    {
+      "id": "surface-safe_chatbot_transcript",
+      "mode": "safe",
+      "path": "surfaces/safe_chatbot_transcript.html",
+      "surface": "voice",
+      "standard": "WCAG 2.2",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "runtime-dom",
+        "document-parse"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "cognitive-memory",
+        "speech-unable"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "4.1.3",
+        "1.3.1",
+        "2.1.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "A log region announcing replies, native buttons for quick replies, a text input as an alternative to speech, and a persistent transcript."
+    }
+  ]
+}

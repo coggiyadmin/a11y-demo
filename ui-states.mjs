@@ -176,7 +176,11 @@ for (const st of STATES) {
       mode: kind === 'broken' ? 'tp' : 'safe',
       path: `ui-states/${file}`,
       surface: 'web',
-      journey: 'form-lifecycle',
+      // offline / permission-denied / timed-out / empty / error are the edge-state
+      // journey, not the ordinary form lifecycle. Tagging them all form-lifecycle
+      // overstated that journey and hid edge-states entirely.
+      journey: ['empty', 'error', 'offline', 'permission-denied', 'timed-out']
+        .includes(st.id) ? 'edge-states' : 'form-lifecycle',
       ui_state: st.id,
       method: ['runtime-dom', 'ax-tree', 'state-exploration', 'interaction'],
       input_at: ['keyboard', 'sr-nvda', 'sr-voiceover-safari'],

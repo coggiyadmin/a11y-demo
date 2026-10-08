@@ -1,0 +1,28 @@
+<!--
+  Checkout — correct — Review and pay
+  WCAG: 3.3.4, 3.3.7, 2.4.5, 3.2.3
+  JOURNEY-LEVEL: this page in isolation may be clean. The defect is in the
+  relationship between steps.
+  Summary before payment, saved address offered, and in-page routes between steps.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Review and pay</title>
+<link rel="stylesheet" href="../../../fixture.css">
+</head>
+<body>
+<header><nav aria-label="Steps"><ul><li><a href="help.html">Help</a></li><li><a href="index.html">Home</a></li><li><a href="step1.html">Search</a></li><li><a href="step2.html" aria-current="page">Details</a></li><li><a href="step3.html">Review</a></li></ul></nav></header>
+<main id="main">
+<h1 tabindex="-1" id="h">Review and pay</h1>
+<p>Step 3 of 3</p><h2>Check your order</h2>
+<dl><dt>Item</dt><dd>Seat upgrade</dd><dt>Billing</dt><dd>1 Example Street</dd>
+<dt>Total</dt><dd>GBP 42.00</dd></dl>
+<p><a href="step1.html">Change payment details</a></p>
+<form action="done.html"><button type="submit">Pay GBP 42.00</button></form>
+</main>
+</body>
+<script>document.getElementById('h').focus();</script>
+</html>

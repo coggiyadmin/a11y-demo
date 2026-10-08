@@ -1,11 +1,11 @@
 {
   "description": "Coverage of this corpus against the enumerated test space. Deliberately unflattering: the denominator is the real space, not the part that happens to be covered.",
   "generated": "2026-10-08",
-  "cases": 132,
+  "cases": 185,
   "dimensions": [
     {
       "dimension": "surfaces",
-      "covered": 2,
+      "covered": 7,
       "total": 18,
       "missing": [
         "ios",
@@ -15,89 +15,49 @@
         "word-processing",
         "presentation",
         "spreadsheet",
-        "epub",
-        "email",
         "kiosk",
         "hardware",
-        "authoring",
-        "voice",
-        "dataviz",
         "immersive",
         "support"
       ]
     },
     {
       "dimension": "journeys",
-      "covered": 9,
+      "covered": 25,
       "total": 25,
-      "missing": [
-        "auth-signup",
-        "commerce",
-        "overlay",
-        "transfer",
-        "edge-states",
-        "async",
-        "paging",
-        "data",
-        "realtime",
-        "display-adapt",
-        "theming",
-        "orientation",
-        "i18n",
-        "session",
-        "sr-task",
-        "input-only"
-      ]
+      "missing": []
     },
     {
       "dimension": "ui-states",
-      "covered": 11,
+      "covered": 12,
       "total": 12,
-      "missing": [
-        "disabled"
-      ]
+      "missing": []
     },
     {
       "dimension": "user-needs",
-      "covered": 21,
+      "covered": 23,
       "total": 23,
-      "missing": [
-        "multiple",
-        "temporary"
-      ]
+      "missing": []
     },
     {
       "dimension": "input-at",
-      "covered": 4,
+      "covered": 12,
       "total": 12,
-      "missing": [
-        "touch",
-        "switch",
-        "speech",
-        "sr-talkback-chrome",
-        "sr-jaws",
-        "sr-narrator-edge",
-        "magnifier",
-        "forced-colors"
-      ]
+      "missing": []
     },
     {
       "dimension": "methods",
-      "covered": 10,
+      "covered": 14,
       "total": 15,
       "missing": [
-        "document-parse",
-        "at-testing",
-        "user-testing",
-        "regression",
-        "ai-assisted"
+        "regression"
       ]
     }
   ],
   "combinations": {
     "formula": "surface x journey x ui-state x input",
     "total": 64800,
-    "triples_touched": 20
+    "triples_touched": 40
   },
   "not_automatable": [
     "guided-manual",

@@ -1,0 +1,21 @@
+<!--
+  forced_colors — correct
+  WCAG: 1.4.1, 1.4.11
+  journey: theming
+  input/AT most affected: forced-colors
+  Uses system colours and a non-colour cue, so the state survives forced colours.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>forced_colors — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>forced_colors — correct</h1>
+<p>Uses system colours and a non-colour cue, so the state survives forced colours.</p><hr><style>.sel2{border:3px solid}
+@media (forced-colors: active){.sel2{border-color:Highlight;forced-color-adjust:none;color:HighlightText;background:Highlight}}</style>
+<ul><li class="sel2"><span aria-hidden="true">✓ </span>Economy <span class="sr">(selected)</span></li>
+<li>Business</li></ul>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

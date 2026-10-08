@@ -1,0 +1,21 @@
+<!--
+  infinite_scroll — correct
+  WCAG: 2.4.3, 4.1.3, 2.4.1
+  journey: paging
+  input/AT most affected: keyboard, sr-nvda
+  An explicit control to load more, the count announced, and the footer always reachable.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>infinite_scroll — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>infinite_scroll — correct</h1>
+<p>An explicit control to load more, the count announced, and the footer always reachable.</p><hr><ul id="l2"><li>BA117</li><li>BA118</li></ul>
+<button type="button" aria-controls="l2">Show 10 more flights</button>
+<p role="status" aria-live="polite">Showing 2 of 24 flights.</p>
+<footer><a href="#terms">Terms</a></footer>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>
