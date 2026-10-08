@@ -1,0 +1,23 @@
+<!--
+  Defect two iframes deep
+  axis: embedded
+  Carries the constant defect: 2.1.1 (div as button) and 1.1.1 (img with no alt).
+  Expectation: a scanner SHOULD report both.
+  Host → intermediate iframe → payload iframe. Tests whether descent is recursive or single-level.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Defect two iframes deep</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Defect two iframes deep</h1>
+<iframe src="./_mid.html" title="Outer"></iframe>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

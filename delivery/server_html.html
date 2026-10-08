@@ -1,0 +1,24 @@
+<!--
+  Server-rendered HTML
+  axis: baseline
+  Carries the constant defect: 2.1.1 (div as button) and 1.1.1 (img with no alt).
+  Expectation: a scanner SHOULD report both.
+  The control case. The defect is in the served bytes. Any scanner that cannot report this one has a rule problem, not a delivery problem — every other row in this matrix is only meaningful relative to it.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Server-rendered HTML</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Server-rendered HTML</h1>
+<div class="btn" onclick="void 0">Search flights</div>
+<img src="../pixel.png">
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

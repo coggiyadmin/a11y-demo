@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>delivery fixtures</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>delivery fixtures</h1>
+<p>Every page below carries the <strong>same two defects</strong> — a div acting as a
+   button (2.1.1) and an image with no accessible name (1.1.1) — and differs only in how
+   that content reaches the browser.</p>
+   <ul><li><a href="server_html.html">Server-rendered HTML</a> — <em>baseline</em></li>
+<li><a href="client_js.html">Injected by script on DOMContentLoaded</a> — <em>client-rendered</em></li>
+<li><a href="client_js_delayed.html">Injected 600ms after load</a> — <em>client-rendered</em></li>
+<li><a href="iframe_same_origin.html">Defect inside a same-origin iframe</a> — <em>embedded</em></li>
+<li><a href="iframe_srcdoc.html">Defect in an iframe srcdoc</a> — <em>embedded</em></li>
+<li><a href="iframe_sandboxed.html">Defect in a sandboxed iframe</a> — <em>embedded</em></li>
+<li><a href="iframe_nested.html">Defect two iframes deep</a> — <em>embedded</em></li>
+<li><a href="shadow_dom_open.html">Defect in an open shadow root</a> — <em>shadow</em></li>
+<li><a href="shadow_dom_closed.html">Defect in a closed shadow root</a> — <em>shadow</em></li>
+<li><a href="web_component.html">Defect inside a custom element</a> — <em>shadow</em></li>
+<li><a href="progressive_enhancement.html">Server HTML replaced by script</a> — <em>client-rendered</em></li></ul>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

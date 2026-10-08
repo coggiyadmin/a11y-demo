@@ -1,0 +1,23 @@
+<!--
+  Defect in an iframe srcdoc
+  axis: embedded
+  Carries the constant defect: 2.1.1 (div as button) and 1.1.1 (img with no alt).
+  Expectation: a scanner SHOULD report both.
+  Same as above but the child document is inline in the attribute, so it has no URL of its own and cannot be crawled as a page.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Defect in an iframe srcdoc</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Defect in an iframe srcdoc</h1>
+<iframe title="Booking widget" srcdoc="<div class=&quot;btn&quot; onclick=&quot;void 0&quot;>Search flights</div> <img src=&quot;../pixel.png&quot;>"></iframe>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

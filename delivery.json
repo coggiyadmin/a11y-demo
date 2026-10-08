@@ -1,0 +1,131 @@
+{
+  "description": "Delivery matrix: one constant defect pair, many delivery mechanisms. Differences in what a scanner reports across these rows are pipeline blind spots, not rule errors, because the defect does not change.",
+  "constant_defect": {
+    "2.1.1": "div styled as a button, not focusable",
+    "1.1.1": "img with no accessible name"
+  },
+  "generated": "2026-10-08",
+  "cases": [
+    {
+      "id": "delivery-server_html",
+      "mode": "tp",
+      "path": "delivery/server_html.html",
+      "axis": "baseline",
+      "min_criteria": {
+        "2.1.1": 1,
+        "1.1.1": 1
+      },
+      "notes": "The control case. The defect is in the served bytes. Any scanner that cannot report this one has a rule problem, not a delivery problem — every other row in this matrix is only meaningful relative to it."
+    },
+    {
+      "id": "delivery-client_js",
+      "mode": "tp",
+      "path": "delivery/client_js.html",
+      "axis": "client-rendered",
+      "min_criteria": {
+        "2.1.1": 1,
+        "1.1.1": 1
+      },
+      "notes": "Served bytes contain a shell. The defect exists only after script runs."
+    },
+    {
+      "id": "delivery-client_js_delayed",
+      "mode": "tp",
+      "path": "delivery/client_js_delayed.html",
+      "axis": "client-rendered",
+      "min_criteria": {
+        "2.1.1": 1,
+        "1.1.1": 1
+      },
+      "notes": "Same as client_js but after a timer, past most \"network idle\" heuristics. Separates \"does it run script\" from \"does it wait long enough\"."
+    },
+    {
+      "id": "delivery-iframe_same_origin",
+      "mode": "tp",
+      "path": "delivery/iframe_same_origin.html",
+      "axis": "embedded",
+      "min_criteria": {
+        "2.1.1": 1,
+        "1.1.1": 1
+      },
+      "notes": "The host page is clean. The defect is in a child document on the same origin, which a scanner may or may not descend into. WCAG applies to what the user meets, and the user meets the iframe content."
+    },
+    {
+      "id": "delivery-iframe_srcdoc",
+      "mode": "tp",
+      "path": "delivery/iframe_srcdoc.html",
+      "axis": "embedded",
+      "min_criteria": {
+        "2.1.1": 1,
+        "1.1.1": 1
+      },
+      "notes": "Same as above but the child document is inline in the attribute, so it has no URL of its own and cannot be crawled as a page."
+    },
+    {
+      "id": "delivery-iframe_sandboxed",
+      "mode": "tp",
+      "path": "delivery/iframe_sandboxed.html",
+      "axis": "embedded",
+      "min_criteria": {
+        "2.1.1": 1,
+        "1.1.1": 1
+      },
+      "notes": "sandbox=\"allow-same-origin\" — scripted access to the child may be restricted depending on how the scanner reaches it."
+    },
+    {
+      "id": "delivery-iframe_nested",
+      "mode": "tp",
+      "path": "delivery/iframe_nested.html",
+      "axis": "embedded",
+      "min_criteria": {
+        "2.1.1": 1,
+        "1.1.1": 1
+      },
+      "notes": "Host → intermediate iframe → payload iframe. Tests whether descent is recursive or single-level."
+    },
+    {
+      "id": "delivery-shadow_dom_open",
+      "mode": "tp",
+      "path": "delivery/shadow_dom_open.html",
+      "axis": "shadow",
+      "min_criteria": {
+        "2.1.1": 1,
+        "1.1.1": 1
+      },
+      "notes": "Not in the light DOM, not in the served HTML, but present in the accessibility tree and reachable via element.shadowRoot."
+    },
+    {
+      "id": "delivery-shadow_dom_closed",
+      "mode": "tp",
+      "path": "delivery/shadow_dom_closed.html",
+      "axis": "shadow",
+      "min_criteria": {
+        "2.1.1": 1,
+        "1.1.1": 1
+      },
+      "notes": "As above, but mode:\"closed\" — element.shadowRoot returns null, so a DOM-walking scanner cannot see it. It is still in the accessibility tree and still affects users. The hardest row in the matrix, and a fair one: real design systems ship closed roots."
+    },
+    {
+      "id": "delivery-web_component",
+      "mode": "tp",
+      "path": "delivery/web_component.html",
+      "axis": "shadow",
+      "min_criteria": {
+        "2.1.1": 1,
+        "1.1.1": 1
+      },
+      "notes": "A registered custom element that renders the defect into its own open shadow root on connect — the common framework-agnostic component shape."
+    },
+    {
+      "id": "delivery-progressive_enhancement",
+      "mode": "tp",
+      "path": "delivery/progressive_enhancement.html",
+      "axis": "client-rendered",
+      "min_criteria": {
+        "2.1.1": 1,
+        "1.1.1": 1
+      },
+      "notes": "The served bytes contain a CORRECT control; script then replaces it with the broken one. A scanner reading served markup reports clean and is wrong — the inverse of client_js, and the reason \"read the HTML\" is not a safe shortcut."
+    }
+  ]
+}

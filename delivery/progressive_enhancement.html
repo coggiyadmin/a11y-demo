@@ -1,0 +1,24 @@
+<!--
+  Server HTML replaced by script
+  axis: client-rendered
+  Carries the constant defect: 2.1.1 (div as button) and 1.1.1 (img with no alt).
+  Expectation: a scanner SHOULD report both.
+  The served bytes contain a CORRECT control; script then replaces it with the broken one. A scanner reading served markup reports clean and is wrong — the inverse of client_js, and the reason "read the HTML" is not a safe shortcut.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Server HTML replaced by script</title>
+<link rel="stylesheet" href="../fixture.css">
+<script>addEventListener('DOMContentLoaded',()=>{document.getElementById('root').innerHTML="<div class=\"btn\" onclick=\"void 0\">Search flights</div>\n<img src=\"../pixel.png\">"});</script>
+</head>
+<body>
+<main>
+<h1>Server HTML replaced by script</h1>
+<div id="root"><button type="button">Search flights</button><img src="../pixel.png" alt="Airline logo"></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

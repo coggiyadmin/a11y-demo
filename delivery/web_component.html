@@ -1,0 +1,28 @@
+<!--
+  Defect inside a custom element
+  axis: shadow
+  Carries the constant defect: 2.1.1 (div as button) and 1.1.1 (img with no alt).
+  Expectation: a scanner SHOULD report both.
+  A registered custom element that renders the defect into its own open shadow root on connect — the common framework-agnostic component shape.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Defect inside a custom element</title>
+<link rel="stylesheet" href="../fixture.css">
+<script>
+customElements.define('booking-widget', class extends HTMLElement {
+  connectedCallback(){ this.attachShadow({mode:'open'}).innerHTML = "<div class=\"btn\" onclick=\"void 0\">Search flights</div>\n<img src=\"../pixel.png\">"; }
+});
+</script>
+</head>
+<body>
+<main>
+<h1>Defect inside a custom element</h1>
+<booking-widget></booking-widget>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

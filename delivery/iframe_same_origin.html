@@ -1,0 +1,23 @@
+<!--
+  Defect inside a same-origin iframe
+  axis: embedded
+  Carries the constant defect: 2.1.1 (div as button) and 1.1.1 (img with no alt).
+  Expectation: a scanner SHOULD report both.
+  The host page is clean. The defect is in a child document on the same origin, which a scanner may or may not descend into. WCAG applies to what the user meets, and the user meets the iframe content.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Defect inside a same-origin iframe</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Defect inside a same-origin iframe</h1>
+<iframe src="./_payload.html" title="Booking widget"></iframe>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

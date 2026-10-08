@@ -1,0 +1,24 @@
+<!--
+  Defect in a closed shadow root
+  axis: shadow
+  Carries the constant defect: 2.1.1 (div as button) and 1.1.1 (img with no alt).
+  Expectation: a scanner SHOULD report both.
+  As above, but mode:"closed" — element.shadowRoot returns null, so a DOM-walking scanner cannot see it. It is still in the accessibility tree and still affects users. The hardest row in the matrix, and a fair one: real design systems ship closed roots.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Defect in a closed shadow root</title>
+<link rel="stylesheet" href="../fixture.css">
+<script>addEventListener('DOMContentLoaded',()=>{document.getElementById('host').attachShadow({mode:'closed'}).innerHTML="<div class=\"btn\" onclick=\"void 0\">Search flights</div>\n<img src=\"../pixel.png\">"});</script>
+</head>
+<body>
+<main>
+<h1>Defect in a closed shadow root</h1>
+<div id="host"></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

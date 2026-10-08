@@ -1,0 +1,24 @@
+<!--
+  Injected by script on DOMContentLoaded
+  axis: client-rendered
+  Carries the constant defect: 2.1.1 (div as button) and 1.1.1 (img with no alt).
+  Expectation: a scanner SHOULD report both.
+  Served bytes contain a shell. The defect exists only after script runs.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Injected by script on DOMContentLoaded</title>
+<link rel="stylesheet" href="../fixture.css">
+<script>addEventListener('DOMContentLoaded',()=>{document.getElementById('root').innerHTML="<div class=\"btn\" onclick=\"void 0\">Search flights</div>\n<img src=\"../pixel.png\">"});</script>
+</head>
+<body>
+<main>
+<h1>Injected by script on DOMContentLoaded</h1>
+<div id="root"><p>Loading…</p></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

@@ -19,6 +19,10 @@ const ROOT = path.resolve(HERE, '..');
 const BASE = process.env.BASE_URL || 'http://localhost:8080';
 
 const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog.json'), 'utf8'));
+const deliveryPath = path.join(ROOT, 'delivery.json');
+const delivery = fs.existsSync(deliveryPath)
+  ? JSON.parse(fs.readFileSync(deliveryPath, 'utf8')) : { cases: [] };
+const ALL = [...catalog.cases, ...delivery.cases];
 
 /**
  * Walk the real tab order by pressing Tab and seeing where focus lands.
@@ -78,7 +82,7 @@ async function clientRenderedShare(browser, url) {
 const results = [];
 const browser = await chromium.launch();
 
-for (const c of catalog.cases) {
+for (const c of ALL) {
   const url = `${BASE}/${c.path}`;
   const page = await browser.newPage();
   const row = { id: c.id, mode: c.mode, path: c.path, url };
@@ -86,9 +90,41 @@ for (const c of catalog.cases) {
     const resp = await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
     row.http = resp ? resp.status() : null;
 
+    // What a scanner sees if it stops at networkidle, BEFORE the explicit settle.
+    // delivery/client_js_delayed.html mounts on a 600ms timer, which networkidle
+    // does not wait for — so this column is where a too-eager settle shows up.
+    // Uses the SAME shadow-aware walk as the settled count, so the only variable
+    // between the two numbers is time. An earlier version used a plain
+    // querySelectorAll here, which made every shadow-root fixture look
+    // settle-sensitive when it was really just shadow descent.
+    row.interactive_at_networkidle = await page.evaluate(() => {
+      const collect = (root, acc = []) => {
+        for (const e of root.querySelectorAll('*')) { acc.push(e); if (e.shadowRoot) collect(e.shadowRoot, acc); }
+        return acc;
+      };
+      return collect(document).filter((e) =>
+        (e.hasAttribute('onclick') || e.getAttribute('role') === 'button')
+        && !e.matches('a[href],button,input,select,textarea,summary')
+        && e.getAttribute('tabindex') === null).length;
+    });
+
+    // Ground truth needs the page actually settled, so wait past short timers.
+    await page.waitForTimeout(1500);
+
     // Counted in the built DOM, which is the page a visitor actually meets.
+    //
+    // Walks OPEN shadow roots as well as the light DOM. A closed root is invisible
+    // to script by design, so a 0 here on shadow_dom_closed is the honest answer and
+    // the fixture's whole point. Same-origin frames are counted separately below.
     Object.assign(row, await page.evaluate(() => {
-      const all = [...document.querySelectorAll('*')];
+      const collect = (root, acc = []) => {
+        for (const e of root.querySelectorAll('*')) {
+          acc.push(e);
+          if (e.shadowRoot) collect(e.shadowRoot, acc);
+        }
+        return acc;
+      };
+      const all = collect(document);
       const natively = 'a[href],button,input,select,textarea,summary,[contenteditable=true]';
       const clickableNonFocusable = all.filter((e) =>
         (e.hasAttribute('onclick') || e.getAttribute('role') === 'button')
@@ -96,18 +132,42 @@ for (const c of catalog.cases) {
         && e.getAttribute('tabindex') === null);
       return {
         elements: all.length,
-        natively_focusable: document.querySelectorAll(natively).length,
+        natively_focusable: all.filter((e) => e.matches(natively)).length,
         tabindex_zero: document.querySelectorAll('[tabindex="0"]').length,
         tabindex_negative: document.querySelectorAll('[tabindex="-1"]').length,
         aria_roles: document.querySelectorAll('[role]').length,
-        images: document.querySelectorAll('img').length,
-        images_unnamed: [...document.querySelectorAll('img')]
-          .filter((i) => !i.getAttribute('alt') && !i.getAttribute('aria-label')
-            && i.getAttribute('role') !== 'presentation').length,
+        images: all.filter((e) => e.tagName === 'IMG').length,
+        images_unnamed: all.filter((e) => e.tagName === 'IMG'
+          && !e.getAttribute('alt') && !e.getAttribute('aria-label')
+          && e.getAttribute('role') !== 'presentation').length,
+        shadow_hosts: all.filter((e) => e.shadowRoot).length,
         // the shape the keyboard fixtures are about
         pointer_operable_not_focusable: clickableNonFocusable.length,
       };
     }));
+
+    // what lives in child documents, which a scanner must descend into to see
+    const frames = page.frames().filter((f) => f !== page.mainFrame());
+    row.frames = frames.length;
+    if (frames.length) {
+      let fImgUnnamed = 0, fNonFocusClick = 0;
+      for (const f of frames) {
+        try {
+          const r = await f.evaluate(() => ({
+            imgUnnamed: [...document.querySelectorAll('img')].filter((i) =>
+              !i.getAttribute('alt') && !i.getAttribute('aria-label')
+              && i.getAttribute('role') !== 'presentation').length,
+            nonFocusClick: [...document.querySelectorAll('*')].filter((e) =>
+              (e.hasAttribute('onclick') || e.getAttribute('role') === 'button')
+              && !e.matches('a[href],button,input,select,textarea,summary')
+              && e.getAttribute('tabindex') === null).length,
+          }));
+          fImgUnnamed += r.imgUnnamed; fNonFocusClick += r.nonFocusClick;
+        } catch { /* cross-origin or sandboxed: not reachable, which is the finding */ }
+      }
+      row.frame_images_unnamed = fImgUnnamed;
+      row.frame_pointer_operable_not_focusable = fNonFocusClick;
+    }
 
     row.tab_stops = await tabOrder(page);
 
@@ -127,7 +187,9 @@ for (const c of catalog.cases) {
   process.stderr.write(`· ${row.id.padEnd(32)} tab=${String(row.tab_stops ?? '-').padStart(4)}` +
     ` focusable=${String(row.natively_focusable ?? '-').padStart(4)}` +
     ` nonfocus_click=${String(row.pointer_operable_not_focusable ?? '-').padStart(2)}` +
-    ` client_rendered_els=${String(row.elements_client_rendered ?? '-').padStart(3)}` +
+    ` img_unnamed=${String((row.images_unnamed ?? 0) + (row.frame_images_unnamed ?? 0)).padStart(2)}` +
+    ` nonfocus_in_frame=${String(row.frame_pointer_operable_not_focusable ?? 0).padStart(2)}` +
+    ` shadow=${String(row.shadow_hosts ?? 0).padStart(2)}` +
     `${row.error ? '  ERROR ' + row.error : ''}\n`);
 }
 await browser.close();
