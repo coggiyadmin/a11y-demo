@@ -250,9 +250,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "color-vision/error_color_only.html color-vision/status_color_only.html color-vision/link_color_only.html color-vision/chart_series_color_only.html color-vision/selection_color_only.html color-vision/disabled_state.html color-vision/required_color_only.html",
+    "local_safe": "color-vision/safe_error_color_only.html color-vision/safe_status_color_only.html color-vision/safe_link_color_only.html color-vision/safe_chart_series_color_only.html color-vision/safe_selection_color_only.html color-vision/safe_disabled_state.html color-vision/safe_required_color_only.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "1.4.2",
@@ -280,9 +280,9 @@
     "act_failed": 24,
     "act_passed": 23,
     "act_inapplicable": 22,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "ACT"
+    "local_tp": "color-vision/placeholder_contrast.html",
+    "local_safe": "color-vision/safe_placeholder_contrast.html",
+    "ground_truth": "ACT + local"
   },
   {
     "sc": "1.4.4",
@@ -1135,8 +1135,8 @@
     "act_failed": 5,
     "act_passed": 3,
     "act_inapplicable": 1,
-    "local_tp": "patterns/form-errors.html",
-    "local_safe": "patterns/safe_form-errors.html",
+    "local_tp": "patterns/form-errors.html color-vision/error_color_only.html",
+    "local_safe": "patterns/safe_form-errors.html color-vision/safe_error_color_only.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -1150,8 +1150,8 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "static/field_no_visible_label.html patterns/form-errors.html patterns/required-fields.html",
-    "local_safe": "patterns/safe_form-errors.html patterns/safe_required-fields.html",
+    "local_tp": "static/field_no_visible_label.html patterns/form-errors.html patterns/required-fields.html color-vision/required_color_only.html",
+    "local_safe": "patterns/safe_form-errors.html patterns/safe_required-fields.html color-vision/safe_required_color_only.html",
     "ground_truth": "local only"
   },
   {
@@ -1270,8 +1270,8 @@
     "act_failed": 70,
     "act_passed": 102,
     "act_inapplicable": 61,
-    "local_tp": "keyboard/div_button.html keyboard/div_text_field.html keyboard/div_checkbox.html keyboard/role_tab_no_tablist.html capture/client_mounted.html patterns/disclosure.html patterns/accordion.html patterns/tabs.html patterns/dialog.html patterns/combobox.html patterns/menu.html patterns/switch.html patterns/tooltip.html patterns/breadcrumb.html patterns/slider.html patterns/listbox.html patterns/form-errors.html",
-    "local_safe": "keyboard/safe_native_button.html keyboard/safe_native_text_field.html keyboard/safe_native_checkbox.html keyboard/safe_custom_button.html capture/safe_server_rendered.html patterns/safe_disclosure.html patterns/safe_accordion.html patterns/safe_tabs.html patterns/safe_dialog.html patterns/safe_combobox.html patterns/safe_menu.html patterns/safe_switch.html patterns/safe_tooltip.html patterns/safe_breadcrumb.html patterns/safe_slider.html patterns/safe_listbox.html patterns/safe_form-errors.html",
+    "local_tp": "keyboard/div_button.html keyboard/div_text_field.html keyboard/div_checkbox.html keyboard/role_tab_no_tablist.html capture/client_mounted.html patterns/disclosure.html patterns/accordion.html patterns/tabs.html patterns/dialog.html patterns/combobox.html patterns/menu.html patterns/switch.html patterns/tooltip.html patterns/breadcrumb.html patterns/slider.html patterns/listbox.html patterns/form-errors.html color-vision/selection_color_only.html",
+    "local_safe": "keyboard/safe_native_button.html keyboard/safe_native_text_field.html keyboard/safe_native_checkbox.html keyboard/safe_custom_button.html capture/safe_server_rendered.html patterns/safe_disclosure.html patterns/safe_accordion.html patterns/safe_tabs.html patterns/safe_dialog.html patterns/safe_combobox.html patterns/safe_menu.html patterns/safe_switch.html patterns/safe_tooltip.html patterns/safe_breadcrumb.html patterns/safe_slider.html patterns/safe_listbox.html patterns/safe_form-errors.html color-vision/safe_selection_color_only.html",
     "ground_truth": "ACT + local"
   },
   {

@@ -75,6 +75,41 @@ null there, so script cannot see in — but the content is still in the
 accessibility tree and still reaches users, and real design systems ship closed
 roots. It is the hardest row and a fair one.
 
+## Functional needs are the primary index
+
+Every rule maps to the functional needs it serves
+(`taxonomy/criterion-needs.json`), and a fixture inherits needs from the criteria
+it exercises. This is the index that matters for product decisions, because one
+requirement usually serves several groups at once:
+
+```
+4.1.2  Name, Role, Value   13 needs
+2.1.1  Keyboard            12 needs
+1.3.1  Info and Rel'ships  11 needs
+1.4.1  Use of Colour       10 needs
+```
+
+Keyboard access alone serves blind users, people with limited dexterity, tremor
+or paralysis, switch users and many speech-input users. A criterion-first report
+cannot show that one fix moves twelve groups; `node needs-index.mjs` can.
+
+Mapping rules rather than fixtures is deliberate — hand-annotating every case
+drifts, and the rule-level mapping stays the single source of truth.
+
+### Colour vision
+
+`color-vision/` holds eight pairs covering the checks a contrast test cannot
+reach: error and status by colour alone, red/green pairings, chart series
+separated only by hue, links distinguished only by colour, placeholder and
+disabled contrast, and selection state by colour alone.
+
+Contrast ratio does not catch any of these. Two colours can each clear 4.5:1
+against the background and still be indistinguishable from each other.
+
+`color-vision/simulate.html` renders a fixture through protanopia, deuteranopia,
+tritanopia and achromatopsia filters, so "can you still tell?" is a question you
+can put to a screenshot rather than take on trust.
+
 ## The test space
 
 `taxonomy/` enumerates the space this corpus is a slice of:

@@ -1,164 +1,349 @@
 {
-  "note": "Functional needs, not medical categories. A fixture names the needs its defect actually blocks, so coverage can be read per need rather than per criterion.",
+  "note": "Functional needs, not medical categories. This is the PRIMARY index: every rule and every fixture names the needs it serves, because one requirement usually serves several groups at once. A keyboard-access rule supports blind users, motor-impaired users, switch users and many speech-input users — indexing by criterion alone hides that.",
   "source": "https://www.w3.org/WAI/people-use-web/abilities-barriers/",
   "values": [
     {
       "id": "vision-blind",
       "label": "Blindness",
+      "group": "vision",
       "at": [
         "screen-reader",
         "braille"
+      ],
+      "scenarios": [
+        "screen-reader output",
+        "keyboard navigation",
+        "alt text",
+        "headings",
+        "landmarks",
+        "form labels",
+        "focus order",
+        "live announcements",
+        "accessible name/role/state",
+        "audio description"
       ]
     },
     {
       "id": "vision-low",
       "label": "Low vision",
+      "group": "vision",
       "at": [
         "magnifier",
         "zoom",
         "high-contrast"
+      ],
+      "scenarios": [
+        "zoom",
+        "200-400% reflow",
+        "text resize",
+        "contrast",
+        "text spacing",
+        "focus visibility",
+        "screen magnification",
+        "content clipping"
       ]
     },
     {
       "id": "vision-color",
-      "label": "Colour-vision deficiency",
-      "at": []
+      "label": "Colour blindness",
+      "group": "vision",
+      "at": [],
+      "scenarios": [
+        "information not conveyed by colour alone",
+        "distinguishable chart series",
+        "form errors with text or icons",
+        "link identification",
+        "foreground/background contrast"
+      ]
     },
     {
       "id": "vision-contrast",
       "label": "Contrast sensitivity",
+      "group": "vision",
       "at": [
         "high-contrast",
         "forced-colors"
+      ],
+      "scenarios": [
+        "text and non-text contrast",
+        "forced-colors mode",
+        "placeholder contrast",
+        "disabled-state contrast"
       ]
     },
     {
       "id": "hearing-deaf",
       "label": "Deafness",
+      "group": "hearing",
       "at": [
         "captions",
         "transcript"
+      ],
+      "scenarios": [
+        "captions",
+        "transcripts",
+        "speaker identification",
+        "meaningful sound descriptions",
+        "visual alerts",
+        "text alternatives for audio instructions"
       ]
     },
     {
       "id": "hearing-hoh",
       "label": "Hard of hearing",
+      "group": "hearing",
       "at": [
         "captions",
         "volume-control"
+      ],
+      "scenarios": [
+        "captions",
+        "background-audio control",
+        "volume control",
+        "visual alerts"
+      ]
+    },
+    {
+      "id": "deafblind",
+      "label": "Deafblindness",
+      "group": "multiple",
+      "at": [
+        "braille",
+        "screen-reader"
+      ],
+      "scenarios": [
+        "refreshable-Braille compatibility",
+        "screen-reader compatibility",
+        "keyboard access",
+        "text alternatives",
+        "no audio-only instructions",
+        "no vision-only instructions"
       ]
     },
     {
       "id": "motor-dexterity",
       "label": "Limited dexterity",
+      "group": "motor",
       "at": [
         "keyboard",
         "switch",
         "speech"
+      ],
+      "scenarios": [
+        "keyboard-only use",
+        "switch access",
+        "speech control",
+        "large targets",
+        "target spacing",
+        "no required dragging",
+        "no complex gestures",
+        "generous time limits"
       ]
     },
     {
       "id": "motor-tremor",
       "label": "Tremor",
+      "group": "motor",
       "at": [
         "large-targets",
         "pointer-cancellation"
+      ],
+      "scenarios": [
+        "target size",
+        "target spacing",
+        "pointer cancellation",
+        "no path gestures"
       ]
     },
     {
       "id": "motor-paralysis",
       "label": "Paralysis",
+      "group": "motor",
       "at": [
         "switch",
         "speech",
         "eye-tracking"
+      ],
+      "scenarios": [
+        "switch access",
+        "speech control",
+        "full keyboard equivalence"
       ]
     },
     {
       "id": "motor-fatigue",
       "label": "Fatigue",
+      "group": "motor",
       "at": [
         "reduced-steps",
         "save-progress"
+      ],
+      "scenarios": [
+        "reduced interaction cost",
+        "save progress",
+        "redundant-entry prevention",
+        "extendable time limits"
       ]
     },
     {
       "id": "speech-unable",
       "label": "Unable to use voice interfaces",
-      "at": []
+      "group": "speech",
+      "at": [],
+      "scenarios": [
+        "alternatives to voice input",
+        "alternatives to voice authentication",
+        "alternatives to telephone-only support"
+      ]
     },
     {
       "id": "cognitive-memory",
       "label": "Memory",
+      "group": "cognitive",
       "at": [
         "redundant-entry-prevention",
         "save-progress"
+      ],
+      "scenarios": [
+        "reduced memory demand",
+        "redundant-entry prevention",
+        "accessible authentication",
+        "no memory puzzles"
       ]
     },
     {
       "id": "cognitive-attention",
       "label": "Attention",
+      "group": "cognitive",
       "at": [
         "reduced-motion",
         "pause-controls"
+      ],
+      "scenarios": [
+        "distraction controls",
+        "pause/stop/hide",
+        "no unexpected context change"
       ]
     },
     {
       "id": "cognitive-dyslexia",
       "label": "Dyslexia",
+      "group": "cognitive",
       "at": [
         "text-spacing",
         "read-aloud"
+      ],
+      "scenarios": [
+        "readable typography",
+        "text spacing overrides",
+        "uncluttered layout",
+        "text-to-speech compatibility",
+        "no images of text"
       ]
     },
     {
       "id": "cognitive-language",
       "label": "Language and literacy",
+      "group": "cognitive",
       "at": [
         "plain-language"
+      ],
+      "scenarios": [
+        "clear language",
+        "understandable errors",
+        "abbreviations explained",
+        "plain-language summaries"
       ]
     },
     {
       "id": "cognitive-executive",
       "label": "Executive function",
+      "group": "cognitive",
       "at": [
         "clear-steps",
         "undo"
+      ],
+      "scenarios": [
+        "consistent navigation",
+        "clear steps",
+        "review and confirm",
+        "undo",
+        "sufficient time"
       ]
     },
     {
-      "id": "neuro-seizure",
-      "label": "Seizure sensitivity",
+      "id": "neuro-photosensitive",
+      "label": "Photosensitivity",
+      "group": "neurological",
       "at": [
         "flash-thresholds"
+      ],
+      "scenarios": [
+        "flash thresholds",
+        "animation controls",
+        "avoidance of dangerous visual patterns"
       ]
     },
     {
       "id": "neuro-vestibular",
       "label": "Vestibular and motion sensitivity",
+      "group": "neurological",
       "at": [
         "reduced-motion"
+      ],
+      "scenarios": [
+        "prefers-reduced-motion",
+        "disable parallax",
+        "disable auto-zoom",
+        "no unexpected animation"
       ]
     },
     {
       "id": "multiple",
       "label": "Multiple or intersecting disabilities",
-      "at": []
+      "group": "multiple",
+      "at": [],
+      "scenarios": [
+        "combined testing, e.g. keyboard + screen reader + high contrast"
+      ]
     },
     {
       "id": "age-related",
-      "label": "Age-related impairment",
-      "at": []
+      "label": "Age-related needs",
+      "group": "multiple",
+      "at": [],
+      "scenarios": [
+        "larger text and targets",
+        "clear instructions",
+        "good contrast",
+        "forgiving input",
+        "straightforward navigation"
+      ]
     },
     {
       "id": "temporary",
-      "label": "Temporary impairment",
-      "at": []
+      "label": "Temporary limitation",
+      "group": "situational",
+      "at": [],
+      "scenarios": [
+        "broken arm",
+        "eye surgery",
+        "ear infection",
+        "medication-related cognitive effects"
+      ]
     },
     {
       "id": "situational",
       "label": "Situational limitation",
-      "at": []
+      "group": "situational",
+      "at": [],
+      "scenarios": [
+        "bright sunlight",
+        "noisy room",
+        "one-handed use",
+        "muted audio",
+        "slow connectivity"
+      ]
     }
   ]
 }

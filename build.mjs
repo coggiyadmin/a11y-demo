@@ -376,6 +376,8 @@ const EXTRA_GROUPS = [
       + 'client-rendered, iframes, shadow DOM, web components' },
   { dir: 'patterns', blurb: 'ARIA Authoring Practices component patterns as matched '
       + 'broken/correct pairs — dialogs, combobox, tabs, menus, tables and more' },
+  { dir: 'color-vision', blurb: 'colour used as the only carrier of information, with a '
+      + 'simulation view through protanopia, deuteranopia, tritanopia and achromatopsia' },
 ];
 
 fs.writeFileSync(path.join(ROOT, 'index.html'), page('Accessibility fixture corpus',

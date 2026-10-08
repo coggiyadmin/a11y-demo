@@ -1,0 +1,387 @@
+{
+  "note": "Which functional needs each success criterion serves. A fixture inherits needs from the criteria it exercises unless it names its own, so coverage by need stays correct without hand-annotating every case.",
+  "values": [
+    {
+      "sc": "1.1.1",
+      "needs": [
+        "vision-blind",
+        "vision-low",
+        "deafblind",
+        "cognitive-language",
+        "situational"
+      ]
+    },
+    {
+      "sc": "1.2.1",
+      "needs": [
+        "hearing-deaf",
+        "hearing-hoh",
+        "vision-blind",
+        "deafblind",
+        "situational"
+      ]
+    },
+    {
+      "sc": "1.2.2",
+      "needs": [
+        "hearing-deaf",
+        "hearing-hoh",
+        "deafblind",
+        "cognitive-language",
+        "situational"
+      ]
+    },
+    {
+      "sc": "1.2.3",
+      "needs": [
+        "vision-blind",
+        "vision-low",
+        "deafblind",
+        "cognitive-attention"
+      ]
+    },
+    {
+      "sc": "1.2.5",
+      "needs": [
+        "vision-blind",
+        "vision-low",
+        "deafblind"
+      ]
+    },
+    {
+      "sc": "1.3.1",
+      "needs": [
+        "vision-blind",
+        "vision-low",
+        "deafblind",
+        "cognitive-memory",
+        "cognitive-language",
+        "cognitive-executive"
+      ]
+    },
+    {
+      "sc": "1.3.4",
+      "needs": [
+        "motor-dexterity",
+        "motor-paralysis",
+        "vision-low",
+        "situational"
+      ]
+    },
+    {
+      "sc": "1.3.5",
+      "needs": [
+        "cognitive-memory",
+        "motor-dexterity",
+        "motor-fatigue",
+        "cognitive-language"
+      ]
+    },
+    {
+      "sc": "1.4.1",
+      "needs": [
+        "vision-color",
+        "vision-blind",
+        "vision-low",
+        "vision-contrast",
+        "cognitive-language",
+        "cognitive-executive"
+      ]
+    },
+    {
+      "sc": "1.4.2",
+      "needs": [
+        "hearing-hoh",
+        "vision-blind",
+        "cognitive-attention",
+        "situational"
+      ]
+    },
+    {
+      "sc": "1.4.3",
+      "needs": [
+        "vision-low",
+        "vision-contrast",
+        "vision-color",
+        "age-related",
+        "situational"
+      ]
+    },
+    {
+      "sc": "1.4.4",
+      "needs": [
+        "vision-low",
+        "age-related",
+        "cognitive-dyslexia"
+      ]
+    },
+    {
+      "sc": "1.4.10",
+      "needs": [
+        "vision-low",
+        "age-related",
+        "motor-dexterity",
+        "situational"
+      ]
+    },
+    {
+      "sc": "1.4.11",
+      "needs": [
+        "vision-low",
+        "vision-contrast",
+        "vision-color",
+        "age-related"
+      ]
+    },
+    {
+      "sc": "1.4.12",
+      "needs": [
+        "vision-low",
+        "cognitive-dyslexia",
+        "cognitive-language",
+        "age-related"
+      ]
+    },
+    {
+      "sc": "1.4.13",
+      "needs": [
+        "vision-low",
+        "motor-tremor",
+        "motor-dexterity",
+        "vision-blind",
+        "cognitive-attention"
+      ]
+    },
+    {
+      "sc": "2.1.1",
+      "needs": [
+        "vision-blind",
+        "deafblind",
+        "motor-dexterity",
+        "motor-paralysis",
+        "motor-tremor",
+        "speech-unable"
+      ]
+    },
+    {
+      "sc": "2.1.2",
+      "needs": [
+        "vision-blind",
+        "deafblind",
+        "motor-dexterity",
+        "motor-paralysis"
+      ]
+    },
+    {
+      "sc": "2.2.1",
+      "needs": [
+        "cognitive-memory",
+        "cognitive-executive",
+        "motor-dexterity",
+        "motor-fatigue",
+        "age-related"
+      ]
+    },
+    {
+      "sc": "2.2.2",
+      "needs": [
+        "cognitive-attention",
+        "neuro-vestibular",
+        "neuro-photosensitive",
+        "vision-low",
+        "cognitive-dyslexia"
+      ]
+    },
+    {
+      "sc": "2.3.1",
+      "needs": [
+        "neuro-photosensitive"
+      ]
+    },
+    {
+      "sc": "2.3.3",
+      "needs": [
+        "neuro-vestibular",
+        "cognitive-attention"
+      ]
+    },
+    {
+      "sc": "2.4.1",
+      "needs": [
+        "vision-blind",
+        "motor-dexterity",
+        "motor-fatigue",
+        "deafblind"
+      ]
+    },
+    {
+      "sc": "2.4.2",
+      "needs": [
+        "vision-blind",
+        "cognitive-memory",
+        "cognitive-executive"
+      ]
+    },
+    {
+      "sc": "2.4.3",
+      "needs": [
+        "vision-blind",
+        "deafblind",
+        "motor-dexterity",
+        "cognitive-attention"
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "needs": [
+        "vision-blind",
+        "vision-low",
+        "cognitive-language",
+        "cognitive-executive"
+      ]
+    },
+    {
+      "sc": "2.4.6",
+      "needs": [
+        "vision-blind",
+        "cognitive-language",
+        "cognitive-executive"
+      ]
+    },
+    {
+      "sc": "2.4.7",
+      "needs": [
+        "vision-low",
+        "motor-dexterity",
+        "motor-paralysis",
+        "cognitive-attention",
+        "age-related"
+      ]
+    },
+    {
+      "sc": "2.4.11",
+      "needs": [
+        "vision-low",
+        "motor-dexterity",
+        "cognitive-attention"
+      ]
+    },
+    {
+      "sc": "2.5.3",
+      "needs": [
+        "speech-unable",
+        "motor-dexterity",
+        "vision-blind"
+      ]
+    },
+    {
+      "sc": "2.5.4",
+      "needs": [
+        "motor-dexterity",
+        "motor-tremor",
+        "motor-paralysis",
+        "situational"
+      ]
+    },
+    {
+      "sc": "2.5.7",
+      "needs": [
+        "motor-dexterity",
+        "motor-tremor",
+        "motor-paralysis",
+        "age-related"
+      ]
+    },
+    {
+      "sc": "2.5.8",
+      "needs": [
+        "motor-tremor",
+        "motor-dexterity",
+        "age-related",
+        "vision-low",
+        "situational"
+      ]
+    },
+    {
+      "sc": "3.1.1",
+      "needs": [
+        "vision-blind",
+        "deafblind",
+        "cognitive-language",
+        "cognitive-dyslexia"
+      ]
+    },
+    {
+      "sc": "3.1.2",
+      "needs": [
+        "vision-blind",
+        "cognitive-language",
+        "cognitive-dyslexia"
+      ]
+    },
+    {
+      "sc": "3.2.2",
+      "needs": [
+        "cognitive-attention",
+        "cognitive-executive",
+        "vision-blind",
+        "motor-dexterity"
+      ]
+    },
+    {
+      "sc": "3.3.1",
+      "needs": [
+        "cognitive-language",
+        "cognitive-executive",
+        "vision-blind",
+        "vision-color"
+      ]
+    },
+    {
+      "sc": "3.3.2",
+      "needs": [
+        "cognitive-language",
+        "cognitive-memory",
+        "vision-blind",
+        "vision-color"
+      ]
+    },
+    {
+      "sc": "3.3.7",
+      "needs": [
+        "cognitive-memory",
+        "motor-fatigue",
+        "motor-dexterity",
+        "cognitive-executive"
+      ]
+    },
+    {
+      "sc": "3.3.8",
+      "needs": [
+        "cognitive-memory",
+        "cognitive-executive",
+        "motor-dexterity",
+        "speech-unable"
+      ]
+    },
+    {
+      "sc": "4.1.2",
+      "needs": [
+        "vision-blind",
+        "deafblind",
+        "motor-dexterity",
+        "speech-unable",
+        "cognitive-executive"
+      ]
+    },
+    {
+      "sc": "4.1.3",
+      "needs": [
+        "vision-blind",
+        "deafblind",
+        "cognitive-attention",
+        "vision-low"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<!--
+  link_color_only — broken
+  WCAG: 1.4.1
+  check: link-color-only
+  needs: vision-color, vision-low
+  A link inside a paragraph, distinguished from surrounding text only by colour. WCAG needs a second cue, or 3:1 contrast against the surrounding text plus a cue on hover and focus.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>link_color_only — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>link_color_only — broken</h1>
+<p>A link inside a paragraph, distinguished from surrounding text only by colour. WCAG needs a second cue, or 3:1 contrast against the surrounding text plus a cue on hover and focus.</p><hr><style>.ln{color:#2a6ebb;text-decoration:none}</style>
+<p>Baggage limits are listed in the <a href="#f" class="ln">fare conditions</a> for your ticket.</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

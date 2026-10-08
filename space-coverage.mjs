@@ -9,7 +9,7 @@ import path from 'node:path';
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
 const tax = (n) => JSON.parse(fs.readFileSync(path.join(ROOT, 'taxonomy', `${n}.json`), 'utf8'));
 
-const FAMILIES = ['catalog.json', 'delivery.json', 'patterns.json'];
+const FAMILIES = ['catalog.json', 'delivery.json', 'patterns.json', 'color-vision.json'];
 const cases = FAMILIES
   .map((f) => path.join(ROOT, f)).filter(fs.existsSync)
   .flatMap((f) => JSON.parse(fs.readFileSync(f, 'utf8')).cases);

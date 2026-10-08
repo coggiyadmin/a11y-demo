@@ -1,0 +1,24 @@
+<!--
+  placeholder_contrast — broken
+  WCAG: 1.4.3
+  check: placeholder-contrast
+  needs: vision-low, vision-contrast, age-related
+  Placeholder at #bbb on white is about 1.9:1 — below the 4.5:1 minimum — and here it is the only labelling the field has.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>placeholder_contrast — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>placeholder_contrast — broken</h1>
+<p>Placeholder at #bbb on white is about 1.9:1 — below the 4.5:1 minimum — and here it is the only labelling the field has.</p><hr><style>.ph::placeholder{color:#bbb}</style>
+<input class="ph" placeholder="Departure airport">
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

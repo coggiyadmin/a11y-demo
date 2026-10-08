@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Colour-vision simulation</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Colour-vision simulation</h1>
+<p>Each fixture rendered through protanopia, deuteranopia, tritanopia and
+   achromatopsia filters. Open a broken fixture in a filtered frame and ask whether
+   the information survives. If it does not, colour was the only channel.</p>
+<svg width="0" height="0" aria-hidden="true" focusable="false"><defs>
+  <filter id="protanopia"><feColorMatrix type="matrix" values="
+    0.567 0.433 0     0 0
+    0.558 0.442 0     0 0
+    0     0.242 0.758 0 0
+    0     0     0     1 0"/></filter>
+  <filter id="deuteranopia"><feColorMatrix type="matrix" values="
+    0.625 0.375 0     0 0
+    0.70  0.30  0     0 0
+    0     0.30  0.70  0 0
+    0     0     0     1 0"/></filter>
+  <filter id="tritanopia"><feColorMatrix type="matrix" values="
+    0.95  0.05  0     0 0
+    0     0.433 0.567 0 0
+    0     0.475 0.525 0 0
+    0     0     0     1 0"/></filter>
+  <filter id="achromatopsia"><feColorMatrix type="matrix" values="
+    0.299 0.587 0.114 0 0
+    0.299 0.587 0.114 0 0
+    0.299 0.587 0.114 0 0
+    0     0     0     1 0"/></filter>
+</defs></svg>
+<style>
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem}
+  .grid figure{margin:0}
+  .grid iframe{height:16rem}
+  .p{filter:url(#protanopia)} .d{filter:url(#deuteranopia)}
+  .t{filter:url(#tritanopia)} .a{filter:url(#achromatopsia)}
+</style>
+<div class="grid">
+  <figure>
+    <figcaption>Unfiltered</figcaption>
+    <iframe class="" src="./status_color_only.html" title="Status fixture, unfiltered"></iframe>
+  </figure>
+  <figure>
+    <figcaption>Protanopia</figcaption>
+    <iframe class="p" src="./status_color_only.html" title="Status fixture, protanopia"></iframe>
+  </figure>
+  <figure>
+    <figcaption>Deuteranopia</figcaption>
+    <iframe class="d" src="./status_color_only.html" title="Status fixture, deuteranopia"></iframe>
+  </figure>
+  <figure>
+    <figcaption>Tritanopia</figcaption>
+    <iframe class="t" src="./status_color_only.html" title="Status fixture, tritanopia"></iframe>
+  </figure>
+  <figure>
+    <figcaption>Achromatopsia</figcaption>
+    <iframe class="a" src="./status_color_only.html" title="Status fixture, achromatopsia"></iframe>
+  </figure>
+</div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

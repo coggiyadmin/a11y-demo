@@ -1,0 +1,24 @@
+<!--
+  disabled_state — correct
+  WCAG: 1.4.1
+  check: placeholder-contrast
+  needs: vision-color, vision-contrast, cognitive-executive
+  Genuinely disabled, so the state is exposed, plus text explaining why.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>disabled_state — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>disabled_state — correct</h1>
+<p>Genuinely disabled, so the state is exposed, plus text explaining why.</p><hr><button type="button" disabled aria-describedby="why">Continue</button>
+<p id="why">Select a departure date before continuing.</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

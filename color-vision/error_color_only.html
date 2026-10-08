@@ -1,0 +1,25 @@
+<!--
+  error_color_only — broken
+  WCAG: 1.4.1, 3.3.1
+  check: error-color-only
+  needs: vision-color, vision-blind, cognitive-language
+  The only signal that this field is wrong is that its border and message turned red. Remove colour and the page says nothing is wrong.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>error_color_only — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>error_color_only — broken</h1>
+<p>The only signal that this field is wrong is that its border and message turned red. Remove colour and the page says nothing is wrong.</p><hr><style>.bad{border:2px solid #d00}.msg{color:#d00}</style>
+<form><label for="a1">Email</label><input id="a1" class="bad" value="not-an-email">
+<p class="msg">not-an-email</p></form>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "note": "Specific checks for colour-vision deficiency. A contrast-ratio test does not catch any of these: two colours can have ample contrast against the background and still be indistinguishable from each other.",
+  "values": [
+    {
+      "id": "error-color-only",
+      "label": "Error, status or selection indicated by colour alone",
+      "automatable": "partial"
+    },
+    {
+      "id": "red-green",
+      "label": "Red/green or blue/purple pairs that are hard to distinguish",
+      "automatable": "partial"
+    },
+    {
+      "id": "chart-series",
+      "label": "Chart series differing only by colour",
+      "automatable": false
+    },
+    {
+      "id": "link-color-only",
+      "label": "Links distinguished from body text only by colour",
+      "automatable": true
+    },
+    {
+      "id": "placeholder-contrast",
+      "label": "Placeholder and disabled-state contrast",
+      "automatable": true
+    },
+    {
+      "id": "interactive-states",
+      "label": "Hover, focus, selected and active states",
+      "automatable": "partial"
+    },
+    {
+      "id": "simulation",
+      "label": "Simulated protanopia, deuteranopia, tritanopia, achromatopsia",
+      "automatable": true
+    },
+    {
+      "id": "without-color",
+      "label": "Patterns, labels, shapes or icons remain understandable without colour",
+      "automatable": false
+    }
+  ]
+}

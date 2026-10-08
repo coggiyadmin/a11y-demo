@@ -1,0 +1,26 @@
+<!--
+  status_color_only — correct
+  WCAG: 1.4.1
+  check: error-color-only
+  needs: vision-color, vision-blind
+  Shape and text carry the status; colour is redundant reinforcement.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>status_color_only — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>status_color_only — correct</h1>
+<p>Shape and text carry the status; colour is redundant reinforcement.</p><hr><style>.dot{display:inline-block;width:14px;height:14px}
+.on{background:#1a6b1a;border-radius:50%}.off{background:#a11;clip-path:polygon(50% 0,100% 100%,0 100%)}</style>
+<ul><li><span class="dot on" aria-hidden="true"></span> BA117 — On time</li>
+<li><span class="dot off" aria-hidden="true"></span> BA118 — Cancelled</li></ul>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

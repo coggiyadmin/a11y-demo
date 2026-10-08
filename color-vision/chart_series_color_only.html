@@ -1,0 +1,27 @@
+<!--
+  chart_series_color_only — broken
+  WCAG: 1.4.1
+  check: chart-series
+  needs: vision-color, vision-blind, cognitive-language
+  Two series separated only by hue, with a colour-keyed legend. Automation can flag the pattern; whether the series remain readable is a judgement call — this is a cannot-tell case, not an automatic fail.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>chart_series_color_only — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>chart_series_color_only — broken</h1>
+<p>Two series separated only by hue, with a colour-keyed legend. Automation can flag the pattern; whether the series remain readable is a judgement call — this is a cannot-tell case, not an automatic fail.</p><hr><svg width="100%" viewBox="0 0 300 120" role="img" aria-label="Bookings by month">
+<polyline fill="none" stroke="#c22" stroke-width="3" points="10,100 70,70 130,80 190,40 250,30"/>
+<polyline fill="none" stroke="#2a2" stroke-width="3" points="10,110 70,95 130,60 190,75 250,55"/>
+</svg>
+<p><span style="color:#c22">■</span> Economy &nbsp; <span style="color:#2a2">■</span> Business</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!--
+  selection_color_only — broken
+  WCAG: 1.4.1, 4.1.2
+  check: interactive-states
+  needs: vision-color, vision-blind
+  The selected seat class is shown by background colour alone — no text, no checkmark, no aria-pressed or aria-selected.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>selection_color_only — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>selection_color_only — broken</h1>
+<p>The selected seat class is shown by background colour alone — no text, no checkmark, no aria-pressed or aria-selected.</p><hr><style>.opt{border:1px solid #999}.sel{background:#2a6ebb;color:#fff}</style>
+<div><span class="opt sel">Economy</span> <span class="opt">Business</span></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

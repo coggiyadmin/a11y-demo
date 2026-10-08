@@ -1,0 +1,27 @@
+<!--
+  error_color_only — correct
+  WCAG: 1.4.1, 3.3.1
+  check: error-color-only
+  needs: vision-color, vision-blind, cognitive-language
+  Colour is still used, but the error is also stated in text, carries an icon, and is programmatically associated with the field.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>error_color_only — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>error_color_only — correct</h1>
+<p>Colour is still used, but the error is also stated in text, carries an icon, and is programmatically associated with the field.</p><hr><style>.bad{border:2px solid #d00}.msg{color:#a00}</style>
+<form><label for="a2">Email</label>
+<input id="a2" class="bad" value="not-an-email" aria-invalid="true" aria-describedby="a2e">
+<p class="msg" id="a2e"><span aria-hidden="true">⚠</span> Error: enter an address in the
+format name@example.com.</p></form>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>
