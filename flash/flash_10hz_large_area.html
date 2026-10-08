@@ -1,0 +1,47 @@
+<!--
+  flash_10hz_large_area — broken
+  WCAG: 2.3.1, 2.3.2
+  expected outcome: fail
+  SAFETY: nothing flashes on load. Motion starts only on a button press, stops after
+  3 seconds, and is disabled under prefers-reduced-motion. The keyframes are in the
+  document while dormant, so the defect is detectable without playing it.
+  A full-width panel alternating black and white ten times a second. That is well above three flashes per second, with a luminance change far over 10%, across most of the viewport. The frequency alone is machine-detectable from the keyframes and the animation duration.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>flash_10hz_large_area — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+@keyframes f10 { 0%,49% { background:#000 } 50%,100% { background:#fff } }
+/* 0.1s cycle = 10 flashes per second. 2.3.1 allows at most 3. */
+#stage.run { animation: f10 0.1s steps(1) infinite; }
+#stage { height: 40vh; background:#444; border:1px solid #767676; }
+@media (prefers-reduced-motion: reduce) { #stage.run { animation: none } }
+</style>
+</head>
+<body><main><h1>flash_10hz_large_area — broken</h1>
+<p>A full-width panel alternating black and white ten times a second. That is well above three flashes per second, with a luminance change far over 10%, across most of the viewport. The frequency alone is machine-detectable from the keyframes and the animation duration.</p><hr><div role="alert" style="border:3px solid #a11;padding:1rem;margin:1rem 0">
+  <h2 style="margin-top:0">Seizure warning</h2>
+  <p><strong>This page can produce flashing light.</strong> Nothing flashes until you press
+     the button below. It stops on its own after 3 seconds, and does not run at all if your
+     system is set to reduce motion.</p>
+  <p>If you have photosensitive epilepsy or are unsure, do not press it. The defect is in the
+     page source either way — you do not need to see it to test for it.</p>
+</div><div id="stage"></div><button type="button" id="go">Start 10Hz flash for 3 seconds</button>
+<script>
+document.getElementById('go').addEventListener('click', function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.getElementById('note').textContent =
+      'Not started: your system is set to reduce motion.';
+    return;
+  }
+  var el = document.getElementById('stage');
+  el.classList.add('run');
+  setTimeout(function () { el.classList.remove('run'); }, 3000);
+});
+</script>
+<p id="note" role="status" aria-live="polite"></p>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

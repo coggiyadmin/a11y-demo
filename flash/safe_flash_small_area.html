@@ -1,0 +1,23 @@
+<!--
+  flash_small_area — correct
+  WCAG: 2.3.1
+  expected outcome: pass
+  SAFETY: nothing flashes on load. Motion starts only on a button press, stops after
+  3 seconds, and is disabled under prefers-reduced-motion. The keyframes are in the
+  document while dormant, so the defect is detectable without playing it.
+  The same small element, not flashing at all.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>flash_small_area — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+#stage { width:64px; height:64px; background:#30556e; border:1px solid #767676; }
+</style>
+</head>
+<body><main><h1>flash_small_area — correct</h1>
+<p>The same small element, not flashing at all.</p><hr><div id="stage"></div><p>Static. Nothing flashes.</p>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

@@ -1,0 +1,47 @@
+<!--
+  red_flash — broken
+  WCAG: 2.3.1
+  expected outcome: fail
+  SAFETY: nothing flashes on load. Motion starts only on a button press, stops after
+  3 seconds, and is disabled under prefers-reduced-motion. The keyframes are in the
+  document while dormant, so the defect is detectable without playing it.
+  Saturated red alternating with black at 6Hz. The red flash threshold is separate from, and stricter than, the general one: transitions to and from saturated red are treated differently because they carry additional risk.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>red_flash — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+@keyframes fr { 0%,49% { background:#000 } 50%,100% { background:#f00 } }
+/* saturated red, 6 flashes per second */
+#stage.run { animation: fr 0.1666s steps(1) infinite; }
+#stage { height: 30vh; background:#444; border:1px solid #767676; }
+@media (prefers-reduced-motion: reduce) { #stage.run { animation: none } }
+</style>
+</head>
+<body><main><h1>red_flash — broken</h1>
+<p>Saturated red alternating with black at 6Hz. The red flash threshold is separate from, and stricter than, the general one: transitions to and from saturated red are treated differently because they carry additional risk.</p><hr><div role="alert" style="border:3px solid #a11;padding:1rem;margin:1rem 0">
+  <h2 style="margin-top:0">Seizure warning</h2>
+  <p><strong>This page can produce flashing light.</strong> Nothing flashes until you press
+     the button below. It stops on its own after 3 seconds, and does not run at all if your
+     system is set to reduce motion.</p>
+  <p>If you have photosensitive epilepsy or are unsure, do not press it. The defect is in the
+     page source either way — you do not need to see it to test for it.</p>
+</div><div id="stage"></div><button type="button" id="go">Start red flash for 3 seconds</button>
+<script>
+document.getElementById('go').addEventListener('click', function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.getElementById('note').textContent =
+      'Not started: your system is set to reduce motion.';
+    return;
+  }
+  var el = document.getElementById('stage');
+  el.classList.add('run');
+  setTimeout(function () { el.classList.remove('run'); }, 3000);
+});
+</script>
+<p id="note" role="status" aria-live="polite"></p>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

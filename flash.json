@@ -1,0 +1,296 @@
+{
+  "description": "Flash and seizure thresholds. Every fixture is gated: no motion on load, stops after 3 seconds, disabled under prefers-reduced-motion. The keyframes remain in the document while dormant so the defect is detectable without playing it.",
+  "safety": "A fixture that genuinely violates 2.3.1 can trigger a seizure. Nothing here autoplays. Do not remove the gating.",
+  "threshold_note": "2.3.1 permits content at or below 3 flashes per second, OR under both the general and red flash thresholds. The general threshold is defined over the visual field, which depends on screen size and viewing distance — not knowable from the page. Area-dependent cases are therefore cannot-tell.",
+  "generated": "2026-10-08",
+  "counts": {
+    "pairs": 5,
+    "cases": 10,
+    "machine_decidable": 4,
+    "cannot_tell": 1
+  },
+  "cases": [
+    {
+      "id": "flash-flash_10hz_large_area",
+      "mode": "tp",
+      "path": "flash/flash_10hz_large_area.html",
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "visual",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "pointer",
+        "keyboard"
+      ],
+      "user_needs": [
+        "neuro-photosensitive"
+      ],
+      "min_criteria": {
+        "2.3.1": 1,
+        "2.3.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "confidence": "probable",
+      "safety": "gated — no motion on load, stops after 3s, honours prefers-reduced-motion",
+      "notes": "A full-width panel alternating black and white ten times a second. That is well above three flashes per second, with a luminance change far over 10%, across most of the viewport. The frequency alone is machine-detectable from the keyframes and the animation duration."
+    },
+    {
+      "id": "flash-safe_flash_10hz_large_area",
+      "mode": "safe",
+      "path": "flash/safe_flash_10hz_large_area.html",
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "visual",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "pointer",
+        "keyboard"
+      ],
+      "user_needs": [
+        "neuro-photosensitive"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.3.1",
+        "2.3.2"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "safety": "gated — no motion on load, stops after 3s, honours prefers-reduced-motion",
+      "notes": "The same panel at two flashes per second — at or below the three-per-second limit, so it passes 2.3.1 regardless of area."
+    },
+    {
+      "id": "flash-red_flash",
+      "mode": "tp",
+      "path": "flash/red_flash.html",
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "visual",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "pointer",
+        "keyboard"
+      ],
+      "user_needs": [
+        "neuro-photosensitive"
+      ],
+      "min_criteria": {
+        "2.3.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "confidence": "probable",
+      "safety": "gated — no motion on load, stops after 3s, honours prefers-reduced-motion",
+      "notes": "Saturated red alternating with black at 6Hz. The red flash threshold is separate from, and stricter than, the general one: transitions to and from saturated red are treated differently because they carry additional risk."
+    },
+    {
+      "id": "flash-safe_red_flash",
+      "mode": "safe",
+      "path": "flash/safe_red_flash.html",
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "visual",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "pointer",
+        "keyboard"
+      ],
+      "user_needs": [
+        "neuro-photosensitive"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.3.1"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "safety": "gated — no motion on load, stops after 3s, honours prefers-reduced-motion",
+      "notes": "A slow fade between unsaturated colours — no opposing transition at speed, and no saturated red."
+    },
+    {
+      "id": "flash-flash_small_area",
+      "mode": "tp",
+      "path": "flash/flash_small_area.html",
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "visual",
+        "guided-manual"
+      ],
+      "input_at": [
+        "pointer",
+        "keyboard"
+      ],
+      "user_needs": [
+        "neuro-photosensitive"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "expected_outcome": "cannot-tell",
+      "confidence": "possible",
+      "safety": "gated — no motion on load, stops after 3s, honours prefers-reduced-motion",
+      "notes": "A SMALL element flashing at 8Hz. This is the case a tool cannot decide. Frequency is over the limit, but 2.3.1 also permits content under the general flash threshold, which is defined over a proportion of the VISUAL FIELD — and that depends on screen size and viewing distance, which the page cannot know. A tool can measure the fraction of the viewport; it cannot measure the fraction of the visual field. The honest outcome is cannot-tell, not pass and not fail."
+    },
+    {
+      "id": "flash-safe_flash_small_area",
+      "mode": "safe",
+      "path": "flash/safe_flash_small_area.html",
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "visual",
+        "guided-manual"
+      ],
+      "input_at": [
+        "pointer",
+        "keyboard"
+      ],
+      "user_needs": [
+        "neuro-photosensitive"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.3.1"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "safety": "gated — no motion on load, stops after 3s, honours prefers-reduced-motion",
+      "notes": "The same small element, not flashing at all."
+    },
+    {
+      "id": "flash-three_flashes_exactly",
+      "mode": "tp",
+      "path": "flash/three_flashes_exactly.html",
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "visual",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "pointer",
+        "keyboard"
+      ],
+      "user_needs": [
+        "neuro-photosensitive"
+      ],
+      "min_criteria": {
+        "2.3.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "confidence": "probable",
+      "safety": "gated — no motion on load, stops after 3s, honours prefers-reduced-motion",
+      "notes": "Three high-contrast flashes in one second. This passes 2.3.1, which allows up to three per second — and fails 2.3.2 (AAA), which allows no more than three flashes in any one-second period with no threshold exemption at all. A corpus that only tests Level A never distinguishes the two."
+    },
+    {
+      "id": "flash-safe_three_flashes_exactly",
+      "mode": "safe",
+      "path": "flash/safe_three_flashes_exactly.html",
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "visual",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "pointer",
+        "keyboard"
+      ],
+      "user_needs": [
+        "neuro-photosensitive"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.3.2"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "safety": "gated — no motion on load, stops after 3s, honours prefers-reduced-motion",
+      "notes": "A single transition, which is below any flash threshold at any level."
+    },
+    {
+      "id": "flash-animation_from_interaction",
+      "mode": "tp",
+      "path": "flash/animation_from_interaction.html",
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "visual",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "pointer",
+        "keyboard"
+      ],
+      "user_needs": [
+        "neuro-vestibular",
+        "cognitive-attention"
+      ],
+      "min_criteria": {
+        "2.3.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "confidence": "definite",
+      "safety": "gated — no motion on load, stops after 3s, honours prefers-reduced-motion",
+      "notes": "A large parallax translation triggered by interaction, with no prefers-reduced-motion guard. 2.3.3 is about motion sickness rather than seizures, and the absence of the guard is machine-detectable — no judgement needed."
+    },
+    {
+      "id": "flash-safe_animation_from_interaction",
+      "mode": "safe",
+      "path": "flash/safe_animation_from_interaction.html",
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "visual",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "pointer",
+        "keyboard"
+      ],
+      "user_needs": [
+        "neuro-vestibular",
+        "cognitive-attention"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.3.3"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "safety": "gated — no motion on load, stops after 3s, honours prefers-reduced-motion",
+      "notes": "The same interaction, with motion removed under prefers-reduced-motion."
+    }
+  ]
+}

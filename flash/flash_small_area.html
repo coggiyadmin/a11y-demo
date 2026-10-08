@@ -1,0 +1,48 @@
+<!--
+  flash_small_area — broken
+  WCAG: 2.3.1
+  expected outcome: cannot-tell
+  SAFETY: nothing flashes on load. Motion starts only on a button press, stops after
+  3 seconds, and is disabled under prefers-reduced-motion. The keyframes are in the
+  document while dormant, so the defect is detectable without playing it.
+  A SMALL element flashing at 8Hz. This is the case a tool cannot decide. Frequency is over the limit, but 2.3.1 also permits content under the general flash threshold, which is defined over a proportion of the VISUAL FIELD — and that depends on screen size and viewing distance, which the page cannot know. A tool can measure the fraction of the viewport; it cannot measure the fraction of the visual field. The honest outcome is cannot-tell, not pass and not fail.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>flash_small_area — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+@keyframes f8 { 0%,49% { background:#000 } 50%,100% { background:#fff } }
+/* 8 flashes per second over a small area — area-dependent, so not machine-decidable */
+#stage.run { animation: f8 0.125s steps(1) infinite; }
+#stage { width:64px; height:64px; background:#444; border:1px solid #767676; }
+@media (prefers-reduced-motion: reduce) { #stage.run { animation: none } }
+</style>
+</head>
+<body><main><h1>flash_small_area — broken</h1>
+<p>A SMALL element flashing at 8Hz. This is the case a tool cannot decide. Frequency is over the limit, but 2.3.1 also permits content under the general flash threshold, which is defined over a proportion of the VISUAL FIELD — and that depends on screen size and viewing distance, which the page cannot know. A tool can measure the fraction of the viewport; it cannot measure the fraction of the visual field. The honest outcome is cannot-tell, not pass and not fail.</p><hr><div role="alert" style="border:3px solid #a11;padding:1rem;margin:1rem 0">
+  <h2 style="margin-top:0">Seizure warning</h2>
+  <p><strong>This page can produce flashing light.</strong> Nothing flashes until you press
+     the button below. It stops on its own after 3 seconds, and does not run at all if your
+     system is set to reduce motion.</p>
+  <p>If you have photosensitive epilepsy or are unsure, do not press it. The defect is in the
+     page source either way — you do not need to see it to test for it.</p>
+</div><div id="stage"></div><button type="button" id="go">Start small-area 8Hz flash for 3 seconds</button>
+<script>
+document.getElementById('go').addEventListener('click', function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.getElementById('note').textContent =
+      'Not started: your system is set to reduce motion.';
+    return;
+  }
+  var el = document.getElementById('stage');
+  el.classList.add('run');
+  setTimeout(function () { el.classList.remove('run'); }, 3000);
+});
+</script>
+<p id="note" role="status" aria-live="polite"></p>
+<p>A tool should report <code>cannot-tell</code> here and route it to a person, not guess.</p>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

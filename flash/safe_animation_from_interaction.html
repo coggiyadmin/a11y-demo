@@ -1,0 +1,41 @@
+<!--
+  animation_from_interaction — correct
+  WCAG: 2.3.3
+  expected outcome: pass
+  SAFETY: nothing flashes on load. Motion starts only on a button press, stops after
+  3 seconds, and is disabled under prefers-reduced-motion. The keyframes are in the
+  document while dormant, so the defect is detectable without playing it.
+  The same interaction, with motion removed under prefers-reduced-motion.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>animation_from_interaction — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+@keyframes slide2 { from { transform: translateX(-60vw) scale(1.4) } to { transform:none } }
+#stage.run { animation: slide2 0.6s ease-out; }
+#stage { height:30vh; background:#30556e; color:#fff; padding:1rem }
+@media (prefers-reduced-motion: reduce) {
+  #stage.run { animation: none }
+}
+</style>
+</head>
+<body><main><h1>animation_from_interaction — correct</h1>
+<p>The same interaction, with motion removed under prefers-reduced-motion.</p><hr><div id="stage">Seat map</div><button type="button" id="go">Trigger parallax</button>
+<script>
+document.getElementById('go').addEventListener('click', function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.getElementById('note').textContent =
+      'Not started: your system is set to reduce motion.';
+    return;
+  }
+  var el = document.getElementById('stage');
+  el.classList.add('run');
+  setTimeout(function () { el.classList.remove('run'); }, 3000);
+});
+</script>
+<p id="note" role="status" aria-live="polite"></p>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

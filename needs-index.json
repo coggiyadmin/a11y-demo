@@ -7,9 +7,9 @@
       "label": "Blindness",
       "group": "vision",
       "scenarios": 10,
-      "cases": 103,
-      "tp": 58,
-      "safe": 45,
+      "cases": 149,
+      "tp": 78,
+      "safe": 65,
       "criteria": [
         "1.1.1",
         "1.2.1",
@@ -18,14 +18,26 @@
         "1.2.5",
         "1.3.1",
         "1.4.1",
+        "1.4.11",
         "1.4.13",
         "1.4.2",
+        "1.4.3",
         "2.1.1",
+        "2.1.2",
         "2.2.1",
+        "2.4.1",
         "2.4.3",
+        "2.4.5",
+        "2.5.3",
         "3.1.1",
+        "3.1.2",
+        "3.2.3",
+        "3.2.4",
         "3.3.1",
         "3.3.2",
+        "3.3.4",
+        "3.3.7",
+        "3.3.8",
         "4.1.2",
         "4.1.3"
       ],
@@ -132,7 +144,53 @@
         "ui-states/timed-out.html",
         "ui-states/safe_timed-out.html",
         "ui-states/busy.html",
-        "ui-states/safe_busy.html"
+        "ui-states/safe_busy.html",
+        "journeys/booking/broken/index.html",
+        "journeys/booking/correct/index.html",
+        "journeys/signin/broken/index.html",
+        "journeys/signin/correct/index.html",
+        "journeys/destructive/broken/index.html",
+        "journeys/destructive/correct/index.html",
+        "journeys/consent/broken/index.html",
+        "journeys/consent/correct/index.html",
+        "journeys/navigate/broken/index.html",
+        "journeys/navigate/correct/index.html",
+        "journeys/signup/broken/index.html",
+        "journeys/signup/correct/index.html",
+        "scenarios/overlay_focus_trap.html",
+        "scenarios/safe_overlay_focus_trap.html",
+        "scenarios/async_validation.html",
+        "scenarios/safe_async_validation.html",
+        "scenarios/infinite_scroll.html",
+        "scenarios/safe_infinite_scroll.html",
+        "scenarios/data_dashboard.html",
+        "scenarios/safe_data_dashboard.html",
+        "scenarios/live_chat.html",
+        "scenarios/safe_live_chat.html",
+        "scenarios/forced_colors.html",
+        "scenarios/safe_forced_colors.html",
+        "scenarios/rtl_mixed_language.html",
+        "scenarios/safe_rtl_mixed_language.html",
+        "scenarios/label_in_name.html",
+        "scenarios/safe_label_in_name.html",
+        "scenarios/disabled_state.html",
+        "scenarios/safe_disabled_state.html",
+        "surfaces/email_table_layout.html",
+        "surfaces/safe_email_table_layout.html",
+        "surfaces/email_contrast_darkmode.html",
+        "surfaces/safe_email_contrast_darkmode.html",
+        "surfaces/epub_no_metadata.html",
+        "surfaces/safe_epub_no_metadata.html",
+        "surfaces/authoring_generates_bad_markup.html",
+        "surfaces/safe_authoring_generates_bad_markup.html",
+        "surfaces/chatbot_transcript.html",
+        "surfaces/safe_chatbot_transcript.html",
+        "guided/alt_text_appropriateness.html",
+        "guided/reading_order.html",
+        "guided/sensory_characteristics.html",
+        "guided/focus_order_meaning.html",
+        "guided/at_screen_reader_task.html",
+        "guided/ai_suggested_alt_review.html"
       ]
     },
     {
@@ -140,27 +198,35 @@
       "label": "Low vision",
       "group": "vision",
       "scenarios": 8,
-      "cases": 70,
-      "tp": 41,
-      "safe": 29,
+      "cases": 105,
+      "tp": 57,
+      "safe": 45,
       "criteria": [
         "1.1.1",
         "1.2.2",
         "1.2.3",
         "1.2.5",
         "1.3.1",
+        "1.3.4",
         "1.4.1",
+        "1.4.10",
+        "1.4.11",
+        "1.4.12",
         "1.4.13",
         "1.4.3",
         "1.4.4",
         "2.1.1",
         "2.2.1",
         "2.2.2",
+        "2.4.1",
         "2.4.11",
         "2.4.3",
         "2.4.7",
+        "2.5.5",
+        "2.5.8",
         "3.3.1",
         "3.3.2",
+        "3.3.4",
         "4.1.2",
         "4.1.3"
       ],
@@ -234,7 +300,42 @@
         "ui-states/timed-out.html",
         "ui-states/safe_timed-out.html",
         "ui-states/busy.html",
-        "ui-states/safe_busy.html"
+        "ui-states/safe_busy.html",
+        "journeys/destructive/broken/index.html",
+        "journeys/destructive/correct/index.html",
+        "journeys/consent/broken/index.html",
+        "journeys/consent/correct/index.html",
+        "scenarios/async_validation.html",
+        "scenarios/safe_async_validation.html",
+        "scenarios/infinite_scroll.html",
+        "scenarios/safe_infinite_scroll.html",
+        "scenarios/data_dashboard.html",
+        "scenarios/safe_data_dashboard.html",
+        "scenarios/live_chat.html",
+        "scenarios/safe_live_chat.html",
+        "scenarios/text_spacing.html",
+        "scenarios/safe_text_spacing.html",
+        "scenarios/forced_colors.html",
+        "scenarios/safe_forced_colors.html",
+        "scenarios/orientation_lock.html",
+        "scenarios/safe_orientation_lock.html",
+        "scenarios/touch_targets.html",
+        "scenarios/safe_touch_targets.html",
+        "scenarios/disabled_state.html",
+        "scenarios/safe_disabled_state.html",
+        "surfaces/email_table_layout.html",
+        "surfaces/safe_email_table_layout.html",
+        "surfaces/email_contrast_darkmode.html",
+        "surfaces/safe_email_contrast_darkmode.html",
+        "surfaces/epub_no_metadata.html",
+        "surfaces/safe_epub_no_metadata.html",
+        "surfaces/authoring_generates_bad_markup.html",
+        "surfaces/safe_authoring_generates_bad_markup.html",
+        "surfaces/chatbot_transcript.html",
+        "surfaces/safe_chatbot_transcript.html",
+        "guided/alt_text_appropriateness.html",
+        "guided/sensory_characteristics.html",
+        "guided/ai_suggested_alt_review.html"
       ]
     },
     {
@@ -242,16 +343,21 @@
       "label": "Colour blindness",
       "group": "vision",
       "scenarios": 5,
-      "cases": 31,
-      "tp": 16,
-      "safe": 15,
+      "cases": 44,
+      "tp": 22,
+      "safe": 21,
       "criteria": [
         "1.3.1",
         "1.4.1",
+        "1.4.11",
         "1.4.3",
+        "2.1.1",
         "2.4.3",
         "3.3.1",
         "3.3.2",
+        "3.3.4",
+        "3.3.7",
+        "3.3.8",
         "4.1.2",
         "4.1.3"
       ],
@@ -286,7 +392,20 @@
         "ui-states/offline.html",
         "ui-states/safe_offline.html",
         "ui-states/permission-denied.html",
-        "ui-states/safe_permission-denied.html"
+        "ui-states/safe_permission-denied.html",
+        "journeys/signin/broken/index.html",
+        "journeys/signin/correct/index.html",
+        "journeys/signup/broken/index.html",
+        "journeys/signup/correct/index.html",
+        "scenarios/async_validation.html",
+        "scenarios/safe_async_validation.html",
+        "scenarios/forced_colors.html",
+        "scenarios/safe_forced_colors.html",
+        "scenarios/disabled_state.html",
+        "scenarios/safe_disabled_state.html",
+        "surfaces/email_contrast_darkmode.html",
+        "surfaces/safe_email_contrast_darkmode.html",
+        "guided/sensory_characteristics.html"
       ]
     },
     {
@@ -294,11 +413,12 @@
       "label": "Contrast sensitivity",
       "group": "vision",
       "scenarios": 4,
-      "cases": 16,
-      "tp": 8,
-      "safe": 8,
+      "cases": 22,
+      "tp": 11,
+      "safe": 11,
       "criteria": [
         "1.4.1",
+        "1.4.11",
         "1.4.3",
         "3.3.1",
         "3.3.2",
@@ -320,7 +440,13 @@
         "color-vision/disabled_state.html",
         "color-vision/safe_disabled_state.html",
         "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html"
+        "color-vision/safe_required_color_only.html",
+        "scenarios/forced_colors.html",
+        "scenarios/safe_forced_colors.html",
+        "scenarios/disabled_state.html",
+        "scenarios/safe_disabled_state.html",
+        "surfaces/email_contrast_darkmode.html",
+        "surfaces/safe_email_contrast_darkmode.html"
       ]
     },
     {
@@ -328,7 +454,7 @@
       "label": "Deafness",
       "group": "hearing",
       "scenarios": 6,
-      "cases": 9,
+      "cases": 10,
       "tp": 4,
       "safe": 5,
       "criteria": [
@@ -345,7 +471,8 @@
         "media/audio_no_transcript.html",
         "media/safe_audio_no_transcript.html",
         "media/captions_unlabelled_track.html",
-        "media/safe_captions_unlabelled_track.html"
+        "media/safe_captions_unlabelled_track.html",
+        "guided/caption_quality.html"
       ]
     },
     {
@@ -353,7 +480,7 @@
       "label": "Hard of hearing",
       "group": "hearing",
       "scenarios": 4,
-      "cases": 11,
+      "cases": 12,
       "tp": 5,
       "safe": 6,
       "criteria": [
@@ -373,7 +500,8 @@
         "media/autoplay_no_control.html",
         "media/safe_autoplay_no_control.html",
         "media/captions_unlabelled_track.html",
-        "media/safe_captions_unlabelled_track.html"
+        "media/safe_captions_unlabelled_track.html",
+        "guided/caption_quality.html"
       ]
     },
     {
@@ -381,9 +509,9 @@
       "label": "Deafblindness",
       "group": "multiple",
       "scenarios": 6,
-      "cases": 93,
-      "tp": 52,
-      "safe": 41,
+      "cases": 127,
+      "tp": 68,
+      "safe": 57,
       "criteria": [
         "1.1.1",
         "1.2.1",
@@ -394,11 +522,20 @@
         "1.4.1",
         "1.4.13",
         "2.1.1",
+        "2.1.2",
         "2.2.1",
+        "2.4.1",
         "2.4.3",
+        "2.4.5",
         "3.1.1",
+        "3.1.2",
+        "3.2.3",
+        "3.2.4",
         "3.3.1",
         "3.3.2",
+        "3.3.4",
+        "3.3.7",
+        "3.3.8",
         "4.1.2",
         "4.1.3"
       ],
@@ -495,7 +632,41 @@
         "ui-states/timed-out.html",
         "ui-states/safe_timed-out.html",
         "ui-states/busy.html",
-        "ui-states/safe_busy.html"
+        "ui-states/safe_busy.html",
+        "journeys/booking/broken/index.html",
+        "journeys/booking/correct/index.html",
+        "journeys/signin/broken/index.html",
+        "journeys/signin/correct/index.html",
+        "journeys/destructive/broken/index.html",
+        "journeys/destructive/correct/index.html",
+        "journeys/consent/broken/index.html",
+        "journeys/consent/correct/index.html",
+        "journeys/navigate/broken/index.html",
+        "journeys/navigate/correct/index.html",
+        "scenarios/overlay_focus_trap.html",
+        "scenarios/safe_overlay_focus_trap.html",
+        "scenarios/async_validation.html",
+        "scenarios/safe_async_validation.html",
+        "scenarios/infinite_scroll.html",
+        "scenarios/safe_infinite_scroll.html",
+        "scenarios/data_dashboard.html",
+        "scenarios/safe_data_dashboard.html",
+        "scenarios/live_chat.html",
+        "scenarios/safe_live_chat.html",
+        "scenarios/rtl_mixed_language.html",
+        "scenarios/safe_rtl_mixed_language.html",
+        "scenarios/disabled_state.html",
+        "scenarios/safe_disabled_state.html",
+        "surfaces/email_table_layout.html",
+        "surfaces/safe_email_table_layout.html",
+        "surfaces/epub_no_metadata.html",
+        "surfaces/safe_epub_no_metadata.html",
+        "surfaces/authoring_generates_bad_markup.html",
+        "surfaces/safe_authoring_generates_bad_markup.html",
+        "surfaces/chatbot_transcript.html",
+        "surfaces/safe_chatbot_transcript.html",
+        "guided/reading_order.html",
+        "guided/at_screen_reader_task.html"
       ]
     },
     {
@@ -503,21 +674,38 @@
       "label": "Limited dexterity",
       "group": "motor",
       "scenarios": 8,
-      "cases": 62,
-      "tp": 38,
-      "safe": 24,
+      "cases": 97,
+      "tp": 55,
+      "safe": 41,
       "criteria": [
         "1.1.1",
         "1.3.1",
+        "1.3.4",
         "1.4.1",
+        "1.4.10",
         "1.4.13",
         "2.1.1",
+        "2.1.2",
         "2.2.1",
+        "2.2.6",
+        "2.4.1",
         "2.4.11",
         "2.4.3",
+        "2.4.5",
         "2.4.7",
+        "2.5.1",
+        "2.5.3",
+        "2.5.4",
+        "2.5.5",
+        "2.5.7",
+        "2.5.8",
+        "3.2.3",
+        "3.2.4",
         "3.3.1",
         "3.3.2",
+        "3.3.4",
+        "3.3.7",
+        "3.3.8",
         "4.1.2",
         "4.1.3"
       ],
@@ -583,7 +771,42 @@
         "ui-states/error.html",
         "ui-states/safe_error.html",
         "ui-states/timed-out.html",
-        "ui-states/safe_timed-out.html"
+        "ui-states/safe_timed-out.html",
+        "journeys/booking/broken/index.html",
+        "journeys/booking/correct/index.html",
+        "journeys/signin/broken/index.html",
+        "journeys/signin/correct/index.html",
+        "journeys/destructive/broken/index.html",
+        "journeys/destructive/correct/index.html",
+        "journeys/consent/broken/index.html",
+        "journeys/consent/correct/index.html",
+        "journeys/navigate/broken/index.html",
+        "journeys/navigate/correct/index.html",
+        "journeys/signup/broken/index.html",
+        "journeys/signup/correct/index.html",
+        "journeys/checkout/broken/index.html",
+        "journeys/checkout/correct/index.html",
+        "journeys/session/broken/index.html",
+        "journeys/session/correct/index.html",
+        "scenarios/overlay_focus_trap.html",
+        "scenarios/safe_overlay_focus_trap.html",
+        "scenarios/infinite_scroll.html",
+        "scenarios/safe_infinite_scroll.html",
+        "scenarios/orientation_lock.html",
+        "scenarios/safe_orientation_lock.html",
+        "scenarios/label_in_name.html",
+        "scenarios/safe_label_in_name.html",
+        "scenarios/dragging_required.html",
+        "scenarios/safe_dragging_required.html",
+        "scenarios/touch_targets.html",
+        "scenarios/safe_touch_targets.html",
+        "scenarios/disabled_state.html",
+        "scenarios/safe_disabled_state.html",
+        "scenarios/motion_actuation.html",
+        "scenarios/safe_motion_actuation.html",
+        "surfaces/chatbot_transcript.html",
+        "surfaces/safe_chatbot_transcript.html",
+        "guided/focus_order_meaning.html"
       ]
     },
     {
@@ -591,16 +814,24 @@
       "label": "Tremor",
       "group": "motor",
       "scenarios": 4,
-      "cases": 43,
-      "tp": 28,
-      "safe": 15,
+      "cases": 55,
+      "tp": 34,
+      "safe": 21,
       "criteria": [
         "1.1.1",
         "1.3.1",
         "1.4.13",
         "2.1.1",
         "2.4.3",
-        "4.1.2"
+        "2.5.1",
+        "2.5.4",
+        "2.5.5",
+        "2.5.7",
+        "2.5.8",
+        "3.3.1",
+        "3.3.8",
+        "4.1.2",
+        "4.1.3"
       ],
       "fixtures": [
         "keyboard/div_button.html",
@@ -645,7 +876,19 @@
         "patterns/slider.html",
         "patterns/safe_slider.html",
         "patterns/listbox.html",
-        "patterns/safe_listbox.html"
+        "patterns/safe_listbox.html",
+        "journeys/signin/broken/index.html",
+        "journeys/signin/correct/index.html",
+        "journeys/consent/broken/index.html",
+        "journeys/consent/correct/index.html",
+        "scenarios/dragging_required.html",
+        "scenarios/safe_dragging_required.html",
+        "scenarios/touch_targets.html",
+        "scenarios/safe_touch_targets.html",
+        "scenarios/motion_actuation.html",
+        "scenarios/safe_motion_actuation.html",
+        "surfaces/chatbot_transcript.html",
+        "surfaces/safe_chatbot_transcript.html"
       ]
     },
     {
@@ -653,16 +896,25 @@
       "label": "Paralysis",
       "group": "motor",
       "scenarios": 3,
-      "cases": 42,
-      "tp": 28,
-      "safe": 14,
+      "cases": 56,
+      "tp": 35,
+      "safe": 21,
       "criteria": [
         "1.1.1",
         "1.3.1",
+        "1.3.4",
+        "1.4.10",
         "2.1.1",
+        "2.1.2",
         "2.4.3",
         "2.4.7",
-        "4.1.2"
+        "2.5.1",
+        "2.5.4",
+        "2.5.7",
+        "3.3.1",
+        "3.3.8",
+        "4.1.2",
+        "4.1.3"
       ],
       "fixtures": [
         "keyboard/div_button.html",
@@ -706,7 +958,21 @@
         "patterns/slider.html",
         "patterns/safe_slider.html",
         "patterns/listbox.html",
-        "patterns/safe_listbox.html"
+        "patterns/safe_listbox.html",
+        "journeys/signin/broken/index.html",
+        "journeys/signin/correct/index.html",
+        "journeys/consent/broken/index.html",
+        "journeys/consent/correct/index.html",
+        "scenarios/overlay_focus_trap.html",
+        "scenarios/safe_overlay_focus_trap.html",
+        "scenarios/orientation_lock.html",
+        "scenarios/safe_orientation_lock.html",
+        "scenarios/dragging_required.html",
+        "scenarios/safe_dragging_required.html",
+        "scenarios/motion_actuation.html",
+        "scenarios/safe_motion_actuation.html",
+        "surfaces/chatbot_transcript.html",
+        "surfaces/safe_chatbot_transcript.html"
       ]
     },
     {
@@ -714,16 +980,37 @@
       "label": "Fatigue",
       "group": "motor",
       "scenarios": 4,
-      "cases": 2,
-      "tp": 1,
-      "safe": 1,
+      "cases": 14,
+      "tp": 7,
+      "safe": 7,
       "criteria": [
         "2.2.1",
+        "2.2.6",
+        "2.4.1",
+        "2.4.3",
+        "2.4.5",
+        "3.2.3",
+        "3.2.4",
+        "3.3.1",
+        "3.3.4",
+        "3.3.7",
         "4.1.3"
       ],
       "fixtures": [
         "ui-states/timed-out.html",
-        "ui-states/safe_timed-out.html"
+        "ui-states/safe_timed-out.html",
+        "journeys/booking/broken/index.html",
+        "journeys/booking/correct/index.html",
+        "journeys/navigate/broken/index.html",
+        "journeys/navigate/correct/index.html",
+        "journeys/signup/broken/index.html",
+        "journeys/signup/correct/index.html",
+        "journeys/checkout/broken/index.html",
+        "journeys/checkout/correct/index.html",
+        "journeys/session/broken/index.html",
+        "journeys/session/correct/index.html",
+        "scenarios/infinite_scroll.html",
+        "scenarios/safe_infinite_scroll.html"
       ]
     },
     {
@@ -731,9 +1018,9 @@
       "label": "Unable to use voice interfaces",
       "group": "speech",
       "scenarios": 3,
-      "cases": 53,
-      "tp": 33,
-      "safe": 20,
+      "cases": 63,
+      "tp": 38,
+      "safe": 25,
       "criteria": [
         "1.1.1",
         "1.3.1",
@@ -741,9 +1028,12 @@
         "1.4.13",
         "2.1.1",
         "2.4.3",
+        "2.5.3",
         "3.3.1",
         "3.3.2",
-        "4.1.2"
+        "3.3.8",
+        "4.1.2",
+        "4.1.3"
       ],
       "fixtures": [
         "keyboard/div_button.html",
@@ -798,7 +1088,17 @@
         "color-vision/selection_color_only.html",
         "color-vision/safe_selection_color_only.html",
         "ui-states/invalid.html",
-        "ui-states/safe_invalid.html"
+        "ui-states/safe_invalid.html",
+        "journeys/signin/broken/index.html",
+        "journeys/signin/correct/index.html",
+        "journeys/consent/broken/index.html",
+        "journeys/consent/correct/index.html",
+        "scenarios/label_in_name.html",
+        "scenarios/safe_label_in_name.html",
+        "scenarios/disabled_state.html",
+        "scenarios/safe_disabled_state.html",
+        "surfaces/chatbot_transcript.html",
+        "surfaces/safe_chatbot_transcript.html"
       ]
     },
     {
@@ -806,16 +1106,24 @@
       "label": "Memory",
       "group": "cognitive",
       "scenarios": 4,
-      "cases": 23,
-      "tp": 12,
-      "safe": 11,
+      "cases": 48,
+      "tp": 24,
+      "safe": 23,
       "criteria": [
+        "1.1.1",
         "1.3.1",
         "1.4.1",
         "2.1.1",
         "2.2.1",
+        "2.2.6",
+        "2.4.3",
+        "2.4.5",
+        "3.2.3",
         "3.3.1",
         "3.3.2",
+        "3.3.4",
+        "3.3.7",
+        "3.3.8",
         "4.1.2",
         "4.1.3"
       ],
@@ -842,7 +1150,32 @@
         "ui-states/permission-denied.html",
         "ui-states/safe_permission-denied.html",
         "ui-states/timed-out.html",
-        "ui-states/safe_timed-out.html"
+        "ui-states/safe_timed-out.html",
+        "journeys/booking/broken/index.html",
+        "journeys/booking/correct/index.html",
+        "journeys/signin/broken/index.html",
+        "journeys/signin/correct/index.html",
+        "journeys/consent/broken/index.html",
+        "journeys/consent/correct/index.html",
+        "journeys/signup/broken/index.html",
+        "journeys/signup/correct/index.html",
+        "journeys/checkout/broken/index.html",
+        "journeys/checkout/correct/index.html",
+        "journeys/session/broken/index.html",
+        "journeys/session/correct/index.html",
+        "scenarios/data_dashboard.html",
+        "scenarios/safe_data_dashboard.html",
+        "scenarios/live_chat.html",
+        "scenarios/safe_live_chat.html",
+        "surfaces/email_table_layout.html",
+        "surfaces/safe_email_table_layout.html",
+        "surfaces/epub_no_metadata.html",
+        "surfaces/safe_epub_no_metadata.html",
+        "surfaces/authoring_generates_bad_markup.html",
+        "surfaces/safe_authoring_generates_bad_markup.html",
+        "surfaces/chatbot_transcript.html",
+        "surfaces/safe_chatbot_transcript.html",
+        "guided/plain_language.html"
       ]
     },
     {
@@ -850,23 +1183,30 @@
       "label": "Attention",
       "group": "cognitive",
       "scenarios": 3,
-      "cases": 36,
-      "tp": 18,
-      "safe": 18,
+      "cases": 55,
+      "tp": 27,
+      "safe": 27,
       "criteria": [
         "1.1.1",
         "1.2.2",
         "1.2.3",
         "1.2.5",
+        "1.3.1",
         "1.4.13",
         "1.4.2",
         "2.1.1",
+        "2.1.2",
         "2.2.1",
         "2.2.2",
+        "2.3.3",
+        "2.4.1",
         "2.4.11",
         "2.4.3",
         "2.4.7",
+        "3.2.3",
         "3.3.1",
+        "3.3.4",
+        "3.3.7",
         "4.1.2",
         "4.1.3"
       ],
@@ -906,7 +1246,26 @@
         "ui-states/timed-out.html",
         "ui-states/safe_timed-out.html",
         "ui-states/busy.html",
-        "ui-states/safe_busy.html"
+        "ui-states/safe_busy.html",
+        "journeys/booking/broken/index.html",
+        "journeys/booking/correct/index.html",
+        "journeys/destructive/broken/index.html",
+        "journeys/destructive/correct/index.html",
+        "journeys/consent/broken/index.html",
+        "journeys/consent/correct/index.html",
+        "scenarios/overlay_focus_trap.html",
+        "scenarios/safe_overlay_focus_trap.html",
+        "scenarios/async_validation.html",
+        "scenarios/safe_async_validation.html",
+        "scenarios/infinite_scroll.html",
+        "scenarios/safe_infinite_scroll.html",
+        "scenarios/live_chat.html",
+        "scenarios/safe_live_chat.html",
+        "surfaces/chatbot_transcript.html",
+        "surfaces/safe_chatbot_transcript.html",
+        "guided/focus_order_meaning.html",
+        "flash/animation_from_interaction.html",
+        "flash/safe_animation_from_interaction.html"
       ]
     },
     {
@@ -914,20 +1273,27 @@
       "label": "Dyslexia",
       "group": "cognitive",
       "scenarios": 5,
-      "cases": 5,
-      "tp": 3,
-      "safe": 2,
+      "cases": 10,
+      "tp": 5,
+      "safe": 4,
       "criteria": [
+        "1.4.12",
         "1.4.4",
         "2.2.2",
-        "3.1.1"
+        "3.1.1",
+        "3.1.2"
       ],
       "fixtures": [
         "static/viewport_no_zoom.html",
         "static/safe_viewport.html",
         "static/anim_no_reduced_motion.html",
         "static/safe_anim_reduced_motion.html",
-        "static/lang_missing.html"
+        "static/lang_missing.html",
+        "scenarios/text_spacing.html",
+        "scenarios/safe_text_spacing.html",
+        "scenarios/rtl_mixed_language.html",
+        "scenarios/safe_rtl_mixed_language.html",
+        "guided/plain_language.html"
       ]
     },
     {
@@ -935,20 +1301,28 @@
       "label": "Language and literacy",
       "group": "cognitive",
       "scenarios": 4,
-      "cases": 60,
-      "tp": 36,
-      "safe": 24,
+      "cases": 94,
+      "tp": 51,
+      "safe": 39,
       "criteria": [
         "1.1.1",
         "1.2.2",
         "1.2.3",
         "1.3.1",
         "1.4.1",
+        "1.4.11",
+        "1.4.12",
+        "1.4.3",
+        "1.4.4",
         "2.1.1",
         "2.4.3",
         "3.1.1",
+        "3.1.2",
         "3.3.1",
         "3.3.2",
+        "3.3.4",
+        "3.3.7",
+        "3.3.8",
         "4.1.2",
         "4.1.3"
       ],
@@ -1012,7 +1386,41 @@
         "ui-states/offline.html",
         "ui-states/safe_offline.html",
         "ui-states/permission-denied.html",
-        "ui-states/safe_permission-denied.html"
+        "ui-states/safe_permission-denied.html",
+        "journeys/signin/broken/index.html",
+        "journeys/signin/correct/index.html",
+        "journeys/consent/broken/index.html",
+        "journeys/consent/correct/index.html",
+        "journeys/signup/broken/index.html",
+        "journeys/signup/correct/index.html",
+        "scenarios/async_validation.html",
+        "scenarios/safe_async_validation.html",
+        "scenarios/data_dashboard.html",
+        "scenarios/safe_data_dashboard.html",
+        "scenarios/live_chat.html",
+        "scenarios/safe_live_chat.html",
+        "scenarios/text_spacing.html",
+        "scenarios/safe_text_spacing.html",
+        "scenarios/forced_colors.html",
+        "scenarios/safe_forced_colors.html",
+        "scenarios/rtl_mixed_language.html",
+        "scenarios/safe_rtl_mixed_language.html",
+        "scenarios/disabled_state.html",
+        "scenarios/safe_disabled_state.html",
+        "surfaces/email_table_layout.html",
+        "surfaces/safe_email_table_layout.html",
+        "surfaces/email_contrast_darkmode.html",
+        "surfaces/safe_email_contrast_darkmode.html",
+        "surfaces/epub_no_metadata.html",
+        "surfaces/safe_epub_no_metadata.html",
+        "surfaces/authoring_generates_bad_markup.html",
+        "surfaces/safe_authoring_generates_bad_markup.html",
+        "surfaces/chatbot_transcript.html",
+        "surfaces/safe_chatbot_transcript.html",
+        "guided/alt_text_appropriateness.html",
+        "guided/sensory_characteristics.html",
+        "guided/plain_language.html",
+        "guided/ai_suggested_alt_review.html"
       ]
     },
     {
@@ -1020,18 +1428,27 @@
       "label": "Executive function",
       "group": "cognitive",
       "scenarios": 5,
-      "cases": 64,
-      "tp": 32,
-      "safe": 32,
+      "cases": 97,
+      "tp": 48,
+      "safe": 48,
       "criteria": [
+        "1.1.1",
         "1.3.1",
         "1.4.1",
+        "1.4.11",
         "1.4.13",
+        "1.4.3",
         "2.1.1",
         "2.2.1",
+        "2.2.6",
         "2.4.3",
+        "2.4.5",
+        "3.2.3",
         "3.3.1",
         "3.3.2",
+        "3.3.4",
+        "3.3.7",
+        "3.3.8",
         "4.1.2",
         "4.1.3"
       ],
@@ -1099,7 +1516,40 @@
         "ui-states/permission-denied.html",
         "ui-states/safe_permission-denied.html",
         "ui-states/timed-out.html",
-        "ui-states/safe_timed-out.html"
+        "ui-states/safe_timed-out.html",
+        "journeys/booking/broken/index.html",
+        "journeys/booking/correct/index.html",
+        "journeys/signin/broken/index.html",
+        "journeys/signin/correct/index.html",
+        "journeys/consent/broken/index.html",
+        "journeys/consent/correct/index.html",
+        "journeys/signup/broken/index.html",
+        "journeys/signup/correct/index.html",
+        "journeys/checkout/broken/index.html",
+        "journeys/checkout/correct/index.html",
+        "journeys/session/broken/index.html",
+        "journeys/session/correct/index.html",
+        "scenarios/async_validation.html",
+        "scenarios/safe_async_validation.html",
+        "scenarios/data_dashboard.html",
+        "scenarios/safe_data_dashboard.html",
+        "scenarios/live_chat.html",
+        "scenarios/safe_live_chat.html",
+        "scenarios/forced_colors.html",
+        "scenarios/safe_forced_colors.html",
+        "scenarios/disabled_state.html",
+        "scenarios/safe_disabled_state.html",
+        "surfaces/email_table_layout.html",
+        "surfaces/safe_email_table_layout.html",
+        "surfaces/email_contrast_darkmode.html",
+        "surfaces/safe_email_contrast_darkmode.html",
+        "surfaces/epub_no_metadata.html",
+        "surfaces/safe_epub_no_metadata.html",
+        "surfaces/authoring_generates_bad_markup.html",
+        "surfaces/safe_authoring_generates_bad_markup.html",
+        "surfaces/chatbot_transcript.html",
+        "surfaces/safe_chatbot_transcript.html",
+        "guided/reading_order.html"
       ]
     },
     {
@@ -1107,15 +1557,25 @@
       "label": "Photosensitivity",
       "group": "neurological",
       "scenarios": 3,
-      "cases": 2,
-      "tp": 1,
-      "safe": 1,
+      "cases": 10,
+      "tp": 5,
+      "safe": 5,
       "criteria": [
-        "2.2.2"
+        "2.2.2",
+        "2.3.1",
+        "2.3.2"
       ],
       "fixtures": [
         "static/anim_no_reduced_motion.html",
-        "static/safe_anim_reduced_motion.html"
+        "static/safe_anim_reduced_motion.html",
+        "flash/flash_10hz_large_area.html",
+        "flash/safe_flash_10hz_large_area.html",
+        "flash/red_flash.html",
+        "flash/safe_red_flash.html",
+        "flash/flash_small_area.html",
+        "flash/safe_flash_small_area.html",
+        "flash/three_flashes_exactly.html",
+        "flash/safe_three_flashes_exactly.html"
       ]
     },
     {
@@ -1123,15 +1583,18 @@
       "label": "Vestibular and motion sensitivity",
       "group": "neurological",
       "scenarios": 4,
-      "cases": 2,
-      "tp": 1,
-      "safe": 1,
+      "cases": 4,
+      "tp": 2,
+      "safe": 2,
       "criteria": [
-        "2.2.2"
+        "2.2.2",
+        "2.3.3"
       ],
       "fixtures": [
         "static/anim_no_reduced_motion.html",
-        "static/safe_anim_reduced_motion.html"
+        "static/safe_anim_reduced_motion.html",
+        "flash/animation_from_interaction.html",
+        "flash/safe_animation_from_interaction.html"
       ]
     },
     {
@@ -1139,25 +1602,38 @@
       "label": "Multiple or intersecting disabilities",
       "group": "multiple",
       "scenarios": 1,
-      "cases": 0,
+      "cases": 1,
       "tp": 0,
       "safe": 0,
       "criteria": [],
-      "fixtures": []
+      "fixtures": [
+        "guided/user_task_completion.html"
+      ]
     },
     {
       "id": "age-related",
       "label": "Age-related needs",
       "group": "multiple",
       "scenarios": 5,
-      "cases": 7,
-      "tp": 4,
-      "safe": 3,
+      "cases": 21,
+      "tp": 11,
+      "safe": 10,
       "criteria": [
+        "1.3.4",
+        "1.4.1",
+        "1.4.10",
+        "1.4.11",
+        "1.4.12",
         "1.4.3",
         "1.4.4",
         "2.2.1",
+        "2.2.6",
         "2.4.7",
+        "2.5.1",
+        "2.5.5",
+        "2.5.7",
+        "2.5.8",
+        "3.3.7",
         "4.1.3"
       ],
       "fixtures": [
@@ -1167,7 +1643,21 @@
         "color-vision/placeholder_contrast.html",
         "color-vision/safe_placeholder_contrast.html",
         "ui-states/timed-out.html",
-        "ui-states/safe_timed-out.html"
+        "ui-states/safe_timed-out.html",
+        "journeys/session/broken/index.html",
+        "journeys/session/correct/index.html",
+        "scenarios/text_spacing.html",
+        "scenarios/safe_text_spacing.html",
+        "scenarios/forced_colors.html",
+        "scenarios/safe_forced_colors.html",
+        "scenarios/orientation_lock.html",
+        "scenarios/safe_orientation_lock.html",
+        "scenarios/dragging_required.html",
+        "scenarios/safe_dragging_required.html",
+        "scenarios/touch_targets.html",
+        "scenarios/safe_touch_targets.html",
+        "surfaces/email_contrast_darkmode.html",
+        "surfaces/safe_email_contrast_darkmode.html"
       ]
     },
     {
@@ -1175,28 +1665,48 @@
       "label": "Temporary limitation",
       "group": "situational",
       "scenarios": 4,
-      "cases": 0,
-      "tp": 0,
-      "safe": 0,
-      "criteria": [],
-      "fixtures": []
+      "cases": 6,
+      "tp": 3,
+      "safe": 3,
+      "criteria": [
+        "2.5.1",
+        "2.5.4",
+        "2.5.5",
+        "2.5.7",
+        "2.5.8"
+      ],
+      "fixtures": [
+        "scenarios/dragging_required.html",
+        "scenarios/safe_dragging_required.html",
+        "scenarios/touch_targets.html",
+        "scenarios/safe_touch_targets.html",
+        "scenarios/motion_actuation.html",
+        "scenarios/safe_motion_actuation.html"
+      ]
     },
     {
       "id": "situational",
       "label": "Situational limitation",
       "group": "situational",
       "scenarios": 5,
-      "cases": 28,
-      "tp": 19,
-      "safe": 9,
+      "cases": 42,
+      "tp": 26,
+      "safe": 16,
       "criteria": [
         "1.1.1",
         "1.2.1",
         "1.2.2",
         "1.2.3",
+        "1.3.1",
+        "1.3.4",
+        "1.4.1",
+        "1.4.10",
         "1.4.2",
         "1.4.3",
         "2.1.1",
+        "2.5.4",
+        "2.5.5",
+        "2.5.8",
         "4.1.3"
       ],
       "fixtures": [
@@ -1227,13 +1737,47 @@
         "media/autoplay_no_control.html",
         "media/safe_autoplay_no_control.html",
         "media/captions_unlabelled_track.html",
-        "media/safe_captions_unlabelled_track.html"
+        "media/safe_captions_unlabelled_track.html",
+        "scenarios/data_dashboard.html",
+        "scenarios/safe_data_dashboard.html",
+        "scenarios/orientation_lock.html",
+        "scenarios/safe_orientation_lock.html",
+        "scenarios/touch_targets.html",
+        "scenarios/safe_touch_targets.html",
+        "scenarios/motion_actuation.html",
+        "scenarios/safe_motion_actuation.html",
+        "surfaces/email_table_layout.html",
+        "surfaces/safe_email_table_layout.html",
+        "surfaces/email_contrast_darkmode.html",
+        "surfaces/safe_email_contrast_darkmode.html",
+        "surfaces/authoring_generates_bad_markup.html",
+        "surfaces/safe_authoring_generates_bad_markup.html"
       ]
     }
   ],
   "shared_benefit": [
     {
-      "sc": "4.1.2",
+      "sc": "4.1.3",
+      "needs": [
+        "age-related",
+        "cognitive-attention",
+        "cognitive-executive",
+        "cognitive-language",
+        "cognitive-memory",
+        "deafblind",
+        "motor-dexterity",
+        "motor-fatigue",
+        "motor-paralysis",
+        "motor-tremor",
+        "situational",
+        "speech-unable",
+        "vision-blind",
+        "vision-color",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "3.3.1",
       "needs": [
         "cognitive-attention",
         "cognitive-executive",
@@ -1241,6 +1785,7 @@
         "cognitive-memory",
         "deafblind",
         "motor-dexterity",
+        "motor-fatigue",
         "motor-paralysis",
         "motor-tremor",
         "speech-unable",
@@ -1264,29 +1809,14 @@
         "situational",
         "speech-unable",
         "vision-blind",
-        "vision-low"
-      ]
-    },
-    {
-      "sc": "4.1.3",
-      "needs": [
-        "age-related",
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-fatigue",
-        "situational",
-        "vision-blind",
         "vision-color",
         "vision-low"
       ]
     },
     {
-      "sc": "1.3.1",
+      "sc": "4.1.2",
       "needs": [
+        "cognitive-attention",
         "cognitive-executive",
         "cognitive-language",
         "cognitive-memory",
@@ -1294,6 +1824,25 @@
         "motor-dexterity",
         "motor-paralysis",
         "motor-tremor",
+        "speech-unable",
+        "vision-blind",
+        "vision-color",
+        "vision-contrast",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "1.3.1",
+      "needs": [
+        "cognitive-attention",
+        "cognitive-executive",
+        "cognitive-language",
+        "cognitive-memory",
+        "deafblind",
+        "motor-dexterity",
+        "motor-paralysis",
+        "motor-tremor",
+        "situational",
         "speech-unable",
         "vision-blind",
         "vision-color",
@@ -1306,29 +1855,15 @@
         "cognitive-attention",
         "cognitive-executive",
         "cognitive-language",
+        "cognitive-memory",
         "deafblind",
         "motor-dexterity",
+        "motor-fatigue",
         "motor-paralysis",
         "motor-tremor",
         "speech-unable",
         "vision-blind",
         "vision-color",
-        "vision-low"
-      ]
-    },
-    {
-      "sc": "3.3.1",
-      "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "speech-unable",
-        "vision-blind",
-        "vision-color",
-        "vision-contrast",
         "vision-low"
       ]
     },
@@ -1336,7 +1871,9 @@
       "sc": "1.1.1",
       "needs": [
         "cognitive-attention",
+        "cognitive-executive",
         "cognitive-language",
+        "cognitive-memory",
         "deafblind",
         "motor-dexterity",
         "motor-paralysis",
@@ -1344,6 +1881,23 @@
         "situational",
         "speech-unable",
         "vision-blind",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "1.4.1",
+      "needs": [
+        "age-related",
+        "cognitive-executive",
+        "cognitive-language",
+        "cognitive-memory",
+        "deafblind",
+        "motor-dexterity",
+        "situational",
+        "speech-unable",
+        "vision-blind",
+        "vision-color",
+        "vision-contrast",
         "vision-low"
       ]
     },
@@ -1363,18 +1917,48 @@
       ]
     },
     {
-      "sc": "1.4.1",
+      "sc": "3.3.4",
+      "needs": [
+        "cognitive-attention",
+        "cognitive-executive",
+        "cognitive-language",
+        "cognitive-memory",
+        "deafblind",
+        "motor-dexterity",
+        "motor-fatigue",
+        "vision-blind",
+        "vision-color",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "3.3.7",
+      "needs": [
+        "age-related",
+        "cognitive-attention",
+        "cognitive-executive",
+        "cognitive-language",
+        "cognitive-memory",
+        "deafblind",
+        "motor-dexterity",
+        "motor-fatigue",
+        "vision-blind",
+        "vision-color"
+      ]
+    },
+    {
+      "sc": "3.3.8",
       "needs": [
         "cognitive-executive",
         "cognitive-language",
         "cognitive-memory",
         "deafblind",
         "motor-dexterity",
+        "motor-paralysis",
+        "motor-tremor",
         "speech-unable",
         "vision-blind",
-        "vision-color",
-        "vision-contrast",
-        "vision-low"
+        "vision-color"
       ]
     },
     {
@@ -1431,6 +2015,87 @@
       ]
     },
     {
+      "sc": "1.4.3",
+      "needs": [
+        "age-related",
+        "cognitive-executive",
+        "cognitive-language",
+        "situational",
+        "vision-blind",
+        "vision-color",
+        "vision-contrast",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "3.2.3",
+      "needs": [
+        "cognitive-attention",
+        "cognitive-executive",
+        "cognitive-memory",
+        "deafblind",
+        "motor-dexterity",
+        "motor-fatigue",
+        "vision-blind"
+      ]
+    },
+    {
+      "sc": "1.4.11",
+      "needs": [
+        "age-related",
+        "cognitive-executive",
+        "cognitive-language",
+        "vision-blind",
+        "vision-color",
+        "vision-contrast",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "2.4.5",
+      "needs": [
+        "cognitive-executive",
+        "cognitive-memory",
+        "deafblind",
+        "motor-dexterity",
+        "motor-fatigue",
+        "vision-blind"
+      ]
+    },
+    {
+      "sc": "2.4.1",
+      "needs": [
+        "cognitive-attention",
+        "deafblind",
+        "motor-dexterity",
+        "motor-fatigue",
+        "vision-blind",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "2.5.8",
+      "needs": [
+        "age-related",
+        "motor-dexterity",
+        "motor-tremor",
+        "situational",
+        "temporary",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "2.5.5",
+      "needs": [
+        "age-related",
+        "motor-dexterity",
+        "motor-tremor",
+        "situational",
+        "temporary",
+        "vision-low"
+      ]
+    },
+    {
       "sc": "2.4.7",
       "needs": [
         "age-related",
@@ -1451,16 +2116,6 @@
       ]
     },
     {
-      "sc": "1.4.3",
-      "needs": [
-        "age-related",
-        "situational",
-        "vision-color",
-        "vision-contrast",
-        "vision-low"
-      ]
-    },
-    {
       "sc": "1.2.1",
       "needs": [
         "deafblind",
@@ -1468,6 +2123,85 @@
         "hearing-hoh",
         "situational",
         "vision-blind"
+      ]
+    },
+    {
+      "sc": "2.2.6",
+      "needs": [
+        "age-related",
+        "cognitive-executive",
+        "cognitive-memory",
+        "motor-dexterity",
+        "motor-fatigue"
+      ]
+    },
+    {
+      "sc": "2.1.2",
+      "needs": [
+        "cognitive-attention",
+        "deafblind",
+        "motor-dexterity",
+        "motor-paralysis",
+        "vision-blind"
+      ]
+    },
+    {
+      "sc": "1.3.4",
+      "needs": [
+        "age-related",
+        "motor-dexterity",
+        "motor-paralysis",
+        "situational",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "1.4.10",
+      "needs": [
+        "age-related",
+        "motor-dexterity",
+        "motor-paralysis",
+        "situational",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "2.5.7",
+      "needs": [
+        "age-related",
+        "motor-dexterity",
+        "motor-paralysis",
+        "motor-tremor",
+        "temporary"
+      ]
+    },
+    {
+      "sc": "2.5.1",
+      "needs": [
+        "age-related",
+        "motor-dexterity",
+        "motor-paralysis",
+        "motor-tremor",
+        "temporary"
+      ]
+    },
+    {
+      "sc": "2.5.4",
+      "needs": [
+        "motor-dexterity",
+        "motor-paralysis",
+        "motor-tremor",
+        "situational",
+        "temporary"
+      ]
+    },
+    {
+      "sc": "1.4.4",
+      "needs": [
+        "age-related",
+        "cognitive-dyslexia",
+        "cognitive-language",
+        "vision-low"
       ]
     },
     {
@@ -1498,6 +2232,33 @@
       ]
     },
     {
+      "sc": "3.2.4",
+      "needs": [
+        "deafblind",
+        "motor-dexterity",
+        "motor-fatigue",
+        "vision-blind"
+      ]
+    },
+    {
+      "sc": "1.4.12",
+      "needs": [
+        "age-related",
+        "cognitive-dyslexia",
+        "cognitive-language",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "3.1.2",
+      "needs": [
+        "cognitive-dyslexia",
+        "cognitive-language",
+        "deafblind",
+        "vision-blind"
+      ]
+    },
+    {
       "sc": "2.4.11",
       "needs": [
         "cognitive-attention",
@@ -1506,11 +2267,18 @@
       ]
     },
     {
-      "sc": "1.4.4",
+      "sc": "2.5.3",
       "needs": [
-        "age-related",
-        "cognitive-dyslexia",
-        "vision-low"
+        "motor-dexterity",
+        "speech-unable",
+        "vision-blind"
+      ]
+    },
+    {
+      "sc": "2.3.3",
+      "needs": [
+        "cognitive-attention",
+        "neuro-vestibular"
       ]
     }
   ]

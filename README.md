@@ -117,6 +117,34 @@ no review — and no single page is wrong.
 A journey case is a **set** of pages with an entry point, not one page, so the
 case records `entry` and `steps` rather than a single path.
 
+### Flash and seizure thresholds
+
+> **Seizure warning.** `flash/` can produce flashing light. **Nothing flashes on
+> load.** Every fixture needs an explicit button press, stops itself after 3
+> seconds, and does nothing at all under `prefers-reduced-motion`.
+
+This family is different from the rest of the corpus. Everywhere else the worst
+case of a bad fixture is a wrong measurement; here it is a seizure. So the
+gating is not a convenience and must not be removed. The keyframes and timings
+stay in the document while dormant, so **the defect is detectable without ever
+playing it** — a scanner reading styles or the animation API finds it with the
+page sitting still.
+
+Covers 2.3.1 (A), 2.3.2 (AAA) and 2.3.3 (AAA): a 10Hz full-width flash, a
+saturated-red flash at 6Hz, a small-area 8Hz flash, exactly three flashes in one
+second, and parallax on interaction with no reduced-motion guard.
+
+`three_flashes_exactly` is the pair worth noting — it **passes 2.3.1 and fails
+2.3.2**. A corpus that only tests Level A never distinguishes the two.
+
+`flash_small_area` expects **cannot-tell**, and the reason is substantive. 2.3.1
+is not simply "faster than 3Hz": content also passes if it stays under the
+general and red flash thresholds, and the general threshold is defined over a
+proportion of the **visual field** — which depends on screen size and viewing
+distance, something a page cannot know. A tool can measure frequency and the
+fraction of the viewport. It cannot measure the visual field. Guessing either
+way would be wrong.
+
 ### Media and captions
 
 `media/` covers captions, transcripts, audio description, live captioning and

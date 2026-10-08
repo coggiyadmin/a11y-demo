@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>flash and seizure fixtures</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>flash and seizure fixtures</h1>
+
+<div role="alert" style="border:3px solid #a11;padding:1rem">
+  <h2 style="margin-top:0">Seizure warning</h2>
+  <p>Pages linked below can produce flashing light. <strong>Nothing flashes on load.</strong>
+     Each one needs a button press, stops after 3 seconds, and does nothing at all if your
+     system is set to reduce motion.</p>
+  <p>If you have photosensitive epilepsy or are unsure, you can still test these: the
+     keyframes and timings are in the page source whether or not they are playing.</p>
+</div>
+<p>WCAG 2.3.1 is not simply "faster than 3Hz". Content passes if it flashes at or below three
+   times per second, <em>or</em> stays under both the general and red flash thresholds. The
+   general threshold is defined over a proportion of the <strong>visual field</strong>, which
+   depends on screen size and viewing distance — something a page cannot know. A tool can
+   measure frequency and the fraction of the viewport; it cannot measure the visual field.
+   <code>flash_small_area</code> exists to make that limit explicit, and expects
+   <code>cannot-tell</code>.</p>
+<ul><li><a href="flash_10hz_large_area.html">flash_10hz_large_area</a> ·
+  <a href="safe_flash_10hz_large_area.html">corrected</a> — 2.3.1, 2.3.2 —
+  <em>fail</em></li>
+<li><a href="red_flash.html">red_flash</a> ·
+  <a href="safe_red_flash.html">corrected</a> — 2.3.1 —
+  <em>fail</em></li>
+<li><a href="flash_small_area.html">flash_small_area</a> ·
+  <a href="safe_flash_small_area.html">corrected</a> — 2.3.1 —
+  <em>cannot-tell</em></li>
+<li><a href="three_flashes_exactly.html">three_flashes_exactly</a> ·
+  <a href="safe_three_flashes_exactly.html">corrected</a> — 2.3.2 —
+  <em>fail</em></li>
+<li><a href="animation_from_interaction.html">animation_from_interaction</a> ·
+  <a href="safe_animation_from_interaction.html">corrected</a> — 2.3.3 —
+  <em>fail</em></li></ul>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

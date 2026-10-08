@@ -9,7 +9,7 @@ import path from 'node:path';
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
 const tax = (n) => JSON.parse(fs.readFileSync(path.join(ROOT, 'taxonomy', `${n}.json`), 'utf8'));
 
-const FAMILIES = ['catalog.json', 'delivery.json', 'patterns.json', 'color-vision.json', 'media.json', 'ui-states.json', 'journeys.json', 'scenarios.json', 'surfaces.json', 'guided.json'];
+const FAMILIES = ['catalog.json', 'delivery.json', 'patterns.json', 'color-vision.json', 'media.json', 'ui-states.json', 'journeys.json', 'scenarios.json', 'surfaces.json', 'guided.json', 'flash.json'];
 // Needs are inherited from the criteria a case exercises, the same way needs-index.mjs
 // does it. Without this the two reports disagree about the same corpus.
 const critNeeds = Object.fromEntries(

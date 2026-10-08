@@ -392,6 +392,8 @@ const EXTRA_GROUPS = [
       + 'tool and its output (ATAG 2.0), and a conversational interface' },
   { dir: 'guided', blurb: 'questions automation cannot answer, with the fixture to ask them '
       + 'against and a slot for evidence \u2014 every one expects cannot-tell' },
+  { dir: 'flash', blurb: 'flash and seizure thresholds \u2014 SEIZURE WARNING: these can produce '
+      + 'flashing light. Nothing flashes on load; each needs a button press and stops after 3s' },
 ];
 
 fs.writeFileSync(path.join(ROOT, 'index.html'), page('Accessibility fixture corpus',

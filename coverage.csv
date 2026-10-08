@@ -38,9 +38,9 @@ sc,name,level,since,principle,guideline,act_rules,act_failed,act_passed,act_inap
 2.2.4,Interruptions,AAA,2.0,Operable,2.2 Enough Time,2,7,5,16,,,ACT
 2.2.5,Re-authenticating,AAA,2.0,Operable,2.2 Enough Time,0,0,0,0,,,NONE
 2.2.6,Timeouts,AAA,2.1,Operable,2.2 Enough Time,0,0,0,0,journeys/session/broken/index.html,journeys/session/correct/index.html,local only
-2.3.1,Three Flashes or Below Threshold,A,2.0,Operable,2.3 Seizures and Physical Reactions,0,0,0,0,,,NONE
-2.3.2,Three Flashes,AAA,2.0,Operable,2.3 Seizures and Physical Reactions,0,0,0,0,,,NONE
-2.3.3,Animation from Interactions,AAA,2.1,Operable,2.3 Seizures and Physical Reactions,0,0,0,0,,,NONE
+2.3.1,Three Flashes or Below Threshold,A,2.0,Operable,2.3 Seizures and Physical Reactions,0,0,0,0,flash/flash_10hz_large_area.html flash/red_flash.html,flash/safe_flash_10hz_large_area.html flash/safe_red_flash.html flash/safe_flash_small_area.html,local only
+2.3.2,Three Flashes,AAA,2.0,Operable,2.3 Seizures and Physical Reactions,0,0,0,0,flash/flash_10hz_large_area.html flash/three_flashes_exactly.html,flash/safe_flash_10hz_large_area.html flash/safe_three_flashes_exactly.html,local only
+2.3.3,Animation from Interactions,AAA,2.1,Operable,2.3 Seizures and Physical Reactions,0,0,0,0,flash/animation_from_interaction.html,flash/safe_animation_from_interaction.html,local only
 2.4.1,Bypass Blocks,A,2.0,Operable,2.4 Navigable,1,1,12,1,journeys/navigate/broken/index.html scenarios/infinite_scroll.html,journeys/navigate/correct/index.html scenarios/safe_infinite_scroll.html,ACT + local
 2.4.2,Page Titled,A,2.0,Operable,2.4 Navigable,2,9,9,2,,,ACT
 2.4.3,Focus Order,A,2.0,Operable,2.4 Navigable,0,0,0,0,keyboard/role_tab_no_tablist.html patterns/tabs.html patterns/dialog.html ui-states/submitted.html ui-states/error.html journeys/booking/broken/index.html journeys/destructive/broken/index.html journeys/consent/broken/index.html scenarios/overlay_focus_trap.html scenarios/infinite_scroll.html,keyboard/safe_roving_tabindex.html capture/link_heavy.html patterns/safe_tabs.html patterns/safe_dialog.html ui-states/safe_submitted.html ui-states/safe_error.html journeys/booking/correct/index.html journeys/destructive/correct/index.html journeys/consent/correct/index.html scenarios/safe_overlay_focus_trap.html scenarios/safe_infinite_scroll.html,local only

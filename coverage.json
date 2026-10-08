@@ -595,9 +595,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "flash/flash_10hz_large_area.html flash/red_flash.html",
+    "local_safe": "flash/safe_flash_10hz_large_area.html flash/safe_red_flash.html flash/safe_flash_small_area.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.3.2",
@@ -610,9 +610,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "flash/flash_10hz_large_area.html flash/three_flashes_exactly.html",
+    "local_safe": "flash/safe_flash_10hz_large_area.html flash/safe_three_flashes_exactly.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.3.3",
@@ -625,9 +625,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "flash/animation_from_interaction.html",
+    "local_safe": "flash/safe_animation_from_interaction.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.4.1",

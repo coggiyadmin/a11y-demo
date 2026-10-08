@@ -1,0 +1,50 @@
+<!--
+  three_flashes_exactly — broken
+  WCAG: 2.3.2
+  expected outcome: fail
+  SAFETY: nothing flashes on load. Motion starts only on a button press, stops after
+  3 seconds, and is disabled under prefers-reduced-motion. The keyframes are in the
+  document while dormant, so the defect is detectable without playing it.
+  Three high-contrast flashes in one second. This passes 2.3.1, which allows up to three per second — and fails 2.3.2 (AAA), which allows no more than three flashes in any one-second period with no threshold exemption at all. A corpus that only tests Level A never distinguishes the two.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>three_flashes_exactly — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+@keyframes f3 { 0%,16% { background:#000 } 17%,33% { background:#fff }
+                34%,50% { background:#000 } 51%,66% { background:#fff }
+                67%,83% { background:#000 } 84%,100% { background:#fff } }
+/* three opposing transitions inside one second */
+#stage.run { animation: f3 1s steps(1) 3; }
+#stage { height:30vh; background:#444; border:1px solid #767676; }
+@media (prefers-reduced-motion: reduce) { #stage.run { animation: none } }
+</style>
+</head>
+<body><main><h1>three_flashes_exactly — broken</h1>
+<p>Three high-contrast flashes in one second. This passes 2.3.1, which allows up to three per second — and fails 2.3.2 (AAA), which allows no more than three flashes in any one-second period with no threshold exemption at all. A corpus that only tests Level A never distinguishes the two.</p><hr><div role="alert" style="border:3px solid #a11;padding:1rem;margin:1rem 0">
+  <h2 style="margin-top:0">Seizure warning</h2>
+  <p><strong>This page can produce flashing light.</strong> Nothing flashes until you press
+     the button below. It stops on its own after 3 seconds, and does not run at all if your
+     system is set to reduce motion.</p>
+  <p>If you have photosensitive epilepsy or are unsure, do not press it. The defect is in the
+     page source either way — you do not need to see it to test for it.</p>
+</div><div id="stage"></div><button type="button" id="go">Start 3-flash sequence</button>
+<script>
+document.getElementById('go').addEventListener('click', function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.getElementById('note').textContent =
+      'Not started: your system is set to reduce motion.';
+    return;
+  }
+  var el = document.getElementById('stage');
+  el.classList.add('run');
+  setTimeout(function () { el.classList.remove('run'); }, 3000);
+});
+</script>
+<p id="note" role="status" aria-live="polite"></p>
+<p>Passes 2.3.1 (Level A). Fails 2.3.2 (Level AAA).</p>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

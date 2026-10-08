@@ -1,0 +1,39 @@
+<!--
+  animation_from_interaction — broken
+  WCAG: 2.3.3
+  expected outcome: fail
+  SAFETY: nothing flashes on load. Motion starts only on a button press, stops after
+  3 seconds, and is disabled under prefers-reduced-motion. The keyframes are in the
+  document while dormant, so the defect is detectable without playing it.
+  A large parallax translation triggered by interaction, with no prefers-reduced-motion guard. 2.3.3 is about motion sickness rather than seizures, and the absence of the guard is machine-detectable — no judgement needed.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>animation_from_interaction — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+@keyframes slide { from { transform: translateX(-60vw) scale(1.4) } to { transform:none } }
+#stage.run { animation: slide 0.6s ease-out; }
+#stage { height:30vh; background:#30556e; color:#fff; padding:1rem }
+/* no prefers-reduced-motion rule: that IS the defect */
+</style>
+</head>
+<body><main><h1>animation_from_interaction — broken</h1>
+<p>A large parallax translation triggered by interaction, with no prefers-reduced-motion guard. 2.3.3 is about motion sickness rather than seizures, and the absence of the guard is machine-detectable — no judgement needed.</p><hr><div id="stage">Seat map</div><button type="button" id="go">Trigger parallax</button>
+<script>
+document.getElementById('go').addEventListener('click', function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.getElementById('note').textContent =
+      'Not started: your system is set to reduce motion.';
+    return;
+  }
+  var el = document.getElementById('stage');
+  el.classList.add('run');
+  setTimeout(function () { el.classList.remove('run'); }, 3000);
+});
+</script>
+<p id="note" role="status" aria-live="polite"></p>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>
