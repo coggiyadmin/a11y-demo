@@ -1,0 +1,24 @@
+<!--
+  live_no_captions — broken
+  WCAG: 1.2.4
+  expected outcome: fail
+  A live stream with no caption mechanism. Live captioning cannot be added after the fact, so this is a build-time decision, not a content fix.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>live_no_captions — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>live_no_captions — broken</h1>
+<p>A live stream with no caption mechanism. Live captioning cannot be added after the fact, so this is a build-time decision, not a content fix.</p><hr><video controls autoplay muted width="320" aria-label="Live boarding announcements">
+  <source src="live.m3u8" type="application/vnd.apple.mpegurl">
+</video>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

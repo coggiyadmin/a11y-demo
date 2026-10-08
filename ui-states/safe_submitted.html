@@ -1,0 +1,25 @@
+<!--
+  Seat selection — submitted (correct)
+  WCAG: 4.1.3, 2.4.3
+  Confirmation in a live region AND a focusable heading that receives focus, so both announcement and focus position are handled.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seat selection — submitted (correct)</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Seat selection — submitted (correct)</h1>
+<p>Confirmation in a live region AND a focusable heading that receives focus, so both announcement and focus position are handled.</p><hr><div role="status" aria-live="polite">
+  <h2 tabindex="-1" id="done">Seat 14A confirmed</h2>
+  <p>Your boarding pass has been updated.</p>
+</div>
+<script>document.getElementById('done').focus();</script>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

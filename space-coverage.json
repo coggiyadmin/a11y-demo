@@ -1,11 +1,11 @@
 {
   "description": "Coverage of this corpus against the enumerated test space. Deliberately unflattering: the denominator is the real space, not the part that happens to be covered.",
   "generated": "2026-10-08",
-  "cases": 68,
+  "cases": 120,
   "dimensions": [
     {
       "dimension": "surfaces",
-      "covered": 1,
+      "covered": 2,
       "total": 18,
       "missing": [
         "ios",
@@ -16,7 +16,6 @@
         "presentation",
         "spreadsheet",
         "epub",
-        "media",
         "email",
         "kiosk",
         "hardware",
@@ -29,14 +28,13 @@
     },
     {
       "dimension": "journeys",
-      "covered": 1,
+      "covered": 3,
       "total": 25,
       "missing": [
         "auth-signup",
         "auth-challenge",
         "consent",
         "navigate",
-        "form-lifecycle",
         "commerce",
         "high-stakes",
         "overlay",
@@ -45,7 +43,6 @@
         "async",
         "paging",
         "data",
-        "media-player",
         "realtime",
         "display-adapt",
         "theming",
@@ -60,45 +57,26 @@
     },
     {
       "dimension": "ui-states",
-      "covered": 1,
+      "covered": 11,
       "total": 12,
       "missing": [
-        "loading",
-        "empty",
-        "invalid",
-        "corrected",
-        "submitted",
-        "error",
-        "offline",
-        "permission-denied",
-        "timed-out",
-        "disabled",
-        "busy"
+        "disabled"
       ]
     },
     {
       "dimension": "user-needs",
-      "covered": 12,
-      "total": 22,
+      "covered": 21,
+      "total": 23,
       "missing": [
-        "vision-contrast",
-        "motor-paralysis",
-        "motor-fatigue",
-        "speech-unable",
-        "cognitive-dyslexia",
-        "neuro-seizure",
-        "neuro-vestibular",
         "multiple",
-        "age-related",
         "temporary"
       ]
     },
     {
       "dimension": "input-at",
-      "covered": 3,
+      "covered": 4,
       "total": 12,
       "missing": [
-        "pointer",
         "touch",
         "switch",
         "speech",
@@ -111,17 +89,11 @@
     },
     {
       "dimension": "methods",
-      "covered": 3,
+      "covered": 9,
       "total": 15,
       "missing": [
-        "static-source",
-        "visual",
-        "interaction",
-        "state-exploration",
         "crawl",
         "document-parse",
-        "media-analysis",
-        "guided-manual",
         "at-testing",
         "user-testing",
         "regression",
@@ -132,7 +104,7 @@
   "combinations": {
     "formula": "surface x journey x ui-state x input",
     "total": 64800,
-    "triples_touched": 2
+    "triples_touched": 14
   },
   "not_automatable": [
     "guided-manual",

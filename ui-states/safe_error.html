@@ -1,0 +1,26 @@
+<!--
+  Seat selection — error (correct)
+  WCAG: 3.3.1, 2.4.3
+  An alert that is announced, focusable, names the problem and offers a way out.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seat selection — error (correct)</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Seat selection — error (correct)</h1>
+<p>An alert that is announced, focusable, names the problem and offers a way out.</p><hr><div role="alert" tabindex="-1" id="e">
+  <h2>We could not save your seat</h2>
+  <p>The booking service did not respond. Your card has not been charged.</p>
+  <p><a href="#retry">Try again</a> or <a href="#help">contact support</a>.</p>
+</div>
+<script>document.getElementById('e').focus();</script>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

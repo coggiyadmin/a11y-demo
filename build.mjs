@@ -92,10 +92,12 @@ const FIXTURES = [
     dir: 'keyboard', file: 'div_fare_cards.html', expect: 'flag',
     sc: ['2.1.1'], manual: ['#15', '#16', '#17'],
     title: 'Selectable cards that are divs',
-    note: 'Special-fare options. Pointer-operable, not keyboard reachable.',
-    body: `<div class="card" onclick="void 0">Student</div>
-<div class="card" onclick="void 0">Senior Citizen</div>
-<div class="card" onclick="void 0">Armed Forces</div>`,
+    // Fare TYPES, not passenger categories. Sample content in a public repo should
+    // not label groups of people — especially not in a page demonstrating broken code.
+    note: 'Fare options presented as cards. Pointer-operable, not keyboard reachable.',
+    body: `<div class="card" onclick="void 0">Flexible</div>
+<div class="card" onclick="void 0">Standard</div>
+<div class="card" onclick="void 0">Saver</div>`,
   },
   {
     dir: 'keyboard', file: 'role_tab_no_tablist.html', expect: 'flag',
@@ -378,6 +380,10 @@ const EXTRA_GROUPS = [
       + 'broken/correct pairs — dialogs, combobox, tabs, menus, tables and more' },
   { dir: 'color-vision', blurb: 'colour used as the only carrier of information, with a '
       + 'simulation view through protanopia, deuteranopia, tritanopia and achromatopsia' },
+  { dir: 'media', blurb: 'captions, transcripts, audio description and sound-only signalling '
+      + '\u2014 including cases whose honest outcome is cannot-tell, not pass' },
+  { dir: 'ui-states', blurb: 'one journey across loading, empty, invalid, corrected, submitted, '
+      + 'error, offline, permission-denied, timed-out and busy' },
 ];
 
 fs.writeFileSync(path.join(ROOT, 'index.html'), page('Accessibility fixture corpus',

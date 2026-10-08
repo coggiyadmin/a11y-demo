@@ -1,0 +1,26 @@
+<!--
+  audio_no_transcript — correct
+  WCAG: 1.2.1
+  expected outcome: pass
+  A transcript is on the page, not behind a link that may not exist.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>audio_no_transcript — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>audio_no_transcript — correct</h1>
+<p>A transcript is on the page, not behind a link that may not exist.</p><hr><audio controls preload="none"><source src="announcement.mp3" type="audio/mpeg"></audio>
+<h2 id="t">Transcript</h2>
+<p><strong>Agent:</strong> Your flight leaves from gate 14.</p>
+<p><strong>Traveller:</strong> Which terminal is that?</p>
+<p><strong>Agent:</strong> Terminal 5. Boarding closes 20 minutes before departure.</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

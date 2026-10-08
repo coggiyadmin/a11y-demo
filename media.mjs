@@ -1,0 +1,238 @@
+// Media and captions.
+//
+// The hearing axis was the thinnest coverage in the corpus, and it is also where
+// automation is weakest in an interesting way: a tool can see that a <track> element
+// exists, but not whether the captions are accurate, synchronised, or identify who is
+// speaking. Those are `cannot-tell` — examined, outcome needs a person — and the
+// corpus marks them as such rather than letting a present-but-useless track count
+// as a pass.
+//
+// Several of these also serve people who are not deaf or hard of hearing: captions
+// help in a noisy room or with audio muted, and transcripts help anyone who would
+// rather read than watch. That is recorded through taxonomy/criterion-needs.json.
+import fs from 'node:fs';
+import path from 'node:path';
+
+const ROOT = path.dirname(new URL(import.meta.url).pathname);
+const DIR = path.join(ROOT, 'media');
+
+const page = (title, body, head = '') => `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${title}</title>
+<link rel="stylesheet" href="../fixture.css">${head}
+</head>
+<body>
+<main>
+<h1>${title}</h1>
+${body}
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>`;
+
+// A tiny real WebVTT file, so the "correct" cases have something genuine to point at
+// and a parser has something to parse.
+const VTT_GOOD = `WEBVTT
+
+00:00:00.000 --> 00:00:03.000
+<v Agent>Your flight leaves from gate 14.
+
+00:00:03.000 --> 00:00:06.000
+<v Traveller>Which terminal is that?
+
+00:00:06.000 --> 00:00:09.000
+<v Agent>Terminal 5. Boarding closes 20 minutes before departure.
+`;
+
+// Present, parseable, and useless: no speaker identification, no sound description,
+// and the timings do not line up with anything. A tool sees a track; a person sees
+// that it does not do the job.
+const VTT_POOR = `WEBVTT
+
+00:00:00.000 --> 00:00:30.000
+[inaudible]
+`;
+
+const CASES = [
+  {
+    id: 'video_no_captions',
+    sc: ['1.2.2'], outcome: 'fail', confidence: 'definite',
+    brokenNote: 'Prerecorded video with speech and no caption track at all. The absence of '
+      + 'a track is machine-detectable, so this is a definite fail rather than a judgement call.',
+    broken: `<video controls preload="none" poster="../pixel.png" width="320">
+  <source src="flight-info.mp4" type="video/mp4">
+</video>`,
+    correctNote: 'A caption track is declared, default, and language-tagged.',
+    correct: `<video controls preload="none" poster="../pixel.png" width="320">
+  <source src="flight-info.mp4" type="video/mp4">
+  <track kind="captions" src="flight-info.vtt" srclang="en" label="English" default>
+</video>`,
+  },
+  {
+    id: 'captions_present_but_poor',
+    sc: ['1.2.2'], outcome: 'cannot-tell', confidence: 'possible',
+    brokenNote: 'A caption track IS present, so a presence check passes — but it says only '
+      + '"[inaudible]" across the whole runtime, identifies no speaker and is not '
+      + 'synchronised. This is the case that proves presence is not conformance. The honest '
+      + 'automated outcome is cannot-tell, NOT pass.',
+    broken: `<video controls preload="none" poster="../pixel.png" width="320">
+  <source src="flight-info.mp4" type="video/mp4">
+  <track kind="captions" src="poor.vtt" srclang="en" label="English" default>
+</video>
+<p>A presence check reports this as captioned. Open <a href="poor.vtt">poor.vtt</a>.</p>`,
+    correctNote: 'Captions carry speaker identification and timed, meaningful text.',
+    correct: `<video controls preload="none" poster="../pixel.png" width="320">
+  <source src="flight-info.mp4" type="video/mp4">
+  <track kind="captions" src="flight-info.vtt" srclang="en" label="English" default>
+</video>
+<p>Open <a href="flight-info.vtt">flight-info.vtt</a> — speakers named, timings meaningful.</p>`,
+  },
+  {
+    id: 'audio_no_transcript',
+    sc: ['1.2.1'], outcome: 'fail', confidence: 'probable',
+    brokenNote: 'Audio-only content with no transcript. Nothing on the page conveys what is said.',
+    broken: `<audio controls preload="none"><source src="announcement.mp3" type="audio/mpeg"></audio>`,
+    correctNote: 'A transcript is on the page, not behind a link that may not exist.',
+    correct: `<audio controls preload="none"><source src="announcement.mp3" type="audio/mpeg"></audio>
+<h2 id="t">Transcript</h2>
+<p><strong>Agent:</strong> Your flight leaves from gate 14.</p>
+<p><strong>Traveller:</strong> Which terminal is that?</p>
+<p><strong>Agent:</strong> Terminal 5. Boarding closes 20 minutes before departure.</p>`,
+  },
+  {
+    id: 'video_no_audio_description',
+    sc: ['1.2.3', '1.2.5'], outcome: 'cannot-tell', confidence: 'possible',
+    brokenNote: 'Video whose meaning depends on what is shown, with no audio description and '
+      + 'no text alternative. Whether description is NEEDED depends on the content, so a tool '
+      + 'can flag the absence but cannot decide the outcome.',
+    broken: `<video controls preload="none" poster="../pixel.png" width="320">
+  <source src="seat-map.mp4" type="video/mp4">
+  <track kind="captions" src="flight-info.vtt" srclang="en" label="English" default>
+</video>`,
+    correctNote: 'A descriptions track plus a text alternative covering the visual content.',
+    correct: `<video controls preload="none" poster="../pixel.png" width="320">
+  <source src="seat-map.mp4" type="video/mp4">
+  <track kind="captions" src="flight-info.vtt" srclang="en" label="English" default>
+  <track kind="descriptions" src="seat-map-desc.vtt" srclang="en" label="Descriptions">
+</video>
+<h2>What the video shows</h2>
+<p>The seat map highlights row 14 at the front of the cabin, then zooms to show the
+   extra legroom seats shaded in a darker tone and labelled "extra legroom".</p>`,
+  },
+  {
+    id: 'live_no_captions',
+    sc: ['1.2.4'], outcome: 'fail', confidence: 'probable',
+    brokenNote: 'A live stream with no caption mechanism. Live captioning cannot be added after '
+      + 'the fact, so this is a build-time decision, not a content fix.',
+    broken: `<video controls autoplay muted width="320" aria-label="Live boarding announcements">
+  <source src="live.m3u8" type="application/vnd.apple.mpegurl">
+</video>`,
+    correctNote: 'A live caption region is present and announced politely as text arrives.',
+    correct: `<video controls autoplay muted width="320" aria-label="Live boarding announcements">
+  <source src="live.m3u8" type="application/vnd.apple.mpegurl">
+</video>
+<h2 id="lc">Live captions</h2>
+<div role="log" aria-live="polite" aria-labelledby="lc"><p>Agent: Boarding group 2 at gate 14.</p></div>`,
+  },
+  {
+    id: 'alert_by_sound_only',
+    sc: ['1.1.1', '4.1.3'], outcome: 'fail', confidence: 'definite',
+    brokenNote: 'A session warning signalled by a beep and nothing else. Inaudible to a deaf '
+      + 'user, to anyone with sound muted, and to anyone in a noisy room — the same defect '
+      + 'blocks a permanent need and a situational one.',
+    broken: `<button type="button" onclick="new Audio('beep.mp3').play()">Start checkout timer</button>
+<p>You will hear a tone when your reservation is about to expire.</p>`,
+    correctNote: 'The same warning as visible text in a live region, with the sound optional.',
+    correct: `<button type="button"
+  onclick="document.getElementById('w').textContent='Your reservation expires in 2 minutes.'">Start checkout timer</button>
+<div id="w" role="status" aria-live="assertive"></div>
+<p>A visible warning appears here, and a tone plays if sound is enabled.</p>`,
+  },
+  {
+    id: 'autoplay_no_control',
+    sc: ['1.4.2'], outcome: 'fail', confidence: 'definite',
+    brokenNote: 'Audio starts automatically and runs past three seconds with no pause control. '
+      + 'It also masks a screen reader, so this blocks blind users as much as it annoys everyone.',
+    broken: `<audio autoplay loop><source src="ambient.mp3" type="audio/mpeg"></audio>
+<p>Background audio starts on load with no way to stop it.</p>`,
+    correctNote: 'Not autoplaying, and a control is available regardless.',
+    correct: `<audio controls preload="none"><source src="ambient.mp3" type="audio/mpeg"></audio>
+<p>Audio plays only when started, and can be paused.</p>`,
+  },
+  {
+    id: 'captions_unlabelled_track',
+    sc: ['1.2.2'], outcome: 'fail', confidence: 'probable',
+    brokenNote: 'A track element with no srclang and no label, so a player cannot present a '
+      + 'meaningful caption choice and a user cannot tell what language they would get.',
+    broken: `<video controls preload="none" poster="../pixel.png" width="320">
+  <source src="flight-info.mp4" type="video/mp4">
+  <track kind="captions" src="flight-info.vtt">
+</video>`,
+    correctNote: 'srclang and label present, so the track is identifiable and selectable.',
+    correct: `<video controls preload="none" poster="../pixel.png" width="320">
+  <source src="flight-info.mp4" type="video/mp4">
+  <track kind="captions" src="flight-info.vtt" srclang="en" label="English" default>
+  <track kind="captions" src="flight-info-fr.vtt" srclang="fr" label="Français">
+</video>`,
+  },
+];
+
+fs.rmSync(DIR, { recursive: true, force: true });
+fs.mkdirSync(DIR, { recursive: true });
+fs.writeFileSync(path.join(DIR, 'flight-info.vtt'), VTT_GOOD);
+fs.writeFileSync(path.join(DIR, 'poor.vtt'), VTT_POOR);
+fs.writeFileSync(path.join(DIR, 'seat-map-desc.vtt'),
+  'WEBVTT\n\n00:00:00.000 --> 00:00:04.000\nThe seat map highlights row 14 at the front of the cabin.\n');
+
+const cases = [];
+for (const c of CASES) {
+  for (const [kind, body, note] of [['broken', c.broken, c.brokenNote], ['correct', c.correct, c.correctNote]]) {
+    const file = kind === 'broken' ? `${c.id}.html` : `safe_${c.id}.html`;
+    const outcome = kind === 'broken' ? c.outcome : 'pass';
+    const header = `<!--\n  ${c.id} — ${kind}\n  WCAG: ${c.sc.join(', ')}\n  expected outcome: ${outcome}\n  ${note}\n-->\n`;
+    fs.writeFileSync(path.join(DIR, file), header + page(`${c.id} — ${kind}`, `<p>${note}</p><hr>${body}`));
+    cases.push({
+      id: `media-${kind === 'broken' ? c.id : 'safe_' + c.id}`,
+      mode: kind === 'broken' ? 'tp' : 'safe',
+      path: `media/${file}`,
+      surface: 'media', journey: 'media-player', ui_state: 'default',
+      method: ['static-source', 'media-analysis', kind === 'broken' && c.outcome === 'cannot-tell' ? 'guided-manual' : 'runtime-dom'],
+      input_at: ['keyboard', 'pointer'],
+      // broken cases whose outcome is cannot-tell must NOT be scored as recall misses:
+      // the engine cannot be expected to decide them
+      min_criteria: kind === 'broken' && c.outcome === 'fail' ? Object.fromEntries(c.sc.map((s) => [s, 1])) : {},
+      must_not_report: kind === 'correct' ? c.sc : [],
+      expected_outcome: outcome,
+      confidence: kind === 'broken' ? c.confidence : 'definite',
+      notes: note,
+    });
+  }
+}
+
+fs.writeFileSync(path.join(DIR, 'index.html'), page('media fixtures',
+  `<p>Captions, transcripts, audio description and sound-only signalling.</p>
+   <p>Several of these are <strong>cannot-tell</strong>, not fail: a tool can see that a
+   caption track exists but cannot judge whether the captions are accurate, synchronised,
+   or identify the speaker. <code>captions_present_but_poor</code> exists to prove the
+   point — a presence check passes it, and the captions say only "[inaudible]".</p>
+   <ul>${CASES.map((c) => `<li><a href="${c.id}.html">${c.id}</a> ·
+     <a href="safe_${c.id}.html">corrected</a> — ${c.sc.join(', ')} — <em>${c.outcome}</em></li>`).join('\n')}</ul>`));
+
+fs.writeFileSync(path.join(ROOT, 'media.json'), JSON.stringify({
+  description: 'Media and captions. Includes cases whose honest automated outcome is '
+    + 'cannot-tell rather than pass or fail — presence of a caption track is not conformance.',
+  generated: new Date().toISOString().slice(0, 10),
+  counts: {
+    pairs: CASES.length, cases: cases.length,
+    definite_fail: CASES.filter((c) => c.outcome === 'fail').length,
+    cannot_tell: CASES.filter((c) => c.outcome === 'cannot-tell').length,
+  },
+  cases,
+}, null, 2) + '\n');
+
+console.log(`${CASES.length} pairs → ${cases.length} cases`);
+console.log(`  machine-decidable fail: ${CASES.filter((c) => c.outcome === 'fail').length}`);
+console.log(`  cannot-tell (needs a person): ${CASES.filter((c) => c.outcome === 'cannot-tell').length}`);

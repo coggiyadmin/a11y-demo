@@ -1,0 +1,26 @@
+<!--
+  captions_present_but_poor — correct
+  WCAG: 1.2.2
+  expected outcome: pass
+  Captions carry speaker identification and timed, meaningful text.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>captions_present_but_poor — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>captions_present_but_poor — correct</h1>
+<p>Captions carry speaker identification and timed, meaningful text.</p><hr><video controls preload="none" poster="../pixel.png" width="320">
+  <source src="flight-info.mp4" type="video/mp4">
+  <track kind="captions" src="flight-info.vtt" srclang="en" label="English" default>
+</video>
+<p>Open <a href="flight-info.vtt">flight-info.vtt</a> — speakers named, timings meaningful.</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

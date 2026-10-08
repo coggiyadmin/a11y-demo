@@ -1,0 +1,23 @@
+<!--
+  Seat selection — loading (correct)
+  WCAG: 4.1.3
+  aria-busy on the region and a polite status message, so the wait is announced.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seat selection — loading (correct)</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Seat selection — loading (correct)</h1>
+<p>aria-busy on the region and a polite status message, so the wait is announced.</p><hr><div aria-busy="true" aria-describedby="ld">
+  <p id="ld" role="status" aria-live="polite">Loading seat options…</p>
+</div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

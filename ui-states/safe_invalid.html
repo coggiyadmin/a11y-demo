@@ -1,0 +1,25 @@
+<!--
+  Seat selection — invalid (correct)
+  WCAG: 3.3.1, 4.1.2
+  aria-invalid, aria-describedby to a message that says what to do, and an assertive announcement.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seat selection — invalid (correct)</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Seat selection — invalid (correct)</h1>
+<p>aria-invalid, aria-describedby to a message that says what to do, and an assertive announcement.</p><hr><form><label for="seat">Seat preference</label>
+<input id="seat" name="seat" value="14Q" aria-invalid="true" aria-describedby="err">
+<p id="err" role="alert">Seat 14Q does not exist on this aircraft. Enter a row from 1 to 32
+and a letter from A to F.</p>
+<button type="submit">Continue</button></form>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

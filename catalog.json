@@ -145,7 +145,7 @@
         "#16",
         "#17"
       ],
-      "notes": "Special-fare options. Pointer-operable, not keyboard reachable."
+      "notes": "Fare options presented as cards. Pointer-operable, not keyboard reachable."
     },
     {
       "id": "keyboard-role_tab_no_tablist",

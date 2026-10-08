@@ -1,0 +1,23 @@
+<!--
+  Seat selection — corrected (broken)
+  WCAG: 4.1.3
+  The user fixed the error, but aria-invalid is still true and the stale error message is still associated with the field — so the field keeps announcing itself as invalid after it is valid.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seat selection — corrected (broken)</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Seat selection — corrected (broken)</h1>
+<p>The user fixed the error, but aria-invalid is still true and the stale error message is still associated with the field — so the field keeps announcing itself as invalid after it is valid.</p><hr><form><label for="seat">Seat preference</label>
+<input id="seat" name="seat" value="14A" aria-invalid="true" aria-describedby="err2">
+<p id="err2">Seat 14Q does not exist on this aircraft.</p></form>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

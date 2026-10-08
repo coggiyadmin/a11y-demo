@@ -7,17 +7,21 @@
       "label": "Blindness",
       "group": "vision",
       "scenarios": 10,
-      "cases": 76,
-      "tp": 45,
-      "safe": 31,
+      "cases": 103,
+      "tp": 58,
+      "safe": 45,
       "criteria": [
         "1.1.1",
+        "1.2.1",
         "1.2.2",
         "1.2.3",
+        "1.2.5",
         "1.3.1",
         "1.4.1",
         "1.4.13",
+        "1.4.2",
         "2.1.1",
+        "2.2.1",
         "2.4.3",
         "3.1.1",
         "3.3.1",
@@ -101,7 +105,34 @@
         "color-vision/disabled_state.html",
         "color-vision/safe_disabled_state.html",
         "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html"
+        "color-vision/safe_required_color_only.html",
+        "media/audio_no_transcript.html",
+        "media/safe_audio_no_transcript.html",
+        "media/safe_video_no_audio_description.html",
+        "media/alert_by_sound_only.html",
+        "media/safe_alert_by_sound_only.html",
+        "media/autoplay_no_control.html",
+        "media/safe_autoplay_no_control.html",
+        "ui-states/loading.html",
+        "ui-states/safe_loading.html",
+        "ui-states/empty.html",
+        "ui-states/safe_empty.html",
+        "ui-states/invalid.html",
+        "ui-states/safe_invalid.html",
+        "ui-states/corrected.html",
+        "ui-states/safe_corrected.html",
+        "ui-states/submitted.html",
+        "ui-states/safe_submitted.html",
+        "ui-states/error.html",
+        "ui-states/safe_error.html",
+        "ui-states/offline.html",
+        "ui-states/safe_offline.html",
+        "ui-states/permission-denied.html",
+        "ui-states/safe_permission-denied.html",
+        "ui-states/timed-out.html",
+        "ui-states/safe_timed-out.html",
+        "ui-states/busy.html",
+        "ui-states/safe_busy.html"
       ]
     },
     {
@@ -109,21 +140,24 @@
       "label": "Low vision",
       "group": "vision",
       "scenarios": 8,
-      "cases": 51,
-      "tp": 32,
-      "safe": 19,
+      "cases": 70,
+      "tp": 41,
+      "safe": 29,
       "criteria": [
         "1.1.1",
         "1.2.2",
         "1.2.3",
+        "1.2.5",
         "1.3.1",
         "1.4.1",
         "1.4.13",
         "1.4.3",
         "1.4.4",
         "2.1.1",
+        "2.2.1",
         "2.2.2",
         "2.4.11",
+        "2.4.3",
         "2.4.7",
         "3.3.1",
         "3.3.2",
@@ -181,7 +215,26 @@
         "color-vision/disabled_state.html",
         "color-vision/safe_disabled_state.html",
         "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html"
+        "color-vision/safe_required_color_only.html",
+        "media/safe_video_no_audio_description.html",
+        "media/alert_by_sound_only.html",
+        "media/safe_alert_by_sound_only.html",
+        "ui-states/loading.html",
+        "ui-states/safe_loading.html",
+        "ui-states/empty.html",
+        "ui-states/safe_empty.html",
+        "ui-states/corrected.html",
+        "ui-states/safe_corrected.html",
+        "ui-states/submitted.html",
+        "ui-states/safe_submitted.html",
+        "ui-states/offline.html",
+        "ui-states/safe_offline.html",
+        "ui-states/permission-denied.html",
+        "ui-states/safe_permission-denied.html",
+        "ui-states/timed-out.html",
+        "ui-states/safe_timed-out.html",
+        "ui-states/busy.html",
+        "ui-states/safe_busy.html"
       ]
     },
     {
@@ -189,16 +242,18 @@
       "label": "Colour blindness",
       "group": "vision",
       "scenarios": 5,
-      "cases": 21,
-      "tp": 11,
-      "safe": 10,
+      "cases": 31,
+      "tp": 16,
+      "safe": 15,
       "criteria": [
         "1.3.1",
         "1.4.1",
         "1.4.3",
+        "2.4.3",
         "3.3.1",
         "3.3.2",
-        "4.1.2"
+        "4.1.2",
+        "4.1.3"
       ],
       "fixtures": [
         "static/field_no_visible_label.html",
@@ -221,7 +276,17 @@
         "color-vision/disabled_state.html",
         "color-vision/safe_disabled_state.html",
         "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html"
+        "color-vision/safe_required_color_only.html",
+        "ui-states/empty.html",
+        "ui-states/safe_empty.html",
+        "ui-states/invalid.html",
+        "ui-states/safe_invalid.html",
+        "ui-states/error.html",
+        "ui-states/safe_error.html",
+        "ui-states/offline.html",
+        "ui-states/safe_offline.html",
+        "ui-states/permission-denied.html",
+        "ui-states/safe_permission-denied.html"
       ]
     },
     {
@@ -263,16 +328,24 @@
       "label": "Deafness",
       "group": "hearing",
       "scenarios": 6,
-      "cases": 2,
-      "tp": 1,
-      "safe": 1,
+      "cases": 9,
+      "tp": 4,
+      "safe": 5,
       "criteria": [
+        "1.2.1",
         "1.2.2",
         "1.2.3"
       ],
       "fixtures": [
         "patterns/media-captions.html",
-        "patterns/safe_media-captions.html"
+        "patterns/safe_media-captions.html",
+        "media/video_no_captions.html",
+        "media/safe_video_no_captions.html",
+        "media/safe_captions_present_but_poor.html",
+        "media/audio_no_transcript.html",
+        "media/safe_audio_no_transcript.html",
+        "media/captions_unlabelled_track.html",
+        "media/safe_captions_unlabelled_track.html"
       ]
     },
     {
@@ -280,16 +353,27 @@
       "label": "Hard of hearing",
       "group": "hearing",
       "scenarios": 4,
-      "cases": 2,
-      "tp": 1,
-      "safe": 1,
+      "cases": 11,
+      "tp": 5,
+      "safe": 6,
       "criteria": [
+        "1.2.1",
         "1.2.2",
-        "1.2.3"
+        "1.2.3",
+        "1.4.2"
       ],
       "fixtures": [
         "patterns/media-captions.html",
-        "patterns/safe_media-captions.html"
+        "patterns/safe_media-captions.html",
+        "media/video_no_captions.html",
+        "media/safe_video_no_captions.html",
+        "media/safe_captions_present_but_poor.html",
+        "media/audio_no_transcript.html",
+        "media/safe_audio_no_transcript.html",
+        "media/autoplay_no_control.html",
+        "media/safe_autoplay_no_control.html",
+        "media/captions_unlabelled_track.html",
+        "media/safe_captions_unlabelled_track.html"
       ]
     },
     {
@@ -297,17 +381,20 @@
       "label": "Deafblindness",
       "group": "multiple",
       "scenarios": 6,
-      "cases": 63,
-      "tp": 38,
-      "safe": 25,
+      "cases": 93,
+      "tp": 52,
+      "safe": 41,
       "criteria": [
         "1.1.1",
+        "1.2.1",
         "1.2.2",
         "1.2.3",
+        "1.2.5",
         "1.3.1",
         "1.4.1",
         "1.4.13",
         "2.1.1",
+        "2.2.1",
         "2.4.3",
         "3.1.1",
         "3.3.1",
@@ -378,7 +465,37 @@
         "patterns/media-captions.html",
         "patterns/safe_media-captions.html",
         "color-vision/selection_color_only.html",
-        "color-vision/safe_selection_color_only.html"
+        "color-vision/safe_selection_color_only.html",
+        "media/video_no_captions.html",
+        "media/safe_video_no_captions.html",
+        "media/safe_captions_present_but_poor.html",
+        "media/audio_no_transcript.html",
+        "media/safe_audio_no_transcript.html",
+        "media/safe_video_no_audio_description.html",
+        "media/alert_by_sound_only.html",
+        "media/safe_alert_by_sound_only.html",
+        "media/captions_unlabelled_track.html",
+        "media/safe_captions_unlabelled_track.html",
+        "ui-states/loading.html",
+        "ui-states/safe_loading.html",
+        "ui-states/empty.html",
+        "ui-states/safe_empty.html",
+        "ui-states/invalid.html",
+        "ui-states/safe_invalid.html",
+        "ui-states/corrected.html",
+        "ui-states/safe_corrected.html",
+        "ui-states/submitted.html",
+        "ui-states/safe_submitted.html",
+        "ui-states/error.html",
+        "ui-states/safe_error.html",
+        "ui-states/offline.html",
+        "ui-states/safe_offline.html",
+        "ui-states/permission-denied.html",
+        "ui-states/safe_permission-denied.html",
+        "ui-states/timed-out.html",
+        "ui-states/safe_timed-out.html",
+        "ui-states/busy.html",
+        "ui-states/safe_busy.html"
       ]
     },
     {
@@ -386,21 +503,23 @@
       "label": "Limited dexterity",
       "group": "motor",
       "scenarios": 8,
-      "cases": 54,
-      "tp": 34,
-      "safe": 20,
+      "cases": 62,
+      "tp": 38,
+      "safe": 24,
       "criteria": [
         "1.1.1",
         "1.3.1",
         "1.4.1",
         "1.4.13",
         "2.1.1",
+        "2.2.1",
         "2.4.11",
         "2.4.3",
         "2.4.7",
         "3.3.1",
         "3.3.2",
-        "4.1.2"
+        "4.1.2",
+        "4.1.3"
       ],
       "fixtures": [
         "keyboard/div_button.html",
@@ -456,7 +575,15 @@
         "patterns/form-errors.html",
         "patterns/safe_form-errors.html",
         "color-vision/selection_color_only.html",
-        "color-vision/safe_selection_color_only.html"
+        "color-vision/safe_selection_color_only.html",
+        "ui-states/invalid.html",
+        "ui-states/safe_invalid.html",
+        "ui-states/submitted.html",
+        "ui-states/safe_submitted.html",
+        "ui-states/error.html",
+        "ui-states/safe_error.html",
+        "ui-states/timed-out.html",
+        "ui-states/safe_timed-out.html"
       ]
     },
     {
@@ -587,20 +714,26 @@
       "label": "Fatigue",
       "group": "motor",
       "scenarios": 4,
-      "cases": 0,
-      "tp": 0,
-      "safe": 0,
-      "criteria": [],
-      "fixtures": []
+      "cases": 2,
+      "tp": 1,
+      "safe": 1,
+      "criteria": [
+        "2.2.1",
+        "4.1.3"
+      ],
+      "fixtures": [
+        "ui-states/timed-out.html",
+        "ui-states/safe_timed-out.html"
+      ]
     },
     {
       "id": "speech-unable",
       "label": "Unable to use voice interfaces",
       "group": "speech",
       "scenarios": 3,
-      "cases": 51,
-      "tp": 32,
-      "safe": 19,
+      "cases": 53,
+      "tp": 33,
+      "safe": 20,
       "criteria": [
         "1.1.1",
         "1.3.1",
@@ -663,7 +796,9 @@
         "patterns/form-errors.html",
         "patterns/safe_form-errors.html",
         "color-vision/selection_color_only.html",
-        "color-vision/safe_selection_color_only.html"
+        "color-vision/safe_selection_color_only.html",
+        "ui-states/invalid.html",
+        "ui-states/safe_invalid.html"
       ]
     },
     {
@@ -671,16 +806,18 @@
       "label": "Memory",
       "group": "cognitive",
       "scenarios": 4,
-      "cases": 17,
-      "tp": 9,
-      "safe": 8,
+      "cases": 23,
+      "tp": 12,
+      "safe": 11,
       "criteria": [
         "1.3.1",
         "1.4.1",
         "2.1.1",
+        "2.2.1",
         "3.3.1",
         "3.3.2",
-        "4.1.2"
+        "4.1.2",
+        "4.1.3"
       ],
       "fixtures": [
         "keyboard/div_text_field.html",
@@ -699,7 +836,13 @@
         "patterns/required-fields.html",
         "patterns/safe_required-fields.html",
         "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html"
+        "color-vision/safe_required_color_only.html",
+        "ui-states/empty.html",
+        "ui-states/safe_empty.html",
+        "ui-states/permission-denied.html",
+        "ui-states/safe_permission-denied.html",
+        "ui-states/timed-out.html",
+        "ui-states/safe_timed-out.html"
       ]
     },
     {
@@ -707,18 +850,23 @@
       "label": "Attention",
       "group": "cognitive",
       "scenarios": 3,
-      "cases": 17,
-      "tp": 9,
-      "safe": 8,
+      "cases": 36,
+      "tp": 18,
+      "safe": 18,
       "criteria": [
+        "1.1.1",
         "1.2.2",
         "1.2.3",
+        "1.2.5",
         "1.4.13",
+        "1.4.2",
         "2.1.1",
+        "2.2.1",
         "2.2.2",
         "2.4.11",
         "2.4.3",
         "2.4.7",
+        "3.3.1",
         "4.1.2",
         "4.1.3"
       ],
@@ -739,7 +887,26 @@
         "patterns/tooltip.html",
         "patterns/safe_tooltip.html",
         "patterns/media-captions.html",
-        "patterns/safe_media-captions.html"
+        "patterns/safe_media-captions.html",
+        "media/safe_video_no_audio_description.html",
+        "media/alert_by_sound_only.html",
+        "media/safe_alert_by_sound_only.html",
+        "media/autoplay_no_control.html",
+        "media/safe_autoplay_no_control.html",
+        "ui-states/loading.html",
+        "ui-states/safe_loading.html",
+        "ui-states/corrected.html",
+        "ui-states/safe_corrected.html",
+        "ui-states/submitted.html",
+        "ui-states/safe_submitted.html",
+        "ui-states/error.html",
+        "ui-states/safe_error.html",
+        "ui-states/offline.html",
+        "ui-states/safe_offline.html",
+        "ui-states/timed-out.html",
+        "ui-states/safe_timed-out.html",
+        "ui-states/busy.html",
+        "ui-states/safe_busy.html"
       ]
     },
     {
@@ -768,9 +935,9 @@
       "label": "Language and literacy",
       "group": "cognitive",
       "scenarios": 4,
-      "cases": 43,
-      "tp": 28,
-      "safe": 15,
+      "cases": 60,
+      "tp": 36,
+      "safe": 24,
       "criteria": [
         "1.1.1",
         "1.2.2",
@@ -778,10 +945,12 @@
         "1.3.1",
         "1.4.1",
         "2.1.1",
+        "2.4.3",
         "3.1.1",
         "3.3.1",
         "3.3.2",
-        "4.1.2"
+        "4.1.2",
+        "4.1.3"
       ],
       "fixtures": [
         "keyboard/div_text_field.html",
@@ -826,7 +995,24 @@
         "color-vision/disabled_state.html",
         "color-vision/safe_disabled_state.html",
         "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html"
+        "color-vision/safe_required_color_only.html",
+        "media/video_no_captions.html",
+        "media/safe_video_no_captions.html",
+        "media/safe_captions_present_but_poor.html",
+        "media/alert_by_sound_only.html",
+        "media/safe_alert_by_sound_only.html",
+        "media/captions_unlabelled_track.html",
+        "media/safe_captions_unlabelled_track.html",
+        "ui-states/empty.html",
+        "ui-states/safe_empty.html",
+        "ui-states/invalid.html",
+        "ui-states/safe_invalid.html",
+        "ui-states/error.html",
+        "ui-states/safe_error.html",
+        "ui-states/offline.html",
+        "ui-states/safe_offline.html",
+        "ui-states/permission-denied.html",
+        "ui-states/safe_permission-denied.html"
       ]
     },
     {
@@ -834,18 +1020,20 @@
       "label": "Executive function",
       "group": "cognitive",
       "scenarios": 5,
-      "cases": 52,
-      "tp": 26,
-      "safe": 26,
+      "cases": 64,
+      "tp": 32,
+      "safe": 32,
       "criteria": [
         "1.3.1",
         "1.4.1",
         "1.4.13",
         "2.1.1",
+        "2.2.1",
         "2.4.3",
         "3.3.1",
         "3.3.2",
-        "4.1.2"
+        "4.1.2",
+        "4.1.3"
       ],
       "fixtures": [
         "keyboard/div_button.html",
@@ -899,7 +1087,19 @@
         "color-vision/disabled_state.html",
         "color-vision/safe_disabled_state.html",
         "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html"
+        "color-vision/safe_required_color_only.html",
+        "ui-states/empty.html",
+        "ui-states/safe_empty.html",
+        "ui-states/invalid.html",
+        "ui-states/safe_invalid.html",
+        "ui-states/error.html",
+        "ui-states/safe_error.html",
+        "ui-states/offline.html",
+        "ui-states/safe_offline.html",
+        "ui-states/permission-denied.html",
+        "ui-states/safe_permission-denied.html",
+        "ui-states/timed-out.html",
+        "ui-states/safe_timed-out.html"
       ]
     },
     {
@@ -950,20 +1150,24 @@
       "label": "Age-related needs",
       "group": "multiple",
       "scenarios": 5,
-      "cases": 5,
-      "tp": 3,
-      "safe": 2,
+      "cases": 7,
+      "tp": 4,
+      "safe": 3,
       "criteria": [
         "1.4.3",
         "1.4.4",
-        "2.4.7"
+        "2.2.1",
+        "2.4.7",
+        "4.1.3"
       ],
       "fixtures": [
         "keyboard/focus_not_visible.html",
         "static/viewport_no_zoom.html",
         "static/safe_viewport.html",
         "color-vision/placeholder_contrast.html",
-        "color-vision/safe_placeholder_contrast.html"
+        "color-vision/safe_placeholder_contrast.html",
+        "ui-states/timed-out.html",
+        "ui-states/safe_timed-out.html"
       ]
     },
     {
@@ -982,15 +1186,18 @@
       "label": "Situational limitation",
       "group": "situational",
       "scenarios": 5,
-      "cases": 17,
-      "tp": 14,
-      "safe": 3,
+      "cases": 28,
+      "tp": 19,
+      "safe": 9,
       "criteria": [
         "1.1.1",
+        "1.2.1",
         "1.2.2",
         "1.2.3",
+        "1.4.2",
         "1.4.3",
-        "2.1.1"
+        "2.1.1",
+        "4.1.3"
       ],
       "fixtures": [
         "static/img_no_alt.html",
@@ -1009,7 +1216,18 @@
         "patterns/media-captions.html",
         "patterns/safe_media-captions.html",
         "color-vision/placeholder_contrast.html",
-        "color-vision/safe_placeholder_contrast.html"
+        "color-vision/safe_placeholder_contrast.html",
+        "media/video_no_captions.html",
+        "media/safe_video_no_captions.html",
+        "media/safe_captions_present_but_poor.html",
+        "media/audio_no_transcript.html",
+        "media/safe_audio_no_transcript.html",
+        "media/alert_by_sound_only.html",
+        "media/safe_alert_by_sound_only.html",
+        "media/autoplay_no_control.html",
+        "media/safe_autoplay_no_control.html",
+        "media/captions_unlabelled_track.html",
+        "media/safe_captions_unlabelled_track.html"
       ]
     }
   ],
@@ -1050,6 +1268,23 @@
       ]
     },
     {
+      "sc": "4.1.3",
+      "needs": [
+        "age-related",
+        "cognitive-attention",
+        "cognitive-executive",
+        "cognitive-language",
+        "cognitive-memory",
+        "deafblind",
+        "motor-dexterity",
+        "motor-fatigue",
+        "situational",
+        "vision-blind",
+        "vision-color",
+        "vision-low"
+      ]
+    },
+    {
       "sc": "1.3.1",
       "needs": [
         "cognitive-executive",
@@ -1066,8 +1301,25 @@
       ]
     },
     {
-      "sc": "3.3.2",
+      "sc": "2.4.3",
       "needs": [
+        "cognitive-attention",
+        "cognitive-executive",
+        "cognitive-language",
+        "deafblind",
+        "motor-dexterity",
+        "motor-paralysis",
+        "motor-tremor",
+        "speech-unable",
+        "vision-blind",
+        "vision-color",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "3.3.1",
+      "needs": [
+        "cognitive-attention",
         "cognitive-executive",
         "cognitive-language",
         "cognitive-memory",
@@ -1081,7 +1333,22 @@
       ]
     },
     {
-      "sc": "3.3.1",
+      "sc": "1.1.1",
+      "needs": [
+        "cognitive-attention",
+        "cognitive-language",
+        "deafblind",
+        "motor-dexterity",
+        "motor-paralysis",
+        "motor-tremor",
+        "situational",
+        "speech-unable",
+        "vision-blind",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "3.3.2",
       "needs": [
         "cognitive-executive",
         "cognitive-language",
@@ -1111,30 +1378,17 @@
       ]
     },
     {
-      "sc": "1.1.1",
+      "sc": "2.2.1",
       "needs": [
-        "cognitive-language",
-        "deafblind",
-        "motor-dexterity",
-        "motor-paralysis",
-        "motor-tremor",
-        "situational",
-        "speech-unable",
-        "vision-blind",
-        "vision-low"
-      ]
-    },
-    {
-      "sc": "2.4.3",
-      "needs": [
+        "age-related",
         "cognitive-attention",
         "cognitive-executive",
+        "cognitive-memory",
         "deafblind",
         "motor-dexterity",
-        "motor-paralysis",
-        "motor-tremor",
-        "speech-unable",
-        "vision-blind"
+        "motor-fatigue",
+        "vision-blind",
+        "vision-low"
       ]
     },
     {
@@ -1207,6 +1461,16 @@
       ]
     },
     {
+      "sc": "1.2.1",
+      "needs": [
+        "deafblind",
+        "hearing-deaf",
+        "hearing-hoh",
+        "situational",
+        "vision-blind"
+      ]
+    },
+    {
       "sc": "3.1.1",
       "needs": [
         "cognitive-dyslexia",
@@ -1216,12 +1480,21 @@
       ]
     },
     {
-      "sc": "4.1.3",
+      "sc": "1.2.5",
       "needs": [
         "cognitive-attention",
         "deafblind",
         "vision-blind",
         "vision-low"
+      ]
+    },
+    {
+      "sc": "1.4.2",
+      "needs": [
+        "cognitive-attention",
+        "hearing-hoh",
+        "situational",
+        "vision-blind"
       ]
     },
     {

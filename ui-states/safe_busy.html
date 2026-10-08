@@ -1,0 +1,24 @@
+<!--
+  Seat selection — busy (correct)
+  WCAG: 4.1.3
+  aria-busy on the region, the control disabled while in flight, and progress announced politely.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seat selection — busy (correct)</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Seat selection — busy (correct)</h1>
+<p>aria-busy on the region, the control disabled while in flight, and progress announced politely.</p><hr><form aria-busy="true"><label for="seat">Seat preference</label>
+<input id="seat" name="seat" value="14A">
+<button type="submit" disabled aria-describedby="sv">Saving…</button>
+<p id="sv" role="status" aria-live="polite">Saving your seat choice.</p></form>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

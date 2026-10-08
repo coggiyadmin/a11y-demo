@@ -1,0 +1,24 @@
+<!--
+  video_no_captions — broken
+  WCAG: 1.2.2
+  expected outcome: fail
+  Prerecorded video with speech and no caption track at all. The absence of a track is machine-detectable, so this is a definite fail rather than a judgement call.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>video_no_captions — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>video_no_captions — broken</h1>
+<p>Prerecorded video with speech and no caption track at all. The absence of a track is machine-detectable, so this is a definite fail rather than a judgement call.</p><hr><video controls preload="none" poster="../pixel.png" width="320">
+  <source src="flight-info.mp4" type="video/mp4">
+</video>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

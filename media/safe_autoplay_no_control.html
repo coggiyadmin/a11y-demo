@@ -1,0 +1,23 @@
+<!--
+  autoplay_no_control — correct
+  WCAG: 1.4.2
+  expected outcome: pass
+  Not autoplaying, and a control is available regardless.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>autoplay_no_control — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>autoplay_no_control — correct</h1>
+<p>Not autoplaying, and a control is available regardless.</p><hr><audio controls preload="none"><source src="ambient.mp3" type="audio/mpeg"></audio>
+<p>Audio plays only when started, and can be paused.</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

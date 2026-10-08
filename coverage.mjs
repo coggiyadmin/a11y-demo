@@ -13,7 +13,7 @@ const wcag = JSON.parse(fs.readFileSync(path.join(ROOT, 'wcag/criteria.json'), '
 const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog.json'), 'utf8'));
 
 // every local case family
-const EXTRA = ['delivery.json', 'patterns.json', 'color-vision.json']
+const EXTRA = ['delivery.json', 'patterns.json', 'color-vision.json', 'media.json', 'ui-states.json']
   .map((f) => path.join(ROOT, f)).filter((f) => fs.existsSync(f))
   .flatMap((f) => JSON.parse(fs.readFileSync(f, 'utf8')).cases);
 catalog.cases = [...catalog.cases, ...EXTRA];

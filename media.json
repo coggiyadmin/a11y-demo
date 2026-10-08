@@ -1,0 +1,395 @@
+{
+  "description": "Media and captions. Includes cases whose honest automated outcome is cannot-tell rather than pass or fail — presence of a caption track is not conformance.",
+  "generated": "2026-10-08",
+  "counts": {
+    "pairs": 8,
+    "cases": 16,
+    "definite_fail": 6,
+    "cannot_tell": 2
+  },
+  "cases": [
+    {
+      "id": "media-video_no_captions",
+      "mode": "tp",
+      "path": "media/video_no_captions.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {
+        "1.2.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "confidence": "definite",
+      "notes": "Prerecorded video with speech and no caption track at all. The absence of a track is machine-detectable, so this is a definite fail rather than a judgement call."
+    },
+    {
+      "id": "media-safe_video_no_captions",
+      "mode": "safe",
+      "path": "media/safe_video_no_captions.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.2.2"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "notes": "A caption track is declared, default, and language-tagged."
+    },
+    {
+      "id": "media-captions_present_but_poor",
+      "mode": "tp",
+      "path": "media/captions_present_but_poor.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "guided-manual"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "expected_outcome": "cannot-tell",
+      "confidence": "possible",
+      "notes": "A caption track IS present, so a presence check passes — but it says only \"[inaudible]\" across the whole runtime, identifies no speaker and is not synchronised. This is the case that proves presence is not conformance. The honest automated outcome is cannot-tell, NOT pass."
+    },
+    {
+      "id": "media-safe_captions_present_but_poor",
+      "mode": "safe",
+      "path": "media/safe_captions_present_but_poor.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.2.2"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "notes": "Captions carry speaker identification and timed, meaningful text."
+    },
+    {
+      "id": "media-audio_no_transcript",
+      "mode": "tp",
+      "path": "media/audio_no_transcript.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {
+        "1.2.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "confidence": "probable",
+      "notes": "Audio-only content with no transcript. Nothing on the page conveys what is said."
+    },
+    {
+      "id": "media-safe_audio_no_transcript",
+      "mode": "safe",
+      "path": "media/safe_audio_no_transcript.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.2.1"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "notes": "A transcript is on the page, not behind a link that may not exist."
+    },
+    {
+      "id": "media-video_no_audio_description",
+      "mode": "tp",
+      "path": "media/video_no_audio_description.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "guided-manual"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "expected_outcome": "cannot-tell",
+      "confidence": "possible",
+      "notes": "Video whose meaning depends on what is shown, with no audio description and no text alternative. Whether description is NEEDED depends on the content, so a tool can flag the absence but cannot decide the outcome."
+    },
+    {
+      "id": "media-safe_video_no_audio_description",
+      "mode": "safe",
+      "path": "media/safe_video_no_audio_description.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.2.3",
+        "1.2.5"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "notes": "A descriptions track plus a text alternative covering the visual content."
+    },
+    {
+      "id": "media-live_no_captions",
+      "mode": "tp",
+      "path": "media/live_no_captions.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {
+        "1.2.4": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "confidence": "probable",
+      "notes": "A live stream with no caption mechanism. Live captioning cannot be added after the fact, so this is a build-time decision, not a content fix."
+    },
+    {
+      "id": "media-safe_live_no_captions",
+      "mode": "safe",
+      "path": "media/safe_live_no_captions.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.2.4"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "notes": "A live caption region is present and announced politely as text arrives."
+    },
+    {
+      "id": "media-alert_by_sound_only",
+      "mode": "tp",
+      "path": "media/alert_by_sound_only.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {
+        "1.1.1": 1,
+        "4.1.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "confidence": "definite",
+      "notes": "A session warning signalled by a beep and nothing else. Inaudible to a deaf user, to anyone with sound muted, and to anyone in a noisy room — the same defect blocks a permanent need and a situational one."
+    },
+    {
+      "id": "media-safe_alert_by_sound_only",
+      "mode": "safe",
+      "path": "media/safe_alert_by_sound_only.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.1.1",
+        "4.1.3"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "notes": "The same warning as visible text in a live region, with the sound optional."
+    },
+    {
+      "id": "media-autoplay_no_control",
+      "mode": "tp",
+      "path": "media/autoplay_no_control.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {
+        "1.4.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "confidence": "definite",
+      "notes": "Audio starts automatically and runs past three seconds with no pause control. It also masks a screen reader, so this blocks blind users as much as it annoys everyone."
+    },
+    {
+      "id": "media-safe_autoplay_no_control",
+      "mode": "safe",
+      "path": "media/safe_autoplay_no_control.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.4.2"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "notes": "Not autoplaying, and a control is available regardless."
+    },
+    {
+      "id": "media-captions_unlabelled_track",
+      "mode": "tp",
+      "path": "media/captions_unlabelled_track.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {
+        "1.2.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "confidence": "probable",
+      "notes": "A track element with no srclang and no label, so a player cannot present a meaningful caption choice and a user cannot tell what language they would get."
+    },
+    {
+      "id": "media-safe_captions_unlabelled_track",
+      "mode": "safe",
+      "path": "media/safe_captions_unlabelled_track.html",
+      "surface": "media",
+      "journey": "media-player",
+      "ui_state": "default",
+      "method": [
+        "static-source",
+        "media-analysis",
+        "runtime-dom"
+      ],
+      "input_at": [
+        "keyboard",
+        "pointer"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.2.2"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "notes": "srclang and label present, so the track is identifiable and selectable."
+    }
+  ]
+}

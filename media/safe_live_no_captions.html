@@ -1,0 +1,26 @@
+<!--
+  live_no_captions — correct
+  WCAG: 1.2.4
+  expected outcome: pass
+  A live caption region is present and announced politely as text arrives.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>live_no_captions — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>live_no_captions — correct</h1>
+<p>A live caption region is present and announced politely as text arrives.</p><hr><video controls autoplay muted width="320" aria-label="Live boarding announcements">
+  <source src="live.m3u8" type="application/vnd.apple.mpegurl">
+</video>
+<h2 id="lc">Live captions</h2>
+<div role="log" aria-live="polite" aria-labelledby="lc"><p>Agent: Boarding group 2 at gate 14.</p></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

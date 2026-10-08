@@ -96,6 +96,29 @@ cannot show that one fix moves twelve groups; `node needs-index.mjs` can.
 Mapping rules rather than fixtures is deliberate — hand-annotating every case
 drifts, and the rule-level mapping stays the single source of truth.
 
+### Media and captions
+
+`media/` covers captions, transcripts, audio description, live captioning and
+sound-only signalling. Two of the eight pairs are deliberately **cannot-tell**
+rather than fail — `captions_present_but_poor` ships a real, parseable caption
+track that says only `[inaudible]` across the whole runtime, identifies no
+speaker and is not synchronised. A presence check passes it. That is the point:
+presence of a track is not conformance, and the honest automated outcome is
+"examined, needs a person", not "pass".
+
+### UI states
+
+`ui-states/` holds one journey — choosing a seat — constant across ten states:
+loading, empty, invalid, corrected, submitted, error, offline,
+permission-denied, timed-out and busy. Holding the journey constant makes any
+difference attributable to the state rather than to different content.
+
+Three of these cannot be reached by following links — `timed-out`,
+`permission-denied` and `offline` have to be driven. A corpus that only tests
+crawlable pages never tests them at all, which is why a form can be perfectly
+labelled when blank and still lose focus on submit and announce nothing when
+validation fails.
+
 ### Colour vision
 
 `color-vision/` holds eight pairs covering the checks a contrast test cannot
@@ -125,8 +148,8 @@ It is written down so coverage can be divided by a real denominator. Run
 `node space-coverage.mjs` for the current, deliberately unflattering picture:
 
 ```
-surfaces      1 / 18     journeys   1 / 25     ui-states  1 / 12
-user-needs   12 / 22     input-at   3 / 12     methods    3 / 15
+surfaces      2 / 18     journeys    3 / 25     ui-states  11 / 12
+user-needs   21 / 23     input-at    4 / 12     methods     9 / 15
 ```
 
 Two notes that matter more than the numbers:

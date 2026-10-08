@@ -1,0 +1,25 @@
+<!--
+  alert_by_sound_only — correct
+  WCAG: 1.1.1, 4.1.3
+  expected outcome: pass
+  The same warning as visible text in a live region, with the sound optional.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>alert_by_sound_only — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>alert_by_sound_only — correct</h1>
+<p>The same warning as visible text in a live region, with the sound optional.</p><hr><button type="button"
+  onclick="document.getElementById('w').textContent='Your reservation expires in 2 minutes.'">Start checkout timer</button>
+<div id="w" role="status" aria-live="assertive"></div>
+<p>A visible warning appears here, and a tone plays if sound is enabled.</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

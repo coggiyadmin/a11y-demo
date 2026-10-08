@@ -1,0 +1,23 @@
+<!--
+  alert_by_sound_only — broken
+  WCAG: 1.1.1, 4.1.3
+  expected outcome: fail
+  A session warning signalled by a beep and nothing else. Inaudible to a deaf user, to anyone with sound muted, and to anyone in a noisy room — the same defect blocks a permanent need and a situational one.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>alert_by_sound_only — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>alert_by_sound_only — broken</h1>
+<p>A session warning signalled by a beep and nothing else. Inaudible to a deaf user, to anyone with sound muted, and to anyone in a noisy room — the same defect blocks a permanent need and a situational one.</p><hr><button type="button" onclick="new Audio('beep.mp3').play()">Start checkout timer</button>
+<p>You will hear a tone when your reservation is about to expire.</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

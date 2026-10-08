@@ -1,0 +1,25 @@
+<!--
+  video_no_audio_description — broken
+  WCAG: 1.2.3, 1.2.5
+  expected outcome: cannot-tell
+  Video whose meaning depends on what is shown, with no audio description and no text alternative. Whether description is NEEDED depends on the content, so a tool can flag the absence but cannot decide the outcome.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>video_no_audio_description — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>video_no_audio_description — broken</h1>
+<p>Video whose meaning depends on what is shown, with no audio description and no text alternative. Whether description is NEEDED depends on the content, so a tool can flag the absence but cannot decide the outcome.</p><hr><video controls preload="none" poster="../pixel.png" width="320">
+  <source src="seat-map.mp4" type="video/mp4">
+  <track kind="captions" src="flight-info.vtt" srclang="en" label="English" default>
+</video>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!--
+  video_no_audio_description — correct
+  WCAG: 1.2.3, 1.2.5
+  expected outcome: pass
+  A descriptions track plus a text alternative covering the visual content.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>video_no_audio_description — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>video_no_audio_description — correct</h1>
+<p>A descriptions track plus a text alternative covering the visual content.</p><hr><video controls preload="none" poster="../pixel.png" width="320">
+  <source src="seat-map.mp4" type="video/mp4">
+  <track kind="captions" src="flight-info.vtt" srclang="en" label="English" default>
+  <track kind="descriptions" src="seat-map-desc.vtt" srclang="en" label="Descriptions">
+</video>
+<h2>What the video shows</h2>
+<p>The seat map highlights row 14 at the front of the cabin, then zooms to show the
+   extra legroom seats shaded in a darker tone and labelled "extra legroom".</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>
