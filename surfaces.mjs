@@ -94,7 +94,10 @@ const CASES = [
       + 'checkers test only the rendered page and so never see Part B at all.',
     broken: `<div class="field"><div class="btn" onclick="void 0">B</div>
 <div class="btn" onclick="void 0">Insert image</div></div>
-<h2>Generated output</h2>
+<h2>Generated output, as the tool renders it</h2>
+<div style="font-size:24px;font-weight:bold">Baggage</div>
+<img src="../pixel.png">
+<h2>Generated output, as source</h2>
 <pre><code>&lt;div style="font-size:24px;font-weight:bold"&gt;Baggage&lt;/div&gt;
 &lt;img src="bag.png"&gt;</code></pre>`,
     correctNote: 'Keyboard-operable toolbar, and output that uses real headings and prompts '
@@ -102,7 +105,10 @@ const CASES = [
     correct: `<div role="toolbar" aria-label="Formatting">
 <button type="button" aria-pressed="false">Bold</button>
 <button type="button">Insert image</button></div>
-<h2>Generated output</h2>
+<h2>Generated output, as the tool renders it</h2>
+<h3>Baggage</h3>
+<img src="../pixel.png" alt="A cabin bag in a size gauge">
+<h2>Generated output, as source</h2>
 <pre><code>&lt;h2&gt;Baggage&lt;/h2&gt;
 &lt;img src="bag.png" alt="A cabin bag in a size gauge"&gt;</code></pre>
 <p>The editor requires a text alternative before an image can be inserted.</p>`,

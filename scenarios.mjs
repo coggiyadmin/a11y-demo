@@ -32,8 +32,10 @@ const S = [
     needsAt: ['keyboard'],
     brokenNote: 'A popover opens but focus stays behind it, and Tab cycles through the page '
       + 'underneath while the popover covers it. Nothing traps, nothing restores.',
+    // Open at load. Previously hidden until clicked, which meant a scan that does not
+    // interact found no focus cycle to observe and the fixture tested nothing.
     broken: `<button type="button" onclick="document.getElementById('po').hidden=false">Fare rules</button>
-<div id="po" hidden style="border:2px solid #30556e;padding:1rem">
+<div id="po" style="border:2px solid #30556e;padding:1rem">
   <p>Changes permitted for a fee.</p>
   <div class="btn" onclick="document.getElementById('po').hidden=true">Close</div>
 </div>

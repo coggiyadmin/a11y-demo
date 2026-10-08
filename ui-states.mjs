@@ -139,14 +139,26 @@ the connection returns.</p>
     brokenNote: 'The session expired silently and the form was cleared. No warning beforehand, '
       + 'no way to extend, and the work is gone — which penalises anyone who needs longer, '
       + 'whether for motor, cognitive or situational reasons.',
-    broken: `<form>${FIELD('value=""')}</form><p style="color:#999">Session expired.</p>`,
+    // 2.2.1 is about a time limit SET BY THE CONTENT. The fixture previously only
+    // described an expiry in prose, so it exercised nothing — a meta refresh makes the
+    // limit real and machine-detectable, which is what the criterion is about.
+    // 3600s, not 20s. A short refresh would reload the page DURING a scan, making the
+    // fixture pathological for the tools under test. 2.2.1 is failed by a timed reload
+    // the user cannot turn off, adjust or extend at any duration under 20 hours, so a
+    // long delay is just as much a failure and does not disrupt measurement.
+    broken: `<meta http-equiv="refresh" content="3600">
+<form>${FIELD('value=""')}</form>
+<p style="color:#999">Session expired. This page reloads on a timer with no way to turn
+   that off, extend it, or be warned first.</p>`,
     correctNote: 'Warned before expiry, offered an extension, and the entered value preserved.',
     correct: `<div role="alert">
   <h2>Your session is about to expire</h2>
   <p>You have 2 minutes left. Your seat choice has been kept.</p>
   <button type="button">Give me more time</button>
+  <button type="button">Turn off the time limit</button>
 </div>
-<form>${FIELD('value="14A"')}</form>`,
+<form>${FIELD('value="14A"')}</form>
+<p>No meta refresh: the limit can be extended, turned off, and warns before it expires.</p>`,
   },
   {
     id: 'busy', sc: ['4.1.3'],
