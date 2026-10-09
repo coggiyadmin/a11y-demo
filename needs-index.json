@@ -3,9 +3,9 @@
   "generated": "2026-10-09",
   "needs": [
     {
-      "id": "vision-blind",
-      "label": "Blindness",
-      "group": "vision",
+      "id": "nonvisual-access",
+      "label": "Non-visual operation",
+      "group": "visual-presentation",
       "scenarios": 10,
       "cases": 155,
       "tp": 81,
@@ -104,20 +104,20 @@
         "patterns/safe_required-fields.html",
         "patterns/media-captions.html",
         "patterns/safe_media-captions.html",
-        "color-vision/error_color_only.html",
-        "color-vision/safe_error_color_only.html",
-        "color-vision/status_color_only.html",
-        "color-vision/safe_status_color_only.html",
-        "color-vision/link_color_only.html",
-        "color-vision/safe_link_color_only.html",
-        "color-vision/chart_series_color_only.html",
-        "color-vision/safe_chart_series_color_only.html",
-        "color-vision/selection_color_only.html",
-        "color-vision/safe_selection_color_only.html",
-        "color-vision/disabled_state.html",
-        "color-vision/safe_disabled_state.html",
-        "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html",
+        "color-independent/error_color_only.html",
+        "color-independent/safe_error_color_only.html",
+        "color-independent/status_color_only.html",
+        "color-independent/safe_status_color_only.html",
+        "color-independent/link_color_only.html",
+        "color-independent/safe_link_color_only.html",
+        "color-independent/chart_series_color_only.html",
+        "color-independent/safe_chart_series_color_only.html",
+        "color-independent/selection_color_only.html",
+        "color-independent/safe_selection_color_only.html",
+        "color-independent/disabled_state.html",
+        "color-independent/safe_disabled_state.html",
+        "color-independent/required_color_only.html",
+        "color-independent/safe_required_color_only.html",
         "media/audio_no_transcript.html",
         "media/safe_audio_no_transcript.html",
         "media/safe_video_no_audio_description.html",
@@ -200,9 +200,9 @@
       ]
     },
     {
-      "id": "vision-low",
-      "label": "Low vision",
-      "group": "vision",
+      "id": "visual-clarity",
+      "label": "Visual clarity and scaling",
+      "group": "visual-presentation",
       "scenarios": 8,
       "cases": 105,
       "tp": 57,
@@ -271,22 +271,22 @@
         "patterns/safe_required-fields.html",
         "patterns/media-captions.html",
         "patterns/safe_media-captions.html",
-        "color-vision/error_color_only.html",
-        "color-vision/safe_error_color_only.html",
-        "color-vision/status_color_only.html",
-        "color-vision/safe_status_color_only.html",
-        "color-vision/link_color_only.html",
-        "color-vision/safe_link_color_only.html",
-        "color-vision/chart_series_color_only.html",
-        "color-vision/safe_chart_series_color_only.html",
-        "color-vision/selection_color_only.html",
-        "color-vision/safe_selection_color_only.html",
-        "color-vision/placeholder_contrast.html",
-        "color-vision/safe_placeholder_contrast.html",
-        "color-vision/disabled_state.html",
-        "color-vision/safe_disabled_state.html",
-        "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html",
+        "color-independent/error_color_only.html",
+        "color-independent/safe_error_color_only.html",
+        "color-independent/status_color_only.html",
+        "color-independent/safe_status_color_only.html",
+        "color-independent/link_color_only.html",
+        "color-independent/safe_link_color_only.html",
+        "color-independent/chart_series_color_only.html",
+        "color-independent/safe_chart_series_color_only.html",
+        "color-independent/selection_color_only.html",
+        "color-independent/safe_selection_color_only.html",
+        "color-independent/placeholder_contrast.html",
+        "color-independent/safe_placeholder_contrast.html",
+        "color-independent/disabled_state.html",
+        "color-independent/safe_disabled_state.html",
+        "color-independent/required_color_only.html",
+        "color-independent/safe_required_color_only.html",
         "media/safe_video_no_audio_description.html",
         "media/alert_by_sound_only.html",
         "media/safe_alert_by_sound_only.html",
@@ -344,9 +344,9 @@
       ]
     },
     {
-      "id": "vision-color",
-      "label": "Colour blindness",
-      "group": "vision",
+      "id": "color-independent",
+      "label": "Colour-independent information",
+      "group": "visual-presentation",
       "scenarios": 5,
       "cases": 44,
       "tp": 22,
@@ -372,22 +372,22 @@
         "patterns/safe_form-errors.html",
         "patterns/required-fields.html",
         "patterns/safe_required-fields.html",
-        "color-vision/error_color_only.html",
-        "color-vision/safe_error_color_only.html",
-        "color-vision/status_color_only.html",
-        "color-vision/safe_status_color_only.html",
-        "color-vision/link_color_only.html",
-        "color-vision/safe_link_color_only.html",
-        "color-vision/chart_series_color_only.html",
-        "color-vision/safe_chart_series_color_only.html",
-        "color-vision/selection_color_only.html",
-        "color-vision/safe_selection_color_only.html",
-        "color-vision/placeholder_contrast.html",
-        "color-vision/safe_placeholder_contrast.html",
-        "color-vision/disabled_state.html",
-        "color-vision/safe_disabled_state.html",
-        "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html",
+        "color-independent/error_color_only.html",
+        "color-independent/safe_error_color_only.html",
+        "color-independent/status_color_only.html",
+        "color-independent/safe_status_color_only.html",
+        "color-independent/link_color_only.html",
+        "color-independent/safe_link_color_only.html",
+        "color-independent/chart_series_color_only.html",
+        "color-independent/safe_chart_series_color_only.html",
+        "color-independent/selection_color_only.html",
+        "color-independent/safe_selection_color_only.html",
+        "color-independent/placeholder_contrast.html",
+        "color-independent/safe_placeholder_contrast.html",
+        "color-independent/disabled_state.html",
+        "color-independent/safe_disabled_state.html",
+        "color-independent/required_color_only.html",
+        "color-independent/safe_required_color_only.html",
         "ui-states/empty.html",
         "ui-states/safe_empty.html",
         "ui-states/invalid.html",
@@ -414,9 +414,9 @@
       ]
     },
     {
-      "id": "vision-contrast",
-      "label": "Contrast sensitivity",
-      "group": "vision",
+      "id": "contrast-adaptation",
+      "label": "Contrast and display adaptation",
+      "group": "visual-presentation",
       "scenarios": 4,
       "cases": 22,
       "tp": 11,
@@ -430,22 +430,22 @@
         "4.1.2"
       ],
       "fixtures": [
-        "color-vision/error_color_only.html",
-        "color-vision/safe_error_color_only.html",
-        "color-vision/status_color_only.html",
-        "color-vision/safe_status_color_only.html",
-        "color-vision/link_color_only.html",
-        "color-vision/safe_link_color_only.html",
-        "color-vision/chart_series_color_only.html",
-        "color-vision/safe_chart_series_color_only.html",
-        "color-vision/selection_color_only.html",
-        "color-vision/safe_selection_color_only.html",
-        "color-vision/placeholder_contrast.html",
-        "color-vision/safe_placeholder_contrast.html",
-        "color-vision/disabled_state.html",
-        "color-vision/safe_disabled_state.html",
-        "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html",
+        "color-independent/error_color_only.html",
+        "color-independent/safe_error_color_only.html",
+        "color-independent/status_color_only.html",
+        "color-independent/safe_status_color_only.html",
+        "color-independent/link_color_only.html",
+        "color-independent/safe_link_color_only.html",
+        "color-independent/chart_series_color_only.html",
+        "color-independent/safe_chart_series_color_only.html",
+        "color-independent/selection_color_only.html",
+        "color-independent/safe_selection_color_only.html",
+        "color-independent/placeholder_contrast.html",
+        "color-independent/safe_placeholder_contrast.html",
+        "color-independent/disabled_state.html",
+        "color-independent/safe_disabled_state.html",
+        "color-independent/required_color_only.html",
+        "color-independent/safe_required_color_only.html",
         "scenarios/forced_colors.html",
         "scenarios/safe_forced_colors.html",
         "scenarios/disabled_state.html",
@@ -455,9 +455,9 @@
       ]
     },
     {
-      "id": "hearing-deaf",
-      "label": "Deafness",
-      "group": "hearing",
+      "id": "text-for-audio",
+      "label": "Text alternatives for audio",
+      "group": "audio-and-alternatives",
       "scenarios": 6,
       "cases": 10,
       "tp": 4,
@@ -481,9 +481,9 @@
       ]
     },
     {
-      "id": "hearing-hoh",
-      "label": "Hard of hearing",
-      "group": "hearing",
+      "id": "adjustable-audio",
+      "label": "Adjustable and clear audio",
+      "group": "audio-and-alternatives",
       "scenarios": 4,
       "cases": 12,
       "tp": 5,
@@ -510,9 +510,9 @@
       ]
     },
     {
-      "id": "deafblind",
-      "label": "Deafblindness",
-      "group": "multiple",
+      "id": "text-and-tactile",
+      "label": "Text and tactile access",
+      "group": "combined-access",
       "scenarios": 6,
       "cases": 125,
       "tp": 67,
@@ -602,8 +602,8 @@
         "patterns/safe_required-fields.html",
         "patterns/media-captions.html",
         "patterns/safe_media-captions.html",
-        "color-vision/selection_color_only.html",
-        "color-vision/safe_selection_color_only.html",
+        "color-independent/selection_color_only.html",
+        "color-independent/safe_selection_color_only.html",
         "media/video_no_captions.html",
         "media/safe_video_no_captions.html",
         "media/safe_captions_present_but_poor.html",
@@ -669,9 +669,9 @@
       ]
     },
     {
-      "id": "motor-dexterity",
-      "label": "Limited dexterity",
-      "group": "motor",
+      "id": "alternative-input",
+      "label": "Alternative input access",
+      "group": "input-and-control",
       "scenarios": 8,
       "cases": 101,
       "tp": 57,
@@ -761,8 +761,8 @@
         "patterns/safe_listbox.html",
         "patterns/form-errors.html",
         "patterns/safe_form-errors.html",
-        "color-vision/selection_color_only.html",
-        "color-vision/safe_selection_color_only.html",
+        "color-independent/selection_color_only.html",
+        "color-independent/safe_selection_color_only.html",
         "ui-states/invalid.html",
         "ui-states/safe_invalid.html",
         "ui-states/submitted.html",
@@ -813,9 +813,9 @@
       ]
     },
     {
-      "id": "motor-tremor",
-      "label": "Tremor",
-      "group": "motor",
+      "id": "error-tolerant-pointer",
+      "label": "Error-tolerant pointer input",
+      "group": "input-and-control",
       "scenarios": 4,
       "cases": 57,
       "tp": 35,
@@ -898,9 +898,9 @@
       ]
     },
     {
-      "id": "motor-paralysis",
-      "label": "Paralysis",
-      "group": "motor",
+      "id": "hands-free-switch",
+      "label": "Hands-free and switch operation",
+      "group": "input-and-control",
       "scenarios": 3,
       "cases": 54,
       "tp": 34,
@@ -979,9 +979,9 @@
       ]
     },
     {
-      "id": "motor-fatigue",
-      "label": "Fatigue",
-      "group": "motor",
+      "id": "low-effort-interaction",
+      "label": "Low-effort interaction",
+      "group": "input-and-control",
       "scenarios": 4,
       "cases": 10,
       "tp": 5,
@@ -1011,9 +1011,9 @@
       ]
     },
     {
-      "id": "speech-unable",
-      "label": "Unable to use voice interfaces",
-      "group": "speech",
+      "id": "non-voice-alternative",
+      "label": "Non-voice alternatives",
+      "group": "voice-alternatives",
       "scenarios": 3,
       "cases": 63,
       "tp": 38,
@@ -1082,8 +1082,8 @@
         "patterns/safe_listbox.html",
         "patterns/form-errors.html",
         "patterns/safe_form-errors.html",
-        "color-vision/selection_color_only.html",
-        "color-vision/safe_selection_color_only.html",
+        "color-independent/selection_color_only.html",
+        "color-independent/safe_selection_color_only.html",
         "ui-states/invalid.html",
         "ui-states/safe_invalid.html",
         "journeys/signin/broken/index.html",
@@ -1099,9 +1099,9 @@
       ]
     },
     {
-      "id": "cognitive-memory",
-      "label": "Memory",
-      "group": "cognitive",
+      "id": "memory-support",
+      "label": "Memory support",
+      "group": "comprehension-and-task",
       "scenarios": 4,
       "cases": 52,
       "tp": 26,
@@ -1142,8 +1142,8 @@
         "patterns/safe_form-errors.html",
         "patterns/required-fields.html",
         "patterns/safe_required-fields.html",
-        "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html",
+        "color-independent/required_color_only.html",
+        "color-independent/safe_required_color_only.html",
         "ui-states/empty.html",
         "ui-states/safe_empty.html",
         "ui-states/permission-denied.html",
@@ -1182,9 +1182,9 @@
       ]
     },
     {
-      "id": "cognitive-attention",
-      "label": "Attention",
-      "group": "cognitive",
+      "id": "focus-support",
+      "label": "Focus and attention support",
+      "group": "comprehension-and-task",
       "scenarios": 3,
       "cases": 59,
       "tp": 29,
@@ -1276,9 +1276,9 @@
       ]
     },
     {
-      "id": "cognitive-dyslexia",
-      "label": "Dyslexia",
-      "group": "cognitive",
+      "id": "reading-support",
+      "label": "Reading support",
+      "group": "comprehension-and-task",
       "scenarios": 5,
       "cases": 10,
       "tp": 5,
@@ -1304,9 +1304,9 @@
       ]
     },
     {
-      "id": "cognitive-language",
-      "label": "Language and literacy",
-      "group": "cognitive",
+      "id": "language-clarity",
+      "label": "Language clarity",
+      "group": "comprehension-and-task",
       "scenarios": 4,
       "cases": 98,
       "tp": 53,
@@ -1364,20 +1364,20 @@
         "patterns/safe_required-fields.html",
         "patterns/media-captions.html",
         "patterns/safe_media-captions.html",
-        "color-vision/error_color_only.html",
-        "color-vision/safe_error_color_only.html",
-        "color-vision/status_color_only.html",
-        "color-vision/safe_status_color_only.html",
-        "color-vision/link_color_only.html",
-        "color-vision/safe_link_color_only.html",
-        "color-vision/chart_series_color_only.html",
-        "color-vision/safe_chart_series_color_only.html",
-        "color-vision/selection_color_only.html",
-        "color-vision/safe_selection_color_only.html",
-        "color-vision/disabled_state.html",
-        "color-vision/safe_disabled_state.html",
-        "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html",
+        "color-independent/error_color_only.html",
+        "color-independent/safe_error_color_only.html",
+        "color-independent/status_color_only.html",
+        "color-independent/safe_status_color_only.html",
+        "color-independent/link_color_only.html",
+        "color-independent/safe_link_color_only.html",
+        "color-independent/chart_series_color_only.html",
+        "color-independent/safe_chart_series_color_only.html",
+        "color-independent/selection_color_only.html",
+        "color-independent/safe_selection_color_only.html",
+        "color-independent/disabled_state.html",
+        "color-independent/safe_disabled_state.html",
+        "color-independent/required_color_only.html",
+        "color-independent/safe_required_color_only.html",
         "media/video_no_captions.html",
         "media/safe_video_no_captions.html",
         "media/safe_captions_present_but_poor.html",
@@ -1436,9 +1436,9 @@
       ]
     },
     {
-      "id": "cognitive-executive",
-      "label": "Executive function",
-      "group": "cognitive",
+      "id": "task-guidance",
+      "label": "Task guidance and recovery",
+      "group": "comprehension-and-task",
       "scenarios": 5,
       "cases": 103,
       "tp": 51,
@@ -1506,20 +1506,20 @@
         "patterns/safe_form-errors.html",
         "patterns/required-fields.html",
         "patterns/safe_required-fields.html",
-        "color-vision/error_color_only.html",
-        "color-vision/safe_error_color_only.html",
-        "color-vision/status_color_only.html",
-        "color-vision/safe_status_color_only.html",
-        "color-vision/link_color_only.html",
-        "color-vision/safe_link_color_only.html",
-        "color-vision/chart_series_color_only.html",
-        "color-vision/safe_chart_series_color_only.html",
-        "color-vision/selection_color_only.html",
-        "color-vision/safe_selection_color_only.html",
-        "color-vision/disabled_state.html",
-        "color-vision/safe_disabled_state.html",
-        "color-vision/required_color_only.html",
-        "color-vision/safe_required_color_only.html",
+        "color-independent/error_color_only.html",
+        "color-independent/safe_error_color_only.html",
+        "color-independent/status_color_only.html",
+        "color-independent/safe_status_color_only.html",
+        "color-independent/link_color_only.html",
+        "color-independent/safe_link_color_only.html",
+        "color-independent/chart_series_color_only.html",
+        "color-independent/safe_chart_series_color_only.html",
+        "color-independent/selection_color_only.html",
+        "color-independent/safe_selection_color_only.html",
+        "color-independent/disabled_state.html",
+        "color-independent/safe_disabled_state.html",
+        "color-independent/required_color_only.html",
+        "color-independent/safe_required_color_only.html",
         "ui-states/empty.html",
         "ui-states/safe_empty.html",
         "ui-states/invalid.html",
@@ -1574,9 +1574,9 @@
       ]
     },
     {
-      "id": "neuro-photosensitive",
-      "label": "Photosensitivity",
-      "group": "neurological",
+      "id": "flash-safety",
+      "label": "Flash safety",
+      "group": "motion-and-flash",
       "scenarios": 3,
       "cases": 10,
       "tp": 5,
@@ -1600,9 +1600,9 @@
       ]
     },
     {
-      "id": "neuro-vestibular",
-      "label": "Vestibular and motion sensitivity",
-      "group": "neurological",
+      "id": "motion-safety",
+      "label": "Motion safety",
+      "group": "motion-and-flash",
       "scenarios": 4,
       "cases": 4,
       "tp": 2,
@@ -1619,9 +1619,9 @@
       ]
     },
     {
-      "id": "multiple",
-      "label": "Multiple or intersecting disabilities",
-      "group": "multiple",
+      "id": "combined-access",
+      "label": "Combined access requirements",
+      "group": "combined-access",
       "scenarios": 1,
       "cases": 1,
       "tp": 0,
@@ -1632,9 +1632,9 @@
       ]
     },
     {
-      "id": "age-related",
-      "label": "Age-related needs",
-      "group": "multiple",
+      "id": "forgiving-interface",
+      "label": "Forgiving interaction",
+      "group": "combined-access",
       "scenarios": 5,
       "cases": 23,
       "tp": 12,
@@ -1662,8 +1662,8 @@
         "keyboard/focus_not_visible.html",
         "static/viewport_no_zoom.html",
         "static/safe_viewport.html",
-        "color-vision/placeholder_contrast.html",
-        "color-vision/safe_placeholder_contrast.html",
+        "color-independent/placeholder_contrast.html",
+        "color-independent/safe_placeholder_contrast.html",
         "ui-states/timed-out.html",
         "ui-states/safe_timed-out.html",
         "journeys/session/broken/index.html",
@@ -1685,9 +1685,9 @@
       ]
     },
     {
-      "id": "temporary",
-      "label": "Temporary limitation",
-      "group": "situational",
+      "id": "constrained-use",
+      "label": "Constrained-use support",
+      "group": "context-and-environment",
       "scenarios": 4,
       "cases": 8,
       "tp": 4,
@@ -1712,9 +1712,9 @@
       ]
     },
     {
-      "id": "situational",
-      "label": "Situational limitation",
-      "group": "situational",
+      "id": "environmental-resilience",
+      "label": "Environmental resilience",
+      "group": "context-and-environment",
       "scenarios": 5,
       "cases": 42,
       "tp": 26,
@@ -1752,8 +1752,8 @@
         "delivery/progressive_enhancement.html",
         "patterns/media-captions.html",
         "patterns/safe_media-captions.html",
-        "color-vision/placeholder_contrast.html",
-        "color-vision/safe_placeholder_contrast.html",
+        "color-independent/placeholder_contrast.html",
+        "color-independent/safe_placeholder_contrast.html",
         "media/video_no_captions.html",
         "media/safe_video_no_captions.html",
         "media/safe_captions_present_but_poor.html",
@@ -1786,537 +1786,537 @@
     {
       "sc": "4.1.3",
       "needs": [
-        "age-related",
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-fatigue",
-        "motor-paralysis",
-        "motor-tremor",
-        "situational",
-        "speech-unable",
-        "vision-blind",
-        "vision-color",
-        "vision-low"
+        "alternative-input",
+        "color-independent",
+        "environmental-resilience",
+        "error-tolerant-pointer",
+        "focus-support",
+        "forgiving-interface",
+        "hands-free-switch",
+        "language-clarity",
+        "low-effort-interaction",
+        "memory-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "3.3.1",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-fatigue",
-        "motor-paralysis",
-        "motor-tremor",
-        "speech-unable",
-        "vision-blind",
-        "vision-color",
-        "vision-contrast",
-        "vision-low"
+        "alternative-input",
+        "color-independent",
+        "contrast-adaptation",
+        "error-tolerant-pointer",
+        "focus-support",
+        "hands-free-switch",
+        "language-clarity",
+        "low-effort-interaction",
+        "memory-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "2.1.1",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-paralysis",
-        "motor-tremor",
-        "situational",
-        "speech-unable",
-        "vision-blind",
-        "vision-color",
-        "vision-low"
+        "alternative-input",
+        "color-independent",
+        "environmental-resilience",
+        "error-tolerant-pointer",
+        "focus-support",
+        "hands-free-switch",
+        "language-clarity",
+        "memory-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "4.1.2",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-paralysis",
-        "motor-tremor",
-        "speech-unable",
-        "vision-blind",
-        "vision-color",
-        "vision-contrast",
-        "vision-low"
+        "alternative-input",
+        "color-independent",
+        "contrast-adaptation",
+        "error-tolerant-pointer",
+        "focus-support",
+        "hands-free-switch",
+        "language-clarity",
+        "memory-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "1.3.1",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-paralysis",
-        "motor-tremor",
-        "situational",
-        "speech-unable",
-        "vision-blind",
-        "vision-color",
-        "vision-low"
+        "alternative-input",
+        "color-independent",
+        "environmental-resilience",
+        "error-tolerant-pointer",
+        "focus-support",
+        "hands-free-switch",
+        "language-clarity",
+        "memory-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "2.4.3",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-fatigue",
-        "motor-paralysis",
-        "motor-tremor",
-        "speech-unable",
-        "vision-blind",
-        "vision-color",
-        "vision-low"
+        "alternative-input",
+        "color-independent",
+        "error-tolerant-pointer",
+        "focus-support",
+        "hands-free-switch",
+        "language-clarity",
+        "low-effort-interaction",
+        "memory-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "1.1.1",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-paralysis",
-        "motor-tremor",
-        "situational",
-        "speech-unable",
-        "vision-blind",
-        "vision-low"
+        "alternative-input",
+        "environmental-resilience",
+        "error-tolerant-pointer",
+        "focus-support",
+        "hands-free-switch",
+        "language-clarity",
+        "memory-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "1.4.1",
       "needs": [
-        "age-related",
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "situational",
-        "speech-unable",
-        "vision-blind",
-        "vision-color",
-        "vision-contrast",
-        "vision-low"
+        "alternative-input",
+        "color-independent",
+        "contrast-adaptation",
+        "environmental-resilience",
+        "forgiving-interface",
+        "language-clarity",
+        "memory-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "3.3.2",
       "needs": [
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "speech-unable",
-        "vision-blind",
-        "vision-color",
-        "vision-contrast",
-        "vision-low"
+        "alternative-input",
+        "color-independent",
+        "contrast-adaptation",
+        "language-clarity",
+        "memory-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "3.3.4",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-fatigue",
-        "vision-blind",
-        "vision-color",
-        "vision-low"
+        "alternative-input",
+        "color-independent",
+        "focus-support",
+        "language-clarity",
+        "low-effort-interaction",
+        "memory-support",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "3.3.7",
       "needs": [
-        "age-related",
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-fatigue",
-        "vision-blind",
-        "vision-color"
+        "alternative-input",
+        "color-independent",
+        "focus-support",
+        "forgiving-interface",
+        "language-clarity",
+        "low-effort-interaction",
+        "memory-support",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile"
       ]
     },
     {
       "sc": "3.3.8",
       "needs": [
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-paralysis",
-        "motor-tremor",
-        "speech-unable",
-        "vision-blind",
-        "vision-color"
+        "alternative-input",
+        "color-independent",
+        "error-tolerant-pointer",
+        "hands-free-switch",
+        "language-clarity",
+        "memory-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile"
       ]
     },
     {
       "sc": "2.2.1",
       "needs": [
-        "age-related",
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-fatigue",
-        "vision-blind",
-        "vision-low"
+        "alternative-input",
+        "focus-support",
+        "forgiving-interface",
+        "low-effort-interaction",
+        "memory-support",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "1.4.13",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "deafblind",
-        "motor-dexterity",
-        "motor-tremor",
-        "speech-unable",
-        "vision-blind",
-        "vision-low"
+        "alternative-input",
+        "error-tolerant-pointer",
+        "focus-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "1.2.2",
       "needs": [
-        "cognitive-attention",
-        "cognitive-language",
-        "deafblind",
-        "hearing-deaf",
-        "hearing-hoh",
-        "situational",
-        "vision-blind",
-        "vision-low"
+        "adjustable-audio",
+        "environmental-resilience",
+        "focus-support",
+        "language-clarity",
+        "nonvisual-access",
+        "text-and-tactile",
+        "text-for-audio",
+        "visual-clarity"
       ]
     },
     {
       "sc": "1.2.3",
       "needs": [
-        "cognitive-attention",
-        "cognitive-language",
-        "deafblind",
-        "hearing-deaf",
-        "hearing-hoh",
-        "situational",
-        "vision-blind",
-        "vision-low"
+        "adjustable-audio",
+        "environmental-resilience",
+        "focus-support",
+        "language-clarity",
+        "nonvisual-access",
+        "text-and-tactile",
+        "text-for-audio",
+        "visual-clarity"
       ]
     },
     {
       "sc": "1.4.3",
       "needs": [
-        "age-related",
-        "cognitive-executive",
-        "cognitive-language",
-        "situational",
-        "vision-blind",
-        "vision-color",
-        "vision-contrast",
-        "vision-low"
+        "color-independent",
+        "contrast-adaptation",
+        "environmental-resilience",
+        "forgiving-interface",
+        "language-clarity",
+        "nonvisual-access",
+        "task-guidance",
+        "visual-clarity"
       ]
     },
     {
       "sc": "3.2.3",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "cognitive-memory",
-        "deafblind",
-        "motor-dexterity",
-        "motor-fatigue",
-        "vision-blind"
+        "alternative-input",
+        "focus-support",
+        "low-effort-interaction",
+        "memory-support",
+        "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile"
       ]
     },
     {
       "sc": "1.4.11",
       "needs": [
-        "age-related",
-        "cognitive-executive",
-        "cognitive-language",
-        "vision-blind",
-        "vision-color",
-        "vision-contrast",
-        "vision-low"
+        "color-independent",
+        "contrast-adaptation",
+        "forgiving-interface",
+        "language-clarity",
+        "nonvisual-access",
+        "task-guidance",
+        "visual-clarity"
       ]
     },
     {
       "sc": "2.5.8",
       "needs": [
-        "age-related",
-        "motor-dexterity",
-        "motor-tremor",
-        "situational",
-        "temporary",
-        "vision-low"
+        "alternative-input",
+        "constrained-use",
+        "environmental-resilience",
+        "error-tolerant-pointer",
+        "forgiving-interface",
+        "visual-clarity"
       ]
     },
     {
       "sc": "2.5.5",
       "needs": [
-        "age-related",
-        "motor-dexterity",
-        "motor-tremor",
-        "situational",
-        "temporary",
-        "vision-low"
+        "alternative-input",
+        "constrained-use",
+        "environmental-resilience",
+        "error-tolerant-pointer",
+        "forgiving-interface",
+        "visual-clarity"
       ]
     },
     {
       "sc": "2.4.7",
       "needs": [
-        "age-related",
-        "cognitive-attention",
-        "motor-dexterity",
-        "motor-paralysis",
-        "vision-low"
+        "alternative-input",
+        "focus-support",
+        "forgiving-interface",
+        "hands-free-switch",
+        "visual-clarity"
       ]
     },
     {
       "sc": "2.2.2",
       "needs": [
-        "cognitive-attention",
-        "cognitive-dyslexia",
-        "neuro-photosensitive",
-        "neuro-vestibular",
-        "vision-low"
+        "flash-safety",
+        "focus-support",
+        "motion-safety",
+        "reading-support",
+        "visual-clarity"
       ]
     },
     {
       "sc": "1.2.1",
       "needs": [
-        "deafblind",
-        "hearing-deaf",
-        "hearing-hoh",
-        "situational",
-        "vision-blind"
+        "adjustable-audio",
+        "environmental-resilience",
+        "nonvisual-access",
+        "text-and-tactile",
+        "text-for-audio"
       ]
     },
     {
       "sc": "2.2.6",
       "needs": [
-        "age-related",
-        "cognitive-executive",
-        "cognitive-memory",
-        "motor-dexterity",
-        "motor-fatigue"
+        "alternative-input",
+        "forgiving-interface",
+        "low-effort-interaction",
+        "memory-support",
+        "task-guidance"
       ]
     },
     {
       "sc": "1.3.4",
       "needs": [
-        "age-related",
-        "motor-dexterity",
-        "motor-paralysis",
-        "situational",
-        "vision-low"
+        "alternative-input",
+        "environmental-resilience",
+        "forgiving-interface",
+        "hands-free-switch",
+        "visual-clarity"
       ]
     },
     {
       "sc": "1.4.10",
       "needs": [
-        "age-related",
-        "motor-dexterity",
-        "motor-paralysis",
-        "situational",
-        "vision-low"
+        "alternative-input",
+        "environmental-resilience",
+        "forgiving-interface",
+        "hands-free-switch",
+        "visual-clarity"
       ]
     },
     {
       "sc": "2.5.7",
       "needs": [
-        "age-related",
-        "motor-dexterity",
-        "motor-paralysis",
-        "motor-tremor",
-        "temporary"
+        "alternative-input",
+        "constrained-use",
+        "error-tolerant-pointer",
+        "forgiving-interface",
+        "hands-free-switch"
       ]
     },
     {
       "sc": "2.5.1",
       "needs": [
-        "age-related",
-        "motor-dexterity",
-        "motor-paralysis",
-        "motor-tremor",
-        "temporary"
+        "alternative-input",
+        "constrained-use",
+        "error-tolerant-pointer",
+        "forgiving-interface",
+        "hands-free-switch"
       ]
     },
     {
       "sc": "2.5.4",
       "needs": [
-        "motor-dexterity",
-        "motor-paralysis",
-        "motor-tremor",
-        "situational",
-        "temporary"
+        "alternative-input",
+        "constrained-use",
+        "environmental-resilience",
+        "error-tolerant-pointer",
+        "hands-free-switch"
       ]
     },
     {
       "sc": "3.1.1",
       "needs": [
-        "cognitive-dyslexia",
-        "cognitive-language",
-        "deafblind",
-        "vision-blind"
+        "language-clarity",
+        "nonvisual-access",
+        "reading-support",
+        "text-and-tactile"
       ]
     },
     {
       "sc": "1.2.5",
       "needs": [
-        "cognitive-attention",
-        "deafblind",
-        "vision-blind",
-        "vision-low"
+        "focus-support",
+        "nonvisual-access",
+        "text-and-tactile",
+        "visual-clarity"
       ]
     },
     {
       "sc": "1.4.2",
       "needs": [
-        "cognitive-attention",
-        "hearing-hoh",
-        "situational",
-        "vision-blind"
+        "adjustable-audio",
+        "environmental-resilience",
+        "focus-support",
+        "nonvisual-access"
       ]
     },
     {
       "sc": "2.4.5",
       "needs": [
-        "cognitive-executive",
-        "cognitive-memory",
-        "motor-dexterity",
-        "motor-fatigue"
+        "alternative-input",
+        "low-effort-interaction",
+        "memory-support",
+        "task-guidance"
       ]
     },
     {
       "sc": "1.3.2",
       "needs": [
-        "cognitive-language",
-        "cognitive-memory",
-        "deafblind",
-        "vision-blind"
+        "language-clarity",
+        "memory-support",
+        "nonvisual-access",
+        "text-and-tactile"
       ]
     },
     {
       "sc": "1.4.12",
       "needs": [
-        "age-related",
-        "cognitive-dyslexia",
-        "cognitive-language",
-        "vision-low"
+        "forgiving-interface",
+        "language-clarity",
+        "reading-support",
+        "visual-clarity"
       ]
     },
     {
       "sc": "2.5.2",
       "needs": [
-        "age-related",
-        "motor-dexterity",
-        "motor-tremor",
-        "temporary"
+        "alternative-input",
+        "constrained-use",
+        "error-tolerant-pointer",
+        "forgiving-interface"
       ]
     },
     {
       "sc": "3.2.1",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "motor-dexterity",
-        "vision-blind"
+        "alternative-input",
+        "focus-support",
+        "nonvisual-access",
+        "task-guidance"
       ]
     },
     {
       "sc": "3.2.2",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "motor-dexterity",
-        "vision-blind"
+        "alternative-input",
+        "focus-support",
+        "nonvisual-access",
+        "task-guidance"
       ]
     },
     {
       "sc": "3.3.3",
       "needs": [
-        "cognitive-executive",
-        "cognitive-language",
-        "cognitive-memory",
-        "vision-blind"
+        "language-clarity",
+        "memory-support",
+        "nonvisual-access",
+        "task-guidance"
       ]
     },
     {
       "sc": "2.4.11",
       "needs": [
-        "cognitive-attention",
-        "motor-dexterity",
-        "vision-low"
+        "alternative-input",
+        "focus-support",
+        "visual-clarity"
       ]
     },
     {
       "sc": "1.4.4",
       "needs": [
-        "age-related",
-        "cognitive-dyslexia",
-        "vision-low"
+        "forgiving-interface",
+        "reading-support",
+        "visual-clarity"
       ]
     },
     {
       "sc": "3.1.2",
       "needs": [
-        "cognitive-dyslexia",
-        "cognitive-language",
-        "vision-blind"
+        "language-clarity",
+        "nonvisual-access",
+        "reading-support"
       ]
     },
     {
       "sc": "2.5.3",
       "needs": [
-        "motor-dexterity",
-        "speech-unable",
-        "vision-blind"
+        "alternative-input",
+        "non-voice-alternative",
+        "nonvisual-access"
       ]
     },
     {
       "sc": "2.3.3",
       "needs": [
-        "cognitive-attention",
-        "neuro-vestibular"
+        "focus-support",
+        "motion-safety"
       ]
     }
   ]

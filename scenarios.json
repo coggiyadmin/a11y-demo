@@ -1,5 +1,5 @@
 {
-  "description": "Remaining scenario types at their honest unit. Several target an input mode rather than a criterion family: label_in_name is the defect speech control is uniquely blocked by, dragging_required the one switch access is.",
+  "description": "Remaining scenario types at their honest unit. Several target an input mode rather than a criterion family: label_in_name is the defect voice control is uniquely blocked by, dragging_required the one switch access is.",
   "generated": "2026-10-09",
   "counts": {
     "scenarios": 19,
@@ -227,10 +227,10 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-blind",
-        "deafblind",
-        "cognitive-memory",
-        "cognitive-language"
+        "nonvisual-access",
+        "text-and-tactile",
+        "memory-support",
+        "language-clarity"
       ],
       "min_criteria": {
         "1.3.2": 1
@@ -256,10 +256,10 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-blind",
-        "deafblind",
-        "cognitive-memory",
-        "cognitive-language"
+        "nonvisual-access",
+        "text-and-tactile",
+        "memory-support",
+        "language-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -337,8 +337,8 @@
         "magnifier"
       ],
       "user_needs": [
-        "cognitive-dyslexia",
-        "vision-low"
+        "reading-support",
+        "visual-clarity"
       ],
       "min_criteria": {
         "1.4.12": 1
@@ -364,8 +364,8 @@
         "magnifier"
       ],
       "user_needs": [
-        "cognitive-dyslexia",
-        "vision-low"
+        "reading-support",
+        "visual-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -391,8 +391,8 @@
         "forced-colors"
       ],
       "user_needs": [
-        "vision-contrast",
-        "vision-low"
+        "contrast-adaptation",
+        "visual-clarity"
       ],
       "min_criteria": {
         "1.4.1": 1,
@@ -419,8 +419,8 @@
         "forced-colors"
       ],
       "user_needs": [
-        "vision-contrast",
-        "vision-low"
+        "contrast-adaptation",
+        "visual-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -447,8 +447,8 @@
         "touch"
       ],
       "user_needs": [
-        "motor-dexterity",
-        "motor-paralysis"
+        "alternative-input",
+        "hands-free-switch"
       ],
       "min_criteria": {
         "1.3.4": 1,
@@ -475,8 +475,8 @@
         "touch"
       ],
       "user_needs": [
-        "motor-dexterity",
-        "motor-paralysis"
+        "alternative-input",
+        "hands-free-switch"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -503,8 +503,8 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-blind",
-        "cognitive-language"
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {
         "3.1.2": 1
@@ -530,8 +530,8 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-blind",
-        "cognitive-language"
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -554,19 +554,19 @@
         "interaction"
       ],
       "input_at": [
-        "speech"
+        "voice-control"
       ],
       "user_needs": [
-        "speech-unable",
-        "motor-dexterity",
-        "vision-blind"
+        "non-voice-alternative",
+        "alternative-input",
+        "nonvisual-access"
       ],
       "min_criteria": {
         "2.5.3": 1
       },
       "must_not_report": [],
       "expected_outcome": "fail",
-      "notes": "The visible label says \"Search flights\" but the accessible name is \"Submit\". A speech-control user saying \"click Search flights\" gets nothing — this is the defect speech input is uniquely blocked by."
+      "notes": "The visible label says \"Search flights\" but the accessible name is \"Submit\". A voice-control command such as \"click Search flights\" gets nothing — this is the defect voice control is uniquely blocked by."
     },
     {
       "id": "scenario-safe_label_in_name",
@@ -582,12 +582,12 @@
         "interaction"
       ],
       "input_at": [
-        "speech"
+        "voice-control"
       ],
       "user_needs": [
-        "speech-unable",
-        "motor-dexterity",
-        "vision-blind"
+        "non-voice-alternative",
+        "alternative-input",
+        "nonvisual-access"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -615,9 +615,9 @@
         "switch"
       ],
       "user_needs": [
-        "motor-tremor",
-        "motor-paralysis",
-        "temporary"
+        "error-tolerant-pointer",
+        "hands-free-switch",
+        "constrained-use"
       ],
       "min_criteria": {
         "2.5.7": 1,
@@ -625,7 +625,7 @@
       },
       "must_not_report": [],
       "expected_outcome": "fail",
-      "notes": "Reordering requires a drag. No single-pointer alternative, so it is impossible with a switch, hard with a tremor, and hard one-handed or with an injured hand."
+      "notes": "Reordering requires a drag. No single-pointer alternative, so it is impossible with a switch, difficult with reduced pointer precision, and difficult one-handed."
     },
     {
       "id": "scenario-safe_dragging_required",
@@ -646,9 +646,9 @@
         "switch"
       ],
       "user_needs": [
-        "motor-tremor",
-        "motor-paralysis",
-        "temporary"
+        "error-tolerant-pointer",
+        "hands-free-switch",
+        "constrained-use"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -676,9 +676,9 @@
         "pointer"
       ],
       "user_needs": [
-        "motor-tremor",
-        "age-related",
-        "temporary"
+        "error-tolerant-pointer",
+        "forgiving-interface",
+        "constrained-use"
       ],
       "min_criteria": {
         "2.5.8": 1,
@@ -706,9 +706,9 @@
         "pointer"
       ],
       "user_needs": [
-        "motor-tremor",
-        "age-related",
-        "temporary"
+        "error-tolerant-pointer",
+        "forgiving-interface",
+        "constrained-use"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -736,10 +736,10 @@
         "touch"
       ],
       "user_needs": [
-        "motor-tremor",
-        "motor-dexterity",
-        "age-related",
-        "temporary"
+        "error-tolerant-pointer",
+        "alternative-input",
+        "forgiving-interface",
+        "constrained-use"
       ],
       "min_criteria": {
         "2.5.2": 1
@@ -766,10 +766,10 @@
         "touch"
       ],
       "user_needs": [
-        "motor-tremor",
-        "motor-dexterity",
-        "age-related",
-        "temporary"
+        "error-tolerant-pointer",
+        "alternative-input",
+        "forgiving-interface",
+        "constrained-use"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -796,10 +796,10 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "vision-blind",
-        "motor-dexterity"
+        "focus-support",
+        "task-guidance",
+        "nonvisual-access",
+        "alternative-input"
       ],
       "min_criteria": {
         "3.2.1": 1
@@ -826,10 +826,10 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "vision-blind",
-        "motor-dexterity"
+        "focus-support",
+        "task-guidance",
+        "nonvisual-access",
+        "alternative-input"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -856,10 +856,10 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "vision-blind",
-        "motor-dexterity"
+        "focus-support",
+        "task-guidance",
+        "nonvisual-access",
+        "alternative-input"
       ],
       "min_criteria": {
         "3.2.2": 1
@@ -886,10 +886,10 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "vision-blind",
-        "motor-dexterity"
+        "focus-support",
+        "task-guidance",
+        "nonvisual-access",
+        "alternative-input"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -916,10 +916,10 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "cognitive-language",
-        "cognitive-executive",
-        "cognitive-memory",
-        "vision-blind"
+        "language-clarity",
+        "task-guidance",
+        "memory-support",
+        "nonvisual-access"
       ],
       "min_criteria": {
         "3.3.3": 1
@@ -946,10 +946,10 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "cognitive-language",
-        "cognitive-executive",
-        "cognitive-memory",
-        "vision-blind"
+        "language-clarity",
+        "task-guidance",
+        "memory-support",
+        "nonvisual-access"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -1027,17 +1027,17 @@
         "touch"
       ],
       "user_needs": [
-        "motor-tremor",
-        "motor-paralysis",
-        "temporary",
-        "situational"
+        "error-tolerant-pointer",
+        "hands-free-switch",
+        "constrained-use",
+        "environmental-resilience"
       ],
       "min_criteria": {
         "2.5.4": 1
       },
       "must_not_report": [],
       "expected_outcome": "fail",
-      "notes": "Shake-to-undo with no alternative. Impossible on a mounted device and hard with a tremor."
+      "notes": "Shake-to-undo with no alternative. Impossible on a mounted device and difficult when precise device movement is unavailable."
     },
     {
       "id": "scenario-safe_motion_actuation",
@@ -1056,10 +1056,10 @@
         "touch"
       ],
       "user_needs": [
-        "motor-tremor",
-        "motor-paralysis",
-        "temporary",
-        "situational"
+        "error-tolerant-pointer",
+        "hands-free-switch",
+        "constrained-use",
+        "environmental-resilience"
       ],
       "min_criteria": {},
       "must_not_report": [

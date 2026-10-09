@@ -138,7 +138,7 @@ the connection returns.</p>
     id: 'timed-out', sc: ['2.2.1', '4.1.3'],
     brokenNote: 'The session expired silently and the form was cleared. No warning beforehand, '
       + 'no way to extend, and the work is gone — which penalises anyone who needs longer, '
-      + 'whether for motor, cognitive or situational reasons.',
+      + 'whether because input is slower, the task requires more processing time, or interruptions occur.',
     // 2.2.1 is about a time limit SET BY THE CONTENT. The fixture previously only
     // described an expiry in prose, so it exercised nothing — a meta refresh makes the
     // limit real and machine-detectable, which is what the criterion is about.

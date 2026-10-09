@@ -1,9 +1,9 @@
 // Needs-first index: for each functional need, which fixtures exercise it.
 //
 // This is the inverse of the usual criterion-first view, and it is the one that
-// matters for product decisions. A keyboard-access rule serves blind users, people
-// with limited dexterity, switch users and many speech-input users at once —
-// indexing only by success criterion hides that a single fix moves four groups.
+// matters for product decisions. A keyboard-access rule supports non-visual operation,
+// alternative input, switch access and voice-control workflows at once — indexing only
+// by success criterion hides that a single fix improves several functional needs.
 import fs from 'node:fs';
 import path from 'node:path';
 import { loadFixtureCases } from './fixture-families.mjs';

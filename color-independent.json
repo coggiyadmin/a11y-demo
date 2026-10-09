@@ -1,5 +1,5 @@
 {
-  "description": "Colour-vision fixtures. Each pair holds content constant and differs only in whether a second, non-colour channel carries the information.",
+  "description": "Colour-independent information fixtures. Each pair holds content constant and differs only in whether a second, non-colour channel carries the information.",
   "checks_covered": [
     "error-color-only",
     "link-color-only",
@@ -16,7 +16,7 @@
     {
       "id": "color-error_color_only",
       "mode": "tp",
-      "path": "color-vision/error_color_only.html",
+      "path": "color-independent/error_color_only.html",
       "color_check": "error-color-only",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -30,9 +30,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-blind",
-        "cognitive-language"
+        "color-independent",
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {
         "1.4.1": 1,
@@ -45,7 +45,7 @@
     {
       "id": "color-safe_error_color_only",
       "mode": "safe",
-      "path": "color-vision/safe_error_color_only.html",
+      "path": "color-independent/safe_error_color_only.html",
       "color_check": "error-color-only",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -59,9 +59,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-blind",
-        "cognitive-language"
+        "color-independent",
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -74,7 +74,7 @@
     {
       "id": "color-status_color_only",
       "mode": "tp",
-      "path": "color-vision/status_color_only.html",
+      "path": "color-independent/status_color_only.html",
       "color_check": "error-color-only",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -88,20 +88,20 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-blind"
+        "color-independent",
+        "nonvisual-access"
       ],
       "min_criteria": {
         "1.4.1": 1
       },
       "must_not_report": [],
       "expected_outcome": "fail",
-      "notes": "Flight status shown as coloured dots. Red and green are the classic indistinguishable pair for deuteranopia and protanopia — the two most common forms."
+      "notes": "Flight status shown as coloured dots. The red and green signals can become indistinguishable when hue perception differs or colour is unavailable."
     },
     {
       "id": "color-safe_status_color_only",
       "mode": "safe",
-      "path": "color-vision/safe_status_color_only.html",
+      "path": "color-independent/safe_status_color_only.html",
       "color_check": "error-color-only",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -115,8 +115,8 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-blind"
+        "color-independent",
+        "nonvisual-access"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -128,7 +128,7 @@
     {
       "id": "color-link_color_only",
       "mode": "tp",
-      "path": "color-vision/link_color_only.html",
+      "path": "color-independent/link_color_only.html",
       "color_check": "link-color-only",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -142,8 +142,8 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-low"
+        "color-independent",
+        "visual-clarity"
       ],
       "min_criteria": {
         "1.4.1": 1
@@ -155,7 +155,7 @@
     {
       "id": "color-safe_link_color_only",
       "mode": "safe",
-      "path": "color-vision/safe_link_color_only.html",
+      "path": "color-independent/safe_link_color_only.html",
       "color_check": "link-color-only",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -169,8 +169,8 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-low"
+        "color-independent",
+        "visual-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -182,7 +182,7 @@
     {
       "id": "color-chart_series_color_only",
       "mode": "tp",
-      "path": "color-vision/chart_series_color_only.html",
+      "path": "color-independent/chart_series_color_only.html",
       "color_check": "chart-series",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -196,9 +196,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-blind",
-        "cognitive-language"
+        "color-independent",
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {
         "1.4.1": 1
@@ -210,7 +210,7 @@
     {
       "id": "color-safe_chart_series_color_only",
       "mode": "safe",
-      "path": "color-vision/safe_chart_series_color_only.html",
+      "path": "color-independent/safe_chart_series_color_only.html",
       "color_check": "chart-series",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -224,9 +224,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-blind",
-        "cognitive-language"
+        "color-independent",
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -238,7 +238,7 @@
     {
       "id": "color-selection_color_only",
       "mode": "tp",
-      "path": "color-vision/selection_color_only.html",
+      "path": "color-independent/selection_color_only.html",
       "color_check": "interactive-states",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -252,8 +252,8 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-blind"
+        "color-independent",
+        "nonvisual-access"
       ],
       "min_criteria": {
         "1.4.1": 1,
@@ -266,7 +266,7 @@
     {
       "id": "color-safe_selection_color_only",
       "mode": "safe",
-      "path": "color-vision/safe_selection_color_only.html",
+      "path": "color-independent/safe_selection_color_only.html",
       "color_check": "interactive-states",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -280,8 +280,8 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-blind"
+        "color-independent",
+        "nonvisual-access"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -294,7 +294,7 @@
     {
       "id": "color-placeholder_contrast",
       "mode": "tp",
-      "path": "color-vision/placeholder_contrast.html",
+      "path": "color-independent/placeholder_contrast.html",
       "color_check": "placeholder-contrast",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -308,9 +308,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-low",
-        "vision-contrast",
-        "age-related"
+        "visual-clarity",
+        "contrast-adaptation",
+        "forgiving-interface"
       ],
       "min_criteria": {
         "1.4.3": 1
@@ -322,7 +322,7 @@
     {
       "id": "color-safe_placeholder_contrast",
       "mode": "safe",
-      "path": "color-vision/safe_placeholder_contrast.html",
+      "path": "color-independent/safe_placeholder_contrast.html",
       "color_check": "placeholder-contrast",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -336,9 +336,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-low",
-        "vision-contrast",
-        "age-related"
+        "visual-clarity",
+        "contrast-adaptation",
+        "forgiving-interface"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -350,7 +350,7 @@
     {
       "id": "color-disabled_state",
       "mode": "tp",
-      "path": "color-vision/disabled_state.html",
+      "path": "color-independent/disabled_state.html",
       "color_check": "placeholder-contrast",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -364,9 +364,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-contrast",
-        "cognitive-executive"
+        "color-independent",
+        "contrast-adaptation",
+        "task-guidance"
       ],
       "min_criteria": {
         "1.4.1": 1
@@ -378,7 +378,7 @@
     {
       "id": "color-safe_disabled_state",
       "mode": "safe",
-      "path": "color-vision/safe_disabled_state.html",
+      "path": "color-independent/safe_disabled_state.html",
       "color_check": "placeholder-contrast",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -392,9 +392,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-contrast",
-        "cognitive-executive"
+        "color-independent",
+        "contrast-adaptation",
+        "task-guidance"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -406,7 +406,7 @@
     {
       "id": "color-required_color_only",
       "mode": "tp",
-      "path": "color-vision/required_color_only.html",
+      "path": "color-independent/required_color_only.html",
       "color_check": "error-color-only",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -420,9 +420,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-blind",
-        "cognitive-language"
+        "color-independent",
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {
         "1.4.1": 1,
@@ -435,7 +435,7 @@
     {
       "id": "color-safe_required_color_only",
       "mode": "safe",
-      "path": "color-vision/safe_required_color_only.html",
+      "path": "color-independent/safe_required_color_only.html",
       "color_check": "error-color-only",
       "surface": "web",
       "journey": "form-lifecycle",
@@ -449,9 +449,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-color",
-        "vision-blind",
-        "cognitive-language"
+        "color-independent",
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [

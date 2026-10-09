@@ -1,15 +1,14 @@
 // Media and captions.
 //
-// The hearing axis was the thinnest coverage in the corpus, and it is also where
+// The audio-alternative axis was the thinnest coverage in the corpus, and it is also where
 // automation is weakest in an interesting way: a tool can see that a <track> element
 // exists, but not whether the captions are accurate, synchronised, or identify who is
 // speaking. Those are `cannot-tell` — examined, outcome needs a person — and the
 // corpus marks them as such rather than letting a present-but-useless track count
 // as a pass.
 //
-// Several of these also serve people who are not deaf or hard of hearing: captions
-// help in a noisy room or with audio muted, and transcripts help anyone who would
-// rather read than watch. That is recorded through taxonomy/criterion-needs.json.
+// Captions also help in a noisy room or with audio muted, and transcripts help anyone
+// who would rather read than watch. That is recorded through taxonomy/criterion-needs.json.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -60,7 +59,7 @@ const CASES = [
   {
     id: 'video_no_captions',
     sc: ['1.2.2'], outcome: 'fail', confidence: 'definite',
-    brokenNote: 'Prerecorded video with speech and no caption track at all. The absence of '
+    brokenNote: 'Prerecorded video with spoken dialogue and no caption track at all. The absence of '
       + 'a track is machine-detectable, so this is a definite fail rather than a judgement call.',
     broken: `<video controls preload="none" poster="../pixel.png" width="320">
   <source src="flight-info.mp4" type="video/mp4">
@@ -140,9 +139,9 @@ const CASES = [
   {
     id: 'alert_by_sound_only',
     sc: ['1.1.1', '4.1.3'], outcome: 'fail', confidence: 'definite',
-    brokenNote: 'A session warning signalled by a beep and nothing else. Inaudible to a deaf '
-      + 'user, to anyone with sound muted, and to anyone in a noisy room — the same defect '
-      + 'blocks a permanent need and a situational one.',
+    brokenNote: 'A session warning signalled by a beep and nothing else. Unavailable when audio '
+      + 'cannot be perceived, with sound muted, or in a noisy room — the same defect '
+      + 'blocks both audio-alternative and environmental-resilience needs.',
     broken: `<button type="button" onclick="new Audio('beep.mp3').play()">Start checkout timer</button>
 <p>You will hear a tone when your reservation is about to expire.</p>`,
     correctNote: 'The same warning as visible text in a live region, with the sound optional.',
@@ -155,7 +154,7 @@ const CASES = [
     id: 'autoplay_no_control',
     sc: ['1.4.2'], outcome: 'fail', confidence: 'definite',
     brokenNote: 'Audio starts automatically and runs past three seconds with no pause control. '
-      + 'It also masks a screen reader, so this blocks blind users as much as it annoys everyone.',
+      + 'It also masks screen-reader output, blocking non-visual operation as well as interrupting everyone.',
     broken: `<audio autoplay loop><source src="ambient.mp3" type="audio/mpeg"></audio>
 <p>Background audio starts on load with no way to stop it.</p>`,
     correctNote: 'Not autoplaying, and a control is available regardless.',

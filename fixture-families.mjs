@@ -8,7 +8,7 @@ export const FIXTURE_FAMILY_FILES = Object.freeze([
   'catalog.json',
   'delivery.json',
   'patterns.json',
-  'color-vision.json',
+  'color-independent.json',
   'media.json',
   'ui-states.json',
   'journeys.json',
@@ -38,4 +38,3 @@ export function loadFixtureCases(root) {
       fixture_family: file.replace(/\.json$/, ''),
     })));
 }
-

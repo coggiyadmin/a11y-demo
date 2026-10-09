@@ -2,8 +2,8 @@
   label_in_name — broken
   WCAG: 2.5.3
   journey: input-only
-  input/AT most affected: speech
-  The visible label says "Search flights" but the accessible name is "Submit". A speech-control user saying "click Search flights" gets nothing — this is the defect speech input is uniquely blocked by.
+  input/AT most affected: voice-control
+  The visible label says "Search flights" but the accessible name is "Submit". A voice-control command such as "click Search flights" gets nothing — this is the defect voice control is uniquely blocked by.
 -->
 <!doctype html>
 <html lang="en">
@@ -14,5 +14,5 @@
 <link rel="stylesheet" href="../fixture.css">
 </head>
 <body><main><h1>label_in_name — broken</h1>
-<p>The visible label says "Search flights" but the accessible name is "Submit". A speech-control user saying "click Search flights" gets nothing — this is the defect speech input is uniquely blocked by.</p><hr><button type="button" aria-label="Submit">Search flights</button>
+<p>The visible label says "Search flights" but the accessible name is "Submit". A voice-control command such as "click Search flights" gets nothing — this is the defect voice control is uniquely blocked by.</p><hr><button type="button" aria-label="Submit">Search flights</button>
 </main><p><a href="../index.html">Back to the index</a></p></body></html>

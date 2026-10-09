@@ -51,7 +51,7 @@ Messages.
 
 ## The finding that shapes this corpus
 
-**A scanner can score 100% on an ACT-only corpus while being effectively blind
+**A scanner can score 100% on an ACT-only corpus while being unable to observe
 to a real site.**
 
 Every ACT test case is a standalone HTML file of a few hundred bytes —

@@ -111,7 +111,7 @@
       "must_not_report": [],
       "expected_outcome": "fail",
       "scope": "multi-page",
-      "notes": "Authentication depends on a cognitive function test — transcribing distorted characters — and the password field blocks paste, which breaks password managers. Both are 3.3.8 failures and both hit memory, dyslexia and motor needs hardest."
+      "notes": "Authentication depends on a transcription puzzle — copying distorted characters — and the password field blocks paste, which breaks password managers. Both are 3.3.8 failures and both obstruct memory support, reading support and alternative input."
     },
     {
       "id": "journey-signin-correct",

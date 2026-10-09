@@ -2,7 +2,7 @@
   autoplay_no_control — broken
   WCAG: 1.4.2
   expected outcome: fail
-  Audio starts automatically and runs past three seconds with no pause control. It also masks a screen reader, so this blocks blind users as much as it annoys everyone.
+  Audio starts automatically and runs past three seconds with no pause control. It also masks screen-reader output, blocking non-visual operation as well as interrupting everyone.
 -->
 <!doctype html>
 <html lang="en">
@@ -15,7 +15,7 @@
 <body>
 <main>
 <h1>autoplay_no_control — broken</h1>
-<p>Audio starts automatically and runs past three seconds with no pause control. It also masks a screen reader, so this blocks blind users as much as it annoys everyone.</p><hr><audio autoplay loop><source src="ambient.mp3" type="audio/mpeg"></audio>
+<p>Audio starts automatically and runs past three seconds with no pause control. It also masks screen-reader output, blocking non-visual operation as well as interrupting everyone.</p><hr><audio autoplay loop><source src="ambient.mp3" type="audio/mpeg"></audio>
 <p>Background audio starts on load with no way to stop it.</p>
 </main>
 <p><a href="../index.html">Back to the index</a></p>

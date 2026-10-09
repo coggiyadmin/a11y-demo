@@ -1,5 +1,5 @@
 {
-  "note": "Five outcomes, not two. `cannot-tell` and `not-tested` are results, not failures to hide: conflating either with `pass` is how a blind scanner looks healthy.",
+  "note": "Five outcomes, not two. `cannot-tell` and `not-tested` are results, not failures to hide: conflating either with `pass` is how an incomplete scanner looks healthy.",
   "values": [
     {
       "id": "pass",

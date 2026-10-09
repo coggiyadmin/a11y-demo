@@ -4,419 +4,419 @@
     {
       "sc": "1.1.1",
       "needs": [
-        "vision-blind",
-        "vision-low",
-        "deafblind",
-        "cognitive-language",
-        "situational"
+        "nonvisual-access",
+        "visual-clarity",
+        "text-and-tactile",
+        "language-clarity",
+        "environmental-resilience"
       ]
     },
     {
       "sc": "1.2.1",
       "needs": [
-        "hearing-deaf",
-        "hearing-hoh",
-        "vision-blind",
-        "deafblind",
-        "situational"
+        "text-for-audio",
+        "adjustable-audio",
+        "nonvisual-access",
+        "text-and-tactile",
+        "environmental-resilience"
       ]
     },
     {
       "sc": "1.2.2",
       "needs": [
-        "hearing-deaf",
-        "hearing-hoh",
-        "deafblind",
-        "cognitive-language",
-        "situational"
+        "text-for-audio",
+        "adjustable-audio",
+        "text-and-tactile",
+        "language-clarity",
+        "environmental-resilience"
       ]
     },
     {
       "sc": "1.2.3",
       "needs": [
-        "vision-blind",
-        "vision-low",
-        "deafblind",
-        "cognitive-attention"
+        "nonvisual-access",
+        "visual-clarity",
+        "text-and-tactile",
+        "focus-support"
       ]
     },
     {
       "sc": "1.2.5",
       "needs": [
-        "vision-blind",
-        "vision-low",
-        "deafblind"
+        "nonvisual-access",
+        "visual-clarity",
+        "text-and-tactile"
       ]
     },
     {
       "sc": "1.3.1",
       "needs": [
-        "vision-blind",
-        "vision-low",
-        "deafblind",
-        "cognitive-memory",
-        "cognitive-language",
-        "cognitive-executive"
+        "nonvisual-access",
+        "visual-clarity",
+        "text-and-tactile",
+        "memory-support",
+        "language-clarity",
+        "task-guidance"
       ]
     },
     {
       "sc": "1.3.2",
       "needs": [
-        "vision-blind",
-        "deafblind",
-        "cognitive-memory",
-        "cognitive-language"
+        "nonvisual-access",
+        "text-and-tactile",
+        "memory-support",
+        "language-clarity"
       ]
     },
     {
       "sc": "1.3.4",
       "needs": [
-        "motor-dexterity",
-        "motor-paralysis",
-        "vision-low",
-        "situational"
+        "alternative-input",
+        "hands-free-switch",
+        "visual-clarity",
+        "environmental-resilience"
       ]
     },
     {
       "sc": "1.3.5",
       "needs": [
-        "cognitive-memory",
-        "motor-dexterity",
-        "motor-fatigue",
-        "cognitive-language"
+        "memory-support",
+        "alternative-input",
+        "low-effort-interaction",
+        "language-clarity"
       ]
     },
     {
       "sc": "1.4.1",
       "needs": [
-        "vision-color",
-        "vision-blind",
-        "vision-low",
-        "vision-contrast",
-        "cognitive-language",
-        "cognitive-executive"
+        "color-independent",
+        "nonvisual-access",
+        "visual-clarity",
+        "contrast-adaptation",
+        "language-clarity",
+        "task-guidance"
       ]
     },
     {
       "sc": "1.4.2",
       "needs": [
-        "hearing-hoh",
-        "vision-blind",
-        "cognitive-attention",
-        "situational"
+        "adjustable-audio",
+        "nonvisual-access",
+        "focus-support",
+        "environmental-resilience"
       ]
     },
     {
       "sc": "1.4.3",
       "needs": [
-        "vision-low",
-        "vision-contrast",
-        "vision-color",
-        "age-related",
-        "situational"
+        "visual-clarity",
+        "contrast-adaptation",
+        "color-independent",
+        "forgiving-interface",
+        "environmental-resilience"
       ]
     },
     {
       "sc": "1.4.4",
       "needs": [
-        "vision-low",
-        "age-related",
-        "cognitive-dyslexia"
+        "visual-clarity",
+        "forgiving-interface",
+        "reading-support"
       ]
     },
     {
       "sc": "1.4.10",
       "needs": [
-        "vision-low",
-        "age-related",
-        "motor-dexterity",
-        "situational"
+        "visual-clarity",
+        "forgiving-interface",
+        "alternative-input",
+        "environmental-resilience"
       ]
     },
     {
       "sc": "1.4.11",
       "needs": [
-        "vision-low",
-        "vision-contrast",
-        "vision-color",
-        "age-related"
+        "visual-clarity",
+        "contrast-adaptation",
+        "color-independent",
+        "forgiving-interface"
       ]
     },
     {
       "sc": "1.4.12",
       "needs": [
-        "vision-low",
-        "cognitive-dyslexia",
-        "cognitive-language",
-        "age-related"
+        "visual-clarity",
+        "reading-support",
+        "language-clarity",
+        "forgiving-interface"
       ]
     },
     {
       "sc": "1.4.13",
       "needs": [
-        "vision-low",
-        "motor-tremor",
-        "motor-dexterity",
-        "vision-blind",
-        "cognitive-attention"
+        "visual-clarity",
+        "error-tolerant-pointer",
+        "alternative-input",
+        "nonvisual-access",
+        "focus-support"
       ]
     },
     {
       "sc": "2.1.1",
       "needs": [
-        "vision-blind",
-        "deafblind",
-        "motor-dexterity",
-        "motor-paralysis",
-        "motor-tremor",
-        "speech-unable"
+        "nonvisual-access",
+        "text-and-tactile",
+        "alternative-input",
+        "hands-free-switch",
+        "error-tolerant-pointer",
+        "non-voice-alternative"
       ]
     },
     {
       "sc": "2.1.2",
       "needs": [
-        "vision-blind",
-        "deafblind",
-        "motor-dexterity",
-        "motor-paralysis"
+        "nonvisual-access",
+        "text-and-tactile",
+        "alternative-input",
+        "hands-free-switch"
       ]
     },
     {
       "sc": "2.2.1",
       "needs": [
-        "cognitive-memory",
-        "cognitive-executive",
-        "motor-dexterity",
-        "motor-fatigue",
-        "age-related"
+        "memory-support",
+        "task-guidance",
+        "alternative-input",
+        "low-effort-interaction",
+        "forgiving-interface"
       ]
     },
     {
       "sc": "2.2.2",
       "needs": [
-        "cognitive-attention",
-        "neuro-vestibular",
-        "neuro-photosensitive",
-        "vision-low",
-        "cognitive-dyslexia"
+        "focus-support",
+        "motion-safety",
+        "flash-safety",
+        "visual-clarity",
+        "reading-support"
       ]
     },
     {
       "sc": "2.3.1",
       "needs": [
-        "neuro-photosensitive"
+        "flash-safety"
       ]
     },
     {
       "sc": "2.3.3",
       "needs": [
-        "neuro-vestibular",
-        "cognitive-attention"
+        "motion-safety",
+        "focus-support"
       ]
     },
     {
       "sc": "2.4.1",
       "needs": [
-        "vision-blind",
-        "motor-dexterity",
-        "motor-fatigue",
-        "deafblind"
+        "nonvisual-access",
+        "alternative-input",
+        "low-effort-interaction",
+        "text-and-tactile"
       ]
     },
     {
       "sc": "2.4.2",
       "needs": [
-        "vision-blind",
-        "cognitive-memory",
-        "cognitive-executive"
+        "nonvisual-access",
+        "memory-support",
+        "task-guidance"
       ]
     },
     {
       "sc": "2.4.3",
       "needs": [
-        "vision-blind",
-        "deafblind",
-        "motor-dexterity",
-        "cognitive-attention"
+        "nonvisual-access",
+        "text-and-tactile",
+        "alternative-input",
+        "focus-support"
       ]
     },
     {
       "sc": "2.4.4",
       "needs": [
-        "vision-blind",
-        "vision-low",
-        "cognitive-language",
-        "cognitive-executive"
+        "nonvisual-access",
+        "visual-clarity",
+        "language-clarity",
+        "task-guidance"
       ]
     },
     {
       "sc": "2.4.6",
       "needs": [
-        "vision-blind",
-        "cognitive-language",
-        "cognitive-executive"
+        "nonvisual-access",
+        "language-clarity",
+        "task-guidance"
       ]
     },
     {
       "sc": "2.4.7",
       "needs": [
-        "vision-low",
-        "motor-dexterity",
-        "motor-paralysis",
-        "cognitive-attention",
-        "age-related"
+        "visual-clarity",
+        "alternative-input",
+        "hands-free-switch",
+        "focus-support",
+        "forgiving-interface"
       ]
     },
     {
       "sc": "2.4.11",
       "needs": [
-        "vision-low",
-        "motor-dexterity",
-        "cognitive-attention"
+        "visual-clarity",
+        "alternative-input",
+        "focus-support"
       ]
     },
     {
       "sc": "2.5.2",
       "needs": [
-        "motor-tremor",
-        "motor-dexterity",
-        "age-related",
-        "temporary"
+        "error-tolerant-pointer",
+        "alternative-input",
+        "forgiving-interface",
+        "constrained-use"
       ]
     },
     {
       "sc": "2.5.3",
       "needs": [
-        "speech-unable",
-        "motor-dexterity",
-        "vision-blind"
+        "non-voice-alternative",
+        "alternative-input",
+        "nonvisual-access"
       ]
     },
     {
       "sc": "2.5.4",
       "needs": [
-        "motor-dexterity",
-        "motor-tremor",
-        "motor-paralysis",
-        "situational"
+        "alternative-input",
+        "error-tolerant-pointer",
+        "hands-free-switch",
+        "environmental-resilience"
       ]
     },
     {
       "sc": "2.5.7",
       "needs": [
-        "motor-dexterity",
-        "motor-tremor",
-        "motor-paralysis",
-        "age-related"
+        "alternative-input",
+        "error-tolerant-pointer",
+        "hands-free-switch",
+        "forgiving-interface"
       ]
     },
     {
       "sc": "2.5.8",
       "needs": [
-        "motor-tremor",
-        "motor-dexterity",
-        "age-related",
-        "vision-low",
-        "situational"
+        "error-tolerant-pointer",
+        "alternative-input",
+        "forgiving-interface",
+        "visual-clarity",
+        "environmental-resilience"
       ]
     },
     {
       "sc": "3.1.1",
       "needs": [
-        "vision-blind",
-        "deafblind",
-        "cognitive-language",
-        "cognitive-dyslexia"
+        "nonvisual-access",
+        "text-and-tactile",
+        "language-clarity",
+        "reading-support"
       ]
     },
     {
       "sc": "3.1.2",
       "needs": [
-        "vision-blind",
-        "cognitive-language",
-        "cognitive-dyslexia"
+        "nonvisual-access",
+        "language-clarity",
+        "reading-support"
       ]
     },
     {
       "sc": "3.2.1",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "vision-blind",
-        "motor-dexterity"
+        "focus-support",
+        "task-guidance",
+        "nonvisual-access",
+        "alternative-input"
       ]
     },
     {
       "sc": "3.2.2",
       "needs": [
-        "cognitive-attention",
-        "cognitive-executive",
-        "vision-blind",
-        "motor-dexterity"
+        "focus-support",
+        "task-guidance",
+        "nonvisual-access",
+        "alternative-input"
       ]
     },
     {
       "sc": "3.3.1",
       "needs": [
-        "cognitive-language",
-        "cognitive-executive",
-        "vision-blind",
-        "vision-color"
+        "language-clarity",
+        "task-guidance",
+        "nonvisual-access",
+        "color-independent"
       ]
     },
     {
       "sc": "3.3.2",
       "needs": [
-        "cognitive-language",
-        "cognitive-memory",
-        "vision-blind",
-        "vision-color"
+        "language-clarity",
+        "memory-support",
+        "nonvisual-access",
+        "color-independent"
       ]
     },
     {
       "sc": "3.3.3",
       "needs": [
-        "cognitive-language",
-        "cognitive-memory",
-        "cognitive-executive",
-        "vision-blind"
+        "language-clarity",
+        "memory-support",
+        "task-guidance",
+        "nonvisual-access"
       ]
     },
     {
       "sc": "3.3.7",
       "needs": [
-        "cognitive-memory",
-        "motor-fatigue",
-        "motor-dexterity",
-        "cognitive-executive"
+        "memory-support",
+        "low-effort-interaction",
+        "alternative-input",
+        "task-guidance"
       ]
     },
     {
       "sc": "3.3.8",
       "needs": [
-        "cognitive-memory",
-        "cognitive-executive",
-        "motor-dexterity",
-        "speech-unable"
+        "memory-support",
+        "task-guidance",
+        "alternative-input",
+        "non-voice-alternative"
       ]
     },
     {
       "sc": "4.1.2",
       "needs": [
-        "vision-blind",
-        "deafblind",
-        "motor-dexterity",
-        "speech-unable",
-        "cognitive-executive"
+        "nonvisual-access",
+        "text-and-tactile",
+        "alternative-input",
+        "non-voice-alternative",
+        "task-guidance"
       ]
     },
     {
       "sc": "4.1.3",
       "needs": [
-        "vision-blind",
-        "deafblind",
-        "cognitive-attention",
-        "vision-low"
+        "nonvisual-access",
+        "text-and-tactile",
+        "focus-support",
+        "visual-clarity"
       ]
     }
   ]

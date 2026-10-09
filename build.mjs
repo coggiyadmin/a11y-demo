@@ -395,8 +395,8 @@ const EXTRA_GROUPS = [
       + 'client-rendered, iframes, shadow DOM, web components' },
   { dir: 'patterns', blurb: 'ARIA Authoring Practices component patterns as matched '
       + 'broken/correct pairs — dialogs, combobox, tabs, menus, tables and more' },
-  { dir: 'color-vision', blurb: 'colour used as the only carrier of information, with a '
-      + 'simulation view through protanopia, deuteranopia, tritanopia and achromatopsia' },
+  { dir: 'color-independent', blurb: 'colour used as the only carrier of information, with a '
+      + 'simulation view through colour-perception and monochrome transformations' },
   { dir: 'media', blurb: 'captions, transcripts, audio description and sound-only signalling '
       + '\u2014 including cases whose honest outcome is cannot-tell, not pass' },
   { dir: 'ui-states', blurb: 'one journey across loading, empty, invalid, corrected, submitted, '
@@ -404,7 +404,7 @@ const EXTRA_GROUPS = [
   { dir: 'journeys', blurb: 'multi-page tasks \u2014 carrying the criteria that cannot be tested '
       + 'on a single page at all: consistent navigation, identification, help, redundant entry' },
   { dir: 'scenarios', blurb: 'remaining scenario types at their honest unit \u2014 overlays, async, '
-      + 'paging, theming, orientation, RTL, touch targets, speech input, dragging' },
+      + 'paging, theming, orientation, RTL, touch targets, voice control, dragging' },
   { dir: 'surfaces', blurb: 'beyond a plain web page \u2014 HTML email, EPUB metadata, an authoring '
       + 'tool and its output (ATAG 2.0), and a conversational interface' },
   { dir: 'guided', blurb: 'questions automation cannot answer, with the fixture to ask them '
