@@ -104,7 +104,10 @@ const S = [
 <label for="m2">Message</label><input id="m2"><button type="submit">Send</button>`,
   },
   {
-    id: 'text_spacing', journey: 'display-adapt', sc: ['1.4.12', '1.4.4'],
+    // 1.4.4 Resize Text is about zoom and is not what this page breaks — the viewport
+    // here is fine. The defect is 1.4.12 Text Spacing. Claiming both made the engine
+    // look like it missed something it correctly passed.
+    id: 'text_spacing', journey: 'display-adapt', sc: ['1.4.12'],
     needsAt: ['magnifier'], needs: ['cognitive-dyslexia', 'vision-low'],
     brokenNote: 'Fixed-height boxes with !important line-height. Applying the 1.4.12 text '
       + 'spacing overrides clips the content.',
@@ -142,7 +145,10 @@ body::after{content:"Please rotate your device"}}</style>
 <p>Seat map, usable in portrait and landscape.</p>`,
   },
   {
-    id: 'rtl_mixed_language', journey: 'i18n', sc: ['3.1.1', '3.1.2'],
+    // The page DOES declare lang="en", so 3.1.1 Language of Page is satisfied and the
+    // engine is right to pass it. The defect is 3.1.2 Language of Parts: the Arabic
+    // passage carries no lang of its own.
+    id: 'rtl_mixed_language', journey: 'i18n', sc: ['3.1.2'],
     needsAt: ['sr-nvda'], needs: ['vision-blind', 'cognitive-language'],
     brokenNote: 'A passage in another language with no lang attribute and no dir, so a screen '
       + 'reader pronounces it with the wrong voice and it renders in the wrong direction.',
@@ -177,7 +183,11 @@ body::after{content:"Please rotate your device"}}</style>
     needsAt: ['touch', 'pointer'], needs: ['motor-tremor', 'age-related', 'temporary'],
     brokenNote: 'Icon controls 16px square and touching, well under the 24px minimum with no '
       + 'spacing exception.',
-    broken: `<style>.ic{display:inline-block;width:16px;height:16px;padding:0;margin:0;background:#30556e}</style>
+    // min-width/min-height MUST be reset here. fixture.css sets both to 24px so the
+    // scaffolding never generates its own target-size defect — and min-* beats width,
+    // so without this reset the fixture rendered at 24x24 and had no defect at all.
+    // Measured: the engine was correctly passing it.
+    broken: `<style>.ic{display:inline-block;width:16px;height:16px;min-width:0;min-height:0;padding:0;margin:0;background:#30556e}</style>
 <a href="#a" class="ic" aria-label="Seat map"></a><a href="#b" class="ic" aria-label="Baggage"></a>`,
     correctNote: 'At least 24x24 with spacing between targets.',
     correct: `<style>.ic2{display:inline-block;width:24px;height:24px;margin:4px;background:#30556e}</style>

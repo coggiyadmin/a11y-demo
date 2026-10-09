@@ -1,7 +1,7 @@
 {
   "description": "Ground truth for the a11y-demo fixture corpus. Each case names the WCAG success criteria a correct scanner should report (min_criteria) or, for a negative control, the criteria it must NOT report (expected-clean). Measured engine behaviour lives in a11y-expected-findings.json, never here.",
   "version": 1,
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "scoring": {
     "recall": "sum(criteria reported on tp cases) / sum(min_criteria) across mode=tp",
     "fp_rate": "any finding on a mode=safe case is a false positive; the ceiling is 0",
