@@ -1,0 +1,4871 @@
+{
+  "description": "The same pages under several display conditions. A fixture whose observable facts change with the condition cannot be assessed from a single config — and a scan that fixes one condition reports as if the answer generalised.",
+  "configs": [
+    {
+      "id": "default-desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "deviceScaleFactor": 1,
+      "note": "what a typical scan uses"
+    },
+    {
+      "id": "reduced-motion",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "reducedMotion": "reduce",
+      "deviceScaleFactor": 1,
+      "note": "what the conformis walk driver hard-codes (walk-core.mjs:30)"
+    },
+    {
+      "id": "mobile-portrait",
+      "viewport": {
+        "width": 375,
+        "height": 667
+      },
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true,
+      "note": "phone, portrait, touch"
+    },
+    {
+      "id": "reflow-320",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "deviceScaleFactor": 1,
+      "note": "1.4.10 Reflow is defined at this width"
+    },
+    {
+      "id": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "dark",
+      "reducedMotion": "no-preference",
+      "deviceScaleFactor": 1,
+      "note": "dark mode"
+    },
+    {
+      "id": "forced-colors",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "deviceScaleFactor": 1,
+      "forcedColors": "active",
+      "note": "Windows high contrast / forced colours"
+    }
+  ],
+  "generated": "2026-10-09T02:31:12.002Z",
+  "results": {
+    "default-desktop": {
+      "keyboard/div_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_text_field.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_text_field.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_date_fields.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_travellers.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_checkbox.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_checkbox.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_fare_cards.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/role_tab_no_tablist.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_roving_tabindex.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_custom_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/focus_not_visible.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/focus_obscured.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 31,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/client_mounted.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/safe_server_rendered.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/link_heavy.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 456,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/viewport_no_zoom.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/safe_viewport.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/img_no_alt.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/safe_img.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/anim_no_reduced_motion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 2,
+        "infinite_rules": 2
+      },
+      "static/safe_anim_reduced_motion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 1,
+        "infinite_rules": 1
+      },
+      "static/field_no_visible_label.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/lang_missing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/overlay_focus_trap.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_overlay_focus_trap.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/async_validation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_async_validation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/infinite_scroll.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_infinite_scroll.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/data_dashboard.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_data_dashboard.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 26,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/meaningful_sequence.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_meaningful_sequence.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/live_chat.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_live_chat.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/text_spacing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_text_spacing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/forced_colors.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_forced_colors.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/orientation_lock.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_orientation_lock.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/rtl_mixed_language.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_rtl_mixed_language.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/label_in_name.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_label_in_name.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/dragging_required.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_dragging_required.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/touch_targets.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 2,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_touch_targets.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/pointer_cancellation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_pointer_cancellation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/change_on_focus.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_change_on_focus.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/change_on_input.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_change_on_input.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/error_suggestion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_error_suggestion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/motion_actuation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_motion_actuation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/error_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_error_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/status_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_status_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/link_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_link_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/chart_series_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_chart_series_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 29,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/selection_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_selection_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/placeholder_contrast.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_placeholder_contrast.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/required_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_required_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/email_table_layout.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_email_table_layout.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/email_contrast_darkmode.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_email_contrast_darkmode.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/epub_no_metadata.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_epub_no_metadata.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/authoring_generates_bad_markup.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 17,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_authoring_generates_bad_markup.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 18,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/chatbot_transcript.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_chatbot_transcript.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 19,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/flash_10hz_large_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_flash_10hz_large_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/red_flash.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_red_flash.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/flash_small_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 17,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_flash_small_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/three_flashes_exactly.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 16,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/safe_three_flashes_exactly.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/animation_from_interaction.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/safe_animation_from_interaction.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      }
+    },
+    "reduced-motion": {
+      "keyboard/div_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_text_field.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_text_field.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_date_fields.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_travellers.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_checkbox.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_checkbox.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_fare_cards.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/role_tab_no_tablist.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_roving_tabindex.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_custom_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/focus_not_visible.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/focus_obscured.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 31,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/client_mounted.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/safe_server_rendered.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/link_heavy.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 456,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/viewport_no_zoom.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/safe_viewport.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/img_no_alt.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/safe_img.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/anim_no_reduced_motion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 2
+      },
+      "static/safe_anim_reduced_motion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "static/field_no_visible_label.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/lang_missing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/overlay_focus_trap.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_overlay_focus_trap.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/async_validation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_async_validation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/infinite_scroll.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_infinite_scroll.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/data_dashboard.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_data_dashboard.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 26,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/meaningful_sequence.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_meaningful_sequence.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/live_chat.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_live_chat.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/text_spacing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_text_spacing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/forced_colors.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_forced_colors.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/orientation_lock.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_orientation_lock.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/rtl_mixed_language.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_rtl_mixed_language.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/label_in_name.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_label_in_name.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/dragging_required.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_dragging_required.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/touch_targets.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 2,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_touch_targets.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/pointer_cancellation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_pointer_cancellation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/change_on_focus.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_change_on_focus.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/change_on_input.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_change_on_input.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/error_suggestion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_error_suggestion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/motion_actuation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_motion_actuation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/error_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_error_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/status_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_status_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/link_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_link_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/chart_series_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_chart_series_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 29,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/selection_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_selection_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/placeholder_contrast.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_placeholder_contrast.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/required_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_required_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/email_table_layout.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_email_table_layout.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/email_contrast_darkmode.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_email_contrast_darkmode.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/epub_no_metadata.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_epub_no_metadata.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/authoring_generates_bad_markup.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 17,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_authoring_generates_bad_markup.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 18,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/chatbot_transcript.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_chatbot_transcript.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 19,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/flash_10hz_large_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_flash_10hz_large_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/red_flash.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_red_flash.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/flash_small_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 17,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_flash_small_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/three_flashes_exactly.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 16,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/safe_three_flashes_exactly.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/animation_from_interaction.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/safe_animation_from_interaction.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      }
+    },
+    "mobile-portrait": {
+      "keyboard/div_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_text_field.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_text_field.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_date_fields.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_travellers.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_checkbox.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_checkbox.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_fare_cards.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/role_tab_no_tablist.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_roving_tabindex.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_custom_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/focus_not_visible.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/focus_obscured.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 31,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/client_mounted.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/safe_server_rendered.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/link_heavy.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 456,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/viewport_no_zoom.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/safe_viewport.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/img_no_alt.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/safe_img.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/anim_no_reduced_motion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 2,
+        "infinite_rules": 2
+      },
+      "static/safe_anim_reduced_motion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 1,
+        "infinite_rules": 1
+      },
+      "static/field_no_visible_label.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/lang_missing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/overlay_focus_trap.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_overlay_focus_trap.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/async_validation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_async_validation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/infinite_scroll.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_infinite_scroll.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/data_dashboard.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_data_dashboard.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 26,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/meaningful_sequence.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_meaningful_sequence.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/live_chat.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_live_chat.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/text_spacing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_text_spacing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/forced_colors.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_forced_colors.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/orientation_lock.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 4,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_orientation_lock.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/rtl_mixed_language.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_rtl_mixed_language.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/label_in_name.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_label_in_name.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/dragging_required.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_dragging_required.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/touch_targets.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 2,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_touch_targets.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/pointer_cancellation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_pointer_cancellation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/change_on_focus.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_change_on_focus.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/change_on_input.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_change_on_input.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/error_suggestion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_error_suggestion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/motion_actuation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_motion_actuation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/error_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_error_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/status_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_status_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/link_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_link_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/chart_series_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_chart_series_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 29,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/selection_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_selection_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/placeholder_contrast.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_placeholder_contrast.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/required_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_required_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/email_table_layout.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_email_table_layout.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/email_contrast_darkmode.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_email_contrast_darkmode.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/epub_no_metadata.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_epub_no_metadata.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/authoring_generates_bad_markup.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 17,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_authoring_generates_bad_markup.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 18,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/chatbot_transcript.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_chatbot_transcript.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 19,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/flash_10hz_large_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_flash_10hz_large_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/red_flash.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_red_flash.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/flash_small_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 17,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_flash_small_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/three_flashes_exactly.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 16,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/safe_three_flashes_exactly.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/animation_from_interaction.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/safe_animation_from_interaction.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      }
+    },
+    "reflow-320": {
+      "keyboard/div_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_text_field.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_text_field.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_date_fields.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_travellers.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_checkbox.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_checkbox.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_fare_cards.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/role_tab_no_tablist.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_roving_tabindex.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_custom_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/focus_not_visible.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/focus_obscured.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 31,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/client_mounted.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/safe_server_rendered.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/link_heavy.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 456,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/viewport_no_zoom.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/safe_viewport.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/img_no_alt.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/safe_img.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/anim_no_reduced_motion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 2,
+        "infinite_rules": 2
+      },
+      "static/safe_anim_reduced_motion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 1,
+        "infinite_rules": 1
+      },
+      "static/field_no_visible_label.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/lang_missing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/overlay_focus_trap.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_overlay_focus_trap.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/async_validation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_async_validation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/infinite_scroll.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_infinite_scroll.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/data_dashboard.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_data_dashboard.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 26,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/meaningful_sequence.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_meaningful_sequence.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/live_chat.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_live_chat.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/text_spacing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_text_spacing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/forced_colors.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_forced_colors.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/orientation_lock.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 4,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_orientation_lock.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/rtl_mixed_language.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_rtl_mixed_language.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/label_in_name.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_label_in_name.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/dragging_required.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_dragging_required.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/touch_targets.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 2,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_touch_targets.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/pointer_cancellation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_pointer_cancellation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/change_on_focus.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_change_on_focus.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/change_on_input.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_change_on_input.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/error_suggestion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_error_suggestion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/motion_actuation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_motion_actuation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/error_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_error_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/status_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_status_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/link_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_link_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/chart_series_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_chart_series_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 29,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/selection_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_selection_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/placeholder_contrast.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_placeholder_contrast.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/required_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_required_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/email_table_layout.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_email_table_layout.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/email_contrast_darkmode.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_email_contrast_darkmode.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/epub_no_metadata.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_epub_no_metadata.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/authoring_generates_bad_markup.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 17,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_authoring_generates_bad_markup.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 18,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/chatbot_transcript.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_chatbot_transcript.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 19,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/flash_10hz_large_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_flash_10hz_large_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/red_flash.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_red_flash.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/flash_small_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 17,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_flash_small_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/three_flashes_exactly.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 16,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/safe_three_flashes_exactly.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/animation_from_interaction.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/safe_animation_from_interaction.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      }
+    },
+    "dark": {
+      "keyboard/div_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_text_field.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_text_field.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_date_fields.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_travellers.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_checkbox.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_checkbox.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_fare_cards.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/role_tab_no_tablist.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_roving_tabindex.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_custom_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/focus_not_visible.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/focus_obscured.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 31,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/client_mounted.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/safe_server_rendered.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/link_heavy.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 456,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/viewport_no_zoom.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/safe_viewport.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/img_no_alt.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/safe_img.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/anim_no_reduced_motion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 2,
+        "infinite_rules": 2
+      },
+      "static/safe_anim_reduced_motion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 1,
+        "infinite_rules": 1
+      },
+      "static/field_no_visible_label.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/lang_missing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/overlay_focus_trap.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_overlay_focus_trap.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/async_validation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_async_validation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/infinite_scroll.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_infinite_scroll.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/data_dashboard.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_data_dashboard.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 26,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/meaningful_sequence.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_meaningful_sequence.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/live_chat.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_live_chat.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/text_spacing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_text_spacing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/forced_colors.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_forced_colors.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/orientation_lock.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_orientation_lock.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/rtl_mixed_language.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_rtl_mixed_language.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/label_in_name.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_label_in_name.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/dragging_required.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_dragging_required.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/touch_targets.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 2,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_touch_targets.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/pointer_cancellation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_pointer_cancellation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/change_on_focus.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_change_on_focus.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/change_on_input.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_change_on_input.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/error_suggestion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_error_suggestion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/motion_actuation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_motion_actuation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/error_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_error_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/status_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_status_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/link_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_link_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/chart_series_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_chart_series_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 29,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/selection_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_selection_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/placeholder_contrast.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_placeholder_contrast.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/required_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_required_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/email_table_layout.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_email_table_layout.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/email_contrast_darkmode.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_email_contrast_darkmode.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/epub_no_metadata.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_epub_no_metadata.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/authoring_generates_bad_markup.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 17,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_authoring_generates_bad_markup.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 18,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/chatbot_transcript.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_chatbot_transcript.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 19,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/flash_10hz_large_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_flash_10hz_large_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/red_flash.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_red_flash.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/flash_small_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 17,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_flash_small_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/three_flashes_exactly.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 16,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/safe_three_flashes_exactly.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/animation_from_interaction.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/safe_animation_from_interaction.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      }
+    },
+    "forced-colors": {
+      "keyboard/div_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_text_field.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_text_field.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_date_fields.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_travellers.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_checkbox.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_native_checkbox.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/div_fare_cards.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/role_tab_no_tablist.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_roving_tabindex.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/safe_custom_button.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/focus_not_visible.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "keyboard/focus_obscured.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 31,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/client_mounted.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/safe_server_rendered.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "capture/link_heavy.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 456,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/viewport_no_zoom.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/safe_viewport.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/img_no_alt.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/safe_img.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/anim_no_reduced_motion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 2,
+        "infinite_rules": 2
+      },
+      "static/safe_anim_reduced_motion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 1,
+        "infinite_rules": 1
+      },
+      "static/field_no_visible_label.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 8,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "static/lang_missing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 7,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/overlay_focus_trap.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_overlay_focus_trap.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/async_validation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_async_validation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/infinite_scroll.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_infinite_scroll.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/data_dashboard.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_data_dashboard.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 26,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/meaningful_sequence.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_meaningful_sequence.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/live_chat.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_live_chat.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/text_spacing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_text_spacing.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/forced_colors.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_forced_colors.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/orientation_lock.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_orientation_lock.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/rtl_mixed_language.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_rtl_mixed_language.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/label_in_name.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_label_in_name.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/dragging_required.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_dragging_required.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/touch_targets.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 2,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_touch_targets.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/pointer_cancellation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_pointer_cancellation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/change_on_focus.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_change_on_focus.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/change_on_input.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_change_on_input.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/error_suggestion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_error_suggestion.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/motion_actuation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "scenarios/safe_motion_actuation.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/error_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_error_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/status_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_status_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 13,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/link_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_link_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/chart_series_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_chart_series_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 29,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/selection_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_selection_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/placeholder_contrast.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_placeholder_contrast.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 9,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_disabled_state.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/required_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 12,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "color-vision/safe_required_color_only.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 11,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/email_table_layout.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_email_table_layout.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/email_contrast_darkmode.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_email_contrast_darkmode.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/epub_no_metadata.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_epub_no_metadata.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/authoring_generates_bad_markup.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 17,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_authoring_generates_bad_markup.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 18,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/chatbot_transcript.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 14,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "surfaces/safe_chatbot_transcript.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 19,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/flash_10hz_large_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_flash_10hz_large_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/red_flash.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_red_flash.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/flash_small_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 17,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 1
+      },
+      "flash/safe_flash_small_area.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/three_flashes_exactly.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 16,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/safe_three_flashes_exactly.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 15,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/animation_from_interaction.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      },
+      "flash/safe_animation_from_interaction.html": {
+        "h_scroll": false,
+        "overflow_px": 0,
+        "visible_elements": 10,
+        "targets_under_24": 0,
+        "running_animations": 0,
+        "infinite_rules": 0
+      }
+    }
+  },
+  "changes": [
+    {
+      "path": "static/anim_no_reduced_motion.html",
+      "cfg": "reduced-motion",
+      "field": "running_animations",
+      "from": 2,
+      "to": 0
+    },
+    {
+      "path": "static/safe_anim_reduced_motion.html",
+      "cfg": "reduced-motion",
+      "field": "running_animations",
+      "from": 1,
+      "to": 0
+    },
+    {
+      "path": "scenarios/orientation_lock.html",
+      "cfg": "mobile-portrait",
+      "field": "visible_elements",
+      "from": 9,
+      "to": 4
+    },
+    {
+      "path": "scenarios/orientation_lock.html",
+      "cfg": "reflow-320",
+      "field": "visible_elements",
+      "from": 9,
+      "to": 4
+    }
+  ]
+}
