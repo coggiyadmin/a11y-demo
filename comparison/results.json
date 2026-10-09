@@ -16,9 +16,11 @@
     "hosted_services": false,
     "repository_content_uploaded": false,
     "install_scripts_disabled_by_npmrc": true,
-    "ibm_scan_metrics_suppressed": true
+    "ibm_scan_metrics_suppressed": true,
+    "cognium_export_contains_raw_evidence": false
   },
   "tool_order": [
+    "cognium",
     "axe",
     "pa11y-htmlcs",
     "ibm",
@@ -355,9 +357,941 @@
     }
   ],
   "tools": {
+    "cognium": {
+      "label": "Cognium",
+      "version": "a11y/html@1.2.0 + tech/html-aria@1.2.0",
+      "source": {
+        "kind": "sanitized-import",
+        "generated": "2026-10-09",
+        "view": "all declared comparison pages, as built in the browser",
+        "capture": {
+          "digest": "sha256:4f925e587841c778929103fc847d2c1a88542a09943f1eae7267e16e1ea3c570",
+          "fixture_pages": 38,
+          "hydrated_pages": 39,
+          "support_pages": 1,
+          "capture_misses": 0,
+          "reproduced_pages": 39,
+          "run_errors": 0
+        },
+        "environment": {
+          "browser": "Chromium 149.0.7827.0",
+          "platform": "linux/arm64",
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          }
+        },
+        "versions": {
+          "packs": {
+            "a11y/html": "1.2.0",
+            "tech/html-aria": "1.2.0"
+          },
+          "catalogs": {
+            "wcag@2.2": "rev1",
+            "a11y-practice@0.1": "rev1",
+            "aria@1.2": "rev1",
+            "html-aria@2026-08-11": "rev1"
+          },
+          "drivers": {
+            "browser": "0.6.1",
+            "static-html": "0.1.0"
+          },
+          "datasets": {
+            "data/act-rules-cases": "2026.7.10",
+            "data/failure-modes": "2026.10.2",
+            "data/known-bad-shared": "2026.9.26"
+          }
+        }
+      },
+      "summary": {
+        "cases": 38,
+        "errors": 0,
+        "tp_cases": 23,
+        "tp_pages_with_target_findings": 12,
+        "tp_pages_with_other_findings_only": 2,
+        "safe_cases": 15,
+        "safe_pages_without_target_findings": 15,
+        "safe_pages_with_target_findings": 0,
+        "safe_pages_with_other_findings_only": 1,
+        "expected_criteria": 38,
+        "expected_criteria_matched": 15,
+        "manual_review_items": 187,
+        "duration_ms": 0
+      },
+      "cases": [
+        {
+          "id": "static-img_no_alt",
+          "mode": "tp",
+          "path": "static/img_no_alt.html",
+          "expected_criteria": [
+            "1.1.1"
+          ],
+          "status": "ok",
+          "automated_findings": 3,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "1.1.1"
+          ],
+          "matched_expected_criteria": [
+            "1.1.1"
+          ],
+          "findings": [
+            {
+              "rule": "AX-05/1.1.1",
+              "count": 3,
+              "criteria": [
+                "1.1.1"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "static-safe_img",
+          "mode": "safe",
+          "path": "static/safe_img.html",
+          "expected_criteria": [
+            "1.1.1"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "static-viewport_no_zoom",
+          "mode": "tp",
+          "path": "static/viewport_no_zoom.html",
+          "expected_criteria": [
+            "1.4.4"
+          ],
+          "status": "ok",
+          "automated_findings": 1,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "1.4.4"
+          ],
+          "matched_expected_criteria": [
+            "1.4.4"
+          ],
+          "findings": [
+            {
+              "rule": "AX-14/1.4.4",
+              "count": 1,
+              "criteria": [
+                "1.4.4"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "static-safe_viewport",
+          "mode": "safe",
+          "path": "static/safe_viewport.html",
+          "expected_criteria": [
+            "1.4.4"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "static-anim_no_reduced_motion",
+          "mode": "tp",
+          "path": "static/anim_no_reduced_motion.html",
+          "expected_criteria": [
+            "2.2.2"
+          ],
+          "status": "ok",
+          "automated_findings": 2,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "2.2.2"
+          ],
+          "matched_expected_criteria": [
+            "2.2.2"
+          ],
+          "findings": [
+            {
+              "rule": "AX-19/2.2.2",
+              "count": 2,
+              "criteria": [
+                "2.2.2"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "static-safe_anim_reduced_motion",
+          "mode": "safe",
+          "path": "static/safe_anim_reduced_motion.html",
+          "expected_criteria": [
+            "2.2.2"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "static-field_no_visible_label",
+          "mode": "tp",
+          "path": "static/field_no_visible_label.html",
+          "expected_criteria": [
+            "3.3.2"
+          ],
+          "status": "ok",
+          "automated_findings": 2,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "3.3.2"
+          ],
+          "matched_expected_criteria": [
+            "3.3.2"
+          ],
+          "findings": [
+            {
+              "rule": "AX-05/3.3.2",
+              "count": 2,
+              "criteria": [
+                "3.3.2"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "static-lang_missing",
+          "mode": "tp",
+          "path": "static/lang_missing.html",
+          "expected_criteria": [
+            "3.1.1"
+          ],
+          "status": "ok",
+          "automated_findings": 1,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "3.1.1"
+          ],
+          "matched_expected_criteria": [
+            "3.1.1"
+          ],
+          "findings": [
+            {
+              "rule": "AX-14/3.1.1",
+              "count": 1,
+              "criteria": [
+                "3.1.1"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "keyboard-div_button",
+          "mode": "tp",
+          "path": "keyboard/div_button.html",
+          "expected_criteria": [
+            "2.1.1",
+            "4.1.2"
+          ],
+          "status": "ok",
+          "automated_findings": 1,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "2.1.1"
+          ],
+          "matched_expected_criteria": [
+            "2.1.1"
+          ],
+          "findings": [
+            {
+              "rule": "AX-10/2.1.1",
+              "count": 1,
+              "criteria": [
+                "2.1.1"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "keyboard-safe_native_button",
+          "mode": "safe",
+          "path": "keyboard/safe_native_button.html",
+          "expected_criteria": [
+            "2.1.1",
+            "4.1.2"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "patterns-tabs",
+          "mode": "tp",
+          "path": "patterns/tabs.html",
+          "expected_criteria": [
+            "4.1.2",
+            "2.1.1",
+            "2.4.3"
+          ],
+          "status": "ok",
+          "automated_findings": 4,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "1.3.1",
+            "2.1.1"
+          ],
+          "matched_expected_criteria": [
+            "2.1.1"
+          ],
+          "findings": [
+            {
+              "rule": "AX-02/1.3.1",
+              "count": 2,
+              "criteria": [
+                "1.3.1"
+              ]
+            },
+            {
+              "rule": "AX-10/2.1.1",
+              "count": 2,
+              "criteria": [
+                "2.1.1"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "patterns-safe_tabs",
+          "mode": "safe",
+          "path": "patterns/safe_tabs.html",
+          "expected_criteria": [
+            "4.1.2",
+            "2.1.1",
+            "2.4.3"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "patterns-form-errors",
+          "mode": "tp",
+          "path": "patterns/form-errors.html",
+          "expected_criteria": [
+            "3.3.1",
+            "3.3.2",
+            "4.1.2"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "patterns-safe_form-errors",
+          "mode": "safe",
+          "path": "patterns/safe_form-errors.html",
+          "expected_criteria": [
+            "3.3.1",
+            "3.3.2",
+            "4.1.2"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "color-status_color_only",
+          "mode": "tp",
+          "path": "color-independent/status_color_only.html",
+          "expected_criteria": [
+            "1.4.1"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "color-safe_status_color_only",
+          "mode": "safe",
+          "path": "color-independent/safe_status_color_only.html",
+          "expected_criteria": [
+            "1.4.1"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "color-placeholder_contrast",
+          "mode": "tp",
+          "path": "color-independent/placeholder_contrast.html",
+          "expected_criteria": [
+            "1.4.3"
+          ],
+          "status": "ok",
+          "automated_findings": 1,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "3.3.2"
+          ],
+          "matched_expected_criteria": [],
+          "findings": [
+            {
+              "rule": "AX-05/3.3.2",
+              "count": 1,
+              "criteria": [
+                "3.3.2"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "color-safe_placeholder_contrast",
+          "mode": "safe",
+          "path": "color-independent/safe_placeholder_contrast.html",
+          "expected_criteria": [
+            "1.4.3"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "media-video_no_captions",
+          "mode": "tp",
+          "path": "media/video_no_captions.html",
+          "expected_criteria": [
+            "1.2.2"
+          ],
+          "status": "ok",
+          "automated_findings": 2,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "2.1.2",
+            "2.4.3"
+          ],
+          "matched_expected_criteria": [],
+          "findings": [
+            {
+              "rule": "AX-08/2.1.2",
+              "count": 1,
+              "criteria": [
+                "2.1.2"
+              ]
+            },
+            {
+              "rule": "AX-08/2.4.3",
+              "count": 1,
+              "criteria": [
+                "2.4.3"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "media-safe_video_no_captions",
+          "mode": "safe",
+          "path": "media/safe_video_no_captions.html",
+          "expected_criteria": [
+            "1.2.2"
+          ],
+          "status": "ok",
+          "automated_findings": 2,
+          "manual_review_items": 4,
+          "found_criteria": [
+            "2.1.2",
+            "2.4.3"
+          ],
+          "matched_expected_criteria": [],
+          "findings": [
+            {
+              "rule": "AX-08/2.1.2",
+              "count": 1,
+              "criteria": [
+                "2.1.2"
+              ]
+            },
+            {
+              "rule": "AX-08/2.4.3",
+              "count": 1,
+              "criteria": [
+                "2.4.3"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "state-invalid",
+          "mode": "tp",
+          "path": "ui-states/invalid.html",
+          "expected_criteria": [
+            "3.3.1",
+            "4.1.2"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "state-safe_invalid",
+          "mode": "safe",
+          "path": "ui-states/safe_invalid.html",
+          "expected_criteria": [
+            "3.3.1",
+            "4.1.2"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "state-timed-out",
+          "mode": "tp",
+          "path": "ui-states/timed-out.html",
+          "expected_criteria": [
+            "2.2.1",
+            "4.1.3"
+          ],
+          "status": "ok",
+          "automated_findings": 2,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "1.4.3",
+            "2.2.1"
+          ],
+          "matched_expected_criteria": [
+            "2.2.1"
+          ],
+          "findings": [
+            {
+              "rule": "AX-15/1.4.3",
+              "count": 1,
+              "criteria": [
+                "1.4.3"
+              ]
+            },
+            {
+              "rule": "AX-19/2.2.1",
+              "count": 1,
+              "criteria": [
+                "2.2.1"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "state-safe_timed-out",
+          "mode": "safe",
+          "path": "ui-states/safe_timed-out.html",
+          "expected_criteria": [
+            "2.2.1",
+            "4.1.3"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "scenario-meaningful_sequence",
+          "mode": "tp",
+          "path": "scenarios/meaningful_sequence.html",
+          "expected_criteria": [
+            "1.3.2"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "scenario-safe_meaningful_sequence",
+          "mode": "safe",
+          "path": "scenarios/safe_meaningful_sequence.html",
+          "expected_criteria": [
+            "1.3.2"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "scenario-label_in_name",
+          "mode": "tp",
+          "path": "scenarios/label_in_name.html",
+          "expected_criteria": [
+            "2.5.3"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "scenario-safe_label_in_name",
+          "mode": "safe",
+          "path": "scenarios/safe_label_in_name.html",
+          "expected_criteria": [
+            "2.5.3"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "scenario-touch_targets",
+          "mode": "tp",
+          "path": "scenarios/touch_targets.html",
+          "expected_criteria": [
+            "2.5.8",
+            "2.5.5"
+          ],
+          "status": "ok",
+          "automated_findings": 2,
+          "manual_review_items": 4,
+          "found_criteria": [
+            "2.5.8"
+          ],
+          "matched_expected_criteria": [
+            "2.5.8"
+          ],
+          "findings": [
+            {
+              "rule": "AX-16/2.5.8",
+              "count": 2,
+              "criteria": [
+                "2.5.8"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "scenario-safe_touch_targets",
+          "mode": "safe",
+          "path": "scenarios/safe_touch_targets.html",
+          "expected_criteria": [
+            "2.5.8",
+            "2.5.5"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 4,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "surface-email_contrast_darkmode",
+          "mode": "tp",
+          "path": "surfaces/email_contrast_darkmode.html",
+          "expected_criteria": [
+            "1.4.3",
+            "1.4.1"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "surface-safe_email_contrast_darkmode",
+          "mode": "safe",
+          "path": "surfaces/safe_email_contrast_darkmode.html",
+          "expected_criteria": [
+            "1.4.3",
+            "1.4.1"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "delivery-server_html",
+          "mode": "tp",
+          "path": "delivery/server_html.html",
+          "expected_criteria": [
+            "2.1.1",
+            "1.1.1"
+          ],
+          "status": "ok",
+          "automated_findings": 2,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "1.1.1",
+            "2.1.1"
+          ],
+          "matched_expected_criteria": [
+            "2.1.1",
+            "1.1.1"
+          ],
+          "findings": [
+            {
+              "rule": "AX-05/1.1.1",
+              "count": 1,
+              "criteria": [
+                "1.1.1"
+              ]
+            },
+            {
+              "rule": "AX-10/2.1.1",
+              "count": 1,
+              "criteria": [
+                "2.1.1"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "delivery-client_js",
+          "mode": "tp",
+          "path": "delivery/client_js.html",
+          "expected_criteria": [
+            "2.1.1",
+            "1.1.1"
+          ],
+          "status": "ok",
+          "automated_findings": 2,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "1.1.1",
+            "2.1.1"
+          ],
+          "matched_expected_criteria": [
+            "2.1.1",
+            "1.1.1"
+          ],
+          "findings": [
+            {
+              "rule": "AX-05/1.1.1",
+              "count": 1,
+              "criteria": [
+                "1.1.1"
+              ]
+            },
+            {
+              "rule": "AX-10/2.1.1",
+              "count": 1,
+              "criteria": [
+                "2.1.1"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "delivery-client_js_delayed",
+          "mode": "tp",
+          "path": "delivery/client_js_delayed.html",
+          "expected_criteria": [
+            "2.1.1",
+            "1.1.1"
+          ],
+          "status": "ok",
+          "automated_findings": 2,
+          "manual_review_items": 5,
+          "found_criteria": [
+            "1.1.1",
+            "2.1.1"
+          ],
+          "matched_expected_criteria": [
+            "2.1.1",
+            "1.1.1"
+          ],
+          "findings": [
+            {
+              "rule": "AX-05/1.1.1",
+              "count": 1,
+              "criteria": [
+                "1.1.1"
+              ]
+            },
+            {
+              "rule": "AX-10/2.1.1",
+              "count": 1,
+              "criteria": [
+                "2.1.1"
+              ]
+            }
+          ],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "delivery-iframe_same_origin",
+          "mode": "tp",
+          "path": "delivery/iframe_same_origin.html",
+          "expected_criteria": [
+            "2.1.1",
+            "1.1.1"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "delivery-shadow_dom_open",
+          "mode": "tp",
+          "path": "delivery/shadow_dom_open.html",
+          "expected_criteria": [
+            "2.1.1",
+            "1.1.1"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        },
+        {
+          "id": "delivery-shadow_dom_closed",
+          "mode": "tp",
+          "path": "delivery/shadow_dom_closed.html",
+          "expected_criteria": [
+            "2.1.1",
+            "1.1.1"
+          ],
+          "status": "ok",
+          "automated_findings": 0,
+          "manual_review_items": 5,
+          "found_criteria": [],
+          "matched_expected_criteria": [],
+          "findings": [],
+          "duration_ms": null,
+          "imported": true
+        }
+      ]
+    },
     "axe": {
       "label": "axe-core",
       "version": "4.14.0",
+      "source": {
+        "kind": "live-local-scan"
+      },
       "summary": {
         "cases": 38,
         "errors": 0,
@@ -371,7 +1305,7 @@
         "expected_criteria": 38,
         "expected_criteria_matched": 9,
         "manual_review_items": 1,
-        "duration_ms": 32787
+        "duration_ms": 32221
       },
       "cases": [
         {
@@ -399,7 +1333,7 @@
               ]
             }
           ],
-          "duration_ms": 915
+          "duration_ms": 849
         },
         {
           "id": "static-safe_img",
@@ -414,7 +1348,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 827
+          "duration_ms": 814
         },
         {
           "id": "static-viewport_no_zoom",
@@ -441,7 +1375,7 @@
               ]
             }
           ],
-          "duration_ms": 840
+          "duration_ms": 811
         },
         {
           "id": "static-safe_viewport",
@@ -456,7 +1390,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 838
+          "duration_ms": 806
         },
         {
           "id": "static-anim_no_reduced_motion",
@@ -481,7 +1415,7 @@
               ]
             }
           ],
-          "duration_ms": 827
+          "duration_ms": 815
         },
         {
           "id": "static-safe_anim_reduced_motion",
@@ -511,7 +1445,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 825
+          "duration_ms": 814
         },
         {
           "id": "static-lang_missing",
@@ -538,7 +1472,7 @@
               ]
             }
           ],
-          "duration_ms": 830
+          "duration_ms": 803
         },
         {
           "id": "keyboard-div_button",
@@ -554,7 +1488,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 825
+          "duration_ms": 812
         },
         {
           "id": "keyboard-safe_native_button",
@@ -570,7 +1504,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 823
+          "duration_ms": 803
         },
         {
           "id": "patterns-tabs",
@@ -597,7 +1531,7 @@
               ]
             }
           ],
-          "duration_ms": 821
+          "duration_ms": 822
         },
         {
           "id": "patterns-safe_tabs",
@@ -614,7 +1548,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 841
+          "duration_ms": 821
         },
         {
           "id": "patterns-form-errors",
@@ -631,7 +1565,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 832
+          "duration_ms": 815
         },
         {
           "id": "patterns-safe_form-errors",
@@ -648,7 +1582,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 840
+          "duration_ms": 821
         },
         {
           "id": "color-status_color_only",
@@ -663,7 +1597,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 832
+          "duration_ms": 811
         },
         {
           "id": "color-safe_status_color_only",
@@ -678,7 +1612,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 828
+          "duration_ms": 807
         },
         {
           "id": "color-placeholder_contrast",
@@ -693,7 +1627,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 822
+          "duration_ms": 816
         },
         {
           "id": "color-safe_placeholder_contrast",
@@ -708,7 +1642,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 823
+          "duration_ms": 813
         },
         {
           "id": "media-video_no_captions",
@@ -723,7 +1657,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 822
+          "duration_ms": 811
         },
         {
           "id": "media-safe_video_no_captions",
@@ -738,7 +1672,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 824
+          "duration_ms": 814
         },
         {
           "id": "state-invalid",
@@ -754,7 +1688,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 824
+          "duration_ms": 810
         },
         {
           "id": "state-safe_invalid",
@@ -770,7 +1704,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 820
+          "duration_ms": 821
         },
         {
           "id": "state-timed-out",
@@ -806,7 +1740,7 @@
               ]
             }
           ],
-          "duration_ms": 833
+          "duration_ms": 814
         },
         {
           "id": "state-safe_timed-out",
@@ -822,7 +1756,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 832
+          "duration_ms": 814
         },
         {
           "id": "scenario-meaningful_sequence",
@@ -837,7 +1771,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 842
+          "duration_ms": 808
         },
         {
           "id": "scenario-safe_meaningful_sequence",
@@ -852,7 +1786,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 839
+          "duration_ms": 806
         },
         {
           "id": "scenario-label_in_name",
@@ -879,7 +1813,7 @@
               ]
             }
           ],
-          "duration_ms": 828
+          "duration_ms": 812
         },
         {
           "id": "scenario-safe_label_in_name",
@@ -894,7 +1828,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 819
+          "duration_ms": 812
         },
         {
           "id": "scenario-touch_targets",
@@ -910,7 +1844,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 822
+          "duration_ms": 809
         },
         {
           "id": "scenario-safe_touch_targets",
@@ -926,7 +1860,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 821
+          "duration_ms": 812
         },
         {
           "id": "surface-email_contrast_darkmode",
@@ -942,7 +1876,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 819
+          "duration_ms": 804
         },
         {
           "id": "surface-safe_email_contrast_darkmode",
@@ -958,7 +1892,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 811
+          "duration_ms": 809
         },
         {
           "id": "delivery-server_html",
@@ -986,7 +1920,7 @@
               ]
             }
           ],
-          "duration_ms": 808
+          "duration_ms": 811
         },
         {
           "id": "delivery-client_js",
@@ -1042,7 +1976,7 @@
               ]
             }
           ],
-          "duration_ms": 1663
+          "duration_ms": 1662
         },
         {
           "id": "delivery-iframe_same_origin",
@@ -1058,7 +1992,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1302
+          "duration_ms": 1305
         },
         {
           "id": "delivery-shadow_dom_open",
@@ -1086,7 +2020,7 @@
               ]
             }
           ],
-          "duration_ms": 824
+          "duration_ms": 806
         },
         {
           "id": "delivery-shadow_dom_closed",
@@ -1102,13 +2036,16 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 817
+          "duration_ms": 800
         }
       ]
     },
     "pa11y-htmlcs": {
       "label": "Pa11y / HTML_CodeSniffer",
       "version": "10.0.0",
+      "source": {
+        "kind": "live-local-scan"
+      },
       "summary": {
         "cases": 38,
         "errors": 0,
@@ -1122,7 +2059,7 @@
         "expected_criteria": 38,
         "expected_criteria_matched": 6,
         "manual_review_items": 10,
-        "duration_ms": 44326
+        "duration_ms": 44376
       },
       "cases": [
         {
@@ -1150,7 +2087,7 @@
               ]
             }
           ],
-          "duration_ms": 1221
+          "duration_ms": 1231
         },
         {
           "id": "static-safe_img",
@@ -1165,7 +2102,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1202
+          "duration_ms": 1204
         },
         {
           "id": "static-viewport_no_zoom",
@@ -1180,7 +2117,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1203
+          "duration_ms": 1208
         },
         {
           "id": "static-safe_viewport",
@@ -1195,7 +2132,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1206
+          "duration_ms": 1204
         },
         {
           "id": "static-anim_no_reduced_motion",
@@ -1210,7 +2147,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 722
+          "duration_ms": 708
         },
         {
           "id": "static-safe_anim_reduced_motion",
@@ -1225,7 +2162,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 717
+          "duration_ms": 715
         },
         {
           "id": "static-field_no_visible_label",
@@ -1258,7 +2195,7 @@
               ]
             }
           ],
-          "duration_ms": 1207
+          "duration_ms": 1211
         },
         {
           "id": "static-lang_missing",
@@ -1285,7 +2222,7 @@
               ]
             }
           ],
-          "duration_ms": 1202
+          "duration_ms": 1207
         },
         {
           "id": "keyboard-div_button",
@@ -1301,7 +2238,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1212
+          "duration_ms": 1201
         },
         {
           "id": "keyboard-safe_native_button",
@@ -1334,7 +2271,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1207
+          "duration_ms": 1206
         },
         {
           "id": "patterns-safe_tabs",
@@ -1351,7 +2288,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1212
+          "duration_ms": 1206
         },
         {
           "id": "patterns-form-errors",
@@ -1378,7 +2315,7 @@
               ]
             }
           ],
-          "duration_ms": 1209
+          "duration_ms": 1202
         },
         {
           "id": "patterns-safe_form-errors",
@@ -1395,7 +2332,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1197
+          "duration_ms": 1205
         },
         {
           "id": "color-status_color_only",
@@ -1410,7 +2347,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1203
+          "duration_ms": 1205
         },
         {
           "id": "color-safe_status_color_only",
@@ -1425,7 +2362,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1200
+          "duration_ms": 1214
         },
         {
           "id": "color-placeholder_contrast",
@@ -1458,7 +2395,7 @@
               ]
             }
           ],
-          "duration_ms": 1206
+          "duration_ms": 1202
         },
         {
           "id": "color-safe_placeholder_contrast",
@@ -1473,7 +2410,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1196
+          "duration_ms": 1203
         },
         {
           "id": "media-video_no_captions",
@@ -1488,7 +2425,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 735
+          "duration_ms": 745
         },
         {
           "id": "media-safe_video_no_captions",
@@ -1503,7 +2440,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 735
+          "duration_ms": 749
         },
         {
           "id": "state-invalid",
@@ -1529,7 +2466,7 @@
               ]
             }
           ],
-          "duration_ms": 1206
+          "duration_ms": 1203
         },
         {
           "id": "state-safe_invalid",
@@ -1545,7 +2482,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1198
+          "duration_ms": 1205
         },
         {
           "id": "state-timed-out",
@@ -1589,7 +2526,7 @@
               ]
             }
           ],
-          "duration_ms": 1206
+          "duration_ms": 1203
         },
         {
           "id": "state-safe_timed-out",
@@ -1615,7 +2552,7 @@
               ]
             }
           ],
-          "duration_ms": 1201
+          "duration_ms": 1202
         },
         {
           "id": "scenario-meaningful_sequence",
@@ -1630,7 +2567,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1204
+          "duration_ms": 1201
         },
         {
           "id": "scenario-safe_meaningful_sequence",
@@ -1660,7 +2597,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1205
+          "duration_ms": 1200
         },
         {
           "id": "scenario-safe_label_in_name",
@@ -1675,7 +2612,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1206
+          "duration_ms": 1210
         },
         {
           "id": "scenario-touch_targets",
@@ -1701,7 +2638,7 @@
               ]
             }
           ],
-          "duration_ms": 1198
+          "duration_ms": 1196
         },
         {
           "id": "scenario-safe_touch_targets",
@@ -1727,7 +2664,7 @@
               ]
             }
           ],
-          "duration_ms": 1206
+          "duration_ms": 1216
         },
         {
           "id": "surface-email_contrast_darkmode",
@@ -1743,7 +2680,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1205
+          "duration_ms": 1206
         },
         {
           "id": "surface-safe_email_contrast_darkmode",
@@ -1759,7 +2696,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1209
+          "duration_ms": 1205
         },
         {
           "id": "delivery-server_html",
@@ -1787,7 +2724,7 @@
               ]
             }
           ],
-          "duration_ms": 1200
+          "duration_ms": 1203
         },
         {
           "id": "delivery-client_js",
@@ -1815,7 +2752,7 @@
               ]
             }
           ],
-          "duration_ms": 1206
+          "duration_ms": 1202
         },
         {
           "id": "delivery-client_js_delayed",
@@ -1843,7 +2780,7 @@
               ]
             }
           ],
-          "duration_ms": 1652
+          "duration_ms": 1648
         },
         {
           "id": "delivery-iframe_same_origin",
@@ -1859,7 +2796,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1212
+          "duration_ms": 1213
         },
         {
           "id": "delivery-shadow_dom_open",
@@ -1875,7 +2812,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 1201
+          "duration_ms": 1218
         },
         {
           "id": "delivery-shadow_dom_closed",
@@ -1898,6 +2835,9 @@
     "ibm": {
       "label": "IBM Equal Access",
       "version": "4.0.34",
+      "source": {
+        "kind": "live-local-scan"
+      },
       "summary": {
         "cases": 38,
         "errors": 0,
@@ -1911,7 +2851,7 @@
         "expected_criteria": 38,
         "expected_criteria_matched": 10,
         "manual_review_items": 96,
-        "duration_ms": 29825
+        "duration_ms": 29579
       },
       "cases": [
         {
@@ -1939,7 +2879,7 @@
               ]
             }
           ],
-          "duration_ms": 807,
+          "duration_ms": 820,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -1955,7 +2895,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 752,
+          "duration_ms": 754,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -1971,7 +2911,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 755,
+          "duration_ms": 748,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -1987,7 +2927,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 755,
+          "duration_ms": 746,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2013,7 +2953,7 @@
               ]
             }
           ],
-          "duration_ms": 755,
+          "duration_ms": 747,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2029,7 +2969,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 759,
+          "duration_ms": 747,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2045,7 +2985,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 759,
+          "duration_ms": 745,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2080,7 +3020,7 @@
               ]
             }
           ],
-          "duration_ms": 755,
+          "duration_ms": 748,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2109,7 +3049,7 @@
               ]
             }
           ],
-          "duration_ms": 760,
+          "duration_ms": 758,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2126,7 +3066,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 760,
+          "duration_ms": 752,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2154,7 +3094,7 @@
               ]
             }
           ],
-          "duration_ms": 761,
+          "duration_ms": 745,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2172,7 +3112,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 770,
+          "duration_ms": 760,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2190,7 +3130,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 765,
+          "duration_ms": 755,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2208,7 +3148,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 765,
+          "duration_ms": 758,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2224,7 +3164,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 762,
+          "duration_ms": 761,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2240,7 +3180,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 762,
+          "duration_ms": 763,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2256,7 +3196,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 766,
+          "duration_ms": 762,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2272,7 +3212,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 754,
+          "duration_ms": 755,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2288,7 +3228,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 762,
+          "duration_ms": 753,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2304,7 +3244,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 769,
+          "duration_ms": 755,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2321,7 +3261,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 760,
+          "duration_ms": 754,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2338,7 +3278,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 759,
+          "duration_ms": 752,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2365,7 +3305,7 @@
               ]
             }
           ],
-          "duration_ms": 762,
+          "duration_ms": 752,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2382,7 +3322,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 785,
+          "duration_ms": 762,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2398,7 +3338,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 765,
+          "duration_ms": 753,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2414,7 +3354,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 754,
+          "duration_ms": 761,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2442,7 +3382,7 @@
               ]
             }
           ],
-          "duration_ms": 771,
+          "duration_ms": 758,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2458,7 +3398,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 761,
+          "duration_ms": 747,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2487,7 +3427,7 @@
               ]
             }
           ],
-          "duration_ms": 757,
+          "duration_ms": 755,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2504,7 +3444,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 781,
+          "duration_ms": 758,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2521,7 +3461,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 766,
+          "duration_ms": 749,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2538,7 +3478,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 762,
+          "duration_ms": 750,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2575,7 +3515,7 @@
               ]
             }
           ],
-          "duration_ms": 760,
+          "duration_ms": 753,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2612,7 +3552,7 @@
               ]
             }
           ],
-          "duration_ms": 756,
+          "duration_ms": 763,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2649,7 +3589,7 @@
               ]
             }
           ],
-          "duration_ms": 1604,
+          "duration_ms": 1605,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2723,7 +3663,7 @@
               ]
             }
           ],
-          "duration_ms": 757,
+          "duration_ms": 758,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         },
         {
@@ -2740,7 +3680,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 750,
+          "duration_ms": 755,
           "rule_archive": "13 July 2026 Deployment (IBM 7.3) (13July2026)"
         }
       ]
@@ -2748,6 +3688,9 @@
     "lighthouse": {
       "label": "Lighthouse accessibility",
       "version": "13.5.0",
+      "source": {
+        "kind": "live-local-scan"
+      },
       "summary": {
         "cases": 38,
         "errors": 0,
@@ -2761,7 +3704,7 @@
         "expected_criteria": 38,
         "expected_criteria_matched": 9,
         "manual_review_items": 380,
-        "duration_ms": 179659
+        "duration_ms": 179052
       },
       "cases": [
         {
@@ -2789,7 +3732,7 @@
               ]
             }
           ],
-          "duration_ms": 4886,
+          "duration_ms": 4832,
           "accessibility_score": 0.87
         },
         {
@@ -2805,7 +3748,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4709,
+          "duration_ms": 4677,
           "accessibility_score": 1
         },
         {
@@ -2833,7 +3776,7 @@
               ]
             }
           ],
-          "duration_ms": 4684,
+          "duration_ms": 4685,
           "accessibility_score": 0.85
         },
         {
@@ -2849,7 +3792,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4681,
+          "duration_ms": 4714,
           "accessibility_score": 1
         },
         {
@@ -2865,7 +3808,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4715,
+          "duration_ms": 4726,
           "accessibility_score": 1
         },
         {
@@ -2881,7 +3824,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4732,
+          "duration_ms": 4699,
           "accessibility_score": 1
         },
         {
@@ -2897,7 +3840,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4679,
+          "duration_ms": 4675,
           "accessibility_score": 1
         },
         {
@@ -2925,7 +3868,7 @@
               ]
             }
           ],
-          "duration_ms": 4714,
+          "duration_ms": 4683,
           "accessibility_score": 0.89
         },
         {
@@ -2942,7 +3885,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4700,
+          "duration_ms": 4680,
           "accessibility_score": 1
         },
         {
@@ -2959,7 +3902,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4708,
+          "duration_ms": 4702,
           "accessibility_score": 1
         },
         {
@@ -2987,7 +3930,7 @@
               ]
             }
           ],
-          "duration_ms": 4722,
+          "duration_ms": 4660,
           "accessibility_score": 0.9
         },
         {
@@ -3005,7 +3948,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4745,
+          "duration_ms": 4710,
           "accessibility_score": 1
         },
         {
@@ -3023,7 +3966,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4783,
+          "duration_ms": 4695,
           "accessibility_score": 1
         },
         {
@@ -3041,7 +3984,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4746,
+          "duration_ms": 4669,
           "accessibility_score": 1
         },
         {
@@ -3057,7 +4000,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4720,
+          "duration_ms": 4702,
           "accessibility_score": 1
         },
         {
@@ -3073,7 +4016,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4725,
+          "duration_ms": 4700,
           "accessibility_score": 1
         },
         {
@@ -3089,7 +4032,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4698,
+          "duration_ms": 4679,
           "accessibility_score": 1
         },
         {
@@ -3105,7 +4048,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4712,
+          "duration_ms": 4682,
           "accessibility_score": 1
         },
         {
@@ -3121,7 +4064,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4692,
+          "duration_ms": 4695,
           "accessibility_score": 1
         },
         {
@@ -3137,7 +4080,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4695,
+          "duration_ms": 4697,
           "accessibility_score": 1
         },
         {
@@ -3154,7 +4097,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4717,
+          "duration_ms": 4690,
           "accessibility_score": 1
         },
         {
@@ -3171,7 +4114,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4710,
+          "duration_ms": 4702,
           "accessibility_score": 1
         },
         {
@@ -3208,7 +4151,7 @@
               ]
             }
           ],
-          "duration_ms": 4702,
+          "duration_ms": 4666,
           "accessibility_score": 0.81
         },
         {
@@ -3225,7 +4168,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4704,
+          "duration_ms": 4702,
           "accessibility_score": 1
         },
         {
@@ -3241,7 +4184,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4720,
+          "duration_ms": 4698,
           "accessibility_score": 1
         },
         {
@@ -3257,7 +4200,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4720,
+          "duration_ms": 4699,
           "accessibility_score": 1
         },
         {
@@ -3285,7 +4228,7 @@
               ]
             }
           ],
-          "duration_ms": 4693,
+          "duration_ms": 4700,
           "accessibility_score": 1
         },
         {
@@ -3301,7 +4244,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4715,
+          "duration_ms": 4685,
           "accessibility_score": 1
         },
         {
@@ -3318,7 +4261,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4688,
+          "duration_ms": 4703,
           "accessibility_score": 1
         },
         {
@@ -3335,7 +4278,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4689,
+          "duration_ms": 4704,
           "accessibility_score": 1
         },
         {
@@ -3352,7 +4295,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4692,
+          "duration_ms": 4698,
           "accessibility_score": 1
         },
         {
@@ -3369,7 +4312,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4717,
+          "duration_ms": 4705,
           "accessibility_score": 1
         },
         {
@@ -3398,7 +4341,7 @@
               ]
             }
           ],
-          "duration_ms": 4683,
+          "duration_ms": 4708,
           "accessibility_score": 0.87
         },
         {
@@ -3427,7 +4370,7 @@
               ]
             }
           ],
-          "duration_ms": 4718,
+          "duration_ms": 4695,
           "accessibility_score": 0.87
         },
         {
@@ -3456,7 +4399,7 @@
               ]
             }
           ],
-          "duration_ms": 4719,
+          "duration_ms": 4722,
           "accessibility_score": 0.87
         },
         {
@@ -3473,7 +4416,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 5225,
+          "duration_ms": 5197,
           "accessibility_score": 1
         },
         {
@@ -3502,7 +4445,7 @@
               ]
             }
           ],
-          "duration_ms": 4714,
+          "duration_ms": 4713,
           "accessibility_score": 0.87
         },
         {
@@ -3519,7 +4462,7 @@
           "found_criteria": [],
           "matched_expected_criteria": [],
           "findings": [],
-          "duration_ms": 4687,
+          "duration_ms": 4703,
           "accessibility_score": 1
         }
       ]

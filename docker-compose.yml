@@ -2,7 +2,8 @@
 #   corpus   serves the fixtures over HTTP (what a scanner points at)
 #   browser  a pinned Playwright image that measures the SAME pages with a real
 #            engine, producing the reference numbers a scanner is judged against
-#   comparison runs four pinned scanners against an ephemeral local corpus
+#   comparison runs four packaged scanners against an ephemeral local corpus and
+#              combines them with the committed sanitized Cognium export
 #
 #   docker compose up -d corpus
 #   docker compose run --rm browser          # writes check/reference.json
