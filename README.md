@@ -27,6 +27,7 @@ catalog.json         ground truth for the local fixtures — what a correct scan
 coverage.csv/.json   every WCAG 2.2 criterion x available ground truth
 build.mjs            regenerates every fixture
 coverage.mjs         regenerates the coverage files
+comparison/          pinned multi-scanner harness and committed comparison snapshot
 
 keyboard/            controls that look interactive but are not reachable by keyboard
 capture/             pages that stress capture and hydration rather than rule logic
@@ -39,6 +40,24 @@ patterns.mjs         regenerates the pattern pairs
 taxonomy.mjs         regenerates the taxonomy
 space-coverage.mjs   coverage against the whole space, not just WCAG
 ```
+
+## Scanner comparison
+
+`comparison/` runs axe-core, Pa11y's HTML_CodeSniffer runner, IBM Equal Access
+and Lighthouse against one declared fixture suite, then normalizes their output
+against each case's expected WCAG criteria. It keeps unrelated findings separate,
+so a scanner does not receive credit merely for reporting something on the page.
+
+The committed snapshot is a reproducible point-in-time comparison, not a universal
+ranking. Run it with:
+
+```sh
+docker compose run --rm comparison
+```
+
+See [`comparison/REPORT.md`](comparison/REPORT.md) for the current result and
+[`comparison/README.md`](comparison/README.md) for methodology, privacy controls
+and local execution options.
 
 ### Component patterns
 
