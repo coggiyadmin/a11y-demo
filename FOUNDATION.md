@@ -35,10 +35,10 @@ Measured from `coverage.json`:
 
 ```
 WCAG 2.2 live criteria        86
-  ACT ground truth available  38
-  local fixtures only          3
-  both                         8
-  neither                     45
+  ACT only                    17
+  local fixtures only         28
+  ACT + local                 21
+  neither                     20
 ```
 
 Criteria where ACT supplies ready-made cases nobody has to author include
@@ -123,7 +123,7 @@ directory of snippets.
 1. Should Tier R vendor the ACT HTML, or fetch it at test time? Vendoring pins
    the corpus and survives upstream drift; fetching stays current. Pinning with a
    content digest is the usual answer for a corpus meant to be a regression gate.
-2. 25 criteria have neither ACT cases nor a local fixture. Many are genuinely
+2. 20 criteria have neither ACT cases nor a local fixture. Many are genuinely
    not machine-testable (1.2.x media quality, 3.3.x error-message usefulness).
    Someone should mark which are *manual-only by nature* versus *not yet
    automated*, because reporting them as uncovered conflates the two.

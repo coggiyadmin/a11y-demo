@@ -1,0 +1,20 @@
+<!--
+  change_on_focus — broken
+  WCAG: 3.2.1
+  journey: navigate
+  input/AT most affected: keyboard, sr-nvda
+  Focusing the destination field immediately replaces the search panel with results. Keyboard and screen-reader users did not request the context change.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>change_on_focus — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>change_on_focus — broken</h1>
+<p>Focusing the destination field immediately replaces the search panel with results. Keyboard and screen-reader users did not request the context change.</p><hr><section id="focus-search"><label for="focus-destination">Destination</label>
+<input id="focus-destination" value="Paris" onfocus="document.getElementById('focus-search').hidden=true;document.getElementById('focus-results').hidden=false"></section>
+<section id="focus-results" hidden><h2>Flights to Paris</h2><p>12 results</p></section>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

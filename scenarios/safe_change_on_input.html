@@ -1,0 +1,21 @@
+<!--
+  change_on_input — correct
+  WCAG: 3.2.2
+  journey: form-lifecycle
+  input/AT most affected: keyboard, sr-nvda
+  Changing the value does not change context; an Apply button advances the form when the user is ready.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>change_on_input — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>change_on_input — correct</h1>
+<p>Changing the value does not change context; an Apply button advances the form when the user is ready.</p><hr><label for="input-destination-safe">Destination</label>
+<select id="input-destination-safe"><option value="">Choose</option><option>Paris</option><option>Rome</option></select>
+<button type="button" onclick="document.getElementById('input-step-two-safe').hidden=false">Apply destination</button>
+<section id="input-step-two-safe" hidden><h2>Choose dates</h2></section>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

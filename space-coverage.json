@@ -1,7 +1,7 @@
 {
   "description": "Representation of the enumerated test space. A represented value is named by at least one fixture; this does not mean the method or AT pairing was executed or verified.",
   "generated": "2026-10-09",
-  "cases": 195,
+  "cases": 205,
   "dimensions": [
     {
       "dimension": "surfaces",

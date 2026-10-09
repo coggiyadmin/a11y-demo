@@ -1,0 +1,19 @@
+<!--
+  pointer_cancellation — broken
+  WCAG: 2.5.2
+  journey: destructive
+  input/AT most affected: pointer, touch
+  The destructive action fires on pointer-down. Moving away before release cannot cancel an accidental press.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>pointer_cancellation — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>pointer_cancellation — broken</h1>
+<p>The destructive action fires on pointer-down. Moving away before release cannot cancel an accidental press.</p><hr><p id="pointer-status">Booking BA117 is active.</p>
+<button type="button" onpointerdown="document.getElementById('pointer-status').textContent='Booking BA117 cancelled.'">Cancel booking</button>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>
