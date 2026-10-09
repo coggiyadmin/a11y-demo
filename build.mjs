@@ -407,7 +407,7 @@ fs.writeFileSync(path.join(ROOT, 'index.html'), page('Accessibility fixture corp
   .replace('<link rel="stylesheet" href="../fixture.css">', '<link rel="stylesheet" href="fixture.css">'));
 
 // Catalog is GROUND TRUTH only — what a correct scanner should say. It deliberately
-// carries no measured verdicts; `measure.mjs` produces the baseline oracle separately,
+// carries no measured verdicts; `check/reference.mjs` produces browser facts separately,
 // so a regression can never be hidden by editing the truth to match the engine.
 //
 // Shape deliberately mirrors the expected-findings convention used by security
@@ -416,13 +416,13 @@ fs.writeFileSync(path.join(ROOT, 'index.html'), page('Accessibility fixture corp
 fs.writeFileSync(path.join(ROOT, 'catalog.json'), JSON.stringify({
   description: 'Ground truth for the a11y-demo fixture corpus. Each case names the WCAG '
     + 'success criteria a correct scanner should report (min_criteria) or, for a negative '
-    + 'control, the criteria it must NOT report (expected-clean). Measured engine behaviour '
-    + 'lives in a11y-expected-findings.json, never here.',
+    + 'control, the criteria it must NOT report (expected-clean). Browser reference facts '
+    + 'live in check/reference.json, never here.',
   version: 1,
   generated: new Date().toISOString().slice(0, 10),
   scoring: {
     recall: 'sum(criteria reported on tp cases) / sum(min_criteria) across mode=tp',
-    fp_rate: 'any finding on a mode=safe case is a false positive; the ceiling is 0',
+    fp_rate: 'a finding for a criterion listed in must_not_report on a mode=safe case is a false positive; other criteria require their own ground truth',
     verdict_legend: {
       'expected-fire': 'a control SHOULD report this criterion on this page',
       'expected-fn': 'known miss at the current baseline — a pinned recall gap, NOT a test failure',
