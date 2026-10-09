@@ -460,9 +460,9 @@
     "act_failed": 5,
     "act_passed": 7,
     "act_inapplicable": 4,
-    "local_tp": "scenarios/overlay_focus_trap.html",
-    "local_safe": "scenarios/safe_overlay_focus_trap.html",
-    "ground_truth": "ACT + local"
+    "local_tp": "",
+    "local_safe": "",
+    "ground_truth": "ACT"
   },
   {
     "sc": "2.1.3",
@@ -640,9 +640,9 @@
     "act_failed": 1,
     "act_passed": 12,
     "act_inapplicable": 1,
-    "local_tp": "journeys/navigate/broken/index.html scenarios/infinite_scroll.html",
-    "local_safe": "journeys/navigate/correct/index.html scenarios/safe_infinite_scroll.html",
-    "ground_truth": "ACT + local"
+    "local_tp": "",
+    "local_safe": "",
+    "ground_truth": "ACT"
   },
   {
     "sc": "2.4.2",
