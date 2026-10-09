@@ -101,7 +101,7 @@ const S = [
   {
     id: 'meaningful_sequence', journey: 'navigate', sc: ['1.3.2'],
     needsAt: ['sr-nvda'],
-    needs: ['vision-blind', 'deafblind', 'cognitive-memory', 'cognitive-language'],
+    needs: ['nonvisual-access', 'text-and-tactile', 'memory-support', 'language-clarity'],
     brokenNote: 'CSS makes the itinerary look chronological, but the DOM is in a different '
       + 'order. A screen reader encounters boarding before check-in and security.',
     broken: `<style>.sequence{display:flex;flex-direction:column}.first{order:1}.second{order:2}.third{order:3}</style>
@@ -128,7 +128,7 @@ const S = [
     // here is fine. The defect is 1.4.12 Text Spacing. Claiming both made the engine
     // look like it missed something it correctly passed.
     id: 'text_spacing', journey: 'display-adapt', sc: ['1.4.12'],
-    needsAt: ['magnifier'], needs: ['cognitive-dyslexia', 'vision-low'],
+    needsAt: ['magnifier'], needs: ['reading-support', 'visual-clarity'],
     brokenNote: 'Fixed-height boxes with !important line-height. Applying the 1.4.12 text '
       + 'spacing overrides clips the content.',
     broken: `<style>.b{height:48px;overflow:hidden;line-height:1.1!important;letter-spacing:normal!important}</style>
@@ -140,7 +140,7 @@ const S = [
   },
   {
     id: 'forced_colors', journey: 'theming', sc: ['1.4.1', '1.4.11'],
-    needsAt: ['forced-colors'], needs: ['vision-contrast', 'vision-low'],
+    needsAt: ['forced-colors'], needs: ['contrast-adaptation', 'visual-clarity'],
     brokenNote: 'State shown with a background image and a hard-coded colour, both discarded '
       + 'in forced-colors mode — so the selected item becomes indistinguishable.',
     broken: `<style>.sel{background:#30556e;color:#fff}
@@ -154,7 +154,7 @@ const S = [
   },
   {
     id: 'orientation_lock', journey: 'orientation', sc: ['1.3.4', '1.4.10'],
-    needsAt: ['touch'], needs: ['motor-dexterity', 'motor-paralysis'],
+    needsAt: ['touch'], needs: ['alternative-input', 'hands-free-switch'],
     brokenNote: 'Content locked to landscape. Someone whose device is fixed to a wheelchair '
       + 'mount in portrait cannot rotate it.',
     broken: `<style>@media (orientation: portrait){main{display:none}
@@ -169,7 +169,7 @@ body::after{content:"Please rotate your device"}}</style>
     // engine is right to pass it. The defect is 3.1.2 Language of Parts: the Arabic
     // passage carries no lang of its own.
     id: 'rtl_mixed_language', journey: 'i18n', sc: ['3.1.2'],
-    needsAt: ['sr-nvda'], needs: ['vision-blind', 'cognitive-language'],
+    needsAt: ['sr-nvda'], needs: ['nonvisual-access', 'language-clarity'],
     brokenNote: 'A passage in another language with no lang attribute and no dir, so a screen '
       + 'reader pronounces it with the wrong voice and it renders in the wrong direction.',
     broken: `<p>Your gate is <span>البوابة ١٤</span> — please proceed.</p>`,
@@ -178,19 +178,19 @@ body::after{content:"Please rotate your device"}}</style>
   },
   {
     id: 'label_in_name', journey: 'input-only', sc: ['2.5.3'],
-    needsAt: ['speech'], needs: ['speech-unable', 'motor-dexterity', 'vision-blind'],
+    needsAt: ['voice-control'], needs: ['non-voice-alternative', 'alternative-input', 'nonvisual-access'],
     brokenNote: 'The visible label says "Search flights" but the accessible name is "Submit". '
-      + 'A speech-control user saying "click Search flights" gets nothing — this is the '
-      + 'defect speech input is uniquely blocked by.',
+      + 'A voice-control command such as "click Search flights" gets nothing — this is the '
+      + 'defect voice control is uniquely blocked by.',
     broken: `<button type="button" aria-label="Submit">Search flights</button>`,
     correctNote: 'The accessible name contains the visible label.',
     correct: `<button type="button">Search flights</button>`,
   },
   {
     id: 'dragging_required', journey: 'transfer', sc: ['2.5.7', '2.5.1'],
-    needsAt: ['keyboard', 'touch', 'switch'], needs: ['motor-tremor', 'motor-paralysis', 'temporary'],
+    needsAt: ['keyboard', 'touch', 'switch'], needs: ['error-tolerant-pointer', 'hands-free-switch', 'constrained-use'],
     brokenNote: 'Reordering requires a drag. No single-pointer alternative, so it is impossible '
-      + 'with a switch, hard with a tremor, and hard one-handed or with an injured hand.',
+      + 'with a switch, difficult with reduced pointer precision, and difficult one-handed.',
     broken: `<ul><li draggable="true">Outbound</li><li draggable="true">Return</li></ul>
 <p>Drag to reorder.</p>`,
     correctNote: 'Buttons provide the same reordering without any dragging.',
@@ -200,7 +200,7 @@ body::after{content:"Please rotate your device"}}</style>
   },
   {
     id: 'touch_targets', journey: 'input-only', sc: ['2.5.8', '2.5.5'],
-    needsAt: ['touch', 'pointer'], needs: ['motor-tremor', 'age-related', 'temporary'],
+    needsAt: ['touch', 'pointer'], needs: ['error-tolerant-pointer', 'forgiving-interface', 'constrained-use'],
     brokenNote: 'Icon controls 16px square and touching, well under the 24px minimum with no '
       + 'spacing exception.',
     // min-width/min-height MUST be reset here. fixture.css sets both to 24px so the
@@ -216,7 +216,7 @@ body::after{content:"Please rotate your device"}}</style>
   {
     id: 'pointer_cancellation', journey: 'destructive', sc: ['2.5.2'],
     needsAt: ['pointer', 'touch'],
-    needs: ['motor-tremor', 'motor-dexterity', 'age-related', 'temporary'],
+    needs: ['error-tolerant-pointer', 'alternative-input', 'forgiving-interface', 'constrained-use'],
     brokenNote: 'The destructive action fires on pointer-down. Moving away before release '
       + 'cannot cancel an accidental press.',
     broken: `<p id="pointer-status">Booking BA117 is active.</p>
@@ -230,7 +230,7 @@ body::after{content:"Please rotate your device"}}</style>
   {
     id: 'change_on_focus', journey: 'navigate', sc: ['3.2.1'],
     needsAt: ['keyboard', 'sr-nvda'],
-    needs: ['cognitive-attention', 'cognitive-executive', 'vision-blind', 'motor-dexterity'],
+    needs: ['focus-support', 'task-guidance', 'nonvisual-access', 'alternative-input'],
     brokenNote: 'Focusing the destination field immediately replaces the search panel with '
       + 'results. Keyboard and screen-reader users did not request the context change.',
     broken: `<section id="focus-search"><label for="focus-destination">Destination</label>
@@ -246,7 +246,7 @@ body::after{content:"Please rotate your device"}}</style>
   {
     id: 'change_on_input', journey: 'form-lifecycle', sc: ['3.2.2'],
     needsAt: ['keyboard', 'sr-nvda'],
-    needs: ['cognitive-attention', 'cognitive-executive', 'vision-blind', 'motor-dexterity'],
+    needs: ['focus-support', 'task-guidance', 'nonvisual-access', 'alternative-input'],
     brokenNote: 'Choosing a destination immediately replaces the form with the next step, '
       + 'without warning or an explicit commit action.',
     broken: `<section id="input-step-one"><label for="input-destination">Destination</label>
@@ -263,7 +263,7 @@ body::after{content:"Please rotate your device"}}</style>
   {
     id: 'error_suggestion', journey: 'form-lifecycle', uiState: 'invalid', sc: ['3.3.3'],
     needsAt: ['keyboard', 'sr-nvda'],
-    needs: ['cognitive-language', 'cognitive-executive', 'cognitive-memory', 'vision-blind'],
+    needs: ['language-clarity', 'task-guidance', 'memory-support', 'nonvisual-access'],
     brokenNote: 'The error is identified and associated with the field, but gives no known '
       + 'correction format or example.',
     broken: `<label for="travel-date">Travel date</label>
@@ -287,9 +287,9 @@ body::after{content:"Please rotate your device"}}</style>
   },
   {
     id: 'motion_actuation', journey: 'input-only', sc: ['2.5.4'],
-    needsAt: ['touch'], needs: ['motor-tremor', 'motor-paralysis', 'temporary', 'situational'],
-    brokenNote: 'Shake-to-undo with no alternative. Impossible on a mounted device and hard '
-      + 'with a tremor.',
+    needsAt: ['touch'], needs: ['error-tolerant-pointer', 'hands-free-switch', 'constrained-use', 'environmental-resilience'],
+    brokenNote: 'Shake-to-undo with no alternative. Impossible on a mounted device and difficult '
+      + 'when precise device movement is unavailable.',
     broken: `<p>Shake your device to undo the last change.</p>`,
     correctNote: 'A control does the same thing, and the motion shortcut can be disabled.',
     correct: `<button type="button">Undo last change</button>
@@ -334,7 +334,7 @@ fs.writeFileSync(path.join(DIR, 'index.html'), page('scenario fixtures',
 
 fs.writeFileSync(path.join(ROOT, 'scenarios.json'), JSON.stringify({
   description: 'Remaining scenario types at their honest unit. Several target an input mode '
-    + 'rather than a criterion family: label_in_name is the defect speech control is uniquely '
+    + 'rather than a criterion family: label_in_name is the defect voice control is uniquely '
     + 'blocked by, dragging_required the one switch access is.',
   generated: new Date().toISOString().slice(0, 10),
   counts: { scenarios: S.length, cases: cases.length },

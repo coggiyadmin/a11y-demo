@@ -34,20 +34,20 @@ ${body}
 const CHECKS = [
   {
     id: 'caption_quality', sc: ['1.2.2'], method: 'guided-manual',
-    needs: ['hearing-deaf', 'hearing-hoh'],
+    needs: ['text-for-audio', 'adjustable-audio'],
     question: 'Do the captions convey the same information as the audio?',
     why: 'A tool can confirm a caption track exists and parses. It cannot judge accuracy, '
       + 'synchronisation, or whether speakers are identified.',
     how: ['Play the media with sound off and captions on.',
       'Check every speaker is identified when more than one person speaks.',
-      'Check meaningful non-speech sound is described, not just dialogue.',
+      'Check meaningful sound effects are described, not just dialogue.',
       'Check captions stay in sync and are readable at playback speed.'],
     evidence: 'Recording of playback with captions on, plus the caption file.',
     fixture: '../media/captions_present_but_poor.html',
   },
   {
     id: 'alt_text_appropriateness', sc: ['1.1.1'], method: 'guided-manual',
-    needs: ['vision-blind', 'vision-low', 'cognitive-language'],
+    needs: ['nonvisual-access', 'visual-clarity', 'language-clarity'],
     question: 'Does each text alternative serve the same purpose as the image?',
     why: 'A tool can detect a missing or empty alt. It cannot tell whether "image1.jpg" or '
       + '"a photo" conveys what the image is there to convey — the commonest real failure is '
@@ -61,7 +61,7 @@ const CHECKS = [
   },
   {
     id: 'reading_order', sc: ['1.3.2'], method: 'guided-manual',
-    needs: ['vision-blind', 'deafblind', 'cognitive-executive'],
+    needs: ['nonvisual-access', 'text-and-tactile', 'task-guidance'],
     question: 'Does the DOM order match the meaningful reading order?',
     why: 'CSS can reorder content visually while the DOM stays unchanged. A tool sees a valid '
       + 'DOM and a valid layout; only a person can say the two tell different stories.',
@@ -73,18 +73,18 @@ const CHECKS = [
   },
   {
     id: 'sensory_characteristics', sc: ['1.3.3'], method: 'guided-manual',
-    needs: ['vision-blind', 'vision-low', 'vision-color', 'cognitive-language'],
+    needs: ['nonvisual-access', 'visual-clarity', 'color-independent', 'language-clarity'],
     question: 'Do instructions rely on shape, size, position, sound or colour alone?',
     why: 'Detecting the phrase "the button on the right" is possible; deciding whether it is '
       + 'the ONLY way to identify the control requires understanding the page.',
     how: ['Find every instruction referring to position, shape, size, colour or sound.',
       'Ask whether the thing referred to is also identified by name or label.'],
     evidence: 'The instruction text quoted, with the control it refers to.',
-    fixture: '../color-vision/status_color_only.html',
+    fixture: '../color-independent/status_color_only.html',
   },
   {
     id: 'plain_language', sc: ['3.1.5'], method: 'guided-manual',
-    needs: ['cognitive-language', 'cognitive-dyslexia', 'cognitive-memory'],
+    needs: ['language-clarity', 'reading-support', 'memory-support'],
     question: 'Is the content understandable without specialist knowledge?',
     why: 'Readability formulas measure sentence and word length, not comprehensibility. A '
       + 'short sentence of jargon scores well and communicates nothing.',
@@ -96,7 +96,7 @@ const CHECKS = [
   },
   {
     id: 'focus_order_meaning', sc: ['2.4.3'], method: 'guided-manual',
-    needs: ['vision-blind', 'motor-dexterity', 'cognitive-attention'],
+    needs: ['nonvisual-access', 'alternative-input', 'focus-support'],
     question: 'Does the focus order preserve meaning and operability?',
     why: 'A tool can record the tab sequence. Whether that sequence makes SENSE for the task '
       + 'is a judgement about the task, not the DOM.',
@@ -108,7 +108,7 @@ const CHECKS = [
   },
   {
     id: 'at_screen_reader_task', sc: ['2.1.1', '4.1.2'], method: 'at-testing',
-    needs: ['vision-blind', 'deafblind'],
+    needs: ['nonvisual-access', 'text-and-tactile'],
     question: 'Can a screen-reader user complete the task from start to finish?',
     why: 'This is the only check that answers the question the others approximate. It needs a '
       + 'real screen reader and a person who uses one; results do not transfer between '
@@ -122,7 +122,7 @@ const CHECKS = [
   },
   {
     id: 'ai_suggested_alt_review', sc: ['1.1.1'], method: 'ai-assisted',
-    needs: ['vision-blind', 'vision-low', 'cognitive-language'],
+    needs: ['nonvisual-access', 'visual-clarity', 'language-clarity'],
     question: 'Is the AI-suggested text alternative correct for THIS context?',
     why: 'A model can describe what is in an image. It cannot know why the image is on the '
       + 'page, which is what the alternative has to convey — the same photo needs different '
@@ -138,7 +138,7 @@ const CHECKS = [
   },
   {
     id: 'user_task_completion', sc: [], method: 'user-testing',
-    needs: ['multiple'],
+    needs: ['combined-access'],
     question: 'Can people with disabilities actually complete this task?',
     why: 'Conformance is not usability. A page can meet every criterion and still be '
       + 'unusable, and the only way to find that out is to watch people try. No corpus, '

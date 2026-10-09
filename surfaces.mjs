@@ -33,7 +33,7 @@ ${body}
 const CASES = [
   {
     id: 'email_table_layout', surface: 'email', standard: 'WCAG 2.2',
-    sc: ['1.3.1', '1.1.1'], needs: ['vision-blind', 'cognitive-language'],
+    sc: ['1.3.1', '1.1.1'], needs: ['nonvisual-access', 'language-clarity'],
     brokenNote: 'HTML email built on layout tables with no role="presentation", a spacer GIF '
       + 'with no alt, and the only call to action as an image with no text. Email clients '
       + 'strip CSS and block images by default, so an image-only CTA can be literally invisible.',
@@ -50,7 +50,7 @@ const CASES = [
   },
   {
     id: 'email_contrast_darkmode', surface: 'email', standard: 'WCAG 2.2',
-    sc: ['1.4.3', '1.4.1'], needs: ['vision-low', 'vision-contrast'],
+    sc: ['1.4.3', '1.4.1'], needs: ['visual-clarity', 'contrast-adaptation'],
     brokenNote: 'Text colour set but no background colour. In a client that applies a dark '
       + 'background the dark text becomes unreadable — a contrast failure that only exists '
       + 'in combination with the reading environment.',
@@ -60,7 +60,7 @@ const CASES = [
   },
   {
     id: 'epub_no_metadata', surface: 'epub', standard: 'EPUB Accessibility 1.1',
-    sc: ['1.3.1'], needs: ['vision-blind', 'cognitive-language'],
+    sc: ['1.3.1'], needs: ['nonvisual-access', 'language-clarity'],
     brokenNote: 'An EPUB content document with no accessibility metadata in its package. '
       + 'Discoverability IS the requirement in EPUB Accessibility 1.1 — a reader cannot tell '
       + 'whether the book is usable before buying it. The package fragment is shown as text '
@@ -87,7 +87,7 @@ const CASES = [
   },
   {
     id: 'authoring_generates_bad_markup', surface: 'authoring', standard: 'ATAG 2.0',
-    sc: ['1.1.1', '1.3.1'], needs: ['vision-blind', 'cognitive-language'],
+    sc: ['1.1.1', '1.3.1'], needs: ['nonvisual-access', 'language-clarity'],
     brokenNote: 'An editor whose own toolbar is unreachable by keyboard AND whose output uses '
       + 'a styled div as a heading with an unlabelled image. ATAG 2.0 covers BOTH halves: the '
       + 'tool must be accessible (Part A) and must produce accessible content (Part B). Most '
@@ -116,7 +116,7 @@ const CASES = [
   {
     id: 'chatbot_transcript', surface: 'voice', standard: 'WCAG 2.2',
     sc: ['4.1.3', '1.3.1', '2.1.1'],
-    needs: ['vision-blind', 'cognitive-memory', 'speech-unable'],
+    needs: ['nonvisual-access', 'memory-support', 'non-voice-alternative'],
     brokenNote: 'A conversational interface where replies append silently, the quick-reply '
       + 'chips are divs, and there is no written record to scroll back through — so anything '
       + 'missed is simply gone. Voice-only interfaces fail people who cannot speak, so a text '
@@ -125,7 +125,7 @@ const CASES = [
 <div><div class="btn" onclick="void 0">London</div><div class="btn" onclick="void 0">Manchester</div></div>
 <p>Say your answer or tap a chip.</p>`,
     correctNote: 'A log region announcing replies, native buttons for quick replies, a text '
-      + 'input as an alternative to speech, and a persistent transcript.',
+      + 'input as a non-voice alternative, and a persistent transcript.',
     correct: `<div id="c2" role="log" aria-live="polite" aria-label="Conversation">
 <p><strong>Assistant:</strong> Where are you flying from?</p></div>
 <button type="button">London</button> <button type="button">Manchester</button>

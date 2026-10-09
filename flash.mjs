@@ -43,7 +43,7 @@ const WARNING = `<div role="alert" style="border:3px solid #a11;padding:1rem;mar
   <p><strong>This page can produce flashing light.</strong> Nothing flashes until you press
      the button below. It stops on its own after 3 seconds, and does not run at all if your
      system is set to reduce motion.</p>
-  <p>If you have photosensitive epilepsy or are unsure, do not press it. The defect is in the
+  <p>If flashing content may be unsafe for you or you are unsure, do not press it. The defect is in the
      page source either way — you do not need to see it to test for it.</p>
 </div>`;
 
@@ -79,7 +79,7 @@ const CASES = [
   {
     id: 'flash_10hz_large_area',
     sc: ['2.3.1', '2.3.2'], outcome: 'fail', confidence: 'probable',
-    needs: ['neuro-photosensitive'],
+    needs: ['flash-safety'],
     brokenNote: 'A full-width panel alternating black and white ten times a second. That is '
       + 'well above three flashes per second, with a luminance change far over 10%, across '
       + 'most of the viewport. The frequency alone is machine-detectable from the keyframes '
@@ -108,7 +108,7 @@ const CASES = [
   {
     id: 'red_flash',
     sc: ['2.3.1'], outcome: 'fail', confidence: 'probable',
-    needs: ['neuro-photosensitive'],
+    needs: ['flash-safety'],
     brokenNote: 'Saturated red alternating with black at 6Hz. The red flash threshold is '
       + 'separate from, and stricter than, the general one: transitions to and from saturated '
       + 'red are treated differently because they carry additional risk.',
@@ -135,7 +135,7 @@ const CASES = [
   {
     id: 'flash_small_area',
     sc: ['2.3.1'], outcome: 'cannot-tell', confidence: 'possible',
-    needs: ['neuro-photosensitive'],
+    needs: ['flash-safety'],
     brokenNote: 'A SMALL element flashing at 8Hz. This is the case a tool cannot decide. '
       + 'Frequency is over the limit, but 2.3.1 also permits content under the general flash '
       + 'threshold, which is defined over a proportion of the VISUAL FIELD — and that depends '
@@ -162,7 +162,7 @@ const CASES = [
   {
     id: 'three_flashes_exactly',
     sc: ['2.3.2'], outcome: 'fail', confidence: 'probable',
-    needs: ['neuro-photosensitive'],
+    needs: ['flash-safety'],
     brokenNote: 'Three high-contrast flashes in one second. This passes 2.3.1, which allows '
       + 'up to three per second — and fails 2.3.2 (AAA), which allows no more than three '
       + 'flashes in any one-second period with no threshold exemption at all. A corpus that '
@@ -192,7 +192,7 @@ const CASES = [
   {
     id: 'animation_from_interaction',
     sc: ['2.3.3'], outcome: 'fail', confidence: 'definite',
-    needs: ['neuro-vestibular', 'cognitive-attention'],
+    needs: ['motion-safety', 'focus-support'],
     brokenNote: 'A large parallax translation triggered by interaction, with no '
       + 'prefers-reduced-motion guard. 2.3.3 is about motion sickness rather than seizures, '
       + 'and the absence of the guard is machine-detectable — no judgement needed.',
@@ -262,7 +262,7 @@ fs.writeFileSync(path.join(DIR, 'index.html'), page('flash and seizure fixtures'
   <p>Pages linked below can produce flashing light. <strong>Nothing flashes on load.</strong>
      Each one needs a button press, stops after 3 seconds, and does nothing at all if your
      system is set to reduce motion.</p>
-  <p>If you have photosensitive epilepsy or are unsure, you can still test these: the
+  <p>If flashing content may be unsafe for you or you are unsure, you can still test these: the
      keyframes and timings are in the page source whether or not they are playing.</p>
 </div>
 <p>WCAG 2.3.1 is not simply "faster than 3Hz". Content passes if it flashes at or below three

@@ -13,7 +13,7 @@
 //
 // Holding the defect constant is the point. A scanner that reports both on
 // `server_html` and neither on `shadow_dom_closed` has not found a rule bug — it
-// has a delivery blind spot, and the matrix says exactly which one.
+// has a delivery coverage gap, and the matrix says exactly which one.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -158,7 +158,7 @@ fs.writeFileSync(path.join(DIR, 'index.html'), page('delivery fixtures',
 
 fs.writeFileSync(path.join(ROOT, 'delivery.json'), JSON.stringify({
   description: 'Delivery matrix: one constant defect pair, many delivery mechanisms. '
-    + 'Differences in what a scanner reports across these rows are pipeline blind spots, '
+    + 'Differences in what a scanner reports across these rows are pipeline coverage gaps, '
     + 'not rule errors, because the defect does not change.',
   constant_defect: { '2.1.1': 'div styled as a button, not focusable', '1.1.1': 'img with no accessible name' },
   generated: new Date().toISOString().slice(0, 10),

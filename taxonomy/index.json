@@ -2,7 +2,7 @@
   "description": "The accessibility test space, enumerated. surface x user need x journey x UI state x input/AT x standard. Written down so coverage can be divided by a real denominator rather than a flattering one.",
   "dimensions": {
     "user-needs": 23,
-    "color-vision-checks": 8,
+    "color-independent-checks": 8,
     "surfaces": 18,
     "journeys": 25,
     "ui-states": 12,

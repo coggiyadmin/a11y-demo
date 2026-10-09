@@ -443,7 +443,7 @@
       },
       "must_not_report": [],
       "expected_outcome": "fail",
-      "notes": "The session expired silently and the form was cleared. No warning beforehand, no way to extend, and the work is gone — which penalises anyone who needs longer, whether for motor, cognitive or situational reasons."
+      "notes": "The session expired silently and the form was cleared. No warning beforehand, no way to extend, and the work is gone — which penalises anyone who needs longer, whether because input is slower, the task requires more processing time, or interruptions occur."
     },
     {
       "id": "state-safe_timed-out",

@@ -40,7 +40,7 @@ ${body}
 const PATTERNS = [
   {
     id: 'disclosure', apg: 'disclosure',
-    sc: ['4.1.2', '2.1.1'], needs: ['vision-blind', 'motor-dexterity'],
+    sc: ['4.1.2', '2.1.1'], needs: ['nonvisual-access', 'alternative-input'],
     brokenNote: 'A div toggles visibility with no role, no aria-expanded and no keyboard access. '
       + 'A screen reader announces nothing about state; a keyboard cannot reach it.',
     broken: `<div class="btn" onclick="var p=document.getElementById('d1');p.hidden=!p.hidden">Baggage rules</div>
@@ -52,7 +52,7 @@ const PATTERNS = [
   },
   {
     id: 'accordion', apg: 'accordion',
-    sc: ['4.1.2', '1.3.1'], needs: ['vision-blind', 'cognitive-executive'],
+    sc: ['4.1.2', '1.3.1'], needs: ['nonvisual-access', 'task-guidance'],
     brokenNote: 'Headings are divs, panels have no relationship to their triggers, no expanded state.',
     broken: `<div class="field" onclick="void 0">Fares</div><div><p>Economy, Premium.</p></div>
 <div class="field" onclick="void 0">Changes</div><div><p>Free within 24h.</p></div>`,
@@ -64,7 +64,7 @@ const PATTERNS = [
   },
   {
     id: 'tabs', apg: 'tabs',
-    sc: ['4.1.2', '2.1.1', '2.4.3'], needs: ['vision-blind', 'motor-dexterity'],
+    sc: ['4.1.2', '2.1.1', '2.4.3'], needs: ['nonvisual-access', 'alternative-input'],
     brokenNote: 'role=tab asserted on non-focusable divs with no tablist, no tabpanel and no selected state.',
     broken: `<div><div role="tab">Flights</div><div role="tab">Hotels</div></div>
 <div><p>Flight results.</p></div>`,
@@ -78,7 +78,7 @@ const PATTERNS = [
   },
   {
     id: 'dialog', apg: 'dialog-modal',
-    sc: ['4.1.2', '2.1.1', '2.4.3'], needs: ['vision-blind', 'motor-dexterity', 'cognitive-attention'],
+    sc: ['4.1.2', '2.1.1', '2.4.3'], needs: ['nonvisual-access', 'alternative-input', 'focus-support'],
     brokenNote: 'A styled div overlay: no dialog role, no accessible name, background not inert, '
       + 'focus never moved in and never restored on close.',
     broken: `<div class="btn" onclick="document.getElementById('m1').hidden=false">Change seat</div>
@@ -95,7 +95,7 @@ const PATTERNS = [
   },
   {
     id: 'combobox', apg: 'combobox',
-    sc: ['4.1.2', '2.1.1'], needs: ['vision-blind', 'motor-dexterity', 'cognitive-memory'],
+    sc: ['4.1.2', '2.1.1'], needs: ['nonvisual-access', 'alternative-input', 'memory-support'],
     brokenNote: 'A div that opens a div list. No combobox role, no expanded state, no active option, '
       + 'no relationship between input and list.',
     broken: `<div class="field" onclick="document.getElementById('l1').hidden=false">Choose airport</div>
@@ -110,7 +110,7 @@ const PATTERNS = [
   },
   {
     id: 'menu', apg: 'menu-button',
-    sc: ['4.1.2', '2.1.1'], needs: ['vision-blind', 'motor-dexterity'],
+    sc: ['4.1.2', '2.1.1'], needs: ['nonvisual-access', 'alternative-input'],
     brokenNote: 'Div trigger, div items, no menu semantics and no keyboard model.',
     broken: `<div class="btn" onclick="document.getElementById('mn1').hidden=false">Account</div>
 <div id="mn1" hidden><div onclick="void 0">Profile</div><div onclick="void 0">Sign out</div></div>`,
@@ -123,7 +123,7 @@ const PATTERNS = [
   },
   {
     id: 'switch', apg: 'switch',
-    sc: ['4.1.2', '2.1.1'], needs: ['vision-blind', 'motor-dexterity'],
+    sc: ['4.1.2', '2.1.1'], needs: ['nonvisual-access', 'alternative-input'],
     brokenNote: 'A toggle whose on/off state is conveyed only by colour and position.',
     broken: `<div class="card" onclick="this.style.background=this.style.background?'':'#30556e'">Seat alerts</div>`,
     correctNote: 'role=switch with aria-checked, or a native checkbox.',
@@ -132,7 +132,7 @@ const PATTERNS = [
   },
   {
     id: 'alert', apg: 'alert',
-    sc: ['4.1.3'], needs: ['vision-blind', 'cognitive-attention'],
+    sc: ['4.1.3'], needs: ['nonvisual-access', 'focus-support'],
     brokenNote: 'A status message injected with no live region, so it is never announced.',
     broken: `<button type="button" onclick="document.getElementById('s1').textContent='Seat saved.'">Save</button>
 <div id="s1"></div>`,
@@ -142,7 +142,7 @@ const PATTERNS = [
   },
   {
     id: 'table', apg: 'table',
-    sc: ['1.3.1'], needs: ['vision-blind', 'cognitive-memory'],
+    sc: ['1.3.1'], needs: ['nonvisual-access', 'memory-support'],
     brokenNote: 'A layout of divs presenting tabular data, with no table semantics or header association.',
     broken: `<div><div><span>Flight</span><span>Depart</span></div>
 <div><span>BA117</span><span>08:40</span></div></div>`,
@@ -153,7 +153,7 @@ const PATTERNS = [
   },
   {
     id: 'tooltip', apg: 'tooltip',
-    sc: ['4.1.2', '1.4.13'], needs: ['vision-blind', 'vision-low', 'motor-tremor'],
+    sc: ['4.1.2', '1.4.13'], needs: ['nonvisual-access', 'visual-clarity', 'error-tolerant-pointer'],
     brokenNote: 'title-only hint on a non-focusable div: unreachable by keyboard, not dismissible, '
       + 'and not associated with any control.',
     broken: `<div class="field" title="Fare rules apply">Fare info</div>`,
@@ -163,7 +163,7 @@ const PATTERNS = [
   },
   {
     id: 'breadcrumb', apg: 'breadcrumb',
-    sc: ['1.3.1', '4.1.2'], needs: ['vision-blind', 'cognitive-executive'],
+    sc: ['1.3.1', '4.1.2'], needs: ['nonvisual-access', 'task-guidance'],
     brokenNote: 'Separator characters as text, no nav landmark, current page not identified.',
     broken: `<div>Home &gt; Flights &gt; Booking</div>`,
     correctNote: 'nav landmark, ordered list, aria-current on the current page.',
@@ -175,7 +175,7 @@ const PATTERNS = [
   },
   {
     id: 'slider', apg: 'slider',
-    sc: ['4.1.2', '2.1.1'], needs: ['vision-blind', 'motor-dexterity', 'motor-tremor'],
+    sc: ['4.1.2', '2.1.1'], needs: ['nonvisual-access', 'alternative-input', 'error-tolerant-pointer'],
     brokenNote: 'A draggable div with no role, no value, and no keyboard alternative to dragging.',
     broken: `<div class="field"><div class="card" draggable="true">drag me</div></div>`,
     correctNote: 'Native range input: role, value, and arrow-key operation for free.',
@@ -184,7 +184,7 @@ const PATTERNS = [
   },
   {
     id: 'listbox', apg: 'listbox',
-    sc: ['4.1.2', '2.1.1'], needs: ['vision-blind', 'motor-dexterity'],
+    sc: ['4.1.2', '2.1.1'], needs: ['nonvisual-access', 'alternative-input'],
     brokenNote: 'Selection indicated by background colour only, with no role or selected state.',
     broken: `<div><div class="card" onclick="void 0">Economy</div><div class="card" onclick="void 0">Business</div></div>`,
     correctNote: 'role=listbox with options, aria-selected, and a single tab stop.',
@@ -195,7 +195,7 @@ const PATTERNS = [
   },
   {
     id: 'form-errors', apg: 'none',
-    sc: ['3.3.1', '3.3.2', '4.1.2'], needs: ['vision-blind', 'cognitive-language', 'cognitive-executive'],
+    sc: ['3.3.1', '3.3.2', '4.1.2'], needs: ['nonvisual-access', 'language-clarity', 'task-guidance'],
     brokenNote: 'Error shown as red text near the field: not associated, not announced, '
       + 'and colour is the only cue.',
     broken: `<form><label for="e1">Email</label><input id="e1" value="not-an-email">
@@ -208,7 +208,7 @@ const PATTERNS = [
   },
   {
     id: 'required-fields', apg: 'none',
-    sc: ['3.3.2', '1.3.1'], needs: ['vision-blind', 'vision-color', 'cognitive-language'],
+    sc: ['3.3.2', '1.3.1'], needs: ['nonvisual-access', 'color-independent', 'language-clarity'],
     brokenNote: 'Required marked with a red asterisk whose meaning is never stated in text.',
     broken: `<form><label for="r1">Name <span style="color:#b00">*</span></label><input id="r1"></form>`,
     correctNote: 'required attribute plus visible text, not colour or glyph alone.',
@@ -216,7 +216,7 @@ const PATTERNS = [
   },
   {
     id: 'media-captions', apg: 'none',
-    sc: ['1.2.2', '1.2.3'], needs: ['hearing-deaf', 'hearing-hoh', 'situational'],
+    sc: ['1.2.2', '1.2.3'], needs: ['text-for-audio', 'adjustable-audio', 'environmental-resilience'],
     brokenNote: 'Video with no caption track and no transcript. Automation can detect the ABSENCE '
       + 'of a track; it cannot judge caption quality or synchronisation — that is cannot-tell.',
     broken: `<video controls width="320"><source src="../pixel.png" type="video/mp4"></video>`,

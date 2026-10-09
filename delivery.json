@@ -1,5 +1,5 @@
 {
-  "description": "Delivery matrix: one constant defect pair, many delivery mechanisms. Differences in what a scanner reports across these rows are pipeline blind spots, not rule errors, because the defect does not change.",
+  "description": "Delivery matrix: one constant defect pair, many delivery mechanisms. Differences in what a scanner reports across these rows are pipeline coverage gaps, not rule errors, because the defect does not change.",
   "constant_defect": {
     "2.1.1": "div styled as a button, not focusable",
     "1.1.1": "img with no accessible name"

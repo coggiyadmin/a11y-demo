@@ -1,5 +1,5 @@
 {
-  "note": "Specific checks for colour-vision deficiency. A contrast-ratio test does not catch any of these: two colours can have ample contrast against the background and still be indistinguishable from each other.",
+  "note": "Specific checks for information conveyed through colour. A contrast-ratio test does not catch any of these: two colours can have ample contrast against the background and still be indistinguishable from each other.",
   "values": [
     {
       "id": "error-color-only",
@@ -33,7 +33,7 @@
     },
     {
       "id": "simulation",
-      "label": "Simulated protanopia, deuteranopia, tritanopia, achromatopsia",
+      "label": "Rendered colour-perception transformations",
       "automatable": true
     },
     {

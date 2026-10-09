@@ -30,7 +30,7 @@
       "must_not_report": [],
       "expected_outcome": "fail",
       "confidence": "definite",
-      "notes": "Prerecorded video with speech and no caption track at all. The absence of a track is machine-detectable, so this is a definite fail rather than a judgement call."
+      "notes": "Prerecorded video with spoken dialogue and no caption track at all. The absence of a track is machine-detectable, so this is a definite fail rather than a judgement call."
     },
     {
       "id": "media-safe_video_no_captions",
@@ -268,7 +268,7 @@
       "must_not_report": [],
       "expected_outcome": "fail",
       "confidence": "definite",
-      "notes": "A session warning signalled by a beep and nothing else. Inaudible to a deaf user, to anyone with sound muted, and to anyone in a noisy room — the same defect blocks a permanent need and a situational one."
+      "notes": "A session warning signalled by a beep and nothing else. Unavailable when audio cannot be perceived, with sound muted, or in a noisy room — the same defect blocks both audio-alternative and environmental-resilience needs."
     },
     {
       "id": "media-safe_alert_by_sound_only",
@@ -317,7 +317,7 @@
       "must_not_report": [],
       "expected_outcome": "fail",
       "confidence": "definite",
-      "notes": "Audio starts automatically and runs past three seconds with no pause control. It also masks a screen reader, so this blocks blind users as much as it annoys everyone."
+      "notes": "Audio starts automatically and runs past three seconds with no pause control. It also masks screen-reader output, blocking non-visual operation as well as interrupting everyone."
     },
     {
       "id": "media-safe_autoplay_no_control",

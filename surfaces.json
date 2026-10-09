@@ -43,8 +43,8 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-blind",
-        "cognitive-language"
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {
         "1.3.1": 1,
@@ -72,8 +72,8 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-blind",
-        "cognitive-language"
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -101,8 +101,8 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-low",
-        "vision-contrast"
+        "visual-clarity",
+        "contrast-adaptation"
       ],
       "min_criteria": {
         "1.4.3": 1,
@@ -130,8 +130,8 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-low",
-        "vision-contrast"
+        "visual-clarity",
+        "contrast-adaptation"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -159,8 +159,8 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-blind",
-        "cognitive-language"
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {
         "1.3.1": 1
@@ -187,8 +187,8 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-blind",
-        "cognitive-language"
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -215,8 +215,8 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-blind",
-        "cognitive-language"
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {
         "1.1.1": 1,
@@ -244,8 +244,8 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-blind",
-        "cognitive-language"
+        "nonvisual-access",
+        "language-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -273,9 +273,9 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-blind",
-        "cognitive-memory",
-        "speech-unable"
+        "nonvisual-access",
+        "memory-support",
+        "non-voice-alternative"
       ],
       "min_criteria": {
         "4.1.3": 1,
@@ -304,9 +304,9 @@
         "sr-nvda"
       ],
       "user_needs": [
-        "vision-blind",
-        "cognitive-memory",
-        "speech-unable"
+        "nonvisual-access",
+        "memory-support",
+        "non-voice-alternative"
       ],
       "min_criteria": {},
       "must_not_report": [
@@ -315,7 +315,7 @@
         "2.1.1"
       ],
       "expected_outcome": "pass",
-      "notes": "A log region announcing replies, native buttons for quick replies, a text input as an alternative to speech, and a persistent transcript."
+      "notes": "A log region announcing replies, native buttons for quick replies, a text input as a non-voice alternative, and a persistent transcript."
     }
   ]
 }

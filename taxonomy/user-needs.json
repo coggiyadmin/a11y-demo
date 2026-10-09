@@ -1,11 +1,11 @@
 {
-  "note": "Functional needs, not medical categories. This is the PRIMARY index: every rule and every fixture names the needs it serves, because one requirement usually serves several groups at once. A keyboard-access rule supports blind users, motor-impaired users, switch users and many speech-input users — indexing by criterion alone hides that.",
+  "note": "Functional needs, not medical categories. This is the PRIMARY index: every rule and every fixture names the needs it serves, because one requirement usually serves several forms of access at once. A keyboard-access rule supports non-visual operation, alternative input, switch access and voice-control workflows — indexing by criterion alone hides that.",
   "source": "https://www.w3.org/WAI/people-use-web/abilities-barriers/",
   "values": [
     {
-      "id": "vision-blind",
-      "label": "Blindness",
-      "group": "vision",
+      "id": "nonvisual-access",
+      "label": "Non-visual operation",
+      "group": "visual-presentation",
       "at": [
         "screen-reader",
         "braille"
@@ -24,9 +24,9 @@
       ]
     },
     {
-      "id": "vision-low",
-      "label": "Low vision",
-      "group": "vision",
+      "id": "visual-clarity",
+      "label": "Visual clarity and scaling",
+      "group": "visual-presentation",
       "at": [
         "magnifier",
         "zoom",
@@ -44,9 +44,9 @@
       ]
     },
     {
-      "id": "vision-color",
-      "label": "Colour blindness",
-      "group": "vision",
+      "id": "color-independent",
+      "label": "Colour-independent information",
+      "group": "visual-presentation",
       "at": [],
       "scenarios": [
         "information not conveyed by colour alone",
@@ -57,9 +57,9 @@
       ]
     },
     {
-      "id": "vision-contrast",
-      "label": "Contrast sensitivity",
-      "group": "vision",
+      "id": "contrast-adaptation",
+      "label": "Contrast and display adaptation",
+      "group": "visual-presentation",
       "at": [
         "high-contrast",
         "forced-colors"
@@ -72,9 +72,9 @@
       ]
     },
     {
-      "id": "hearing-deaf",
-      "label": "Deafness",
-      "group": "hearing",
+      "id": "text-for-audio",
+      "label": "Text alternatives for audio",
+      "group": "audio-and-alternatives",
       "at": [
         "captions",
         "transcript"
@@ -89,9 +89,9 @@
       ]
     },
     {
-      "id": "hearing-hoh",
-      "label": "Hard of hearing",
-      "group": "hearing",
+      "id": "adjustable-audio",
+      "label": "Adjustable and clear audio",
+      "group": "audio-and-alternatives",
       "at": [
         "captions",
         "volume-control"
@@ -104,9 +104,9 @@
       ]
     },
     {
-      "id": "deafblind",
-      "label": "Deafblindness",
-      "group": "multiple",
+      "id": "text-and-tactile",
+      "label": "Text and tactile access",
+      "group": "combined-access",
       "at": [
         "braille",
         "screen-reader"
@@ -121,18 +121,18 @@
       ]
     },
     {
-      "id": "motor-dexterity",
-      "label": "Limited dexterity",
-      "group": "motor",
+      "id": "alternative-input",
+      "label": "Alternative input access",
+      "group": "input-and-control",
       "at": [
         "keyboard",
         "switch",
-        "speech"
+        "voice-control"
       ],
       "scenarios": [
         "keyboard-only use",
         "switch access",
-        "speech control",
+        "voice control",
         "large targets",
         "target spacing",
         "no required dragging",
@@ -141,9 +141,9 @@
       ]
     },
     {
-      "id": "motor-tremor",
-      "label": "Tremor",
-      "group": "motor",
+      "id": "error-tolerant-pointer",
+      "label": "Error-tolerant pointer input",
+      "group": "input-and-control",
       "at": [
         "large-targets",
         "pointer-cancellation"
@@ -156,24 +156,24 @@
       ]
     },
     {
-      "id": "motor-paralysis",
-      "label": "Paralysis",
-      "group": "motor",
+      "id": "hands-free-switch",
+      "label": "Hands-free and switch operation",
+      "group": "input-and-control",
       "at": [
         "switch",
-        "speech",
+        "voice-control",
         "eye-tracking"
       ],
       "scenarios": [
         "switch access",
-        "speech control",
+        "voice control",
         "full keyboard equivalence"
       ]
     },
     {
-      "id": "motor-fatigue",
-      "label": "Fatigue",
-      "group": "motor",
+      "id": "low-effort-interaction",
+      "label": "Low-effort interaction",
+      "group": "input-and-control",
       "at": [
         "reduced-steps",
         "save-progress"
@@ -186,9 +186,9 @@
       ]
     },
     {
-      "id": "speech-unable",
-      "label": "Unable to use voice interfaces",
-      "group": "speech",
+      "id": "non-voice-alternative",
+      "label": "Non-voice alternatives",
+      "group": "voice-alternatives",
       "at": [],
       "scenarios": [
         "alternatives to voice input",
@@ -197,9 +197,9 @@
       ]
     },
     {
-      "id": "cognitive-memory",
-      "label": "Memory",
-      "group": "cognitive",
+      "id": "memory-support",
+      "label": "Memory support",
+      "group": "comprehension-and-task",
       "at": [
         "redundant-entry-prevention",
         "save-progress"
@@ -212,9 +212,9 @@
       ]
     },
     {
-      "id": "cognitive-attention",
-      "label": "Attention",
-      "group": "cognitive",
+      "id": "focus-support",
+      "label": "Focus and attention support",
+      "group": "comprehension-and-task",
       "at": [
         "reduced-motion",
         "pause-controls"
@@ -226,9 +226,9 @@
       ]
     },
     {
-      "id": "cognitive-dyslexia",
-      "label": "Dyslexia",
-      "group": "cognitive",
+      "id": "reading-support",
+      "label": "Reading support",
+      "group": "comprehension-and-task",
       "at": [
         "text-spacing",
         "read-aloud"
@@ -237,14 +237,14 @@
         "readable typography",
         "text spacing overrides",
         "uncluttered layout",
-        "text-to-speech compatibility",
+        "read-aloud compatibility",
         "no images of text"
       ]
     },
     {
-      "id": "cognitive-language",
-      "label": "Language and literacy",
-      "group": "cognitive",
+      "id": "language-clarity",
+      "label": "Language clarity",
+      "group": "comprehension-and-task",
       "at": [
         "plain-language"
       ],
@@ -256,9 +256,9 @@
       ]
     },
     {
-      "id": "cognitive-executive",
-      "label": "Executive function",
-      "group": "cognitive",
+      "id": "task-guidance",
+      "label": "Task guidance and recovery",
+      "group": "comprehension-and-task",
       "at": [
         "clear-steps",
         "undo"
@@ -272,9 +272,9 @@
       ]
     },
     {
-      "id": "neuro-photosensitive",
-      "label": "Photosensitivity",
-      "group": "neurological",
+      "id": "flash-safety",
+      "label": "Flash safety",
+      "group": "motion-and-flash",
       "at": [
         "flash-thresholds"
       ],
@@ -285,9 +285,9 @@
       ]
     },
     {
-      "id": "neuro-vestibular",
-      "label": "Vestibular and motion sensitivity",
-      "group": "neurological",
+      "id": "motion-safety",
+      "label": "Motion safety",
+      "group": "motion-and-flash",
       "at": [
         "reduced-motion"
       ],
@@ -299,18 +299,18 @@
       ]
     },
     {
-      "id": "multiple",
-      "label": "Multiple or intersecting disabilities",
-      "group": "multiple",
+      "id": "combined-access",
+      "label": "Combined access requirements",
+      "group": "combined-access",
       "at": [],
       "scenarios": [
         "combined testing, e.g. keyboard + screen reader + high contrast"
       ]
     },
     {
-      "id": "age-related",
-      "label": "Age-related needs",
-      "group": "multiple",
+      "id": "forgiving-interface",
+      "label": "Forgiving interaction",
+      "group": "combined-access",
       "at": [],
       "scenarios": [
         "larger text and targets",
@@ -321,21 +321,21 @@
       ]
     },
     {
-      "id": "temporary",
-      "label": "Temporary limitation",
-      "group": "situational",
+      "id": "constrained-use",
+      "label": "Constrained-use support",
+      "group": "context-and-environment",
       "at": [],
       "scenarios": [
-        "broken arm",
-        "eye surgery",
-        "ear infection",
-        "medication-related cognitive effects"
+        "limited reach",
+        "reduced input precision",
+        "interrupted use",
+        "slower task completion"
       ]
     },
     {
-      "id": "situational",
-      "label": "Situational limitation",
-      "group": "situational",
+      "id": "environmental-resilience",
+      "label": "Environmental resilience",
+      "group": "context-and-environment",
       "at": [],
       "scenarios": [
         "bright sunlight",

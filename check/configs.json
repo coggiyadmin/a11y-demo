@@ -71,7 +71,7 @@
       "note": "Windows high contrast / forced colours"
     }
   ],
-  "generated": "2026-10-09T02:31:12.002Z",
+  "generated": "2026-10-09T03:43:06.438Z",
   "results": {
     "default-desktop": {
       "keyboard/div_button.html": {
@@ -578,7 +578,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/error_color_only.html": {
+      "color-independent/error_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 12,
@@ -586,7 +586,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_error_color_only.html": {
+      "color-independent/safe_error_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -594,7 +594,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/status_color_only.html": {
+      "color-independent/status_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -602,7 +602,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_status_color_only.html": {
+      "color-independent/safe_status_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -610,7 +610,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/link_color_only.html": {
+      "color-independent/link_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -618,7 +618,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_link_color_only.html": {
+      "color-independent/safe_link_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -626,7 +626,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/chart_series_color_only.html": {
+      "color-independent/chart_series_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 14,
@@ -634,7 +634,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_chart_series_color_only.html": {
+      "color-independent/safe_chart_series_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 29,
@@ -642,7 +642,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/selection_color_only.html": {
+      "color-independent/selection_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -650,7 +650,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_selection_color_only.html": {
+      "color-independent/safe_selection_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -658,7 +658,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/placeholder_contrast.html": {
+      "color-independent/placeholder_contrast.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 9,
@@ -666,7 +666,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_placeholder_contrast.html": {
+      "color-independent/safe_placeholder_contrast.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -674,7 +674,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/disabled_state.html": {
+      "color-independent/disabled_state.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 9,
@@ -682,7 +682,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_disabled_state.html": {
+      "color-independent/safe_disabled_state.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -690,7 +690,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/required_color_only.html": {
+      "color-independent/required_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 12,
@@ -698,7 +698,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_required_color_only.html": {
+      "color-independent/safe_required_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -1372,7 +1372,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/error_color_only.html": {
+      "color-independent/error_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 12,
@@ -1380,7 +1380,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_error_color_only.html": {
+      "color-independent/safe_error_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -1388,7 +1388,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/status_color_only.html": {
+      "color-independent/status_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -1396,7 +1396,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_status_color_only.html": {
+      "color-independent/safe_status_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -1404,7 +1404,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/link_color_only.html": {
+      "color-independent/link_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -1412,7 +1412,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_link_color_only.html": {
+      "color-independent/safe_link_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -1420,7 +1420,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/chart_series_color_only.html": {
+      "color-independent/chart_series_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 14,
@@ -1428,7 +1428,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_chart_series_color_only.html": {
+      "color-independent/safe_chart_series_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 29,
@@ -1436,7 +1436,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/selection_color_only.html": {
+      "color-independent/selection_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -1444,7 +1444,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_selection_color_only.html": {
+      "color-independent/safe_selection_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -1452,7 +1452,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/placeholder_contrast.html": {
+      "color-independent/placeholder_contrast.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 9,
@@ -1460,7 +1460,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_placeholder_contrast.html": {
+      "color-independent/safe_placeholder_contrast.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -1468,7 +1468,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/disabled_state.html": {
+      "color-independent/disabled_state.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 9,
@@ -1476,7 +1476,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_disabled_state.html": {
+      "color-independent/safe_disabled_state.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -1484,7 +1484,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/required_color_only.html": {
+      "color-independent/required_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 12,
@@ -1492,7 +1492,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_required_color_only.html": {
+      "color-independent/safe_required_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -2166,7 +2166,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/error_color_only.html": {
+      "color-independent/error_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 12,
@@ -2174,7 +2174,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_error_color_only.html": {
+      "color-independent/safe_error_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -2182,7 +2182,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/status_color_only.html": {
+      "color-independent/status_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -2190,7 +2190,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_status_color_only.html": {
+      "color-independent/safe_status_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -2198,7 +2198,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/link_color_only.html": {
+      "color-independent/link_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -2206,7 +2206,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_link_color_only.html": {
+      "color-independent/safe_link_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -2214,7 +2214,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/chart_series_color_only.html": {
+      "color-independent/chart_series_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 14,
@@ -2222,7 +2222,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_chart_series_color_only.html": {
+      "color-independent/safe_chart_series_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 29,
@@ -2230,7 +2230,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/selection_color_only.html": {
+      "color-independent/selection_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -2238,7 +2238,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_selection_color_only.html": {
+      "color-independent/safe_selection_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -2246,7 +2246,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/placeholder_contrast.html": {
+      "color-independent/placeholder_contrast.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 9,
@@ -2254,7 +2254,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_placeholder_contrast.html": {
+      "color-independent/safe_placeholder_contrast.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -2262,7 +2262,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/disabled_state.html": {
+      "color-independent/disabled_state.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 9,
@@ -2270,7 +2270,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_disabled_state.html": {
+      "color-independent/safe_disabled_state.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -2278,7 +2278,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/required_color_only.html": {
+      "color-independent/required_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 12,
@@ -2286,7 +2286,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_required_color_only.html": {
+      "color-independent/safe_required_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -2960,7 +2960,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/error_color_only.html": {
+      "color-independent/error_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 12,
@@ -2968,7 +2968,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_error_color_only.html": {
+      "color-independent/safe_error_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -2976,7 +2976,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/status_color_only.html": {
+      "color-independent/status_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -2984,7 +2984,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_status_color_only.html": {
+      "color-independent/safe_status_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -2992,7 +2992,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/link_color_only.html": {
+      "color-independent/link_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -3000,7 +3000,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_link_color_only.html": {
+      "color-independent/safe_link_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -3008,7 +3008,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/chart_series_color_only.html": {
+      "color-independent/chart_series_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 14,
@@ -3016,7 +3016,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_chart_series_color_only.html": {
+      "color-independent/safe_chart_series_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 29,
@@ -3024,7 +3024,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/selection_color_only.html": {
+      "color-independent/selection_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -3032,7 +3032,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_selection_color_only.html": {
+      "color-independent/safe_selection_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -3040,7 +3040,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/placeholder_contrast.html": {
+      "color-independent/placeholder_contrast.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 9,
@@ -3048,7 +3048,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_placeholder_contrast.html": {
+      "color-independent/safe_placeholder_contrast.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -3056,7 +3056,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/disabled_state.html": {
+      "color-independent/disabled_state.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 9,
@@ -3064,7 +3064,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_disabled_state.html": {
+      "color-independent/safe_disabled_state.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -3072,7 +3072,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/required_color_only.html": {
+      "color-independent/required_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 12,
@@ -3080,7 +3080,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_required_color_only.html": {
+      "color-independent/safe_required_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -3754,7 +3754,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/error_color_only.html": {
+      "color-independent/error_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 12,
@@ -3762,7 +3762,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_error_color_only.html": {
+      "color-independent/safe_error_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -3770,7 +3770,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/status_color_only.html": {
+      "color-independent/status_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -3778,7 +3778,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_status_color_only.html": {
+      "color-independent/safe_status_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -3786,7 +3786,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/link_color_only.html": {
+      "color-independent/link_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -3794,7 +3794,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_link_color_only.html": {
+      "color-independent/safe_link_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -3802,7 +3802,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/chart_series_color_only.html": {
+      "color-independent/chart_series_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 14,
@@ -3810,7 +3810,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_chart_series_color_only.html": {
+      "color-independent/safe_chart_series_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 29,
@@ -3818,7 +3818,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/selection_color_only.html": {
+      "color-independent/selection_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -3826,7 +3826,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_selection_color_only.html": {
+      "color-independent/safe_selection_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -3834,7 +3834,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/placeholder_contrast.html": {
+      "color-independent/placeholder_contrast.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 9,
@@ -3842,7 +3842,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_placeholder_contrast.html": {
+      "color-independent/safe_placeholder_contrast.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -3850,7 +3850,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/disabled_state.html": {
+      "color-independent/disabled_state.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 9,
@@ -3858,7 +3858,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_disabled_state.html": {
+      "color-independent/safe_disabled_state.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -3866,7 +3866,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/required_color_only.html": {
+      "color-independent/required_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 12,
@@ -3874,7 +3874,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_required_color_only.html": {
+      "color-independent/safe_required_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -4548,7 +4548,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/error_color_only.html": {
+      "color-independent/error_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 12,
@@ -4556,7 +4556,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_error_color_only.html": {
+      "color-independent/safe_error_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -4564,7 +4564,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/status_color_only.html": {
+      "color-independent/status_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -4572,7 +4572,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_status_color_only.html": {
+      "color-independent/safe_status_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 13,
@@ -4580,7 +4580,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/link_color_only.html": {
+      "color-independent/link_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -4588,7 +4588,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_link_color_only.html": {
+      "color-independent/safe_link_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -4596,7 +4596,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/chart_series_color_only.html": {
+      "color-independent/chart_series_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 14,
@@ -4604,7 +4604,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_chart_series_color_only.html": {
+      "color-independent/safe_chart_series_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 29,
@@ -4612,7 +4612,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/selection_color_only.html": {
+      "color-independent/selection_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -4620,7 +4620,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_selection_color_only.html": {
+      "color-independent/safe_selection_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,
@@ -4628,7 +4628,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/placeholder_contrast.html": {
+      "color-independent/placeholder_contrast.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 9,
@@ -4636,7 +4636,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_placeholder_contrast.html": {
+      "color-independent/safe_placeholder_contrast.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -4644,7 +4644,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/disabled_state.html": {
+      "color-independent/disabled_state.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 9,
@@ -4652,7 +4652,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_disabled_state.html": {
+      "color-independent/safe_disabled_state.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 10,
@@ -4660,7 +4660,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/required_color_only.html": {
+      "color-independent/required_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 12,
@@ -4668,7 +4668,7 @@
         "running_animations": 0,
         "infinite_rules": 0
       },
-      "color-vision/safe_required_color_only.html": {
+      "color-independent/safe_required_color_only.html": {
         "h_scroll": false,
         "overflow_px": 0,
         "visible_elements": 11,

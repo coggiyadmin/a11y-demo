@@ -13,7 +13,7 @@ whether the scanner's **pipeline** — crawl, capture, hydrate, sample, walk —
 ever hands that rule anything to judge.
 
 That distinction is the point. A scanner can score full marks on a corpus of
-isolated HTML snippets while being effectively blind to a real single-page
+isolated HTML snippets while being unable to observe a real single-page
 application, because a snippet never stresses capture, hydration or sampling.
 See [FOUNDATION.md](FOUNDATION.md) for the evidence and the two-tier design
 that follows from it.
@@ -68,7 +68,7 @@ element, and server-rendered-then-replaced-by-script.
 
 Holding the defect constant is the whole point. A scanner that reports
 `server_html` and not `shadow_dom_open` has not found a rule bug; it has a
-delivery blind spot, and the matrix names which one.
+delivery coverage gap, and the matrix names which one.
 
 `closed` shadow roots are deliberately included. `element.shadowRoot` returns
 null there, so script cannot see in — but the content is still in the
@@ -124,9 +124,9 @@ requirement usually serves several groups at once:
 1.4.1  Use of Colour       10 needs
 ```
 
-Keyboard access alone serves blind users, people with limited dexterity, tremor
-or paralysis, switch users and many speech-input users. A criterion-first report
-cannot show that one fix moves twelve groups; `node needs-index.mjs` can.
+Keyboard access alone supports non-visual operation, alternative input, switch
+access and voice-control workflows. A criterion-first report cannot show that one
+fix improves many functional needs; `node needs-index.mjs` can.
 
 Mapping rules rather than fixtures is deliberate — hand-annotating every case
 drifts, and the rule-level mapping stays the single source of truth.
@@ -211,9 +211,9 @@ crawlable pages never tests them at all, which is why a form can be perfectly
 labelled when blank and still lose focus on submit and announce nothing when
 validation fails.
 
-### Colour vision
+### Colour-independent information
 
-`color-vision/` holds eight pairs covering the checks a contrast test cannot
+`color-independent/` holds eight pairs covering the checks a contrast test cannot
 reach: error and status by colour alone, red/green pairings, chart series
 separated only by hue, links distinguished only by colour, placeholder and
 disabled contrast, and selection state by colour alone.
@@ -221,9 +221,9 @@ disabled contrast, and selection state by colour alone.
 Contrast ratio does not catch any of these. Two colours can each clear 4.5:1
 against the background and still be indistinguishable from each other.
 
-`color-vision/simulate.html` renders a fixture through protanopia, deuteranopia,
-tritanopia and achromatopsia filters, so "can you still tell?" is a question you
-can put to a screenshot rather than take on trust.
+`color-independent/simulate.html` renders a fixture through three colour-perception
+transformations and a monochrome transformation, so "can you still tell?" is a
+question you can put to a screenshot rather than take on trust.
 
 ## The test space
 
@@ -398,7 +398,7 @@ output to `catalog.json`. Two numbers are worth reporting separately:
 A third is worth recording for pipeline-tier cases: the **examined count** — how
 many elements the rule actually looked at. A rule that reports "pass" having
 examined nothing has not passed; it has not run. Counting that as a pass is how
-a blind scanner looks healthy.
+an incomplete scanner looks healthy.
 
 ## Provenance and licences
 

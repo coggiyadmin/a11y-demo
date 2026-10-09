@@ -110,9 +110,9 @@ const JOURNEYS = [
     label: 'Sign in',
     journey: 'auth-challenge',
     sc: ['3.3.8', '3.3.1', '2.1.1'],
-    defect: 'Authentication depends on a cognitive function test — transcribing distorted '
+    defect: 'Authentication depends on a transcription puzzle — copying distorted '
       + 'characters — and the password field blocks paste, which breaks password managers. '
-      + 'Both are 3.3.8 failures and both hit memory, dyslexia and motor needs hardest.',
+      + 'Both are 3.3.8 failures and both obstruct memory support, reading support and alternative input.',
     fixed: 'No transcription puzzle, paste permitted, autocomplete tokens present so a '
       + 'password manager can fill the form, and an alternative sign-in route offered.',
     steps: {

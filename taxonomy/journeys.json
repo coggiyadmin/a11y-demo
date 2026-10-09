@@ -99,7 +99,7 @@
     },
     {
       "id": "input-only",
-      "label": "Keyboard-, switch-, touch- or speech-only completion"
+      "label": "Keyboard-, switch-, touch- or voice-control-only completion"
     }
   ]
 }

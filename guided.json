@@ -26,8 +26,8 @@
         "keyboard"
       ],
       "user_needs": [
-        "hearing-deaf",
-        "hearing-hoh"
+        "text-for-audio",
+        "adjustable-audio"
       ],
       "min_criteria": {},
       "must_not_report": [],
@@ -51,9 +51,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-blind",
-        "vision-low",
-        "cognitive-language"
+        "nonvisual-access",
+        "visual-clarity",
+        "language-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [],
@@ -77,9 +77,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-blind",
-        "deafblind",
-        "cognitive-executive"
+        "nonvisual-access",
+        "text-and-tactile",
+        "task-guidance"
       ],
       "min_criteria": {},
       "must_not_report": [],
@@ -103,10 +103,10 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-blind",
-        "vision-low",
-        "vision-color",
-        "cognitive-language"
+        "nonvisual-access",
+        "visual-clarity",
+        "color-independent",
+        "language-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [],
@@ -130,9 +130,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "cognitive-language",
-        "cognitive-dyslexia",
-        "cognitive-memory"
+        "language-clarity",
+        "reading-support",
+        "memory-support"
       ],
       "min_criteria": {},
       "must_not_report": [],
@@ -156,9 +156,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-blind",
-        "motor-dexterity",
-        "cognitive-attention"
+        "nonvisual-access",
+        "alternative-input",
+        "focus-support"
       ],
       "min_criteria": {},
       "must_not_report": [],
@@ -186,8 +186,8 @@
         "sr-narrator-edge"
       ],
       "user_needs": [
-        "vision-blind",
-        "deafblind"
+        "nonvisual-access",
+        "text-and-tactile"
       ],
       "min_criteria": {},
       "must_not_report": [],
@@ -211,9 +211,9 @@
         "keyboard"
       ],
       "user_needs": [
-        "vision-blind",
-        "vision-low",
-        "cognitive-language"
+        "nonvisual-access",
+        "visual-clarity",
+        "language-clarity"
       ],
       "min_criteria": {},
       "must_not_report": [],
@@ -237,7 +237,7 @@
         "keyboard"
       ],
       "user_needs": [
-        "multiple"
+        "combined-access"
       ],
       "min_criteria": {},
       "must_not_report": [],

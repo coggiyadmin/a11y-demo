@@ -42,7 +42,7 @@ const CONFIGS = [
     note: 'Windows high contrast / forced colours' },
 ];
 
-const families = ['catalog.json', 'scenarios.json', 'color-vision.json', 'surfaces.json', 'flash.json'];
+const families = ['catalog.json', 'scenarios.json', 'color-independent.json', 'surfaces.json', 'flash.json'];
 const cases = families
   .map((f) => path.join(ROOT, f)).filter(fs.existsSync)
   .flatMap((f) => JSON.parse(fs.readFileSync(f, 'utf8')).cases);

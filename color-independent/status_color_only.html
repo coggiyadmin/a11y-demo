@@ -2,8 +2,8 @@
   status_color_only — broken
   WCAG: 1.4.1
   check: error-color-only
-  needs: vision-color, vision-blind
-  Flight status shown as coloured dots. Red and green are the classic indistinguishable pair for deuteranopia and protanopia — the two most common forms.
+  needs: color-independent, nonvisual-access
+  Flight status shown as coloured dots. The red and green signals can become indistinguishable when hue perception differs or colour is unavailable.
 -->
 <!doctype html>
 <html lang="en">
@@ -16,7 +16,7 @@
 <body>
 <main>
 <h1>status_color_only — broken</h1>
-<p>Flight status shown as coloured dots. Red and green are the classic indistinguishable pair for deuteranopia and protanopia — the two most common forms.</p><hr><style>.dot{display:inline-block;width:14px;height:14px;border-radius:50%}
+<p>Flight status shown as coloured dots. The red and green signals can become indistinguishable when hue perception differs or colour is unavailable.</p><hr><style>.dot{display:inline-block;width:14px;height:14px;border-radius:50%}
 .on{background:#2a2}.off{background:#d22}</style>
 <ul><li><span class="dot on"></span> BA117</li><li><span class="dot off"></span> BA118</li></ul>
 </main>

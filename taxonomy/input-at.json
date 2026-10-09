@@ -22,8 +22,8 @@
       "automatable": false
     },
     {
-      "id": "speech",
-      "label": "Speech control (Voice Control, Dragon)",
+      "id": "voice-control",
+      "label": "Voice control (Voice Control, Dragon)",
       "automatable": false
     },
     {

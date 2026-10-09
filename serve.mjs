@@ -23,7 +23,7 @@ const TYPES = {
 };
 
 const PUBLIC_DIRECTORIES = new Set([
-  'act', 'capture', 'color-vision', 'delivery', 'flash', 'guided', 'journeys',
+  'act', 'capture', 'color-independent', 'delivery', 'flash', 'guided', 'journeys',
   'keyboard', 'media', 'patterns', 'scenarios', 'static', 'surfaces', 'taxonomy',
   'ui-states', 'wcag',
 ]);
@@ -31,7 +31,7 @@ const PUBLIC_DIRECTORIES = new Set([
 const PUBLIC_ROOT_FILES = new Set([
   'index.html', 'fixture.css', 'pixel.png', 'catalog.json', 'coverage.csv',
   'coverage.json', 'needs-index.json', 'space-coverage.json', 'delivery.json',
-  'patterns.json', 'color-vision.json', 'media.json', 'ui-states.json',
+  'patterns.json', 'color-independent.json', 'media.json', 'ui-states.json',
   'journeys.json', 'scenarios.json', 'surfaces.json', 'guided.json', 'flash.json',
 ]);
 
