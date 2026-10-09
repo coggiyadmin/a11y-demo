@@ -99,6 +99,19 @@ const S = [
 <tr><th scope="row">Business</th><td>70</td></tr></tbody></table></figure>`,
   },
   {
+    id: 'meaningful_sequence', journey: 'navigate', sc: ['1.3.2'],
+    needsAt: ['sr-nvda'],
+    needs: ['vision-blind', 'deafblind', 'cognitive-memory', 'cognitive-language'],
+    brokenNote: 'CSS makes the itinerary look chronological, but the DOM is in a different '
+      + 'order. A screen reader encounters boarding before check-in and security.',
+    broken: `<style>.sequence{display:flex;flex-direction:column}.first{order:1}.second{order:2}.third{order:3}</style>
+<ol class="sequence"><li class="third">3. Board at gate 14</li>
+<li class="first">1. Check in online</li><li class="second">2. Pass security</li></ol>`,
+    correctNote: 'The DOM and visual presentation use the same chronological sequence.',
+    correct: `<ol><li>1. Check in online</li><li>2. Pass security</li>
+<li>3. Board at gate 14</li></ol>`,
+  },
+  {
     id: 'live_chat', journey: 'realtime', sc: ['4.1.3', '1.3.1'],
     needsAt: ['sr-nvda', 'keyboard'],
     brokenNote: 'Incoming messages append to a div with no live region, so a screen-reader '
@@ -199,6 +212,67 @@ body::after{content:"Please rotate your device"}}</style>
     correctNote: 'At least 24x24 with spacing between targets.',
     correct: `<style>.ic2{display:inline-block;width:24px;height:24px;margin:4px;background:#30556e}</style>
 <a href="#a" class="ic2" aria-label="Seat map"></a><a href="#b" class="ic2" aria-label="Baggage"></a>`,
+  },
+  {
+    id: 'pointer_cancellation', journey: 'destructive', sc: ['2.5.2'],
+    needsAt: ['pointer', 'touch'],
+    needs: ['motor-tremor', 'motor-dexterity', 'age-related', 'temporary'],
+    brokenNote: 'The destructive action fires on pointer-down. Moving away before release '
+      + 'cannot cancel an accidental press.',
+    broken: `<p id="pointer-status">Booking BA117 is active.</p>
+<button type="button" onpointerdown="document.getElementById('pointer-status').textContent='Booking BA117 cancelled.'">Cancel booking</button>`,
+    correctNote: 'The action fires on click (after release on the same control), and an Undo '
+      + 'control reverses an accidental activation.',
+    correct: `<p id="pointer-status-safe">Booking BA117 is active.</p>
+<button type="button" onclick="document.getElementById('pointer-status-safe').textContent='Booking BA117 cancelled.';document.getElementById('undo-cancel').hidden=false">Cancel booking</button>
+<button id="undo-cancel" type="button" hidden onclick="document.getElementById('pointer-status-safe').textContent='Booking BA117 is active.';this.hidden=true">Undo cancellation</button>`,
+  },
+  {
+    id: 'change_on_focus', journey: 'navigate', sc: ['3.2.1'],
+    needsAt: ['keyboard', 'sr-nvda'],
+    needs: ['cognitive-attention', 'cognitive-executive', 'vision-blind', 'motor-dexterity'],
+    brokenNote: 'Focusing the destination field immediately replaces the search panel with '
+      + 'results. Keyboard and screen-reader users did not request the context change.',
+    broken: `<section id="focus-search"><label for="focus-destination">Destination</label>
+<input id="focus-destination" value="Paris" onfocus="document.getElementById('focus-search').hidden=true;document.getElementById('focus-results').hidden=false"></section>
+<section id="focus-results" hidden><h2>Flights to Paris</h2><p>12 results</p></section>`,
+    correctNote: 'Focus only enters the field; an explicit button applies the search and '
+      + 'changes the context.',
+    correct: `<label for="focus-destination-safe">Destination</label>
+<input id="focus-destination-safe" value="Paris">
+<button type="button" onclick="document.getElementById('focus-results-safe').hidden=false">Search flights</button>
+<section id="focus-results-safe" hidden><h2>Flights to Paris</h2><p>12 results</p></section>`,
+  },
+  {
+    id: 'change_on_input', journey: 'form-lifecycle', sc: ['3.2.2'],
+    needsAt: ['keyboard', 'sr-nvda'],
+    needs: ['cognitive-attention', 'cognitive-executive', 'vision-blind', 'motor-dexterity'],
+    brokenNote: 'Choosing a destination immediately replaces the form with the next step, '
+      + 'without warning or an explicit commit action.',
+    broken: `<section id="input-step-one"><label for="input-destination">Destination</label>
+<select id="input-destination" onchange="document.getElementById('input-step-one').hidden=true;document.getElementById('input-step-two').hidden=false">
+<option value="">Choose</option><option>Paris</option><option>Rome</option></select></section>
+<section id="input-step-two" hidden><h2>Choose dates</h2></section>`,
+    correctNote: 'Changing the value does not change context; an Apply button advances the '
+      + 'form when the user is ready.',
+    correct: `<label for="input-destination-safe">Destination</label>
+<select id="input-destination-safe"><option value="">Choose</option><option>Paris</option><option>Rome</option></select>
+<button type="button" onclick="document.getElementById('input-step-two-safe').hidden=false">Apply destination</button>
+<section id="input-step-two-safe" hidden><h2>Choose dates</h2></section>`,
+  },
+  {
+    id: 'error_suggestion', journey: 'form-lifecycle', uiState: 'invalid', sc: ['3.3.3'],
+    needsAt: ['keyboard', 'sr-nvda'],
+    needs: ['cognitive-language', 'cognitive-executive', 'cognitive-memory', 'vision-blind'],
+    brokenNote: 'The error is identified and associated with the field, but gives no known '
+      + 'correction format or example.',
+    broken: `<label for="travel-date">Travel date</label>
+<input id="travel-date" value="31-31-2026" aria-invalid="true" aria-describedby="travel-date-error">
+<p id="travel-date-error" role="alert">Date is invalid.</p>`,
+    correctNote: 'The associated error explains the required format and gives a valid example.',
+    correct: `<label for="travel-date-safe">Travel date</label>
+<input id="travel-date-safe" value="31-31-2026" aria-invalid="true" aria-describedby="travel-date-error-safe">
+<p id="travel-date-error-safe" role="alert">Use DD/MM/YYYY, for example 31/12/2026.</p>`,
   },
   {
     id: 'disabled_state', journey: 'form-lifecycle', uiState: 'disabled', sc: ['4.1.2', '1.4.1'],

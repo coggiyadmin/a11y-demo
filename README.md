@@ -286,7 +286,7 @@ Cases come in pairs wherever it is meaningful:
 | `tp` | a scanner **should** report the listed criteria |
 | `safe` | a scanner **must not** report the criteria in `must_not_report` — flagging one of those criteria is a false positive |
 
-195 local cases: 101 `tp`, 85 negative controls and 9 guided checks. The first
+205 local cases: 106 `tp`, 90 negative controls and 9 guided checks. The first
 25 are the original keyboard, capture and static catalog; the remaining cases
 live in ten additional family manifests loaded through `fixture-families.mjs`.
 
@@ -301,10 +301,10 @@ WCAG 2.2 has 86 live success criteria (4.1.1 Parsing was removed in 2.2 and is
 retained in the index with `in_2_2: false`).
 
 ```
-ACT only                     15
-local fixtures only          23
-ACT + local                  23
-neither                      25
+ACT only                     17
+local fixtures only          28
+ACT + local                  21
+neither                      20
 ```
 
 Regenerate with `node coverage.mjs`. If `act/testcases.json` is absent the ACT
@@ -329,6 +329,10 @@ manifests and writes `check/reference.json`: per fixture, the number of tab stop
 finds, how many elements are natively focusable, how many are pointer-operable
 but not keyboard reachable, and how much of the page exists only after script
 runs (measured by loading twice, with JavaScript off and on).
+
+It then runs `check/scenario-interactions.mjs`, which executes the five A/AA
+interaction contracts: visual versus DOM sequence, pointer-down cancellation,
+focus and input context changes, and actionable error suggestions.
 
 Those are **facts about the pages, not judgements about any scanner** — which is
 what makes them usable as a reference. For example:

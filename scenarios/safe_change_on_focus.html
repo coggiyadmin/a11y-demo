@@ -1,0 +1,21 @@
+<!--
+  change_on_focus — correct
+  WCAG: 3.2.1
+  journey: navigate
+  input/AT most affected: keyboard, sr-nvda
+  Focus only enters the field; an explicit button applies the search and changes the context.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>change_on_focus — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>change_on_focus — correct</h1>
+<p>Focus only enters the field; an explicit button applies the search and changes the context.</p><hr><label for="focus-destination-safe">Destination</label>
+<input id="focus-destination-safe" value="Paris">
+<button type="button" onclick="document.getElementById('focus-results-safe').hidden=false">Search flights</button>
+<section id="focus-results-safe" hidden><h2>Flights to Paris</h2><p>12 results</p></section>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

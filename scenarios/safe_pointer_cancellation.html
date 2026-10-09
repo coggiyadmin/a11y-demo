@@ -1,0 +1,20 @@
+<!--
+  pointer_cancellation — correct
+  WCAG: 2.5.2
+  journey: destructive
+  input/AT most affected: pointer, touch
+  The action fires on click (after release on the same control), and an Undo control reverses an accidental activation.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>pointer_cancellation — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>pointer_cancellation — correct</h1>
+<p>The action fires on click (after release on the same control), and an Undo control reverses an accidental activation.</p><hr><p id="pointer-status-safe">Booking BA117 is active.</p>
+<button type="button" onclick="document.getElementById('pointer-status-safe').textContent='Booking BA117 cancelled.';document.getElementById('undo-cancel').hidden=false">Cancel booking</button>
+<button id="undo-cancel" type="button" hidden onclick="document.getElementById('pointer-status-safe').textContent='Booking BA117 is active.';this.hidden=true">Undo cancellation</button>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>
