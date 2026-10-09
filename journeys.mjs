@@ -247,7 +247,11 @@ const JOURNEYS = [
     id: 'navigate',
     label: 'Find a page',
     journey: 'navigate',
-    sc: ['2.4.5', '3.2.4', '2.4.1'],
+    // NOT 2.4.1. Every step here carries a <nav> landmark, and a landmark is itself a
+    // recognised bypass mechanism (ARIA11), so the control passing is correct. The
+    // defects this journey actually carries are 2.4.5 (one route only) and 3.2.4 (the
+    // same destination labelled three different ways).
+    sc: ['2.4.5', '3.2.4'],
     defect: 'Only one route to any page — no search, no sitemap, no breadcrumb — and the same '
       + 'destination is labelled differently in different places. No skip link, so every page '
       + 'starts with the full navigation.',

@@ -28,7 +28,11 @@ ${body}
 
 const S = [
   {
-    id: 'overlay_focus_trap', journey: 'overlay', sc: ['2.1.2', '2.4.3'],
+    // NOT 2.1.2. A keyboard trap is focus that cannot be moved AWAY from a component.
+    // This page's defect is the opposite — focus never moves INTO the popover and the
+    // background stays reachable behind it. That is focus management (2.4.3), and
+    // claiming 2.1.2 made a correct pass look like a gap.
+    id: 'overlay_focus_trap', journey: 'overlay', sc: ['2.4.3'],
     needsAt: ['keyboard'],
     brokenNote: 'A popover opens but focus stays behind it, and Tab cycles through the page '
       + 'underneath while the popover covers it. Nothing traps, nothing restores.',
@@ -61,7 +65,10 @@ const S = [
 <p id="r2" role="status" aria-live="polite">Promo code SUMMER applied: GBP 10 off.</p>`,
   },
   {
-    id: 'infinite_scroll', journey: 'paging', sc: ['2.4.3', '4.1.3', '2.4.1'],
+    // 2.4.1 Bypass Blocks is about content repeated on MULTIPLE pages. A standalone
+    // fixture has nothing to repeat, so the criterion does not apply here and the
+    // control is right to abstain.
+    id: 'infinite_scroll', journey: 'paging', sc: ['2.4.3', '4.1.3'],
     needsAt: ['keyboard', 'sr-nvda'],
     brokenNote: 'Results append on scroll with no announcement and no way to reach anything '
       + 'below the list — a keyboard user can never get past it to the footer.',
