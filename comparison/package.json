@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "compare": "node run.mjs",
-    "compare:smoke": "node run.mjs --suite smoke"
+    "compare:smoke": "node run.mjs --suite smoke",
+    "import:cognium": "node import-cognium.mjs"
   },
   "dependencies": {
     "accessibility-checker": "4.0.34",

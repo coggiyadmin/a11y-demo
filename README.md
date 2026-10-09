@@ -43,10 +43,12 @@ space-coverage.mjs   coverage against the whole space, not just WCAG
 
 ## Scanner comparison
 
-`comparison/` runs axe-core, Pa11y's HTML_CodeSniffer runner, IBM Equal Access
-and Lighthouse against one declared fixture suite, then normalizes their output
-against each case's expected WCAG criteria. It keeps unrelated findings separate,
-so a scanner does not receive credit merely for reporting something on the page.
+`comparison/` compares Cognium, axe-core, Pa11y's HTML_CodeSniffer runner,
+IBM Equal Access and Lighthouse against one declared fixture suite, then normalizes
+their output against each case's expected WCAG criteria. It keeps unrelated findings
+separate, so a scanner does not receive credit merely for reporting something on the
+page. Cognium is represented by a sanitized all-pages export; the other four tools run
+directly in the public harness.
 
 The committed snapshot is a reproducible point-in-time comparison, not a universal
 ranking. Run it with:

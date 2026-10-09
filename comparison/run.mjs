@@ -19,8 +19,9 @@ import { startCorpusServer } from '../serve.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
-const ALL_TOOL_IDS = ['axe', 'pa11y-htmlcs', 'ibm', 'lighthouse'];
+const ALL_TOOL_IDS = ['cognium', 'axe', 'pa11y-htmlcs', 'ibm', 'lighthouse'];
 const TOOL_LABELS = {
+  cognium: 'Cognium',
   axe: 'axe-core',
   'pa11y-htmlcs': 'Pa11y / HTML_CodeSniffer',
   ibm: 'IBM Equal Access',
@@ -128,6 +129,26 @@ function errorRow(testCase, started, error) {
     duration_ms: Date.now() - started,
     error: message,
   };
+}
+
+function runCognium(cases) {
+  const exported = JSON.parse(fs.readFileSync(path.join(HERE, 'cognium-results.json'), 'utf8'));
+  assert.equal(exported.schema_version, 1);
+  assert.equal(exported.capture?.capture_misses, 0, 'Cognium export has incomplete capture dependencies');
+  assert.equal(exported.capture?.run_errors, 0, 'Cognium export has run errors');
+  const rowById = new Map(exported.cases.map((row) => [row.id, row]));
+  const rows = cases.map((testCase) => {
+    const source = rowById.get(testCase.id);
+    assert.ok(source, `Cognium export has no row for ${testCase.id}`);
+    assert.equal(source.path, testCase.path, `Cognium path differs for ${testCase.id}`);
+    const row = rowFor(testCase, Date.now(), source.findings, source.manual_review_items, {
+      duration_ms: null,
+      imported: true,
+    });
+    assert.deepEqual(row.found_criteria, source.found_criteria);
+    return row;
+  });
+  return { rows, exported };
 }
 
 async function loadPage(page, url, testCase) {
@@ -388,9 +409,13 @@ function renderReport(snapshot) {
     lines.push(`| ${tool.label} ${tool.version} | ${s.tp_pages_with_target_findings}/${s.tp_cases} (${percent(s.tp_pages_with_target_findings, s.tp_cases)}) | ${s.safe_pages_without_target_findings}/${s.safe_cases} (${percent(s.safe_pages_without_target_findings, s.safe_cases)}) | ${s.expected_criteria_matched}/${s.expected_criteria} (${percent(s.expected_criteria_matched, s.expected_criteria)}) | ${s.errors} |`);
   }
   lines.push('', 'Expected-criterion matching is conservative: it only credits findings whose tool metadata maps to a WCAG success criterion. A tool can flag a page while still receiving no criterion credit when its public result does not expose that mapping.', '');
+  if (snapshot.tools.cognium) {
+    lines.push('Cognium uses the committed sanitized all-pages export for this exact fixture suite. The other tools are executed directly by this harness.', '');
+  }
 
   lines.push('## What this snapshot shows', '');
-  lines.push(`- The union of all four tools detected a target criterion on ${unionHits.length}/${tpCaseIds.length} known-defect pages (${percent(unionHits.length, tpCaseIds.length)}). ${commonMisses.length} were missed by every tool in the default page-load configuration.`);
+  const comparedTools = snapshot.tool_order.length === 1 ? 'the selected tool' : `all ${snapshot.tool_order.length} tools`;
+  lines.push(`- The union of ${comparedTools} detected a target criterion on ${unionHits.length}/${tpCaseIds.length} known-defect pages (${percent(unionHits.length, tpCaseIds.length)}). ${commonMisses.length} were missed by every tool in the default page-load configuration.`);
   lines.push(`- The largest target-page count was ${leadingCount}/${tpCaseIds.length}, from ${leaders.map((id) => snapshot.tools[id].label).join(' and ')}.`);
   for (const id of snapshot.tool_order) {
     const unique = uniqueHits.get(id);
@@ -425,9 +450,11 @@ function renderReport(snapshot) {
   }
 
   lines.push('## Interpretation limits', '',
-    '- The suite is intentionally representative, not the full corpus. Use `--suite all` for all definite broken and corrected browser fixtures.',
+    '- The suite is intentionally representative, not the full corpus. Use `--suite all --tools axe,pa11y-htmlcs,ibm,lighthouse` for all definite broken and corrected browser fixtures supported directly by this public harness.',
     '- Target-page detection is coarser than criterion-level recall. The JSON result retains rule IDs, mapped criteria and per-page counts for deeper analysis.',
     '- Dynamic states, complete journeys, display conditions, keyboard behavior, user tasks and assisted-technology behavior need drivers or people; a default page-load scan cannot settle them.',
+    ...(snapshot.tools.cognium ? ['- The public harness consumes a sanitized Cognium export; it does not package or invoke the Cognium runtime.'] : []),
+    '- Review-needed counts preserve tool-native unresolved output and are not directly comparable across tools.',
     '- Lighthouse uses axe-derived accessibility audits, so it is a product-level configuration comparison, not an independent rules engine.',
     '- Durations are retained for diagnostics only and are not a performance ranking.',
     '');
@@ -464,6 +491,7 @@ const baseUrl = `http://127.0.0.1:${port}`;
 const executablePath = chromium.executablePath();
 
 const runners = {
+  cognium: runCognium,
   axe: runAxe,
   'pa11y-htmlcs': runPa11y,
   ibm: runIbm,
@@ -480,10 +508,19 @@ const tools = {};
 try {
   for (const id of selectedToolIds) {
     console.log(`\n${TOOL_LABELS[id]}: ${selectedCases.length} pages`);
-    const rows = await runners[id](selectedCases, baseUrl, executablePath);
+    const result = await runners[id](selectedCases, baseUrl, executablePath);
+    const rows = id === 'cognium' ? result.rows : result;
     tools[id] = {
       label: TOOL_LABELS[id],
-      version: packageVersion(versionPackages[id]),
+      version: id === 'cognium' ? result.exported.version : packageVersion(versionPackages[id]),
+      source: id === 'cognium' ? {
+        kind: 'sanitized-import',
+        generated: result.exported.generated,
+        view: result.exported.source_view,
+        capture: result.exported.capture,
+        environment: result.exported.environment,
+        versions: result.exported.versions,
+      } : { kind: 'live-local-scan' },
       summary: summarize(rows),
       cases: rows,
     };
@@ -514,6 +551,7 @@ const snapshot = {
     repository_content_uploaded: false,
     install_scripts_disabled_by_npmrc: true,
     ibm_scan_metrics_suppressed: true,
+    cognium_export_contains_raw_evidence: false,
   },
   tool_order: selectedToolIds,
   cases: selectedCases.map((testCase) => ({
