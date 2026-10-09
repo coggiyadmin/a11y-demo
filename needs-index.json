@@ -1,6 +1,6 @@
 {
   "description": "Functional-need index. For each need: the fixtures that exercise it and the criteria they touch. `shared_benefit` lists criteria serving more than one need — those are the highest-leverage fixes, and a criterion-first report cannot show them.",
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "needs": [
     {
       "id": "vision-blind",
@@ -509,9 +509,9 @@
       "label": "Deafblindness",
       "group": "multiple",
       "scenarios": 6,
-      "cases": 127,
-      "tp": 68,
-      "safe": 57,
+      "cases": 125,
+      "tp": 67,
+      "safe": 56,
       "criteria": [
         "1.1.1",
         "1.2.1",
@@ -528,7 +528,6 @@
         "2.4.3",
         "2.4.5",
         "3.1.1",
-        "3.1.2",
         "3.2.3",
         "3.2.4",
         "3.3.1",
@@ -653,8 +652,6 @@
         "scenarios/safe_data_dashboard.html",
         "scenarios/live_chat.html",
         "scenarios/safe_live_chat.html",
-        "scenarios/rtl_mixed_language.html",
-        "scenarios/safe_rtl_mixed_language.html",
         "scenarios/disabled_state.html",
         "scenarios/safe_disabled_state.html",
         "surfaces/email_table_layout.html",
@@ -1313,7 +1310,6 @@
         "1.4.11",
         "1.4.12",
         "1.4.3",
-        "1.4.4",
         "2.1.1",
         "2.4.3",
         "3.1.1",
@@ -2196,15 +2192,6 @@
       ]
     },
     {
-      "sc": "1.4.4",
-      "needs": [
-        "age-related",
-        "cognitive-dyslexia",
-        "cognitive-language",
-        "vision-low"
-      ]
-    },
-    {
       "sc": "3.1.1",
       "needs": [
         "cognitive-dyslexia",
@@ -2250,20 +2237,27 @@
       ]
     },
     {
-      "sc": "3.1.2",
-      "needs": [
-        "cognitive-dyslexia",
-        "cognitive-language",
-        "deafblind",
-        "vision-blind"
-      ]
-    },
-    {
       "sc": "2.4.11",
       "needs": [
         "cognitive-attention",
         "motor-dexterity",
         "vision-low"
+      ]
+    },
+    {
+      "sc": "1.4.4",
+      "needs": [
+        "age-related",
+        "cognitive-dyslexia",
+        "vision-low"
+      ]
+    },
+    {
+      "sc": "3.1.2",
+      "needs": [
+        "cognitive-dyslexia",
+        "cognitive-language",
+        "vision-blind"
       ]
     },
     {

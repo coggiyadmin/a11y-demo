@@ -1,7 +1,7 @@
 {
   "description": "One journey across many UI states. Holding the journey constant makes any difference attributable to the state. Includes states a crawler cannot reach by following links — timed-out, permission-denied, offline.",
   "journey": "form-lifecycle",
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "counts": {
     "states": 10,
     "cases": 20

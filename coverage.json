@@ -295,8 +295,8 @@
     "act_failed": 12,
     "act_passed": 9,
     "act_inapplicable": 9,
-    "local_tp": "static/viewport_no_zoom.html scenarios/text_spacing.html",
-    "local_safe": "static/safe_viewport.html scenarios/safe_text_spacing.html",
+    "local_tp": "static/viewport_no_zoom.html",
+    "local_safe": "static/safe_viewport.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -955,8 +955,8 @@
     "act_failed": 13,
     "act_passed": 7,
     "act_inapplicable": 9,
-    "local_tp": "static/lang_missing.html scenarios/rtl_mixed_language.html",
-    "local_safe": "scenarios/safe_rtl_mixed_language.html",
+    "local_tp": "static/lang_missing.html",
+    "local_safe": "",
     "ground_truth": "ACT + local"
   },
   {

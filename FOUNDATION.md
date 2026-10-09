@@ -123,7 +123,7 @@ directory of snippets.
 1. Should Tier R vendor the ACT HTML, or fetch it at test time? Vendoring pins
    the corpus and survives upstream drift; fetching stays current. Pinning with a
    content digest is the usual answer for a corpus meant to be a regression gate.
-2. 45 criteria have neither ACT cases nor a local fixture. Many are genuinely
+2. 25 criteria have neither ACT cases nor a local fixture. Many are genuinely
    not machine-testable (1.2.x media quality, 3.3.x error-message usefulness).
    Someone should mark which are *manual-only by nature* versus *not yet
    automated*, because reporting them as uncovered conflates the two.

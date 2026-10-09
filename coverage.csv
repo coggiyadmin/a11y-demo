@@ -18,7 +18,7 @@ sc,name,level,since,principle,guideline,act_rules,act_failed,act_passed,act_inap
 1.4.1,Use of Color,A,2.0,Perceivable,1.4 Distinguishable,0,0,0,0,color-vision/error_color_only.html color-vision/status_color_only.html color-vision/link_color_only.html color-vision/chart_series_color_only.html color-vision/selection_color_only.html color-vision/disabled_state.html color-vision/required_color_only.html scenarios/forced_colors.html scenarios/disabled_state.html surfaces/email_contrast_darkmode.html,color-vision/safe_error_color_only.html color-vision/safe_status_color_only.html color-vision/safe_link_color_only.html color-vision/safe_chart_series_color_only.html color-vision/safe_selection_color_only.html color-vision/safe_disabled_state.html color-vision/safe_required_color_only.html scenarios/safe_forced_colors.html scenarios/safe_disabled_state.html surfaces/safe_email_contrast_darkmode.html,local only
 1.4.2,Audio Control,A,2.0,Perceivable,1.4 Distinguishable,1,2,3,3,media/autoplay_no_control.html,media/safe_autoplay_no_control.html,ACT + local
 1.4.3,Contrast (Minimum),AA,2.0,Perceivable,1.4 Distinguishable,2,24,23,22,color-vision/placeholder_contrast.html surfaces/email_contrast_darkmode.html,color-vision/safe_placeholder_contrast.html surfaces/safe_email_contrast_darkmode.html,ACT + local
-1.4.4,Resize Text,AA,2.0,Perceivable,1.4 Distinguishable,2,12,9,9,static/viewport_no_zoom.html scenarios/text_spacing.html,static/safe_viewport.html scenarios/safe_text_spacing.html,ACT + local
+1.4.4,Resize Text,AA,2.0,Perceivable,1.4 Distinguishable,2,12,9,9,static/viewport_no_zoom.html,static/safe_viewport.html,ACT + local
 1.4.5,Images of Text,AA,2.0,Perceivable,1.4 Distinguishable,1,5,8,2,,,ACT
 1.4.6,Contrast (Enhanced),AAA,2.0,Perceivable,1.4 Distinguishable,2,24,23,22,,,ACT
 1.4.7,Low or No Background Audio,AAA,2.0,Perceivable,1.4 Distinguishable,0,0,0,0,,,NONE
@@ -62,7 +62,7 @@ sc,name,level,since,principle,guideline,act_rules,act_failed,act_passed,act_inap
 2.5.6,Concurrent Input Mechanisms,AAA,2.1,Operable,2.5 Input Modalities,0,0,0,0,,,NONE
 2.5.7,Dragging Movements,AA,2.2,Operable,2.5 Input Modalities,0,0,0,0,scenarios/dragging_required.html,scenarios/safe_dragging_required.html,local only
 2.5.8,Target Size (Minimum),AA,2.2,Operable,2.5 Input Modalities,0,0,0,0,scenarios/touch_targets.html,scenarios/safe_touch_targets.html,local only
-3.1.1,Language of Page,A,2.0,Understandable,3.1 Readable,3,13,7,9,static/lang_missing.html scenarios/rtl_mixed_language.html,scenarios/safe_rtl_mixed_language.html,ACT + local
+3.1.1,Language of Page,A,2.0,Understandable,3.1 Readable,3,13,7,9,static/lang_missing.html,,ACT + local
 3.1.2,Language of Parts,AA,2.0,Understandable,3.1 Readable,2,13,10,10,scenarios/rtl_mixed_language.html,scenarios/safe_rtl_mixed_language.html,ACT + local
 3.1.3,Unusual Words,AAA,2.0,Understandable,3.1 Readable,0,0,0,0,,,NONE
 3.1.4,Abbreviations,AAA,2.0,Understandable,3.1 Readable,0,0,0,0,,,NONE

@@ -1,11 +1,11 @@
 {
-  "description": "Coverage of this corpus against the enumerated test space. Deliberately unflattering: the denominator is the real space, not the part that happens to be covered.",
-  "generated": "2026-10-08",
-  "cases": 185,
+  "description": "Representation of the enumerated test space. A represented value is named by at least one fixture; this does not mean the method or AT pairing was executed or verified.",
+  "generated": "2026-10-09",
+  "cases": 195,
   "dimensions": [
     {
       "dimension": "surfaces",
-      "covered": 7,
+      "represented": 7,
       "total": 18,
       "missing": [
         "ios",
@@ -19,45 +19,59 @@
         "hardware",
         "immersive",
         "support"
-      ]
+      ],
+      "note": "represented means a manifest names the value; it does not imply execution or verification"
     },
     {
       "dimension": "journeys",
-      "covered": 25,
+      "represented": 25,
       "total": 25,
-      "missing": []
+      "missing": [],
+      "note": "represented means a manifest names the value; it does not imply execution or verification"
     },
     {
       "dimension": "ui-states",
-      "covered": 12,
+      "represented": 12,
       "total": 12,
-      "missing": []
+      "missing": [],
+      "note": "represented means a manifest names the value; it does not imply execution or verification"
     },
     {
       "dimension": "user-needs",
-      "covered": 23,
+      "represented": 23,
       "total": 23,
-      "missing": []
+      "missing": [],
+      "note": "represented means a manifest names the value; it does not imply execution or verification"
     },
     {
       "dimension": "input-at",
-      "covered": 12,
+      "represented": 12,
       "total": 12,
-      "missing": []
+      "missing": [],
+      "note": "represented means a manifest names the value; it does not imply execution or verification"
     },
     {
       "dimension": "methods",
-      "covered": 14,
+      "represented": 14,
       "total": 15,
       "missing": [
         "regression"
-      ]
+      ],
+      "note": "represented means a manifest names the value; it does not imply execution or verification"
     }
   ],
   "combinations": {
+    "kind": "applicability candidates, not a conformance denominator",
+    "axes": [
+      "surfaces",
+      "journeys",
+      "ui-states",
+      "input-at"
+    ],
     "formula": "surface x journey x ui-state x input",
     "total": 64800,
-    "triples_touched": 40
+    "triples_touched": 40,
+    "note": "User needs and standards are mapped attributes, not independent Cartesian axes."
   },
   "not_automatable": [
     "guided-manual",
