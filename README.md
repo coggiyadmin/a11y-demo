@@ -75,6 +75,41 @@ null there, so script cannot see in — but the content is still in the
 accessibility tree and still reaches users, and real design systems ship closed
 roots. It is the hardest row and a fair one.
 
+## Display conditions are a test axis
+
+A scan fixes one display condition — viewport, colour scheme, scale, motion
+preference — and reports as if the answer generalised. It does not. Several
+criteria are **defined** against a condition a single config cannot create:
+1.4.10 Reflow is specified at 320px, 1.3.4 needs portrait, 2.5.8 is about touch,
+1.4.1 and 1.4.11 need forced colours.
+
+```sh
+docker compose run --rm configs     # six conditions, reports only what CHANGES
+```
+
+`check/configs.mjs` measures the same pages under six conditions and prints only
+the observations that differ. A fixture that reads the same everywhere is
+condition-independent; one that flips is **undetectable at every condition except
+where it flips**.
+
+The sharpest result so far:
+
+```
+reduced-motion
+   static/anim_no_reduced_motion.html    running_animations: 2 → 0
+   static/safe_anim_reduced_motion.html  running_animations: 1 → 0
+```
+
+With `prefers-reduced-motion: reduce` active, a page whose defect is an unguarded
+infinite animation reports **zero running animations** — identical to the page
+that guards it correctly. Any checker running in that state cannot tell them
+apart, so 2.2.2 and 2.3.x are unobservable, not merely unchecked.
+
+It also fails loudly rather than quietly: a condition that could not load its
+pages aborts the comparison. An earlier run had three of six conditions dead with
+`ERR_NAME_NOT_RESOLVED` and reported their silence as "nothing changes" — which
+is the same shape of error as counting a control that examined nothing as a pass.
+
 ## Functional needs are the primary index
 
 Every rule maps to the functional needs it serves

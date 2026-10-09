@@ -33,3 +33,20 @@ services:
     command: >
       sh -c "npm --prefix check install --no-audit --no-fund --silent &&
              node check/reference.mjs"
+
+  # docker compose run --rm configs
+  # Same pages under six display conditions; reports only what changes between them.
+  # Fails loudly if a condition could not load its pages — silence is not success.
+  configs:
+    image: mcr.microsoft.com/playwright:v1.61.1-noble
+    depends_on:
+      corpus:
+        condition: service_healthy
+    working_dir: /work
+    volumes:
+      - .:/work
+    environment:
+      BASE_URL: http://corpus:8080
+    command: >
+      sh -c "npm --prefix check install --no-audit --no-fund --silent &&
+             node check/configs.mjs"

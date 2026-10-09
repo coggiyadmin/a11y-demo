@@ -303,6 +303,46 @@ T.standards = {
     + 'and surfaces, not as a single pass/fail badge.',
 };
 
+// ─────────────────────────────────────────── display conditions
+//
+// A scan fixes one condition and reports as if the answer generalised. It does not:
+// several criteria are DEFINED against a condition a single config cannot create.
+// 1.4.10 Reflow is specified at 320px. 1.3.4 Orientation needs portrait. 2.5.8 is
+// about touch. And a driver that runs with prefers-reduced-motion forced on cannot
+// observe 2.2.2 or 2.3.x at all, because the motion that is the defect never plays.
+T['display-conditions'] = {
+  note: 'The display condition is a test axis, not a detail. Measured with '
+    + 'check/configs.mjs, which reports only what CHANGES between conditions — a '
+    + 'fixture that reads the same everywhere is condition-independent; one that '
+    + 'flips is undetectable at every condition except where it flips.',
+  values: [
+    { id: 'default-desktop', viewport: '1280x900', scale: 1, scheme: 'light',
+      motion: 'no-preference', note: 'what a typical scan uses' },
+    { id: 'reduced-motion', viewport: '1280x900', scale: 1, scheme: 'light',
+      motion: 'reduce',
+      note: 'MEASURED: with motion reduced, an unguarded infinite animation reports '
+        + '0 running animations — identical to a correctly guarded one. 2.2.2 and '
+        + '2.3.x become unobservable.' },
+    { id: 'mobile-portrait', viewport: '375x667', scale: 2, scheme: 'light',
+      motion: 'no-preference', touch: true,
+      note: 'MEASURED: orientation-locked content drops from 9 visible elements to 4' },
+    { id: 'reflow-320', viewport: '320x900', scale: 1, scheme: 'light',
+      motion: 'no-preference', note: '1.4.10 Reflow is specified at this width' },
+    { id: 'dark', viewport: '1280x900', scale: 1, scheme: 'dark', motion: 'no-preference' },
+    { id: 'forced-colors', viewport: '1280x900', scale: 1, scheme: 'light',
+      motion: 'no-preference', forcedColors: 'active',
+      note: 'Windows high contrast; author colours are discarded' },
+  ],
+  criteria_that_need_a_specific_condition: {
+    '1.4.10': 'reflow-320', '1.3.4': 'mobile-portrait', '2.5.8': 'mobile-portrait',
+    '1.4.1': 'forced-colors', '1.4.11': 'forced-colors',
+    '2.2.2': 'any condition with motion NOT reduced',
+    '2.3.1': 'any condition with motion NOT reduced',
+    '2.3.2': 'any condition with motion NOT reduced',
+    '2.3.3': 'any condition with motion NOT reduced',
+  },
+};
+
 // ─────────────────────────────────────────── criterion -> functional needs
 //
 // THE primary mapping. Attach every rule to the needs it serves, because one

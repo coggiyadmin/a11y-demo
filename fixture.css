@@ -20,6 +20,11 @@
   --bg: #fff;
 }
 * { box-sizing: border-box; }
+/* Long unbroken tokens — the fixture ids are things like
+   authoring_generates_bad_markup — overflow their box at 320px without the box
+   itself being wide, so the document scrolls while every element measures under
+   the viewport. overflow-wrap is what actually fixes 1.4.10 here. */
+body, h1, h2, h3, p, li, td, th, code { overflow-wrap: anywhere; }
 body {
   font: 100%/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
   color: var(--ink);
@@ -32,6 +37,18 @@ h1 { font-size: clamp(1.4rem, 1.1rem + 1.5vw, 2rem); line-height: 1.25; }
 h2 { font-size: clamp(1.1rem, 1rem + 0.6vw, 1.4rem); margin-top: 2rem; }
 p, li { max-width: 70ch; }
 img { max-width: 100%; height: auto; }
+
+/* 1.4.10 Reflow: wide content scrolls inside its OWN container, never the page.
+   Measured at 320px, the pre blocks in surfaces/ pushed the document 239px wide —
+   a reflow defect in fixtures that declare no such thing, and on two of them a
+   negative control. Scaffolding must not generate defects, and that rule only
+   holds at every display condition, not the one it happened to be written at. */
+pre { overflow-x: auto; max-width: 100%; }
+/* and the code inside it wraps rather than scrolls: at 320px a scroll container
+   still left a 377px child, and wrapping is the better answer for 1.4.10 anyway —
+   no horizontal scrolling at all beats scrolling in a sub-region. */
+pre code { white-space: pre-wrap; word-break: break-word; display: block; max-width: 100%; }
+table { display: block; overflow-x: auto; max-width: 100%; }
 
 /* 2.5.8: 24x24 minimum with spacing, for every interactive thing including the
    450 links in capture/link_heavy.html — which otherwise trips a target-size
