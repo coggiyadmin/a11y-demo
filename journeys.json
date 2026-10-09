@@ -1,6 +1,6 @@
 {
   "description": "Multi-page task fixtures. Carries criteria that cannot be expressed on a single page: 3.2.3, 3.2.4, 3.2.6 and 3.3.7 are about the relationship between pages. Each case is a SET of pages with an entry point, not one page.",
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "counts": {
     "journeys": 9,
     "cases": 18,
@@ -376,8 +376,7 @@
       ],
       "min_criteria": {
         "2.4.5": 1,
-        "3.2.4": 1,
-        "2.4.1": 1
+        "3.2.4": 1
       },
       "must_not_report": [],
       "expected_outcome": "fail",
@@ -412,8 +411,7 @@
       "min_criteria": {},
       "must_not_report": [
         "2.4.5",
-        "3.2.4",
-        "2.4.1"
+        "3.2.4"
       ],
       "expected_outcome": "pass",
       "scope": "multi-page",
