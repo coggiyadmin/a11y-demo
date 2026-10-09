@@ -6,6 +6,7 @@
 // indexing only by success criterion hides that a single fix moves four groups.
 import fs from 'node:fs';
 import path from 'node:path';
+import { loadFixtureCases } from './fixture-families.mjs';
 
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
 const needs = JSON.parse(fs.readFileSync(path.join(ROOT, 'taxonomy/user-needs.json'), 'utf8')).values;
@@ -13,9 +14,7 @@ const critNeeds = Object.fromEntries(
   JSON.parse(fs.readFileSync(path.join(ROOT, 'taxonomy/criterion-needs.json'), 'utf8'))
     .values.map((v) => [v.sc, v.needs]));
 
-const cases = ['catalog.json', 'delivery.json', 'patterns.json', 'color-vision.json', 'media.json', 'ui-states.json', 'journeys.json', 'scenarios.json', 'surfaces.json', 'guided.json', 'flash.json']
-  .map((f) => path.join(ROOT, f)).filter(fs.existsSync)
-  .flatMap((f) => JSON.parse(fs.readFileSync(f, 'utf8')).cases)
+const cases = loadFixtureCases(ROOT)
   // A case inherits needs from the criteria it exercises. Hand-annotating every
   // fixture would drift; the rule-level mapping is the single source of truth.
   .map((c) => {

@@ -32,7 +32,8 @@ services:
       BASE_URL: http://corpus:8080
     command: >
       sh -c "npm --prefix check install --no-audit --no-fund --silent &&
-             node check/reference.mjs"
+             node check/reference.mjs &&
+             node check/scenario-interactions.mjs"
 
   # docker compose run --rm configs
   # Same pages under six display conditions; reports only what changes between them.

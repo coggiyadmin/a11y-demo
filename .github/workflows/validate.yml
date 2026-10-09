@@ -1,0 +1,29 @@
+name: Validate corpus
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check repository and fixture contracts
+        run: node --test check/*.test.mjs
+      - name: Regenerate fixture manifests and pages
+        run: |
+          for generator in build.mjs delivery.mjs patterns.mjs taxonomy.mjs journeys.mjs scenarios.mjs media.mjs flash.mjs color-vision.mjs ui-states.mjs surfaces.mjs guided.mjs needs-index.mjs coverage.mjs space-coverage.mjs; do
+            node "$generator"
+          done
+      - name: Check generated files are committed
+        run: git diff --exit-code -I '"generated":'

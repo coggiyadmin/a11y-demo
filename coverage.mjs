@@ -5,18 +5,13 @@
 // usage: node coverage.mjs [--act path/to/testcases.json]
 import fs from 'node:fs';
 import path from 'node:path';
+import { loadFixtureCases } from './fixture-families.mjs';
 
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
 const arg = (n, d) => { const i = process.argv.indexOf(n); return i > -1 ? process.argv[i + 1] : d; };
 
 const wcag = JSON.parse(fs.readFileSync(path.join(ROOT, 'wcag/criteria.json'), 'utf8')).criteria;
-const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog.json'), 'utf8'));
-
-// every local case family
-const EXTRA = ['delivery.json', 'patterns.json', 'color-vision.json', 'media.json', 'ui-states.json', 'journeys.json', 'scenarios.json', 'surfaces.json', 'guided.json', 'flash.json']
-  .map((f) => path.join(ROOT, f)).filter((f) => fs.existsSync(f))
-  .flatMap((f) => JSON.parse(fs.readFileSync(f, 'utf8')).cases);
-catalog.cases = [...catalog.cases, ...EXTRA];
+const cases = loadFixtureCases(ROOT);
 
 const actPath = arg('--act', path.join(ROOT, 'act/testcases.json'));
 let act = [];
@@ -37,7 +32,7 @@ for (const t of act) {
 
 const rows = wcag.filter((c) => c.in_2_2).map((c) => {
   const a = bySC[c.num];
-  const fx = catalog.cases.filter((f) =>
+  const fx = cases.filter((f) =>
     (f.mode === 'tp' ? Object.keys(f.min_criteria) : f.must_not_report).includes(c.num));
   const tp = fx.filter((f) => f.mode === 'tp');
   const safe = fx.filter((f) => f.mode === 'safe');
@@ -68,4 +63,4 @@ const t = rows.reduce((a, r) => { a[r.ground_truth] = (a[r.ground_truth] || 0) +
 console.log(`WCAG 2.2: ${rows.length} live criteria`);
 for (const [k, v] of Object.entries(t).sort((a, b) => b[1] - a[1])) console.log(`  ${k.padEnd(14)} ${v}`);
 console.log(`\nACT cases available: ${rows.reduce((n, r) => n + r.act_failed + r.act_passed + r.act_inapplicable, 0)}`);
-console.log(`local fixtures: ${catalog.cases.length} (${catalog.cases.filter((c) => c.mode === 'tp').length} tp, ${catalog.cases.filter((c) => c.mode === 'safe').length} negative controls)`);
+console.log(`local fixtures: ${cases.length} (${cases.filter((c) => c.mode === 'tp').length} tp, ${cases.filter((c) => c.mode === 'safe').length} negative controls, ${cases.filter((c) => c.mode === 'guided').length} guided checks)`);

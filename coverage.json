@@ -175,9 +175,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "scenarios/meaningful_sequence.html",
+    "local_safe": "scenarios/safe_meaningful_sequence.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "1.3.3",
@@ -295,8 +295,8 @@
     "act_failed": 12,
     "act_passed": 9,
     "act_inapplicable": 9,
-    "local_tp": "static/viewport_no_zoom.html scenarios/text_spacing.html",
-    "local_safe": "static/safe_viewport.html scenarios/safe_text_spacing.html",
+    "local_tp": "static/viewport_no_zoom.html",
+    "local_safe": "static/safe_viewport.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -460,9 +460,9 @@
     "act_failed": 5,
     "act_passed": 7,
     "act_inapplicable": 4,
-    "local_tp": "scenarios/overlay_focus_trap.html",
-    "local_safe": "scenarios/safe_overlay_focus_trap.html",
-    "ground_truth": "ACT + local"
+    "local_tp": "",
+    "local_safe": "",
+    "ground_truth": "ACT"
   },
   {
     "sc": "2.1.3",
@@ -640,9 +640,9 @@
     "act_failed": 1,
     "act_passed": 12,
     "act_inapplicable": 1,
-    "local_tp": "journeys/navigate/broken/index.html scenarios/infinite_scroll.html",
-    "local_safe": "journeys/navigate/correct/index.html scenarios/safe_infinite_scroll.html",
-    "ground_truth": "ACT + local"
+    "local_tp": "",
+    "local_safe": "",
+    "ground_truth": "ACT"
   },
   {
     "sc": "2.4.2",
@@ -850,9 +850,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "scenarios/pointer_cancellation.html",
+    "local_safe": "scenarios/safe_pointer_cancellation.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.5.3",
@@ -955,8 +955,8 @@
     "act_failed": 13,
     "act_passed": 7,
     "act_inapplicable": 9,
-    "local_tp": "static/lang_missing.html scenarios/rtl_mixed_language.html",
-    "local_safe": "scenarios/safe_rtl_mixed_language.html",
+    "local_tp": "static/lang_missing.html",
+    "local_safe": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -1045,9 +1045,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "scenarios/change_on_focus.html",
+    "local_safe": "scenarios/safe_change_on_focus.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "3.2.2",
@@ -1060,9 +1060,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "scenarios/change_on_input.html",
+    "local_safe": "scenarios/safe_change_on_input.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "3.2.3",
@@ -1165,9 +1165,9 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "scenarios/error_suggestion.html",
+    "local_safe": "scenarios/safe_error_suggestion.html",
+    "ground_truth": "local only"
   },
   {
     "sc": "3.3.4",

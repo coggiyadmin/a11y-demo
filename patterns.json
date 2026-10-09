@@ -1,7 +1,7 @@
 {
   "description": "APG component patterns as correct/broken pairs. Custom widgets are where scanners are weakest and products actually break. The correct half is load-bearing: any scanner can flag everything, only an accurate one leaves APG-conformant markup alone.",
   "source": "https://www.w3.org/WAI/ARIA/apg/patterns/",
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "counts": {
     "patterns": 16,
     "cases": 32,

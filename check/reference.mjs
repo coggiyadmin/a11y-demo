@@ -13,16 +13,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
+import { loadFixtureCases } from '../fixture-families.mjs';
 
 const HERE = path.dirname(new URL(import.meta.url).pathname);
 const ROOT = path.resolve(HERE, '..');
 const BASE = process.env.BASE_URL || 'http://localhost:8080';
 
-const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog.json'), 'utf8'));
-const deliveryPath = path.join(ROOT, 'delivery.json');
-const delivery = fs.existsSync(deliveryPath)
-  ? JSON.parse(fs.readFileSync(deliveryPath, 'utf8')) : { cases: [] };
-const ALL = [...catalog.cases, ...delivery.cases];
+const ALL = loadFixtureCases(ROOT);
 
 /**
  * Walk the real tab order by pressing Tab and seeing where focus lands.
@@ -80,12 +77,14 @@ async function clientRenderedShare(browser, url) {
 }
 
 const results = [];
-const browser = await chromium.launch();
+const browser = await chromium.launch(process.env.PLAYWRIGHT_EXECUTABLE_PATH
+  ? { executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH }
+  : {});
 
 for (const c of ALL) {
   const url = `${BASE}/${c.path}`;
   const page = await browser.newPage();
-  const row = { id: c.id, mode: c.mode, path: c.path, url };
+  const row = { id: c.id, mode: c.mode, path: c.path, fixture_family: c.fixture_family };
   try {
     const resp = await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
     row.http = resp ? resp.status() : null;
@@ -108,8 +107,9 @@ for (const c of ALL) {
         && e.getAttribute('tabindex') === null).length;
     });
 
-    // Ground truth needs the page actually settled, so wait past short timers.
-    await page.waitForTimeout(1500);
+    // Only one fixture intentionally mounts after a timer. Avoid adding a 1.5s tax
+    // to every static, manual and journey case now that every family is measured.
+    await page.waitForTimeout(c.id === 'delivery-client_js_delayed' ? 1500 : 100);
 
     // Counted in the built DOM, which is the page a visitor actually meets.
     //
@@ -199,7 +199,6 @@ const out = {
     + 'These are facts about the pages, not judgements about any scanner. A scanner that '
     + 'reports fewer examined elements than tab_stops here has not examined the page.',
   browser: 'chromium via playwright (see docker-compose.yml for the pinned image)',
-  base_url: BASE,
   generated: new Date().toISOString(),
   cases: results,
 };

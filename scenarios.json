@@ -2,8 +2,8 @@
   "description": "Remaining scenario types at their honest unit. Several target an input mode rather than a criterion family: label_in_name is the defect speech control is uniquely blocked by, dragging_required the one switch access is.",
   "generated": "2026-10-09",
   "counts": {
-    "scenarios": 14,
-    "cases": 28
+    "scenarios": 19,
+    "cases": 38
   },
   "cases": [
     {
@@ -209,6 +209,64 @@
       ],
       "expected_outcome": "pass",
       "notes": "Named, described, and backed by the same figures as a table."
+    },
+    {
+      "id": "scenario-meaningful_sequence",
+      "mode": "tp",
+      "path": "scenarios/meaningful_sequence.html",
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "deafblind",
+        "cognitive-memory",
+        "cognitive-language"
+      ],
+      "min_criteria": {
+        "1.3.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "CSS makes the itinerary look chronological, but the DOM is in a different order. A screen reader encounters boarding before check-in and security."
+    },
+    {
+      "id": "scenario-safe_meaningful_sequence",
+      "mode": "safe",
+      "path": "scenarios/safe_meaningful_sequence.html",
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "vision-blind",
+        "deafblind",
+        "cognitive-memory",
+        "cognitive-language"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.3.2"
+      ],
+      "expected_outcome": "pass",
+      "notes": "The DOM and visual presentation use the same chronological sequence."
     },
     {
       "id": "scenario-live_chat",
@@ -659,6 +717,246 @@
       ],
       "expected_outcome": "pass",
       "notes": "At least 24x24 with spacing between targets."
+    },
+    {
+      "id": "scenario-pointer_cancellation",
+      "mode": "tp",
+      "path": "scenarios/pointer_cancellation.html",
+      "surface": "web",
+      "journey": "destructive",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "pointer",
+        "touch"
+      ],
+      "user_needs": [
+        "motor-tremor",
+        "motor-dexterity",
+        "age-related",
+        "temporary"
+      ],
+      "min_criteria": {
+        "2.5.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "The destructive action fires on pointer-down. Moving away before release cannot cancel an accidental press."
+    },
+    {
+      "id": "scenario-safe_pointer_cancellation",
+      "mode": "safe",
+      "path": "scenarios/safe_pointer_cancellation.html",
+      "surface": "web",
+      "journey": "destructive",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "pointer",
+        "touch"
+      ],
+      "user_needs": [
+        "motor-tremor",
+        "motor-dexterity",
+        "age-related",
+        "temporary"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.5.2"
+      ],
+      "expected_outcome": "pass",
+      "notes": "The action fires on click (after release on the same control), and an Undo control reverses an accidental activation."
+    },
+    {
+      "id": "scenario-change_on_focus",
+      "mode": "tp",
+      "path": "scenarios/change_on_focus.html",
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "cognitive-attention",
+        "cognitive-executive",
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {
+        "3.2.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Focusing the destination field immediately replaces the search panel with results. Keyboard and screen-reader users did not request the context change."
+    },
+    {
+      "id": "scenario-safe_change_on_focus",
+      "mode": "safe",
+      "path": "scenarios/safe_change_on_focus.html",
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "cognitive-attention",
+        "cognitive-executive",
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "3.2.1"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Focus only enters the field; an explicit button applies the search and changes the context."
+    },
+    {
+      "id": "scenario-change_on_input",
+      "mode": "tp",
+      "path": "scenarios/change_on_input.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "cognitive-attention",
+        "cognitive-executive",
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {
+        "3.2.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Choosing a destination immediately replaces the form with the next step, without warning or an explicit commit action."
+    },
+    {
+      "id": "scenario-safe_change_on_input",
+      "mode": "safe",
+      "path": "scenarios/safe_change_on_input.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "cognitive-attention",
+        "cognitive-executive",
+        "vision-blind",
+        "motor-dexterity"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "3.2.2"
+      ],
+      "expected_outcome": "pass",
+      "notes": "Changing the value does not change context; an Apply button advances the form when the user is ready."
+    },
+    {
+      "id": "scenario-error_suggestion",
+      "mode": "tp",
+      "path": "scenarios/error_suggestion.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "invalid",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "cognitive-language",
+        "cognitive-executive",
+        "cognitive-memory",
+        "vision-blind"
+      ],
+      "min_criteria": {
+        "3.3.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "The error is identified and associated with the field, but gives no known correction format or example."
+    },
+    {
+      "id": "scenario-safe_error_suggestion",
+      "mode": "safe",
+      "path": "scenarios/safe_error_suggestion.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "invalid",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "user_needs": [
+        "cognitive-language",
+        "cognitive-executive",
+        "cognitive-memory",
+        "vision-blind"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "3.3.3"
+      ],
+      "expected_outcome": "pass",
+      "notes": "The associated error explains the required format and gives a valid example."
     },
     {
       "id": "scenario-disabled_state",

@@ -1,0 +1,21 @@
+<!--
+  change_on_input — broken
+  WCAG: 3.2.2
+  journey: form-lifecycle
+  input/AT most affected: keyboard, sr-nvda
+  Choosing a destination immediately replaces the form with the next step, without warning or an explicit commit action.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>change_on_input — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>change_on_input — broken</h1>
+<p>Choosing a destination immediately replaces the form with the next step, without warning or an explicit commit action.</p><hr><section id="input-step-one"><label for="input-destination">Destination</label>
+<select id="input-destination" onchange="document.getElementById('input-step-one').hidden=true;document.getElementById('input-step-two').hidden=false">
+<option value="">Choose</option><option>Paris</option><option>Rome</option></select></section>
+<section id="input-step-two" hidden><h2>Choose dates</h2></section>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>
