@@ -1,7 +1,8 @@
-# Two services:
+# Core services:
 #   corpus   serves the fixtures over HTTP (what a scanner points at)
 #   browser  a pinned Playwright image that measures the SAME pages with a real
 #            engine, producing the reference numbers a scanner is judged against
+#   comparison runs four pinned scanners against an ephemeral local corpus
 #
 #   docker compose up -d corpus
 #   docker compose run --rm browser          # writes check/reference.json
@@ -51,3 +52,16 @@ services:
     command: >
       sh -c "npm --prefix check install --no-audit --no-fund --silent &&
              node check/configs.mjs"
+
+  # docker compose run --rm comparison
+  # Generates comparison/results.json and comparison/REPORT.md.
+  comparison:
+    image: mcr.microsoft.com/playwright:v1.61.1-noble
+    working_dir: /work
+    volumes:
+      - .:/work
+    environment:
+      PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
+    command: >
+      sh -c "npm --prefix comparison ci --silent &&
+             node comparison/run.mjs"
