@@ -67,11 +67,28 @@ const FIXTURES = [
 <div class="field" onclick="void 0"><span class="lbl">Return</span><div class="val">19 Oct</div></div>`,
   },
   {
+    dir: 'keyboard', file: 'safe_native_date_fields.html', expect: 'clean',
+    sc: ['2.1.1'], manual: [],
+    title: 'Date pickers using native inputs',
+    note: 'Negative control for div_date_fields.html. Both controls are named and keyboard reachable.',
+    body: `<p><label for="depart">Departure</label> <input id="depart" type="date" value="2026-10-12"></p>
+<p><label for="return">Return</label> <input id="return" type="date" value="2026-10-19"></p>`,
+  },
+  {
     dir: 'keyboard', file: 'div_travellers.html', expect: 'flag',
     sc: ['2.1.1'], manual: ['#12'],
     title: 'Travellers and class, nested clickable divs',
     note: 'A disclosure built from nested divs, none of them focusable.',
     body: `<div class="field" onclick="void 0"><div><div class="val">1 Traveller, Economy</div></div></div>`,
+  },
+  {
+    dir: 'keyboard', file: 'safe_native_travellers.html', expect: 'clean',
+    sc: ['2.1.1'], manual: [],
+    title: 'Travellers and class disclosure using a button',
+    note: 'Negative control for div_travellers.html. A native button exposes a keyboard-operable disclosure.',
+    body: `<button type="button" aria-expanded="false" aria-controls="traveller-options"
+  onclick="var p=document.getElementById('traveller-options');var open=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',String(!open));p.hidden=open">1 Traveller, Economy</button>
+<div id="traveller-options" hidden><p>Traveller and cabin options.</p></div>`,
   },
   {
     dir: 'keyboard', file: 'div_checkbox.html', expect: 'flag',
@@ -98,6 +115,17 @@ const FIXTURES = [
     body: `<div class="card" onclick="void 0">Flexible</div>
 <div class="card" onclick="void 0">Standard</div>
 <div class="card" onclick="void 0">Saver</div>`,
+  },
+  {
+    dir: 'keyboard', file: 'safe_native_fare_options.html', expect: 'clean',
+    sc: ['2.1.1'], manual: [],
+    title: 'Selectable fare options using radio buttons',
+    note: 'Negative control for div_fare_cards.html. The option group uses native keyboard-operable controls.',
+    body: `<fieldset><legend>Fare type</legend>
+  <label><input type="radio" name="fare" value="flexible"> Flexible</label>
+  <label><input type="radio" name="fare" value="standard" checked> Standard</label>
+  <label><input type="radio" name="fare" value="saver"> Saver</label>
+</fieldset>`,
   },
   {
     dir: 'keyboard', file: 'role_tab_no_tablist.html', expect: 'flag',
@@ -141,6 +169,13 @@ const FIXTURES = [
 <button class="nofocus">One</button> <button class="nofocus">Two</button>`,
   },
   {
+    dir: 'keyboard', file: 'safe_focus_visible.html', expect: 'clean',
+    sc: ['2.4.7'], manual: [],
+    title: 'Visible keyboard focus indicator',
+    note: 'Negative control for focus_not_visible.html. The shared fixture styling preserves a visible outline.',
+    body: `<button>One</button> <button>Two</button>`,
+  },
+  {
     dir: 'keyboard', file: 'focus_obscured.html', expect: 'flag',
     sc: ['2.4.11'], manual: ['#21'],
     title: 'Focused control hidden behind a sticky bar',
@@ -148,6 +183,20 @@ const FIXTURES = [
     body: `<style>.sticky{position:fixed;bottom:0;left:0;right:0;height:90px;background:#222;color:#fff}</style>
 ${Array.from({ length: 12 }, (_, i) => `<p><button>Control ${i + 1}</button></p>`).join('\n')}
 <div class="sticky">Sticky footer that covers the last control</div>`,
+  },
+  {
+    dir: 'keyboard', file: 'safe_focus_not_obscured.html', expect: 'clean',
+    sc: ['2.4.11'], manual: [],
+    title: 'Focused controls remain visible above a sticky bar',
+    note: 'Negative control for focus_obscured.html. Scroll spacing keeps the focused control above the overlay.',
+    body: `<style>
+html{scroll-padding-bottom:110px}
+body{padding-bottom:110px}
+button{scroll-margin-bottom:110px}
+.sticky{position:fixed;bottom:0;left:0;right:0;height:90px;background:#222;color:#fff}
+</style>
+${Array.from({ length: 12 }, (_, i) => `<p><button>Control ${i + 1}</button></p>`).join('\n')}
+<div class="sticky">Sticky footer with reserved focus space</div>`,
   },
 
   // ───────────────────────── capture: can the scanner even see the page?

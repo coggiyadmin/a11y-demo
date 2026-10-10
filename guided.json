@@ -1,7 +1,7 @@
 {
   "description": "Guided manual, AT and user-testing checks. A corpus cannot perform these; it carries the question, the fixture and an evidence slot so the requirement is visible and trackable rather than silently missing from a coverage figure.",
   "note": "All cases expect cannot-tell. A scanner reporting pass on these is overclaiming.",
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "counts": {
     "checks": 9,
     "by_method": {

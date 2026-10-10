@@ -446,7 +446,7 @@
     "act_passed": 6,
     "act_inapplicable": 16,
     "local_tp": "keyboard/div_button.html keyboard/div_text_field.html keyboard/div_date_fields.html keyboard/div_travellers.html keyboard/div_checkbox.html keyboard/div_fare_cards.html keyboard/role_tab_no_tablist.html capture/client_mounted.html delivery/server_html.html delivery/client_js.html delivery/client_js_delayed.html delivery/iframe_same_origin.html delivery/iframe_srcdoc.html delivery/iframe_sandboxed.html delivery/iframe_nested.html delivery/shadow_dom_open.html delivery/shadow_dom_closed.html delivery/web_component.html delivery/progressive_enhancement.html patterns/disclosure.html patterns/tabs.html patterns/dialog.html patterns/combobox.html patterns/menu.html patterns/switch.html patterns/slider.html patterns/listbox.html journeys/signin/broken/index.html journeys/consent/broken/index.html surfaces/chatbot_transcript.html",
-    "local_safe": "keyboard/safe_native_button.html keyboard/safe_native_text_field.html keyboard/safe_native_checkbox.html keyboard/safe_roving_tabindex.html keyboard/safe_custom_button.html capture/safe_server_rendered.html patterns/safe_disclosure.html patterns/safe_tabs.html patterns/safe_dialog.html patterns/safe_combobox.html patterns/safe_menu.html patterns/safe_switch.html patterns/safe_slider.html patterns/safe_listbox.html journeys/signin/correct/index.html journeys/consent/correct/index.html surfaces/safe_chatbot_transcript.html",
+    "local_safe": "keyboard/safe_native_button.html keyboard/safe_native_text_field.html keyboard/safe_native_date_fields.html keyboard/safe_native_travellers.html keyboard/safe_native_checkbox.html keyboard/safe_native_fare_options.html keyboard/safe_roving_tabindex.html keyboard/safe_custom_button.html capture/safe_server_rendered.html patterns/safe_disclosure.html patterns/safe_tabs.html patterns/safe_dialog.html patterns/safe_combobox.html patterns/safe_menu.html patterns/safe_switch.html patterns/safe_slider.html patterns/safe_listbox.html journeys/signin/correct/index.html journeys/consent/correct/index.html surfaces/safe_chatbot_transcript.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -731,7 +731,7 @@
     "act_passed": 5,
     "act_inapplicable": 3,
     "local_tp": "keyboard/focus_not_visible.html",
-    "local_safe": "",
+    "local_safe": "keyboard/safe_focus_visible.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -791,7 +791,7 @@
     "act_passed": 0,
     "act_inapplicable": 0,
     "local_tp": "keyboard/focus_obscured.html",
-    "local_safe": "",
+    "local_safe": "keyboard/safe_focus_not_obscured.html",
     "ground_truth": "local only"
   },
   {
