@@ -1,0 +1,40 @@
+<!--
+  Focused controls remain visible above a sticky bar
+  WCAG: 2.4.11
+  Expectation: NO control should report this (negative control)
+  Negative control for focus_obscured.html. Scroll spacing keeps the focused control above the overlay.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Focused controls remain visible above a sticky bar</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Focused controls remain visible above a sticky bar</h1>
+<style>
+html{scroll-padding-bottom:110px}
+body{padding-bottom:110px}
+button{scroll-margin-bottom:110px}
+.sticky{position:fixed;bottom:0;left:0;right:0;height:90px;background:#222;color:#fff}
+</style>
+<p><button>Control 1</button></p>
+<p><button>Control 2</button></p>
+<p><button>Control 3</button></p>
+<p><button>Control 4</button></p>
+<p><button>Control 5</button></p>
+<p><button>Control 6</button></p>
+<p><button>Control 7</button></p>
+<p><button>Control 8</button></p>
+<p><button>Control 9</button></p>
+<p><button>Control 10</button></p>
+<p><button>Control 11</button></p>
+<p><button>Control 12</button></p>
+<div class="sticky">Sticky footer with reserved focus space</div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "description": "Media and captions. Includes cases whose honest automated outcome is cannot-tell rather than pass or fail — presence of a caption track is not conformance.",
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "counts": {
     "pairs": 8,
     "cases": 16,

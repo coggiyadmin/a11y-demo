@@ -1,0 +1,24 @@
+<!--
+  Travellers and class disclosure using a button
+  WCAG: 2.1.1
+  Expectation: NO control should report this (negative control)
+  Negative control for div_travellers.html. A native button exposes a keyboard-operable disclosure.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Travellers and class disclosure using a button</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Travellers and class disclosure using a button</h1>
+<button type="button" aria-expanded="false" aria-controls="traveller-options"
+  onclick="var p=document.getElementById('traveller-options');var open=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',String(!open));p.hidden=open">1 Traveller, Economy</button>
+<div id="traveller-options" hidden><p>Traveller and cabin options.</p></div>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

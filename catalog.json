@@ -1,7 +1,7 @@
 {
   "description": "Ground truth for the a11y-demo fixture corpus. Each case names the WCAG success criteria a correct scanner should report (min_criteria) or, for a negative control, the criteria it must NOT report (expected-clean). Browser reference facts live in check/reference.json, never here.",
   "version": 1,
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "scoring": {
     "recall": "sum(criteria reported on tp cases) / sum(min_criteria) across mode=tp",
     "fp_rate": "a finding for a criterion listed in must_not_report on a mode=safe case is a false positive; other criteria require their own ground truth",
@@ -13,9 +13,9 @@
     }
   },
   "counts": {
-    "total": 25,
+    "total": 30,
     "tp": 15,
-    "safe": 10
+    "safe": 15
   },
   "cases": [
     {
@@ -93,6 +93,17 @@
       "notes": "Departure and return, each a clickable div with no focusable control inside."
     },
     {
+      "id": "keyboard-safe_native_date_fields",
+      "mode": "safe",
+      "path": "keyboard/safe_native_date_fields.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for div_date_fields.html. Both controls are named and keyboard reachable."
+    },
+    {
       "id": "keyboard-div_travellers",
       "mode": "tp",
       "path": "keyboard/div_travellers.html",
@@ -104,6 +115,17 @@
         "#12"
       ],
       "notes": "A disclosure built from nested divs, none of them focusable."
+    },
+    {
+      "id": "keyboard-safe_native_travellers",
+      "mode": "safe",
+      "path": "keyboard/safe_native_travellers.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for div_travellers.html. A native button exposes a keyboard-operable disclosure."
     },
     {
       "id": "keyboard-div_checkbox",
@@ -146,6 +168,17 @@
         "#17"
       ],
       "notes": "Fare options presented as cards. Pointer-operable, not keyboard reachable."
+    },
+    {
+      "id": "keyboard-safe_native_fare_options",
+      "mode": "safe",
+      "path": "keyboard/safe_native_fare_options.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for div_fare_cards.html. The option group uses native keyboard-operable controls."
     },
     {
       "id": "keyboard-role_tab_no_tablist",
@@ -202,6 +235,17 @@
       "notes": "Focusable controls whose focus ring is removed in CSS."
     },
     {
+      "id": "keyboard-safe_focus_visible",
+      "mode": "safe",
+      "path": "keyboard/safe_focus_visible.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.4.7"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for focus_not_visible.html. The shared fixture styling preserves a visible outline."
+    },
+    {
       "id": "keyboard-focus_obscured",
       "mode": "tp",
       "path": "keyboard/focus_obscured.html",
@@ -213,6 +257,17 @@
         "#21"
       ],
       "notes": "The control receives focus but a sticky footer covers it, so the focus indicator is not visible. 2.4.11 is new in WCAG 2.2."
+    },
+    {
+      "id": "keyboard-safe_focus_not_obscured",
+      "mode": "safe",
+      "path": "keyboard/safe_focus_not_obscured.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.4.11"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for focus_obscured.html. Scroll spacing keeps the focused control above the overlay."
     },
     {
       "id": "capture-client_mounted",
