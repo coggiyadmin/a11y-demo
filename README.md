@@ -28,7 +28,7 @@ coverage.csv/.json   every WCAG 2.2 criterion x available ground truth
 build.mjs            regenerates every fixture
 coverage.mjs         regenerates the coverage files
 
-keyboard/            controls that look interactive but are not reachable by keyboard
+keyboard/            matched defective/corrected controls for keyboard and focus behaviour
 capture/             pages that stress capture and hydration rather than rule logic
 static/              single-page defects readable from served HTML
 delivery/            ONE constant defect, delivered eleven different ways
@@ -52,6 +52,32 @@ Custom widgets are where scanners are weakest and where products actually break 
 a native `<button>` is hard to get wrong, a div-based combobox is hard to get
 right. The **correct** half of each pair is the load-bearing one: any scanner can
 flag everything, only an accurate one leaves APG-conformant markup alone.
+
+### Flight-search regression shapes
+
+The `keyboard/` and `patterns/` families include a reusable regression slice
+derived from 21 findings in a human review of a production flight-search flow.
+The public corpus retains only synthetic interface shapes and declared ground
+truth; it does not retain the production URL, page content, screenshots,
+selectors or session data.
+
+The 21 review rows reduce to nine distinct scenarios. Each scenario has one
+known-defect fixture and one corrected control:
+
+| Scenario | Known-defect fixture | Corrected control | Criteria |
+|---|---|---|---|
+| Travel-mode tabs | `keyboard/role_tab_no_tablist.html` | `patterns/safe_tabs.html` | 2.1.1, 2.4.3, 4.1.2 |
+| Route fields | `keyboard/div_text_field.html` | `keyboard/safe_native_text_field.html` | 1.3.1, 2.1.1, 4.1.2 |
+| Date controls | `keyboard/div_date_fields.html` | `keyboard/safe_native_date_fields.html` | 2.1.1 |
+| Traveller disclosure | `keyboard/div_travellers.html` | `keyboard/safe_native_travellers.html` | 2.1.1 |
+| Checkbox selection | `keyboard/div_checkbox.html` | `keyboard/safe_native_checkbox.html` | 2.1.1, 4.1.2 |
+| Fare-option cards | `keyboard/div_fare_cards.html` | `keyboard/safe_native_fare_options.html` | 2.1.1 |
+| Search action | `keyboard/div_button.html` | `keyboard/safe_native_button.html` | 2.1.1, 4.1.2 |
+| Focus indicator | `keyboard/focus_not_visible.html` | `keyboard/safe_focus_visible.html` | 2.4.7 |
+| Focus obstruction | `keyboard/focus_obscured.html` | `keyboard/safe_focus_not_obscured.html` | 2.4.11 |
+
+The private comparison repository owns row-level traceability and tool results.
+This repository owns only the executable fixtures and expected outcomes.
 
 ### The delivery matrix
 
@@ -119,9 +145,9 @@ requirement usually serves several groups at once:
 
 ```
 4.1.2  Name, Role, Value   13 needs
-2.1.1  Keyboard            12 needs
-1.3.1  Info and Rel'ships  11 needs
-1.4.1  Use of Colour       10 needs
+2.1.1  Keyboard            13 needs
+1.3.1  Info and Rel'ships  13 needs
+1.4.1  Use of Colour       12 needs
 ```
 
 Keyboard access alone supports non-visual operation, alternative input, switch
@@ -133,9 +159,10 @@ drifts, and the rule-level mapping stays the single source of truth.
 
 ### Journeys
 
-`journeys/` holds six multi-page tasks — booking, sign-in, consistent help,
-a destructive action, cookie consent and navigation — each as a broken and a
-correct variant of the same task, step for step.
+`journeys/` holds nine multi-page tasks — booking, sign-in, consistent help,
+a destructive action, cookie consent, navigation, signup, checkout and session
+recovery — each as a broken and a correct variant of the same task, step for
+step.
 
 This family exists because **some criteria cannot be tested on a single page by
 definition**. 3.2.3 Consistent Navigation, 3.2.4 Consistent Identification,
@@ -321,8 +348,8 @@ Cases come in pairs wherever it is meaningful:
 | `tp` | a scanner **should** report the listed criteria |
 | `safe` | a scanner **must not** report the criteria in `must_not_report` — flagging one of those criteria is a false positive |
 
-205 local cases: 106 `tp`, 90 negative controls and 9 guided checks. The first
-25 are the original keyboard, capture and static catalog; the remaining cases
+210 local cases: 106 `tp`, 95 negative controls and 9 guided checks. The first
+30 are the keyboard, capture and static catalog; the remaining cases
 live in ten additional family manifests loaded through `fixture-families.mjs`.
 
 The negative controls matter more than the positives. `keyboard/safe_roving_tabindex.html`
@@ -420,7 +447,8 @@ particular site.
 
 ## Status
 
-Early. The three pipeline-tier fixtures in `capture/` are the novel part and
-the least finished; four more are specified in FOUNDATION.md and not yet built,
-including the multi-page cases needed to test sampling. Treat coverage numbers
-as a description of this corpus, not of WCAG.
+Active fixture corpus. The capture and delivery families will continue to grow,
+but the repository already contains matched controls, multi-page journeys,
+state-driven cases and explicit manual-review outcomes. Treat every coverage
+number as a description of this corpus, never as a statement of WCAG conformance
+or universal scanner quality.
