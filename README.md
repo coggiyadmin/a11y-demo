@@ -79,6 +79,21 @@ known-defect fixture and one corrected control:
 The private comparison repository owns row-level traceability and tool results.
 This repository owns only the executable fixtures and expected outcomes.
 
+### Functional scenario expansion
+
+The corpus also includes narrowly matched pairs for page language, page title,
+text contrast, common input purpose, link purpose, descriptive headings and
+labels, persistent field labels, and keyboard-trap escape. These pairs keep one
+declared criterion constant between the known-defect page and its corrected
+control, making criterion-level comparisons less prone to crediting an
+unrelated finding on the same page.
+
+Dynamic behavior is represented at the smallest honest unit. For example,
+`scenarios/keyboard_trap.html` does not claim that a page-load scan can settle
+2.1.2; a runner must open the panel and exercise Tab and Escape. Media quality
+and meaning remain human-review boundaries even when track presence is
+machine-observable.
+
 ### The delivery matrix
 
 Accessibility defects live in the rendered DOM, not in the server language — PHP,

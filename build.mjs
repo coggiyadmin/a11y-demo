@@ -5,13 +5,18 @@ import path from 'node:path';
 
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
 
-const page = (title, body, { head = '', lang = 'en', viewport = 'width=device-width,initial-scale=1' } = {}) =>
+const page = (title, body, {
+  head = '',
+  lang = 'en',
+  viewport = 'width=device-width,initial-scale=1',
+  documentTitle = title,
+} = {}) =>
   `<!doctype html>
 <html lang="${lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="${viewport}">
-<title>${title}</title>
+${documentTitle === null ? '' : `<title>${documentTitle}</title>`}
 <link rel="stylesheet" href="../fixture.css">${head}
 </head>
 <body>
@@ -129,7 +134,7 @@ const FIXTURES = [
   },
   {
     dir: 'keyboard', file: 'role_tab_no_tablist.html', expect: 'flag',
-    sc: ['2.1.1', '2.4.3', '4.1.2'], manual: ['#1', '#2', '#3'],
+    sc: ['2.1.1', '4.1.2'], manual: ['#1', '#2', '#3'],
     title: 'role=tab on non-focusable divs, no tablist',
     note: 'The ARIA role is asserted without the structure or the keyboard behaviour that makes it true.',
     body: `<div>
@@ -179,9 +184,12 @@ const FIXTURES = [
     dir: 'keyboard', file: 'focus_obscured.html', expect: 'flag',
     sc: ['2.4.11'], manual: ['#21'],
     title: 'Focused control hidden behind a sticky bar',
-    note: 'The control receives focus but a sticky footer covers it, so the focus indicator is not visible. 2.4.11 is new in WCAG 2.2.',
-    body: `<style>.sticky{position:fixed;bottom:0;left:0;right:0;height:90px;background:#222;color:#fff}</style>
-${Array.from({ length: 12 }, (_, i) => `<p><button>Control ${i + 1}</button></p>`).join('\n')}
+    note: 'The final control receives focus in a fixed position entirely behind a sticky footer, so the control and focus indicator are not visible. 2.4.11 is new in WCAG 2.2.',
+    body: `<style>
+.focus-target{position:fixed;bottom:24px;left:1rem;z-index:1}
+.sticky{position:fixed;z-index:2;bottom:0;left:0;right:0;height:90px;background:#222;color:#fff}
+</style>
+${Array.from({ length: 12 }, (_, i) => `<p><button${i === 11 ? ' class="focus-target"' : ''}>Control ${i + 1}</button></p>`).join('\n')}
 <div class="sticky">Sticky footer that covers the last control</div>`,
   },
   {
@@ -193,9 +201,10 @@ ${Array.from({ length: 12 }, (_, i) => `<p><button>Control ${i + 1}</button></p>
 html{scroll-padding-bottom:110px}
 body{padding-bottom:110px}
 button{scroll-margin-bottom:110px}
-.sticky{position:fixed;bottom:0;left:0;right:0;height:90px;background:#222;color:#fff}
+.focus-target{position:fixed;bottom:110px;left:1rem;z-index:1}
+.sticky{position:fixed;z-index:2;bottom:0;left:0;right:0;height:90px;background:#222;color:#fff}
 </style>
-${Array.from({ length: 12 }, (_, i) => `<p><button>Control ${i + 1}</button></p>`).join('\n')}
+${Array.from({ length: 12 }, (_, i) => `<p><button${i === 11 ? ' class="focus-target"' : ''}>Control ${i + 1}</button></p>`).join('\n')}
 <div class="sticky">Sticky footer with reserved focus space</div>`,
   },
 
@@ -297,12 +306,120 @@ ${Array.from({ length: 12 }, (_, i) => `<p><button>Control ${i + 1}</button></p>
     body: `<input placeholder="Coupon code"><input placeholder="GST number">`,
   },
   {
+    dir: 'static', file: 'safe_field_visible_label.html', expect: 'clean',
+    sc: ['3.3.2'], manual: [],
+    title: 'Form fields with persistent visible labels',
+    note: 'Negative control for field_no_visible_label.html. Each instruction remains visible and is programmatically associated.',
+    body: `<p><label for="coupon">Coupon code</label> <input id="coupon"></p>
+<p><label for="tax-number">Tax number</label> <input id="tax-number"></p>`,
+  },
+  {
     dir: 'static', file: 'lang_missing.html', expect: 'flag',
     sc: ['3.1.1'], manual: [],
     title: 'No language declared',
     note: 'The html element carries no lang attribute.',
     body: `<p>This page does not declare its language.</p>`,
     lang: '',
+  },
+  {
+    dir: 'static', file: 'safe_lang_declared.html', expect: 'clean',
+    sc: ['3.1.1'], manual: [],
+    title: 'Page language declared',
+    note: 'Negative control for lang_missing.html. The document language is declared on the html element.',
+    body: `<p>This page declares its language.</p>`,
+    lang: 'en',
+  },
+  {
+    dir: 'static', file: 'page_title_missing.html', expect: 'flag',
+    sc: ['2.4.2'], manual: [],
+    title: 'Travel search results',
+    note: 'The visible page has a heading, but the document has no title element for browser tabs and history.',
+    body: `<p>12 synthetic results.</p>`,
+    documentTitle: null,
+  },
+  {
+    dir: 'static', file: 'safe_page_title.html', expect: 'clean',
+    sc: ['2.4.2'], manual: [],
+    title: 'Travel search results',
+    note: 'Negative control for page_title_missing.html. The document title identifies the page purpose.',
+    body: `<p>12 synthetic results.</p>`,
+    documentTitle: 'Travel search results',
+  },
+  {
+    dir: 'static', file: 'text_low_contrast.html', expect: 'flag',
+    sc: ['1.4.3'], manual: [],
+    title: 'Low-contrast instructions',
+    note: 'Instruction text uses #aaaaaa on white, a contrast ratio below the 4.5:1 requirement for normal text.',
+    body: `<p style="color:#aaa;background:#fff">Choose a departure time to continue.</p>`,
+  },
+  {
+    dir: 'static', file: 'safe_text_contrast.html', expect: 'clean',
+    sc: ['1.4.3'], manual: [],
+    title: 'Readable-contrast instructions',
+    note: 'Negative control for text_low_contrast.html. Instruction text uses a contrast ratio above 4.5:1.',
+    body: `<p style="color:#333;background:#fff">Choose a departure time to continue.</p>`,
+  },
+  {
+    dir: 'static', file: 'input_purpose_missing.html', expect: 'flag',
+    sc: ['1.3.5'], manual: [],
+    title: 'Common input purpose not identified',
+    note: 'Common contact fields have visible labels but omit machine-readable input-purpose tokens.',
+    body: `<p><label for="contact-name">Name</label> <input id="contact-name" name="contact-name"></p>
+<p><label for="contact-email">Email</label> <input id="contact-email" name="contact-email" type="email"></p>`,
+  },
+  {
+    dir: 'static', file: 'safe_input_purpose.html', expect: 'clean',
+    sc: ['1.3.5'], manual: [],
+    title: 'Common input purpose identified',
+    note: 'Negative control for input_purpose_missing.html. Standard autocomplete tokens identify each input purpose.',
+    body: `<p><label for="contact-name-safe">Name</label> <input id="contact-name-safe" name="contact-name" autocomplete="name"></p>
+<p><label for="contact-email-safe">Email</label> <input id="contact-email-safe" name="contact-email" type="email" autocomplete="email"></p>`,
+  },
+  {
+    dir: 'static', file: 'route_field_relationship.html', expect: 'flag',
+    sc: ['1.3.1'], manual: ['#4', '#5', '#6', '#7', '#8', '#9'],
+    title: 'Route fields with unassociated visible labels',
+    note: 'Native inputs remain keyboard operable and named, but their visible labels are not programmatically associated with them.',
+    body: `<p><span>From</span> <input aria-label="From" value="London"></p>
+<p><span>To</span> <input aria-label="To" value="Paris"></p>`,
+  },
+  {
+    dir: 'static', file: 'safe_route_field_relationship.html', expect: 'clean',
+    sc: ['1.3.1'], manual: [],
+    title: 'Route fields with associated visible labels',
+    note: 'Negative control for route_field_relationship.html. Native labels express the visible relationships programmatically.',
+    body: `<p><label for="route-from">From</label> <input id="route-from" value="London"></p>
+<p><label for="route-to">To</label> <input id="route-to" value="Paris"></p>`,
+  },
+  {
+    dir: 'static', file: 'ambiguous_link_purpose.html', expect: 'flag',
+    sc: ['2.4.4'], manual: [],
+    title: 'Links without contextual purpose',
+    note: 'Repeated links have the same generic text and no programmatic context that identifies their destinations.',
+    body: `<div><span>Flexible fare</span> <a href="#flexible">Learn more</a></div>
+<div><span>Standard fare</span> <a href="#standard">Learn more</a></div>`,
+  },
+  {
+    dir: 'static', file: 'safe_link_purpose.html', expect: 'clean',
+    sc: ['2.4.4'], manual: [],
+    title: 'Links with specific purpose',
+    note: 'Negative control for ambiguous_link_purpose.html. Each link names its destination without relying on visual proximity.',
+    body: `<p><a href="#flexible">Learn more about the flexible fare</a></p>
+<p><a href="#standard">Learn more about the standard fare</a></p>`,
+  },
+  {
+    dir: 'static', file: 'vague_heading_and_label.html', expect: 'flag',
+    sc: ['2.4.6'], manual: [],
+    title: 'Vague heading and control label',
+    note: 'The heading and button text do not describe their topic or purpose.',
+    body: `<section><h2>More</h2><p>Optional fare details.</p><button type="button">Go</button></section>`,
+  },
+  {
+    dir: 'static', file: 'safe_descriptive_heading_and_label.html', expect: 'clean',
+    sc: ['2.4.6'], manual: [],
+    title: 'Descriptive heading and control label',
+    note: 'Negative control for vague_heading_and_label.html. The heading and button describe their topic and action.',
+    body: `<section><h2>Optional fare details</h2><p>Review change and cancellation terms.</p><button type="button">Review fare details</button></section>`,
   },
 ];
 
@@ -319,6 +436,7 @@ for (const f of FIXTURES) {
   if (f.head) opts.head = f.head;
   if (f.lang !== undefined) opts.lang = f.lang;
   if (f.viewport) opts.viewport = f.viewport;
+  if (f.documentTitle !== undefined) opts.documentTitle = f.documentTitle;
   fs.writeFileSync(path.join(dir, f.file), comment + page(f.title, f.body, opts));
 }
 

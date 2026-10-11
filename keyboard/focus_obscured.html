@@ -2,7 +2,7 @@
   Focused control hidden behind a sticky bar
   WCAG: 2.4.11
   Expectation: a control SHOULD report this
-  The control receives focus but a sticky footer covers it, so the focus indicator is not visible. 2.4.11 is new in WCAG 2.2.
+  The final control receives focus in a fixed position entirely behind a sticky footer, so the control and focus indicator are not visible. 2.4.11 is new in WCAG 2.2.
 -->
 <!doctype html>
 <html lang="en">
@@ -15,7 +15,10 @@
 <body>
 <main>
 <h1>Focused control hidden behind a sticky bar</h1>
-<style>.sticky{position:fixed;bottom:0;left:0;right:0;height:90px;background:#222;color:#fff}</style>
+<style>
+.focus-target{position:fixed;bottom:24px;left:1rem;z-index:1}
+.sticky{position:fixed;z-index:2;bottom:0;left:0;right:0;height:90px;background:#222;color:#fff}
+</style>
 <p><button>Control 1</button></p>
 <p><button>Control 2</button></p>
 <p><button>Control 3</button></p>
@@ -27,7 +30,7 @@
 <p><button>Control 9</button></p>
 <p><button>Control 10</button></p>
 <p><button>Control 11</button></p>
-<p><button>Control 12</button></p>
+<p><button class="focus-target">Control 12</button></p>
 <div class="sticky">Sticky footer that covers the last control</div>
 </main>
 <p><a href="../index.html">Back to the index</a></p>
