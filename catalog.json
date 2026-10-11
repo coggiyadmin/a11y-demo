@@ -1,7 +1,7 @@
 {
   "description": "Ground truth for the a11y-demo fixture corpus. Each case names the WCAG success criteria a correct scanner should report (min_criteria) or, for a negative control, the criteria it must NOT report (expected-clean). Browser reference facts live in check/reference.json, never here.",
   "version": 1,
-  "generated": "2026-10-10",
+  "generated": "2026-10-11",
   "scoring": {
     "recall": "sum(criteria reported on tp cases) / sum(min_criteria) across mode=tp",
     "fp_rate": "a finding for a criterion listed in must_not_report on a mode=safe case is a false positive; other criteria require their own ground truth",
@@ -13,9 +13,9 @@
     }
   },
   "counts": {
-    "total": 30,
-    "tp": 15,
-    "safe": 15
+    "total": 44,
+    "tp": 21,
+    "safe": 23
   },
   "cases": [
     {
@@ -186,7 +186,6 @@
       "path": "keyboard/role_tab_no_tablist.html",
       "min_criteria": {
         "2.1.1": 1,
-        "2.4.3": 1,
         "4.1.2": 1
       },
       "must_not_report": [],
@@ -256,7 +255,7 @@
       "derived_from_manual_rows": [
         "#21"
       ],
-      "notes": "The control receives focus but a sticky footer covers it, so the focus indicator is not visible. 2.4.11 is new in WCAG 2.2."
+      "notes": "The final control receives focus in a fixed position entirely behind a sticky footer, so the control and focus indicator are not visible. 2.4.11 is new in WCAG 2.2."
     },
     {
       "id": "keyboard-safe_focus_not_obscured",
@@ -382,6 +381,17 @@
       "notes": "Placeholder text is not a label."
     },
     {
+      "id": "static-safe_field_visible_label",
+      "mode": "safe",
+      "path": "static/safe_field_visible_label.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "3.3.2"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for field_no_visible_label.html. Each instruction remains visible and is programmatically associated."
+    },
+    {
       "id": "static-lang_missing",
       "mode": "tp",
       "path": "static/lang_missing.html",
@@ -391,6 +401,156 @@
       "must_not_report": [],
       "derived_from_manual_rows": [],
       "notes": "The html element carries no lang attribute."
+    },
+    {
+      "id": "static-safe_lang_declared",
+      "mode": "safe",
+      "path": "static/safe_lang_declared.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "3.1.1"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for lang_missing.html. The document language is declared on the html element."
+    },
+    {
+      "id": "static-page_title_missing",
+      "mode": "tp",
+      "path": "static/page_title_missing.html",
+      "min_criteria": {
+        "2.4.2": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [],
+      "notes": "The visible page has a heading, but the document has no title element for browser tabs and history."
+    },
+    {
+      "id": "static-safe_page_title",
+      "mode": "safe",
+      "path": "static/safe_page_title.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.4.2"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for page_title_missing.html. The document title identifies the page purpose."
+    },
+    {
+      "id": "static-text_low_contrast",
+      "mode": "tp",
+      "path": "static/text_low_contrast.html",
+      "min_criteria": {
+        "1.4.3": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [],
+      "notes": "Instruction text uses #aaaaaa on white, a contrast ratio below the 4.5:1 requirement for normal text."
+    },
+    {
+      "id": "static-safe_text_contrast",
+      "mode": "safe",
+      "path": "static/safe_text_contrast.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "1.4.3"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for text_low_contrast.html. Instruction text uses a contrast ratio above 4.5:1."
+    },
+    {
+      "id": "static-input_purpose_missing",
+      "mode": "tp",
+      "path": "static/input_purpose_missing.html",
+      "min_criteria": {
+        "1.3.5": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [],
+      "notes": "Common contact fields have visible labels but omit machine-readable input-purpose tokens."
+    },
+    {
+      "id": "static-safe_input_purpose",
+      "mode": "safe",
+      "path": "static/safe_input_purpose.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "1.3.5"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for input_purpose_missing.html. Standard autocomplete tokens identify each input purpose."
+    },
+    {
+      "id": "static-route_field_relationship",
+      "mode": "tp",
+      "path": "static/route_field_relationship.html",
+      "min_criteria": {
+        "1.3.1": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [
+        "#4",
+        "#5",
+        "#6",
+        "#7",
+        "#8",
+        "#9"
+      ],
+      "notes": "Native inputs remain keyboard operable and named, but their visible labels are not programmatically associated with them."
+    },
+    {
+      "id": "static-safe_route_field_relationship",
+      "mode": "safe",
+      "path": "static/safe_route_field_relationship.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "1.3.1"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for route_field_relationship.html. Native labels express the visible relationships programmatically."
+    },
+    {
+      "id": "static-ambiguous_link_purpose",
+      "mode": "tp",
+      "path": "static/ambiguous_link_purpose.html",
+      "min_criteria": {
+        "2.4.4": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [],
+      "notes": "Repeated links have the same generic text and no programmatic context that identifies their destinations."
+    },
+    {
+      "id": "static-safe_link_purpose",
+      "mode": "safe",
+      "path": "static/safe_link_purpose.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.4.4"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for ambiguous_link_purpose.html. Each link names its destination without relying on visual proximity."
+    },
+    {
+      "id": "static-vague_heading_and_label",
+      "mode": "tp",
+      "path": "static/vague_heading_and_label.html",
+      "min_criteria": {
+        "2.4.6": 1
+      },
+      "must_not_report": [],
+      "derived_from_manual_rows": [],
+      "notes": "The heading and button text do not describe their topic or purpose."
+    },
+    {
+      "id": "static-safe_descriptive_heading_and_label",
+      "mode": "safe",
+      "path": "static/safe_descriptive_heading_and_label.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.4.6"
+      ],
+      "derived_from_manual_rows": [],
+      "notes": "Negative control for vague_heading_and_label.html. The heading and button describe their topic and action."
     }
   ]
 }

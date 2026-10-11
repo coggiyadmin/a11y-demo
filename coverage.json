@@ -160,8 +160,8 @@
     "act_failed": 52,
     "act_passed": 80,
     "act_inapplicable": 44,
-    "local_tp": "keyboard/div_text_field.html patterns/accordion.html patterns/table.html patterns/breadcrumb.html patterns/required-fields.html ui-states/empty.html ui-states/permission-denied.html journeys/consent/broken/index.html scenarios/data_dashboard.html scenarios/live_chat.html surfaces/email_table_layout.html surfaces/epub_no_metadata.html surfaces/authoring_generates_bad_markup.html surfaces/chatbot_transcript.html",
-    "local_safe": "keyboard/safe_native_text_field.html patterns/safe_accordion.html patterns/safe_table.html patterns/safe_breadcrumb.html patterns/safe_required-fields.html ui-states/safe_empty.html ui-states/safe_permission-denied.html journeys/consent/correct/index.html scenarios/safe_data_dashboard.html scenarios/safe_live_chat.html surfaces/safe_email_table_layout.html surfaces/safe_epub_no_metadata.html surfaces/safe_authoring_generates_bad_markup.html surfaces/safe_chatbot_transcript.html",
+    "local_tp": "keyboard/div_text_field.html static/route_field_relationship.html patterns/accordion.html patterns/table.html patterns/breadcrumb.html patterns/required-fields.html ui-states/empty.html ui-states/permission-denied.html journeys/consent/broken/index.html scenarios/data_dashboard.html scenarios/live_chat.html surfaces/email_table_layout.html surfaces/epub_no_metadata.html surfaces/authoring_generates_bad_markup.html surfaces/chatbot_transcript.html",
+    "local_safe": "keyboard/safe_native_text_field.html static/safe_route_field_relationship.html patterns/safe_accordion.html patterns/safe_table.html patterns/safe_breadcrumb.html patterns/safe_required-fields.html ui-states/safe_empty.html ui-states/safe_permission-denied.html journeys/consent/correct/index.html scenarios/safe_data_dashboard.html scenarios/safe_live_chat.html surfaces/safe_email_table_layout.html surfaces/safe_epub_no_metadata.html surfaces/safe_authoring_generates_bad_markup.html surfaces/safe_chatbot_transcript.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -220,9 +220,9 @@
     "act_failed": 10,
     "act_passed": 9,
     "act_inapplicable": 11,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "ACT"
+    "local_tp": "static/input_purpose_missing.html",
+    "local_safe": "static/safe_input_purpose.html",
+    "ground_truth": "ACT + local"
   },
   {
     "sc": "1.3.6",
@@ -280,8 +280,8 @@
     "act_failed": 24,
     "act_passed": 23,
     "act_inapplicable": 22,
-    "local_tp": "color-independent/placeholder_contrast.html surfaces/email_contrast_darkmode.html",
-    "local_safe": "color-independent/safe_placeholder_contrast.html surfaces/safe_email_contrast_darkmode.html",
+    "local_tp": "static/text_low_contrast.html color-independent/placeholder_contrast.html surfaces/email_contrast_darkmode.html",
+    "local_safe": "static/safe_text_contrast.html color-independent/safe_placeholder_contrast.html surfaces/safe_email_contrast_darkmode.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -460,9 +460,9 @@
     "act_failed": 5,
     "act_passed": 7,
     "act_inapplicable": 4,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "ACT"
+    "local_tp": "scenarios/keyboard_trap.html",
+    "local_safe": "scenarios/safe_keyboard_trap.html",
+    "ground_truth": "ACT + local"
   },
   {
     "sc": "2.1.3",
@@ -655,9 +655,9 @@
     "act_failed": 9,
     "act_passed": 9,
     "act_inapplicable": 2,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "ACT"
+    "local_tp": "static/page_title_missing.html",
+    "local_safe": "static/safe_page_title.html",
+    "ground_truth": "ACT + local"
   },
   {
     "sc": "2.4.3",
@@ -670,7 +670,7 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "keyboard/role_tab_no_tablist.html patterns/tabs.html patterns/dialog.html ui-states/submitted.html ui-states/error.html journeys/booking/broken/index.html journeys/destructive/broken/index.html journeys/consent/broken/index.html scenarios/overlay_focus_trap.html scenarios/infinite_scroll.html",
+    "local_tp": "patterns/tabs.html patterns/dialog.html ui-states/submitted.html ui-states/error.html journeys/booking/broken/index.html journeys/destructive/broken/index.html journeys/consent/broken/index.html scenarios/overlay_focus_trap.html scenarios/infinite_scroll.html",
     "local_safe": "keyboard/safe_roving_tabindex.html capture/link_heavy.html patterns/safe_tabs.html patterns/safe_dialog.html ui-states/safe_submitted.html ui-states/safe_error.html journeys/booking/correct/index.html journeys/destructive/correct/index.html journeys/consent/correct/index.html scenarios/safe_overlay_focus_trap.html scenarios/safe_infinite_scroll.html",
     "ground_truth": "local only"
   },
@@ -685,9 +685,9 @@
     "act_failed": 25,
     "act_passed": 29,
     "act_inapplicable": 16,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "ACT"
+    "local_tp": "static/ambiguous_link_purpose.html",
+    "local_safe": "static/safe_link_purpose.html",
+    "ground_truth": "ACT + local"
   },
   {
     "sc": "2.4.5",
@@ -715,9 +715,9 @@
     "act_failed": 10,
     "act_passed": 13,
     "act_inapplicable": 5,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "ACT"
+    "local_tp": "static/vague_heading_and_label.html",
+    "local_safe": "static/safe_descriptive_heading_and_label.html",
+    "ground_truth": "ACT + local"
   },
   {
     "sc": "2.4.7",
@@ -956,7 +956,7 @@
     "act_passed": 7,
     "act_inapplicable": 9,
     "local_tp": "static/lang_missing.html",
-    "local_safe": "",
+    "local_safe": "static/safe_lang_declared.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -1151,7 +1151,7 @@
     "act_passed": 0,
     "act_inapplicable": 0,
     "local_tp": "static/field_no_visible_label.html patterns/form-errors.html patterns/required-fields.html color-independent/required_color_only.html ui-states/empty.html",
-    "local_safe": "patterns/safe_form-errors.html patterns/safe_required-fields.html color-independent/safe_required_color_only.html ui-states/safe_empty.html",
+    "local_safe": "static/safe_field_visible_label.html patterns/safe_form-errors.html patterns/safe_required-fields.html color-independent/safe_required_color_only.html ui-states/safe_empty.html",
     "ground_truth": "local only"
   },
   {

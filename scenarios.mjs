@@ -28,6 +28,24 @@ ${body}
 
 const S = [
   {
+    id: 'keyboard_trap', journey: 'overlay', sc: ['2.1.2'],
+    needsAt: ['keyboard', 'switch'], needs: ['alternative-input', 'hands-free-switch', 'focus-support'],
+    brokenNote: 'After the panel opens, its key handler cancels Tab, Shift+Tab and Escape, so keyboard focus cannot leave or dismiss it.',
+    broken: `<button id="trap-trigger" type="button" onclick="document.getElementById('trap-panel').hidden=false;document.getElementById('trap-field').focus()">Open preferences</button>
+<section id="trap-panel" hidden aria-labelledby="trap-title" onkeydown="if(event.key==='Tab'||event.key==='Escape')event.preventDefault()">
+  <h2 id="trap-title">Preferences</h2>
+  <label for="trap-field">Display name</label><input id="trap-field">
+  <button type="button">Save</button>
+</section>`,
+    correctNote: 'The modal can be traversed, Escape closes it, and focus returns to the trigger.',
+    correct: `<button id="trap-trigger-safe" type="button" onclick="document.getElementById('trap-dialog-safe').showModal()">Open preferences</button>
+<dialog id="trap-dialog-safe" aria-labelledby="trap-title-safe" onclose="document.getElementById('trap-trigger-safe').focus()">
+  <h2 id="trap-title-safe">Preferences</h2>
+  <form method="dialog"><label for="trap-field-safe">Display name</label><input id="trap-field-safe">
+  <button value="save">Save</button><button value="cancel">Cancel</button></form>
+</dialog>`,
+  },
+  {
     // NOT 2.1.2. A keyboard trap is focus that cannot be moved AWAY from a component.
     // This page's defect is the opposite — focus never moves INTO the popover and the
     // background stays reachable behind it. That is focus management (2.4.3), and

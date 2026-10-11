@@ -19,7 +19,8 @@
 html{scroll-padding-bottom:110px}
 body{padding-bottom:110px}
 button{scroll-margin-bottom:110px}
-.sticky{position:fixed;bottom:0;left:0;right:0;height:90px;background:#222;color:#fff}
+.focus-target{position:fixed;bottom:110px;left:1rem;z-index:1}
+.sticky{position:fixed;z-index:2;bottom:0;left:0;right:0;height:90px;background:#222;color:#fff}
 </style>
 <p><button>Control 1</button></p>
 <p><button>Control 2</button></p>
@@ -32,7 +33,7 @@ button{scroll-margin-bottom:110px}
 <p><button>Control 9</button></p>
 <p><button>Control 10</button></p>
 <p><button>Control 11</button></p>
-<p><button>Control 12</button></p>
+<p><button class="focus-target">Control 12</button></p>
 <div class="sticky">Sticky footer with reserved focus space</div>
 </main>
 <p><a href="../index.html">Back to the index</a></p>

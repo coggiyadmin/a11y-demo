@@ -1,0 +1,23 @@
+<!--
+  keyboard_trap — correct
+  WCAG: 2.1.2
+  journey: overlay
+  input/AT most affected: keyboard, switch
+  The modal can be traversed, Escape closes it, and focus returns to the trigger.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>keyboard_trap — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>keyboard_trap — correct</h1>
+<p>The modal can be traversed, Escape closes it, and focus returns to the trigger.</p><hr><button id="trap-trigger-safe" type="button" onclick="document.getElementById('trap-dialog-safe').showModal()">Open preferences</button>
+<dialog id="trap-dialog-safe" aria-labelledby="trap-title-safe" onclose="document.getElementById('trap-trigger-safe').focus()">
+  <h2 id="trap-title-safe">Preferences</h2>
+  <form method="dialog"><label for="trap-field-safe">Display name</label><input id="trap-field-safe">
+  <button value="save">Save</button><button value="cancel">Cancel</button></form>
+</dialog>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

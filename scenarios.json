@@ -1,11 +1,69 @@
 {
   "description": "Remaining scenario types at their honest unit. Several target an input mode rather than a criterion family: label_in_name is the defect voice control is uniquely blocked by, dragging_required the one switch access is.",
-  "generated": "2026-10-10",
+  "generated": "2026-10-11",
   "counts": {
-    "scenarios": 19,
-    "cases": 38
+    "scenarios": 20,
+    "cases": 40
   },
   "cases": [
+    {
+      "id": "scenario-keyboard_trap",
+      "mode": "tp",
+      "path": "scenarios/keyboard_trap.html",
+      "surface": "web",
+      "journey": "overlay",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "switch"
+      ],
+      "user_needs": [
+        "alternative-input",
+        "hands-free-switch",
+        "focus-support"
+      ],
+      "min_criteria": {
+        "2.1.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "After the panel opens, its key handler cancels Tab, Shift+Tab and Escape, so keyboard focus cannot leave or dismiss it."
+    },
+    {
+      "id": "scenario-safe_keyboard_trap",
+      "mode": "safe",
+      "path": "scenarios/safe_keyboard_trap.html",
+      "surface": "web",
+      "journey": "overlay",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction"
+      ],
+      "input_at": [
+        "keyboard",
+        "switch"
+      ],
+      "user_needs": [
+        "alternative-input",
+        "hands-free-switch",
+        "focus-support"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.2"
+      ],
+      "expected_outcome": "pass",
+      "notes": "The modal can be traversed, Escape closes it, and focus returns to the trigger."
+    },
     {
       "id": "scenario-overlay_focus_trap",
       "mode": "tp",

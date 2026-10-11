@@ -1,0 +1,23 @@
+<!--
+  keyboard_trap — broken
+  WCAG: 2.1.2
+  journey: overlay
+  input/AT most affected: keyboard, switch
+  After the panel opens, its key handler cancels Tab, Shift+Tab and Escape, so keyboard focus cannot leave or dismiss it.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>keyboard_trap — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>keyboard_trap — broken</h1>
+<p>After the panel opens, its key handler cancels Tab, Shift+Tab and Escape, so keyboard focus cannot leave or dismiss it.</p><hr><button id="trap-trigger" type="button" onclick="document.getElementById('trap-panel').hidden=false;document.getElementById('trap-field').focus()">Open preferences</button>
+<section id="trap-panel" hidden aria-labelledby="trap-title" onkeydown="if(event.key==='Tab'||event.key==='Escape')event.preventDefault()">
+  <h2 id="trap-title">Preferences</h2>
+  <label for="trap-field">Display name</label><input id="trap-field">
+  <button type="button">Save</button>
+</section>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>
