@@ -364,7 +364,7 @@ ${Array.from({ length: 12 }, (_, i) => `<p><button${i === 11 ? ' class="focus-ta
     sc: ['1.3.5'], manual: [],
     title: 'Common input purpose not identified',
     note: 'Common contact fields have visible labels but omit machine-readable input-purpose tokens.',
-    body: `<p><label for="contact-name">Name</label> <input id="contact-name" name="contact-name"></p>
+    body: `<p><label for="contact-name">Name</label> <input id="contact-name" name="contact-name" type="text"></p>
 <p><label for="contact-email">Email</label> <input id="contact-email" name="contact-email" type="email"></p>`,
   },
   {
@@ -372,7 +372,7 @@ ${Array.from({ length: 12 }, (_, i) => `<p><button${i === 11 ? ' class="focus-ta
     sc: ['1.3.5'], manual: [],
     title: 'Common input purpose identified',
     note: 'Negative control for input_purpose_missing.html. Standard autocomplete tokens identify each input purpose.',
-    body: `<p><label for="contact-name-safe">Name</label> <input id="contact-name-safe" name="contact-name" autocomplete="name"></p>
+    body: `<p><label for="contact-name-safe">Name</label> <input id="contact-name-safe" name="contact-name" type="text" autocomplete="name"></p>
 <p><label for="contact-email-safe">Email</label> <input id="contact-email-safe" name="contact-email" type="email" autocomplete="email"></p>`,
   },
   {
