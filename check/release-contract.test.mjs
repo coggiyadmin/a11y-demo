@@ -78,6 +78,7 @@ test('release builder emits reproducible metadata and valid checksums', () => {
     assert.equal(metadata.contracts.human_protocols, '1.0.0');
     assert.equal(metadata.contracts.human_result, '1.0.0');
     assert.equal(metadata.contracts.double_review, '1.0.0');
+  assert.equal(metadata.contracts.scoring_policy, 'cognium-a11y-scoring/1.0.0');
     assert.equal(metadata.known_gaps.wcag_without_ground_truth, 20);
     assert.deepEqual(metadata.known_gaps.surfaces.represented, 7);
     assert.deepEqual(metadata.known_gaps.surfaces.total, 18);

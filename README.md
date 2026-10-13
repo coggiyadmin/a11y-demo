@@ -61,6 +61,13 @@ projects are welcome. Participation has two separate paths:
   outside this corpus repository. The complete protocol and comparison rules are
   in [PUBLISHING_RESULTS.md](PUBLISHING_RESULTS.md).
 
+`check/score.mjs` is the reference scorer and regression runner. It turns the
+manifest plus schema-valid results into recall, false-positive,
+pipeline-integrity, execution and examined-count metrics, every rate published
+with its numerator and denominator, and refuses to compare runs measured
+against different corpus revisions or scoring policies. See
+[SCORING.md](SCORING.md).
+
 After publishing, a third party may open a **Published benchmark result** issue
 to make the bundle discoverable. Listing confirms disclosure and schema validity
 only; it is not Cognium endorsement, product certification, a legal opinion or a

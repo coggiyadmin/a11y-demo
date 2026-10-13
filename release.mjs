@@ -4,6 +4,8 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
+import { SCORING_POLICY } from './check/scoring.mjs';
+
 const ROOT = path.resolve(fileURLToPath(new URL('.', import.meta.url)));
 const version = fs.readFileSync(path.join(ROOT, 'VERSION'), 'utf8').trim();
 const tag = `v${version}`;
@@ -97,6 +99,9 @@ const metadata = {
     human_protocols: humanProtocols.format_version,
     human_result: humanResultExample.format_version,
     double_review: doubleReviewExample.format_version,
+    // Results quote this string; recording it here lets a reader tell which
+    // scoring policy was current when the snapshot was cut.
+    scoring_policy: SCORING_POLICY,
   },
   included: {
     pipeline_integrity: {

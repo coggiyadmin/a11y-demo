@@ -82,6 +82,19 @@ Report denominators and counts, not only percentages:
 - results by fixture family, criterion and functional need so gaps remain
   visible.
 
+`check/score.mjs` implements exactly these metrics and is the reference
+scoring policy. Use it, or reproduce its denominators and lane separation
+faithfully:
+
+```sh
+node check/score.mjs score result.json --json score.json --csv score.csv --strict
+node check/score.mjs compare previous-score.json score.json
+```
+
+Quote the `scoring_policy` string from its output alongside any metric you
+publish. [SCORING.md](SCORING.md) documents every metric, denominator and
+refusal.
+
 Do not collapse coverage, conformance, severity and confidence into one score.
 Do not turn `unsupported`, `error`, `not-observed`, `cannot-tell` or an examined
 count of zero into a pass. A benchmark result is not a WCAG conformance claim,

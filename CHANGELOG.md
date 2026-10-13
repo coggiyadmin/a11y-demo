@@ -5,7 +5,27 @@ machine-readable manifest and schema versions are recorded with every release.
 
 ## Unreleased
 
-No changes yet.
+### Added
+
+- `check/score.mjs`, a product-neutral reference scorer and regression runner
+  producing true-positive recall, corrected-control false-positive,
+  pipeline-integrity, execution-state, observability and examined-count metrics
+  with explicit numerators and denominators, plus breakdowns by family,
+  criterion and functional need and repeat-to-repeat variance.
+- `check/scoring.mjs`, the scoring library behind the CLI, stamped with the
+  `cognium-a11y-scoring/1.0.0` policy identifier.
+- JSON and CSV outputs that carry corpus identity and a denominator on every
+  row, and a regression comparison that refuses runs measured against a
+  different corpus revision, manifest digest or scoring policy.
+- Two synthetic result repeats under `schemas/examples/` as the worked example,
+  exercising detection, false positives, blocked and unsupported executions, a
+  vacuous pass, a human-lane `cannot-tell` and an unstable assertion.
+- `SCORING.md` documenting every metric, denominator and refusal.
+
+### Changed
+
+- Release metadata records the current scoring policy identifier.
+- CI validates and scores the published result examples.
 
 ## [0.1.0] - 2026-10-13
 
