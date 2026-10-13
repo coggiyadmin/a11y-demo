@@ -60,6 +60,11 @@ versions and change log. Consumers should pin a full commit SHA and verify the
 manifest before comparing runs. The default branch is development state, not an
 immutable benchmark release.
 
+Maintainers follow [RELEASING.md](RELEASING.md). The publishing workflow accepts
+only an annotated semantic-version tag that matches `VERSION`, reruns every
+contract and full-history privacy check, regenerates the corpus, verifies that
+generated files are committed, and emits checksummed release assets.
+
 Schema versions evolve independently. A release may contain several schema
 versions during a documented deprecation period. Deprecated fields remain for
 at least one minor release unless keeping them would create a security, privacy

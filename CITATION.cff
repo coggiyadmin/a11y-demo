@@ -8,6 +8,7 @@ authors:
 repository-code: "https://github.com/cogniumhq/a11y-benchmark"
 url: "https://github.com/cogniumhq/a11y-benchmark"
 abstract: "A product-neutral corpus of paired accessibility fixtures, stateful journeys, negative controls, guided checks and pipeline-integrity cases with machine-readable expected outcomes."
+version: 0.1.0
 keywords:
   - accessibility
   - benchmarking
@@ -15,4 +16,4 @@ keywords:
   - ACT Rules
   - assistive technology
   - software testing
-date-released: 2026-10-12
+date-released: 2026-10-13

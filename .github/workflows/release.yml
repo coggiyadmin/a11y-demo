@@ -1,0 +1,59 @@
+name: Publish tagged release
+
+on:
+  push:
+    tags:
+      - "v[0-9]*.[0-9]*.[0-9]*"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    if: github.repository == 'cogniumhq/a11y-benchmark'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Fetch every public head and tag for the release privacy audit
+        run: git fetch --force --tags origin '+refs/heads/*:refs/remotes/origin/*'
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: check/package-lock.json
+      - name: Verify annotated tag and version
+        run: |
+          test "$(git cat-file -t "$GITHUB_REF_NAME")" = tag
+          test "$GITHUB_REF_NAME" = "v$(tr -d '\n' < VERSION)"
+          test -f "releases/$GITHUB_REF_NAME.md"
+      - name: Install validation dependencies
+        run: npm ci --prefix check --ignore-scripts
+      - name: Check repository, history and fixture contracts
+        run: node --test check/*.test.mjs
+      - name: Regenerate fixture manifests and pages
+        run: |
+          for generator in build.mjs delivery.mjs patterns.mjs taxonomy.mjs journeys.mjs scenarios.mjs media.mjs flash.mjs color-independent.mjs ui-states.mjs surfaces.mjs guided.mjs needs-index.mjs coverage.mjs space-coverage.mjs manifest.mjs; do
+            node "$generator"
+          done
+      - name: Check generated files are committed
+        run: git diff --exit-code -I '"generated":'
+      - name: Build release assets
+        id: assets
+        run: |
+          output="$RUNNER_TEMP/a11y-benchmark-$GITHUB_REF_NAME"
+          node release.mjs "$output"
+          echo "directory=$output" >> "$GITHUB_OUTPUT"
+      - name: Verify release checksums
+        working-directory: ${{ steps.assets.outputs.directory }}
+        run: sha256sum --check SHA256SUMS
+      - name: Publish immutable release snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ASSET_DIRECTORY: ${{ steps.assets.outputs.directory }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" "$ASSET_DIRECTORY"/* \
+            --verify-tag \
+            --title "a11y-benchmark $GITHUB_REF_NAME" \
+            --notes-file "releases/$GITHUB_REF_NAME.md"
