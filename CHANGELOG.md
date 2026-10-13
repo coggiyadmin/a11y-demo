@@ -40,6 +40,15 @@ machine-readable manifest and schema versions are recorded with every release.
 - Six further guided checks covering the AAA criteria that need a human
   judgement, carrying `inapplicable` alongside `cannot-tell` where the criterion
   is applicability-dependent.
+- `sources.json` and `schemas/sources.schema.json`, recording the url, licence,
+  required notice, transform and upstream SHA-256 of every standards-derived
+  input.
+- `refresh-sources.mjs`, a reviewed refresh that reports added, removed and
+  changed ACT rule and test-case ids with their expected outcomes, changed WCAG
+  transformed fields, and the local fixtures each change affects.
+- A scheduled `Refresh standards sources` workflow that regenerates, runs the
+  contract tests and opens a reviewable pull request. It never pushes to the
+  default branch and never merges itself.
 
 ### Changed
 

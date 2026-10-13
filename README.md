@@ -106,6 +106,7 @@ wcag/criteria.json   WCAG 2.2 success criteria — slim index derived from W3C's
 act/testcases.json   W3C ACT Task Force test cases (1,213 cases, 87 rules)
 catalog.json         ground truth for the local fixtures — what a correct scanner should say
 corpus-manifest.json stable family index, case counts and content digests
+sources.json         provenance for every standards-derived input: url, licence, upstream digest
 coverage.csv/.json   every WCAG 2.2 criterion x available ground truth
 schemas/             JSON Schema contracts and validated examples
 pipeline.json        pipeline-integrity ground truth and execution boundaries
@@ -128,8 +129,28 @@ patterns.mjs         regenerates the pattern pairs
 taxonomy.mjs         regenerates the taxonomy
 aaa.mjs              regenerates the AAA classification and its fixture pairs
 maturity.mjs         represented / executable / executed / verified states
+refresh-sources.mjs  reviewed refresh of the WCAG, ACT and APG inputs
 space-coverage.mjs   coverage against the whole space, not just WCAG
 ```
+
+### Standards sources
+
+`sources.json` records where every standards-derived input came from, under
+what licence, at which upstream digest. `refresh-sources.mjs` re-derives the
+vendored snapshots and reports what moved: added, removed and changed ACT rule
+and test-case ids with their expected outcomes, changed WCAG transformed
+fields, and the local fixtures each change affects.
+
+```sh
+node refresh-sources.mjs --check     # report drift, write nothing
+node refresh-sources.mjs --apply     # re-derive the snapshots
+```
+
+It fails closed. An upstream that returns 404 or 410, or whose declared licence
+has changed, stops the run rather than re-vendoring under terms nobody checked.
+The scheduled workflow opens a pull request for review and never pushes to the
+default branch. Releases keep referencing the committed snapshot, not live
+upstream content.
 
 Project decisions and compatibility follow [GOVERNANCE.md](GOVERNANCE.md).
 Contributions follow [CONTRIBUTING.md](CONTRIBUTING.md), and sensitive reports

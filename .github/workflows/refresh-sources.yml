@@ -1,0 +1,74 @@
+name: Refresh standards sources
+
+# Keeps the standards-derived inputs current without letting them change
+# benchmark identity behind anyone's back. The job opens a pull request with the
+# diff report in the body; a maintainer reviews and merges it. It never pushes
+# to the default branch and never merges itself.
+
+on:
+  schedule:
+    # Weekly, early Monday. Upstream moves rarely; a noisy cadence would train
+    # reviewers to rubber-stamp the result.
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    if: github.repository == 'cogniumhq/a11y-benchmark'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: check/package-lock.json
+
+      - name: Install validation dependencies
+        run: npm ci --prefix check --ignore-scripts
+
+      - name: Refresh the vendored snapshots
+        id: refresh
+        run: |
+          set +e
+          node refresh-sources.mjs --apply --report "$RUNNER_TEMP/refresh.md"
+          status=$?
+          set -e
+          # 0 = nothing moved, 1 = upstream moved, 2 = failed closed.
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          if [ "$status" -eq 2 ]; then
+            echo "::error::A source failed closed. See the report; resolve it by hand."
+            cat "$RUNNER_TEMP/refresh.md"
+            exit 1
+          fi
+
+      - name: Regenerate manifests and reports
+        if: steps.refresh.outputs.status == '1'
+        run: |
+          for generator in build.mjs delivery.mjs patterns.mjs taxonomy.mjs journeys.mjs scenarios.mjs media.mjs flash.mjs color-independent.mjs ui-states.mjs surfaces.mjs guided.mjs aaa.mjs manifest.mjs needs-index.mjs coverage.mjs space-coverage.mjs; do
+            node "$generator"
+          done
+
+      - name: Check the corpus still holds
+        if: steps.refresh.outputs.status == '1'
+        run: node --test check/*.test.mjs
+
+      - name: Open a reviewable pull request
+        if: steps.refresh.outputs.status == '1'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: refresh/standards-sources
+          base: ${{ github.event.repository.default_branch }}
+          commit-message: "Refresh standards-derived sources"
+          title: "Refresh standards-derived sources"
+          body-path: ${{ runner.temp }}/refresh.md
+          labels: dependencies
+          delete-branch: true
+          draft: false

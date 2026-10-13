@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cogniumhq/a11y-benchmark/schemas/sources.schema.json",
+  "title": "Standards-derived source provenance",
+  "description": "Where every standards-derived input came from, under what licence, at which upstream digest. A refresh records provenance here so a reader can tell which snapshot a release was built from, and so an upstream removal or licence change fails closed instead of being re-vendored silently.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "format", "format_version", "generated", "policy", "sources"],
+  "properties": {
+    "$schema": { "const": "./schemas/sources.schema.json" },
+    "format": { "const": "cognium-a11y-sources" },
+    "format_version": { "type": "string", "pattern": "^[1-9][0-9]*\\.[0-9]+\\.[0-9]+$" },
+    "generated": { "type": "string", "format": "date" },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["refresh", "fail_closed", "identity", "notices"],
+      "properties": {
+        "refresh": { "type": "string", "minLength": 1 },
+        "fail_closed": { "type": "string", "minLength": 1 },
+        "identity": { "type": "string", "minLength": 1 },
+        "notices": { "type": "string", "minLength": 1 }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/source" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "kind", "url", "canonical", "vendored", "transform", "license", "upstream"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "title": { "type": "string", "minLength": 1 },
+        "kind": { "enum": ["wcag", "act", "apg"] },
+        "url": { "type": "string", "pattern": "^https://" },
+        "canonical": { "type": "string", "pattern": "^https://" },
+        "vendored": {
+          "anyOf": [{ "type": "string", "minLength": 1 }, { "type": "null" }],
+          "description": "The committed snapshot this source produces, or null when nothing is vendored."
+        },
+        "watch_only": {
+          "const": true,
+          "description": "Nothing is vendored; a digest change means the fixtures it informed need review."
+        },
+        "informs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Paths to review when a watch-only source changes."
+        },
+        "transform": { "type": "string", "minLength": 1 },
+        "license": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "url", "notice"],
+          "properties": {
+            "name": { "type": "string", "minLength": 1 },
+            "url": { "type": "string", "pattern": "^https://" },
+            "notice": { "type": "string", "minLength": 1 },
+            "upstream_field": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Dotted path to the licence the upstream document declares about itself."
+            },
+            "upstream_value": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The value expected at upstream_field. A mismatch fails the refresh closed."
+            }
+          },
+          "dependentRequired": {
+            "upstream_field": ["upstream_value"],
+            "upstream_value": ["upstream_field"]
+          }
+        },
+        "upstream": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sha256", "fetched"],
+          "properties": {
+            "sha256": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+            "fetched": { "type": "string", "format": "date" },
+            "revision": { "type": "string", "minLength": 1 },
+            "counts": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "description": "A watch-only source vendors nothing; every other source must name its snapshot.",
+          "if": { "properties": { "watch_only": { "const": true } }, "required": ["watch_only"] },
+          "then": {
+            "properties": { "vendored": { "type": "null" }, "informs": {} },
+            "required": ["informs"]
+          },
+          "else": { "properties": { "vendored": { "type": "string" } } }
+        }
+      ]
+    }
+  }
+}
