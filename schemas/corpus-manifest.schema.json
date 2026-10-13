@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/cogniumhq/a11y-demo/schemas/corpus-manifest.schema.json",
+  "$id": "https://github.com/cogniumhq/a11y-benchmark/schemas/corpus-manifest.schema.json",
   "title": "Cognium accessibility corpus manifest",
   "type": "object",
   "additionalProperties": false,
@@ -23,7 +23,7 @@
       "additionalProperties": false,
       "required": ["id", "default_branch"],
       "properties": {
-        "id": { "const": "cogniumhq/a11y-demo" },
+        "id": { "const": "cogniumhq/a11y-benchmark" },
         "default_branch": { "type": "string", "minLength": 1 }
       }
     },

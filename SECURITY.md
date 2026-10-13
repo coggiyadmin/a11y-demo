@@ -3,7 +3,7 @@
 ## Reporting a vulnerability
 
 Report vulnerabilities privately through
-[GitHub private vulnerability reporting](https://github.com/cogniumhq/a11y-demo/security/advisories/new).
+[GitHub private vulnerability reporting](https://github.com/cogniumhq/a11y-benchmark/security/advisories/new).
 Do not open a public issue when a report contains an exploit, credential,
 personal information, private target, unsafe flashing payload or another detail
 that would increase harm.

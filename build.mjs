@@ -598,7 +598,7 @@ fs.writeFileSync(path.join(ROOT, 'index.html'), page('Accessibility fixture corp
 // test corpora: cases carry ground truth, a separate measured baseline carries engine
 // behaviour, and the two are never merged.
 fs.writeFileSync(path.join(ROOT, 'catalog.json'), JSON.stringify({
-  description: 'Ground truth for the a11y-demo fixture corpus. Each case names the WCAG '
+  description: 'Ground truth for the a11y-benchmark fixture corpus. Each case names the WCAG '
     + 'success criteria a correct scanner should report (min_criteria) or, for a negative '
     + 'control, the criteria it must NOT report (expected-clean). Browser reference facts '
     + 'live in check/reference.json, never here.',

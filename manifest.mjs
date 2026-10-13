@@ -41,7 +41,7 @@ const manifest = {
   format: 'cognium-a11y-corpus-manifest',
   format_version: '1.0.0',
   corpus: {
-    id: 'cogniumhq/a11y-demo',
+    id: 'cogniumhq/a11y-benchmark',
     default_branch: 'master',
   },
   generated: new Date().toISOString().slice(0, 10),

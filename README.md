@@ -1,6 +1,6 @@
-# a11y-demo
+# a11y-benchmark
 
-[![Validate corpus](https://github.com/cogniumhq/a11y-demo/actions/workflows/validate.yml/badge.svg)](https://github.com/cogniumhq/a11y-demo/actions/workflows/validate.yml)
+[![Validate corpus](https://github.com/cogniumhq/a11y-benchmark/actions/workflows/validate.yml/badge.svg)](https://github.com/cogniumhq/a11y-benchmark/actions/workflows/validate.yml)
 
 An accessibility fixture corpus: small pages with **known WCAG outcomes**, for
 measuring what an automated accessibility scanner finds, what it misses, and
@@ -9,7 +9,7 @@ what it reports that is not there.
 Engine-agnostic by design. Nothing here knows about any particular scanner.
 
 The canonical public repository is
-[`cogniumhq/a11y-demo`](https://github.com/cogniumhq/a11y-demo). Pin a full
+[`cogniumhq/a11y-benchmark`](https://github.com/cogniumhq/a11y-benchmark). Pin a full
 commit SHA for every published run. The default branch is development state;
 tagged releases are immutable benchmark references.
 

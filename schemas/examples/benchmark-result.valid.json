@@ -2,7 +2,7 @@
   "format": "cognium-a11y-benchmark-result",
   "format_version": "1.0.0",
   "corpus": {
-    "repository": "cogniumhq/a11y-demo",
+    "repository": "cogniumhq/a11y-benchmark",
     "revision": "af70e7c0298f8bfc266ffccfee0d5e1b40f5d62b",
     "manifest_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
   },

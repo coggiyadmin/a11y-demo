@@ -1,5 +1,5 @@
 {
-  "description": "Ground truth for the a11y-demo fixture corpus. Each case names the WCAG success criteria a correct scanner should report (min_criteria) or, for a negative control, the criteria it must NOT report (expected-clean). Browser reference facts live in check/reference.json, never here.",
+  "description": "Ground truth for the a11y-benchmark fixture corpus. Each case names the WCAG success criteria a correct scanner should report (min_criteria) or, for a negative control, the criteria it must NOT report (expected-clean). Browser reference facts live in check/reference.json, never here.",
   "version": 1,
   "generated": "2026-10-13",
   "scoring": {

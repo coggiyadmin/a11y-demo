@@ -3,7 +3,7 @@
   "format": "cognium-a11y-corpus-manifest",
   "format_version": "1.0.0",
   "corpus": {
-    "id": "cogniumhq/a11y-demo",
+    "id": "cogniumhq/a11y-benchmark",
     "default_branch": "master"
   },
   "generated": "2026-10-13",
@@ -17,7 +17,7 @@
       "id": "core",
       "file": "catalog.json",
       "case_count": 44,
-      "content_sha256": "sha256:7fe1e2806132574c2e894ca826d7fb277237c7e61767301b797b8f7781482557"
+      "content_sha256": "sha256:754a48b398c520fa446740f37791d1305252a6ead498b368af1afee3e439f476"
     },
     {
       "id": "delivery",

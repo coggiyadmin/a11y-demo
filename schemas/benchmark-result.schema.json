@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/cogniumhq/a11y-demo/schemas/benchmark-result.schema.json",
+  "$id": "https://github.com/cogniumhq/a11y-benchmark/schemas/benchmark-result.schema.json",
   "title": "Accessibility benchmark result interchange",
   "description": "Tool-neutral evidence for running an accessibility product against a pinned public corpus revision. The format preserves execution failure, observability, cannot-tell, and engine lineage instead of coercing them into pass/fail.",
   "type": "object",

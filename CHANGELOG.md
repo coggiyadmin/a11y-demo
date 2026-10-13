@@ -20,4 +20,4 @@ machine-readable manifest and schema versions are recorded with every release.
 ### Changed
 
 - CI installs pinned validation dependencies and validates published contracts.
-- The canonical repository is now `cogniumhq/a11y-demo`.
+- The canonical repository is now `cogniumhq/a11y-benchmark`.

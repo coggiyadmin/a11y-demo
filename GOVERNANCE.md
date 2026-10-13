@@ -1,6 +1,6 @@
 # Governance
 
-`cogniumhq/a11y-demo` is a public, product-neutral accessibility fixture corpus.
+`cogniumhq/a11y-benchmark` is a public, product-neutral accessibility fixture corpus.
 Its maintainers protect the integrity of expected outcomes, stable identifiers,
 public synthetic data, and machine-readable contracts. The repository does not
 certify products or publish private comparison results.

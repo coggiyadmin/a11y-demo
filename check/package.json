@@ -1,5 +1,5 @@
 {
-  "name": "a11y-demo-check",
+  "name": "a11y-benchmark-check",
   "private": true,
   "type": "module",
   "description": "Optional browser harness. The corpus itself has no dependencies; this one does.",

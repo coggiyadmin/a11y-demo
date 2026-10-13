@@ -9,7 +9,7 @@
 services:
   corpus:
     build: .
-    image: a11y-demo-corpus
+    image: a11y-benchmark-corpus
     ports:
       - "8080:8080"
     healthcheck:
