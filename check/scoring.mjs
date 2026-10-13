@@ -14,7 +14,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
-export const SCORING_POLICY = 'cognium-a11y-scoring/1.0.0';
+export const SCORING_POLICY = 'cognium-a11y-scoring/1.1.0';
 export const SCORE_FORMAT = 'cognium-a11y-score';
 export const SCORE_FORMAT_VERSION = '1.0.0';
 
@@ -53,6 +53,7 @@ export function loadCorpus(root) {
     manifest,
     manifest_sha256: `sha256:${crypto.createHash('sha256').update(manifestBytes).digest('hex')}`,
     cases,
+    levels: criterionLevels(root),
   };
 }
 
@@ -105,6 +106,34 @@ function pipelineAssertions(cases) {
 /** Cases whose evidence is a human judgement; never mixed into automated rates. */
 const isHumanLane = (fixture) => fixture.requires_human === true || fixture.mode === 'guided';
 
+/**
+ * The criteria a run demonstrated it has a rule for.
+ *
+ * A product that emits any outcome for a criterion -- fail, pass, cannot-tell,
+ * inapplicable -- has shown it evaluated that criterion. A product that emits
+ * nothing for it has shown nothing, and crediting its silence as restraint is
+ * the vacuous-pass error one layer up from where Tier P catches it.
+ *
+ * Derived from the run rather than declared, so it needs no extra disclosure
+ * from the publisher and cannot be overstated.
+ */
+export function engineReachableCriteria(results) {
+  const reachable = new Set();
+  for (const result of results) {
+    for (const execution of result.executions) {
+      for (const outcome of execution.outcomes ?? []) reachable.add(outcome.criterion);
+    }
+  }
+  return reachable;
+}
+
+/** WCAG level per criterion, so the AAA lane can be reported on its own. */
+export function criterionLevels(root) {
+  const file = path.join(root, 'wcag/criteria.json');
+  if (!fs.existsSync(file)) return new Map();
+  return new Map(readJson(file).criteria.map((row) => [row.num, row.level]));
+}
+
 // --- outcome aggregation ----------------------------------------------------
 
 /**
@@ -138,7 +167,7 @@ function aggregateCriterion(execution, criterion) {
 
 // --- lane: automated true-positive recall -----------------------------------
 
-function scoreRecall(assertions, executionsById) {
+function scoreRecall(assertions, executionsById, reachable) {
   const missed = {
     not_run: 0,
     execution_not_completed: 0,
@@ -152,6 +181,8 @@ function scoreRecall(assertions, executionsById) {
   const detail = [];
   let detected = 0;
   let attempted = 0;
+  let reachableDenominator = 0;
+  let reachableDetected = 0;
 
   for (const assertion of assertions) {
     const execution = executionsById.get(assertion.case_id);
@@ -192,12 +223,28 @@ function scoreRecall(assertions, executionsById) {
       }
     }
 
+    const engineReachable = reachable.has(assertion.criterion);
+    if (engineReachable) reachableDenominator += 1;
+
     if (reason) {
       missed[reason] += 1;
-      detail.push({ case_id: assertion.case_id, criterion: assertion.criterion, detected: false, reason });
+      detail.push({
+        case_id: assertion.case_id,
+        criterion: assertion.criterion,
+        detected: false,
+        reason,
+        engine_reachable: engineReachable,
+      });
     } else {
       detected += 1;
-      detail.push({ case_id: assertion.case_id, criterion: assertion.criterion, detected: true, reason: null });
+      if (engineReachable) reachableDetected += 1;
+      detail.push({
+        case_id: assertion.case_id,
+        criterion: assertion.criterion,
+        detected: true,
+        reason: null,
+        engine_reachable: engineReachable,
+      });
     }
   }
 
@@ -207,6 +254,13 @@ function scoreRecall(assertions, executionsById) {
     rate: rate(detected, assertions.length),
     denominator_attempted: attempted,
     rate_of_attempted: rate(detected, attempted),
+    // Assertions over criteria the run showed it evaluates at all. Published
+    // beside the whole-corpus rate, never instead of it: the full denominator
+    // is what stops a narrow engine looking complete, and this one is what
+    // makes the figure comparable to a published number for the same engine.
+    denominator_engine_reachable: reachableDenominator,
+    rate_engine_reachable: rate(reachableDetected, reachableDenominator),
+    engine_unreachable: assertions.length - reachableDenominator,
     missed,
     detail,
   };
@@ -214,15 +268,23 @@ function scoreRecall(assertions, executionsById) {
 
 // --- lane: corrected-control false positives --------------------------------
 
-function scoreFalsePositives(assertions, executionsById) {
+function scoreFalsePositives(assertions, executionsById, reachable) {
   const detail = [];
   let falsePositives = 0;
   let controlFalsePositives = 0;
   let controlDenominator = 0;
+  let controlReachableDenominator = 0;
+  let reachableDenominator = 0;
   let attempted = 0;
 
   for (const assertion of assertions) {
+    const engineReachable = reachable.has(assertion.criterion);
     if (assertion.corrected_control) controlDenominator += 1;
+    if (engineReachable) {
+      reachableDenominator += 1;
+      if (assertion.corrected_control) controlReachableDenominator += 1;
+    }
+
     const execution = executionsById.get(assertion.case_id);
     if (!execution) continue;
     attempted += 1;
@@ -251,10 +313,20 @@ function scoreFalsePositives(assertions, executionsById) {
     denominator: assertions.length,
     rate: rate(falsePositives, assertions.length),
     denominator_attempted: attempted,
+    // A product cannot produce a false positive for a criterion it has no rule
+    // for. Scoring restraint it never had to exercise reads silence as success
+    // -- the exact error this corpus exists to expose -- so the reachable
+    // denominator is published beside the full one.
+    denominator_engine_reachable: reachableDenominator,
+    rate_engine_reachable: rate(falsePositives, reachableDenominator),
+    engine_unreachable: assertions.length - reachableDenominator,
     corrected_control: {
       count: controlFalsePositives,
       denominator: controlDenominator,
       rate: rate(controlFalsePositives, controlDenominator),
+      denominator_engine_reachable: controlReachableDenominator,
+      rate_engine_reachable: rate(controlFalsePositives, controlReachableDenominator),
+      engine_unreachable: controlDenominator - controlReachableDenominator,
     },
     detail,
   };
@@ -527,7 +599,7 @@ function scoreRepeats(perRun) {
 
 // --- top level --------------------------------------------------------------
 
-function scoreSingleRun(corpus, result, assertionSets) {
+function scoreSingleRun(corpus, result, assertionSets, reachable) {
   const executions = result.executions;
   const executionsById = new Map();
   const duplicates = [];
@@ -539,8 +611,8 @@ function scoreSingleRun(corpus, result, assertionSets) {
     if (!corpus.cases.has(execution.case_id)) unknownCases.push(execution.case_id);
   }
 
-  const recall = scoreRecall(assertionSets.truePositive, executionsById);
-  const falsePositive = scoreFalsePositives(assertionSets.falsePositive, executionsById);
+  const recall = scoreRecall(assertionSets.truePositive, executionsById, reachable);
+  const falsePositive = scoreFalsePositives(assertionSets.falsePositive, executionsById, reachable);
   const pipeline = scorePipeline(assertionSets.pipeline, executionsById);
   const human = scoreHumanLane(corpus.cases, executionsById);
   const accounting = scoreExecutions(corpus.cases, executions, executionsById);
@@ -567,12 +639,20 @@ function scoreSingleRun(corpus, result, assertionSets) {
   };
 }
 
-function pool(perRun, assertionSets, corpus) {
+function pool(perRun, assertionSets, corpus, { reachable, levels }) {
   const sum = (pick) => perRun.reduce((total, run) => total + pick(run), 0);
 
   const tpNumerator = sum((run) => run.lanes.automated.true_positive_recall.numerator);
   const tpDenominator = sum((run) => run.lanes.automated.true_positive_recall.denominator);
   const tpAttempted = sum((run) => run.lanes.automated.true_positive_recall.denominator_attempted);
+  const tpReachable = sum((run) => run.lanes.automated.true_positive_recall.denominator_engine_reachable);
+  const tpReachableHit = perRun.reduce(
+    (total, run) =>
+      total + run.lanes.automated.true_positive_recall.detail.filter((row) => row.detected && row.engine_reachable).length,
+    0,
+  );
+  const fpReachable = sum((run) => run.lanes.automated.false_positive.denominator_engine_reachable);
+  const controlReachable = sum((run) => run.lanes.automated.false_positive.corrected_control.denominator_engine_reachable);
   const fpCount = sum((run) => run.lanes.automated.false_positive.count);
   const fpDenominator = sum((run) => run.lanes.automated.false_positive.denominator);
   const controlCount = sum((run) => run.lanes.automated.false_positive.corrected_control.count);
@@ -603,16 +683,25 @@ function pool(perRun, assertionSets, corpus) {
           // beside it so a deliberately scoped run stays readable.
           denominator_attempted: tpAttempted,
           rate_of_attempted: rate(tpNumerator, tpAttempted),
+          denominator_engine_reachable: tpReachable,
+          rate_engine_reachable: rate(tpReachableHit, tpReachable),
+          engine_unreachable: tpDenominator - tpReachable,
           missed,
         },
         false_positive: {
           count: fpCount,
           denominator: fpDenominator,
           rate: rate(fpCount, fpDenominator),
+          denominator_engine_reachable: fpReachable,
+          rate_engine_reachable: rate(fpCount, fpReachable),
+          engine_unreachable: fpDenominator - fpReachable,
           corrected_control: {
             count: controlCount,
             denominator: controlDenominator,
             rate: rate(controlCount, controlDenominator),
+            denominator_engine_reachable: controlReachable,
+            rate_engine_reachable: rate(controlCount, controlReachable),
+            engine_unreachable: controlDenominator - controlReachable,
           },
         },
       },
@@ -645,7 +734,27 @@ function pool(perRun, assertionSets, corpus) {
         assertionSets.falsePositive,
         fpDetail,
       ),
+      // WCAG level matters for comparability: no shipping engine implements
+      // AAA, so pooling AAA assertions into one rate depresses the headline
+      // while carrying no discriminating information.
+      by_level: breakdown(
+        (assertion) => [levels.get(assertion.criterion) ?? 'unknown'],
+        assertionSets.truePositive,
+        recallDetail,
+        assertionSets.falsePositive,
+        fpDetail,
+      ),
     },
+    // Criteria the corpus asserts on that no run in this comparison reported at
+    // all. Published so "nobody implements this" is visible rather than
+    // inferred from a low rate.
+    criteria_no_engine_reported: [
+      ...new Set(
+        [...assertionSets.truePositive, ...assertionSets.falsePositive]
+          .map((assertion) => assertion.criterion)
+          .filter((criterion) => !reachable.has(criterion)),
+      ),
+    ].sort(),
     corpus_cases: corpus.cases.size,
   };
 }
@@ -693,8 +802,11 @@ export function scoreResults(corpus, results, { strict = false } = {}) {
     pipeline: pipelineAssertions(corpus.cases),
   };
 
+  const reachable = engineReachableCriteria(results);
+  const levels = corpus.levels ?? new Map();
+
   const perRun = results
-    .map((result) => scoreSingleRun(corpus, result, assertionSets))
+    .map((result) => scoreSingleRun(corpus, result, assertionSets, reachable))
     .sort((a, b) => a.run.repeat - b.run.repeat || a.run.id.localeCompare(b.run.id));
 
   for (const run of perRun) {
@@ -711,7 +823,7 @@ export function scoreResults(corpus, results, { strict = false } = {}) {
     warnings.push(`pooled runs span ${environments.size} different environments; repeat variance may reflect the environment`);
   }
 
-  const pooled = pool(perRun, assertionSets, corpus);
+  const pooled = pool(perRun, assertionSets, corpus, { reachable, levels });
   const tools = perRun.map((run) => run.tool);
 
   return {
@@ -881,6 +993,33 @@ export function toCsv(score) {
     recall.numerator,
     recall.denominator_attempted,
     recall.rate_of_attempted,
+  );
+  push(
+    'automated',
+    'true_positive_recall_engine_reachable',
+    'overall',
+    '',
+    recall.numerator,
+    recall.denominator_engine_reachable,
+    recall.rate_engine_reachable,
+  );
+  push(
+    'automated',
+    'false_positive_engine_reachable',
+    'overall',
+    '',
+    fp.count,
+    fp.denominator_engine_reachable,
+    fp.rate_engine_reachable,
+  );
+  push(
+    'automated',
+    'corrected_control_false_positive_engine_reachable',
+    'overall',
+    '',
+    fp.corrected_control.count,
+    fp.corrected_control.denominator_engine_reachable,
+    fp.corrected_control.rate_engine_reachable,
   );
   push('automated', 'false_positive', 'overall', '', fp.count, fp.denominator, fp.rate);
   push(
