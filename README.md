@@ -54,6 +54,20 @@ to make the bundle discoverable. Listing confirms disclosure and schema validity
 only; it is not Cognium endorsement, product certification, a legal opinion or a
 WCAG conformance claim.
 
+## Human and assistive-technology evaluation
+
+Repeatable task scripts for JAWS, NVDA, VoiceOver, TalkBack, keyboard, switch
+and voice operation, media alternatives, display adaptation, comprehension and
+task completion are published in [protocols/](protocols/README.md). Each
+protocol fixes the prerequisites, environment fields, steps, expected
+observations, evidence and safety stops while keeping human-guided,
+interoperability, user-task and automated metrics separate.
+
+The protocol result vocabulary is `pass`, `fail`, `inapplicable`,
+`cannot-tell` and `not-tested`. Independent reviewers keep their original
+decisions; agreement and disagreements are reported without forced consensus.
+Only public synthetic fixture evidence belongs in a published bundle.
+
 ## Why it exists
 
 Most accessibility corpora test whether a *rule* is right. This one also tests

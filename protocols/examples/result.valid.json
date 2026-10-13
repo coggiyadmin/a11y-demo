@@ -1,0 +1,74 @@
+{
+  "$schema": "../result.schema.json",
+  "format": "cognium-a11y-human-result",
+  "format_version": "1.0.0",
+  "corpus": {
+    "repository": "cogniumhq/a11y-benchmark",
+    "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "manifest_sha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "protocol": {
+    "id": "keyboard-task",
+    "version": "1.0.0",
+    "fixture_ids": [
+      "scenario-safe_keyboard_trap"
+    ]
+  },
+  "session": {
+    "reviewer_id": "reviewer-alpha",
+    "started_at": "2026-10-13T10:00:00Z",
+    "completed_at": "2026-10-13T10:08:00Z",
+    "environment": {
+      "tool": null,
+      "tool_version": null,
+      "browser": "Example Browser",
+      "browser_version": "1.0",
+      "platform": "Example OS",
+      "platform_version": "1.0",
+      "settings": {
+        "viewport": "1280x720",
+        "zoom_percent": 100
+      },
+      "input_method": "keyboard only"
+    }
+  },
+  "outcomes": [
+    {
+      "step_id": "key-01",
+      "outcome": "pass",
+      "observation": "All declared task controls were reached once in a meaningful order.",
+      "evidence": [
+        {
+          "type": "note",
+          "note": "Synthetic focus trace: start, open panel, close panel, continue."
+        }
+      ]
+    },
+    {
+      "step_id": "key-02",
+      "outcome": "pass",
+      "observation": "The panel opened, closed with Escape and returned focus to its trigger.",
+      "evidence": [
+        {
+          "type": "digest",
+          "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        }
+      ]
+    },
+    {
+      "step_id": "key-03",
+      "outcome": "not-tested",
+      "observation": "This example is scoped to the corrected trap fixture rather than the full journey.",
+      "evidence": []
+    }
+  ],
+  "privacy": {
+    "fixture_data": "public-synthetic",
+    "participant_data_included": false,
+    "production_evidence_included": false
+  },
+  "metrics": {
+    "lane": "human-guided",
+    "automated_results_included": false
+  }
+}

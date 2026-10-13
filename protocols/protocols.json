@@ -1,0 +1,504 @@
+{
+  "$schema": "./protocols.schema.json",
+  "format": "cognium-a11y-human-protocols",
+  "format_version": "1.0.0",
+  "result_vocabulary": [
+    "pass",
+    "fail",
+    "inapplicable",
+    "cannot-tell",
+    "not-tested"
+  ],
+  "privacy": {
+    "fixture_data": "public-synthetic-only",
+    "participant_data": "prohibited",
+    "production_evidence": "prohibited"
+  },
+  "protocols": [
+    {
+      "id": "screen-reader-task",
+      "version": "1.0.0",
+      "title": "Screen-reader task interoperability",
+      "lane": "at-interoperability",
+      "fixture_ids": [
+        "guided-at_screen_reader_task",
+        "journey-booking-broken",
+        "journey-booking-correct"
+      ],
+      "prerequisites": [
+        "Use a clean profile and a supported product-browser pairing.",
+        "Know the normal reading, navigation, forms and interaction commands for the chosen pairing.",
+        "Run only against the public synthetic fixture host and reset the booking journey before each review."
+      ],
+      "environment": {
+        "required_fields": [
+          "tool",
+          "tool_version",
+          "browser",
+          "browser_version",
+          "platform",
+          "platform_version",
+          "settings",
+          "input_method"
+        ],
+        "pairing_options": [
+          {
+            "id": "jaws-windows-browser",
+            "tool": "JAWS",
+            "platform": "Windows",
+            "browser": "Record the exact supported browser",
+            "input_method": "screen-reader keyboard commands",
+            "scope_note": "The result applies only to the recorded JAWS, browser and platform versions."
+          },
+          {
+            "id": "nvda-windows-browser",
+            "tool": "NVDA",
+            "platform": "Windows",
+            "browser": "Record the exact supported browser",
+            "input_method": "screen-reader keyboard commands",
+            "scope_note": "The result applies only to the recorded NVDA, browser and platform versions."
+          },
+          {
+            "id": "voiceover-apple-browser",
+            "tool": "VoiceOver",
+            "platform": "Record macOS or iOS and its exact version",
+            "browser": "Record the exact browser",
+            "input_method": "VoiceOver commands for the recorded device",
+            "scope_note": "Desktop and mobile VoiceOver results are distinct and cannot be substituted for each other."
+          },
+          {
+            "id": "talkback-android-chrome",
+            "tool": "TalkBack",
+            "platform": "Android",
+            "browser": "Chrome",
+            "input_method": "TalkBack touch and gesture commands",
+            "scope_note": "Record device, Android, TalkBack and Chrome versions; do not generalize beyond them."
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "sr-01",
+          "action": "Open the declared journey entry and identify the page title, main heading and task start without visual assistance.",
+          "expected_observation": "The reviewer can locate the task and distinguish page structure using the chosen pairing.",
+          "evidence": "Record the announced title and heading order as a transcript or structured note."
+        },
+        {
+          "id": "sr-02",
+          "action": "Complete every declared booking step using only the chosen screen-reader commands.",
+          "expected_observation": "Controls expose usable names, roles, values, state changes and error or status feedback throughout the task.",
+          "evidence": "Record each blocker, unexpected announcement and successful state transition by step ID."
+        },
+        {
+          "id": "sr-03",
+          "action": "Repeat the same journey with the matched corrected fixture and compare only within the recorded pairing.",
+          "expected_observation": "The control is independently evaluated; a result from one pairing is not copied to another.",
+          "evidence": "Capture separate outcomes for the broken and corrected fixture IDs."
+        }
+      ],
+      "expected_observations": [
+        "Task completion and barriers are reported per pairing, not as universal product claims.",
+        "Announcements, navigation order, state changes and completion are observable in the evidence."
+      ],
+      "stop_conditions": [
+        "Stop if navigation leaves the public synthetic host or requests real account, payment or identity data.",
+        "Stop if the reviewer loses control of focus, audio or device operation in a way that cannot be safely reset.",
+        "Pause on discomfort or fatigue and mark remaining steps not-tested."
+      ],
+      "evidence_requirements": [
+        "Pseudonymous reviewer ID and exact pairing versions.",
+        "Step-level outcome, observation and evidence digest or public-synthetic note.",
+        "Separate result records for each pairing and fixture variant."
+      ]
+    },
+    {
+      "id": "keyboard-task",
+      "version": "1.0.0",
+      "title": "Keyboard-only task operation",
+      "lane": "human-guided",
+      "fixture_ids": [
+        "guided-focus_order_meaning",
+        "scenario-keyboard_trap",
+        "scenario-safe_keyboard_trap",
+        "journey-booking-broken",
+        "journey-booking-correct"
+      ],
+      "prerequisites": [
+        "Use a clean browser profile at the protocol default display settings.",
+        "Disconnect or set aside pointing input for the duration of the run.",
+        "Reset the fixture to its declared entry and default state."
+      ],
+      "environment": {
+        "required_fields": ["tool", "tool_version", "browser", "browser_version", "platform", "platform_version", "settings", "input_method"],
+        "pairing_options": []
+      },
+      "steps": [
+        {
+          "id": "key-01",
+          "action": "Traverse the task using Tab, Shift+Tab and documented native keys only.",
+          "expected_observation": "Every required control is reachable in an order that preserves meaning and operation.",
+          "evidence": "Record the ordered focus stops and any skipped or extra target."
+        },
+        {
+          "id": "key-02",
+          "action": "Activate, change and dismiss every interactive state using the keyboard.",
+          "expected_observation": "Activation works without pointer input, focus remains visible and no state traps focus.",
+          "evidence": "Record key sequence, resulting state and focus destination."
+        },
+        {
+          "id": "key-03",
+          "action": "Complete the matched corrected task from entry to confirmation.",
+          "expected_observation": "The control completes without borrowing observations from the broken fixture.",
+          "evidence": "Record task completion and control-specific observations."
+        }
+      ],
+      "expected_observations": [
+        "Focus order, visibility, activation and escape behavior are independently observable.",
+        "A blocked step is fail or cannot-tell with evidence, never an inferred pass."
+      ],
+      "stop_conditions": [
+        "Stop if focus enters a state that cannot be escaped with the documented recovery key.",
+        "Stop before any route outside the public synthetic fixture host.",
+        "Mark unattempted steps not-tested after a blocking failure."
+      ],
+      "evidence_requirements": [
+        "Exact browser, platform, viewport and keyboard layout.",
+        "Ordered focus trace and step-level outcome.",
+        "Public-synthetic screenshots or notes only."
+      ]
+    },
+    {
+      "id": "switch-task",
+      "version": "1.0.0",
+      "title": "Switch-access task operation",
+      "lane": "at-interoperability",
+      "fixture_ids": [
+        "scenario-dragging_required",
+        "scenario-safe_dragging_required",
+        "journey-booking-broken",
+        "journey-booking-correct"
+      ],
+      "prerequisites": [
+        "Configure the recorded switch interface, scan pattern and activation timing before opening the fixture.",
+        "Verify the reviewer can pause or exit scanning at any point.",
+        "Reset the fixture and switch scan position before each variant."
+      ],
+      "environment": {
+        "required_fields": ["tool", "tool_version", "browser", "browser_version", "platform", "platform_version", "settings", "input_method"],
+        "pairing_options": []
+      },
+      "steps": [
+        {
+          "id": "switch-01",
+          "action": "Scan from the entry point to each required task control without direct pointer selection.",
+          "expected_observation": "Every target enters the scan sequence once in a usable order.",
+          "evidence": "Record scan order, missed targets and duplicate stops."
+        },
+        {
+          "id": "switch-02",
+          "action": "Activate each control and complete any alternative to dragging or path movement.",
+          "expected_observation": "All required operations have a switch-operable action that does not depend on fine path input.",
+          "evidence": "Record activation method and resulting state for every step."
+        },
+        {
+          "id": "switch-03",
+          "action": "Complete the corrected journey using the same switch configuration.",
+          "expected_observation": "The matched control completes under identical timing and scan settings.",
+          "evidence": "Record completion, activation count and any abandoned step."
+        }
+      ],
+      "expected_observations": [
+        "Reachability and activation are reported separately from task completion.",
+        "The exact switch configuration is part of the result scope."
+      ],
+      "stop_conditions": [
+        "Stop if repeated scanning creates discomfort or the reviewer cannot pause the scan safely.",
+        "Stop if a destructive action lacks a public-synthetic reset path.",
+        "Mark remaining steps not-tested after the reviewer stops."
+      ],
+      "evidence_requirements": [
+        "Switch interface, version, scan mode, timing and input method.",
+        "Step-level scan and activation observations.",
+        "No biometric, health or participant profile data."
+      ]
+    },
+    {
+      "id": "voice-operation-task",
+      "version": "1.0.0",
+      "title": "Voice-operation task",
+      "lane": "at-interoperability",
+      "fixture_ids": [
+        "scenario-label_in_name",
+        "scenario-safe_label_in_name",
+        "journey-booking-broken",
+        "journey-booking-correct"
+      ],
+      "prerequisites": [
+        "Configure the recorded voice-operation product and microphone in a controlled environment.",
+        "Use only synthetic commands and fixture data.",
+        "Reset the fixture and recognition state before each variant."
+      ],
+      "environment": {
+        "required_fields": ["tool", "tool_version", "browser", "browser_version", "platform", "platform_version", "settings", "input_method"],
+        "pairing_options": []
+      },
+      "steps": [
+        {
+          "id": "voice-01",
+          "action": "Identify and activate visible controls by their displayed labels.",
+          "expected_observation": "Spoken labels resolve to the intended accessible controls without hidden-name mismatch.",
+          "evidence": "Record command text and the activated target."
+        },
+        {
+          "id": "voice-02",
+          "action": "Enter and correct synthetic field values using voice commands only.",
+          "expected_observation": "Text entry, correction and form navigation can be completed without another input method.",
+          "evidence": "Record successful commands, retries and any fallback."
+        },
+        {
+          "id": "voice-03",
+          "action": "Complete the matched corrected journey with the same recognition settings.",
+          "expected_observation": "The control is evaluated under the identical environment.",
+          "evidence": "Record step outcomes and completion status."
+        }
+      ],
+      "expected_observations": [
+        "Label matching, activation, text correction and completion are reported separately.",
+        "Recognition retries remain evidence and are not hidden by final completion."
+      ],
+      "stop_conditions": [
+        "Stop if the product captures voice input outside the synthetic test session.",
+        "Stop on voice strain, discomfort or loss of command control.",
+        "Do not record raw audio; retain only consented synthetic command evidence."
+      ],
+      "evidence_requirements": [
+        "Product, version, recognition settings, microphone class and ambient condition.",
+        "Command-to-target trace using synthetic content.",
+        "No voiceprint, identity inference or unrelated audio."
+      ]
+    },
+    {
+      "id": "caption-transcript-review",
+      "version": "1.0.0",
+      "title": "Caption and transcript equivalence review",
+      "lane": "human-guided",
+      "fixture_ids": [
+        "guided-caption_quality",
+        "media-captions_present_but_poor",
+        "media-safe_captions_present_but_poor",
+        "media-audio_no_transcript",
+        "media-safe_audio_no_transcript"
+      ],
+      "prerequisites": [
+        "Use the generated public synthetic media and its declared duration.",
+        "Verify playback controls and text tracks load before judging content.",
+        "Set playback rate, caption appearance and output volume to recorded values."
+      ],
+      "environment": {
+        "required_fields": ["tool", "tool_version", "browser", "browser_version", "platform", "platform_version", "settings", "input_method"],
+        "pairing_options": []
+      },
+      "steps": [
+        {
+          "id": "media-01",
+          "action": "Play the video with audio output muted and captions enabled.",
+          "expected_observation": "Dialogue, speaker changes and meaningful sounds are conveyed at usable times.",
+          "evidence": "Record cue timestamps and any missing, inaccurate or late information."
+        },
+        {
+          "id": "media-02",
+          "action": "Read the transcript without playing the audio and compare its information with the source script.",
+          "expected_observation": "The transcript preserves the information and sequence needed to understand the media.",
+          "evidence": "Record the compared source and transcript digests plus differences."
+        },
+        {
+          "id": "media-03",
+          "action": "Repeat both checks on the matched corrected fixtures.",
+          "expected_observation": "Presence and quality are judged separately; a present track is not automatically a pass.",
+          "evidence": "Record separate outcomes for each fixture and review dimension."
+        }
+      ],
+      "expected_observations": [
+        "Track presence, accuracy, timing, speaker identification and sound information are distinct observations.",
+        "Quality that cannot be settled from the available evidence is cannot-tell."
+      ],
+      "stop_conditions": [
+        "Stop if media is not the generated public synthetic asset or its digest is unknown.",
+        "Stop if playback unexpectedly produces unsafe volume or motion.",
+        "Mark unavailable content not-tested rather than treating silence as pass."
+      ],
+      "evidence_requirements": [
+        "Media and text-track digests, playback rate and caption settings.",
+        "Timestamped observation per quality dimension.",
+        "No external media, personal recordings or production captures."
+      ]
+    },
+    {
+      "id": "zoom-display-adaptation",
+      "version": "1.0.0",
+      "title": "Zoom and display-adaptation review",
+      "lane": "human-guided",
+      "fixture_ids": [
+        "scenario-text_spacing",
+        "scenario-safe_text_spacing",
+        "scenario-forced_colors",
+        "scenario-safe_forced_colors",
+        "scenario-orientation_lock",
+        "scenario-safe_orientation_lock"
+      ],
+      "prerequisites": [
+        "Start from the recorded viewport, zoom, text size, orientation and display preferences.",
+        "Use a clean browser profile with extension effects recorded or disabled.",
+        "Reset the fixture between display conditions."
+      ],
+      "environment": {
+        "required_fields": ["tool", "tool_version", "browser", "browser_version", "platform", "platform_version", "settings", "input_method"],
+        "pairing_options": []
+      },
+      "steps": [
+        {
+          "id": "display-01",
+          "action": "Apply the declared zoom and text-spacing condition and complete the fixture task.",
+          "expected_observation": "Content remains available, readable and operable without loss or two-dimensional page scrolling where prohibited.",
+          "evidence": "Record viewport, scale, spacing values and any clipped or overlapping target."
+        },
+        {
+          "id": "display-02",
+          "action": "Enable the declared high-contrast or forced-color condition and inspect required states.",
+          "expected_observation": "Information, focus and control boundaries remain distinguishable without relying on author colors alone.",
+          "evidence": "Record condition, state and public-synthetic screenshot digest."
+        },
+        {
+          "id": "display-03",
+          "action": "Change to each declared orientation and repeat the critical operation.",
+          "expected_observation": "The task remains operable unless a documented essential exception applies.",
+          "evidence": "Record orientation, exception rationale and outcome."
+        }
+      ],
+      "expected_observations": [
+        "Each display condition has its own outcome; one condition cannot stand in for another.",
+        "Clipping, overlap, reflow, focus and state visibility are recorded separately."
+      ],
+      "stop_conditions": [
+        "Stop if rapid visual change or motion appears unexpectedly; restore the safe default.",
+        "Stop when required content cannot be reached and record the blocking state.",
+        "Mark any condition not applied as not-tested."
+      ],
+      "evidence_requirements": [
+        "Viewport, scale, spacing, contrast preference, orientation and platform settings.",
+        "Condition-specific observations and evidence digests.",
+        "Essential-exception rationale when used."
+      ]
+    },
+    {
+      "id": "comprehension-review",
+      "version": "1.0.0",
+      "title": "Comprehension and task-guidance review",
+      "lane": "human-guided",
+      "fixture_ids": [
+        "guided-plain_language",
+        "scenario-error_suggestion",
+        "scenario-safe_error_suggestion",
+        "journey-signup-broken",
+        "journey-signup-correct"
+      ],
+      "prerequisites": [
+        "Use the stated audience and synthetic task goal without adding unstated instructions.",
+        "Reviewers complete calibration examples before independent scoring.",
+        "Reset the journey and do not expose one reviewer's outcome to another reviewer."
+      ],
+      "environment": {
+        "required_fields": ["tool", "tool_version", "browser", "browser_version", "platform", "platform_version", "settings", "input_method"],
+        "pairing_options": []
+      },
+      "steps": [
+        {
+          "id": "understand-01",
+          "action": "State the task goal and identify the next action using only the fixture wording.",
+          "expected_observation": "The reviewer can explain the goal and next action without guessing from external knowledge.",
+          "evidence": "Record a structured paraphrase and unclear terms."
+        },
+        {
+          "id": "understand-02",
+          "action": "Trigger each synthetic error and attempt recovery using the presented guidance.",
+          "expected_observation": "The guidance identifies the problem and provides a usable correction path.",
+          "evidence": "Record the error, guidance, attempted correction and result."
+        },
+        {
+          "id": "understand-03",
+          "action": "Repeat independently on the corrected fixture before comparing reviews.",
+          "expected_observation": "Differences are reported through agreement metrics without rewriting either independent result.",
+          "evidence": "Record both outcomes and any unresolved disagreement."
+        }
+      ],
+      "expected_observations": [
+        "Task goal, next action, terminology and error recovery are separate judgements.",
+        "Ambiguous evidence is cannot-tell rather than forced into pass or fail."
+      ],
+      "stop_conditions": [
+        "Stop if the reviewer needs information outside the public fixture and mark the step cannot-tell.",
+        "Stop after a blocking error prevents later steps and mark them not-tested.",
+        "Do not collect education, diagnosis or other participant profile data."
+      ],
+      "evidence_requirements": [
+        "Audience statement, synthetic task goal and exact fixture revision.",
+        "Structured paraphrase and recovery trace.",
+        "Independent outcomes retained before disagreement review."
+      ]
+    },
+    {
+      "id": "user-task-completion",
+      "version": "1.0.0",
+      "title": "User-task completion review",
+      "lane": "user-task",
+      "fixture_ids": [
+        "guided-user_task_completion",
+        "journey-checkout-broken",
+        "journey-checkout-correct"
+      ],
+      "prerequisites": [
+        "Use a trained facilitator and the public synthetic checkout goal.",
+        "Obtain appropriate consent outside the published benchmark bundle and publish no participant data.",
+        "Verify the fixture cannot create a real purchase, account or external submission."
+      ],
+      "environment": {
+        "required_fields": ["tool", "tool_version", "browser", "browser_version", "platform", "platform_version", "settings", "input_method"],
+        "pairing_options": []
+      },
+      "steps": [
+        {
+          "id": "task-01",
+          "action": "Present the synthetic checkout goal without demonstrating the interface.",
+          "expected_observation": "The reviewer begins from the declared entry with only the task goal.",
+          "evidence": "Record facilitator prompt version and fixture entry."
+        },
+        {
+          "id": "task-02",
+          "action": "Observe progress through every declared step without redirecting unless a safety stop applies.",
+          "expected_observation": "Completion, blockers, recovery attempts and assistance are distinguishable.",
+          "evidence": "Record step outcomes and facilitator interventions without participant identifiers."
+        },
+        {
+          "id": "task-03",
+          "action": "Run the matched corrected journey as a separate session and retain both results.",
+          "expected_observation": "Task outcomes remain a user-task lane and are not merged into automated conformance metrics.",
+          "evidence": "Record separate completion status, assistance and not-tested steps."
+        }
+      ],
+      "expected_observations": [
+        "Completion, assistance, abandonment and recovery are recorded without identity or profile data.",
+        "The result is scoped to the synthetic task, environment and review session."
+      ],
+      "stop_conditions": [
+        "Stop immediately at a reviewer request or any sign of discomfort.",
+        "Stop if the fixture leaves the public synthetic host or requests real personal, payment or account data.",
+        "Stop before any irreversible action and mark remaining steps not-tested."
+      ],
+      "evidence_requirements": [
+        "Pseudonymous reviewer ID, facilitator prompt version and exact environment.",
+        "Step outcome and assistance count without quotes or identifying recordings.",
+        "No participant data, production evidence or real transaction values."
+      ]
+    }
+  ]
+}

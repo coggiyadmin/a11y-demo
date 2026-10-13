@@ -10,6 +10,11 @@ results. Publish result bundles in a separate public repository, archive or
 research artifact. This separation prevents a product result from changing the
 truth it is measured against.
 
+Human-guided, assistive-technology interoperability and user-task evaluations
+follow the versioned contracts in [protocols/](protocols/README.md). Publish
+those result files as separate lanes; do not insert them into automated
+executions or average them into automated recall and false-positive metrics.
+
 ## Minimum publication bundle
 
 A publishable bundle contains:
