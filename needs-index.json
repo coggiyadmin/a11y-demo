@@ -13,9 +13,9 @@
       "label": "Non-visual operation",
       "group": "visual-presentation",
       "scenarios": 10,
-      "cases": 170,
-      "tp": 86,
-      "safe": 78,
+      "cases": 183,
+      "tp": 91,
+      "safe": 83,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -38,13 +38,16 @@
         "2.1.1",
         "2.1.2",
         "2.2.1",
+        "2.4.10",
         "2.4.2",
         "2.4.3",
         "2.4.4",
         "2.4.6",
+        "2.4.8",
         "2.5.3",
         "3.1.1",
         "3.1.2",
+        "3.1.4",
         "3.2.1",
         "3.2.2",
         "3.2.3",
@@ -227,7 +230,20 @@
         "guided/sensory_characteristics.html",
         "guided/focus_order_meaning.html",
         "guided/at_screen_reader_task.html",
-        "guided/ai_suggested_alt_review.html"
+        "guided/ai_suggested_alt_review.html",
+        "guided/sign_language_equivalence.html",
+        "guided/extended_audio_description.html",
+        "guided/pronunciation_ambiguity.html",
+        "aaa/location.html",
+        "aaa/safe_location.html",
+        "aaa/section_headings.html",
+        "aaa/safe_section_headings.html",
+        "aaa/abbreviations.html",
+        "aaa/safe_abbreviations.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -235,9 +251,9 @@
       "label": "Visual clarity and scaling",
       "group": "visual-presentation",
       "scenarios": 8,
-      "cases": 113,
-      "tp": 60,
-      "safe": 50,
+      "cases": 124,
+      "tp": 65,
+      "safe": 55,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -258,15 +274,19 @@
         "1.4.13",
         "1.4.3",
         "1.4.4",
+        "1.4.8",
         "2.1.1",
         "2.2.1",
         "2.2.2",
         "2.4.11",
+        "2.4.12",
+        "2.4.13",
         "2.4.3",
         "2.4.4",
         "2.4.7",
         "2.5.5",
         "2.5.8",
+        "3.1.1",
         "3.3.1",
         "3.3.2",
         "3.3.4",
@@ -386,7 +406,18 @@
         "surfaces/safe_chatbot_transcript.html",
         "guided/alt_text_appropriateness.html",
         "guided/sensory_characteristics.html",
-        "guided/ai_suggested_alt_review.html"
+        "guided/ai_suggested_alt_review.html",
+        "guided/extended_audio_description.html",
+        "aaa/visual_presentation.html",
+        "aaa/safe_visual_presentation.html",
+        "aaa/focus_not_obscured_enhanced.html",
+        "aaa/safe_focus_not_obscured_enhanced.html",
+        "aaa/focus_appearance.html",
+        "aaa/safe_focus_appearance.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -473,9 +504,9 @@
       "label": "Contrast and display adaptation",
       "group": "visual-presentation",
       "scenarios": 4,
-      "cases": 24,
-      "tp": 12,
-      "safe": 12,
+      "cases": 26,
+      "tp": 13,
+      "safe": 13,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -486,6 +517,7 @@
         "1.4.1",
         "1.4.11",
         "1.4.3",
+        "2.4.13",
         "3.3.1",
         "3.3.2",
         "4.1.2"
@@ -514,7 +546,9 @@
         "scenarios/disabled_state.html",
         "scenarios/safe_disabled_state.html",
         "surfaces/email_contrast_darkmode.html",
-        "surfaces/safe_email_contrast_darkmode.html"
+        "surfaces/safe_email_contrast_darkmode.html",
+        "aaa/focus_appearance.html",
+        "aaa/safe_focus_appearance.html"
       ]
     },
     {
@@ -522,7 +556,7 @@
       "label": "Text alternatives for audio",
       "group": "audio-and-alternatives",
       "scenarios": 6,
-      "cases": 10,
+      "cases": 13,
       "tp": 4,
       "safe": 5,
       "maturity": "executable",
@@ -546,7 +580,10 @@
         "media/safe_audio_no_transcript.html",
         "media/captions_unlabelled_track.html",
         "media/safe_captions_unlabelled_track.html",
-        "guided/caption_quality.html"
+        "guided/caption_quality.html",
+        "guided/sign_language_equivalence.html",
+        "guided/live_audio_alternative.html",
+        "guided/background_audio_level.html"
       ]
     },
     {
@@ -554,7 +591,7 @@
       "label": "Adjustable and clear audio",
       "group": "audio-and-alternatives",
       "scenarios": 4,
-      "cases": 12,
+      "cases": 15,
       "tp": 5,
       "safe": 6,
       "maturity": "executable",
@@ -581,7 +618,10 @@
         "media/safe_autoplay_no_control.html",
         "media/captions_unlabelled_track.html",
         "media/safe_captions_unlabelled_track.html",
-        "guided/caption_quality.html"
+        "guided/caption_quality.html",
+        "guided/sign_language_equivalence.html",
+        "guided/live_audio_alternative.html",
+        "guided/background_audio_level.html"
       ]
     },
     {
@@ -589,9 +629,9 @@
       "label": "Text and tactile access",
       "group": "combined-access",
       "scenarios": 6,
-      "cases": 133,
-      "tp": 69,
-      "safe": 62,
+      "cases": 140,
+      "tp": 71,
+      "safe": 64,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -755,7 +795,14 @@
         "surfaces/chatbot_transcript.html",
         "surfaces/safe_chatbot_transcript.html",
         "guided/reading_order.html",
-        "guided/at_screen_reader_task.html"
+        "guided/at_screen_reader_task.html",
+        "guided/extended_audio_description.html",
+        "guided/live_audio_alternative.html",
+        "guided/pronunciation_ambiguity.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -763,9 +810,9 @@
       "label": "Alternative input access",
       "group": "input-and-control",
       "scenarios": 8,
-      "cases": 110,
-      "tp": 59,
-      "safe": 50,
+      "cases": 120,
+      "tp": 64,
+      "safe": 55,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -777,6 +824,7 @@
         "1.3.1",
         "1.3.4",
         "1.3.5",
+        "1.3.6",
         "1.4.1",
         "1.4.10",
         "1.4.13",
@@ -785,6 +833,8 @@
         "2.2.1",
         "2.2.6",
         "2.4.11",
+        "2.4.12",
+        "2.4.13",
         "2.4.3",
         "2.4.5",
         "2.4.7",
@@ -793,6 +843,7 @@
         "2.5.3",
         "2.5.4",
         "2.5.5",
+        "2.5.6",
         "2.5.7",
         "2.5.8",
         "3.2.1",
@@ -803,6 +854,7 @@
         "3.3.4",
         "3.3.7",
         "3.3.8",
+        "3.3.9",
         "4.1.2",
         "4.1.3"
       ],
@@ -916,7 +968,17 @@
         "scenarios/safe_motion_actuation.html",
         "surfaces/chatbot_transcript.html",
         "surfaces/safe_chatbot_transcript.html",
-        "guided/focus_order_meaning.html"
+        "guided/focus_order_meaning.html",
+        "aaa/identify_purpose.html",
+        "aaa/safe_identify_purpose.html",
+        "aaa/accessible_auth_enhanced.html",
+        "aaa/safe_accessible_auth_enhanced.html",
+        "aaa/focus_not_obscured_enhanced.html",
+        "aaa/safe_focus_not_obscured_enhanced.html",
+        "aaa/focus_appearance.html",
+        "aaa/safe_focus_appearance.html",
+        "aaa/concurrent_input.html",
+        "aaa/safe_concurrent_input.html"
       ]
     },
     {
@@ -924,9 +986,9 @@
       "label": "Error-tolerant pointer input",
       "group": "input-and-control",
       "scenarios": 4,
-      "cases": 60,
-      "tp": 35,
-      "safe": 25,
+      "cases": 62,
+      "tp": 36,
+      "safe": 26,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -943,6 +1005,7 @@
         "2.5.2",
         "2.5.4",
         "2.5.5",
+        "2.5.6",
         "2.5.7",
         "2.5.8",
         "3.3.1",
@@ -1010,7 +1073,9 @@
         "scenarios/motion_actuation.html",
         "scenarios/safe_motion_actuation.html",
         "surfaces/chatbot_transcript.html",
-        "surfaces/safe_chatbot_transcript.html"
+        "surfaces/safe_chatbot_transcript.html",
+        "aaa/concurrent_input.html",
+        "aaa/safe_concurrent_input.html"
       ]
     },
     {
@@ -1018,9 +1083,9 @@
       "label": "Hands-free and switch operation",
       "group": "input-and-control",
       "scenarios": 3,
-      "cases": 60,
-      "tp": 35,
-      "safe": 25,
+      "cases": 64,
+      "tp": 37,
+      "safe": 27,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1034,10 +1099,12 @@
         "1.4.10",
         "2.1.1",
         "2.1.2",
+        "2.4.12",
         "2.4.3",
         "2.4.7",
         "2.5.1",
         "2.5.4",
+        "2.5.6",
         "2.5.7",
         "3.3.1",
         "3.3.8",
@@ -1104,7 +1171,11 @@
         "scenarios/motion_actuation.html",
         "scenarios/safe_motion_actuation.html",
         "surfaces/chatbot_transcript.html",
-        "surfaces/safe_chatbot_transcript.html"
+        "surfaces/safe_chatbot_transcript.html",
+        "aaa/focus_not_obscured_enhanced.html",
+        "aaa/safe_focus_not_obscured_enhanced.html",
+        "aaa/concurrent_input.html",
+        "aaa/safe_concurrent_input.html"
       ]
     },
     {
@@ -1112,9 +1183,9 @@
       "label": "Low-effort interaction",
       "group": "input-and-control",
       "scenarios": 4,
-      "cases": 12,
-      "tp": 6,
-      "safe": 6,
+      "cases": 20,
+      "tp": 10,
+      "safe": 10,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1123,13 +1194,17 @@
       "independently_verified": false,
       "criteria": [
         "1.3.5",
+        "1.3.6",
         "2.2.1",
+        "2.2.3",
+        "2.2.5",
         "2.2.6",
         "2.4.3",
         "2.4.5",
         "3.2.3",
         "3.3.1",
         "3.3.4",
+        "3.3.6",
         "3.3.7",
         "4.1.3"
       ],
@@ -1145,7 +1220,15 @@
         "journeys/checkout/broken/index.html",
         "journeys/checkout/correct/index.html",
         "journeys/session/broken/index.html",
-        "journeys/session/correct/index.html"
+        "journeys/session/correct/index.html",
+        "aaa/identify_purpose.html",
+        "aaa/safe_identify_purpose.html",
+        "aaa/no_timing.html",
+        "aaa/safe_no_timing.html",
+        "aaa/re_authenticating.html",
+        "aaa/safe_re_authenticating.html",
+        "aaa/error_prevention_all.html",
+        "aaa/safe_error_prevention_all.html"
       ]
     },
     {
@@ -1153,9 +1236,9 @@
       "label": "Non-voice alternatives",
       "group": "voice-alternatives",
       "scenarios": 3,
-      "cases": 66,
-      "tp": 38,
-      "safe": 28,
+      "cases": 68,
+      "tp": 39,
+      "safe": 29,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1173,6 +1256,7 @@
         "3.3.1",
         "3.3.2",
         "3.3.8",
+        "3.3.9",
         "4.1.2",
         "4.1.3"
       ],
@@ -1242,7 +1326,9 @@
         "scenarios/disabled_state.html",
         "scenarios/safe_disabled_state.html",
         "surfaces/chatbot_transcript.html",
-        "surfaces/safe_chatbot_transcript.html"
+        "surfaces/safe_chatbot_transcript.html",
+        "aaa/accessible_auth_enhanced.html",
+        "aaa/safe_accessible_auth_enhanced.html"
       ]
     },
     {
@@ -1250,9 +1336,9 @@
       "label": "Memory support",
       "group": "comprehension-and-task",
       "scenarios": 4,
-      "cases": 59,
-      "tp": 29,
-      "safe": 29,
+      "cases": 82,
+      "tp": 40,
+      "safe": 40,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1264,20 +1350,30 @@
         "1.3.1",
         "1.3.2",
         "1.3.5",
+        "1.3.6",
         "1.4.1",
         "2.1.1",
         "2.2.1",
+        "2.2.3",
+        "2.2.5",
         "2.2.6",
+        "2.4.10",
         "2.4.2",
         "2.4.3",
         "2.4.5",
+        "2.4.8",
+        "3.1.1",
+        "3.1.4",
         "3.2.3",
         "3.3.1",
         "3.3.2",
         "3.3.3",
         "3.3.4",
+        "3.3.5",
+        "3.3.6",
         "3.3.7",
         "3.3.8",
+        "3.3.9",
         "4.1.2",
         "4.1.3"
       ],
@@ -1340,7 +1436,30 @@
         "surfaces/safe_authoring_generates_bad_markup.html",
         "surfaces/chatbot_transcript.html",
         "surfaces/safe_chatbot_transcript.html",
-        "guided/plain_language.html"
+        "guided/plain_language.html",
+        "guided/unusual_words.html",
+        "aaa/identify_purpose.html",
+        "aaa/safe_identify_purpose.html",
+        "aaa/location.html",
+        "aaa/safe_location.html",
+        "aaa/section_headings.html",
+        "aaa/safe_section_headings.html",
+        "aaa/abbreviations.html",
+        "aaa/safe_abbreviations.html",
+        "aaa/help.html",
+        "aaa/safe_help.html",
+        "aaa/accessible_auth_enhanced.html",
+        "aaa/safe_accessible_auth_enhanced.html",
+        "aaa/no_timing.html",
+        "aaa/safe_no_timing.html",
+        "aaa/re_authenticating.html",
+        "aaa/safe_re_authenticating.html",
+        "aaa/error_prevention_all.html",
+        "aaa/safe_error_prevention_all.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -1348,9 +1467,9 @@
       "label": "Focus and attention support",
       "group": "comprehension-and-task",
       "scenarios": 3,
-      "cases": 62,
-      "tp": 29,
-      "safe": 32,
+      "cases": 66,
+      "tp": 31,
+      "safe": 34,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1371,6 +1490,8 @@
         "2.2.2",
         "2.3.3",
         "2.4.11",
+        "2.4.12",
+        "2.4.13",
         "2.4.3",
         "2.4.7",
         "3.2.1",
@@ -1443,6 +1564,10 @@
         "surfaces/chatbot_transcript.html",
         "surfaces/safe_chatbot_transcript.html",
         "guided/focus_order_meaning.html",
+        "aaa/focus_not_obscured_enhanced.html",
+        "aaa/safe_focus_not_obscured_enhanced.html",
+        "aaa/focus_appearance.html",
+        "aaa/safe_focus_appearance.html",
         "flash/animation_from_interaction.html",
         "flash/safe_animation_from_interaction.html"
       ]
@@ -1452,9 +1577,9 @@
       "label": "Reading support",
       "group": "comprehension-and-task",
       "scenarios": 5,
-      "cases": 11,
-      "tp": 5,
-      "safe": 5,
+      "cases": 24,
+      "tp": 10,
+      "safe": 10,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1462,11 +1587,16 @@
       "verified": false,
       "independently_verified": false,
       "criteria": [
+        "1.1.1",
+        "1.3.1",
         "1.4.12",
         "1.4.4",
+        "1.4.8",
         "2.2.2",
+        "2.4.10",
         "3.1.1",
-        "3.1.2"
+        "3.1.2",
+        "3.1.4"
       ],
       "fixtures": [
         "static/viewport_no_zoom.html",
@@ -1479,7 +1609,20 @@
         "scenarios/safe_text_spacing.html",
         "scenarios/rtl_mixed_language.html",
         "scenarios/safe_rtl_mixed_language.html",
-        "guided/plain_language.html"
+        "guided/plain_language.html",
+        "guided/background_audio_level.html",
+        "guided/unusual_words.html",
+        "guided/pronunciation_ambiguity.html",
+        "aaa/visual_presentation.html",
+        "aaa/safe_visual_presentation.html",
+        "aaa/section_headings.html",
+        "aaa/safe_section_headings.html",
+        "aaa/abbreviations.html",
+        "aaa/safe_abbreviations.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -1487,9 +1630,9 @@
       "label": "Language clarity",
       "group": "comprehension-and-task",
       "scenarios": 4,
-      "cases": 108,
-      "tp": 57,
-      "safe": 47,
+      "cases": 125,
+      "tp": 64,
+      "safe": 54,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1503,20 +1646,25 @@
         "1.3.1",
         "1.3.2",
         "1.3.5",
+        "1.3.6",
         "1.4.1",
         "1.4.11",
         "1.4.12",
         "1.4.3",
+        "1.4.8",
         "2.1.1",
         "2.4.3",
         "2.4.4",
         "2.4.6",
+        "2.4.8",
         "3.1.1",
         "3.1.2",
+        "3.1.4",
         "3.3.1",
         "3.3.2",
         "3.3.3",
         "3.3.4",
+        "3.3.5",
         "3.3.7",
         "3.3.8",
         "4.1.2",
@@ -1630,7 +1778,24 @@
         "guided/alt_text_appropriateness.html",
         "guided/sensory_characteristics.html",
         "guided/plain_language.html",
-        "guided/ai_suggested_alt_review.html"
+        "guided/ai_suggested_alt_review.html",
+        "guided/sign_language_equivalence.html",
+        "guided/unusual_words.html",
+        "guided/pronunciation_ambiguity.html",
+        "aaa/identify_purpose.html",
+        "aaa/safe_identify_purpose.html",
+        "aaa/visual_presentation.html",
+        "aaa/safe_visual_presentation.html",
+        "aaa/location.html",
+        "aaa/safe_location.html",
+        "aaa/abbreviations.html",
+        "aaa/safe_abbreviations.html",
+        "aaa/help.html",
+        "aaa/safe_help.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -1638,9 +1803,9 @@
       "label": "Task guidance and recovery",
       "group": "comprehension-and-task",
       "scenarios": 5,
-      "cases": 111,
-      "tp": 55,
-      "safe": 55,
+      "cases": 129,
+      "tp": 64,
+      "safe": 64,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1656,12 +1821,17 @@
         "1.4.3",
         "2.1.1",
         "2.2.1",
+        "2.2.3",
+        "2.2.5",
         "2.2.6",
+        "2.4.10",
         "2.4.2",
         "2.4.3",
         "2.4.4",
         "2.4.5",
         "2.4.6",
+        "2.4.8",
+        "3.1.1",
         "3.2.1",
         "3.2.2",
         "3.2.3",
@@ -1669,8 +1839,11 @@
         "3.3.2",
         "3.3.3",
         "3.3.4",
+        "3.3.5",
+        "3.3.6",
         "3.3.7",
         "3.3.8",
+        "3.3.9",
         "4.1.2",
         "4.1.3"
       ],
@@ -1785,7 +1958,25 @@
         "surfaces/safe_authoring_generates_bad_markup.html",
         "surfaces/chatbot_transcript.html",
         "surfaces/safe_chatbot_transcript.html",
-        "guided/reading_order.html"
+        "guided/reading_order.html",
+        "aaa/location.html",
+        "aaa/safe_location.html",
+        "aaa/section_headings.html",
+        "aaa/safe_section_headings.html",
+        "aaa/help.html",
+        "aaa/safe_help.html",
+        "aaa/accessible_auth_enhanced.html",
+        "aaa/safe_accessible_auth_enhanced.html",
+        "aaa/no_timing.html",
+        "aaa/safe_no_timing.html",
+        "aaa/re_authenticating.html",
+        "aaa/safe_re_authenticating.html",
+        "aaa/error_prevention_all.html",
+        "aaa/safe_error_prevention_all.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -1869,9 +2060,9 @@
       "label": "Forgiving interaction",
       "group": "combined-access",
       "scenarios": 5,
-      "cases": 26,
-      "tp": 13,
-      "safe": 13,
+      "cases": 38,
+      "tp": 19,
+      "safe": 19,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1886,14 +2077,20 @@
         "1.4.12",
         "1.4.3",
         "1.4.4",
+        "1.4.8",
         "2.2.1",
+        "2.2.3",
+        "2.2.5",
         "2.2.6",
         "2.4.7",
         "2.5.1",
         "2.5.2",
         "2.5.5",
+        "2.5.6",
         "2.5.7",
         "2.5.8",
+        "3.3.5",
+        "3.3.6",
         "3.3.7",
         "4.1.3"
       ],
@@ -1923,7 +2120,19 @@
         "scenarios/pointer_cancellation.html",
         "scenarios/safe_pointer_cancellation.html",
         "surfaces/email_contrast_darkmode.html",
-        "surfaces/safe_email_contrast_darkmode.html"
+        "surfaces/safe_email_contrast_darkmode.html",
+        "aaa/visual_presentation.html",
+        "aaa/safe_visual_presentation.html",
+        "aaa/help.html",
+        "aaa/safe_help.html",
+        "aaa/no_timing.html",
+        "aaa/safe_no_timing.html",
+        "aaa/re_authenticating.html",
+        "aaa/safe_re_authenticating.html",
+        "aaa/concurrent_input.html",
+        "aaa/safe_concurrent_input.html",
+        "aaa/error_prevention_all.html",
+        "aaa/safe_error_prevention_all.html"
       ]
     },
     {
@@ -1964,9 +2173,9 @@
       "label": "Environmental resilience",
       "group": "context-and-environment",
       "scenarios": 5,
-      "cases": 44,
-      "tp": 27,
-      "safe": 17,
+      "cases": 48,
+      "tp": 28,
+      "safe": 18,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1988,6 +2197,7 @@
         "2.5.4",
         "2.5.5",
         "2.5.8",
+        "3.1.1",
         "4.1.3"
       ],
       "fixtures": [
@@ -2034,7 +2244,11 @@
         "surfaces/email_contrast_darkmode.html",
         "surfaces/safe_email_contrast_darkmode.html",
         "surfaces/authoring_generates_bad_markup.html",
-        "surfaces/safe_authoring_generates_bad_markup.html"
+        "surfaces/safe_authoring_generates_bad_markup.html",
+        "guided/live_audio_alternative.html",
+        "guided/background_audio_level.html",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     }
   ],
@@ -2054,6 +2268,25 @@
         "memory-support",
         "non-voice-alternative",
         "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
+      ]
+    },
+    {
+      "sc": "1.3.1",
+      "needs": [
+        "alternative-input",
+        "color-independent",
+        "environmental-resilience",
+        "error-tolerant-pointer",
+        "focus-support",
+        "hands-free-switch",
+        "language-clarity",
+        "memory-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "reading-support",
         "task-guidance",
         "text-and-tactile",
         "visual-clarity"
@@ -2115,24 +2348,6 @@
       ]
     },
     {
-      "sc": "1.3.1",
-      "needs": [
-        "alternative-input",
-        "color-independent",
-        "environmental-resilience",
-        "error-tolerant-pointer",
-        "focus-support",
-        "hands-free-switch",
-        "language-clarity",
-        "memory-support",
-        "non-voice-alternative",
-        "nonvisual-access",
-        "task-guidance",
-        "text-and-tactile",
-        "visual-clarity"
-      ]
-    },
-    {
       "sc": "2.4.3",
       "needs": [
         "alternative-input",
@@ -2162,6 +2377,7 @@
         "memory-support",
         "non-voice-alternative",
         "nonvisual-access",
+        "reading-support",
         "task-guidance",
         "text-and-tactile",
         "visual-clarity"
@@ -2253,6 +2469,19 @@
         "low-effort-interaction",
         "memory-support",
         "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
+      ]
+    },
+    {
+      "sc": "3.1.1",
+      "needs": [
+        "environmental-resilience",
+        "language-clarity",
+        "memory-support",
+        "nonvisual-access",
+        "reading-support",
         "task-guidance",
         "text-and-tactile",
         "visual-clarity"
@@ -2457,15 +2686,6 @@
       ]
     },
     {
-      "sc": "3.1.1",
-      "needs": [
-        "language-clarity",
-        "nonvisual-access",
-        "reading-support",
-        "text-and-tactile"
-      ]
-    },
-    {
       "sc": "1.3.5",
       "needs": [
         "alternative-input",
@@ -2561,6 +2781,123 @@
         "language-clarity",
         "memory-support",
         "nonvisual-access",
+        "task-guidance"
+      ]
+    },
+    {
+      "sc": "1.3.6",
+      "needs": [
+        "alternative-input",
+        "language-clarity",
+        "low-effort-interaction",
+        "memory-support"
+      ]
+    },
+    {
+      "sc": "1.4.8",
+      "needs": [
+        "forgiving-interface",
+        "language-clarity",
+        "reading-support",
+        "visual-clarity"
+      ]
+    },
+    {
+      "sc": "2.4.8",
+      "needs": [
+        "language-clarity",
+        "memory-support",
+        "nonvisual-access",
+        "task-guidance"
+      ]
+    },
+    {
+      "sc": "2.4.10",
+      "needs": [
+        "memory-support",
+        "nonvisual-access",
+        "reading-support",
+        "task-guidance"
+      ]
+    },
+    {
+      "sc": "3.1.4",
+      "needs": [
+        "language-clarity",
+        "memory-support",
+        "nonvisual-access",
+        "reading-support"
+      ]
+    },
+    {
+      "sc": "3.3.5",
+      "needs": [
+        "forgiving-interface",
+        "language-clarity",
+        "memory-support",
+        "task-guidance"
+      ]
+    },
+    {
+      "sc": "3.3.9",
+      "needs": [
+        "alternative-input",
+        "memory-support",
+        "non-voice-alternative",
+        "task-guidance"
+      ]
+    },
+    {
+      "sc": "2.2.3",
+      "needs": [
+        "forgiving-interface",
+        "low-effort-interaction",
+        "memory-support",
+        "task-guidance"
+      ]
+    },
+    {
+      "sc": "2.2.5",
+      "needs": [
+        "forgiving-interface",
+        "low-effort-interaction",
+        "memory-support",
+        "task-guidance"
+      ]
+    },
+    {
+      "sc": "2.4.12",
+      "needs": [
+        "alternative-input",
+        "focus-support",
+        "hands-free-switch",
+        "visual-clarity"
+      ]
+    },
+    {
+      "sc": "2.4.13",
+      "needs": [
+        "alternative-input",
+        "contrast-adaptation",
+        "focus-support",
+        "visual-clarity"
+      ]
+    },
+    {
+      "sc": "2.5.6",
+      "needs": [
+        "alternative-input",
+        "error-tolerant-pointer",
+        "forgiving-interface",
+        "hands-free-switch"
+      ]
+    },
+    {
+      "sc": "3.3.6",
+      "needs": [
+        "forgiving-interface",
+        "low-effort-interaction",
+        "memory-support",
         "task-guidance"
       ]
     },

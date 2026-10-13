@@ -72,16 +72,30 @@ test('release builder emits reproducible metadata and valid checksums', () => {
     assert.equal(metadata.release.version, VERSION);
     assert.equal(metadata.release.tag, TAG);
     assert.equal(metadata.release.revision, head);
-    assert.deepEqual(metadata.corpus.counts, { families: 12, cases: 234 });
+    // Derived from the manifest rather than hardcoded, so adding fixtures does
+    // not break the contract test it is not about.
+    const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'corpus-manifest.json'), 'utf8'));
+    assert.deepEqual(metadata.corpus.counts, manifest.counts);
     assert.equal(metadata.corpus.format_version, '1.0.0');
     assert.equal(metadata.contracts.benchmark_result, '1.0.0');
     assert.equal(metadata.contracts.human_protocols, '1.0.0');
     assert.equal(metadata.contracts.human_result, '1.0.0');
     assert.equal(metadata.contracts.double_review, '1.0.0');
-  assert.equal(metadata.contracts.scoring_policy, 'cognium-a11y-scoring/1.0.0');
-    assert.equal(metadata.known_gaps.wcag_without_ground_truth, 20);
-    assert.deepEqual(metadata.known_gaps.surfaces.represented, 7);
+    assert.equal(metadata.contracts.scoring_policy, 'cognium-a11y-scoring/1.0.0');
+    // Every WCAG 2.2 criterion now has ground truth of some kind: ACT cases,
+    // local fixtures, or a guided check for the ones no tool can decide.
+    assert.equal(metadata.known_gaps.wcag_without_ground_truth, 0);
+    // Derived from the generated report rather than hardcoded, so adding a
+    // surface does not break a test that is not about surface counts.
+    const spaceCoverage = JSON.parse(fs.readFileSync(path.join(ROOT, 'space-coverage.json'), 'utf8'));
+    const surfaces = spaceCoverage.dimensions.find((row) => row.dimension === 'surfaces');
+    assert.deepEqual(metadata.known_gaps.surfaces.represented, surfaces.represented);
     assert.deepEqual(metadata.known_gaps.surfaces.total, 18);
+    // A release must never present a proxy as native coverage.
+    assert.deepEqual(metadata.known_gaps.surfaces.represented_natively, surfaces.represented_natively);
+    assert.ok(metadata.known_gaps.surfaces.represented >= metadata.known_gaps.surfaces.represented_natively);
+    assert.equal(metadata.known_gaps.surfaces.executed, 0);
+    assert.equal(metadata.known_gaps.surfaces.verified, 0);
     assert.deepEqual(metadata.included.pipeline_integrity, {
       cases: 8,
       pairs: 4,

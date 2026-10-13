@@ -10,8 +10,9 @@
     "act_failed": 26,
     "act_passed": 27,
     "act_inapplicable": 41,
-    "local_tp": "static/img_no_alt.html delivery/server_html.html delivery/client_js.html delivery/client_js_delayed.html delivery/iframe_same_origin.html delivery/iframe_srcdoc.html delivery/iframe_sandboxed.html delivery/iframe_nested.html delivery/shadow_dom_open.html delivery/shadow_dom_closed.html delivery/web_component.html delivery/progressive_enhancement.html media/alert_by_sound_only.html scenarios/data_dashboard.html surfaces/email_table_layout.html surfaces/authoring_generates_bad_markup.html",
-    "local_safe": "static/safe_img.html media/safe_alert_by_sound_only.html scenarios/safe_data_dashboard.html surfaces/safe_email_table_layout.html surfaces/safe_authoring_generates_bad_markup.html",
+    "local_tp": "static/img_no_alt.html delivery/server_html.html delivery/client_js.html delivery/client_js_delayed.html delivery/iframe_same_origin.html delivery/iframe_srcdoc.html delivery/iframe_sandboxed.html delivery/iframe_nested.html delivery/shadow_dom_open.html delivery/shadow_dom_closed.html delivery/web_component.html delivery/progressive_enhancement.html media/alert_by_sound_only.html scenarios/data_dashboard.html surfaces/email_table_layout.html surfaces/authoring_generates_bad_markup.html native/docx/unstructured.docx",
+    "local_safe": "static/safe_img.html media/safe_alert_by_sound_only.html scenarios/safe_data_dashboard.html surfaces/safe_email_table_layout.html surfaces/safe_authoring_generates_bad_markup.html native/docx/safe_structured.docx",
+    "guided": "guided/alt_text_appropriateness.html guided/ai_suggested_alt_review.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -27,6 +28,7 @@
     "act_inapplicable": 10,
     "local_tp": "media/audio_no_transcript.html",
     "local_safe": "media/safe_audio_no_transcript.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -42,6 +44,7 @@
     "act_inapplicable": 2,
     "local_tp": "patterns/media-captions.html media/video_no_captions.html media/captions_unlabelled_track.html",
     "local_safe": "patterns/safe_media-captions.html media/safe_video_no_captions.html media/safe_captions_present_but_poor.html media/safe_captions_unlabelled_track.html",
+    "guided": "guided/caption_quality.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -57,6 +60,7 @@
     "act_inapplicable": 2,
     "local_tp": "patterns/media-captions.html",
     "local_safe": "patterns/safe_media-captions.html media/safe_video_no_audio_description.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -72,6 +76,7 @@
     "act_inapplicable": 0,
     "local_tp": "media/live_no_captions.html",
     "local_safe": "media/safe_live_no_captions.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -87,6 +92,7 @@
     "act_inapplicable": 4,
     "local_tp": "",
     "local_safe": "media/safe_video_no_audio_description.html",
+    "guided": "",
     "ground_truth": "ACT"
   },
   {
@@ -102,7 +108,8 @@
     "act_inapplicable": 0,
     "local_tp": "",
     "local_safe": "",
-    "ground_truth": "NONE"
+    "guided": "guided/sign_language_equivalence.html",
+    "ground_truth": "manual only"
   },
   {
     "sc": "1.2.7",
@@ -117,7 +124,8 @@
     "act_inapplicable": 0,
     "local_tp": "",
     "local_safe": "",
-    "ground_truth": "NONE"
+    "guided": "guided/extended_audio_description.html",
+    "ground_truth": "manual only"
   },
   {
     "sc": "1.2.8",
@@ -132,6 +140,7 @@
     "act_inapplicable": 3,
     "local_tp": "",
     "local_safe": "",
+    "guided": "",
     "ground_truth": "ACT"
   },
   {
@@ -147,7 +156,8 @@
     "act_inapplicable": 0,
     "local_tp": "",
     "local_safe": "",
-    "ground_truth": "NONE"
+    "guided": "guided/live_audio_alternative.html",
+    "ground_truth": "manual only"
   },
   {
     "sc": "1.3.1",
@@ -160,8 +170,9 @@
     "act_failed": 52,
     "act_passed": 80,
     "act_inapplicable": 44,
-    "local_tp": "keyboard/div_text_field.html static/route_field_relationship.html patterns/accordion.html patterns/table.html patterns/breadcrumb.html patterns/required-fields.html ui-states/empty.html ui-states/permission-denied.html journeys/consent/broken/index.html scenarios/data_dashboard.html scenarios/live_chat.html surfaces/email_table_layout.html surfaces/epub_no_metadata.html surfaces/authoring_generates_bad_markup.html surfaces/chatbot_transcript.html",
-    "local_safe": "keyboard/safe_native_text_field.html static/safe_route_field_relationship.html patterns/safe_accordion.html patterns/safe_table.html patterns/safe_breadcrumb.html patterns/safe_required-fields.html ui-states/safe_empty.html ui-states/safe_permission-denied.html journeys/consent/correct/index.html scenarios/safe_data_dashboard.html scenarios/safe_live_chat.html surfaces/safe_email_table_layout.html surfaces/safe_epub_no_metadata.html surfaces/safe_authoring_generates_bad_markup.html surfaces/safe_chatbot_transcript.html",
+    "local_tp": "keyboard/div_text_field.html static/route_field_relationship.html patterns/accordion.html patterns/table.html patterns/breadcrumb.html patterns/required-fields.html ui-states/empty.html ui-states/permission-denied.html journeys/consent/broken/index.html scenarios/data_dashboard.html scenarios/live_chat.html surfaces/email_table_layout.html surfaces/epub_no_metadata.html surfaces/authoring_generates_bad_markup.html surfaces/chatbot_transcript.html native/pdf/untagged.pdf native/docx/unstructured.docx",
+    "local_safe": "keyboard/safe_native_text_field.html static/safe_route_field_relationship.html patterns/safe_accordion.html patterns/safe_table.html patterns/safe_breadcrumb.html patterns/safe_required-fields.html ui-states/safe_empty.html ui-states/safe_permission-denied.html journeys/consent/correct/index.html scenarios/safe_data_dashboard.html scenarios/safe_live_chat.html surfaces/safe_email_table_layout.html surfaces/safe_epub_no_metadata.html surfaces/safe_authoring_generates_bad_markup.html surfaces/safe_chatbot_transcript.html native/pdf/safe_tagged.pdf native/docx/safe_structured.docx",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -177,6 +188,7 @@
     "act_inapplicable": 0,
     "local_tp": "scenarios/meaningful_sequence.html",
     "local_safe": "scenarios/safe_meaningful_sequence.html",
+    "guided": "guided/reading_order.html",
     "ground_truth": "local only"
   },
   {
@@ -192,6 +204,7 @@
     "act_inapplicable": 2,
     "local_tp": "",
     "local_safe": "",
+    "guided": "guided/sensory_characteristics.html",
     "ground_truth": "ACT"
   },
   {
@@ -207,6 +220,7 @@
     "act_inapplicable": 6,
     "local_tp": "scenarios/orientation_lock.html",
     "local_safe": "scenarios/safe_orientation_lock.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -222,6 +236,7 @@
     "act_inapplicable": 11,
     "local_tp": "static/input_purpose_missing.html",
     "local_safe": "static/safe_input_purpose.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -235,9 +250,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/identify_purpose.html",
+    "local_safe": "aaa/safe_identify_purpose.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "1.4.1",
@@ -252,6 +268,7 @@
     "act_inapplicable": 0,
     "local_tp": "color-independent/error_color_only.html color-independent/status_color_only.html color-independent/link_color_only.html color-independent/chart_series_color_only.html color-independent/selection_color_only.html color-independent/disabled_state.html color-independent/required_color_only.html scenarios/forced_colors.html scenarios/disabled_state.html surfaces/email_contrast_darkmode.html",
     "local_safe": "color-independent/safe_error_color_only.html color-independent/safe_status_color_only.html color-independent/safe_link_color_only.html color-independent/safe_chart_series_color_only.html color-independent/safe_selection_color_only.html color-independent/safe_disabled_state.html color-independent/safe_required_color_only.html scenarios/safe_forced_colors.html scenarios/safe_disabled_state.html surfaces/safe_email_contrast_darkmode.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -267,6 +284,7 @@
     "act_inapplicable": 3,
     "local_tp": "media/autoplay_no_control.html",
     "local_safe": "media/safe_autoplay_no_control.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -282,6 +300,7 @@
     "act_inapplicable": 22,
     "local_tp": "static/text_low_contrast.html color-independent/placeholder_contrast.html surfaces/email_contrast_darkmode.html",
     "local_safe": "static/safe_text_contrast.html color-independent/safe_placeholder_contrast.html surfaces/safe_email_contrast_darkmode.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -297,6 +316,7 @@
     "act_inapplicable": 9,
     "local_tp": "static/viewport_no_zoom.html",
     "local_safe": "static/safe_viewport.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -312,6 +332,7 @@
     "act_inapplicable": 2,
     "local_tp": "",
     "local_safe": "",
+    "guided": "",
     "ground_truth": "ACT"
   },
   {
@@ -327,6 +348,7 @@
     "act_inapplicable": 22,
     "local_tp": "",
     "local_safe": "",
+    "guided": "",
     "ground_truth": "ACT"
   },
   {
@@ -342,7 +364,8 @@
     "act_inapplicable": 0,
     "local_tp": "",
     "local_safe": "",
-    "ground_truth": "NONE"
+    "guided": "guided/background_audio_level.html",
+    "ground_truth": "manual only"
   },
   {
     "sc": "1.4.8",
@@ -355,9 +378,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/visual_presentation.html",
+    "local_safe": "aaa/safe_visual_presentation.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "1.4.9",
@@ -372,6 +396,7 @@
     "act_inapplicable": 2,
     "local_tp": "",
     "local_safe": "",
+    "guided": "",
     "ground_truth": "ACT"
   },
   {
@@ -387,6 +412,7 @@
     "act_inapplicable": 0,
     "local_tp": "scenarios/orientation_lock.html",
     "local_safe": "scenarios/safe_orientation_lock.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -402,6 +428,7 @@
     "act_inapplicable": 0,
     "local_tp": "scenarios/forced_colors.html",
     "local_safe": "scenarios/safe_forced_colors.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -417,6 +444,7 @@
     "act_inapplicable": 28,
     "local_tp": "scenarios/text_spacing.html",
     "local_safe": "scenarios/safe_text_spacing.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -432,6 +460,7 @@
     "act_inapplicable": 0,
     "local_tp": "patterns/tooltip.html",
     "local_safe": "patterns/safe_tooltip.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -447,6 +476,7 @@
     "act_inapplicable": 16,
     "local_tp": "keyboard/div_button.html keyboard/div_text_field.html keyboard/div_date_fields.html keyboard/div_travellers.html keyboard/div_checkbox.html keyboard/div_fare_cards.html keyboard/role_tab_no_tablist.html capture/client_mounted.html delivery/server_html.html delivery/client_js.html delivery/client_js_delayed.html delivery/iframe_same_origin.html delivery/iframe_srcdoc.html delivery/iframe_sandboxed.html delivery/iframe_nested.html delivery/shadow_dom_open.html delivery/shadow_dom_closed.html delivery/web_component.html delivery/progressive_enhancement.html patterns/disclosure.html patterns/tabs.html patterns/dialog.html patterns/combobox.html patterns/menu.html patterns/switch.html patterns/slider.html patterns/listbox.html journeys/signin/broken/index.html journeys/consent/broken/index.html surfaces/chatbot_transcript.html",
     "local_safe": "keyboard/safe_native_button.html keyboard/safe_native_text_field.html keyboard/safe_native_date_fields.html keyboard/safe_native_travellers.html keyboard/safe_native_checkbox.html keyboard/safe_native_fare_options.html keyboard/safe_roving_tabindex.html keyboard/safe_custom_button.html capture/safe_server_rendered.html patterns/safe_disclosure.html patterns/safe_tabs.html patterns/safe_dialog.html patterns/safe_combobox.html patterns/safe_menu.html patterns/safe_switch.html patterns/safe_slider.html patterns/safe_listbox.html journeys/signin/correct/index.html journeys/consent/correct/index.html surfaces/safe_chatbot_transcript.html",
+    "guided": "guided/at_screen_reader_task.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -462,6 +492,7 @@
     "act_inapplicable": 4,
     "local_tp": "scenarios/keyboard_trap.html",
     "local_safe": "scenarios/safe_keyboard_trap.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -477,6 +508,7 @@
     "act_inapplicable": 10,
     "local_tp": "",
     "local_safe": "",
+    "guided": "",
     "ground_truth": "ACT"
   },
   {
@@ -492,6 +524,7 @@
     "act_inapplicable": 2,
     "local_tp": "",
     "local_safe": "",
+    "guided": "",
     "ground_truth": "ACT"
   },
   {
@@ -507,6 +540,7 @@
     "act_inapplicable": 16,
     "local_tp": "ui-states/timed-out.html journeys/session/broken/index.html",
     "local_safe": "ui-states/safe_timed-out.html journeys/session/correct/index.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -522,6 +556,7 @@
     "act_inapplicable": 5,
     "local_tp": "static/anim_no_reduced_motion.html",
     "local_safe": "static/safe_anim_reduced_motion.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -535,9 +570,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/no_timing.html",
+    "local_safe": "aaa/safe_no_timing.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.2.4",
@@ -552,6 +588,7 @@
     "act_inapplicable": 16,
     "local_tp": "",
     "local_safe": "",
+    "guided": "",
     "ground_truth": "ACT"
   },
   {
@@ -565,9 +602,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/re_authenticating.html",
+    "local_safe": "aaa/safe_re_authenticating.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.2.6",
@@ -582,6 +620,7 @@
     "act_inapplicable": 0,
     "local_tp": "journeys/session/broken/index.html",
     "local_safe": "journeys/session/correct/index.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -597,6 +636,7 @@
     "act_inapplicable": 0,
     "local_tp": "flash/flash_10hz_large_area.html flash/red_flash.html",
     "local_safe": "flash/safe_flash_10hz_large_area.html flash/safe_red_flash.html flash/safe_flash_small_area.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -612,6 +652,7 @@
     "act_inapplicable": 0,
     "local_tp": "flash/flash_10hz_large_area.html flash/three_flashes_exactly.html",
     "local_safe": "flash/safe_flash_10hz_large_area.html flash/safe_three_flashes_exactly.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -627,6 +668,7 @@
     "act_inapplicable": 0,
     "local_tp": "flash/animation_from_interaction.html",
     "local_safe": "flash/safe_animation_from_interaction.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -642,6 +684,7 @@
     "act_inapplicable": 1,
     "local_tp": "",
     "local_safe": "",
+    "guided": "",
     "ground_truth": "ACT"
   },
   {
@@ -657,6 +700,7 @@
     "act_inapplicable": 2,
     "local_tp": "static/page_title_missing.html",
     "local_safe": "static/safe_page_title.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -672,6 +716,7 @@
     "act_inapplicable": 0,
     "local_tp": "patterns/tabs.html patterns/dialog.html ui-states/submitted.html ui-states/error.html journeys/booking/broken/index.html journeys/destructive/broken/index.html journeys/consent/broken/index.html scenarios/overlay_focus_trap.html scenarios/infinite_scroll.html",
     "local_safe": "keyboard/safe_roving_tabindex.html capture/link_heavy.html patterns/safe_tabs.html patterns/safe_dialog.html ui-states/safe_submitted.html ui-states/safe_error.html journeys/booking/correct/index.html journeys/destructive/correct/index.html journeys/consent/correct/index.html scenarios/safe_overlay_focus_trap.html scenarios/safe_infinite_scroll.html",
+    "guided": "guided/focus_order_meaning.html",
     "ground_truth": "local only"
   },
   {
@@ -687,6 +732,7 @@
     "act_inapplicable": 16,
     "local_tp": "static/ambiguous_link_purpose.html",
     "local_safe": "static/safe_link_purpose.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -702,6 +748,7 @@
     "act_inapplicable": 0,
     "local_tp": "journeys/navigate/broken/index.html journeys/checkout/broken/index.html",
     "local_safe": "journeys/navigate/correct/index.html journeys/checkout/correct/index.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -717,6 +764,7 @@
     "act_inapplicable": 5,
     "local_tp": "static/vague_heading_and_label.html",
     "local_safe": "static/safe_descriptive_heading_and_label.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -732,6 +780,7 @@
     "act_inapplicable": 3,
     "local_tp": "keyboard/focus_not_visible.html",
     "local_safe": "keyboard/safe_focus_visible.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -745,9 +794,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/location.html",
+    "local_safe": "aaa/safe_location.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.4.9",
@@ -762,6 +812,7 @@
     "act_inapplicable": 22,
     "local_tp": "",
     "local_safe": "",
+    "guided": "",
     "ground_truth": "ACT"
   },
   {
@@ -775,9 +826,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/section_headings.html",
+    "local_safe": "aaa/safe_section_headings.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.4.11",
@@ -792,6 +844,7 @@
     "act_inapplicable": 0,
     "local_tp": "keyboard/focus_obscured.html",
     "local_safe": "keyboard/safe_focus_not_obscured.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -805,9 +858,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/focus_not_obscured_enhanced.html",
+    "local_safe": "aaa/safe_focus_not_obscured_enhanced.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.4.13",
@@ -820,9 +874,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/focus_appearance.html",
+    "local_safe": "aaa/safe_focus_appearance.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.5.1",
@@ -837,6 +892,7 @@
     "act_inapplicable": 0,
     "local_tp": "scenarios/dragging_required.html",
     "local_safe": "scenarios/safe_dragging_required.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -852,6 +908,7 @@
     "act_inapplicable": 0,
     "local_tp": "scenarios/pointer_cancellation.html",
     "local_safe": "scenarios/safe_pointer_cancellation.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -867,6 +924,7 @@
     "act_inapplicable": 6,
     "local_tp": "scenarios/label_in_name.html",
     "local_safe": "scenarios/safe_label_in_name.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -882,6 +940,7 @@
     "act_inapplicable": 2,
     "local_tp": "scenarios/motion_actuation.html",
     "local_safe": "scenarios/safe_motion_actuation.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -897,6 +956,7 @@
     "act_inapplicable": 0,
     "local_tp": "scenarios/touch_targets.html",
     "local_safe": "scenarios/safe_touch_targets.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -910,9 +970,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/concurrent_input.html",
+    "local_safe": "aaa/safe_concurrent_input.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "2.5.7",
@@ -927,6 +988,7 @@
     "act_inapplicable": 0,
     "local_tp": "scenarios/dragging_required.html",
     "local_safe": "scenarios/safe_dragging_required.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -942,6 +1004,7 @@
     "act_inapplicable": 0,
     "local_tp": "scenarios/touch_targets.html",
     "local_safe": "scenarios/safe_touch_targets.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -955,8 +1018,9 @@
     "act_failed": 13,
     "act_passed": 7,
     "act_inapplicable": 9,
-    "local_tp": "static/lang_missing.html",
-    "local_safe": "static/safe_lang_declared.html",
+    "local_tp": "static/lang_missing.html native/pdf/untagged.pdf native/docx/unstructured.docx",
+    "local_safe": "static/safe_lang_declared.html native/pdf/safe_tagged.pdf native/docx/safe_structured.docx",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -972,6 +1036,7 @@
     "act_inapplicable": 10,
     "local_tp": "scenarios/rtl_mixed_language.html",
     "local_safe": "scenarios/safe_rtl_mixed_language.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -987,7 +1052,8 @@
     "act_inapplicable": 0,
     "local_tp": "",
     "local_safe": "",
-    "ground_truth": "NONE"
+    "guided": "guided/unusual_words.html",
+    "ground_truth": "manual only"
   },
   {
     "sc": "3.1.4",
@@ -1000,9 +1066,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/abbreviations.html",
+    "local_safe": "aaa/safe_abbreviations.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "3.1.5",
@@ -1017,7 +1084,8 @@
     "act_inapplicable": 0,
     "local_tp": "",
     "local_safe": "",
-    "ground_truth": "NONE"
+    "guided": "guided/plain_language.html",
+    "ground_truth": "manual only"
   },
   {
     "sc": "3.1.6",
@@ -1032,7 +1100,8 @@
     "act_inapplicable": 0,
     "local_tp": "",
     "local_safe": "",
-    "ground_truth": "NONE"
+    "guided": "guided/pronunciation_ambiguity.html",
+    "ground_truth": "manual only"
   },
   {
     "sc": "3.2.1",
@@ -1047,6 +1116,7 @@
     "act_inapplicable": 0,
     "local_tp": "scenarios/change_on_focus.html",
     "local_safe": "scenarios/safe_change_on_focus.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -1062,6 +1132,7 @@
     "act_inapplicable": 0,
     "local_tp": "scenarios/change_on_input.html",
     "local_safe": "scenarios/safe_change_on_input.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -1077,6 +1148,7 @@
     "act_inapplicable": 0,
     "local_tp": "journeys/booking/broken/index.html journeys/consistent-help/broken/index.html journeys/checkout/broken/index.html",
     "local_safe": "journeys/booking/correct/index.html journeys/consistent-help/correct/index.html journeys/checkout/correct/index.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -1092,6 +1164,7 @@
     "act_inapplicable": 0,
     "local_tp": "journeys/consistent-help/broken/index.html journeys/navigate/broken/index.html",
     "local_safe": "journeys/consistent-help/correct/index.html journeys/navigate/correct/index.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -1107,6 +1180,7 @@
     "act_inapplicable": 16,
     "local_tp": "",
     "local_safe": "",
+    "guided": "",
     "ground_truth": "ACT"
   },
   {
@@ -1122,6 +1196,7 @@
     "act_inapplicable": 0,
     "local_tp": "journeys/consistent-help/broken/index.html",
     "local_safe": "journeys/consistent-help/correct/index.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -1137,6 +1212,7 @@
     "act_inapplicable": 1,
     "local_tp": "patterns/form-errors.html color-independent/error_color_only.html ui-states/invalid.html ui-states/error.html ui-states/offline.html ui-states/permission-denied.html journeys/signin/broken/index.html journeys/signup/broken/index.html scenarios/async_validation.html",
     "local_safe": "patterns/safe_form-errors.html color-independent/safe_error_color_only.html ui-states/safe_invalid.html ui-states/safe_error.html ui-states/safe_offline.html ui-states/safe_permission-denied.html journeys/signin/correct/index.html journeys/signup/correct/index.html scenarios/safe_async_validation.html",
+    "guided": "",
     "ground_truth": "ACT + local"
   },
   {
@@ -1152,6 +1228,7 @@
     "act_inapplicable": 0,
     "local_tp": "static/field_no_visible_label.html patterns/form-errors.html patterns/required-fields.html color-independent/required_color_only.html ui-states/empty.html",
     "local_safe": "static/safe_field_visible_label.html patterns/safe_form-errors.html patterns/safe_required-fields.html color-independent/safe_required_color_only.html ui-states/safe_empty.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -1167,6 +1244,7 @@
     "act_inapplicable": 0,
     "local_tp": "scenarios/error_suggestion.html",
     "local_safe": "scenarios/safe_error_suggestion.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -1182,6 +1260,7 @@
     "act_inapplicable": 0,
     "local_tp": "journeys/booking/broken/index.html journeys/destructive/broken/index.html journeys/signup/broken/index.html journeys/checkout/broken/index.html",
     "local_safe": "journeys/booking/correct/index.html journeys/destructive/correct/index.html journeys/signup/correct/index.html journeys/checkout/correct/index.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -1195,9 +1274,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/help.html",
+    "local_safe": "aaa/safe_help.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "3.3.6",
@@ -1210,9 +1290,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/error_prevention_all.html",
+    "local_safe": "aaa/safe_error_prevention_all.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "3.3.7",
@@ -1227,6 +1308,7 @@
     "act_inapplicable": 0,
     "local_tp": "journeys/booking/broken/index.html journeys/signup/broken/index.html journeys/checkout/broken/index.html journeys/session/broken/index.html",
     "local_safe": "journeys/booking/correct/index.html journeys/signup/correct/index.html journeys/checkout/correct/index.html journeys/session/correct/index.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -1242,6 +1324,7 @@
     "act_inapplicable": 0,
     "local_tp": "journeys/signin/broken/index.html",
     "local_safe": "journeys/signin/correct/index.html",
+    "guided": "",
     "ground_truth": "local only"
   },
   {
@@ -1255,9 +1338,10 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "",
-    "local_safe": "",
-    "ground_truth": "NONE"
+    "local_tp": "aaa/accessible_auth_enhanced.html",
+    "local_safe": "aaa/safe_accessible_auth_enhanced.html",
+    "guided": "",
+    "ground_truth": "local only"
   },
   {
     "sc": "4.1.2",
@@ -1272,6 +1356,7 @@
     "act_inapplicable": 61,
     "local_tp": "keyboard/div_button.html keyboard/div_text_field.html keyboard/div_checkbox.html keyboard/role_tab_no_tablist.html capture/client_mounted.html patterns/disclosure.html patterns/accordion.html patterns/tabs.html patterns/dialog.html patterns/combobox.html patterns/menu.html patterns/switch.html patterns/tooltip.html patterns/breadcrumb.html patterns/slider.html patterns/listbox.html patterns/form-errors.html color-independent/selection_color_only.html ui-states/invalid.html scenarios/disabled_state.html",
     "local_safe": "keyboard/safe_native_button.html keyboard/safe_native_text_field.html keyboard/safe_native_checkbox.html keyboard/safe_custom_button.html capture/safe_server_rendered.html patterns/safe_disclosure.html patterns/safe_accordion.html patterns/safe_tabs.html patterns/safe_dialog.html patterns/safe_combobox.html patterns/safe_menu.html patterns/safe_switch.html patterns/safe_tooltip.html patterns/safe_breadcrumb.html patterns/safe_slider.html patterns/safe_listbox.html patterns/safe_form-errors.html color-independent/safe_selection_color_only.html ui-states/safe_invalid.html scenarios/safe_disabled_state.html",
+    "guided": "guided/at_screen_reader_task.html",
     "ground_truth": "ACT + local"
   },
   {
@@ -1287,6 +1372,7 @@
     "act_inapplicable": 0,
     "local_tp": "patterns/alert.html media/alert_by_sound_only.html ui-states/loading.html ui-states/corrected.html ui-states/submitted.html ui-states/offline.html ui-states/timed-out.html ui-states/busy.html journeys/destructive/broken/index.html scenarios/async_validation.html scenarios/infinite_scroll.html scenarios/live_chat.html surfaces/chatbot_transcript.html",
     "local_safe": "patterns/safe_alert.html media/safe_alert_by_sound_only.html ui-states/safe_loading.html ui-states/safe_corrected.html ui-states/safe_submitted.html ui-states/safe_offline.html ui-states/safe_timed-out.html ui-states/safe_busy.html journeys/destructive/correct/index.html scenarios/safe_async_validation.html scenarios/safe_infinite_scroll.html scenarios/safe_live_chat.html surfaces/safe_chatbot_transcript.html",
+    "guided": "",
     "ground_truth": "local only"
   }
 ]

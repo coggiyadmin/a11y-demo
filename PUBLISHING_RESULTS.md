@@ -15,6 +15,16 @@ follow the versioned contracts in [protocols/](protocols/README.md). Publish
 those result files as separate lanes; do not insert them into automated
 executions or average them into automated recall and false-positive metrics.
 
+## Start from the kit
+
+[`starter/`](starter/README.md) is a copy-and-fill bundle. It pins the corpus
+revision, manifest digest, product version, engine lineage, environment and
+repetition count by construction, ships example mapping code and a CI workflow
+that runs validation and the scorer with `--strict`, and produces a
+`publication.json` the public index can ingest.
+
+Replace the adapter; the rest of the bundle shape stays correct.
+
 ## Minimum publication bundle
 
 A publishable bundle contains:
@@ -61,10 +71,14 @@ uses public synthetic inputs; a conforming run does not need private evidence.
    node check/validate-result.mjs path/to/result.json
    ```
 
-6. Publish the bundle at an immutable revision or archived DOI. Optionally open
-   a **Published benchmark result** issue in this repository so others can find
-   it. Maintainer acknowledgement confirms only that the disclosure is complete
-   and schema-valid; it is not certification or endorsement.
+6. Publish the bundle at an immutable revision or archived DOI. A link to a
+   branch is not a published result: it changes under the reader. Optionally
+   open a **Published benchmark result** issue in this repository so others can
+   find it. A workflow checks mechanically that the disclosure is complete, the
+   revision is a full 40-character SHA, the manifest digest is well formed, a
+   wrapper names its engine, and the bundle URL is immutable — then comments
+   with what it found. That confirms format and disclosure only; it is not
+   certification or endorsement.
 
 ## Metrics that may be compared
 

@@ -1,0 +1,47 @@
+<!--
+  WCAG 2.4.12 Focus Not Obscured (Enhanced) (AAA)
+  lane: stateful-interaction
+  source: https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-enhanced.html
+  this page: broken
+  defect: A sticky footer covers part of each control as it receives focus, so no part of the focused component is guaranteed visible.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Settings</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+.sticky-footer {
+  position: fixed;
+  inset-block-end: 0;
+  inset-inline: 0;
+  padding: 1.4em;
+  background: #1d3f72;
+  color: #fff;
+}
+/* Nothing reserves room for the footer, so the focused control sits under it. */
+main { padding-block-end: 0; }
+</style>
+</head>
+<body>
+<main>
+<h1>Settings</h1>
+<p><button type="button">Option 1</button></p>
+<p><button type="button">Option 2</button></p>
+<p><button type="button">Option 3</button></p>
+<p><button type="button">Option 4</button></p>
+<p><button type="button">Option 5</button></p>
+<p><button type="button">Option 6</button></p>
+<p><button type="button">Option 7</button></p>
+<p><button type="button">Option 8</button></p>
+<p><button type="button">Option 9</button></p>
+<p><button type="button">Option 10</button></p>
+<p><button type="button">Option 11</button></p>
+<p><button type="button">Option 12</button></p>
+</main>
+<div class="sticky-footer">Sticky footer that overlaps the focused control</div><p><a href="index.html">Back to the AAA index</a></p>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

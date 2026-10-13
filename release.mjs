@@ -65,6 +65,10 @@ const maturityGap = (dimension) =>
   dimension
     ? {
         represented: dimension.represented,
+        // Published separately so a release note cannot present proxy
+        // representation as native coverage of a surface.
+        represented_natively: dimension.represented_natively,
+        proxy_only: dimension.proxy_only,
         executable: dimension.executable,
         executed: dimension.executed,
         verified: dimension.verified,

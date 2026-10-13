@@ -32,6 +32,45 @@ machine-readable manifest and schema versions are recorded with every release.
   no-op regeneration, so evidence expires when the corpus changes and not when
   a date is restamped.
 - `EVIDENCE.md` documenting the states, the ledger and the expiry rules.
+- A reviewed evidence-lane classification for the twenty WCAG AAA criteria that
+  had no ground truth, in `wcag/aaa-classification.json`, each with its public
+  W3C Understanding source and the rationale for its lane.
+- `aaa.mjs` and the `aaa` fixture family: thirteen matched broken/corrected
+  pairs covering the AAA criteria decidable from markup or by driving the page.
+- Six further guided checks covering the AAA criteria that need a human
+  judgement, carrying `inapplicable` alongside `cannot-tell` where the criterion
+  is applicability-dependent.
+- `sources.json` and `schemas/sources.schema.json`, recording the url, licence,
+  required notice, transform and upstream SHA-256 of every standards-derived
+  input.
+- `refresh-sources.mjs`, a reviewed refresh that reports added, removed and
+  changed ACT rule and test-case ids with their expected outcomes, changed WCAG
+  transformed fields, and the local fixtures each change affects.
+- A scheduled `Refresh standards sources` workflow that regenerates, runs the
+  contract tests and opens a reviewable pull request. It never pushes to the
+  default branch and never merges itself.
+- `starter/`, a copy-and-fill publisher kit: a runner that pins corpus revision,
+  manifest digest, product version, engine lineage, environment and repetitions
+  by construction, example mapping code, a method note, a raw-output disclosure,
+  a licence, a `publication.json` the public index can ingest, and a CI workflow
+  running validation and the scorer with `--strict`.
+- A committed multi-case example bundle demonstrating the honest non-pass
+  states: `completed`, `blocked` for an undriven multi-page case, and
+  `unsupported` for a human-judgement case.
+- `check/verify-published-result.mjs` and a `Verify published result disclosure`
+  workflow, checking a submission mechanically: required fields, a full
+  40-character revision, a well-formed manifest digest, a wrapper that names its
+  engine, a stated publisher relationship, and an immutable bundle URL.
+- `surface-contracts.json`: native artifact format, parser or execution harness,
+  applicable standard, evidence fields and the simulable/physical boundary for
+  all eleven unrepresented surfaces.
+- `native/`, the first real non-web artifacts: deterministic PDF and Office Open
+  XML byte streams with matched controls, pinned by SHA-256 and reproducible
+  from the committed `native.mjs`.
+- `check/pdf-structure.mjs` and `check/ooxml-structure.mjs`, the harnesses the
+  PDF and word-processing contracts name. The PDF reader resolves objects
+  through the cross-reference table, so a document with bad offsets is reported
+  broken rather than read anyway.
 
 ### Changed
 
@@ -43,6 +82,15 @@ machine-readable manifest and schema versions are recorded with every release.
 - CI validates and scores the published result examples.
 - README coverage figures corrected: `methods` is 15/15 represented, not 14/15,
   since the pipeline family names `regression`.
+- Coverage now reports `manual only` as its own category, separating criteria
+  that no tool can decide from criteria nobody has built a fixture for yet. No
+  WCAG 2.2 criterion reports `NONE` any longer.
+- Guided cases carry `guided_criteria`, so a human-judgement check counts as
+  coverage without ever becoming an assertion a tool is expected to report.
+- Generators run families, then the manifest, then the reports that consume it.
+- Proxy representations are labelled: coverage reports `represented_natively`
+  and `proxy_only` beside `represented`, and release metadata carries both, so
+  a proxy can never be presented as native coverage of the surface it resembles.
 
 ## [0.1.0] - 2026-10-13
 

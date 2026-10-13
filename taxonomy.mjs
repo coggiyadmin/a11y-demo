@@ -402,6 +402,30 @@ T['criterion-needs'] = {
     '3.3.8': ['memory-support', 'task-guidance', 'alternative-input', 'non-voice-alternative'],
     '4.1.2': ['nonvisual-access', 'text-and-tactile', 'alternative-input', 'non-voice-alternative', 'task-guidance'],
     '4.1.3': ['nonvisual-access', 'text-and-tactile', 'focus-support', 'visual-clarity'],
+
+    // AAA. Added with the AAA classification so the twenty criteria that had no
+    // ground truth inherit needs like every other criterion, rather than
+    // silently contributing nothing to the needs index.
+    '1.2.6': ['text-for-audio', 'adjustable-audio', 'nonvisual-access', 'language-clarity'],
+    '1.2.7': ['nonvisual-access', 'visual-clarity', 'text-and-tactile'],
+    '1.2.9': ['text-for-audio', 'adjustable-audio', 'text-and-tactile', 'environmental-resilience'],
+    '1.3.6': ['memory-support', 'alternative-input', 'low-effort-interaction', 'language-clarity'],
+    '1.4.7': ['adjustable-audio', 'text-for-audio', 'environmental-resilience', 'reading-support'],
+    '1.4.8': ['visual-clarity', 'reading-support', 'language-clarity', 'forgiving-interface'],
+    '2.2.3': ['memory-support', 'low-effort-interaction', 'task-guidance', 'forgiving-interface'],
+    '2.2.5': ['memory-support', 'task-guidance', 'low-effort-interaction', 'forgiving-interface'],
+    '2.4.8': ['memory-support', 'task-guidance', 'nonvisual-access', 'language-clarity'],
+    '2.4.10': ['nonvisual-access', 'memory-support', 'task-guidance', 'reading-support'],
+    '2.4.12': ['focus-support', 'visual-clarity', 'alternative-input', 'hands-free-switch'],
+    '2.4.13': ['focus-support', 'visual-clarity', 'contrast-adaptation', 'alternative-input'],
+    '2.5.6': ['alternative-input', 'hands-free-switch', 'error-tolerant-pointer', 'forgiving-interface'],
+    '3.1.3': ['language-clarity', 'reading-support', 'memory-support'],
+    '3.1.4': ['language-clarity', 'reading-support', 'memory-support', 'nonvisual-access'],
+    '3.1.5': ['language-clarity', 'reading-support', 'memory-support'],
+    '3.1.6': ['language-clarity', 'reading-support', 'nonvisual-access', 'text-and-tactile'],
+    '3.3.5': ['task-guidance', 'memory-support', 'language-clarity', 'forgiving-interface'],
+    '3.3.6': ['memory-support', 'task-guidance', 'forgiving-interface', 'low-effort-interaction'],
+    '3.3.9': ['memory-support', 'task-guidance', 'alternative-input', 'non-voice-alternative'],
   }).map(([sc, needs]) => ({ sc, needs })),
 };
 

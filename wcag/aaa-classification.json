@@ -1,0 +1,240 @@
+{
+  "description": "Reviewed evidence-lane classification for the twenty WCAG 2.2 AAA criteria that had no ground truth. Each entry records the lane, the public source for the requirement, and why the lane was chosen.",
+  "boundary": "Classification and fixture coverage are not conformance. No count here supports a claim that a site conforms at AAA.",
+  "generated": "2026-10-13",
+  "lanes": {
+    "automated-static": "decidable from the delivered markup or computed style",
+    "stateful-interaction": "decidable only by driving the page into a declared state",
+    "guided-manual": "needs a human judgement about meaning, equivalence or adequacy"
+  },
+  "counts": {
+    "criteria": 20,
+    "by_lane": {
+      "guided-manual": 7,
+      "automated-static": 7,
+      "stateful-interaction": 6
+    }
+  },
+  "criteria": [
+    {
+      "sc": "1.2.6",
+      "name": "Sign Language (Prerecorded)",
+      "level": "AAA",
+      "lane": "guided-manual",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/sign-language-prerecorded.html",
+      "evidence": "guided/sign_language_equivalence.html",
+      "control": null,
+      "applicability": "inapplicable when there is no prerecorded audio in synchronised media",
+      "rationale": "Detecting that a sign-language track exists is mechanical. Deciding whether the signing conveys the same information as the audio, in a language the audience reads, is a human judgement about two languages."
+    },
+    {
+      "sc": "1.2.7",
+      "name": "Extended Audio Description (Prerecorded)",
+      "level": "AAA",
+      "lane": "guided-manual",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/extended-audio-description-prerecorded.html",
+      "evidence": "guided/extended_audio_description.html",
+      "control": null,
+      "applicability": "inapplicable when foreground audio pauses already allow full description",
+      "rationale": "Whether the existing pauses are long enough to describe what matters depends on what the video shows and what a viewer would otherwise lose. No parser can weigh that."
+    },
+    {
+      "sc": "1.2.9",
+      "name": "Audio-only (Live)",
+      "level": "AAA",
+      "lane": "guided-manual",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/audio-only-live.html",
+      "evidence": "guided/live_audio_alternative.html",
+      "control": null,
+      "applicability": "inapplicable when no live audio-only content is presented",
+      "rationale": "The equivalent must be produced live and track the broadcast. A corpus can hold the question but cannot hold a live stream, and adequacy is judged by a person listening."
+    },
+    {
+      "sc": "1.3.6",
+      "name": "Identify Purpose",
+      "level": "AAA",
+      "lane": "automated-static",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/identify-purpose.html",
+      "evidence": "aaa/identify_purpose.html",
+      "control": "aaa/safe_identify_purpose.html",
+      "applicability": null,
+      "rationale": "The criterion asks for programmatically determinable purpose on inputs, icons and regions. Autocomplete tokens, landmark roles and accessible names are all readable from the delivered markup."
+    },
+    {
+      "sc": "1.4.7",
+      "name": "Low or No Background Audio",
+      "level": "AAA",
+      "lane": "guided-manual",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/low-or-no-background-audio.html",
+      "evidence": "guided/background_audio_level.html",
+      "control": null,
+      "applicability": "inapplicable to audio that is a musical performance, or where spoken content is incidental",
+      "rationale": "The 20 dB separation is measurable in principle, but only from the rendered audio, and deciding which passages are foreground narration is a listening judgement. A markup corpus cannot assert it."
+    },
+    {
+      "sc": "1.4.8",
+      "name": "Visual Presentation",
+      "level": "AAA",
+      "lane": "automated-static",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html",
+      "evidence": "aaa/visual_presentation.html",
+      "control": "aaa/safe_visual_presentation.html",
+      "applicability": null,
+      "rationale": "Line length, line spacing, paragraph spacing and full justification are computable from the cascade. The user-selectable colour requirement is a mechanism check, exercised here by whether the page forces its own colours."
+    },
+    {
+      "sc": "2.2.3",
+      "name": "No Timing",
+      "level": "AAA",
+      "lane": "stateful-interaction",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/no-timing.html",
+      "evidence": "aaa/no_timing.html",
+      "control": "aaa/safe_no_timing.html",
+      "applicability": "inapplicable to real-time events and to time limits that are essential",
+      "rationale": "A time limit is observable only by letting it run. Static markup cannot show that a timer exists, which is exactly why this needs a driven state rather than a parse."
+    },
+    {
+      "sc": "2.2.5",
+      "name": "Re-authenticating",
+      "level": "AAA",
+      "lane": "stateful-interaction",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/re-authenticating.html",
+      "evidence": "aaa/re_authenticating.html",
+      "control": "aaa/safe_re_authenticating.html",
+      "applicability": "inapplicable where no authenticated session can expire mid-task",
+      "rationale": "Whether data survives re-authentication is only answerable by expiring a session and continuing. It is a journey assertion, not a document assertion."
+    },
+    {
+      "sc": "2.4.8",
+      "name": "Location",
+      "level": "AAA",
+      "lane": "automated-static",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/location.html",
+      "evidence": "aaa/location.html",
+      "control": "aaa/safe_location.html",
+      "applicability": null,
+      "rationale": "A breadcrumb trail, a site map, or a current-page indication in navigation are all present or absent in the markup."
+    },
+    {
+      "sc": "2.4.10",
+      "name": "Section Headings",
+      "level": "AAA",
+      "lane": "automated-static",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/section-headings.html",
+      "evidence": "aaa/section_headings.html",
+      "control": "aaa/safe_section_headings.html",
+      "applicability": "inapplicable to content that is not organised into sections",
+      "rationale": "Whether sections are delimited by headings rather than by styling alone is structural and readable from the document."
+    },
+    {
+      "sc": "2.4.12",
+      "name": "Focus Not Obscured (Enhanced)",
+      "level": "AAA",
+      "lane": "stateful-interaction",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-enhanced.html",
+      "evidence": "aaa/focus_not_obscured_enhanced.html",
+      "control": "aaa/safe_focus_not_obscured_enhanced.html",
+      "applicability": null,
+      "rationale": "Requires focusing each control and comparing its box against sticky overlays. Nothing about the static DOM reveals the occlusion."
+    },
+    {
+      "sc": "2.4.13",
+      "name": "Focus Appearance",
+      "level": "AAA",
+      "lane": "stateful-interaction",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html",
+      "evidence": "aaa/focus_appearance.html",
+      "control": "aaa/safe_focus_appearance.html",
+      "applicability": null,
+      "rationale": "The indicator exists only in the focused state, and the check is about its area and contrast against adjacent colours. Both need the focused rendering."
+    },
+    {
+      "sc": "2.5.6",
+      "name": "Concurrent Input Mechanisms",
+      "level": "AAA",
+      "lane": "stateful-interaction",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/concurrent-input-mechanisms.html",
+      "evidence": "aaa/concurrent_input.html",
+      "control": "aaa/safe_concurrent_input.html",
+      "applicability": "inapplicable where the restriction is essential or required by the platform",
+      "rationale": "A page that disables one input modality once another is used looks correct until both are tried. Only driving it with two modalities exposes the restriction."
+    },
+    {
+      "sc": "3.1.3",
+      "name": "Unusual Words",
+      "level": "AAA",
+      "lane": "guided-manual",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/unusual-words.html",
+      "evidence": "guided/unusual_words.html",
+      "control": null,
+      "applicability": null,
+      "rationale": "Deciding that a word is used in an unusual or restricted way, idiomatically or as jargon, is a judgement about the audience. A dictionary lookup cannot make it."
+    },
+    {
+      "sc": "3.1.4",
+      "name": "Abbreviations",
+      "level": "AAA",
+      "lane": "automated-static",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/abbreviations.html",
+      "evidence": "aaa/abbreviations.html",
+      "control": "aaa/safe_abbreviations.html",
+      "applicability": null,
+      "rationale": "Whether a mechanism exists for identifying an expansion -- an abbr element, an expansion on first use, or a linked glossary -- is readable from the markup. Whether a string IS an abbreviation is not, so the pair asserts only on the mechanism."
+    },
+    {
+      "sc": "3.1.5",
+      "name": "Reading Level",
+      "level": "AAA",
+      "lane": "guided-manual",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/reading-level.html",
+      "evidence": "guided/plain_language.html",
+      "control": null,
+      "applicability": null,
+      "rationale": "Readability formulas measure word and sentence length. A short sentence of jargon scores well and communicates nothing, so a formula cannot stand in for the judgement."
+    },
+    {
+      "sc": "3.1.6",
+      "name": "Pronunciation",
+      "level": "AAA",
+      "lane": "guided-manual",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/pronunciation.html",
+      "evidence": "guided/pronunciation_ambiguity.html",
+      "control": null,
+      "applicability": "inapplicable where no word is ambiguous without its pronunciation",
+      "rationale": "The criterion applies only where meaning is ambiguous without pronunciation. Deciding that a heteronym is genuinely ambiguous in context is a reading judgement."
+    },
+    {
+      "sc": "3.3.5",
+      "name": "Help",
+      "level": "AAA",
+      "lane": "automated-static",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/help.html",
+      "evidence": "aaa/help.html",
+      "control": "aaa/safe_help.html",
+      "applicability": null,
+      "rationale": "Context-sensitive help, a help link in a consistent place, and contact details are present or absent. Whether the help is GOOD is not asserted here."
+    },
+    {
+      "sc": "3.3.6",
+      "name": "Error Prevention (All)",
+      "level": "AAA",
+      "lane": "stateful-interaction",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-all.html",
+      "evidence": "aaa/error_prevention_all.html",
+      "control": "aaa/safe_error_prevention_all.html",
+      "applicability": null,
+      "rationale": "Reversibility, checking and confirmation are properties of the submission flow. They are observable only by running the flow to its end."
+    },
+    {
+      "sc": "3.3.9",
+      "name": "Accessible Authentication (Enhanced)",
+      "level": "AAA",
+      "lane": "automated-static",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-enhanced.html",
+      "evidence": "aaa/accessible_auth_enhanced.html",
+      "control": "aaa/safe_accessible_auth_enhanced.html",
+      "applicability": null,
+      "rationale": "A recall-or-transcription test with no alternative -- copying distorted characters, reproducing selected letters of a memorised word, solving a puzzle -- plus blocked paste and suppressed autocomplete, is visible in the delivered form markup."
+    }
+  ]
+}

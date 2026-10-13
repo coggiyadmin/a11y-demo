@@ -39,10 +39,13 @@ test('scorer reports recall and false positives with explicit denominators', () 
   const recall = report.lanes.automated.true_positive_recall;
   const falsePositive = report.lanes.automated.false_positive;
 
+  // Derived rather than hardcoded: the denominator is every true-positive
+  // assertion in the corpus, so it moves whenever fixtures are added.
+  const assertions = manifestAssertionCount();
   assert.equal(recall.numerator, 4);
-  assert.equal(recall.denominator, 189);
+  assert.equal(recall.denominator, assertions);
   assert.equal(recall.denominator_attempted, 8);
-  assert.equal(recall.rate, Number((4 / 189).toFixed(6)));
+  assert.equal(recall.rate, Number((4 / assertions).toFixed(6)));
   assert.equal(recall.rate_of_attempted, 0.5);
 
   // The corrected control was wrongly reported for 2.1.1 but not for 4.1.2.

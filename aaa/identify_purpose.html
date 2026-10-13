@@ -1,0 +1,33 @@
+<!--
+  WCAG 1.3.6 Identify Purpose (AAA)
+  lane: automated-static
+  source: https://www.w3.org/WAI/WCAG22/Understanding/identify-purpose.html
+  this page: broken
+  defect: Input purposes are not programmatically determinable and the icon controls have no accessible name, so no personalisation layer can relabel or re-icon them.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact preferences</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<header><p>Example service</p></header>
+<div>
+  <a href="#account">&#9733;</a>
+  <a href="#alerts">&#9993;</a>
+</div>
+<div>
+  <h1>Contact preferences</h1>
+  <form action="#" method="get">
+    <label for="n">Full name</label><input id="n" name="n" type="text">
+    <label for="e">Email</label><input id="e" name="e" type="text">
+    <label for="t">Telephone</label><input id="t" name="t" type="text">
+    <button type="submit">Save</button>
+  </form>
+</div><p><a href="index.html">Back to the AAA index</a></p>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

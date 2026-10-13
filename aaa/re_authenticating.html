@@ -1,0 +1,38 @@
+<!--
+  WCAG 2.2.5 Re-authenticating (AAA)
+  lane: stateful-interaction
+  source: https://www.w3.org/WAI/WCAG22/Understanding/re-authenticating.html
+  this page: broken
+  defect: When the session expires mid-task, re-authenticating returns an empty form and the entered data is gone.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Application, step 2 of 3</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Application, step 2 of 3</h1>
+<form id="f" action="#" method="get">
+  <label for="a">Previous address</label><input id="a" name="a" type="text">
+  <label for="y">Years at that address</label><input id="y" name="y" type="text">
+  <button type="button" id="expire">Simulate session expiry</button>
+  <button type="submit">Continue</button>
+</form>
+<p id="state" role="status"></p>
+</main><p><a href="index.html">Back to the AAA index</a></p>
+<p><a href="../index.html">Back to the index</a></p>
+<script>
+// Re-authentication discards the work in progress.
+document.getElementById('expire').addEventListener('click', function () {
+  document.getElementById('a').value = '';
+  document.getElementById('y').value = '';
+  document.getElementById('state').textContent =
+    'Session expired. You have been signed back in. Please enter your details again.';
+});
+</script>
+</body>
+</html>

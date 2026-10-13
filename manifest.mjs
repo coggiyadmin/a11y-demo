@@ -17,6 +17,8 @@ const FAMILIES = [
   ['ui-states', 'ui-states.json'],
   ['surfaces', 'surfaces.json'],
   ['guided', 'guided.json'],
+  ['aaa', 'aaa.json'],
+  ['native', 'native.json'],
 ];
 
 function canonicalContentDigest(document) {

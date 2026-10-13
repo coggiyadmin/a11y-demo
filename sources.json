@@ -1,0 +1,86 @@
+{
+  "$schema": "./schemas/sources.schema.json",
+  "format": "cognium-a11y-sources",
+  "format_version": "1.0.0",
+  "generated": "2026-10-13",
+  "policy": {
+    "refresh": "node refresh-sources.mjs --check reports drift; --apply re-derives the vendored snapshots. The scheduled workflow opens a pull request and never pushes to the default branch.",
+    "fail_closed": "An upstream that returns 404 or 410, or whose declared licence string has changed, stops the refresh. The stale snapshot is kept and a maintainer resolves it by hand.",
+    "identity": "Releases reference the immutable snapshot committed here, never live upstream content. A refresh that moves ground truth changes benchmark identity and must be reviewed as such.",
+    "notices": "Required W3C attribution and modification statements live in THIRD_PARTY_NOTICES.md and are not rewritten by a refresh."
+  },
+  "sources": [
+    {
+      "id": "wcag22",
+      "title": "WCAG 2.2 success criteria",
+      "kind": "wcag",
+      "url": "https://www.w3.org/WAI/WCAG22/wcag.json",
+      "canonical": "https://www.w3.org/TR/WCAG22/",
+      "vendored": "wcag/criteria.json",
+      "transform": "Reduced to criterion number, name, level, principle and guideline placement, plus the versions each criterion appears in. Normative prose is not vendored. 4.1.1 Parsing is retained with in_2_2 false because it was removed in WCAG 2.2.",
+      "license": {
+        "name": "W3C Document License 2023",
+        "url": "https://www.w3.org/copyright/document-license-2023/",
+        "notice": "THIRD_PARTY_NOTICES.md"
+      },
+      "upstream": {
+        "sha256": "sha256:3a034865a879a7d874b60ff2aec7f430cf37bc1597a1e00985680fd80ef5cf75",
+        "fetched": "2026-10-13",
+        "counts": {
+          "total": 87,
+          "in_2_2": 86,
+          "A": 31,
+          "AA": 24,
+          "AAA": 31
+        }
+      }
+    },
+    {
+      "id": "act-testcases",
+      "title": "W3C ACT Rules test-case catalogue",
+      "kind": "act",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases.json",
+      "canonical": "https://www.w3.org/WAI/standards-guidelines/act/rules/",
+      "vendored": "act/testcases.json",
+      "transform": "Vendored as published. Reducing it would discard the expected outcomes the corpus measures against.",
+      "license": {
+        "name": "W3C Software and Document License",
+        "url": "https://act-rules.github.io/pages/license/",
+        "notice": "THIRD_PARTY_NOTICES.md",
+        "upstream_field": "license",
+        "upstream_value": "https://act-rules.github.io/pages/license/"
+      },
+      "upstream": {
+        "sha256": "sha256:a9a1483e24335d9ec49429468963823673d7e27ca3085999ecc2770d5307d053",
+        "fetched": "2026-10-13",
+        "counts": {
+          "testcases": 1213
+        }
+      }
+    },
+    {
+      "id": "apg-patterns",
+      "title": "WAI-ARIA Authoring Practices Guide patterns",
+      "kind": "apg",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/",
+      "canonical": "https://www.w3.org/WAI/ARIA/apg/",
+      "vendored": null,
+      "watch_only": true,
+      "transform": "Nothing is vendored. The pattern fixtures are original work informed by APG guidance, so the only honest automated signal is that upstream moved and the fixtures it informed need review.",
+      "informs": [
+        "patterns.mjs",
+        "patterns.json",
+        "patterns/"
+      ],
+      "license": {
+        "name": "W3C Software and Document License 2023",
+        "url": "https://www.w3.org/copyright/software-license-2023/",
+        "notice": "THIRD_PARTY_NOTICES.md"
+      },
+      "upstream": {
+        "sha256": "sha256:78d2582dc5b4aef7455e800e9bd306563337e3b51eb889024be6c2e1dacc3ea8",
+        "fetched": "2026-10-13"
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<!--
+  WCAG 2.2.3 No Timing (AAA)
+  lane: stateful-interaction
+  source: https://www.w3.org/WAI/WCAG22/Understanding/no-timing.html
+  this page: broken
+  defect: The form expires after a fixed interval and discards what was typed. The content is not a real-time event and the limit is not essential, so timing is not required at all.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Report a problem</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Report a problem</h1>
+<p id="clock" role="status">This form expires in 30 seconds.</p>
+<form id="f" action="#" method="get">
+  <label for="d">What went wrong?</label>
+  <textarea id="d" name="d" rows="6"></textarea>
+  <button type="submit">Send</button>
+</form>
+</main><p><a href="index.html">Back to the AAA index</a></p>
+<p><a href="../index.html">Back to the index</a></p>
+<script>
+// A time limit on content that is neither real-time nor essential.
+var left = 30;
+var clock = document.getElementById('clock');
+var timer = setInterval(function () {
+  left -= 1;
+  clock.textContent = left > 0
+    ? 'This form expires in ' + left + ' seconds.'
+    : 'This form has expired. Your text was discarded.';
+  if (left <= 0) {
+    clearInterval(timer);
+    document.getElementById('d').value = '';
+    document.getElementById('f').querySelector('button').disabled = true;
+  }
+}, 1000);
+</script>
+</body>
+</html>

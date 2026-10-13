@@ -27,8 +27,8 @@ branch as a benchmark identity.
 
 ## Interoperability contract
 
-`corpus-manifest.json` is the canonical index of the 12 fixture families and
-their stable content digests. It currently covers 234 cases. The digest ignores
+`corpus-manifest.json` is the canonical index of the 13 fixture families and
+their stable content digests. It currently covers 266 cases. The digest ignores
 only each family's generated date; expected outcomes, IDs, paths and notes all
 participate.
 
@@ -60,6 +60,12 @@ projects are welcome. Participation has two separate paths:
   with `node check/validate-result.mjs`, and publish the immutable result bundle
   outside this corpus repository. The complete protocol and comparison rules are
   in [PUBLISHING_RESULTS.md](PUBLISHING_RESULTS.md).
+
+A copy-and-fill [starter kit](starter/README.md) produces a bundle that
+validates, scores and lists: it pins the corpus revision, manifest digest,
+product version, engine lineage, environment and repetition count by
+construction, and ships a worked multi-case example with its method note,
+mapping code, raw-output disclosure and licence.
 
 `check/score.mjs` is the reference scorer and regression runner. It turns the
 manifest plus schema-valid results into recall, false-positive,
@@ -106,6 +112,7 @@ wcag/criteria.json   WCAG 2.2 success criteria — slim index derived from W3C's
 act/testcases.json   W3C ACT Task Force test cases (1,213 cases, 87 rules)
 catalog.json         ground truth for the local fixtures — what a correct scanner should say
 corpus-manifest.json stable family index, case counts and content digests
+sources.json         provenance for every standards-derived input: url, licence, upstream digest
 coverage.csv/.json   every WCAG 2.2 criterion x available ground truth
 schemas/             JSON Schema contracts and validated examples
 pipeline.json        pipeline-integrity ground truth and execution boundaries
@@ -121,13 +128,70 @@ static/              single-page defects readable from served HTML
 delivery/            ONE constant defect, delivered eleven different ways
 patterns/            APG component patterns as matched broken/correct pairs
 taxonomy/            the enumerated test space
+aaa/                 matched pairs for the automatable and stateful WCAG AAA criteria
+native/              real PDF and OOXML artifacts for non-web surfaces
+surface-contracts.json  native artifact format, harness and standard per unrepresented surface
 evidence/            the execution and verification evidence ledger
+starter/             copy-and-fill kit for publishing a result bundle
 delivery.mjs         regenerates the delivery matrix
 patterns.mjs         regenerates the pattern pairs
 taxonomy.mjs         regenerates the taxonomy
+aaa.mjs              regenerates the AAA classification and its fixture pairs
+native.mjs           regenerates the PDF and OOXML artifacts
+surface-contracts.mjs   regenerates the native artifact contracts
 maturity.mjs         represented / executable / executed / verified states
+refresh-sources.mjs  reviewed refresh of the WCAG, ACT and APG inputs
 space-coverage.mjs   coverage against the whole space, not just WCAG
 ```
+
+### Surfaces beyond the web
+
+Eleven of eighteen surfaces were unrepresented, and the tempting fix — an HTML
+page that resembles a PDF or a mobile screen — measures nothing. A control
+reading that page is reading HTML.
+
+[`surface-contracts.json`](surface-contracts.json) fixes, per surface, what the
+native artifact actually is, what parses or drives it, which standard applies,
+and where software stops. Seven surfaces need physical evaluation for part of
+the answer: a kiosk's reach and a hardware control's detent are not simulable,
+and the contract says so rather than pretending otherwise.
+
+`native/` ships the two surfaces whose artifacts are reproducible without a
+device lab:
+
+```sh
+node check/pdf-structure.mjs   native/pdf/safe_tagged.pdf
+node check/ooxml-structure.mjs native/docx/safe_structured.docx
+```
+
+These are real PDF and Office Open XML byte streams, generated deterministically
+by `native.mjs` and pinned by SHA-256. Each defect has a matched control whose
+*visible* content is identical and whose structure differs only in what the
+criterion requires.
+
+**A contract is not coverage.** A surface with a contract and no artifact is
+still unrepresented, and `space-coverage.json` reports it as missing. Proxy
+representations — an HTML transcript standing in for a voice interface, say —
+are labelled `proxy` and excluded from `represented_natively`.
+
+### Standards sources
+
+`sources.json` records where every standards-derived input came from, under
+what licence, at which upstream digest. `refresh-sources.mjs` re-derives the
+vendored snapshots and reports what moved: added, removed and changed ACT rule
+and test-case ids with their expected outcomes, changed WCAG transformed
+fields, and the local fixtures each change affects.
+
+```sh
+node refresh-sources.mjs --check     # report drift, write nothing
+node refresh-sources.mjs --apply     # re-derive the snapshots
+```
+
+It fails closed. An upstream that returns 404 or 410, or whose declared licence
+has changed, stops the run rather than re-vendoring under terms nobody checked.
+The scheduled workflow opens a pull request for review and never pushes to the
+default branch. Releases keep referencing the committed snapshot, not live
+upstream content.
 
 Project decisions and compatibility follow [GOVERNANCE.md](GOVERNANCE.md).
 Contributions follow [CONTRIBUTING.md](CONTRIBUTING.md), and sensitive reports
@@ -486,9 +550,9 @@ Cases come in pairs wherever it is meaningful:
 | `tp` | a scanner **should** report the listed criteria |
 | `safe` | a scanner **must not** report the criteria in `must_not_report` — flagging one of those criteria is a false positive |
 
-234 local cases: 117 `tp`, 108 negative controls and 9 guided checks. The 44
+266 local cases: 130 `tp`, 121 negative controls and 15 guided checks. The 44
 keyboard, capture and static cases are the core catalog; the remaining cases
-live in eleven additional family manifests loaded through `fixture-families.mjs`.
+live in twelve additional family manifests loaded through `fixture-families.mjs`.
 
 The negative controls matter more than the positives. `keyboard/safe_roving_tabindex.html`
 is APG-correct markup in which `tabindex="-1"` is the *right* answer; a scanner
@@ -501,11 +565,24 @@ WCAG 2.2 has 86 live success criteria (4.1.1 Parsing was removed in 2.2 and is
 retained in the index with `in_2_2: false`).
 
 ```
-ACT only                     17
-local fixtures only          28
-ACT + local                  21
-neither                      20
+ACT only                     12
+local fixtures only          41
+ACT + local                  26
+manual only                   7
+neither                       0
 ```
+
+Every criterion now has ground truth of some kind. `manual only` is the
+category that matters: seven criteria are covered by a guided check because no
+tool can decide them, and collapsing that into `neither` conflated *nobody has
+built this yet* with *this cannot be automated at all*.
+
+The twenty criteria that previously reported `neither` were all AAA. Each is
+now classified into an evidence lane in
+[`wcag/aaa-classification.json`](wcag/aaa-classification.json) with its public
+W3C source: thirteen got matched broken/corrected pairs in `aaa/`, and seven
+got guided checks. **Covering every AAA criterion here is not an AAA
+conformance claim** — these are single-purpose fixtures, not a sampled site.
 
 Regenerate with `node coverage.mjs`. If `act/testcases.json` is absent the ACT
 columns come back empty and the command tells you how to fetch it.

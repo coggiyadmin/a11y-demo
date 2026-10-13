@@ -1,0 +1,60 @@
+name: Verify published result disclosure
+
+# Checks a Published benchmark result issue mechanically: is the disclosure
+# complete, and will the bundle URL still mean the same thing next year.
+#
+# It confirms format and disclosure only. It is not certification, endorsement,
+# or any judgement about the product or its numbers, and the comment it leaves
+# says so.
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    if: contains(github.event.issue.labels.*.name, 'published-result')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Verify disclosure and bundle immutability
+        id: verify
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          printf '%s' "$ISSUE_BODY" > "$RUNNER_TEMP/issue.md"
+          set +e
+          node check/verify-published-result.mjs "$RUNNER_TEMP/issue.md" > "$RUNNER_TEMP/comment.md"
+          echo "status=$?" >> "$GITHUB_OUTPUT"
+          set -e
+          cat "$RUNNER_TEMP/comment.md"
+
+      - name: Comment with the outcome
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body-file "$RUNNER_TEMP/comment.md"
+
+      - name: Label the submission
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          STATUS: ${{ steps.verify.outputs.status }}
+        run: |
+          if [ "$STATUS" = "0" ]; then
+            gh issue edit "$ISSUE" --repo "$GITHUB_REPOSITORY" \
+              --add-label "disclosure-complete" --remove-label "disclosure-incomplete" || true
+          else
+            gh issue edit "$ISSUE" --repo "$GITHUB_REPOSITORY" \
+              --add-label "disclosure-incomplete" --remove-label "disclosure-complete" || true
+          fi

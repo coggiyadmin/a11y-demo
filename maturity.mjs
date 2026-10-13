@@ -154,10 +154,19 @@ export function computeMaturity({ root, cases, ledger, contentDigest }) {
       else if (executable) state = 'executable';
       else if (represented) state = 'represented';
 
+      // A proxy represents the surface in the manifest but is not native
+      // coverage of it. Both numbers are published; neither stands in for the
+      // other.
+      const nativeCases = supporting.filter((testCase) => testCase.representation !== 'proxy');
+      const proxyCases = supporting.filter((testCase) => testCase.representation === 'proxy');
+
       return {
         value,
         state,
         represented,
+        represented_natively: nativeCases.length > 0,
+        native_cases: nativeCases.length,
+        proxy_cases: proxyCases.length,
         executable,
         executed,
         verified: verifiedRecords.length > 0,
@@ -181,6 +190,8 @@ export function computeMaturity({ root, cases, ledger, contentDigest }) {
       // represented-only value can never appear in the executed or verified
       // figure.
       represented: tally((row) => row.represented),
+      represented_natively: tally((row) => row.represented_natively),
+      proxy_only: tally((row) => row.represented && !row.represented_natively),
       executable: tally((row) => row.executable),
       executed: tally((row) => row.executed),
       verified: tally((row) => row.verified),

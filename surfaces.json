@@ -31,6 +31,7 @@
       "path": "surfaces/email_table_layout.html",
       "surface": "email",
       "standard": "WCAG 2.2",
+      "representation": "native",
       "journey": "navigate",
       "ui_state": "default",
       "method": [
@@ -60,6 +61,7 @@
       "path": "surfaces/safe_email_table_layout.html",
       "surface": "email",
       "standard": "WCAG 2.2",
+      "representation": "native",
       "journey": "navigate",
       "ui_state": "default",
       "method": [
@@ -89,6 +91,7 @@
       "path": "surfaces/email_contrast_darkmode.html",
       "surface": "email",
       "standard": "WCAG 2.2",
+      "representation": "native",
       "journey": "navigate",
       "ui_state": "default",
       "method": [
@@ -118,6 +121,7 @@
       "path": "surfaces/safe_email_contrast_darkmode.html",
       "surface": "email",
       "standard": "WCAG 2.2",
+      "representation": "native",
       "journey": "navigate",
       "ui_state": "default",
       "method": [
@@ -147,6 +151,8 @@
       "path": "surfaces/epub_no_metadata.html",
       "surface": "epub",
       "standard": "EPUB Accessibility 1.1",
+      "representation": "proxy",
+      "proxy_for": "the EPUB package document (OPF)",
       "journey": "navigate",
       "ui_state": "default",
       "method": [
@@ -175,6 +181,8 @@
       "path": "surfaces/safe_epub_no_metadata.html",
       "surface": "epub",
       "standard": "EPUB Accessibility 1.1",
+      "representation": "proxy",
+      "proxy_for": "the EPUB package document (OPF)",
       "journey": "navigate",
       "ui_state": "default",
       "method": [
@@ -203,6 +211,7 @@
       "path": "surfaces/authoring_generates_bad_markup.html",
       "surface": "authoring",
       "standard": "ATAG 2.0",
+      "representation": "native",
       "journey": "navigate",
       "ui_state": "default",
       "method": [
@@ -232,6 +241,7 @@
       "path": "surfaces/safe_authoring_generates_bad_markup.html",
       "surface": "authoring",
       "standard": "ATAG 2.0",
+      "representation": "native",
       "journey": "navigate",
       "ui_state": "default",
       "method": [
@@ -261,6 +271,8 @@
       "path": "surfaces/chatbot_transcript.html",
       "surface": "voice",
       "standard": "WCAG 2.2",
+      "representation": "proxy",
+      "proxy_for": "a spoken conversational interface",
       "journey": "navigate",
       "ui_state": "default",
       "method": [
@@ -292,6 +304,8 @@
       "path": "surfaces/safe_chatbot_transcript.html",
       "surface": "voice",
       "standard": "WCAG 2.2",
+      "representation": "proxy",
+      "proxy_for": "a spoken conversational interface",
       "journey": "navigate",
       "ui_state": "default",
       "method": [

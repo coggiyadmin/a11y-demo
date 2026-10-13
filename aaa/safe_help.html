@@ -1,0 +1,35 @@
+<!--
+  WCAG 3.3.5 Help (AAA)
+  lane: automated-static
+  source: https://www.w3.org/WAI/WCAG22/Understanding/help.html
+  this page: corrected control
+  differs from the broken page only in what this criterion requires
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claim a refund</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<header>
+  <nav aria-label="Support"><a href="#help">Help</a></nav>
+</header>
+<main>
+<h1>Claim a refund</h1>
+<form action="#" method="get">
+  <label for="ref">Scheme reference</label>
+  <input id="ref" name="ref" type="text" aria-describedby="ref-help">
+  <p id="ref-help">Nine characters, printed at the top right of your statement, for example
+  <samp>AB1234567</samp>. <a href="#ref-example">See an annotated statement</a>.</p>
+  <button type="submit">Continue</button>
+</form>
+<h2 id="help">If you are stuck</h2>
+<p>Email <a href="mailto:support@example.com">support@example.com</a> or call 0000 000 0000,
+Monday to Friday.</p>
+</main><p><a href="index.html">Back to the AAA index</a></p>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>
