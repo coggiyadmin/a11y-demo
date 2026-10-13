@@ -1,0 +1,47 @@
+{
+  "$schema": "../result.schema.json",
+  "format": "cognium-a11y-human-result",
+  "format_version": "1.0.0",
+  "corpus": {
+    "repository": "cogniumhq/a11y-benchmark",
+    "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "manifest_sha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "protocol": {
+    "id": "keyboard-task",
+    "version": "1.0.0",
+    "fixture_ids": ["scenario-safe_keyboard_trap"]
+  },
+  "session": {
+    "reviewer_id": "reviewer-alpha",
+    "started_at": "2026-10-13T10:00:00Z",
+    "completed_at": "2026-10-13T10:08:00Z",
+    "environment": {
+      "tool": null,
+      "tool_version": null,
+      "browser": "Example Browser",
+      "browser_version": "1.0",
+      "platform": "Example OS",
+      "platform_version": "1.0",
+      "settings": {},
+      "input_method": "keyboard only"
+    }
+  },
+  "outcomes": [
+    {
+      "step_id": "key-01",
+      "outcome": "pass",
+      "observation": "Synthetic example.",
+      "evidence": []
+    }
+  ],
+  "privacy": {
+    "fixture_data": "public-synthetic",
+    "participant_data_included": true,
+    "production_evidence_included": false
+  },
+  "metrics": {
+    "lane": "human-guided",
+    "automated_results_included": false
+  }
+}

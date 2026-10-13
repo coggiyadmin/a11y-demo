@@ -1,0 +1,53 @@
+{
+  "$schema": "../double-review.schema.json",
+  "format": "cognium-a11y-double-review",
+  "format_version": "1.0.0",
+  "protocol": {
+    "id": "comprehension-review",
+    "version": "1.0.0"
+  },
+  "reviews": [
+    {
+      "reviewer_id": "reviewer-alpha",
+      "independent": true,
+      "decisions": [
+        { "step_id": "sample-01", "outcome": "pass" },
+        { "step_id": "sample-02", "outcome": "fail" },
+        { "step_id": "sample-03", "outcome": "cannot-tell" },
+        { "step_id": "sample-04", "outcome": "pass" },
+        { "step_id": "sample-05", "outcome": "inapplicable" }
+      ]
+    },
+    {
+      "reviewer_id": "reviewer-beta",
+      "independent": true,
+      "decisions": [
+        { "step_id": "sample-01", "outcome": "pass" },
+        { "step_id": "sample-02", "outcome": "fail" },
+        { "step_id": "sample-03", "outcome": "cannot-tell" },
+        { "step_id": "sample-04", "outcome": "fail" },
+        { "step_id": "sample-05", "outcome": "inapplicable" }
+      ]
+    }
+  ],
+  "comparison": {
+    "decision_count": 5,
+    "agreement_count": 4,
+    "raw_agreement": 0.8,
+    "cohen_kappa": 0.736842,
+    "forced_consensus": false,
+    "disagreements": [
+      {
+        "step_id": "sample-04",
+        "reviewer_a": "pass",
+        "reviewer_b": "fail",
+        "resolution": "unresolved"
+      }
+    ]
+  },
+  "privacy": {
+    "reviewer_ids_are_pseudonymous": true,
+    "participant_data_included": false,
+    "production_evidence_included": false
+  }
+}
