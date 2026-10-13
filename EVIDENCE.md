@@ -34,10 +34,45 @@ presented as independent reproduction.
   `known_gaps.evidence` carry the states, so a release cannot publish
   representation alone.
 
+## Where records come from
+
+`ingest-results.mjs` derives them from published bundles. Hand-authoring would
+make the ledger an assertion rather than a derivation.
+
+```sh
+node ingest-results.mjs path/to/bundle            # report what it would add
+node ingest-results.mjs path/to/bundle --apply    # write the records
+```
+
+Two rules decide what a bundle is allowed to prove.
+
+**Trust runs one way.** A bundle is evidence that something ran. It can never
+assert `represented` or `executable` — those are facts about the corpus — and
+the schema rejects a record that tries. Every derived record is `executed`,
+never `verified`: a run is not a review, and `verified` needs a named reviewer.
+
+**A run proves only what it exercised.** Executing a case tagged
+`input_at: [keyboard, sr-nvda]` with an automated scanner does not mean a
+screen-reader pairing was exercised — the fixture *names* those inputs, the run
+did not necessarily use them. So:
+
+| Dimension | Promoted? | Why |
+|---|---|---|
+| `surfaces` | yes | the artifact for that surface was actually processed |
+| `ui-states` | yes, if `state_reached` | a declared state that was not reached proves nothing |
+| `journeys` | yes, if `state_reached` | same |
+| `input-at` | **no** | a result file does not record which modality was exercised |
+| `methods` | **no** | the case names candidate methods, not the one taken |
+| `user-needs` | **no** | mapped attributes of criteria, not something a run executes |
+
+Ground truth is resolved by recomputing the content digest from the manifest as
+it stood at the bundle's declared revision, read straight out of git. A
+revision the clone does not hold fails closed rather than being guessed.
+
 ## The current state
 
-Nothing. The ledger is empty, so every represented value stops at `executable`,
-and `space-coverage.json` says so:
+The ledger holds **72 records** ingested from the published
+`functional-scenarios-wave1` bundle — and **every one is expired**:
 
 ```
 dimension       repr  exec        run  verif / total   what is missing
@@ -49,9 +84,24 @@ input-at         12    12    0      0 / 12
 methods          15    15    0      0 / 15
 ```
 
-That is the honest picture and it is the reason this model exists. The previous
-report showed `represented` only, which read as though 25 of 25 journeys were
-covered.
+```
+Evidence ledger: 0 current record(s), 72 stale. 0 value(s) executed, 0 verified.
+All 72 record(s) were captured against different ground truth than the corpus
+now holds, so nothing counts as executed.
+```
+
+Those runs measured the 234-case corpus, before the `aaa` and `native` families
+existed. The corpus is now 270 cases, so the content digest moved and the
+evidence expired exactly as the rule says it should.
+
+That is worth stating plainly: **our own corpus changes invalidated the only
+evidence we had.** The ledger does not hide it — it reports 72 stale records
+and the reason, where previously it reported nothing at all and gave no reason.
+Re-running those bundles against the current corpus is what would make them
+count.
+
+The previous report showed `represented` only, which read as though 25 of 25
+journeys were covered.
 
 ## Recording evidence
 

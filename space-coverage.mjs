@@ -83,9 +83,16 @@ const executedTotal = rows.reduce((sum, row) => sum + row.executed, 0);
 const verifiedTotal = rows.reduce((sum, row) => sum + row.verified, 0);
 console.log(`\nEvidence ledger: ${maturity.evidence_counts.current} current record(s), `
   + `${maturity.evidence_counts.stale} stale. ${executedTotal} value(s) executed, ${verifiedTotal} verified.`);
-if (executedTotal === 0) {
+if (executedTotal === 0 && maturity.evidence_counts.records === 0) {
   console.log('No execution evidence has been recorded yet, so every represented value stops at');
   console.log('`executable`. That is the honest state, and it is what this report exists to show.');
+} else if (executedTotal === 0) {
+  // Evidence exists but none of it describes the corpus as it now stands.
+  // Saying "no evidence" here would hide the reason, which is the one thing a
+  // reader needs: the ground truth moved and the runs have to be repeated.
+  console.log(`All ${maturity.evidence_counts.stale} record(s) were captured against different ground`);
+  console.log('truth than the corpus now holds, so nothing counts as executed. Re-running those');
+  console.log('bundles against the current corpus is what would make them count.');
 }
 
 fs.writeFileSync(path.join(ROOT, 'space-coverage.json'), JSON.stringify({

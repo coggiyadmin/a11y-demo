@@ -10,14 +10,591 @@
   ],
   "corpus_content_digest": "sha256:ee773270596adbf7f9c9da8b9b6e86e6423e16eae36a6b02de33a2f407e9cfdc",
   "evidence": {
-    "records": 0,
+    "records": 72,
     "current": 0,
-    "stale": 0,
+    "stale": 72,
     "by_reproduction_class": {},
     "vendor_evidence": 0,
     "independent_reproduction": 0
   },
-  "stale_evidence": [],
+  "stale_evidence": [
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.ui-states.suite-declared-page-or-flow-state",
+      "dimension": "ui-states",
+      "value": "suite-declared page or flow state",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "stale_reason": "captured against different ground truth",
+      "recorded_on": "2026-10-13"
+    }
+  ],
   "dimensions": [
     {
       "dimension": "surfaces",
