@@ -1,0 +1,31 @@
+<!--
+  WCAG 2.4.13 Focus Appearance (AAA)
+  lane: stateful-interaction
+  source: https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html
+  this page: broken
+  defect: The focus indicator is a one-pixel dotted outline in a colour close to the page background, so it covers too little area and has too little contrast against the unfocused state.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Newsletter</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+a:focus, button:focus {
+  outline: 1px dotted #c9cdd2;
+  outline-offset: 0;
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Newsletter</h1>
+<p><a href="#weekly">Weekly digest</a></p>
+<p><button type="button">Subscribe</button></p>
+<p><a href="#archive">Read the archive</a></p>
+</main><p><a href="index.html">Back to the AAA index</a></p>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>

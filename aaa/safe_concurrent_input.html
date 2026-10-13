@@ -1,0 +1,43 @@
+<!--
+  WCAG 2.5.6 Concurrent Input Mechanisms (AAA)
+  lane: stateful-interaction
+  source: https://www.w3.org/WAI/WCAG22/Understanding/concurrent-input-mechanisms.html
+  this page: corrected control
+  differs from the broken page only in what this criterion requires
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quantity</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Quantity</h1>
+<p>Use the stepper with either a pointer or the keyboard.</p>
+<p>
+  <button type="button" id="dec">Decrease</button>
+  <output id="n">1</output>
+  <button type="button" id="inc">Increase</button>
+</p>
+<p id="mode" role="status">Input mode: any</p>
+</main><p><a href="index.html">Back to the AAA index</a></p>
+<p><a href="../index.html">Back to the index</a></p>
+<script>
+// Both mechanisms stay active at all times; neither disables the other.
+var value = 1;
+var out = document.getElementById('n');
+
+function step(by) { value = Math.max(1, value + by); out.textContent = String(value); }
+
+['inc', 'dec'].forEach(function (id) {
+  // A native button already fires click for pointer, touch, keyboard and voice.
+  document.getElementById(id).addEventListener('click', function () {
+    step(id === 'inc' ? 1 : -1);
+  });
+});
+</script>
+</body>
+</html>

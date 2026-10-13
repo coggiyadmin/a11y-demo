@@ -72,14 +72,19 @@ test('release builder emits reproducible metadata and valid checksums', () => {
     assert.equal(metadata.release.version, VERSION);
     assert.equal(metadata.release.tag, TAG);
     assert.equal(metadata.release.revision, head);
-    assert.deepEqual(metadata.corpus.counts, { families: 12, cases: 234 });
+    // Derived from the manifest rather than hardcoded, so adding fixtures does
+    // not break the contract test it is not about.
+    const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'corpus-manifest.json'), 'utf8'));
+    assert.deepEqual(metadata.corpus.counts, manifest.counts);
     assert.equal(metadata.corpus.format_version, '1.0.0');
     assert.equal(metadata.contracts.benchmark_result, '1.0.0');
     assert.equal(metadata.contracts.human_protocols, '1.0.0');
     assert.equal(metadata.contracts.human_result, '1.0.0');
     assert.equal(metadata.contracts.double_review, '1.0.0');
-  assert.equal(metadata.contracts.scoring_policy, 'cognium-a11y-scoring/1.0.0');
-    assert.equal(metadata.known_gaps.wcag_without_ground_truth, 20);
+    assert.equal(metadata.contracts.scoring_policy, 'cognium-a11y-scoring/1.0.0');
+    // Every WCAG 2.2 criterion now has ground truth of some kind: ACT cases,
+    // local fixtures, or a guided check for the ones no tool can decide.
+    assert.equal(metadata.known_gaps.wcag_without_ground_truth, 0);
     assert.deepEqual(metadata.known_gaps.surfaces.represented, 7);
     assert.deepEqual(metadata.known_gaps.surfaces.total, 18);
     assert.deepEqual(metadata.included.pipeline_integrity, {

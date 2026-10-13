@@ -418,6 +418,183 @@
         "focus-support",
         "visual-clarity"
       ]
+    },
+    {
+      "sc": "1.2.6",
+      "needs": [
+        "text-for-audio",
+        "adjustable-audio",
+        "nonvisual-access",
+        "language-clarity"
+      ]
+    },
+    {
+      "sc": "1.2.7",
+      "needs": [
+        "nonvisual-access",
+        "visual-clarity",
+        "text-and-tactile"
+      ]
+    },
+    {
+      "sc": "1.2.9",
+      "needs": [
+        "text-for-audio",
+        "adjustable-audio",
+        "text-and-tactile",
+        "environmental-resilience"
+      ]
+    },
+    {
+      "sc": "1.3.6",
+      "needs": [
+        "memory-support",
+        "alternative-input",
+        "low-effort-interaction",
+        "language-clarity"
+      ]
+    },
+    {
+      "sc": "1.4.7",
+      "needs": [
+        "adjustable-audio",
+        "text-for-audio",
+        "environmental-resilience",
+        "reading-support"
+      ]
+    },
+    {
+      "sc": "1.4.8",
+      "needs": [
+        "visual-clarity",
+        "reading-support",
+        "language-clarity",
+        "forgiving-interface"
+      ]
+    },
+    {
+      "sc": "2.2.3",
+      "needs": [
+        "memory-support",
+        "low-effort-interaction",
+        "task-guidance",
+        "forgiving-interface"
+      ]
+    },
+    {
+      "sc": "2.2.5",
+      "needs": [
+        "memory-support",
+        "task-guidance",
+        "low-effort-interaction",
+        "forgiving-interface"
+      ]
+    },
+    {
+      "sc": "2.4.8",
+      "needs": [
+        "memory-support",
+        "task-guidance",
+        "nonvisual-access",
+        "language-clarity"
+      ]
+    },
+    {
+      "sc": "2.4.10",
+      "needs": [
+        "nonvisual-access",
+        "memory-support",
+        "task-guidance",
+        "reading-support"
+      ]
+    },
+    {
+      "sc": "2.4.12",
+      "needs": [
+        "focus-support",
+        "visual-clarity",
+        "alternative-input",
+        "hands-free-switch"
+      ]
+    },
+    {
+      "sc": "2.4.13",
+      "needs": [
+        "focus-support",
+        "visual-clarity",
+        "contrast-adaptation",
+        "alternative-input"
+      ]
+    },
+    {
+      "sc": "2.5.6",
+      "needs": [
+        "alternative-input",
+        "hands-free-switch",
+        "error-tolerant-pointer",
+        "forgiving-interface"
+      ]
+    },
+    {
+      "sc": "3.1.3",
+      "needs": [
+        "language-clarity",
+        "reading-support",
+        "memory-support"
+      ]
+    },
+    {
+      "sc": "3.1.4",
+      "needs": [
+        "language-clarity",
+        "reading-support",
+        "memory-support",
+        "nonvisual-access"
+      ]
+    },
+    {
+      "sc": "3.1.5",
+      "needs": [
+        "language-clarity",
+        "reading-support",
+        "memory-support"
+      ]
+    },
+    {
+      "sc": "3.1.6",
+      "needs": [
+        "language-clarity",
+        "reading-support",
+        "nonvisual-access",
+        "text-and-tactile"
+      ]
+    },
+    {
+      "sc": "3.3.5",
+      "needs": [
+        "task-guidance",
+        "memory-support",
+        "language-clarity",
+        "forgiving-interface"
+      ]
+    },
+    {
+      "sc": "3.3.6",
+      "needs": [
+        "memory-support",
+        "task-guidance",
+        "forgiving-interface",
+        "low-effort-interaction"
+      ]
+    },
+    {
+      "sc": "3.3.9",
+      "needs": [
+        "memory-support",
+        "task-guidance",
+        "alternative-input",
+        "non-voice-alternative"
+      ]
     }
   ]
 }

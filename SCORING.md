@@ -103,13 +103,13 @@ runs         2 (repeats 1, 2)
 engines      1 independent
 
 automated lane
-  true-positive recall    7/378       1.9%  (whole corpus)
+  true-positive recall    7/404       1.7%  (whole corpus)
   ... of attempted        7/16       43.8%  (cases this run executed)
-  false positives         2/348       0.6%
-  corrected-control FP    2/348       0.6%
+  false positives         2/374       0.5%
+  corrected-control FP    2/374       0.5%
 
 misses by reason
-  not_run                    362
+  not_run                    388
   execution_not_completed    8
   cannot_tell                1
 
@@ -117,21 +117,21 @@ pipeline-integrity lane
   expectations honored    6/16       37.5%
 
 human lane (never averaged into the rates above)
-  cases 9  executed 1  cannot-tell 1  not run 8
+  cases 15  executed 1  cannot-tell 1  not run 14
 
 execution accounting (first repeat)
-  completed 6  blocked 1  unsupported 1  error 1  not run 225
+  completed 6  blocked 1  unsupported 1  error 1  not run 257
   observed 7  not-observed 1  unknown 1
   examined: positive 9  zero 1  unknown 1
   cannot-tell outcomes 1 across 1 case(s)
 
 repeat variance
-  true-positive rate  min 0.015873  max 0.021164  mean 0.018519  stddev 0.002645
+  true-positive rate  min 0.014851  max 0.019802  mean 0.017327  stddev 0.002476
   unstable assertions 1
 
 warnings
   - result declares manifest sha256:aaaa... but the checked-out corpus manifest
-    is sha256:1f6e...; ground truth may not be the ground truth the run was
+    is sha256:<current>; ground truth may not be the ground truth the run was
     measured against
 
 note: Not a WCAG conformance claim, certification or endorsement.
@@ -139,8 +139,8 @@ note: No single universal score is produced; every rate is published with its nu
 note: error, blocked, unsupported, not-observed, cannot-tell and examined_count 0 are never credited as passes or detections.
 ```
 
-The 1.9% headline is correct and deliberate: the example executes 9 of 234
-cases, so 362 of 378 assertions are `not_run`. The attempted rate of 43.8% is
+The 1.7% headline is correct and deliberate: the example executes 9 of 266
+cases, so 388 of 404 assertions are `not_run`. The attempted rate of 43.8% is
 the one that describes the product's behaviour on what it actually ran. A real
 published result should run the whole corpus so the two converge.
 
@@ -156,11 +156,11 @@ $ node check/score.mjs compare schemas/examples/benchmark-result.repeat-1.json \
 corpus cogniumhq/a11y-benchmark@000000000000
 
 metric                                  baseline    candidate   delta
-true_positive_rate                      0.021164    0.015873    -0.005291
+true_positive_rate                      0.019802    0.014851    -0.004951
 true_positive_detected                  4           3           -1
-false_positive_rate                     0.005747    0.005747    0
+false_positive_rate                     0.005348    0.005348    0
 false_positive_count                    1           1           0
-corrected_control_false_positive_rate   0.005747    0.005747    0
+corrected_control_false_positive_rate   0.005348    0.005348    0
 pipeline_rate                           0.375       0.375       0
 
 newly missed   1
@@ -168,7 +168,7 @@ newly missed   1
 newly detected 0
 
 REGRESSED
-  - true-positive recall fell by 0.005291
+  - true-positive recall fell by 0.004951
 ```
 
 `newly_missed` and `newly_detected` are reported at assertion level, so an
@@ -193,8 +193,8 @@ from its header context.
 
 ```
 corpus_repository,corpus_revision,manifest_sha256,scoring_policy,lane,metric,group_kind,group,numerator,denominator,value
-cogniumhq/a11y-benchmark,0000...,sha256:aaaa...,cognium-a11y-scoring/1.0.0,automated,true_positive_recall,overall,,4,189,0.021164
-cogniumhq/a11y-benchmark,0000...,sha256:aaaa...,cognium-a11y-scoring/1.0.0,automated,false_positive,overall,,1,174,0.005747
+cogniumhq/a11y-benchmark,0000...,sha256:aaaa...,cognium-a11y-scoring/1.0.0,automated,true_positive_recall,overall,,4,202,0.019802
+cogniumhq/a11y-benchmark,0000...,sha256:aaaa...,cognium-a11y-scoring/1.0.0,automated,false_positive,overall,,1,187,0.005348
 cogniumhq/a11y-benchmark,0000...,sha256:aaaa...,cognium-a11y-scoring/1.0.0,pipeline,expected_execution_honored,overall,,3,8,0.375
 ```
 

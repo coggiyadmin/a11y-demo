@@ -1,14 +1,14 @@
 {
   "description": "Maturity of the enumerated test space. A represented value is named by at least one fixture; executable means a route to evidence exists; executed and verified require a current record in the evidence ledger. The states are strictly nested and a value can never be counted in a state it has not reached.",
   "generated": "2026-10-13",
-  "cases": 234,
+  "cases": 266,
   "maturity_states": [
     "represented",
     "executable",
     "executed",
     "verified"
   ],
-  "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+  "corpus_content_digest": "sha256:553d28051ee45da62898c24cd90f6f78abd7fca83ebbe1de58ec6d9ebbb5e27e",
   "evidence": {
     "records": 0,
     "current": 0,
@@ -59,7 +59,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 151,
+          "cases": 183,
           "evidence": []
         },
         {
@@ -309,7 +309,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 2,
+          "cases": 4,
           "evidence": []
         },
         {
@@ -331,7 +331,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 22,
+          "cases": 32,
           "evidence": []
         },
         {
@@ -342,7 +342,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 32,
+          "cases": 34,
           "evidence": []
         },
         {
@@ -364,7 +364,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 2,
+          "cases": 4,
           "evidence": []
         },
         {
@@ -386,7 +386,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 32,
+          "cases": 34,
           "evidence": []
         },
         {
@@ -474,7 +474,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 12,
+          "cases": 14,
           "evidence": []
         },
         {
@@ -518,7 +518,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 2,
+          "cases": 6,
           "evidence": []
         },
         {
@@ -540,7 +540,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 2,
+          "cases": 4,
           "evidence": []
         },
         {
@@ -551,7 +551,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 9,
+          "cases": 15,
           "evidence": []
         },
         {
@@ -601,7 +601,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 147,
+          "cases": 173,
           "evidence": []
         },
         {
@@ -656,7 +656,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 2,
+          "cases": 4,
           "evidence": []
         },
         {
@@ -700,7 +700,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 2,
+          "cases": 6,
           "evidence": []
         },
         {
@@ -772,7 +772,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 170,
+          "cases": 179,
           "evidence": []
         },
         {
@@ -783,7 +783,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 113,
+          "cases": 120,
           "evidence": []
         },
         {
@@ -805,7 +805,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 24,
+          "cases": 26,
           "evidence": []
         },
         {
@@ -816,7 +816,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 10,
+          "cases": 13,
           "evidence": []
         },
         {
@@ -827,7 +827,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 12,
+          "cases": 15,
           "evidence": []
         },
         {
@@ -838,7 +838,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 133,
+          "cases": 136,
           "evidence": []
         },
         {
@@ -849,7 +849,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 110,
+          "cases": 120,
           "evidence": []
         },
         {
@@ -860,7 +860,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 60,
+          "cases": 62,
           "evidence": []
         },
         {
@@ -871,7 +871,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 60,
+          "cases": 64,
           "evidence": []
         },
         {
@@ -882,7 +882,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 12,
+          "cases": 20,
           "evidence": []
         },
         {
@@ -893,7 +893,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 66,
+          "cases": 68,
           "evidence": []
         },
         {
@@ -904,7 +904,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 59,
+          "cases": 78,
           "evidence": []
         },
         {
@@ -915,7 +915,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 62,
+          "cases": 66,
           "evidence": []
         },
         {
@@ -926,7 +926,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 11,
+          "cases": 20,
           "evidence": []
         },
         {
@@ -937,7 +937,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 108,
+          "cases": 121,
           "evidence": []
         },
         {
@@ -948,7 +948,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 111,
+          "cases": 125,
           "evidence": []
         },
         {
@@ -992,7 +992,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 26,
+          "cases": 38,
           "evidence": []
         },
         {
@@ -1014,7 +1014,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 44,
+          "cases": 46,
           "evidence": []
         }
       ],
@@ -1053,7 +1053,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 160,
+          "cases": 192,
           "evidence": []
         },
         {
@@ -1064,7 +1064,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 46,
+          "cases": 48,
           "evidence": []
         },
         {
@@ -1075,7 +1075,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 10,
+          "cases": 12,
           "evidence": []
         },
         {
@@ -1086,7 +1086,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 4,
+          "cases": 12,
           "evidence": []
         },
         {
@@ -1097,7 +1097,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 2,
+          "cases": 6,
           "evidence": []
         },
         {
@@ -1130,7 +1130,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 101,
+          "cases": 117,
           "evidence": []
         },
         {
@@ -1163,7 +1163,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 2,
+          "cases": 8,
           "evidence": []
         },
         {
@@ -1216,7 +1216,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 36,
+          "cases": 48,
           "evidence": []
         },
         {
@@ -1227,7 +1227,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 160,
+          "cases": 162,
           "evidence": []
         },
         {
@@ -1238,7 +1238,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 92,
+          "cases": 96,
           "evidence": []
         },
         {
@@ -1249,7 +1249,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 66,
+          "cases": 72,
           "evidence": []
         },
         {
@@ -1260,7 +1260,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 78,
+          "cases": 90,
           "evidence": []
         },
         {
@@ -1271,7 +1271,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 40,
+          "cases": 48,
           "evidence": []
         },
         {
@@ -1282,7 +1282,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 22,
+          "cases": 24,
           "evidence": []
         },
         {
@@ -1326,7 +1326,7 @@
           "executed": false,
           "verified": false,
           "independently_verified": false,
-          "cases": 10,
+          "cases": 16,
           "evidence": []
         },
         {
@@ -1387,7 +1387,7 @@
     ],
     "formula": "surface x journey x ui-state x input",
     "total": 64800,
-    "triples_touched": 40,
+    "triples_touched": 42,
     "note": "User needs and standards are mapped attributes, not independent Cartesian axes."
   },
   "not_automatable": [

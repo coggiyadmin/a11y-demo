@@ -136,6 +136,102 @@ const CHECKS = [
     evidence: 'The suggestion, the accepted text, and who approved it.',
     fixture: '../static/img_no_alt.html',
   },
+  // --- WCAG AAA criteria whose evidence is a human judgement ----------------
+  //
+  // These are classified in aaa.mjs. They are carried here rather than given
+  // automated fixtures because the question each one asks is about meaning,
+  // equivalence or adequacy, and a fabricated assertion would be worse than an
+  // honest cannot-tell.
+  {
+    id: 'sign_language_equivalence', sc: ['1.2.6'], method: 'guided-manual',
+    needs: ['text-for-audio', 'adjustable-audio', 'nonvisual-access', 'language-clarity'],
+    question: 'Does the sign-language interpretation convey the same information as the audio?',
+    why: 'A tool can detect that a sign-language track is present. It cannot judge whether the '
+      + 'signing is complete, correctly timed, in the sign language the audience actually uses, '
+      + 'or large and well-lit enough to read. Sign languages are distinct languages, not '
+      + 'transliterations of the spoken track.',
+    how: ['Identify which sign language the audience uses; it is not implied by the page language.',
+      'Watch the interpretation against the audio and check nothing is summarised away.',
+      'Check the interpreter stays visible, well lit and large enough to read at the default size.',
+      'Check the interpretation is synchronised with the audio it interprets.'],
+    evidence: 'The media, the sign-language track, and a note from a fluent signer.',
+    fixture: '../media/video_no_audio_description.html',
+    applicability: 'inapplicable when there is no prerecorded audio in synchronised media',
+  },
+  {
+    id: 'extended_audio_description', sc: ['1.2.7'], method: 'guided-manual',
+    needs: ['nonvisual-access', 'visual-clarity', 'text-and-tactile'],
+    question: 'Do the pauses allow every important visual detail to be described?',
+    why: 'Standard audio description fits into existing gaps in the dialogue. Deciding that those '
+      + 'gaps are too short, and that the video must be paused to say more, requires knowing what '
+      + 'the picture carries that the soundtrack does not.',
+    how: ['Watch with the picture hidden and list what becomes unclear.',
+      'Compare that list with what the description actually says.',
+      'Check whether the existing pauses could carry the missing detail without extending them.',
+      'Only then decide whether extended description is required.'],
+    evidence: 'The description script, the media, and the list of details lost without the picture.',
+    fixture: '../media/video_no_audio_description.html',
+    applicability: 'inapplicable when foreground audio pauses already allow full description',
+  },
+  {
+    id: 'live_audio_alternative', sc: ['1.2.9'], method: 'guided-manual',
+    needs: ['text-for-audio', 'adjustable-audio', 'text-and-tactile', 'environmental-resilience'],
+    question: 'Is there a live equivalent for the live audio-only content?',
+    why: 'The alternative has to exist while the broadcast is happening and keep pace with it. '
+      + 'A corpus can hold the question but not a live stream, and whether the equivalent keeps '
+      + 'up is judged by someone following both at once.',
+    how: ['Join the live audio and the alternative at the same time.',
+      'Check the alternative presents equivalent information, not a delayed summary.',
+      'Check the lag stays small enough to follow the broadcast.',
+      'Record who produced the alternative and how it is announced to the audience.'],
+    evidence: 'Recording of both streams with timestamps, and the production arrangement.',
+    fixture: '../media/live_no_captions.html',
+    applicability: 'inapplicable when no live audio-only content is presented',
+  },
+  {
+    id: 'background_audio_level', sc: ['1.4.7'], method: 'guided-manual',
+    needs: ['adjustable-audio', 'text-for-audio', 'environmental-resilience', 'reading-support'],
+    question: 'Is the background at least 20 dB below the foreground narration?',
+    why: 'The separation is measurable, but only from the rendered audio, and deciding which '
+      + 'passages are foreground narration rather than incidental sound is a listening judgement. '
+      + 'Markup says nothing about either.',
+    how: ['Identify the passages that are foreground narration.',
+      'Measure the level of the narration and of the background beneath it.',
+      'Allow the exception for two or fewer seconds of incidental sound.',
+      'If a control mutes the background entirely, record that instead of a measurement.'],
+    evidence: 'Level measurements per passage, the tool used, and the audio file.',
+    fixture: '../media/audio_no_transcript.html',
+    applicability: 'inapplicable to musical performance and where spoken content is incidental',
+  },
+  {
+    id: 'unusual_words', sc: ['3.1.3'], method: 'guided-manual',
+    needs: ['language-clarity', 'reading-support', 'memory-support'],
+    question: 'Is a definition available for every word used in an unusual or restricted way?',
+    why: 'Whether a word is unusual depends on who is reading. Jargon, idiom and words given a '
+      + 'narrow technical meaning all qualify, and none of them is detectable by looking the word '
+      + 'up — the same word is ordinary in one audience and opaque in another.',
+    how: ['Decide who the content is for before judging any word.',
+      'List terms of art, idioms, and ordinary words given a narrow meaning here.',
+      'Check each has a definition inline, in a glossary, or in a linked dictionary entry.',
+      'Check the mechanism is reachable from the place the word is used.'],
+    evidence: 'The term list, the audience assumption, and where each definition was found.',
+    fixture: '../aaa/abbreviations.html',
+  },
+  {
+    id: 'pronunciation_ambiguity', sc: ['3.1.6'], method: 'guided-manual',
+    needs: ['language-clarity', 'reading-support', 'nonvisual-access', 'text-and-tactile'],
+    question: 'Is pronunciation available where meaning is ambiguous without it?',
+    why: 'The criterion applies only where the word cannot be understood without knowing how it '
+      + 'is said. Deciding that a heteronym is genuinely ambiguous in its context, rather than '
+      + 'resolved by the surrounding sentence, is a reading judgement.',
+    how: ['Find words whose meaning changes with pronunciation in this context.',
+      'Check whether the sentence already disambiguates them; if it does, the criterion does not apply.',
+      'For the rest, check a pronunciation is given inline, in a glossary, or as ruby annotation.',
+      'Listen with a screen reader to confirm the mechanism survives spoken output.'],
+    evidence: 'The ambiguous words, their context, and the pronunciation mechanism used.',
+    fixture: '../aaa/abbreviations.html',
+    applicability: 'inapplicable where no word is ambiguous without its pronunciation',
+  },
   {
     id: 'user_task_completion', sc: [], method: 'user-testing',
     needs: ['combined-access'],
@@ -168,7 +264,11 @@ for (const c of CHECKS) {
 
 <h2>Why automation cannot decide this</h2>
 <p>${c.why}</p>
-
+${c.applicability ? `
+<h2>When this does not apply</h2>
+<p>This criterion is <code>inapplicable</code> ${c.applicability}. Recording
+<code>inapplicable</code> is a correct result here, not a gap.</p>
+` : ''}
 <h2>How to check it</h2>
 <ol>${c.how.map((h) => `<li>${h}</li>`).join('\n')}</ol>
 
@@ -205,11 +305,21 @@ for (const c of CHECKS) {
     user_needs: c.needs,
     min_criteria: {},
     must_not_report: [],
+    // The criteria this check covers, carried separately from min_criteria on
+    // purpose: these are questions for a person, not assertions that a tool
+    // should report anything. Coverage reads this to tell "manual only" apart
+    // from "not built yet".
+    guided_criteria: c.sc,
     // the honest automated result; NOT a failure to record
     expected_outcome: 'cannot-tell',
     confidence: 'possible',
     requires_human: true,
     question: c.question,
+    // Where a criterion only applies in some contexts, `inapplicable` is as
+    // correct an answer as `cannot-tell`, and neither is a coverage gap.
+    ...(c.applicability
+      ? { applicability: c.applicability, acceptable_outcomes: ['cannot-tell', 'inapplicable'] }
+      : {}),
     notes: c.why,
   });
 }

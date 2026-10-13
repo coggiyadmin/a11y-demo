@@ -1,0 +1,849 @@
+{
+  "description": "Matched broken/corrected pairs for the WCAG AAA criteria whose evidence is machine-readable or reachable by driving the page. Criteria requiring human judgement are carried as guided checks instead of fabricated automated assertions.",
+  "boundary": "Single-purpose fixtures, not a sampled site. AAA coverage here is not an AAA conformance claim about any website; whole-site conformance is judged under WCAG-EM.",
+  "generated": "2026-10-13",
+  "counts": {
+    "pairs": 13,
+    "cases": 26
+  },
+  "cases": [
+    {
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "voice-control"
+      ],
+      "method": [
+        "static-source",
+        "ax-tree"
+      ],
+      "user_needs": [
+        "memory-support",
+        "alternative-input",
+        "low-effort-interaction",
+        "language-clarity"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-identify_purpose",
+      "mode": "tp",
+      "path": "aaa/identify_purpose.html",
+      "min_criteria": {
+        "1.3.6": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "automated-static",
+      "notes": "Input purposes are not programmatically determinable and the icon controls have no accessible name, so no personalisation layer can relabel or re-icon them."
+    },
+    {
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "voice-control"
+      ],
+      "method": [
+        "static-source",
+        "ax-tree"
+      ],
+      "user_needs": [
+        "memory-support",
+        "alternative-input",
+        "low-effort-interaction",
+        "language-clarity"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_identify_purpose",
+      "mode": "safe",
+      "path": "aaa/safe_identify_purpose.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "1.3.6"
+      ],
+      "expected_outcome": "pass",
+      "lane": "automated-static",
+      "notes": "Corrected control for identify_purpose.html. A control that reports 1.3.6 here has produced a false positive."
+    },
+    {
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "magnifier"
+      ],
+      "method": [
+        "visual",
+        "runtime-dom"
+      ],
+      "user_needs": [
+        "visual-clarity",
+        "reading-support",
+        "language-clarity",
+        "forgiving-interface"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-visual_presentation",
+      "mode": "tp",
+      "path": "aaa/visual_presentation.html",
+      "min_criteria": {
+        "1.4.8": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "automated-static",
+      "notes": "Text is fully justified, lines run well past 80 characters, line spacing is below 1.5 within paragraphs, paragraph spacing is below 1.5 times line spacing, and the page forces its own foreground and background colours."
+    },
+    {
+      "surface": "web",
+      "journey": "display-adapt",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "magnifier"
+      ],
+      "method": [
+        "visual",
+        "runtime-dom"
+      ],
+      "user_needs": [
+        "visual-clarity",
+        "reading-support",
+        "language-clarity",
+        "forgiving-interface"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_visual_presentation",
+      "mode": "safe",
+      "path": "aaa/safe_visual_presentation.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "1.4.8"
+      ],
+      "expected_outcome": "pass",
+      "lane": "automated-static",
+      "notes": "Corrected control for visual_presentation.html. A control that reports 1.4.8 here has produced a false positive."
+    },
+    {
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "method": [
+        "static-source",
+        "crawl"
+      ],
+      "user_needs": [
+        "memory-support",
+        "task-guidance",
+        "nonvisual-access",
+        "language-clarity"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-location",
+      "mode": "tp",
+      "path": "aaa/location.html",
+      "min_criteria": {
+        "2.4.8": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "automated-static",
+      "notes": "A page three levels deep gives no breadcrumb, no site map and no indication of which navigation entry is the current page."
+    },
+    {
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "method": [
+        "static-source",
+        "crawl"
+      ],
+      "user_needs": [
+        "memory-support",
+        "task-guidance",
+        "nonvisual-access",
+        "language-clarity"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_location",
+      "mode": "safe",
+      "path": "aaa/safe_location.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.4.8"
+      ],
+      "expected_outcome": "pass",
+      "lane": "automated-static",
+      "notes": "Corrected control for location.html. A control that reports 2.4.8 here has produced a false positive."
+    },
+    {
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "method": [
+        "static-source",
+        "ax-tree"
+      ],
+      "user_needs": [
+        "nonvisual-access",
+        "memory-support",
+        "task-guidance",
+        "reading-support"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-section_headings",
+      "mode": "tp",
+      "path": "aaa/section_headings.html",
+      "min_criteria": {
+        "2.4.10": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "automated-static",
+      "notes": "Sections are delimited by bold styled text rather than headings, so no heading navigation reaches them."
+    },
+    {
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "method": [
+        "static-source",
+        "ax-tree"
+      ],
+      "user_needs": [
+        "nonvisual-access",
+        "memory-support",
+        "task-guidance",
+        "reading-support"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_section_headings",
+      "mode": "safe",
+      "path": "aaa/safe_section_headings.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.4.10"
+      ],
+      "expected_outcome": "pass",
+      "lane": "automated-static",
+      "notes": "Corrected control for section_headings.html. A control that reports 2.4.10 here has produced a false positive."
+    },
+    {
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "method": [
+        "static-source"
+      ],
+      "user_needs": [
+        "language-clarity",
+        "reading-support",
+        "memory-support",
+        "nonvisual-access"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-abbreviations",
+      "mode": "tp",
+      "path": "aaa/abbreviations.html",
+      "min_criteria": {
+        "3.1.4": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "automated-static",
+      "notes": "Abbreviations are used throughout with no expansion on first use, no abbr element and no glossary, so no mechanism identifies the expanded form."
+    },
+    {
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "method": [
+        "static-source"
+      ],
+      "user_needs": [
+        "language-clarity",
+        "reading-support",
+        "memory-support",
+        "nonvisual-access"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_abbreviations",
+      "mode": "safe",
+      "path": "aaa/safe_abbreviations.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "3.1.4"
+      ],
+      "expected_outcome": "pass",
+      "lane": "automated-static",
+      "notes": "Corrected control for abbreviations.html. A control that reports 3.1.4 here has produced a false positive."
+    },
+    {
+      "surface": "web",
+      "journey": "help",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "method": [
+        "static-source"
+      ],
+      "user_needs": [
+        "task-guidance",
+        "memory-support",
+        "language-clarity",
+        "forgiving-interface"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-help",
+      "mode": "tp",
+      "path": "aaa/help.html",
+      "min_criteria": {
+        "3.3.5": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "automated-static",
+      "notes": "A form asking for an unfamiliar reference number offers no context-sensitive help, no help link and no way to reach a person."
+    },
+    {
+      "surface": "web",
+      "journey": "help",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "method": [
+        "static-source"
+      ],
+      "user_needs": [
+        "task-guidance",
+        "memory-support",
+        "language-clarity",
+        "forgiving-interface"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_help",
+      "mode": "safe",
+      "path": "aaa/safe_help.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "3.3.5"
+      ],
+      "expected_outcome": "pass",
+      "lane": "automated-static",
+      "notes": "Corrected control for help.html. A control that reports 3.3.5 here has produced a false positive."
+    },
+    {
+      "surface": "web",
+      "journey": "auth-challenge",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "voice-control"
+      ],
+      "method": [
+        "static-source"
+      ],
+      "user_needs": [
+        "memory-support",
+        "task-guidance",
+        "alternative-input",
+        "non-voice-alternative"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-accessible_auth_enhanced",
+      "mode": "tp",
+      "path": "aaa/accessible_auth_enhanced.html",
+      "min_criteria": {
+        "3.3.9": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "automated-static",
+      "notes": "Sign-in requires transcribing distorted text and recalling selected characters of a memorised word. Both are recall-or-transcription tests, paste is blocked and autocomplete is suppressed, and no alternative is offered."
+    },
+    {
+      "surface": "web",
+      "journey": "auth-challenge",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "voice-control"
+      ],
+      "method": [
+        "static-source"
+      ],
+      "user_needs": [
+        "memory-support",
+        "task-guidance",
+        "alternative-input",
+        "non-voice-alternative"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_accessible_auth_enhanced",
+      "mode": "safe",
+      "path": "aaa/safe_accessible_auth_enhanced.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "3.3.9"
+      ],
+      "expected_outcome": "pass",
+      "lane": "automated-static",
+      "notes": "Corrected control for accessible_auth_enhanced.html. A control that reports 3.3.9 here has produced a false positive."
+    },
+    {
+      "surface": "web",
+      "journey": "session",
+      "ui_state": "timed-out",
+      "input_at": [
+        "keyboard",
+        "switch"
+      ],
+      "method": [
+        "interaction",
+        "state-exploration"
+      ],
+      "user_needs": [
+        "memory-support",
+        "low-effort-interaction",
+        "task-guidance",
+        "forgiving-interface"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-no_timing",
+      "mode": "tp",
+      "path": "aaa/no_timing.html",
+      "min_criteria": {
+        "2.2.3": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "stateful-interaction",
+      "notes": "The form expires after a fixed interval and discards what was typed. The content is not a real-time event and the limit is not essential, so timing is not required at all."
+    },
+    {
+      "surface": "web",
+      "journey": "session",
+      "ui_state": "timed-out",
+      "input_at": [
+        "keyboard",
+        "switch"
+      ],
+      "method": [
+        "interaction",
+        "state-exploration"
+      ],
+      "user_needs": [
+        "memory-support",
+        "low-effort-interaction",
+        "task-guidance",
+        "forgiving-interface"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_no_timing",
+      "mode": "safe",
+      "path": "aaa/safe_no_timing.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.2.3"
+      ],
+      "expected_outcome": "pass",
+      "lane": "stateful-interaction",
+      "notes": "Corrected control for no_timing.html. A control that reports 2.2.3 here has produced a false positive."
+    },
+    {
+      "surface": "web",
+      "journey": "session",
+      "ui_state": "timed-out",
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "method": [
+        "interaction",
+        "state-exploration"
+      ],
+      "user_needs": [
+        "memory-support",
+        "task-guidance",
+        "low-effort-interaction",
+        "forgiving-interface"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-re_authenticating",
+      "mode": "tp",
+      "path": "aaa/re_authenticating.html",
+      "min_criteria": {
+        "2.2.5": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "stateful-interaction",
+      "notes": "When the session expires mid-task, re-authenticating returns an empty form and the entered data is gone."
+    },
+    {
+      "surface": "web",
+      "journey": "session",
+      "ui_state": "timed-out",
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "method": [
+        "interaction",
+        "state-exploration"
+      ],
+      "user_needs": [
+        "memory-support",
+        "task-guidance",
+        "low-effort-interaction",
+        "forgiving-interface"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_re_authenticating",
+      "mode": "safe",
+      "path": "aaa/safe_re_authenticating.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.2.5"
+      ],
+      "expected_outcome": "pass",
+      "lane": "stateful-interaction",
+      "notes": "Corrected control for re_authenticating.html. A control that reports 2.2.5 here has produced a false positive."
+    },
+    {
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "switch",
+        "magnifier"
+      ],
+      "method": [
+        "interaction",
+        "visual"
+      ],
+      "user_needs": [
+        "focus-support",
+        "visual-clarity",
+        "alternative-input",
+        "hands-free-switch"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-focus_not_obscured_enhanced",
+      "mode": "tp",
+      "path": "aaa/focus_not_obscured_enhanced.html",
+      "min_criteria": {
+        "2.4.12": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "stateful-interaction",
+      "notes": "A sticky footer covers part of each control as it receives focus, so no part of the focused component is guaranteed visible."
+    },
+    {
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "switch",
+        "magnifier"
+      ],
+      "method": [
+        "interaction",
+        "visual"
+      ],
+      "user_needs": [
+        "focus-support",
+        "visual-clarity",
+        "alternative-input",
+        "hands-free-switch"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_focus_not_obscured_enhanced",
+      "mode": "safe",
+      "path": "aaa/safe_focus_not_obscured_enhanced.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.4.12"
+      ],
+      "expected_outcome": "pass",
+      "lane": "stateful-interaction",
+      "notes": "Corrected control for focus_not_obscured_enhanced.html. A control that reports 2.4.12 here has produced a false positive."
+    },
+    {
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "switch",
+        "magnifier"
+      ],
+      "method": [
+        "interaction",
+        "visual"
+      ],
+      "user_needs": [
+        "focus-support",
+        "visual-clarity",
+        "contrast-adaptation",
+        "alternative-input"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-focus_appearance",
+      "mode": "tp",
+      "path": "aaa/focus_appearance.html",
+      "min_criteria": {
+        "2.4.13": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "stateful-interaction",
+      "notes": "The focus indicator is a one-pixel dotted outline in a colour close to the page background, so it covers too little area and has too little contrast against the unfocused state."
+    },
+    {
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "switch",
+        "magnifier"
+      ],
+      "method": [
+        "interaction",
+        "visual"
+      ],
+      "user_needs": [
+        "focus-support",
+        "visual-clarity",
+        "contrast-adaptation",
+        "alternative-input"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_focus_appearance",
+      "mode": "safe",
+      "path": "aaa/safe_focus_appearance.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.4.13"
+      ],
+      "expected_outcome": "pass",
+      "lane": "stateful-interaction",
+      "notes": "Corrected control for focus_appearance.html. A control that reports 2.4.13 here has produced a false positive."
+    },
+    {
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "switch"
+      ],
+      "method": [
+        "interaction",
+        "state-exploration"
+      ],
+      "user_needs": [
+        "alternative-input",
+        "hands-free-switch",
+        "error-tolerant-pointer",
+        "forgiving-interface"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-concurrent_input",
+      "mode": "tp",
+      "path": "aaa/concurrent_input.html",
+      "min_criteria": {
+        "2.5.6": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "stateful-interaction",
+      "notes": "Once the control is used with a pointer the page switches to a pointer-only mode and removes the keyboard handler, so a person alternating between input mechanisms is locked out of one of them."
+    },
+    {
+      "surface": "web",
+      "journey": "composite-widget",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "switch"
+      ],
+      "method": [
+        "interaction",
+        "state-exploration"
+      ],
+      "user_needs": [
+        "alternative-input",
+        "hands-free-switch",
+        "error-tolerant-pointer",
+        "forgiving-interface"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_concurrent_input",
+      "mode": "safe",
+      "path": "aaa/safe_concurrent_input.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.5.6"
+      ],
+      "expected_outcome": "pass",
+      "lane": "stateful-interaction",
+      "notes": "Corrected control for concurrent_input.html. A control that reports 2.5.6 here has produced a false positive."
+    },
+    {
+      "surface": "web",
+      "journey": "high-stakes",
+      "ui_state": "submitted",
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "method": [
+        "interaction",
+        "state-exploration"
+      ],
+      "user_needs": [
+        "memory-support",
+        "task-guidance",
+        "forgiving-interface",
+        "low-effort-interaction"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-error_prevention_all",
+      "mode": "tp",
+      "path": "aaa/error_prevention_all.html",
+      "min_criteria": {
+        "3.3.6": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "lane": "stateful-interaction",
+      "notes": "The submission is final on the first press. It cannot be reversed, nothing is checked for errors, and there is no chance to review and confirm."
+    },
+    {
+      "surface": "web",
+      "journey": "high-stakes",
+      "ui_state": "submitted",
+      "input_at": [
+        "keyboard",
+        "sr-nvda"
+      ],
+      "method": [
+        "interaction",
+        "state-exploration"
+      ],
+      "user_needs": [
+        "memory-support",
+        "task-guidance",
+        "forgiving-interface",
+        "low-effort-interaction"
+      ],
+      "standard": [
+        "wcag22"
+      ],
+      "id": "aaa-safe_error_prevention_all",
+      "mode": "safe",
+      "path": "aaa/safe_error_prevention_all.html",
+      "min_criteria": {},
+      "must_not_report": [
+        "3.3.6"
+      ],
+      "expected_outcome": "pass",
+      "lane": "stateful-interaction",
+      "notes": "Corrected control for error_prevention_all.html. A control that reports 3.3.6 here has produced a false positive."
+    }
+  ]
+}

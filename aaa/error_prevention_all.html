@@ -1,0 +1,36 @@
+<!--
+  WCAG 3.3.6 Error Prevention (All) (AAA)
+  lane: stateful-interaction
+  source: https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-all.html
+  this page: broken
+  defect: The submission is final on the first press. It cannot be reversed, nothing is checked for errors, and there is no chance to review and confirm.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Send payment</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Send payment</h1>
+<form id="f" action="#" method="get">
+  <label for="to">Pay to</label><input id="to" name="to" type="text">
+  <label for="amt">Amount</label><input id="amt" name="amt" type="text">
+  <button type="submit" id="send">Send now</button>
+</form>
+<p id="state" role="status"></p>
+</main><p><a href="index.html">Back to the AAA index</a></p>
+<p><a href="../index.html">Back to the index</a></p>
+<script>
+// Final on first press: no review, no confirmation, no reversal.
+document.getElementById('f').addEventListener('submit', function (event) {
+  event.preventDefault();
+  document.getElementById('state').textContent = 'Payment sent. This cannot be undone.';
+  document.getElementById('send').disabled = true;
+});
+</script>
+</body>
+</html>

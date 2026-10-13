@@ -1,0 +1,42 @@
+<!--
+  WCAG 2.2.5 Re-authenticating (AAA)
+  lane: stateful-interaction
+  source: https://www.w3.org/WAI/WCAG22/Understanding/re-authenticating.html
+  this page: corrected control
+  differs from the broken page only in what this criterion requires
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Application, step 2 of 3</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Application, step 2 of 3</h1>
+<form id="f" action="#" method="get">
+  <label for="a">Previous address</label><input id="a" name="a" type="text">
+  <label for="y">Years at that address</label><input id="y" name="y" type="text">
+  <button type="button" id="expire">Simulate session expiry</button>
+  <button type="submit">Continue</button>
+</form>
+<p id="state" role="status"></p>
+</main><p><a href="index.html">Back to the AAA index</a></p>
+<p><a href="../index.html">Back to the index</a></p>
+<script>
+// Re-authentication preserves and restores the work in progress.
+document.getElementById('expire').addEventListener('click', function () {
+  var kept = {
+    a: document.getElementById('a').value,
+    y: document.getElementById('y').value
+  };
+  document.getElementById('a').value = kept.a;
+  document.getElementById('y').value = kept.y;
+  document.getElementById('state').textContent =
+    'Session expired. You have been signed back in and your answers were kept.';
+});
+</script>
+</body>
+</html>

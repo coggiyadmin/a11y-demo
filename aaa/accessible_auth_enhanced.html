@@ -1,0 +1,39 @@
+<!--
+  WCAG 3.3.9 Accessible Authentication (Enhanced) (AAA)
+  lane: automated-static
+  source: https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-enhanced.html
+  this page: broken
+  defect: Sign-in requires transcribing distorted text and recalling selected characters of a memorised word. Both are recall-or-transcription tests, paste is blocked and autocomplete is suppressed, and no alternative is offered.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign in</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body>
+<main>
+<h1>Sign in</h1>
+<form action="#" method="get">
+  <label for="u">Username</label>
+  <input id="u" name="u" type="text" autocomplete="off">
+
+  <label for="p">Password</label>
+  <input id="p" name="p" type="password" autocomplete="off" onpaste="return false">
+
+  <label for="m">Enter the 2nd, 5th and 7th characters of your memorable word</label>
+  <input id="m" name="m" type="text" autocomplete="off" onpaste="return false">
+
+  <p>Type the characters shown in the image below.</p>
+  <p><img src="../pixel.png" alt="Distorted characters"></p>
+  <label for="c">Characters from the image</label>
+  <input id="c" name="c" type="text" autocomplete="off">
+
+  <button type="submit">Sign in</button>
+</form>
+</main><p><a href="index.html">Back to the AAA index</a></p>
+<p><a href="../index.html">Back to the index</a></p>
+</body>
+</html>
