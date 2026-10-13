@@ -5,6 +5,26 @@ machine-readable manifest and schema versions are recorded with every release.
 
 ## Unreleased
 
+### Fixed
+
+- Scoring credited an engine for silence. The corrected-control false-positive
+  rate counted every assertion in its denominator, including criteria the
+  engine has no rule for, so a product implementing nothing scored a perfect
+  0%. Measured against axe-core 4.14.0, 82% of that denominator was
+  unviolatable by construction. Every rate is now also published over the
+  criteria a run demonstrably evaluates, beside the whole-corpus figure rather
+  than instead of it (#37).
+- WCAG AAA assertions were pooled into one recall denominator although no
+  shipping engine implements AAA, depressing the headline while carrying no
+  discriminating information. Recall and false positives are now broken out by
+  WCAG level, and `criteria_no_engine_reported` names criteria no engine in a
+  comparison reported at all (#38).
+
+### Changed
+
+- The scoring policy is `cognium-a11y-scoring/1.1.0`. `compare` refuses to
+  measure a delta across the change, which is the intended behaviour.
+
 ### Added
 
 - `check/score.mjs`, a product-neutral reference scorer and regression runner

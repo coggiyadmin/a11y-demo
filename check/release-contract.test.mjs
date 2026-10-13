@@ -81,7 +81,7 @@ test('release builder emits reproducible metadata and valid checksums', () => {
     assert.equal(metadata.contracts.human_protocols, '1.0.0');
     assert.equal(metadata.contracts.human_result, '1.0.0');
     assert.equal(metadata.contracts.double_review, '1.0.0');
-    assert.equal(metadata.contracts.scoring_policy, 'cognium-a11y-scoring/1.0.0');
+    assert.equal(metadata.contracts.scoring_policy, 'cognium-a11y-scoring/1.1.0');
     // Every WCAG 2.2 criterion now has ground truth of some kind: ACT cases,
     // local fixtures, or a guided check for the ones no tool can decide.
     assert.equal(metadata.known_gaps.wcag_without_ground_truth, 0);

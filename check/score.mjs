@@ -123,10 +123,52 @@ function reportScore(score) {
       '  (cases this run executed)',
     ),
   );
+  lines.push(
+    laneRow(
+      '... engine-reachable',
+      recall.numerator,
+      recall.denominator_engine_reachable,
+      recall.rate_engine_reachable,
+      '  (criteria this engine evaluates)',
+    ),
+  );
   lines.push(laneRow('false positives', fp.count, fp.denominator, fp.rate));
   lines.push(
     laneRow('corrected-control FP', fp.corrected_control.count, fp.corrected_control.denominator, fp.corrected_control.rate),
   );
+  lines.push(
+    laneRow(
+      '... engine-reachable',
+      fp.corrected_control.count,
+      fp.corrected_control.denominator_engine_reachable,
+      fp.corrected_control.rate_engine_reachable,
+      '  (the only FP figure it could fail)',
+    ),
+  );
+
+  if (fp.corrected_control.engine_unreachable > 0) {
+    const share = Math.round((100 * fp.corrected_control.engine_unreachable) / fp.corrected_control.denominator);
+    lines.push('');
+    lines.push(
+      `  note: ${fp.corrected_control.engine_unreachable} of ${fp.corrected_control.denominator} corrected-control`,
+    );
+    lines.push(
+      `  assertions (${share}%) are criteria this engine never reported. It cannot produce a false`,
+    );
+    lines.push('  positive on those, so the full-denominator rate credits silence.');
+  }
+
+  const byLevel = score.breakdowns?.by_level ?? [];
+  if (byLevel.length > 0) {
+    lines.push('');
+    lines.push('by WCAG level');
+    for (const row of byLevel) {
+      lines.push(
+        `  ${String(row.group).padEnd(10)}recall ${String(`${row.tp_detected}/${row.tp_denominator}`).padEnd(10)}${percent(row.tp_rate).padStart(6)}` +
+          `    FP ${String(`${row.fp_count}/${row.fp_denominator}`).padEnd(10)}${percent(row.fp_rate).padStart(6)}`,
+      );
+    }
+  }
   lines.push('');
   lines.push('misses by reason');
   for (const [reason, count] of Object.entries(recall.missed)) {
@@ -169,6 +211,13 @@ function reportScore(score) {
     lines.push('');
     lines.push('warnings');
     for (const warning of score.warnings) lines.push(`  - ${warning}`);
+  }
+
+  const unimplemented = score.criteria_no_engine_reported ?? [];
+  if (unimplemented.length > 0) {
+    lines.push('');
+    lines.push(`criteria no engine in this comparison reported at all (${unimplemented.length})`);
+    lines.push(`  ${unimplemented.join(', ')}`);
   }
 
   lines.push('');

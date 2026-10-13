@@ -6,7 +6,14 @@ import { spawnSync } from 'node:child_process';
 import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 
-import { compareScores, loadCorpus, scoreResults, toCsv } from './scoring.mjs';
+import {
+  compareScores,
+  criterionLevels,
+  engineReachableCriteria,
+  loadCorpus,
+  scoreResults,
+  toCsv,
+} from './scoring.mjs';
 
 const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const CLI = path.join(ROOT, 'check/score.mjs');
@@ -364,7 +371,7 @@ test('CSV rows carry corpus identity and a denominator for every metric', () => 
     const columns = row.split(',');
     assert.equal(columns[0], 'cogniumhq/a11y-benchmark');
     assert.equal(columns[1], '0'.repeat(40));
-    assert.equal(columns[3], 'cognium-a11y-scoring/1.0.0');
+    assert.equal(columns[3], 'cognium-a11y-scoring/1.1.0');
     assert.notEqual(columns[9], '', `row has no denominator: ${row}`);
   }
 });
@@ -501,4 +508,152 @@ test('CLI reports usage for an unknown command or option', () => {
   const unknownOption = run(['score', '--wat']);
   assert.equal(unknownOption.status, 2);
   assert.match(unknownOption.stderr, /unknown option: --wat/);
+});
+
+// --- #37 engine-reachable denominators --------------------------------------
+
+/** A result that evaluates only the criteria named, on every executed case. */
+function narrowEngine(result, criteria) {
+  const copy = structuredClone(result);
+  for (const execution of copy.executions) {
+    execution.outcomes = (execution.outcomes ?? []).filter((outcome) => criteria.includes(outcome.criterion));
+    if (execution.status === 'completed' && execution.outcomes.length === 0) {
+      execution.status = 'unsupported';
+      delete execution.error;
+    }
+  }
+  return copy;
+}
+
+test('engineReachableCriteria reads what a run actually evaluated', () => {
+  const reachable = engineReachableCriteria([repeatOne()]);
+  // Any emitted outcome counts -- fail, pass or cannot-tell -- because each
+  // shows the engine has a rule for that criterion.
+  assert.ok(reachable.has('2.1.1'));
+  assert.ok(reachable.has('4.1.2'));
+  assert.equal(reachable.has('2.4.8'), false, 'a criterion never reported is not reachable');
+});
+
+test('an engine cannot score a clean false-positive rate on criteria it never evaluates', () => {
+  // #37: the corrected-control rate credited silence. A product implementing
+  // one criterion must not look restrained on the 100+ it ignores.
+  const narrow = narrowEngine(repeatOne(), ['2.1.1']);
+  const report = score([narrow]);
+  const control = report.lanes.automated.false_positive.corrected_control;
+
+  // This engine evaluates one criterion and reports a genuine false positive
+  // on it. Spread over every assertion in the corpus that reads as near-clean;
+  // over the assertions it could actually fail, it does not.
+  assert.equal(control.count, 1);
+  assert.ok(
+    control.engine_unreachable > 0,
+    'the assertions it could not have violated must be counted and published',
+  );
+  assert.ok(
+    control.denominator_engine_reachable < control.denominator / 5,
+    'the reachable denominator must be far smaller than the full one here',
+  );
+  assert.ok(
+    control.rate_engine_reachable > control.rate * 5,
+    `the honest rate must be materially worse: ${control.rate_engine_reachable} vs ${control.rate}`,
+  );
+});
+
+test('the reachable denominator never exceeds the full denominator', () => {
+  for (const result of [repeatOne(), repeatTwo(), narrowEngine(repeatOne(), ['2.1.1'])]) {
+    const report = score([result]);
+    const recall = report.lanes.automated.true_positive_recall;
+    const fp = report.lanes.automated.false_positive;
+
+    assert.ok(recall.denominator_engine_reachable <= recall.denominator);
+    assert.ok(fp.denominator_engine_reachable <= fp.denominator);
+    assert.equal(recall.engine_unreachable, recall.denominator - recall.denominator_engine_reachable);
+    assert.equal(fp.engine_unreachable, fp.denominator - fp.denominator_engine_reachable);
+  }
+});
+
+test('the whole-corpus denominator remains the headline', () => {
+  // The reachable figure is published beside the full one, never instead of
+  // it, so a narrow engine still cannot look complete.
+  const report = score([narrowEngine(repeatOne(), ['2.1.1'])]);
+  const recall = report.lanes.automated.true_positive_recall;
+
+  assert.equal(recall.denominator, manifestAssertionCount());
+  assert.ok(recall.rate < recall.rate_engine_reachable, 'the honest denominator should read higher');
+  assert.ok(recall.rate_engine_reachable !== null);
+});
+
+test('an engine that reports nothing at all gets no rate rather than a perfect one', () => {
+  const silent = narrowEngine(repeatOne(), []);
+  const report = score([silent]);
+  const fp = report.lanes.automated.false_positive;
+
+  assert.equal(fp.denominator_engine_reachable, 0);
+  // null, not 0 -- a product that evaluated nothing has not earned a clean score.
+  assert.equal(fp.rate_engine_reachable, null);
+  assert.equal(report.lanes.automated.true_positive_recall.rate_engine_reachable, null);
+});
+
+test('criteria no engine reported are named rather than left to inference', () => {
+  const report = score([narrowEngine(repeatOne(), ['2.1.1'])]);
+  assert.ok(Array.isArray(report.criteria_no_engine_reported));
+  assert.ok(report.criteria_no_engine_reported.length > 0);
+  assert.equal(report.criteria_no_engine_reported.includes('2.1.1'), false);
+  assert.ok(report.criteria_no_engine_reported.includes('4.1.2'));
+  // Sorted and unique, so the list is stable across runs.
+  const sorted = [...report.criteria_no_engine_reported].sort();
+  assert.deepEqual(report.criteria_no_engine_reported, sorted);
+});
+
+// --- #38 WCAG level lane ----------------------------------------------------
+
+test('recall is broken out by WCAG level so AAA is not pooled into the headline', () => {
+  const report = score([repeatOne()]);
+  const levels = report.breakdowns.by_level;
+  const groups = levels.map((row) => row.group);
+
+  assert.ok(groups.includes('A'));
+  assert.ok(groups.includes('AA'));
+  assert.ok(groups.includes('AAA'), 'the AAA lane must be visible on its own');
+
+  // Every assertion lands in exactly one level, so the levels partition the total.
+  const summed = levels.reduce((total, row) => total + row.tp_denominator, 0);
+  assert.equal(summed, report.lanes.automated.true_positive_recall.denominator);
+});
+
+test('the AAA lane carries the corpus AAA assertions and no others', () => {
+  const report = score([repeatOne()]);
+  const aaa = report.breakdowns.by_level.find((row) => row.group === 'AAA');
+  const levels = criterionLevels(ROOT);
+
+  let expected = 0;
+  for (const fixture of corpus.cases.values()) {
+    if (fixture.requires_human === true || fixture.mode === 'guided') continue;
+    for (const criterion of Object.keys(fixture.min_criteria ?? {})) {
+      if (levels.get(criterion) === 'AAA') expected += 1;
+    }
+  }
+  assert.equal(aaa.tp_denominator, expected);
+  assert.ok(expected > 0, 'the corpus asserts on AAA criteria');
+});
+
+test('criterionLevels resolves every criterion the corpus asserts on', () => {
+  const levels = criterionLevels(ROOT);
+  const unresolved = [];
+  for (const fixture of corpus.cases.values()) {
+    for (const criterion of [...Object.keys(fixture.min_criteria ?? {}), ...(fixture.must_not_report ?? [])]) {
+      if (!levels.has(criterion)) unresolved.push(criterion);
+    }
+  }
+  assert.deepEqual([...new Set(unresolved)], [], 'every asserted criterion must have a WCAG level');
+});
+
+test('the report names the vacuous-denominator problem in plain words', () => {
+  const result = spawnSync(process.execPath, [CLI, 'score', path.join(ROOT, 'schemas/examples/benchmark-result.repeat-1.json')], {
+    encoding: 'utf8',
+  });
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(result.stdout, /engine-reachable/);
+  assert.match(result.stdout, /credits silence/);
+  assert.match(result.stdout, /by WCAG level/);
 });
