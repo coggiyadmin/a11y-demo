@@ -16,8 +16,13 @@ machine-readable manifest and schema versions are recorded with every release.
   in the public result contract.
 - Governance, security, support, citation and third-party attribution policies.
 - Structured fixture-proposal and corpus-defect issue forms.
+- Apache-2.0 licensing for original project material with explicit W3C
+  third-party boundaries and notices.
+- Third-party contribution and result-publication guidance, a schema-validation
+  CLI and a published-result issue form.
 
 ### Changed
 
 - CI installs pinned validation dependencies and validates published contracts.
 - The canonical repository is now `cogniumhq/a11y-benchmark`.
+- README corpus totals now match the 226-case manifest.

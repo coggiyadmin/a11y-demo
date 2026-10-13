@@ -28,6 +28,7 @@ T['user-needs'] = {
     + 'several forms of access at once. A keyboard-access rule supports non-visual operation, '
     + 'alternative input, switch access and voice-control workflows — indexing by criterion alone hides that.',
   source: 'https://www.w3.org/WAI/people-use-web/abilities-barriers/',
+  license: 'W3C Document License 2023 — https://www.w3.org/copyright/document-license-2023/',
   values: [
     { id: 'nonvisual-access', label: 'Non-visual operation', group: 'visual-presentation',
       at: ['screen-reader', 'braille'],
