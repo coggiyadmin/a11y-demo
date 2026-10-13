@@ -7,6 +7,20 @@ machine-readable manifest and schema versions are recorded with every release.
 
 ### Fixed
 
+- `serve.mjs` could not serve 38 of 270 fixtures. Its directory allow-list
+  omitted `pipeline`, `aaa` and `native`, and its media-type table omitted
+  `.pdf` and `.docx`, so those paths returned 404. Every pipeline-integrity
+  case was unservable, and had been since v0.1.0 — the Tier P cases that exist
+  precisely because they need a served site. Found by a six-engine baseline run
+  in which three adapters reported 34 `HTTP 404` errors each (#44).
+- `check/server-contract.test.mjs` now asserts that every path in the corpus
+  manifest, and every declared multi-page step, returns 200. The existing
+  server test proved the server refuses what it should refuse; nothing proved
+  it serves what it should serve, which is how an allow-list fell three
+  families behind without failing a check.
+
+### Fixed
+
 - Scoring credited an engine for silence. The corrected-control false-positive
   rate counted every assertion in its denominator, including criteria the
   engine has no rule for, so a product implementing nothing scored a perfect
