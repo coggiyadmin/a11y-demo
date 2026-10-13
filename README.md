@@ -13,6 +13,18 @@ The canonical public repository is
 commit SHA for every published run. The default branch is development state;
 tagged releases are immutable benchmark references.
 
+## Releases and reproducibility
+
+The first release candidate is **v0.1.0**. Its scope and known limitations are
+recorded in [the versioned release notes](releases/v0.1.0.md). The tag and
+attached checksum bundle will be published only from a reviewed, green default-
+branch commit by the tag-gated workflow described in [RELEASING.md](RELEASING.md).
+
+For a reproducible comparison, pin the published tag or its full commit SHA,
+record the SHA-256 digest of `corpus-manifest.json`, and validate evidence against
+the schema versions named in the release metadata. Do not use a moving default
+branch as a benchmark identity.
+
 ## Interoperability contract
 
 `corpus-manifest.json` is the canonical index of the 11 fixture families and
