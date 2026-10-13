@@ -1,0 +1,53 @@
+<!--
+  Guided check: Does the sign-language interpretation convey the same information as the audio?
+  method: guided-manual
+  WCAG: 1.2.6
+  expected automated outcome: cannot-tell — a tool returning pass here is overclaiming
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Does the sign-language interpretation convey the same information as the audio?</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>Does the sign-language interpretation convey the same information as the audio?</h1>
+
+<p><strong>Method:</strong> guided-manual ·
+   <strong>Criteria:</strong> 1.2.6 ·
+   <strong>Automated outcome:</strong> <code>cannot-tell</code></p>
+
+<h2>Why automation cannot decide this</h2>
+<p>A tool can detect that a sign-language track is present. It cannot judge whether the signing is complete, correctly timed, in the sign language the audience actually uses, or large and well-lit enough to read. Sign languages are distinct languages, not transliterations of the spoken track.</p>
+
+<h2>When this does not apply</h2>
+<p>This criterion is <code>inapplicable</code> inapplicable when there is no prerecorded audio in synchronised media. Recording
+<code>inapplicable</code> is a correct result here, not a gap.</p>
+
+<h2>How to check it</h2>
+<ol><li>Identify which sign language the audience uses; it is not implied by the page language.</li>
+<li>Watch the interpretation against the audio and check nothing is summarised away.</li>
+<li>Check the interpreter stays visible, well lit and large enough to read at the default size.</li>
+<li>Check the interpretation is synchronised with the audio it interprets.</li></ol>
+
+<h2>Evidence to capture</h2>
+<p>The media, the sign-language track, and a note from a fluent signer.</p>
+
+<h2>Fixture to check against</h2>
+<p><a href="../media/video_no_audio_description.html">media/video_no_audio_description.html</a></p>
+
+<h2>Result</h2>
+<form>
+  <fieldset><legend>Outcome</legend>
+    <label><input type="radio" name="o" value="pass"> Pass</label>
+    <label><input type="radio" name="o" value="fail"> Fail</label>
+    <label><input type="radio" name="o" value="inapplicable"> Inapplicable</label>
+    <label><input type="radio" name="o" value="cannot-tell"> Cannot tell</label>
+  </fieldset>
+  <label for="who">Checked by</label><input id="who">
+  <label for="at">AT and browser versions, if applicable</label><input id="at">
+  <label for="ev">Evidence location</label><input id="ev">
+  <label for="nt">Notes</label><textarea id="nt" rows="4"></textarea>
+</form>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

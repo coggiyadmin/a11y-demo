@@ -1,0 +1,53 @@
+<!--
+  Guided check: Is there a live equivalent for the live audio-only content?
+  method: guided-manual
+  WCAG: 1.2.9
+  expected automated outcome: cannot-tell — a tool returning pass here is overclaiming
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Is there a live equivalent for the live audio-only content?</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>Is there a live equivalent for the live audio-only content?</h1>
+
+<p><strong>Method:</strong> guided-manual ·
+   <strong>Criteria:</strong> 1.2.9 ·
+   <strong>Automated outcome:</strong> <code>cannot-tell</code></p>
+
+<h2>Why automation cannot decide this</h2>
+<p>The alternative has to exist while the broadcast is happening and keep pace with it. A corpus can hold the question but not a live stream, and whether the equivalent keeps up is judged by someone following both at once.</p>
+
+<h2>When this does not apply</h2>
+<p>This criterion is <code>inapplicable</code> inapplicable when no live audio-only content is presented. Recording
+<code>inapplicable</code> is a correct result here, not a gap.</p>
+
+<h2>How to check it</h2>
+<ol><li>Join the live audio and the alternative at the same time.</li>
+<li>Check the alternative presents equivalent information, not a delayed summary.</li>
+<li>Check the lag stays small enough to follow the broadcast.</li>
+<li>Record who produced the alternative and how it is announced to the audience.</li></ol>
+
+<h2>Evidence to capture</h2>
+<p>Recording of both streams with timestamps, and the production arrangement.</p>
+
+<h2>Fixture to check against</h2>
+<p><a href="../media/live_no_captions.html">media/live_no_captions.html</a></p>
+
+<h2>Result</h2>
+<form>
+  <fieldset><legend>Outcome</legend>
+    <label><input type="radio" name="o" value="pass"> Pass</label>
+    <label><input type="radio" name="o" value="fail"> Fail</label>
+    <label><input type="radio" name="o" value="inapplicable"> Inapplicable</label>
+    <label><input type="radio" name="o" value="cannot-tell"> Cannot tell</label>
+  </fieldset>
+  <label for="who">Checked by</label><input id="who">
+  <label for="at">AT and browser versions, if applicable</label><input id="at">
+  <label for="ev">Evidence location</label><input id="ev">
+  <label for="nt">Notes</label><textarea id="nt" rows="4"></textarea>
+</form>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

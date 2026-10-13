@@ -30,12 +30,22 @@ for (const t of act) {
   }
 }
 
+// A guided check is real coverage of a different kind: it carries the question, the
+// fixture and an evidence slot for a criterion no tool can decide. Counting it as
+// NONE conflated "nobody built this yet" with "this cannot be automated at all",
+// which are the two things a coverage report most needs to keep apart.
+const guidedBySC = {};
+for (const f of cases.filter((x) => x.requires_human)) {
+  for (const s of f.guided_criteria ?? []) (guidedBySC[s] ||= []).push(f.path);
+}
+
 const rows = wcag.filter((c) => c.in_2_2).map((c) => {
   const a = bySC[c.num];
   const fx = cases.filter((f) =>
     (f.mode === 'tp' ? Object.keys(f.min_criteria) : f.must_not_report).includes(c.num));
   const tp = fx.filter((f) => f.mode === 'tp');
   const safe = fx.filter((f) => f.mode === 'safe');
+  const guided = guidedBySC[c.num] ?? [];
   return {
     sc: c.num, name: c.handle, level: c.level, since: c.versions.includes('2.0') ? '2.0'
       : c.versions.includes('2.1') ? '2.1' : '2.2',
@@ -46,7 +56,12 @@ const rows = wcag.filter((c) => c.in_2_2).map((c) => {
     act_inapplicable: a ? a.inapplicable : 0,
     local_tp: tp.map((f) => f.path).join(' '),
     local_safe: safe.map((f) => f.path).join(' '),
-    ground_truth: a ? (tp.length ? 'ACT + local' : 'ACT') : (tp.length ? 'local only' : 'NONE'),
+    guided: guided.join(' '),
+    ground_truth: a
+      ? (tp.length ? 'ACT + local' : 'ACT')
+      : tp.length ? 'local only'
+      : guided.length ? 'manual only'
+      : 'NONE',
   };
 });
 

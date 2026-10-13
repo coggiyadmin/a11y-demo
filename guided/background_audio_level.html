@@ -1,0 +1,53 @@
+<!--
+  Guided check: Is the background at least 20 dB below the foreground narration?
+  method: guided-manual
+  WCAG: 1.4.7
+  expected automated outcome: cannot-tell — a tool returning pass here is overclaiming
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Is the background at least 20 dB below the foreground narration?</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>Is the background at least 20 dB below the foreground narration?</h1>
+
+<p><strong>Method:</strong> guided-manual ·
+   <strong>Criteria:</strong> 1.4.7 ·
+   <strong>Automated outcome:</strong> <code>cannot-tell</code></p>
+
+<h2>Why automation cannot decide this</h2>
+<p>The separation is measurable, but only from the rendered audio, and deciding which passages are foreground narration rather than incidental sound is a listening judgement. Markup says nothing about either.</p>
+
+<h2>When this does not apply</h2>
+<p>This criterion is <code>inapplicable</code> inapplicable to musical performance and where spoken content is incidental. Recording
+<code>inapplicable</code> is a correct result here, not a gap.</p>
+
+<h2>How to check it</h2>
+<ol><li>Identify the passages that are foreground narration.</li>
+<li>Measure the level of the narration and of the background beneath it.</li>
+<li>Allow the exception for two or fewer seconds of incidental sound.</li>
+<li>If a control mutes the background entirely, record that instead of a measurement.</li></ol>
+
+<h2>Evidence to capture</h2>
+<p>Level measurements per passage, the tool used, and the audio file.</p>
+
+<h2>Fixture to check against</h2>
+<p><a href="../media/audio_no_transcript.html">media/audio_no_transcript.html</a></p>
+
+<h2>Result</h2>
+<form>
+  <fieldset><legend>Outcome</legend>
+    <label><input type="radio" name="o" value="pass"> Pass</label>
+    <label><input type="radio" name="o" value="fail"> Fail</label>
+    <label><input type="radio" name="o" value="inapplicable"> Inapplicable</label>
+    <label><input type="radio" name="o" value="cannot-tell"> Cannot tell</label>
+  </fieldset>
+  <label for="who">Checked by</label><input id="who">
+  <label for="at">AT and browser versions, if applicable</label><input id="at">
+  <label for="ev">Evidence location</label><input id="ev">
+  <label for="nt">Notes</label><textarea id="nt" rows="4"></textarea>
+</form>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>

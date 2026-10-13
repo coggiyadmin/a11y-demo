@@ -32,6 +32,14 @@ machine-readable manifest and schema versions are recorded with every release.
   no-op regeneration, so evidence expires when the corpus changes and not when
   a date is restamped.
 - `EVIDENCE.md` documenting the states, the ledger and the expiry rules.
+- A reviewed evidence-lane classification for the twenty WCAG AAA criteria that
+  had no ground truth, in `wcag/aaa-classification.json`, each with its public
+  W3C Understanding source and the rationale for its lane.
+- `aaa.mjs` and the `aaa` fixture family: thirteen matched broken/corrected
+  pairs covering the AAA criteria decidable from markup or by driving the page.
+- Six further guided checks covering the AAA criteria that need a human
+  judgement, carrying `inapplicable` alongside `cannot-tell` where the criterion
+  is applicability-dependent.
 
 ### Changed
 
@@ -43,6 +51,12 @@ machine-readable manifest and schema versions are recorded with every release.
 - CI validates and scores the published result examples.
 - README coverage figures corrected: `methods` is 15/15 represented, not 14/15,
   since the pipeline family names `regression`.
+- Coverage now reports `manual only` as its own category, separating criteria
+  that no tool can decide from criteria nobody has built a fixture for yet. No
+  WCAG 2.2 criterion reports `NONE` any longer.
+- Guided cases carry `guided_criteria`, so a human-judgement check counts as
+  coverage without ever becoming an assertion a tool is expected to report.
+- Generators run families, then the manifest, then the reports that consume it.
 
 ## [0.1.0] - 2026-10-13
 
