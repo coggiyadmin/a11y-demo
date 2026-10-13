@@ -1,0 +1,736 @@
+{
+  "$schema": "./schemas/adjudication.schema.json",
+  "format": "cognium-a11y-adjudication",
+  "format_version": "1.0.0",
+  "generated": "2026-10-13",
+  "policy": {
+    "expiry": "A decision is scoped to the content digest of the family its case belongs to, not the whole corpus. Adding an unrelated family must not expire every decision -- the evidence ledger learned that the hard way when the aaa and native families expired all 72 of its records at once.",
+    "sourcing": "Every decision cites a public source. An assertion is never changed to match current tool behaviour alone; that would make the corpus track the tools instead of the standard.",
+    "scope": "An assertion no engine reports is not thereby wrong, and not thereby right. Two engines agreeing on silence is enough to flag a question, never enough to settle it as wrong."
+  },
+  "decisions": [
+    {
+      "case_id": "aaa-abbreviations",
+      "criterion": "3.1.4",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "aaa-accessible_auth_enhanced",
+      "criterion": "3.3.9",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "aaa-concurrent_input",
+      "criterion": "2.5.6",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "aaa-error_prevention_all",
+      "criterion": "3.3.6",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "aaa-focus_appearance",
+      "criterion": "2.4.13",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "aaa-focus_not_obscured_enhanced",
+      "criterion": "2.4.12",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "aaa-help",
+      "criterion": "3.3.5",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "aaa-identify_purpose",
+      "criterion": "1.3.6",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "aaa-location",
+      "criterion": "2.4.8",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "aaa-no_timing",
+      "criterion": "2.2.3",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "aaa-re_authenticating",
+      "criterion": "2.2.5",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "aaa-section_headings",
+      "criterion": "2.4.10",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "aaa-visual_presentation",
+      "criterion": "1.4.8",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "aaa",
+      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ]
+    },
+    {
+      "case_id": "patterns-accordion",
+      "criterion": "1.3.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-accordion",
+      "criterion": "4.1.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-alert",
+      "criterion": "4.1.3",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-breadcrumb",
+      "criterion": "1.3.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-breadcrumb",
+      "criterion": "4.1.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-combobox",
+      "criterion": "2.1.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-combobox",
+      "criterion": "4.1.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-dialog",
+      "criterion": "2.1.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-dialog",
+      "criterion": "2.4.3",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-dialog",
+      "criterion": "4.1.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-disclosure",
+      "criterion": "2.1.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-disclosure",
+      "criterion": "4.1.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-form-errors",
+      "criterion": "3.3.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-form-errors",
+      "criterion": "3.3.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-form-errors",
+      "criterion": "4.1.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-listbox",
+      "criterion": "2.1.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-listbox",
+      "criterion": "4.1.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-media-captions",
+      "criterion": "1.2.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-media-captions",
+      "criterion": "1.2.3",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-menu",
+      "criterion": "2.1.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-menu",
+      "criterion": "4.1.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-required-fields",
+      "criterion": "1.3.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-required-fields",
+      "criterion": "3.3.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-slider",
+      "criterion": "2.1.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-slider",
+      "criterion": "4.1.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-switch",
+      "criterion": "2.1.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-switch",
+      "criterion": "4.1.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-table",
+      "criterion": "1.3.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-tabs",
+      "criterion": "2.1.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-tabs",
+      "criterion": "2.4.3",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-tabs",
+      "criterion": "4.1.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-tooltip",
+      "criterion": "1.4.13",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "patterns-tooltip",
+      "criterion": "4.1.2",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "patterns",
+      "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "HTML_CodeSniffer 2.5.1"
+      ],
+      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    }
+  ]
+}

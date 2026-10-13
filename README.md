@@ -141,6 +141,8 @@ native.mjs           regenerates the PDF and OOXML artifacts
 surface-contracts.mjs   regenerates the native artifact contracts
 maturity.mjs         represented / executable / executed / verified states
 ingest-results.mjs   derives ledger records from published result bundles
+adjudicate.mjs       reconciles a multi-engine baseline against reviewed ground truth
+adjudication.json    reviewed decisions about assertions no engine reports
 refresh-sources.mjs  reviewed refresh of the WCAG, ACT and APG inputs
 space-coverage.mjs   coverage against the whole space, not just WCAG
 ```
@@ -174,6 +176,30 @@ criterion requires.
 still unrepresented, and `space-coverage.json` reports it as missing. Proxy
 representations — an HTML transcript standing in for a voice interface, say —
 are labelled `proxy` and excluded from `represented_natively`.
+
+### Adjudicating ground truth
+
+Two independent engines over every HTML fixture detect 14 of 202 true-positive
+assertions between them. **193 assertions are reported by no engine** — and an
+assertion nothing detects is not thereby wrong, nor thereby right. It is a
+question.
+
+[`adjudication.json`](adjudication.json) records the answers: one of
+`correct-unimplemented`, `correct-manual-only`, `correct-pipeline-dependent` or
+`wrong`, each with a named reviewer and a public source.
+
+```sh
+node adjudicate.mjs result-one.json result-two.json
+```
+
+An assertion is **never** changed to match current tool behaviour alone — that
+would make the corpus track the tools instead of the standard. Two engines
+agreeing on silence flags a question; it does not settle one.
+
+Decisions expire per fixture family rather than per corpus, so an unrelated
+addition does not invalidate unrelated review. See
+[ADJUDICATION.md](ADJUDICATION.md), which also assesses the GOV.UK tool audit
+and W3C ARIA-AT as external sources.
 
 ### Standards sources
 
