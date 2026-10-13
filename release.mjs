@@ -47,6 +47,10 @@ if (!fs.existsSync(path.join(ROOT, notesPath))) {
 
 const manifest = readJson('corpus-manifest.json');
 const resultExample = readJson('schemas/examples/benchmark-result.valid.json');
+const humanProtocols = readJson('protocols/protocols.json');
+const humanResultExample = readJson('protocols/examples/result.valid.json');
+const doubleReviewExample = readJson('protocols/examples/double-review.json');
+const pipeline = readJson('pipeline.json');
 const coverage = readJson('coverage.json');
 const spaceCoverage = readJson('space-coverage.json');
 const surfaces = spaceCoverage.dimensions.find((dimension) => dimension.dimension === 'surfaces');
@@ -58,6 +62,10 @@ const assets = [
   ['corpus-manifest.json', 'corpus-manifest.json'],
   ['schemas/corpus-manifest.schema.json', 'corpus-manifest.schema.json'],
   ['schemas/benchmark-result.schema.json', 'benchmark-result.schema.json'],
+  ['protocols/protocols.json', 'protocols.json'],
+  ['protocols/protocols.schema.json', 'protocols.schema.json'],
+  ['protocols/result.schema.json', 'human-result.schema.json'],
+  ['protocols/double-review.schema.json', 'double-review.schema.json'],
   ['CITATION.cff', 'CITATION.cff'],
   ['LICENSE', 'LICENSE'],
   ['THIRD_PARTY_NOTICES.md', 'THIRD_PARTY_NOTICES.md'],
@@ -86,6 +94,18 @@ const metadata = {
   contracts: {
     corpus_manifest: manifest.format_version,
     benchmark_result: resultExample.format_version,
+    human_protocols: humanProtocols.format_version,
+    human_result: humanResultExample.format_version,
+    double_review: doubleReviewExample.format_version,
+  },
+  included: {
+    pipeline_integrity: {
+      cases: pipeline.cases.length,
+      pairs: new Set(pipeline.cases.map(({ pair }) => pair)).size,
+    },
+    human_protocols: {
+      protocols: humanProtocols.protocols.length,
+    },
   },
   known_gaps: {
     wcag_without_ground_truth: coverage.filter((row) => row.ground_truth === 'NONE').length,
@@ -95,7 +115,6 @@ const metadata = {
     methods: methods
       ? { represented: methods.represented, total: methods.total, missing: methods.missing }
       : null,
-    pipeline_cases_planned: ['deep_site', 'entry_not_sampled', 'vacuous_pass', 'no_declared_flow'],
   },
   limitations: [
     'A benchmark result is not a WCAG conformance claim or product certification.',
