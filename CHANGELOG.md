@@ -20,6 +20,19 @@ machine-readable manifest and schema versions are recorded with every release.
   WCAG level, and `criteria_no_engine_reported` names criteria no engine in a
   comparison reported at all (#38).
 
+- `adjudication.json` and `schemas/adjudication.schema.json`, recording
+  reviewed decisions about assertions no engine reports: one of
+  `correct-unimplemented`, `correct-manual-only`, `correct-pipeline-dependent`
+  or `wrong`, each with a named reviewer and a public source. Decisions expire
+  per fixture family rather than per corpus, so an unrelated addition does not
+  invalidate unrelated review (#40).
+- `adjudicate.mjs`, reconciling a multi-engine baseline against those
+  decisions. It finds questions and never answers them; exit 1 while a review
+  backlog remains.
+- `ADJUDICATION.md`, with the measured two-engine baseline, the four outcomes,
+  and assessments of the GOV.UK accessibility tool audit and W3C ARIA-AT as
+  external cross-check sources.
+
 ### Changed
 
 - The scoring policy is `cognium-a11y-scoring/1.1.0`. `compare` refuses to

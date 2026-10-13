@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cogniumhq/a11y-benchmark/schemas/adjudication.schema.json",
+  "title": "Ground-truth adjudication record",
+  "description": "Reviewed decisions about assertions that no engine reports. An assertion going undetected is not evidence that it is wrong, and it is not evidence that it is right. This file records which, who decided, and on what public source, so the question is answered once rather than re-litigated on every run.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "format", "format_version", "generated", "policy", "decisions"],
+  "properties": {
+    "$schema": { "type": "string", "minLength": 1 },
+    "format": { "const": "cognium-a11y-adjudication" },
+    "format_version": { "type": "string", "pattern": "^[1-9][0-9]*\\.[0-9]+\\.[0-9]+$" },
+    "generated": { "type": "string", "format": "date" },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["expiry", "sourcing", "scope"],
+      "properties": {
+        "expiry": { "type": "string", "minLength": 1 },
+        "sourcing": { "type": "string", "minLength": 1 },
+        "scope": { "type": "string", "minLength": 1 }
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/decision" }
+    }
+  },
+  "$defs": {
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "criterion",
+        "outcome",
+        "source",
+        "rationale",
+        "reviewer",
+        "family",
+        "family_sha256",
+        "reviewed_on"
+      ],
+      "properties": {
+        "case_id": { "type": "string", "minLength": 1 },
+        "criterion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "outcome": {
+          "enum": [
+            "correct-unimplemented",
+            "correct-manual-only",
+            "correct-pipeline-dependent",
+            "wrong"
+          ],
+          "description": "correct-unimplemented: the assertion is right and tools could implement it but do not. correct-manual-only: no tool can decide it. correct-pipeline-dependent: a tool could decide it only after reaching a state these engines did not drive. wrong: the assertion is incorrect and the fixture or its ground truth must change."
+        },
+        "source": {
+          "type": "string",
+          "pattern": "^https://",
+          "description": "Public source supporting the decision. An assertion is never changed to match current tool behaviour alone."
+        },
+        "rationale": { "type": "string", "minLength": 40 },
+        "reviewer": { "type": "string", "minLength": 1 },
+        "family": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "family_sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$",
+          "description": "The content digest of the family this case belongs to, at the time of review. Scoped to the family rather than the whole corpus so an unrelated addition does not expire every decision."
+        },
+        "reviewed_on": { "type": "string", "format": "date" },
+        "engines_consulted": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Engines whose silence prompted the review. More engines make a `wrong` finding safer; two do not establish one."
+        },
+        "notes": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "description": "Declaring an assertion wrong requires saying what should change.",
+          "if": { "properties": { "outcome": { "const": "wrong" } }, "required": ["outcome"] },
+          "then": { "properties": { "notes": {} }, "required": ["notes"] }
+        }
+      ]
+    }
+  }
+}
