@@ -10,8 +10,8 @@
     "act_failed": 26,
     "act_passed": 27,
     "act_inapplicable": 41,
-    "local_tp": "static/img_no_alt.html delivery/server_html.html delivery/client_js.html delivery/client_js_delayed.html delivery/iframe_same_origin.html delivery/iframe_srcdoc.html delivery/iframe_sandboxed.html delivery/iframe_nested.html delivery/shadow_dom_open.html delivery/shadow_dom_closed.html delivery/web_component.html delivery/progressive_enhancement.html media/alert_by_sound_only.html scenarios/data_dashboard.html surfaces/email_table_layout.html surfaces/authoring_generates_bad_markup.html",
-    "local_safe": "static/safe_img.html media/safe_alert_by_sound_only.html scenarios/safe_data_dashboard.html surfaces/safe_email_table_layout.html surfaces/safe_authoring_generates_bad_markup.html",
+    "local_tp": "static/img_no_alt.html delivery/server_html.html delivery/client_js.html delivery/client_js_delayed.html delivery/iframe_same_origin.html delivery/iframe_srcdoc.html delivery/iframe_sandboxed.html delivery/iframe_nested.html delivery/shadow_dom_open.html delivery/shadow_dom_closed.html delivery/web_component.html delivery/progressive_enhancement.html media/alert_by_sound_only.html scenarios/data_dashboard.html surfaces/email_table_layout.html surfaces/authoring_generates_bad_markup.html native/docx/unstructured.docx",
+    "local_safe": "static/safe_img.html media/safe_alert_by_sound_only.html scenarios/safe_data_dashboard.html surfaces/safe_email_table_layout.html surfaces/safe_authoring_generates_bad_markup.html native/docx/safe_structured.docx",
     "guided": "guided/alt_text_appropriateness.html guided/ai_suggested_alt_review.html",
     "ground_truth": "ACT + local"
   },
@@ -170,8 +170,8 @@
     "act_failed": 52,
     "act_passed": 80,
     "act_inapplicable": 44,
-    "local_tp": "keyboard/div_text_field.html static/route_field_relationship.html patterns/accordion.html patterns/table.html patterns/breadcrumb.html patterns/required-fields.html ui-states/empty.html ui-states/permission-denied.html journeys/consent/broken/index.html scenarios/data_dashboard.html scenarios/live_chat.html surfaces/email_table_layout.html surfaces/epub_no_metadata.html surfaces/authoring_generates_bad_markup.html surfaces/chatbot_transcript.html",
-    "local_safe": "keyboard/safe_native_text_field.html static/safe_route_field_relationship.html patterns/safe_accordion.html patterns/safe_table.html patterns/safe_breadcrumb.html patterns/safe_required-fields.html ui-states/safe_empty.html ui-states/safe_permission-denied.html journeys/consent/correct/index.html scenarios/safe_data_dashboard.html scenarios/safe_live_chat.html surfaces/safe_email_table_layout.html surfaces/safe_epub_no_metadata.html surfaces/safe_authoring_generates_bad_markup.html surfaces/safe_chatbot_transcript.html",
+    "local_tp": "keyboard/div_text_field.html static/route_field_relationship.html patterns/accordion.html patterns/table.html patterns/breadcrumb.html patterns/required-fields.html ui-states/empty.html ui-states/permission-denied.html journeys/consent/broken/index.html scenarios/data_dashboard.html scenarios/live_chat.html surfaces/email_table_layout.html surfaces/epub_no_metadata.html surfaces/authoring_generates_bad_markup.html surfaces/chatbot_transcript.html native/pdf/untagged.pdf native/docx/unstructured.docx",
+    "local_safe": "keyboard/safe_native_text_field.html static/safe_route_field_relationship.html patterns/safe_accordion.html patterns/safe_table.html patterns/safe_breadcrumb.html patterns/safe_required-fields.html ui-states/safe_empty.html ui-states/safe_permission-denied.html journeys/consent/correct/index.html scenarios/safe_data_dashboard.html scenarios/safe_live_chat.html surfaces/safe_email_table_layout.html surfaces/safe_epub_no_metadata.html surfaces/safe_authoring_generates_bad_markup.html surfaces/safe_chatbot_transcript.html native/pdf/safe_tagged.pdf native/docx/safe_structured.docx",
     "guided": "",
     "ground_truth": "ACT + local"
   },
@@ -1018,8 +1018,8 @@
     "act_failed": 13,
     "act_passed": 7,
     "act_inapplicable": 9,
-    "local_tp": "static/lang_missing.html",
-    "local_safe": "static/safe_lang_declared.html",
+    "local_tp": "static/lang_missing.html native/pdf/untagged.pdf native/docx/unstructured.docx",
+    "local_safe": "static/safe_lang_declared.html native/pdf/safe_tagged.pdf native/docx/safe_structured.docx",
     "guided": "",
     "ground_truth": "ACT + local"
   },

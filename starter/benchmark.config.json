@@ -1,0 +1,39 @@
+{
+  "adapter": "./adapter.example.mjs",
+  "run_id_prefix": "example-starter",
+  "corpus": {
+    "repository": "cogniumhq/a11y-benchmark",
+    "revision": null
+  },
+  "tool": {
+    "name": "Example product",
+    "version": "0.0.0",
+    "engine_family": "Example engine",
+    "tool_surface": "CLI",
+    "independence": "independent-engine"
+  },
+  "environment": {
+    "os": "Linux",
+    "runtime": "Node.js 22",
+    "browser": "Chromium",
+    "browser_version": "140",
+    "viewport": { "width": 1280, "height": 720 },
+    "preferences": { "reduced_motion": false, "color_scheme": "light" }
+  },
+  "repeat": 2,
+  "raw_evidence_published": false,
+  "cases": {
+    "ids": [
+      "keyboard-div_button",
+      "keyboard-safe_native_button",
+      "patterns-disclosure",
+      "patterns-safe_disclosure",
+      "aaa-abbreviations",
+      "aaa-safe_abbreviations",
+      "pipeline-vacuous_pass",
+      "pipeline-observed_pass-control",
+      "guided-caption_quality",
+      "journey-booking-broken"
+    ]
+  }
+}

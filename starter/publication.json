@@ -1,0 +1,22 @@
+{
+  "format": "cognium-a11y-benchmark-publication",
+  "format_version": "1.0.0",
+  "id": "REPLACE-yyyy-mm-dd-corpus-version-suite",
+  "classification": "vendor-authored",
+  "run_local_date": "2026-10-13",
+  "timezone": "UTC",
+  "supersedes": null,
+  "corpus": {
+    "repository": "cogniumhq/a11y-benchmark",
+    "version": "v0.1.0",
+    "revision": "0000000000000000000000000000000000000000",
+    "manifest_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "harness": {
+    "repository": "https://example.org/your/harness",
+    "revision": "0000000000000000000000000000000000000000"
+  },
+  "contact": {
+    "issues": "https://example.org/your/results/issues"
+  }
+}

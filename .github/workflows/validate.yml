@@ -31,6 +31,8 @@ jobs:
         run: |
           node check/validate-result.mjs schemas/examples/benchmark-result.repeat-1.json
           node check/validate-result.mjs schemas/examples/benchmark-result.repeat-2.json
+          node check/validate-result.mjs starter/example-result.repeat-1.json
+          node check/validate-result.mjs starter/example-result.repeat-2.json
           node check/score.mjs score \
             schemas/examples/benchmark-result.repeat-1.json \
             schemas/examples/benchmark-result.repeat-2.json \
@@ -39,9 +41,19 @@ jobs:
           node check/score.mjs compare \
             schemas/examples/benchmark-result.repeat-1.json \
             schemas/examples/benchmark-result.repeat-2.json && exit 1 || test $? -eq 1
+
+      - name: Exercise the publisher starter kit end to end
+        run: |
+          node starter/run.mjs --out "$RUNNER_TEMP/starter/result.json"
+          for result in "$RUNNER_TEMP"/starter/result.repeat-*.json; do
+            node check/validate-result.mjs "$result"
+          done
+          # Corpus identity is read from this checkout, so --strict must pass.
+          node check/score.mjs score "$RUNNER_TEMP"/starter/result.repeat-*.json --strict
+
       - name: Regenerate fixture manifests and pages
         run: |
-          for generator in build.mjs delivery.mjs patterns.mjs taxonomy.mjs journeys.mjs scenarios.mjs media.mjs flash.mjs color-independent.mjs ui-states.mjs surfaces.mjs guided.mjs aaa.mjs manifest.mjs needs-index.mjs coverage.mjs space-coverage.mjs; do
+          for generator in build.mjs delivery.mjs patterns.mjs taxonomy.mjs journeys.mjs scenarios.mjs media.mjs flash.mjs color-independent.mjs ui-states.mjs surfaces.mjs guided.mjs aaa.mjs surface-contracts.mjs native.mjs manifest.mjs needs-index.mjs coverage.mjs space-coverage.mjs; do
             node "$generator"
           done
       - name: Check generated files are committed

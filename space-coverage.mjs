@@ -35,6 +35,8 @@ const rows = maturity.dimensions.map((dimension) => {
     dimension: dimension.dimension,
     total,
     represented,
+    represented_natively: dimension.represented_natively,
+    proxy_only: dimension.proxy_only,
     executable,
     executed,
     verified,
@@ -44,8 +46,9 @@ const rows = maturity.dimensions.map((dimension) => {
     not_executable: dimension.not_executable,
     values: dimension.values,
     note:
-      'represented means a manifest names the value. executable means a route to evidence exists. '
-      + 'executed and verified require a current record in evidence/ledger.json.',
+      'represented means a manifest names the value. represented_natively excludes proxy '
+      + 'representations. executable means a route to evidence exists. executed and verified '
+      + 'require a current record in evidence/ledger.json.',
   };
 });
 
@@ -65,6 +68,16 @@ console.log(`\nMethods that cannot be automated at all: ${
   methods.values.filter((m) => m.automatable === false).map((m) => m.id).join(', ')}`);
 console.log('No fixture corpus can cover those. They need people, and a coverage figure');
 console.log('that quietly omits them is not a coverage figure.');
+
+const proxyOnly = rows.reduce((sum, row) => sum + row.proxy_only, 0);
+if (proxyOnly > 0) {
+  console.log(`\n${proxyOnly} value(s) are represented only by a proxy and are NOT native coverage:`);
+  for (const row of rows) {
+    const proxies = row.values.filter((v) => v.represented && !v.represented_natively).map((v) => v.value);
+    if (proxies.length > 0) console.log(`  ${row.dimension.padEnd(14)} ${proxies.join(', ')}`);
+  }
+  console.log('See surface-contracts.json for what a native artifact would have to be.');
+}
 
 const executedTotal = rows.reduce((sum, row) => sum + row.executed, 0);
 const verifiedTotal = rows.reduce((sum, row) => sum + row.verified, 0);
