@@ -7,5 +7,2094 @@
     "expiry": "A record expires automatically when the corpus content digest changes, because evidence captured against different assertions does not describe the current ground truth. A harness or environment change cannot be detected from the corpus, so those records are retired explicitly with superseded_by.",
     "independence": "reproduction_class records who produced the evidence. Maintainer and vendor evidence is reported as executed and, when reviewed, verified; only independent and academic reproduction is reported as independently verified."
   },
-  "records": []
+  "records": [
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "axe-core",
+        "version": "4.14.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/axe/result.json",
+        "sha256": "sha256:299562df1b1ef064d5ce5c603409436a5b31d5cbf7ccbf70cd71b0be97eea285"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "axe-core",
+        "version": "4.14.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/axe/result.json",
+        "sha256": "sha256:299562df1b1ef064d5ce5c603409436a5b31d5cbf7ccbf70cd71b0be97eea285"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "axe-core",
+        "version": "4.14.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/axe/result.json",
+        "sha256": "sha256:299562df1b1ef064d5ce5c603409436a5b31d5cbf7ccbf70cd71b0be97eea285"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "axe-core",
+        "version": "4.14.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/axe/result.json",
+        "sha256": "sha256:299562df1b1ef064d5ce5c603409436a5b31d5cbf7ccbf70cd71b0be97eea285"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "axe-core",
+        "version": "4.14.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/axe/result.json",
+        "sha256": "sha256:299562df1b1ef064d5ce5c603409436a5b31d5cbf7ccbf70cd71b0be97eea285"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "axe-core",
+        "version": "4.14.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/axe/result.json",
+        "sha256": "sha256:299562df1b1ef064d5ce5c603409436a5b31d5cbf7ccbf70cd71b0be97eea285"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "axe-core",
+        "version": "4.14.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/axe/result.json",
+        "sha256": "sha256:299562df1b1ef064d5ce5c603409436a5b31d5cbf7ccbf70cd71b0be97eea285"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "axe-core",
+        "version": "4.14.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/axe/result.json",
+        "sha256": "sha256:299562df1b1ef064d5ce5c603409436a5b31d5cbf7ccbf70cd71b0be97eea285"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.axe-core-4-14-0.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "axe-core",
+        "version": "4.14.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/axe/result.json",
+        "sha256": "sha256:299562df1b1ef064d5ce5c603409436a5b31d5cbf7ccbf70cd71b0be97eea285"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "cognium-conformis",
+        "version": "git:6876cf20c7e20d1a90017387c4d82a370f9a91fa; a11y/html@1.2.1 + tech/html-aria@1.2.1"
+      },
+      "environment": {
+        "os": "linux/arm64",
+        "runtime": "Cognium Conformis browser driver 0.9.11; static-html driver 0.2.3",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.0"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/cognium-conformis/result.json",
+        "sha256": "sha256:c4b760a7464afeb79015208e988cb347a93851054f65caa2ac7a1cb808125ae8"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "cognium-conformis",
+        "version": "git:6876cf20c7e20d1a90017387c4d82a370f9a91fa; a11y/html@1.2.1 + tech/html-aria@1.2.1"
+      },
+      "environment": {
+        "os": "linux/arm64",
+        "runtime": "Cognium Conformis browser driver 0.9.11; static-html driver 0.2.3",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.0"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/cognium-conformis/result.json",
+        "sha256": "sha256:c4b760a7464afeb79015208e988cb347a93851054f65caa2ac7a1cb808125ae8"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "cognium-conformis",
+        "version": "git:6876cf20c7e20d1a90017387c4d82a370f9a91fa; a11y/html@1.2.1 + tech/html-aria@1.2.1"
+      },
+      "environment": {
+        "os": "linux/arm64",
+        "runtime": "Cognium Conformis browser driver 0.9.11; static-html driver 0.2.3",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.0"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/cognium-conformis/result.json",
+        "sha256": "sha256:c4b760a7464afeb79015208e988cb347a93851054f65caa2ac7a1cb808125ae8"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "cognium-conformis",
+        "version": "git:6876cf20c7e20d1a90017387c4d82a370f9a91fa; a11y/html@1.2.1 + tech/html-aria@1.2.1"
+      },
+      "environment": {
+        "os": "linux/arm64",
+        "runtime": "Cognium Conformis browser driver 0.9.11; static-html driver 0.2.3",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.0"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/cognium-conformis/result.json",
+        "sha256": "sha256:c4b760a7464afeb79015208e988cb347a93851054f65caa2ac7a1cb808125ae8"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "cognium-conformis",
+        "version": "git:6876cf20c7e20d1a90017387c4d82a370f9a91fa; a11y/html@1.2.1 + tech/html-aria@1.2.1"
+      },
+      "environment": {
+        "os": "linux/arm64",
+        "runtime": "Cognium Conformis browser driver 0.9.11; static-html driver 0.2.3",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.0"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/cognium-conformis/result.json",
+        "sha256": "sha256:c4b760a7464afeb79015208e988cb347a93851054f65caa2ac7a1cb808125ae8"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "cognium-conformis",
+        "version": "git:6876cf20c7e20d1a90017387c4d82a370f9a91fa; a11y/html@1.2.1 + tech/html-aria@1.2.1"
+      },
+      "environment": {
+        "os": "linux/arm64",
+        "runtime": "Cognium Conformis browser driver 0.9.11; static-html driver 0.2.3",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.0"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/cognium-conformis/result.json",
+        "sha256": "sha256:c4b760a7464afeb79015208e988cb347a93851054f65caa2ac7a1cb808125ae8"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "cognium-conformis",
+        "version": "git:6876cf20c7e20d1a90017387c4d82a370f9a91fa; a11y/html@1.2.1 + tech/html-aria@1.2.1"
+      },
+      "environment": {
+        "os": "linux/arm64",
+        "runtime": "Cognium Conformis browser driver 0.9.11; static-html driver 0.2.3",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.0"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/cognium-conformis/result.json",
+        "sha256": "sha256:c4b760a7464afeb79015208e988cb347a93851054f65caa2ac7a1cb808125ae8"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "cognium-conformis",
+        "version": "git:6876cf20c7e20d1a90017387c4d82a370f9a91fa; a11y/html@1.2.1 + tech/html-aria@1.2.1"
+      },
+      "environment": {
+        "os": "linux/arm64",
+        "runtime": "Cognium Conformis browser driver 0.9.11; static-html driver 0.2.3",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.0"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/cognium-conformis/result.json",
+        "sha256": "sha256:c4b760a7464afeb79015208e988cb347a93851054f65caa2ac7a1cb808125ae8"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.cognium-conformis-git-6876cf20c7e20d1a90017387c4.ui-states.suite-declared-page-or-flow-state",
+      "dimension": "ui-states",
+      "value": "suite-declared page or flow state",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "cognium-conformis",
+        "version": "git:6876cf20c7e20d1a90017387c4d82a370f9a91fa; a11y/html@1.2.1 + tech/html-aria@1.2.1"
+      },
+      "environment": {
+        "os": "linux/arm64",
+        "runtime": "Cognium Conformis browser driver 0.9.11; static-html driver 0.2.3",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.0"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/cognium-conformis/result.json",
+        "sha256": "sha256:c4b760a7464afeb79015208e988cb347a93851054f65caa2ac7a1cb808125ae8"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "ibm-equal-access",
+        "version": "4.0.34"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/ibm/result.json",
+        "sha256": "sha256:ffae3d8d3dfc796860cb69a890c247e87414ea08256df07190e7301ccf574018"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "ibm-equal-access",
+        "version": "4.0.34"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/ibm/result.json",
+        "sha256": "sha256:ffae3d8d3dfc796860cb69a890c247e87414ea08256df07190e7301ccf574018"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "ibm-equal-access",
+        "version": "4.0.34"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/ibm/result.json",
+        "sha256": "sha256:ffae3d8d3dfc796860cb69a890c247e87414ea08256df07190e7301ccf574018"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "ibm-equal-access",
+        "version": "4.0.34"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/ibm/result.json",
+        "sha256": "sha256:ffae3d8d3dfc796860cb69a890c247e87414ea08256df07190e7301ccf574018"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "ibm-equal-access",
+        "version": "4.0.34"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/ibm/result.json",
+        "sha256": "sha256:ffae3d8d3dfc796860cb69a890c247e87414ea08256df07190e7301ccf574018"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "ibm-equal-access",
+        "version": "4.0.34"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/ibm/result.json",
+        "sha256": "sha256:ffae3d8d3dfc796860cb69a890c247e87414ea08256df07190e7301ccf574018"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "ibm-equal-access",
+        "version": "4.0.34"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/ibm/result.json",
+        "sha256": "sha256:ffae3d8d3dfc796860cb69a890c247e87414ea08256df07190e7301ccf574018"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "ibm-equal-access",
+        "version": "4.0.34"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/ibm/result.json",
+        "sha256": "sha256:ffae3d8d3dfc796860cb69a890c247e87414ea08256df07190e7301ccf574018"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.ibm-equal-access-4-0-34.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "ibm-equal-access",
+        "version": "4.0.34"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/ibm/result.json",
+        "sha256": "sha256:ffae3d8d3dfc796860cb69a890c247e87414ea08256df07190e7301ccf574018"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "lighthouse-accessibility",
+        "version": "13.5.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/lighthouse/result.json",
+        "sha256": "sha256:6f916bc476f7846b559241850ca72d74a66ee112ac2a73dfce2b83784d031949"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "lighthouse-accessibility",
+        "version": "13.5.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/lighthouse/result.json",
+        "sha256": "sha256:6f916bc476f7846b559241850ca72d74a66ee112ac2a73dfce2b83784d031949"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "lighthouse-accessibility",
+        "version": "13.5.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/lighthouse/result.json",
+        "sha256": "sha256:6f916bc476f7846b559241850ca72d74a66ee112ac2a73dfce2b83784d031949"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "lighthouse-accessibility",
+        "version": "13.5.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/lighthouse/result.json",
+        "sha256": "sha256:6f916bc476f7846b559241850ca72d74a66ee112ac2a73dfce2b83784d031949"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "lighthouse-accessibility",
+        "version": "13.5.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/lighthouse/result.json",
+        "sha256": "sha256:6f916bc476f7846b559241850ca72d74a66ee112ac2a73dfce2b83784d031949"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "lighthouse-accessibility",
+        "version": "13.5.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/lighthouse/result.json",
+        "sha256": "sha256:6f916bc476f7846b559241850ca72d74a66ee112ac2a73dfce2b83784d031949"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "lighthouse-accessibility",
+        "version": "13.5.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/lighthouse/result.json",
+        "sha256": "sha256:6f916bc476f7846b559241850ca72d74a66ee112ac2a73dfce2b83784d031949"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "lighthouse-accessibility",
+        "version": "13.5.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/lighthouse/result.json",
+        "sha256": "sha256:6f916bc476f7846b559241850ca72d74a66ee112ac2a73dfce2b83784d031949"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.lighthouse-accessibility-13-5-0.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "lighthouse-accessibility",
+        "version": "13.5.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/lighthouse/result.json",
+        "sha256": "sha256:6f916bc476f7846b559241850ca72d74a66ee112ac2a73dfce2b83784d031949"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "nu-html-checker",
+        "version": "26.10.12 (0a70d65); image sha256:8f21030474e68e06905cfa801b37376e99c0e37867c653c5b6cd7e2dcaf3f503"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/nu-html-checker/result.json",
+        "sha256": "sha256:60fa571dd93d26322e54187d7ac464dff60b76434a35792fdfe594668b392306"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "nu-html-checker",
+        "version": "26.10.12 (0a70d65); image sha256:8f21030474e68e06905cfa801b37376e99c0e37867c653c5b6cd7e2dcaf3f503"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/nu-html-checker/result.json",
+        "sha256": "sha256:60fa571dd93d26322e54187d7ac464dff60b76434a35792fdfe594668b392306"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "nu-html-checker",
+        "version": "26.10.12 (0a70d65); image sha256:8f21030474e68e06905cfa801b37376e99c0e37867c653c5b6cd7e2dcaf3f503"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/nu-html-checker/result.json",
+        "sha256": "sha256:60fa571dd93d26322e54187d7ac464dff60b76434a35792fdfe594668b392306"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "nu-html-checker",
+        "version": "26.10.12 (0a70d65); image sha256:8f21030474e68e06905cfa801b37376e99c0e37867c653c5b6cd7e2dcaf3f503"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/nu-html-checker/result.json",
+        "sha256": "sha256:60fa571dd93d26322e54187d7ac464dff60b76434a35792fdfe594668b392306"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "nu-html-checker",
+        "version": "26.10.12 (0a70d65); image sha256:8f21030474e68e06905cfa801b37376e99c0e37867c653c5b6cd7e2dcaf3f503"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/nu-html-checker/result.json",
+        "sha256": "sha256:60fa571dd93d26322e54187d7ac464dff60b76434a35792fdfe594668b392306"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "nu-html-checker",
+        "version": "26.10.12 (0a70d65); image sha256:8f21030474e68e06905cfa801b37376e99c0e37867c653c5b6cd7e2dcaf3f503"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/nu-html-checker/result.json",
+        "sha256": "sha256:60fa571dd93d26322e54187d7ac464dff60b76434a35792fdfe594668b392306"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "nu-html-checker",
+        "version": "26.10.12 (0a70d65); image sha256:8f21030474e68e06905cfa801b37376e99c0e37867c653c5b6cd7e2dcaf3f503"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/nu-html-checker/result.json",
+        "sha256": "sha256:60fa571dd93d26322e54187d7ac464dff60b76434a35792fdfe594668b392306"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "nu-html-checker",
+        "version": "26.10.12 (0a70d65); image sha256:8f21030474e68e06905cfa801b37376e99c0e37867c653c5b6cd7e2dcaf3f503"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/nu-html-checker/result.json",
+        "sha256": "sha256:60fa571dd93d26322e54187d7ac464dff60b76434a35792fdfe594668b392306"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.nu-html-checker-26-10-12-0a70d65-image-sha256-8f.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "nu-html-checker",
+        "version": "26.10.12 (0a70d65); image sha256:8f21030474e68e06905cfa801b37376e99c0e37867c653c5b6cd7e2dcaf3f503"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/nu-html-checker/result.json",
+        "sha256": "sha256:60fa571dd93d26322e54187d7ac464dff60b76434a35792fdfe594668b392306"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "pa11y-html-codesniffer",
+        "version": "10.0.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/pa11y-htmlcs/result.json",
+        "sha256": "sha256:61de1d2b68ae8eca5ee3cd1c4b6a257a75bca564fbc6a033d8ee682adc2b3f8f"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "pa11y-html-codesniffer",
+        "version": "10.0.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/pa11y-htmlcs/result.json",
+        "sha256": "sha256:61de1d2b68ae8eca5ee3cd1c4b6a257a75bca564fbc6a033d8ee682adc2b3f8f"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "pa11y-html-codesniffer",
+        "version": "10.0.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/pa11y-htmlcs/result.json",
+        "sha256": "sha256:61de1d2b68ae8eca5ee3cd1c4b6a257a75bca564fbc6a033d8ee682adc2b3f8f"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "pa11y-html-codesniffer",
+        "version": "10.0.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/pa11y-htmlcs/result.json",
+        "sha256": "sha256:61de1d2b68ae8eca5ee3cd1c4b6a257a75bca564fbc6a033d8ee682adc2b3f8f"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "pa11y-html-codesniffer",
+        "version": "10.0.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/pa11y-htmlcs/result.json",
+        "sha256": "sha256:61de1d2b68ae8eca5ee3cd1c4b6a257a75bca564fbc6a033d8ee682adc2b3f8f"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "pa11y-html-codesniffer",
+        "version": "10.0.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/pa11y-htmlcs/result.json",
+        "sha256": "sha256:61de1d2b68ae8eca5ee3cd1c4b6a257a75bca564fbc6a033d8ee682adc2b3f8f"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "pa11y-html-codesniffer",
+        "version": "10.0.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/pa11y-htmlcs/result.json",
+        "sha256": "sha256:61de1d2b68ae8eca5ee3cd1c4b6a257a75bca564fbc6a033d8ee682adc2b3f8f"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "pa11y-html-codesniffer",
+        "version": "10.0.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/pa11y-htmlcs/result.json",
+        "sha256": "sha256:61de1d2b68ae8eca5ee3cd1c4b6a257a75bca564fbc6a033d8ee682adc2b3f8f"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.pa11y-html-codesniffer-10-0-0.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "pa11y-html-codesniffer",
+        "version": "10.0.0"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/pa11y-htmlcs/result.json",
+        "sha256": "sha256:61de1d2b68ae8eca5ee3cd1c4b6a257a75bca564fbc6a033d8ee682adc2b3f8f"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "qualweb",
+        "version": "core 0.9.5; ACT rules 0.8.6; WCAG techniques 0.4.9; best practices 0.7.13"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/qualweb/result.json",
+        "sha256": "sha256:54b74ac16c9270882ffc33bc419fb7060ba01bda681072582a3c93364f8a8430"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "qualweb",
+        "version": "core 0.9.5; ACT rules 0.8.6; WCAG techniques 0.4.9; best practices 0.7.13"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/qualweb/result.json",
+        "sha256": "sha256:54b74ac16c9270882ffc33bc419fb7060ba01bda681072582a3c93364f8a8430"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "qualweb",
+        "version": "core 0.9.5; ACT rules 0.8.6; WCAG techniques 0.4.9; best practices 0.7.13"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/qualweb/result.json",
+        "sha256": "sha256:54b74ac16c9270882ffc33bc419fb7060ba01bda681072582a3c93364f8a8430"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "qualweb",
+        "version": "core 0.9.5; ACT rules 0.8.6; WCAG techniques 0.4.9; best practices 0.7.13"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/qualweb/result.json",
+        "sha256": "sha256:54b74ac16c9270882ffc33bc419fb7060ba01bda681072582a3c93364f8a8430"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "qualweb",
+        "version": "core 0.9.5; ACT rules 0.8.6; WCAG techniques 0.4.9; best practices 0.7.13"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/qualweb/result.json",
+        "sha256": "sha256:54b74ac16c9270882ffc33bc419fb7060ba01bda681072582a3c93364f8a8430"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "qualweb",
+        "version": "core 0.9.5; ACT rules 0.8.6; WCAG techniques 0.4.9; best practices 0.7.13"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/qualweb/result.json",
+        "sha256": "sha256:54b74ac16c9270882ffc33bc419fb7060ba01bda681072582a3c93364f8a8430"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "qualweb",
+        "version": "core 0.9.5; ACT rules 0.8.6; WCAG techniques 0.4.9; best practices 0.7.13"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/qualweb/result.json",
+        "sha256": "sha256:54b74ac16c9270882ffc33bc419fb7060ba01bda681072582a3c93364f8a8430"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "qualweb",
+        "version": "core 0.9.5; ACT rules 0.8.6; WCAG techniques 0.4.9; best practices 0.7.13"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/qualweb/result.json",
+        "sha256": "sha256:54b74ac16c9270882ffc33bc419fb7060ba01bda681072582a3c93364f8a8430"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.qualweb-core-0-9-5-act-rules-0-8-6-wcag-techniqu.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "qualweb",
+        "version": "core 0.9.5; ACT rules 0.8.6; WCAG techniques 0.4.9; best practices 0.7.13"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/qualweb/result.json",
+        "sha256": "sha256:54b74ac16c9270882ffc33bc419fb7060ba01bda681072582a3c93364f8a8430"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.destructive",
+      "dimension": "journeys",
+      "value": "destructive",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "siteimprove-alfa",
+        "version": "rules 0.119.0; Puppeteer integration 0.84.2"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/alfa/result.json",
+        "sha256": "sha256:2f737ea185c96f5366878f9beb7b33d73750b80b9ae178d1c6aea86d764d0d4b"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.display-adapt",
+      "dimension": "journeys",
+      "value": "display-adapt",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "siteimprove-alfa",
+        "version": "rules 0.119.0; Puppeteer integration 0.84.2"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/alfa/result.json",
+        "sha256": "sha256:2f737ea185c96f5366878f9beb7b33d73750b80b9ae178d1c6aea86d764d0d4b"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.form-lifecycle",
+      "dimension": "journeys",
+      "value": "form-lifecycle",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "siteimprove-alfa",
+        "version": "rules 0.119.0; Puppeteer integration 0.84.2"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/alfa/result.json",
+        "sha256": "sha256:2f737ea185c96f5366878f9beb7b33d73750b80b9ae178d1c6aea86d764d0d4b"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.i18n",
+      "dimension": "journeys",
+      "value": "i18n",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "siteimprove-alfa",
+        "version": "rules 0.119.0; Puppeteer integration 0.84.2"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/alfa/result.json",
+        "sha256": "sha256:2f737ea185c96f5366878f9beb7b33d73750b80b9ae178d1c6aea86d764d0d4b"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.input-only",
+      "dimension": "journeys",
+      "value": "input-only",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "siteimprove-alfa",
+        "version": "rules 0.119.0; Puppeteer integration 0.84.2"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/alfa/result.json",
+        "sha256": "sha256:2f737ea185c96f5366878f9beb7b33d73750b80b9ae178d1c6aea86d764d0d4b"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.navigate",
+      "dimension": "journeys",
+      "value": "navigate",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "siteimprove-alfa",
+        "version": "rules 0.119.0; Puppeteer integration 0.84.2"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/alfa/result.json",
+        "sha256": "sha256:2f737ea185c96f5366878f9beb7b33d73750b80b9ae178d1c6aea86d764d0d4b"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.journeys.overlay",
+      "dimension": "journeys",
+      "value": "overlay",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "siteimprove-alfa",
+        "version": "rules 0.119.0; Puppeteer integration 0.84.2"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/alfa/result.json",
+        "sha256": "sha256:2f737ea185c96f5366878f9beb7b33d73750b80b9ae178d1c6aea86d764d0d4b"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.surfaces.web",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "siteimprove-alfa",
+        "version": "rules 0.119.0; Puppeteer integration 0.84.2"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/alfa/result.json",
+        "sha256": "sha256:2f737ea185c96f5366878f9beb7b33d73750b80b9ae178d1c6aea86d764d0d4b"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    },
+    {
+      "id": "2026-10-13-v0-1-0-functional-scenarios-wave1.siteimprove-alfa-rules-0-119-0-puppeteer-integra.ui-states.default-page-load",
+      "dimension": "ui-states",
+      "value": "default page load",
+      "state": "executed",
+      "runner": {
+        "kind": "automated-harness",
+        "id": "siteimprove-alfa",
+        "version": "rules 0.119.0; Puppeteer integration 0.84.2"
+      },
+      "environment": {
+        "os": "darwin/arm64",
+        "runtime": "Node.js v25.9.0",
+        "browser": "Chromium",
+        "browser_version": "149.0.7827.55"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://github.com/cogniumhq/a11y-benchmark-results/tree/main/results/2026-10-13-v0.1.0-functional-scenarios-wave1/alfa/result.json",
+        "sha256": "sha256:2f737ea185c96f5366878f9beb7b33d73750b80b9ae178d1c6aea86d764d0d4b"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:d5109d120513c35e0a6869b6a321d624b37a44270e51473bbe62d33e1afb4396",
+        "corpus_revision": "0105c659d9fe7e85119c190910b2c53985f83374"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Derived from published bundle 2026-10-13-v0.1.0-functional-scenarios-wave1 by ingest-results.mjs."
+    }
+  ]
 }

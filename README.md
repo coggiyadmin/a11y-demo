@@ -140,6 +140,7 @@ aaa.mjs              regenerates the AAA classification and its fixture pairs
 native.mjs           regenerates the PDF and OOXML artifacts
 surface-contracts.mjs   regenerates the native artifact contracts
 maturity.mjs         represented / executable / executed / verified states
+ingest-results.mjs   derives ledger records from published result bundles
 refresh-sources.mjs  reviewed refresh of the WCAG, ACT and APG inputs
 space-coverage.mjs   coverage against the whole space, not just WCAG
 ```

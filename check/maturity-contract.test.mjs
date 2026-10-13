@@ -108,16 +108,25 @@ test('a represented value is never reported as executed or verified without evid
   }
 });
 
-test('the committed corpus currently has no execution evidence at all', () => {
-  // This is the honest state the issue asked the reports to stop hiding. If it
-  // ever changes, the ledger gained a record and this expectation should be
-  // updated deliberately rather than drift.
+test('the committed evidence is all expired, and says so rather than reading as absent', () => {
+  // The ledger now holds ingested records from a published bundle, every one
+  // captured against the 234-case corpus that preceded the aaa and native
+  // families. By the expiry rule they are stale, so nothing counts as executed
+  // -- but the reason is visible instead of the ledger simply being empty.
   const live = loadMaturity(ROOT);
-  assert.equal(loadLedger(ROOT).records.length, 0);
-  assert.equal(live.evidence_counts.current, 0);
+  const ledger = loadLedger(ROOT);
+
+  assert.ok(ledger.records.length > 0, 'evidence has been ingested');
+  assert.equal(live.evidence_counts.current, 0, 'none of it describes the current ground truth');
+  assert.equal(live.evidence_counts.stale, ledger.records.length);
+
   for (const dimension of live.dimensions) {
     assert.equal(dimension.executed, 0);
     assert.equal(dimension.verified, 0);
+  }
+
+  for (const record of live.stale_evidence) {
+    assert.equal(record.stale_reason, 'captured against different ground truth');
   }
 });
 

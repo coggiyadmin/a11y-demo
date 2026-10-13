@@ -72,8 +72,21 @@ machine-readable manifest and schema versions are recorded with every release.
   through the cross-reference table, so a document with bad offsets is reported
   broken rather than read anyway.
 
+- `ingest-results.mjs`, deriving evidence-ledger records from published result
+  bundles instead of hand-authoring them. It promotes only what a run actually
+  exercised — surfaces, and the states it reached — and never input modality,
+  method or functional need, because a result file does not record those.
+  Ground truth is resolved by recomputing the content digest from the manifest
+  at the bundle's declared revision, read out of git; an unknown revision fails
+  closed.
+
 ### Changed
 
+- The evidence ledger now holds 72 records ingested from the published
+  `functional-scenarios-wave1` bundle. All 72 are expired: they measured the
+  234-case corpus, and the `aaa` and `native` families moved the content
+  digest. Coverage reports the stale count and the reason rather than reading
+  as though no evidence had ever been produced.
 - Release metadata records the current scoring policy identifier, and
   `known_gaps` now carries every maturity state instead of representation
   alone.
