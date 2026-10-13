@@ -8,8 +8,8 @@
   },
   "generated": "2026-10-13",
   "counts": {
-    "families": 13,
-    "cases": 266
+    "families": 14,
+    "cases": 270
   },
   "digest_policy": "SHA-256 of parsed family JSON with the top-level generated field removed, serialized with JSON.stringify.",
   "families": [
@@ -77,7 +77,7 @@
       "id": "surfaces",
       "file": "surfaces.json",
       "case_count": 10,
-      "content_sha256": "sha256:52bb91460ea899e67c7d0a34fe7f1ad6975ff2c70ad8ab5e0a00a8e0d8896972"
+      "content_sha256": "sha256:ad8438ad694869f071d81de8a3de833d1a085894be627dbb2f2c8a621d2bd976"
     },
     {
       "id": "guided",
@@ -90,6 +90,12 @@
       "file": "aaa.json",
       "case_count": 26,
       "content_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69"
+    },
+    {
+      "id": "native",
+      "file": "native.json",
+      "case_count": 4,
+      "content_sha256": "sha256:962e54ba3f4770d02b5d83d0e4d4e8341a723e0520176b99375bba3ee565b932"
     }
   ]
 }

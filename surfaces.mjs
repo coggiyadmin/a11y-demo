@@ -138,6 +138,14 @@ const CASES = [
 fs.rmSync(DIR, { recursive: true, force: true });
 fs.mkdirSync(DIR, { recursive: true });
 
+// Which of these stand in for an artifact they are not. Labelling a proxy is
+// the point: it is useful evidence about the web presentation, and it must
+// never be counted as native coverage of the surface it resembles.
+const PROXY_FOR = {
+  epub: 'the EPUB package document (OPF)',
+  voice: 'a spoken conversational interface',
+};
+
 const cases = [];
 for (const c of CASES) {
   for (const [kind, body, note] of [['broken', c.broken, c.brokenNote], ['correct', c.correct, c.correctNote]]) {
@@ -150,6 +158,8 @@ for (const c of CASES) {
       path: `surfaces/${file}`,
       surface: c.surface,
       standard: c.standard,
+      representation: PROXY_FOR[c.surface] ? 'proxy' : 'native',
+      ...(PROXY_FOR[c.surface] ? { proxy_for: PROXY_FOR[c.surface] } : {}),
       journey: 'navigate',
       ui_state: 'default',
       method: ['static-source', 'runtime-dom', 'document-parse'],

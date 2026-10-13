@@ -129,16 +129,50 @@ delivery/            ONE constant defect, delivered eleven different ways
 patterns/            APG component patterns as matched broken/correct pairs
 taxonomy/            the enumerated test space
 aaa/                 matched pairs for the automatable and stateful WCAG AAA criteria
+native/              real PDF and OOXML artifacts for non-web surfaces
+surface-contracts.json  native artifact format, harness and standard per unrepresented surface
 evidence/            the execution and verification evidence ledger
 starter/             copy-and-fill kit for publishing a result bundle
 delivery.mjs         regenerates the delivery matrix
 patterns.mjs         regenerates the pattern pairs
 taxonomy.mjs         regenerates the taxonomy
 aaa.mjs              regenerates the AAA classification and its fixture pairs
+native.mjs           regenerates the PDF and OOXML artifacts
+surface-contracts.mjs   regenerates the native artifact contracts
 maturity.mjs         represented / executable / executed / verified states
 refresh-sources.mjs  reviewed refresh of the WCAG, ACT and APG inputs
 space-coverage.mjs   coverage against the whole space, not just WCAG
 ```
+
+### Surfaces beyond the web
+
+Eleven of eighteen surfaces were unrepresented, and the tempting fix — an HTML
+page that resembles a PDF or a mobile screen — measures nothing. A control
+reading that page is reading HTML.
+
+[`surface-contracts.json`](surface-contracts.json) fixes, per surface, what the
+native artifact actually is, what parses or drives it, which standard applies,
+and where software stops. Seven surfaces need physical evaluation for part of
+the answer: a kiosk's reach and a hardware control's detent are not simulable,
+and the contract says so rather than pretending otherwise.
+
+`native/` ships the two surfaces whose artifacts are reproducible without a
+device lab:
+
+```sh
+node check/pdf-structure.mjs   native/pdf/safe_tagged.pdf
+node check/ooxml-structure.mjs native/docx/safe_structured.docx
+```
+
+These are real PDF and Office Open XML byte streams, generated deterministically
+by `native.mjs` and pinned by SHA-256. Each defect has a matched control whose
+*visible* content is identical and whose structure differs only in what the
+criterion requires.
+
+**A contract is not coverage.** A surface with a contract and no artifact is
+still unrepresented, and `space-coverage.json` reports it as missing. Proxy
+representations — an HTML transcript standing in for a voice interface, say —
+are labelled `proxy` and excluded from `represented_natively`.
 
 ### Standards sources
 
