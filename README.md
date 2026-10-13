@@ -1,10 +1,33 @@
 # a11y-demo
 
+[![Validate corpus](https://github.com/cogniumhq/a11y-demo/actions/workflows/validate.yml/badge.svg)](https://github.com/cogniumhq/a11y-demo/actions/workflows/validate.yml)
+
 An accessibility fixture corpus: small pages with **known WCAG outcomes**, for
 measuring what an automated accessibility scanner finds, what it misses, and
 what it reports that is not there.
 
 Engine-agnostic by design. Nothing here knows about any particular scanner.
+
+The canonical public repository is
+[`cogniumhq/a11y-demo`](https://github.com/cogniumhq/a11y-demo). Pin a full
+commit SHA for every published run. The default branch is development state;
+tagged releases are immutable benchmark references.
+
+## Interoperability contract
+
+`corpus-manifest.json` is the canonical index of the 11 fixture families and
+their stable content digests. It currently covers 226 cases. The digest ignores
+only each family's generated date; expected outcomes, IDs, paths and notes all
+participate.
+
+`schemas/benchmark-result.schema.json` defines a product-neutral result format.
+It preserves engine lineage, tool interface, state reach, target observability,
+examined counts, explicit errors and `cannot-tell`. This prevents wrappers from
+being counted as independent engines and prevents a failed or empty execution
+from being reported as a clean pass. See [schemas/README.md](schemas/README.md).
+
+Public fixtures and contracts live here. Credentials, raw production evidence,
+private selectors, customer traceability and competitive result history do not.
 
 ## Why it exists
 
@@ -24,9 +47,12 @@ that follows from it.
 wcag/criteria.json   WCAG 2.2 success criteria — slim index derived from W3C's published JSON
 act/testcases.json   W3C ACT Task Force test cases (1,213 cases, 87 rules)
 catalog.json         ground truth for the local fixtures — what a correct scanner should say
+corpus-manifest.json stable family index, case counts and content digests
 coverage.csv/.json   every WCAG 2.2 criterion x available ground truth
+schemas/             JSON Schema contracts and validated examples
 build.mjs            regenerates every fixture
 coverage.mjs         regenerates the coverage files
+manifest.mjs         regenerates the canonical corpus manifest
 
 keyboard/            matched defective/corrected controls for keyboard and focus behaviour
 capture/             pages that stress capture and hydration rather than rule logic
@@ -39,6 +65,10 @@ patterns.mjs         regenerates the pattern pairs
 taxonomy.mjs         regenerates the taxonomy
 space-coverage.mjs   coverage against the whole space, not just WCAG
 ```
+
+Project decisions and compatibility follow [GOVERNANCE.md](GOVERNANCE.md).
+Contributions follow [CONTRIBUTING.md](CONTRIBUTING.md), and sensitive reports
+follow [SECURITY.md](SECURITY.md).
 
 ### Component patterns
 

@@ -1,0 +1,65 @@
+name: Fixture proposal
+description: Propose a public synthetic defect/control pair or a guided case.
+title: "[Fixture]: "
+labels: [fixture]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include production captures, credentials, personal information, private selectors or internal paths.
+  - type: input
+    id: standard
+    attributes:
+      label: Public source
+      description: WCAG criterion, ACT rule, platform contract, research source or reviewed task.
+      placeholder: https://www.w3.org/TR/WCAG22/#...
+    validations:
+      required: true
+  - type: textarea
+    id: defect
+    attributes:
+      label: Defect and observable target
+      description: Describe exactly what changes and how a runner or evaluator can observe it.
+    validations:
+      required: true
+  - type: textarea
+    id: control
+    attributes:
+      label: Corrected control
+      description: Describe the narrowly matched correction, or explain why a paired control is not possible.
+    validations:
+      required: true
+  - type: dropdown
+    id: method
+    attributes:
+      label: Primary evaluation method
+      options:
+        - automated rule
+        - stateful interaction
+        - guided manual
+        - assistive-technology interoperability
+        - functional task
+        - native platform audit
+        - document/PDF validation
+        - experimental semantic review
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Expected outcome
+      options:
+        - fail
+        - pass corrected control
+        - cannot-tell
+        - inapplicable
+        - not-present
+        - unsupported
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public-data confirmation
+      options:
+        - label: The proposal contains only invented public synthetic data.
+          required: true

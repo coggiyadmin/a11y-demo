@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cogniumhq/a11y-demo/schemas/benchmark-result.schema.json",
+  "title": "Accessibility benchmark result interchange",
+  "description": "Tool-neutral evidence for running an accessibility product against a pinned public corpus revision. The format preserves execution failure, observability, cannot-tell, and engine lineage instead of coercing them into pass/fail.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "format_version", "corpus", "run", "executions"],
+  "properties": {
+    "format": { "const": "cognium-a11y-benchmark-result" },
+    "format_version": { "type": "string", "pattern": "^[1-9][0-9]*\\.[0-9]+\\.[0-9]+$" },
+    "corpus": { "$ref": "#/$defs/corpus" },
+    "run": { "$ref": "#/$defs/run" },
+    "executions": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/execution" }
+    }
+  },
+  "$defs": {
+    "corpus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "revision", "manifest_sha256"],
+      "properties": {
+        "repository": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
+        "revision": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "manifest_sha256": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" }
+      }
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "started_at", "completed_at", "repeat", "tool", "environment", "privacy"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "started_at": { "type": "string", "format": "date-time" },
+        "completed_at": { "type": "string", "format": "date-time" },
+        "repeat": { "type": "integer", "minimum": 1 },
+        "tool": { "$ref": "#/$defs/tool" },
+        "environment": { "$ref": "#/$defs/environment" },
+        "privacy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["fixture_data", "raw_evidence_published"],
+          "properties": {
+            "fixture_data": { "const": "public-synthetic" },
+            "raw_evidence_published": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "engine_family", "tool_surface", "independence"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "engine_family": { "type": "string", "minLength": 1 },
+        "tool_surface": { "type": "string", "minLength": 1 },
+        "independence": { "enum": ["independent-engine", "derived-configuration", "wrapper", "specialist", "methodology"] },
+        "wrapper_of": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "independence": { "enum": ["derived-configuration", "wrapper"] } }, "required": ["independence"] },
+          "then": { "properties": { "wrapper_of": {} }, "required": ["wrapper_of"] }
+        }
+      ]
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["os", "runtime"],
+      "properties": {
+        "os": { "type": "string", "minLength": 1 },
+        "runtime": { "type": "string", "minLength": 1 },
+        "browser": { "type": "string", "minLength": 1 },
+        "browser_version": { "type": "string", "minLength": 1 },
+        "viewport": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["width", "height"],
+          "properties": {
+            "width": { "type": "integer", "minimum": 1 },
+            "height": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "preferences": {
+          "type": "object",
+          "additionalProperties": {
+            "anyOf": [
+              { "type": "string" },
+              { "type": "number" },
+              { "type": "boolean" }
+            ]
+          }
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["case_id", "case_path", "status", "declared_state", "state_reached", "target_observability", "outcomes"],
+      "properties": {
+        "case_id": { "type": "string", "minLength": 1 },
+        "case_path": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["completed", "error", "blocked", "unsupported"] },
+        "declared_state": { "type": "string", "minLength": 1 },
+        "state_reached": { "type": "boolean" },
+        "target_observability": { "enum": ["observed", "not-observed", "unknown"] },
+        "outcomes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/outcome" }
+        },
+        "error": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["code", "message"],
+          "properties": {
+            "code": { "type": "string", "minLength": 1 },
+            "message": { "type": "string", "minLength": 1 }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "completed" } }, "required": ["status"] },
+          "then": {
+            "properties": { "outcomes": { "type": "array", "minItems": 1 } },
+            "not": { "properties": { "error": {} }, "required": ["error"] }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "error" } }, "required": ["status"] },
+          "then": { "properties": { "error": {} }, "required": ["error"] }
+        }
+      ]
+    },
+    "outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["criterion", "native_rule_id", "verdict", "findings", "examined_count", "evidence"],
+      "properties": {
+        "criterion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "native_rule_id": { "type": "string", "minLength": 1 },
+        "verdict": { "enum": ["fail", "pass", "cannot-tell", "inapplicable", "not-present", "unsupported", "error"] },
+        "findings": { "type": "integer", "minimum": 0 },
+        "examined_count": {
+          "anyOf": [
+            { "type": "integer", "minimum": 0 },
+            { "type": "null" }
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidence" }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["selector", "html", "ax-tree", "screenshot", "transcript", "trace", "manual-note", "digest", "other"] },
+        "locator": { "type": "string", "minLength": 1 },
+        "digest": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+        "note": { "type": "string", "minLength": 1 }
+      },
+      "anyOf": [
+        { "properties": { "locator": {} }, "required": ["locator"] },
+        { "properties": { "digest": {} }, "required": ["digest"] },
+        { "properties": { "note": {} }, "required": ["note"] }
+      ]
+    }
+  }
+}

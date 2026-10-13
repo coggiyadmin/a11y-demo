@@ -1,0 +1,41 @@
+{
+  "format": "cognium-a11y-benchmark-result",
+  "format_version": "1.0.0",
+  "corpus": {
+    "repository": "cogniumhq/a11y-demo",
+    "revision": "af70e7c0298f8bfc266ffccfee0d5e1b40f5d62b",
+    "manifest_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "run": {
+    "id": "invalid-example",
+    "started_at": "2026-10-12T12:00:00Z",
+    "completed_at": "2026-10-12T12:00:01Z",
+    "repeat": 1,
+    "tool": {
+      "name": "Unnamed wrapper target",
+      "version": "1.0.0",
+      "engine_family": "Example engine",
+      "tool_surface": "MCP",
+      "independence": "wrapper"
+    },
+    "environment": {
+      "os": "Linux",
+      "runtime": "Node.js 22"
+    },
+    "privacy": {
+      "fixture_data": "public-synthetic",
+      "raw_evidence_published": false
+    }
+  },
+  "executions": [
+    {
+      "case_id": "keyboard-div_button",
+      "case_path": "keyboard/div_button.html",
+      "status": "error",
+      "declared_state": "default",
+      "state_reached": false,
+      "target_observability": "unknown",
+      "outcomes": []
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 # Contributing fixtures
 
+Read [GOVERNANCE.md](GOVERNANCE.md), [SECURITY.md](SECURITY.md) and the
+[machine-readable contracts](schemas/README.md) before proposing a change.
+
 Every fixture is public. Use invented data only: reserved example domains,
 fictional names and addresses, and non-routable identifiers. Never commit real
 credentials, customer data, internal hostnames, private repository paths,
@@ -16,12 +19,20 @@ metadata.
 - Use a native artifact for non-web surfaces. If only a representation is
   possible, label it as a proxy rather than claiming native coverage.
 - Edit the generator, regenerate its outputs and commit both.
+- Treat every published case ID as permanent. Never reuse or silently change an
+  ID's meaning.
+- Update `CHANGELOG.md` for fixture, ground-truth or contract changes.
 
 Run the local checks before opening a pull request:
 
 ```sh
-node --test check/repository-privacy.test.mjs check/server-security.test.mjs
+npm ci --prefix check --ignore-scripts
+node --test check/*.test.mjs
+for generator in build.mjs delivery.mjs patterns.mjs taxonomy.mjs journeys.mjs scenarios.mjs media.mjs flash.mjs color-independent.mjs ui-states.mjs surfaces.mjs guided.mjs needs-index.mjs coverage.mjs space-coverage.mjs manifest.mjs; do
+  node "$generator"
+done
+git diff --exit-code -I '"generated":'
 ```
 
 The pull-request workflow regenerates every family and fails if committed
-outputs have drifted.
+outputs, manifest counts or stable content digests have drifted.

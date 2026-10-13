@@ -24,8 +24,8 @@ const TYPES = {
 
 const PUBLIC_DIRECTORIES = new Set([
   'act', 'capture', 'color-independent', 'delivery', 'flash', 'guided', 'journeys',
-  'keyboard', 'media', 'patterns', 'scenarios', 'static', 'surfaces', 'taxonomy',
-  'ui-states', 'wcag',
+  'keyboard', 'media', 'patterns', 'scenarios', 'schemas', 'static', 'surfaces',
+  'taxonomy', 'ui-states', 'wcag',
 ]);
 
 const PUBLIC_ROOT_FILES = new Set([
@@ -33,6 +33,7 @@ const PUBLIC_ROOT_FILES = new Set([
   'coverage.json', 'needs-index.json', 'space-coverage.json', 'delivery.json',
   'patterns.json', 'color-independent.json', 'media.json', 'ui-states.json',
   'journeys.json', 'scenarios.json', 'surfaces.json', 'guided.json', 'flash.json',
+  'corpus-manifest.json',
 ]);
 
 const text = (res, status, body) => {
@@ -63,7 +64,10 @@ export function createCorpusHandler(root = ROOT) {
 
     let candidate = resolve(publicRoot, `.${pathname.startsWith('/') ? pathname : `/${pathname}`}`);
     const requestedRelative = relativeTo(publicRoot, candidate);
-    if (escapes(requestedRelative)) { text(res, 403, 'forbidden'); return; }
+    if (escapes(requestedRelative) || requestedRelative.split('/').some((part) => part.startsWith('.'))) {
+      text(res, 403, 'forbidden');
+      return;
+    }
 
     if (existsSync(candidate) && statSync(candidate).isDirectory()) candidate = join(candidate, 'index.html');
     if (!existsSync(candidate) || !statSync(candidate).isFile()) { text(res, 404, 'not found'); return; }
