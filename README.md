@@ -121,15 +121,19 @@ static/              single-page defects readable from served HTML
 delivery/            ONE constant defect, delivered eleven different ways
 patterns/            APG component patterns as matched broken/correct pairs
 taxonomy/            the enumerated test space
+evidence/            the execution and verification evidence ledger
 delivery.mjs         regenerates the delivery matrix
 patterns.mjs         regenerates the pattern pairs
 taxonomy.mjs         regenerates the taxonomy
+maturity.mjs         represented / executable / executed / verified states
 space-coverage.mjs   coverage against the whole space, not just WCAG
 ```
 
 Project decisions and compatibility follow [GOVERNANCE.md](GOVERNANCE.md).
 Contributions follow [CONTRIBUTING.md](CONTRIBUTING.md), and sensitive reports
-follow [SECURITY.md](SECURITY.md). Third-party result publishers follow
+follow [SECURITY.md](SECURITY.md). Coverage maturity and the evidence ledger
+are described in [EVIDENCE.md](EVIDENCE.md), and scoring in
+[SCORING.md](SCORING.md). Third-party result publishers follow
 [PUBLISHING_RESULTS.md](PUBLISHING_RESULTS.md).
 
 ### Pipeline integrity
@@ -384,19 +388,30 @@ surface x user need x journey x UI state x input/AT x standard
 18 surfaces · 23 functional user needs · 25 journeys · 12 UI states · 12 input/AT
 pairings · 15 validation methods · 5 outcomes · 13 standards.
 
-It is written down so representation and later execution evidence can be
-measured against an explicit scope. Run
-`node space-coverage.mjs` for the current representation picture:
+It is written down so representation and execution evidence can be measured
+against an explicit scope. Run `node space-coverage.mjs` for the current
+picture:
 
 ```
-surfaces      7 / 18     journeys   25 / 25     ui-states  12 / 12
-user-needs   23 / 23     input-at   12 / 12     methods    14 / 15
+dimension       repr  exec        run  verif / total
+surfaces          7     7    0      0 / 18
+journeys         25    25    0      0 / 25
+ui-states        12    12    0      0 / 12
+user-needs       23    23    0      0 / 23
+input-at         12    12    0      0 / 12
+methods          15    15    0      0 / 15
 ```
 
-**Read those with care.** These are representation counts, not executed test
-coverage. A value is represented when at least one manifest names it. A guided
-screen-reader prompt therefore represents that pairing but does not verify it;
-verification needs a person, the named AT and recorded evidence.
+**Read those with care.** Four states, strictly nested: a value is
+`represented` when a manifest names it, `executable` when a route to evidence
+exists, `executed` only when `evidence/ledger.json` holds a current record
+saying it ran, and `verified` only when a reviewer or an independent
+reproduction confirmed that run. A guided screen-reader prompt represents a
+pairing and makes it executable; it does not execute or verify it.
+
+The `run` and `verif` columns are zero because no execution evidence has been
+recorded yet. That is the honest state, and separating it from representation
+is the whole point — see [EVIDENCE.md](EVIDENCE.md).
 
 The 64,800 figure is the product of four applicability axes — surface, journey,
 UI state and input/AT. Functional needs and standards are mapped attributes,
@@ -411,10 +426,12 @@ kiosk, hardware and immersive surfaces need different artefact formats and
 different parsers. An HTML file pretending to be a PDF measures nothing, so
 they are enumerated as gaps rather than faked.
 
-**`methods 14 / 15` — `regression` is not represented by a fixture.** Regression is a
-method applied *to* a corpus — pin a baseline, re-run, diff — not a property
-any individual case can have. Tagging a case with it to reach 15/15 would be
-exactly the flattering-denominator problem this report exists to avoid.
+**`methods 15 / 15` represented, `0` executed.** Every method is now named by
+some fixture, including `regression` via the pipeline family. That is exactly
+the kind of full-looking row the maturity model exists to qualify: all fifteen
+are represented and executable, and none has been executed. The three that no
+harness can run — `guided-manual`, `at-testing`, `user-testing` — are
+executable only because a versioned human protocol covers them.
 
 Two notes that matter more than the numbers:
 

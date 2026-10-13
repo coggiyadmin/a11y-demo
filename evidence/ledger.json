@@ -1,0 +1,11 @@
+{
+  "$schema": "../schemas/evidence-ledger.schema.json",
+  "format": "cognium-a11y-evidence-ledger",
+  "format_version": "1.0.0",
+  "generated": "2026-10-13",
+  "policy": {
+    "expiry": "A record expires automatically when the corpus content digest changes, because evidence captured against different assertions does not describe the current ground truth. A harness or environment change cannot be detected from the corpus, so those records are retired explicitly with superseded_by.",
+    "independence": "reproduction_class records who produced the evidence. Maintainer and vendor evidence is reported as executed and, when reviewed, verified; only independent and academic reproduction is reported as independently verified."
+  },
+  "records": []
+}
