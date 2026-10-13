@@ -1,0 +1,57 @@
+# Copy to .github/workflows/validate.yml in your result-bundle repository.
+#
+# Validates every result file and scores them with --strict, so a bundle whose
+# declared corpus identity does not match the corpus it is scored against fails
+# instead of warning.
+name: Validate published results
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Check out the pinned corpus revision
+        uses: actions/checkout@v7
+        with:
+          repository: cogniumhq/a11y-benchmark
+          # Pin the same revision your bundle declares. A moving branch here
+          # would score your results against ground truth they never saw.
+          ref: v0.1.0
+          path: corpus
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: corpus/check/package-lock.json
+
+      - run: npm ci --prefix corpus/check --ignore-scripts
+
+      - name: Validate every result file
+        run: |
+          shopt -s globstar nullglob
+          for result in results/**/result*.json; do
+            node corpus/check/validate-result.mjs "$result"
+          done
+
+      - name: Score the bundle
+        run: |
+          shopt -s globstar nullglob
+          node corpus/check/score.mjs score results/**/result*.json \
+            --strict --json score.json --csv score.csv
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: score
+          path: |
+            score.json
+            score.csv

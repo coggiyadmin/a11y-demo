@@ -61,6 +61,12 @@ projects are welcome. Participation has two separate paths:
   outside this corpus repository. The complete protocol and comparison rules are
   in [PUBLISHING_RESULTS.md](PUBLISHING_RESULTS.md).
 
+A copy-and-fill [starter kit](starter/README.md) produces a bundle that
+validates, scores and lists: it pins the corpus revision, manifest digest,
+product version, engine lineage, environment and repetition count by
+construction, and ships a worked multi-case example with its method note,
+mapping code, raw-output disclosure and licence.
+
 `check/score.mjs` is the reference scorer and regression runner. It turns the
 manifest plus schema-valid results into recall, false-positive,
 pipeline-integrity, execution and examined-count metrics, every rate published
@@ -124,6 +130,7 @@ patterns/            APG component patterns as matched broken/correct pairs
 taxonomy/            the enumerated test space
 aaa/                 matched pairs for the automatable and stateful WCAG AAA criteria
 evidence/            the execution and verification evidence ledger
+starter/             copy-and-fill kit for publishing a result bundle
 delivery.mjs         regenerates the delivery matrix
 patterns.mjs         regenerates the pattern pairs
 taxonomy.mjs         regenerates the taxonomy

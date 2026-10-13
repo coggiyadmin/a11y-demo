@@ -49,6 +49,18 @@ machine-readable manifest and schema versions are recorded with every release.
 - A scheduled `Refresh standards sources` workflow that regenerates, runs the
   contract tests and opens a reviewable pull request. It never pushes to the
   default branch and never merges itself.
+- `starter/`, a copy-and-fill publisher kit: a runner that pins corpus revision,
+  manifest digest, product version, engine lineage, environment and repetitions
+  by construction, example mapping code, a method note, a raw-output disclosure,
+  a licence, a `publication.json` the public index can ingest, and a CI workflow
+  running validation and the scorer with `--strict`.
+- A committed multi-case example bundle demonstrating the honest non-pass
+  states: `completed`, `blocked` for an undriven multi-page case, and
+  `unsupported` for a human-judgement case.
+- `check/verify-published-result.mjs` and a `Verify published result disclosure`
+  workflow, checking a submission mechanically: required fields, a full
+  40-character revision, a well-formed manifest digest, a wrapper that names its
+  engine, a stated publisher relationship, and an immutable bundle URL.
 
 ### Changed
 
