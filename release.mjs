@@ -4,6 +4,8 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
+import { SCORING_POLICY } from './check/scoring.mjs';
+
 const ROOT = path.resolve(fileURLToPath(new URL('.', import.meta.url)));
 const version = fs.readFileSync(path.join(ROOT, 'VERSION'), 'utf8').trim();
 const tag = `v${version}`;
@@ -56,6 +58,22 @@ const spaceCoverage = readJson('space-coverage.json');
 const surfaces = spaceCoverage.dimensions.find((dimension) => dimension.dimension === 'surfaces');
 const methods = spaceCoverage.dimensions.find((dimension) => dimension.dimension === 'methods');
 
+// A release note that published only `represented` would overstate the corpus.
+// Carry every maturity state so a reader can see how much of what is named has
+// actually been run, and by whom.
+const maturityGap = (dimension) =>
+  dimension
+    ? {
+        represented: dimension.represented,
+        executable: dimension.executable,
+        executed: dimension.executed,
+        verified: dimension.verified,
+        independently_verified: dimension.independently_verified,
+        total: dimension.total,
+        missing: dimension.missing,
+      }
+    : null;
+
 fs.mkdirSync(output, { recursive: true });
 
 const assets = [
@@ -97,6 +115,9 @@ const metadata = {
     human_protocols: humanProtocols.format_version,
     human_result: humanResultExample.format_version,
     double_review: doubleReviewExample.format_version,
+    // Results quote this string; recording it here lets a reader tell which
+    // scoring policy was current when the snapshot was cut.
+    scoring_policy: SCORING_POLICY,
   },
   included: {
     pipeline_integrity: {
@@ -109,12 +130,9 @@ const metadata = {
   },
   known_gaps: {
     wcag_without_ground_truth: coverage.filter((row) => row.ground_truth === 'NONE').length,
-    surfaces: surfaces
-      ? { represented: surfaces.represented, total: surfaces.total, missing: surfaces.missing }
-      : null,
-    methods: methods
-      ? { represented: methods.represented, total: methods.total, missing: methods.missing }
-      : null,
+    surfaces: maturityGap(surfaces),
+    methods: maturityGap(methods),
+    evidence: spaceCoverage.evidence ?? null,
   },
   limitations: [
     'A benchmark result is not a WCAG conformance claim or product certification.',

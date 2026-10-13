@@ -26,6 +26,19 @@ jobs:
         run: npm ci --prefix check --ignore-scripts
       - name: Check repository and fixture contracts
         run: node --test check/*.test.mjs
+
+      - name: Validate and score the published result examples
+        run: |
+          node check/validate-result.mjs schemas/examples/benchmark-result.repeat-1.json
+          node check/validate-result.mjs schemas/examples/benchmark-result.repeat-2.json
+          node check/score.mjs score \
+            schemas/examples/benchmark-result.repeat-1.json \
+            schemas/examples/benchmark-result.repeat-2.json \
+            --json "$RUNNER_TEMP/score.json" --csv "$RUNNER_TEMP/score.csv"
+          # The two repeats differ by one assertion, so compare must exit 1.
+          node check/score.mjs compare \
+            schemas/examples/benchmark-result.repeat-1.json \
+            schemas/examples/benchmark-result.repeat-2.json && exit 1 || test $? -eq 1
       - name: Regenerate fixture manifests and pages
         run: |
           for generator in build.mjs delivery.mjs patterns.mjs taxonomy.mjs journeys.mjs scenarios.mjs media.mjs flash.mjs color-independent.mjs ui-states.mjs surfaces.mjs guided.mjs needs-index.mjs coverage.mjs space-coverage.mjs manifest.mjs; do

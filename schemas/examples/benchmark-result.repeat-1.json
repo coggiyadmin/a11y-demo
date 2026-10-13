@@ -1,0 +1,277 @@
+{
+  "format": "cognium-a11y-benchmark-result",
+  "format_version": "1.0.0",
+  "corpus": {
+    "repository": "cogniumhq/a11y-benchmark",
+    "revision": "0000000000000000000000000000000000000000",
+    "manifest_sha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "run": {
+    "id": "example-repeat-1",
+    "started_at": "2026-10-13T09:00:00Z",
+    "completed_at": "2026-10-13T09:04:00Z",
+    "repeat": 1,
+    "tool": {
+      "name": "Example scanner",
+      "version": "2.0.0",
+      "engine_family": "Example engine",
+      "tool_surface": "CLI",
+      "independence": "independent-engine"
+    },
+    "environment": {
+      "os": "Linux",
+      "runtime": "Node.js 22",
+      "browser": "Chromium",
+      "browser_version": "140",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "preferences": {
+        "reduced_motion": false,
+        "color_scheme": "light"
+      }
+    },
+    "privacy": {
+      "fixture_data": "public-synthetic",
+      "raw_evidence_published": false
+    }
+  },
+  "executions": [
+    {
+      "case_id": "keyboard-div_button",
+      "case_path": "keyboard/div_button.html",
+      "status": "completed",
+      "declared_state": "default",
+      "state_reached": true,
+      "target_observability": "observed",
+      "outcomes": [
+        {
+          "criterion": "2.1.1",
+          "native_rule_id": "example-keyboard-control",
+          "verdict": "fail",
+          "findings": 1,
+          "examined_count": 12,
+          "evidence": [
+            {
+              "type": "manual-note",
+              "note": "div with click handler"
+            }
+          ]
+        },
+        {
+          "criterion": "4.1.2",
+          "native_rule_id": "example-name-role-value",
+          "verdict": "fail",
+          "findings": 1,
+          "examined_count": 12,
+          "evidence": [
+            {
+              "type": "manual-note",
+              "note": "no role or accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "keyboard-safe_native_button",
+      "case_path": "keyboard/safe_native_button.html",
+      "status": "completed",
+      "declared_state": "default",
+      "state_reached": true,
+      "target_observability": "observed",
+      "outcomes": [
+        {
+          "criterion": "2.1.1",
+          "native_rule_id": "example-keyboard-control",
+          "verdict": "fail",
+          "findings": 1,
+          "examined_count": 12,
+          "evidence": [
+            {
+              "type": "manual-note",
+              "note": "native button flagged in error"
+            }
+          ]
+        },
+        {
+          "criterion": "4.1.2",
+          "native_rule_id": "example-name-role-value",
+          "verdict": "pass",
+          "findings": 0,
+          "examined_count": 12,
+          "evidence": [
+            {
+              "type": "manual-note",
+              "note": "native button has role and name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "patterns-disclosure",
+      "case_path": "patterns/disclosure.html",
+      "status": "completed",
+      "declared_state": "default",
+      "state_reached": true,
+      "target_observability": "observed",
+      "outcomes": [
+        {
+          "criterion": "4.1.2",
+          "native_rule_id": "example-name-role-value",
+          "verdict": "fail",
+          "findings": 1,
+          "examined_count": 5,
+          "evidence": [
+            {
+              "type": "manual-note",
+              "note": "aria-expanded absent"
+            }
+          ]
+        },
+        {
+          "criterion": "2.1.1",
+          "native_rule_id": "example-keyboard-control",
+          "verdict": "fail",
+          "findings": 1,
+          "examined_count": 5,
+          "evidence": [
+            {
+              "type": "manual-note",
+              "note": "summary not reachable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "patterns-safe_disclosure",
+      "case_path": "patterns/safe_disclosure.html",
+      "status": "completed",
+      "declared_state": "default",
+      "state_reached": true,
+      "target_observability": "observed",
+      "outcomes": [
+        {
+          "criterion": "4.1.2",
+          "native_rule_id": "example-name-role-value",
+          "verdict": "pass",
+          "findings": 0,
+          "examined_count": 5,
+          "evidence": [
+            {
+              "type": "manual-note",
+              "note": "correct disclosure markup"
+            }
+          ]
+        },
+        {
+          "criterion": "2.1.1",
+          "native_rule_id": "example-keyboard-control",
+          "verdict": "pass",
+          "findings": 0,
+          "examined_count": 5,
+          "evidence": [
+            {
+              "type": "manual-note",
+              "note": "keyboard operable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "journey-booking-broken",
+      "case_path": "journeys/booking/broken/index.html",
+      "status": "blocked",
+      "declared_state": "checkout-step-2",
+      "state_reached": false,
+      "target_observability": "not-observed",
+      "outcomes": []
+    },
+    {
+      "case_id": "pipeline-vacuous_pass",
+      "case_path": "pipeline/vacuous/zero-examined.html",
+      "status": "error",
+      "declared_state": "default",
+      "state_reached": true,
+      "target_observability": "observed",
+      "error": {
+        "code": "zero-examined",
+        "message": "control reported pass having examined no elements"
+      },
+      "outcomes": [
+        {
+          "criterion": "2.1.1",
+          "native_rule_id": "example-keyboard-control",
+          "verdict": "error",
+          "findings": 0,
+          "examined_count": 0,
+          "evidence": [
+            {
+              "type": "manual-note",
+              "note": "no elements reached the control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "pipeline-observed_pass-control",
+      "case_path": "pipeline/vacuous/observed-control.html",
+      "status": "completed",
+      "declared_state": "default",
+      "state_reached": true,
+      "target_observability": "observed",
+      "outcomes": [
+        {
+          "criterion": "2.1.1",
+          "native_rule_id": "example-keyboard-control",
+          "verdict": "pass",
+          "findings": 0,
+          "examined_count": 14,
+          "evidence": [
+            {
+              "type": "manual-note",
+              "note": "14 focusable elements examined"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "pipeline-no_declared_flow",
+      "case_path": "pipeline/flow/no-declaration.html",
+      "status": "unsupported",
+      "declared_state": "flow-anchored",
+      "state_reached": false,
+      "target_observability": "unknown",
+      "outcomes": []
+    },
+    {
+      "case_id": "guided-caption_quality",
+      "case_path": "guided/caption_quality.html",
+      "status": "completed",
+      "declared_state": "default",
+      "state_reached": true,
+      "target_observability": "observed",
+      "outcomes": [
+        {
+          "criterion": "1.2.2",
+          "native_rule_id": "example-caption-presence",
+          "verdict": "cannot-tell",
+          "findings": 0,
+          "examined_count": null,
+          "evidence": [
+            {
+              "type": "manual-note",
+              "note": "caption track parses; accuracy needs a human"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
