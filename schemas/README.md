@@ -46,5 +46,16 @@ Score a validated result against the corpus:
 node check/score.mjs score path/to/result.json --strict
 ```
 
+## Evidence ledger
+
+`evidence-ledger.schema.json` describes `../evidence/ledger.json`, the record
+of what has actually been executed and verified across the enumerated test
+space. Only `executed` and `verified` are recordable; `represented` and
+`executable` are derived from the corpus and the schema rejects a record
+claiming either. A record claiming `verified` must name a reviewer.
+
+Records pin the corpus content digest and expire automatically when ground
+truth changes. See [EVIDENCE.md](../EVIDENCE.md).
+
 See [Publishing benchmark results](../PUBLISHING_RESULTS.md) for the required
 method disclosure, metric boundaries, privacy rules and discoverability flow.

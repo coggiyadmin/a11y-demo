@@ -21,11 +21,28 @@ machine-readable manifest and schema versions are recorded with every release.
   exercising detection, false positives, blocked and unsupported executions, a
   vacuous pass, a human-lane `cannot-tell` and an unstable assertion.
 - `SCORING.md` documenting every metric, denominator and refusal.
+- An evidence-maturity model: every enumerated dimension value is reported as
+  `represented`, `executable`, `executed` or `verified`, with
+  `independently_verified` counted separately from vendor and maintainer
+  evidence.
+- `evidence/ledger.json` and `schemas/evidence-ledger.schema.json`, recording
+  the runner or protocol, environment, result artifact, reproduction class and
+  reviewer behind each executed or verified value.
+- `corpus-identity.mjs`, deriving a ground-truth digest that is stable across a
+  no-op regeneration, so evidence expires when the corpus changes and not when
+  a date is restamped.
+- `EVIDENCE.md` documenting the states, the ledger and the expiry rules.
 
 ### Changed
 
-- Release metadata records the current scoring policy identifier.
+- Release metadata records the current scoring policy identifier, and
+  `known_gaps` now carries every maturity state instead of representation
+  alone.
+- `space-coverage.json` and `needs-index.json` report the shared maturity
+  vocabulary; representation no longer stands in for execution.
 - CI validates and scores the published result examples.
+- README coverage figures corrected: `methods` is 15/15 represented, not 14/15,
+  since the pipeline family names `regression`.
 
 ## [0.1.0] - 2026-10-13
 

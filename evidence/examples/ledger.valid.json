@@ -1,0 +1,109 @@
+{
+  "$schema": "../../schemas/evidence-ledger.schema.json",
+  "format": "cognium-a11y-evidence-ledger",
+  "format_version": "1.0.0",
+  "generated": "2026-10-13",
+  "policy": {
+    "expiry": "A record expires automatically when the corpus content digest changes. Harness and environment changes are retired explicitly with superseded_by.",
+    "independence": "Only independent and academic reproduction is reported as independently verified."
+  },
+  "records": [
+    {
+      "id": "example.web.executed",
+      "dimension": "surfaces",
+      "value": "web",
+      "state": "executed",
+      "runner": { "kind": "automated-harness", "id": "example-harness", "version": "2.0.0" },
+      "environment": {
+        "os": "Linux",
+        "runtime": "Node.js 22",
+        "browser": "Chromium",
+        "browser_version": "140"
+      },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://example.org/results/web-run-1/result.json",
+        "sha256": "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "reproduction_class": "vendor",
+      "captured_against": {
+        "corpus_content_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "scoring_policy": "cognium-a11y-scoring/1.0.0"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Vendor self-reported execution. Executed, not independently verified."
+    },
+    {
+      "id": "example.sr-task.verified",
+      "dimension": "journeys",
+      "value": "sr-task",
+      "state": "verified",
+      "runner": {
+        "kind": "human-protocol",
+        "id": "screen-reader-task",
+        "version": "1.0.0",
+        "protocol_version": "1.0.0"
+      },
+      "environment": {
+        "os": "Windows 11",
+        "runtime": "manual",
+        "browser": "Example browser",
+        "browser_version": "140",
+        "assistive_technology": "Example screen reader",
+        "assistive_technology_version": "2026.1"
+      },
+      "artifact": {
+        "type": "double-review",
+        "uri": "https://example.org/results/sr-task/double-review.json",
+        "sha256": "sha256:2222222222222222222222222222222222222222222222222222222222222222"
+      },
+      "reproduction_class": "independent",
+      "reviewer": "Example independent reviewer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Independently reproduced under a versioned protocol with a double review."
+    },
+    {
+      "id": "example.keyboard.superseded",
+      "dimension": "input-at",
+      "value": "keyboard",
+      "state": "executed",
+      "runner": { "kind": "automated-harness", "id": "example-harness", "version": "1.0.0" },
+      "environment": { "os": "Linux", "runtime": "Node.js 20" },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://example.org/results/keyboard-run-0/result.json",
+        "sha256": "sha256:3333333333333333333333333333333333333333333333333333333333333333"
+      },
+      "reproduction_class": "maintainer",
+      "captured_against": {
+        "corpus_content_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "recorded_on": "2026-10-13",
+      "superseded_by": "example.keyboard.current",
+      "notes": "Retired explicitly: the harness moved from 1.0.0 to 2.0.0, which the corpus digest cannot detect."
+    },
+    {
+      "id": "example.stale.ground-truth",
+      "dimension": "ui-states",
+      "value": "default",
+      "state": "verified",
+      "runner": { "kind": "automated-harness", "id": "example-harness", "version": "2.0.0" },
+      "environment": { "os": "Linux", "runtime": "Node.js 22" },
+      "artifact": {
+        "type": "benchmark-result",
+        "uri": "https://example.org/results/ui-states-run-0/result.json",
+        "sha256": "sha256:4444444444444444444444444444444444444444444444444444444444444444"
+      },
+      "reproduction_class": "academic",
+      "reviewer": "Example research group",
+      "captured_against": {
+        "corpus_content_digest": "sha256:9999999999999999999999999999999999999999999999999999999999999999"
+      },
+      "recorded_on": "2026-10-13",
+      "notes": "Captured against a different corpus content digest, so it expires automatically and cannot count as verified."
+    }
+  ]
+}
