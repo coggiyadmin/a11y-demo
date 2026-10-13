@@ -30,3 +30,13 @@ count two interfaces over the same engine as two independent detection votes.
 The example files are validated in CI. `benchmark-result.invalid.json` is
 deliberately invalid because it reports a wrapper without `wrapper_of` and an
 error execution without error evidence.
+
+Validate a third-party result before publication:
+
+```sh
+npm ci --prefix check --ignore-scripts
+node check/validate-result.mjs path/to/result.json
+```
+
+See [Publishing benchmark results](../PUBLISHING_RESULTS.md) for the required
+method disclosure, metric boundaries, privacy rules and discoverability flow.

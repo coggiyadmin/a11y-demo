@@ -29,6 +29,31 @@ from being reported as a clean pass. See [schemas/README.md](schemas/README.md).
 Public fixtures and contracts live here. Credentials, raw production evidence,
 private selectors, customer traceability and competitive result history do not.
 
+## Contribute and publish results
+
+Tool vendors, accessibility consultancies, auditors, researchers and community
+projects are welcome. Participation has two separate paths:
+
+- **Improve the benchmark.** Open a fixture proposal or corpus-defect issue,
+  fork the repository, add the smallest synthetic fixture/control pair and open
+  a pull request. Cite the public standard or reviewed task, preserve stable IDs,
+  declare any relationship to a product affected by the change, and run the
+  checks in [CONTRIBUTING.md](CONTRIBUTING.md). Contributions are submitted
+  under Apache-2.0 unless clearly identified third-party terms apply.
+- **Publish product results.** Run against a tagged release or full commit SHA,
+  record the manifest digest, product version, engine lineage, configuration,
+  environment, state reach, observability and every error or unsupported case.
+  Encode the run with the
+  [benchmark-result schema](schemas/benchmark-result.schema.json), validate it
+  with `node check/validate-result.mjs`, and publish the immutable result bundle
+  outside this corpus repository. The complete protocol and comparison rules are
+  in [PUBLISHING_RESULTS.md](PUBLISHING_RESULTS.md).
+
+After publishing, a third party may open a **Published benchmark result** issue
+to make the bundle discoverable. Listing confirms disclosure and schema validity
+only; it is not Cognium endorsement, product certification, a legal opinion or a
+WCAG conformance claim.
+
 ## Why it exists
 
 Most accessibility corpora test whether a *rule* is right. This one also tests
@@ -68,7 +93,8 @@ space-coverage.mjs   coverage against the whole space, not just WCAG
 
 Project decisions and compatibility follow [GOVERNANCE.md](GOVERNANCE.md).
 Contributions follow [CONTRIBUTING.md](CONTRIBUTING.md), and sensitive reports
-follow [SECURITY.md](SECURITY.md).
+follow [SECURITY.md](SECURITY.md). Third-party result publishers follow
+[PUBLISHING_RESULTS.md](PUBLISHING_RESULTS.md).
 
 ### Component patterns
 
@@ -393,7 +419,7 @@ Cases come in pairs wherever it is meaningful:
 | `tp` | a scanner **should** report the listed criteria |
 | `safe` | a scanner **must not** report the criteria in `must_not_report` — flagging one of those criteria is a false positive |
 
-210 local cases: 106 `tp`, 95 negative controls and 9 guided checks. The first
+226 local cases: 113 `tp`, 104 negative controls and 9 guided checks. The first
 30 are the keyboard, capture and static catalog; the remaining cases
 live in ten additional family manifests loaded through `fixture-families.mjs`.
 
@@ -474,21 +500,31 @@ an incomplete scanner looks healthy.
 
 ## Provenance and licences
 
+Except for the third-party material identified below and in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), original code, schemas,
+documentation and synthetic fixtures are licensed under the
+[Apache License 2.0](LICENSE). Contributions intentionally submitted for
+inclusion are accepted under the same terms unless explicitly marked otherwise.
+
 - **WCAG 2.2** — <https://www.w3.org/TR/WCAG22/>. `wcag/criteria.json` is a
   mechanically derived index (criterion number, name, level, placement). The
-  normative text is at the source. W3C Software and Document License.
+  normative text is at the source. W3C Document License.
 - **ACT Rules test cases** — <https://www.w3.org/WAI/standards-guidelines/act/rules/>,
   by the W3C ACT Task Force, redistributed under the
   [W3C Software and Document Notice and License](https://www.w3.org/copyright/software-license-2023/),
   which permits reuse with attribution. `act/testcases.json` is an unmodified
   copy of the published catalogue.
 - **WAI-ARIA Authoring Practices** — <https://www.w3.org/WAI/ARIA/apg/>, the
-  basis for the negative controls.
+  basis for the component-pattern controls, under the W3C Software and Document
+  License.
+- **WAI abilities and barriers guidance** —
+  <https://www.w3.org/WAI/people-use-web/abilities-barriers/>, the source used to
+  organize the functional-needs taxonomy, under the W3C Document License.
 
-Fixtures in `keyboard/`, `capture/` and `static/` are original, written for this
-repository. They reproduce *shapes* commonly found in production interfaces —
-a div acting as a button, a client-mounted widget — and are not copies of any
-particular site.
+The synthetic fixtures and generators are original unless a file or
+`THIRD_PARTY_NOTICES.md` says otherwise. They reproduce *shapes* commonly found
+in production interfaces—a div acting as a button, a client-mounted widget—and
+are not copies of any particular site.
 
 ## Status
 

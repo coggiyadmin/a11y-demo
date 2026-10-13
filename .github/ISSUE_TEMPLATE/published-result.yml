@@ -1,0 +1,65 @@
+name: Published benchmark result
+description: Share a public, reproducible result bundle produced with a pinned corpus revision.
+title: "[Result]: "
+labels: [published-result]
+body:
+  - type: markdown
+    attributes:
+      value: Maintainer acknowledgement checks disclosure and schema validity only. It is not product certification or endorsement. Do not include credentials, private evidence, customer data or production captures.
+  - type: input
+    id: publisher
+    attributes:
+      label: Publisher and relationship
+      description: Name the publishing organization and state whether this is vendor-authored, independent, academic or community work.
+      placeholder: Example Labs — independent reproduction
+    validations:
+      required: true
+  - type: input
+    id: bundle
+    attributes:
+      label: Immutable result bundle URL
+      description: Link to a commit-pinned repository, release archive or DOI containing result.json and the method note.
+      placeholder: https://github.com/example/results/tree/0123456789abcdef...
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Corpus revision
+      description: The full 40-character a11y-benchmark commit SHA.
+    validations:
+      required: true
+  - type: input
+    id: manifest
+    attributes:
+      label: Corpus manifest digest
+      placeholder: sha256:...
+    validations:
+      required: true
+  - type: textarea
+    id: tool
+    attributes:
+      label: Product and engine lineage
+      description: Product/version, interface, engine family, independence value and wrapper_of when applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Method and limitations
+      description: Environment, configuration, repetitions, state driver, mapping/scoring code, unsupported lanes and unavailable raw evidence.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Publication confirmation
+      options:
+        - label: result.json passes `node check/validate-result.mjs`.
+          required: true
+        - label: Errors, blocked and unsupported cases, cannot-tell outcomes, state reach and observability are not reported as passes.
+          required: true
+        - label: The bundle contains only public synthetic fixture evidence and no credentials, personal information, customer data, production captures, private selectors or internal paths.
+          required: true
+        - label: I understand that listing confirms format and disclosure only, not certification or endorsement.
+          required: true

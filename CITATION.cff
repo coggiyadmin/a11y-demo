@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this corpus in research or product evaluation, cite the pinned release or commit and include the corpus manifest digest."
 title: "a11y-benchmark: Accessibility fixture corpus"
 type: dataset
+license: Apache-2.0
 authors:
   - name: "Cognium"
 repository-code: "https://github.com/cogniumhq/a11y-benchmark"

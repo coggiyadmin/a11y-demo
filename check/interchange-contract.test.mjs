@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
@@ -75,4 +76,21 @@ test('invalid benchmark result example fails lineage and error-evidence requirem
   const missing = validate.errors.filter((error) => error.keyword === 'required').map((error) => error.params.missingProperty);
   assert.ok(missing.includes('wrapper_of'));
   assert.ok(missing.includes('error'));
+});
+
+test('result validation CLI accepts valid evidence and rejects invalid evidence', () => {
+  const cli = path.join(ROOT, 'check/validate-result.mjs');
+  const valid = spawnSync(process.execPath, [cli, path.join(ROOT, 'schemas/examples/benchmark-result.valid.json')], {
+    encoding: 'utf8',
+  });
+  assert.equal(valid.status, 0, valid.stderr);
+  assert.match(valid.stdout, /valid benchmark result/);
+
+  const invalid = spawnSync(process.execPath, [cli, path.join(ROOT, 'schemas/examples/benchmark-result.invalid.json')], {
+    encoding: 'utf8',
+  });
+  assert.equal(invalid.status, 1, invalid.stderr);
+  assert.match(invalid.stderr, /invalid benchmark result/);
+  assert.match(invalid.stderr, /wrapper_of/);
+  assert.match(invalid.stderr, /error/);
 });

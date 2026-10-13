@@ -1,6 +1,7 @@
 {
   "note": "Functional needs, not medical categories. This is the PRIMARY index: every rule and every fixture names the needs it serves, because one requirement usually serves several forms of access at once. A keyboard-access rule supports non-visual operation, alternative input, switch access and voice-control workflows — indexing by criterion alone hides that.",
   "source": "https://www.w3.org/WAI/people-use-web/abilities-barriers/",
+  "license": "W3C Document License 2023 — https://www.w3.org/copyright/document-license-2023/",
   "values": [
     {
       "id": "nonvisual-access",

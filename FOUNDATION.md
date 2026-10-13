@@ -7,10 +7,10 @@ foundations **cannot** test.
 
 | Source | What it gives | Licence |
 |---|---|---|
-| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) | 86 live success criteria (+1 obsolete: 4.1.1 Parsing, removed in 2.2) | W3C Software and Document |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) | 86 live success criteria (+1 obsolete: 4.1.1 Parsing, removed in 2.2) | W3C Document License |
 | [ACT Rules](https://www.w3.org/WAI/standards-guidelines/act/rules/) | 87 rules, **1,213 test cases** with expected outcomes | W3C Software and Document — reuse with attribution permitted |
 | [WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/) | Authoring patterns — what *correct* widget markup looks like | W3C Software and Document |
-| [WCAG-EM](https://www.w3.org/TR/WCAG-EM/) | Evaluation methodology — how a sample licenses a site-level claim | W3C |
+| [WCAG-EM](https://www.w3.org/TR/WCAG-EM/) | Evaluation methodology — how a sample licenses a site-level claim | W3C Document License |
 
 `wcag/criteria.json` vendors a slim index of the first (number, name, level,
 placement only). Normative text stays at the source.

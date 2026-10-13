@@ -10,6 +10,13 @@ the smallest honest unit.
 - Corrected control or reason one is not possible:
 - Expected outcome, including `cannot-tell` boundaries:
 
+## Affiliation and licence
+
+- Product, employer, sponsor or other material relationship affected by this change (write `none` when not applicable):
+- Origin and licence of any material not authored for this pull request:
+
+- [ ] I have the right to submit this contribution under Apache-2.0, except for clearly identified third-party material whose compatible terms and notices are included.
+
 ## Compatibility
 
 - [ ] Existing case IDs remain stable, or a breaking-change issue and migration are linked.
