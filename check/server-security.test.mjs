@@ -39,6 +39,14 @@ test('serves fixture documents and HEAD responses', async () => {
   const head = await request('/index.html', 'HEAD');
   assert.equal(head.status, 200);
   assert.equal(head.body.length, 0);
+
+  const manifest = await request('/corpus-manifest.json');
+  assert.equal(manifest.status, 200);
+  assert.match(manifest.body.toString(), /cognium-a11y-corpus-manifest/);
+
+  const schema = await request('/schemas/benchmark-result.schema.json');
+  assert.equal(schema.status, 200);
+  assert.match(schema.body.toString(), /cognium-a11y-benchmark-result/);
 });
 
 test('does not expose repository metadata or source files', async () => {

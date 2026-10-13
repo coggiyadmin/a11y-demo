@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cogniumhq/a11y-benchmark/schemas/corpus-manifest.schema.json",
+  "title": "Cognium accessibility corpus manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "format",
+    "format_version",
+    "corpus",
+    "generated",
+    "counts",
+    "digest_policy",
+    "families"
+  ],
+  "properties": {
+    "$schema": { "const": "./schemas/corpus-manifest.schema.json" },
+    "format": { "const": "cognium-a11y-corpus-manifest" },
+    "format_version": { "type": "string", "pattern": "^[1-9][0-9]*\\.[0-9]+\\.[0-9]+$" },
+    "corpus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "default_branch"],
+      "properties": {
+        "id": { "const": "cogniumhq/a11y-benchmark" },
+        "default_branch": { "type": "string", "minLength": 1 }
+      }
+    },
+    "generated": { "type": "string", "format": "date" },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["families", "cases"],
+      "properties": {
+        "families": { "type": "integer", "minimum": 1 },
+        "cases": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "digest_policy": { "type": "string", "minLength": 1 },
+    "families": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "file", "case_count", "content_sha256"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "file": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*\\.json$" },
+          "case_count": { "type": "integer", "minimum": 1 },
+          "content_sha256": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" }
+        }
+      }
+    }
+  }
+}

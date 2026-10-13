@@ -1,0 +1,83 @@
+{
+  "$schema": "./schemas/corpus-manifest.schema.json",
+  "format": "cognium-a11y-corpus-manifest",
+  "format_version": "1.0.0",
+  "corpus": {
+    "id": "cogniumhq/a11y-benchmark",
+    "default_branch": "master"
+  },
+  "generated": "2026-10-13",
+  "counts": {
+    "families": 11,
+    "cases": 226
+  },
+  "digest_policy": "SHA-256 of parsed family JSON with the top-level generated field removed, serialized with JSON.stringify.",
+  "families": [
+    {
+      "id": "core",
+      "file": "catalog.json",
+      "case_count": 44,
+      "content_sha256": "sha256:754a48b398c520fa446740f37791d1305252a6ead498b368af1afee3e439f476"
+    },
+    {
+      "id": "delivery",
+      "file": "delivery.json",
+      "case_count": 11,
+      "content_sha256": "sha256:de7ec5de77ab65b92f45d7f82e978c8fcb42f09ef7f3bb1aaeb04eaf4f0334eb"
+    },
+    {
+      "id": "patterns",
+      "file": "patterns.json",
+      "case_count": 32,
+      "content_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8"
+    },
+    {
+      "id": "journeys",
+      "file": "journeys.json",
+      "case_count": 18,
+      "content_sha256": "sha256:ca681b3539922a1b76406d04a7d0be7e7dcd111388bf01ad95c27998a004837b"
+    },
+    {
+      "id": "scenarios",
+      "file": "scenarios.json",
+      "case_count": 40,
+      "content_sha256": "sha256:9b4504cb52f3b91f53bdcdb13613f12bf650e4d67584ce961faf7c14ce17d2c3"
+    },
+    {
+      "id": "media",
+      "file": "media.json",
+      "case_count": 16,
+      "content_sha256": "sha256:72d232613ef305c05c24e904f91f067d23fdc60ecb6974a187ec4b4fb339e100"
+    },
+    {
+      "id": "flash",
+      "file": "flash.json",
+      "case_count": 10,
+      "content_sha256": "sha256:b6e37f52b8af258cd2deb85f11ba950869c3a6bb9f2698725430dc0e563fced9"
+    },
+    {
+      "id": "color-independent",
+      "file": "color-independent.json",
+      "case_count": 16,
+      "content_sha256": "sha256:583d711bc6c5da655a03e9d718b7bbca36da1abb9180b956ddbd9432d6127b67"
+    },
+    {
+      "id": "ui-states",
+      "file": "ui-states.json",
+      "case_count": 20,
+      "content_sha256": "sha256:5a130757af00e0bd5e2ac806b0dc114c3e50a2ddbea83d6b9c43a83aa339519f"
+    },
+    {
+      "id": "surfaces",
+      "file": "surfaces.json",
+      "case_count": 10,
+      "content_sha256": "sha256:52bb91460ea899e67c7d0a34fe7f1ad6975ff2c70ad8ab5e0a00a8e0d8896972"
+    },
+    {
+      "id": "guided",
+      "file": "guided.json",
+      "case_count": 9,
+      "content_sha256": "sha256:967a7c05f242bf0f3b6f11671f5b7b2d7bb264b9ddd916c926794fb9ab468300"
+    }
+  ]
+}

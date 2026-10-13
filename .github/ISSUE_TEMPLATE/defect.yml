@@ -1,0 +1,46 @@
+name: Corpus defect
+description: Report incorrect ground truth, fixture behavior, schema or generation drift.
+title: "[Corpus defect]: "
+labels: [bug]
+body:
+  - type: input
+    id: revision
+    attributes:
+      label: Pinned corpus revision
+      placeholder: 40-character commit SHA
+    validations:
+      required: true
+  - type: input
+    id: case
+    attributes:
+      label: Case ID or contract path
+      placeholder: keyboard-div_button
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+      description: Separate rule findings from capture, state-reach, observability and execution failures.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Reproduction environment
+      description: OS, runtime, browser, viewport, preferences, steps and tool version.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: The report contains no credentials, personal information, production captures, private selectors or internal paths.
+          required: true

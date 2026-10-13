@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this corpus in research or product evaluation, cite the pinned release or commit and include the corpus manifest digest."
+title: "a11y-benchmark: Accessibility fixture corpus"
+type: dataset
+authors:
+  - name: "Cognium"
+repository-code: "https://github.com/cogniumhq/a11y-benchmark"
+url: "https://github.com/cogniumhq/a11y-benchmark"
+abstract: "A product-neutral corpus of paired accessibility fixtures, stateful journeys, negative controls, guided checks and pipeline-integrity cases with machine-readable expected outcomes."
+keywords:
+  - accessibility
+  - benchmarking
+  - WCAG
+  - ACT Rules
+  - assistive technology
+  - software testing
+date-released: 2026-10-12
