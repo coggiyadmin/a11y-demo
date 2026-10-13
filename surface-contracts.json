@@ -1,0 +1,377 @@
+{
+  "description": "Native artifact contracts for the surfaces this corpus does not cover with web content. Each contract fixes the artifact format, the parser or execution harness, the applicable standard, and the boundary between what software can decide and what requires physical evaluation.",
+  "boundary": "A contract is a specification, not coverage. A surface with a contract and no artifact is still unrepresented, and space-coverage.json reports it as such. Proxy representations are labelled and excluded from native coverage.",
+  "generated": "2026-10-13",
+  "statuses": {
+    "specified": "the contract exists; no artifact ships yet",
+    "partial": "some artifacts ship; the surface is not complete",
+    "shipped": "matched defect and control artifacts ship for the surface"
+  },
+  "counts": {
+    "contracts": 11,
+    "by_status": {
+      "partial": 2,
+      "specified": 9
+    },
+    "proxies": 4
+  },
+  "contracts": [
+    {
+      "surface": "pdf",
+      "title": "Portable Document Format",
+      "status": "partial",
+      "artifact": {
+        "format": "PDF 1.7 or PDF 2.0 byte stream",
+        "native": true,
+        "source": "The generator that produced it, committed alongside the artifact.",
+        "notes": "A tagged PDF carries a structure tree, a document language and a MarkInfo dictionary. An HTML page describing a PDF carries none of those and tests nothing about PDF support."
+      },
+      "harness": {
+        "kind": "parser",
+        "id": "check/pdf-structure.mjs",
+        "description": "Reads the trailer, resolves the catalog and reports the structure tree, document language, MarkInfo and page count without rendering."
+      },
+      "standards": [
+        "PDF/UA-1 (ISO 14289-1)",
+        "WCAG 2.2 via WCAG2ICT",
+        "EN 301 549 clause 10"
+      ],
+      "evidence_fields": [
+        "pdf_version",
+        "tagged",
+        "document_language",
+        "structure_elements"
+      ],
+      "simulable": "Structure, language, tagging and metadata are decidable from the bytes.",
+      "requires_physical": null,
+      "human_judgement": "Whether the reading order the structure tree encodes matches the visual order, and whether alternative text serves the image, remain human judgements."
+    },
+    {
+      "surface": "word-processing",
+      "title": "Word-processing document",
+      "status": "partial",
+      "artifact": {
+        "format": "Office Open XML (.docx): a ZIP container of XML parts",
+        "native": true,
+        "source": "The generator that produced it, committed alongside the artifact.",
+        "notes": "Heading structure lives in paragraph styles, language in w:lang, and image alternatives in the drawing description attribute. None of that survives a conversion to HTML, so the container itself is the artifact under test."
+      },
+      "harness": {
+        "kind": "parser",
+        "id": "check/ooxml-structure.mjs",
+        "description": "Unzips the container and reports heading styles, document language and image alternative text from the main document part."
+      },
+      "standards": [
+        "ODF/OOXML accessibility guidance",
+        "WCAG 2.2 via WCAG2ICT",
+        "EN 301 549 clause 10"
+      ],
+      "evidence_fields": [
+        "container_parts",
+        "heading_styles",
+        "document_language",
+        "image_alternatives"
+      ],
+      "simulable": "Styles, language and alternative text are readable from the package parts.",
+      "requires_physical": null,
+      "human_judgement": "Whether a heading level reflects the document outline is a judgement about the content."
+    },
+    {
+      "surface": "presentation",
+      "title": "Presentation document",
+      "status": "specified",
+      "artifact": {
+        "format": "Office Open XML (.pptx) or OpenDocument (.odp)",
+        "native": true,
+        "source": "Generator plus the committed package.",
+        "notes": "Slide reading order is the shape tree order, not the visual arrangement, and every slide needs a title for navigation. Both are package-level properties."
+      },
+      "harness": {
+        "kind": "parser",
+        "id": "planned: slide package reader",
+        "description": "Reads the shape tree per slide: title placeholder, reading order and alternative text."
+      },
+      "standards": [
+        "WCAG 2.2 via WCAG2ICT",
+        "EN 301 549 clause 10"
+      ],
+      "evidence_fields": [
+        "slide_count",
+        "slide_titles",
+        "reading_order",
+        "image_alternatives"
+      ],
+      "simulable": "Slide titles, shape-tree order and alternative text are decidable from the package.",
+      "requires_physical": null,
+      "human_judgement": "Whether the shape-tree order matches the intended narrative needs a person."
+    },
+    {
+      "surface": "spreadsheet",
+      "title": "Spreadsheet document",
+      "status": "specified",
+      "artifact": {
+        "format": "Office Open XML (.xlsx) or OpenDocument (.ods)",
+        "native": true,
+        "source": "Generator plus the committed package.",
+        "notes": "Header rows, defined names, sheet names and merged ranges carry the structure a non-visual reader navigates by. A rendered table image carries none of it."
+      },
+      "harness": {
+        "kind": "parser",
+        "id": "planned: workbook reader",
+        "description": "Reads sheet names, header definitions, merged ranges and cell alternative text."
+      },
+      "standards": [
+        "WCAG 2.2 via WCAG2ICT",
+        "EN 301 549 clause 10"
+      ],
+      "evidence_fields": [
+        "sheet_names",
+        "header_rows",
+        "merged_ranges"
+      ],
+      "simulable": "Sheet and range structure are decidable from the package.",
+      "requires_physical": null,
+      "human_judgement": "Whether a merged range destroys a meaningful relationship depends on the data."
+    },
+    {
+      "surface": "ios",
+      "title": "iOS application",
+      "status": "specified",
+      "artifact": {
+        "format": "A built app plus a serialized accessibility snapshot captured from a running instance",
+        "native": true,
+        "source": "The app source and the capture harness, both committed.",
+        "notes": "The artifact under test is the UIAccessibility tree, not a screenshot and not a web view. A snapshot without the platform, OS version and assistive-technology environment that produced it is not reproducible evidence."
+      },
+      "harness": {
+        "kind": "execution",
+        "id": "planned: XCUITest accessibility audit + snapshot capture",
+        "description": "Drives the app in a simulator and serializes the accessibility tree per declared state."
+      },
+      "standards": [
+        "WCAG 2.2 via WCAG2ICT",
+        "EN 301 549 clause 11",
+        "Apple Human Interface Guidelines — Accessibility"
+      ],
+      "evidence_fields": [
+        "platform",
+        "platform_version",
+        "accessibility_api",
+        "assistive_technology",
+        "assistive_technology_version",
+        "device_or_simulator"
+      ],
+      "simulable": "Tree structure, labels, traits, focus order and dynamic-type response in a simulator.",
+      "requires_physical": "VoiceOver gesture behaviour and rotor navigation differ enough on device that a simulator result does not transfer.",
+      "human_judgement": "Whether a label is useful in context, as everywhere else."
+    },
+    {
+      "surface": "android",
+      "title": "Android application",
+      "status": "specified",
+      "artifact": {
+        "format": "An APK plus a serialized accessibility node tree captured from a running instance",
+        "native": true,
+        "source": "The app source and the capture harness, both committed.",
+        "notes": "AccessibilityNodeInfo is the artifact. Content descriptions, touch-target bounds, live regions and traversal order are node properties, not rendered pixels."
+      },
+      "harness": {
+        "kind": "execution",
+        "id": "planned: Espresso accessibility checks + uiautomator dump",
+        "description": "Drives the app on an emulator and serializes the node tree per declared state."
+      },
+      "standards": [
+        "WCAG 2.2 via WCAG2ICT",
+        "EN 301 549 clause 11",
+        "Android accessibility developer guidance"
+      ],
+      "evidence_fields": [
+        "platform",
+        "platform_version",
+        "accessibility_api",
+        "assistive_technology",
+        "assistive_technology_version",
+        "device_or_emulator"
+      ],
+      "simulable": "Node tree, content descriptions, target bounds and traversal order on an emulator.",
+      "requires_physical": "TalkBack gesture and braille-display behaviour needs a device.",
+      "human_judgement": "Whether a content description conveys purpose."
+    },
+    {
+      "surface": "desktop",
+      "title": "Desktop application",
+      "status": "specified",
+      "artifact": {
+        "format": "A built application plus a serialized platform accessibility tree",
+        "native": true,
+        "source": "The app source and the capture harness, both committed.",
+        "notes": "Three incompatible APIs -- UI Automation on Windows, AX on macOS, AT-SPI on Linux -- so a result names one and does not transfer to the others."
+      },
+      "harness": {
+        "kind": "execution",
+        "id": "planned: per-platform tree dump (UIA / AX / AT-SPI)",
+        "description": "Launches the application and serializes the platform accessibility tree per declared state."
+      },
+      "standards": [
+        "WCAG 2.2 via WCAG2ICT",
+        "EN 301 549 clause 11"
+      ],
+      "evidence_fields": [
+        "platform",
+        "platform_version",
+        "accessibility_api",
+        "assistive_technology",
+        "assistive_technology_version"
+      ],
+      "simulable": "Tree structure, roles, names, states and keyboard navigation under a virtual display.",
+      "requires_physical": "Screen-reader interoperability needs the real assistive technology running.",
+      "human_judgement": "Whether the exposed structure matches the task."
+    },
+    {
+      "surface": "kiosk",
+      "title": "Fixed-purpose self-service terminal",
+      "status": "specified",
+      "artifact": {
+        "format": "The terminal software build plus a physical configuration record",
+        "native": true,
+        "source": "Software source, plus the measured installation geometry.",
+        "notes": "Half of what makes a kiosk usable is not software. Reach, screen height, tactile keys and headphone jack placement are installation properties, and a software-only result must say which half it measured."
+      },
+      "harness": {
+        "kind": "hybrid",
+        "id": "planned: terminal software harness plus a measured installation record",
+        "description": "Drives the software, and records the physical configuration separately as evidence."
+      },
+      "standards": [
+        "EN 301 549 clause 8 (ICT with physical components)",
+        "WCAG 2.2 via WCAG2ICT",
+        "Section 508 §402"
+      ],
+      "evidence_fields": [
+        "platform",
+        "accessibility_api",
+        "installation_geometry",
+        "tactile_controls",
+        "audio_output"
+      ],
+      "simulable": "Timeouts, spoken output, caption rendering and on-screen interaction in the software layer.",
+      "requires_physical": "Reach ranges, operable-part height, tactile discernibility and privacy of audio output must be measured at an installed terminal.",
+      "human_judgement": "Whether a person who cannot see the screen can complete the transaction unaided."
+    },
+    {
+      "surface": "hardware",
+      "title": "Hardware with a user interface",
+      "status": "specified",
+      "artifact": {
+        "format": "A device plus a documented control inventory and firmware build",
+        "native": true,
+        "source": "Firmware source where available, plus the control inventory.",
+        "notes": "A control inventory is evidence; a photograph is not."
+      },
+      "harness": {
+        "kind": "physical",
+        "id": "planned: instrumented control inventory and firmware interface harness",
+        "description": "Records every operable part, its tactile discernibility, force and feedback mode."
+      },
+      "standards": [
+        "EN 301 549 clause 8",
+        "Section 508 §402",
+        "WCAG 2.2 via WCAG2ICT where a display is present"
+      ],
+      "evidence_fields": [
+        "control_inventory",
+        "tactile_discernibility",
+        "operating_force",
+        "feedback_modes"
+      ],
+      "simulable": "Firmware-driven display content and timing, where a firmware interface exists.",
+      "requires_physical": "Tactile discernibility, operating force, detent feedback and reach are physical measurements. No simulation substitutes for them.",
+      "human_judgement": "Whether the device is operable without vision and without simultaneous actions."
+    },
+    {
+      "surface": "immersive",
+      "title": "Immersive and spatial environment",
+      "status": "specified",
+      "artifact": {
+        "format": "A scene description (WebXR session or engine scene) plus a captured spatial accessibility tree",
+        "native": true,
+        "source": "Scene source and the capture harness.",
+        "notes": "Spatial audio cues, locomotion comfort and field-of-view constraints have no two-dimensional equivalent, so a flat screenshot is not a proxy for any of them."
+      },
+      "harness": {
+        "kind": "hybrid",
+        "id": "planned: WebXR session capture plus a physical comfort protocol",
+        "description": "Captures the scene graph and spatial audio map; comfort and motion effects need people."
+      },
+      "standards": [
+        "XR Accessibility User Requirements (XAUR)",
+        "WCAG 2.2 where 2D content is presented"
+      ],
+      "evidence_fields": [
+        "runtime",
+        "device",
+        "tracking_mode",
+        "locomotion_options",
+        "spatial_audio_map"
+      ],
+      "simulable": "Scene graph structure, captioning of spatial audio, and the presence of locomotion alternatives.",
+      "requires_physical": "Motion comfort, disorientation from movement, and whether a seated user can complete the task require evaluation with people wearing the device.",
+      "human_judgement": "Comfort and disorientation are reported by participants, not measured from the scene."
+    },
+    {
+      "surface": "support",
+      "title": "Support and documentation channel",
+      "status": "specified",
+      "artifact": {
+        "format": "The support artifact in the form it is delivered: page, document, transcript or recording",
+        "native": true,
+        "source": "The delivered artifact, unmodified.",
+        "notes": "EN 301 549 clause 12 requires support documentation to be as accessible as the product. A help page is web content; a PDF manual is a PDF; a support call transcript is neither."
+      },
+      "harness": {
+        "kind": "hybrid",
+        "id": "planned: per-channel routing to the matching surface harness",
+        "description": "Routes each support artifact to the harness for the form it is actually delivered in."
+      },
+      "standards": [
+        "EN 301 549 clause 12",
+        "Section 508 §602",
+        "WCAG 2.2 for web-delivered support"
+      ],
+      "evidence_fields": [
+        "channel",
+        "delivered_format",
+        "alternative_channels"
+      ],
+      "simulable": "Whatever the delivery format allows, using that format’s harness.",
+      "requires_physical": "Live human support channels are evaluated by using them.",
+      "human_judgement": "Whether the support offered actually resolves the task for the person asking."
+    }
+  ],
+  "proxies": [
+    {
+      "case_id": "surface-epub_no_metadata",
+      "surface": "epub",
+      "proxy_for": "the EPUB package document (OPF)",
+      "reason": "EPUB content documents really are XHTML, so the content lane is native. Accessibility metadata lives in the OPF package document, which this fixture represents as HTML."
+    },
+    {
+      "case_id": "surface-safe_epub_no_metadata",
+      "surface": "epub",
+      "proxy_for": "the EPUB package document (OPF)",
+      "reason": "Matched control for the proxy above."
+    },
+    {
+      "case_id": "surface-chatbot_transcript",
+      "surface": "voice",
+      "proxy_for": "a spoken conversational interface",
+      "reason": "A rendered transcript is the web presentation of a voice interaction. It tests the transcript, not the voice channel, its barge-in behaviour or its timing."
+    },
+    {
+      "case_id": "surface-safe_chatbot_transcript",
+      "surface": "voice",
+      "proxy_for": "a spoken conversational interface",
+      "reason": "Matched control for the proxy above."
+    }
+  ]
+}

@@ -13,9 +13,9 @@
       "label": "Non-visual operation",
       "group": "visual-presentation",
       "scenarios": 10,
-      "cases": 179,
-      "tp": 89,
-      "safe": 81,
+      "cases": 183,
+      "tp": 91,
+      "safe": 83,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -239,7 +239,11 @@
         "aaa/section_headings.html",
         "aaa/safe_section_headings.html",
         "aaa/abbreviations.html",
-        "aaa/safe_abbreviations.html"
+        "aaa/safe_abbreviations.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -247,9 +251,9 @@
       "label": "Visual clarity and scaling",
       "group": "visual-presentation",
       "scenarios": 8,
-      "cases": 120,
-      "tp": 63,
-      "safe": 53,
+      "cases": 124,
+      "tp": 65,
+      "safe": 55,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -282,6 +286,7 @@
         "2.4.7",
         "2.5.5",
         "2.5.8",
+        "3.1.1",
         "3.3.1",
         "3.3.2",
         "3.3.4",
@@ -408,7 +413,11 @@
         "aaa/focus_not_obscured_enhanced.html",
         "aaa/safe_focus_not_obscured_enhanced.html",
         "aaa/focus_appearance.html",
-        "aaa/safe_focus_appearance.html"
+        "aaa/safe_focus_appearance.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -620,9 +629,9 @@
       "label": "Text and tactile access",
       "group": "combined-access",
       "scenarios": 6,
-      "cases": 136,
-      "tp": 69,
-      "safe": 62,
+      "cases": 140,
+      "tp": 71,
+      "safe": 64,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -789,7 +798,11 @@
         "guided/at_screen_reader_task.html",
         "guided/extended_audio_description.html",
         "guided/live_audio_alternative.html",
-        "guided/pronunciation_ambiguity.html"
+        "guided/pronunciation_ambiguity.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -1323,9 +1336,9 @@
       "label": "Memory support",
       "group": "comprehension-and-task",
       "scenarios": 4,
-      "cases": 78,
-      "tp": 38,
-      "safe": 38,
+      "cases": 82,
+      "tp": 40,
+      "safe": 40,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1349,6 +1362,7 @@
         "2.4.3",
         "2.4.5",
         "2.4.8",
+        "3.1.1",
         "3.1.4",
         "3.2.3",
         "3.3.1",
@@ -1441,7 +1455,11 @@
         "aaa/re_authenticating.html",
         "aaa/safe_re_authenticating.html",
         "aaa/error_prevention_all.html",
-        "aaa/safe_error_prevention_all.html"
+        "aaa/safe_error_prevention_all.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -1559,9 +1577,9 @@
       "label": "Reading support",
       "group": "comprehension-and-task",
       "scenarios": 5,
-      "cases": 20,
-      "tp": 8,
-      "safe": 8,
+      "cases": 24,
+      "tp": 10,
+      "safe": 10,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1569,6 +1587,8 @@
       "verified": false,
       "independently_verified": false,
       "criteria": [
+        "1.1.1",
+        "1.3.1",
         "1.4.12",
         "1.4.4",
         "1.4.8",
@@ -1598,7 +1618,11 @@
         "aaa/section_headings.html",
         "aaa/safe_section_headings.html",
         "aaa/abbreviations.html",
-        "aaa/safe_abbreviations.html"
+        "aaa/safe_abbreviations.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -1606,9 +1630,9 @@
       "label": "Language clarity",
       "group": "comprehension-and-task",
       "scenarios": 4,
-      "cases": 121,
-      "tp": 62,
-      "safe": 52,
+      "cases": 125,
+      "tp": 64,
+      "safe": 54,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1767,7 +1791,11 @@
         "aaa/abbreviations.html",
         "aaa/safe_abbreviations.html",
         "aaa/help.html",
-        "aaa/safe_help.html"
+        "aaa/safe_help.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -1775,9 +1803,9 @@
       "label": "Task guidance and recovery",
       "group": "comprehension-and-task",
       "scenarios": 5,
-      "cases": 125,
-      "tp": 62,
-      "safe": 62,
+      "cases": 129,
+      "tp": 64,
+      "safe": 64,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1803,6 +1831,7 @@
         "2.4.5",
         "2.4.6",
         "2.4.8",
+        "3.1.1",
         "3.2.1",
         "3.2.2",
         "3.2.3",
@@ -1943,7 +1972,11 @@
         "aaa/re_authenticating.html",
         "aaa/safe_re_authenticating.html",
         "aaa/error_prevention_all.html",
-        "aaa/safe_error_prevention_all.html"
+        "aaa/safe_error_prevention_all.html",
+        "native/pdf/untagged.pdf",
+        "native/pdf/safe_tagged.pdf",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     },
     {
@@ -2140,9 +2173,9 @@
       "label": "Environmental resilience",
       "group": "context-and-environment",
       "scenarios": 5,
-      "cases": 46,
-      "tp": 27,
-      "safe": 17,
+      "cases": 48,
+      "tp": 28,
+      "safe": 18,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -2164,6 +2197,7 @@
         "2.5.4",
         "2.5.5",
         "2.5.8",
+        "3.1.1",
         "4.1.3"
       ],
       "fixtures": [
@@ -2212,7 +2246,9 @@
         "surfaces/authoring_generates_bad_markup.html",
         "surfaces/safe_authoring_generates_bad_markup.html",
         "guided/live_audio_alternative.html",
-        "guided/background_audio_level.html"
+        "guided/background_audio_level.html",
+        "native/docx/unstructured.docx",
+        "native/docx/safe_structured.docx"
       ]
     }
   ],
@@ -2232,6 +2268,25 @@
         "memory-support",
         "non-voice-alternative",
         "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
+      ]
+    },
+    {
+      "sc": "1.3.1",
+      "needs": [
+        "alternative-input",
+        "color-independent",
+        "environmental-resilience",
+        "error-tolerant-pointer",
+        "focus-support",
+        "hands-free-switch",
+        "language-clarity",
+        "memory-support",
+        "non-voice-alternative",
+        "nonvisual-access",
+        "reading-support",
         "task-guidance",
         "text-and-tactile",
         "visual-clarity"
@@ -2293,24 +2348,6 @@
       ]
     },
     {
-      "sc": "1.3.1",
-      "needs": [
-        "alternative-input",
-        "color-independent",
-        "environmental-resilience",
-        "error-tolerant-pointer",
-        "focus-support",
-        "hands-free-switch",
-        "language-clarity",
-        "memory-support",
-        "non-voice-alternative",
-        "nonvisual-access",
-        "task-guidance",
-        "text-and-tactile",
-        "visual-clarity"
-      ]
-    },
-    {
       "sc": "2.4.3",
       "needs": [
         "alternative-input",
@@ -2340,6 +2377,7 @@
         "memory-support",
         "non-voice-alternative",
         "nonvisual-access",
+        "reading-support",
         "task-guidance",
         "text-and-tactile",
         "visual-clarity"
@@ -2431,6 +2469,19 @@
         "low-effort-interaction",
         "memory-support",
         "nonvisual-access",
+        "task-guidance",
+        "text-and-tactile",
+        "visual-clarity"
+      ]
+    },
+    {
+      "sc": "3.1.1",
+      "needs": [
+        "environmental-resilience",
+        "language-clarity",
+        "memory-support",
+        "nonvisual-access",
+        "reading-support",
         "task-guidance",
         "text-and-tactile",
         "visual-clarity"
@@ -2632,15 +2683,6 @@
         "environmental-resilience",
         "error-tolerant-pointer",
         "hands-free-switch"
-      ]
-    },
-    {
-      "sc": "3.1.1",
-      "needs": [
-        "language-clarity",
-        "nonvisual-access",
-        "reading-support",
-        "text-and-tactile"
       ]
     },
     {

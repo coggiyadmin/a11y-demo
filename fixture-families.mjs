@@ -17,6 +17,7 @@ export const FIXTURE_FAMILY_FILES = Object.freeze([
   'surfaces.json',
   'guided.json',
   'aaa.json',
+  'native.json',
   'flash.json',
 ]);
 

@@ -61,6 +61,16 @@ machine-readable manifest and schema versions are recorded with every release.
   workflow, checking a submission mechanically: required fields, a full
   40-character revision, a well-formed manifest digest, a wrapper that names its
   engine, a stated publisher relationship, and an immutable bundle URL.
+- `surface-contracts.json`: native artifact format, parser or execution harness,
+  applicable standard, evidence fields and the simulable/physical boundary for
+  all eleven unrepresented surfaces.
+- `native/`, the first real non-web artifacts: deterministic PDF and Office Open
+  XML byte streams with matched controls, pinned by SHA-256 and reproducible
+  from the committed `native.mjs`.
+- `check/pdf-structure.mjs` and `check/ooxml-structure.mjs`, the harnesses the
+  PDF and word-processing contracts name. The PDF reader resolves objects
+  through the cross-reference table, so a document with bad offsets is reported
+  broken rather than read anyway.
 
 ### Changed
 
@@ -78,6 +88,9 @@ machine-readable manifest and schema versions are recorded with every release.
 - Guided cases carry `guided_criteria`, so a human-judgement check counts as
   coverage without ever becoming an assertion a tool is expected to report.
 - Generators run families, then the manifest, then the reports that consume it.
+- Proxy representations are labelled: coverage reports `represented_natively`
+  and `proxy_only` beside `represented`, and release metadata carries both, so
+  a proxy can never be presented as native coverage of the surface it resembles.
 
 ## [0.1.0] - 2026-10-13
 
