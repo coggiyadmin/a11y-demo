@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(fileURLToPath(new URL('.', import.meta.url)));
 const FAMILIES = [
   ['core', 'catalog.json'],
+  ['pipeline', 'pipeline.json'],
   ['delivery', 'delivery.json'],
   ['patterns', 'patterns.json'],
   ['journeys', 'journeys.json'],

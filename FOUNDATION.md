@@ -101,22 +101,28 @@ signature is a control reporting `pass` while having examined nothing — a
 vacuous pass. Tier R can never produce that signature, which is precisely why
 a green Tier R run proved nothing.
 
-Planned Tier P cases, each traceable to an observed failure:
+Tier P cases, each traceable to an observed failure:
 
 | case | asserts | shape | status |
 |---|---|---|---|
 | `capture/link_heavy` | a keyboard walk reports a non-zero examined-count on 450 native links | one page | shipped |
 | `capture/client_mounted` | post-hydration DOM reaches the rules | one page + JS | shipped |
 | `capture/safe_server_rendered` | the same UI, server-rendered, as the negative control | one page | shipped |
-| `deep_site` | every page a sampler selects is one the capture holds | multi-page | **not yet built** |
-| `entry_not_sampled` | the URL the scan was pointed at appears in the evaluated set | multi-page | **not yet built** |
-| `vacuous_pass` | `pass` on an examined-count of 0 is distinguishable from a real pass | any | **not yet built** |
-| `no_declared_flow` | flow-anchored criteria are reported as un-run, not as passed | one page | **not yet built** |
+| `deep_site` | every page a sampler selects is one the capture holds | multi-page | shipped with matched control |
+| `entry_not_sampled` | the URL the scan was pointed at appears in the evaluated set | multi-page | shipped with matched control |
+| `vacuous_pass` | `pass` on an examined-count of 0 is distinguishable from a real pass | any | shipped with matched control |
+| `no_declared_flow` | flow-anchored criteria are reported as un-run, not as passed | one page | shipped with matched control |
 
 `deep_site` and `entry_not_sampled` need a multi-page fixture *site* rather
 than isolated pages — a structural requirement the single-page corpora above
 do not have, and the reason this repo ships a linked site rather than a flat
 directory of snippets.
+
+The machine-readable oracle is `pipeline.json`. Every case declares the state
+that should be reached, target observability, examined-count boundary, error
+requirement and any forbidden verdict. Broken shapes and controls are evaluated
+by `check/pipeline-integrity.test.mjs`; an omitted page, missing entry,
+zero-examined pass or absent flow cannot be converted into a pass.
 
 ## Open questions
 
@@ -127,6 +133,6 @@ directory of snippets.
    not machine-testable (1.2.x media quality, 3.3.x error-message usefulness).
    Someone should mark which are *manual-only by nature* versus *not yet
    automated*, because reporting them as uncovered conflates the two.
-3. Tier P assertions read a scanner's internal counters (`applicable`). That
-   couples the tier to an engine's report shape. Worth defining a minimal
-   interchange — criterion, verdict, examined-count — so Tier P stays portable.
+3. Tier P still depends on products exposing state reach, observability and an
+   examined count. The public benchmark-result contract now preserves those
+   fields so adapters can map native reports without treating silence as pass.

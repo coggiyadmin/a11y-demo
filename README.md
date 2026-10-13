@@ -15,8 +15,8 @@ tagged releases are immutable benchmark references.
 
 ## Interoperability contract
 
-`corpus-manifest.json` is the canonical index of the 11 fixture families and
-their stable content digests. It currently covers 226 cases. The digest ignores
+`corpus-manifest.json` is the canonical index of the 12 fixture families and
+their stable content digests. It currently covers 234 cases. The digest ignores
 only each family's generated date; expected outcomes, IDs, paths and notes all
 participate.
 
@@ -75,10 +75,13 @@ catalog.json         ground truth for the local fixtures — what a correct scan
 corpus-manifest.json stable family index, case counts and content digests
 coverage.csv/.json   every WCAG 2.2 criterion x available ground truth
 schemas/             JSON Schema contracts and validated examples
+pipeline.json        pipeline-integrity ground truth and execution boundaries
 build.mjs            regenerates every fixture
+pipeline.mjs         regenerates the pipeline sites, controls and assertions
 coverage.mjs         regenerates the coverage files
 manifest.mjs         regenerates the canonical corpus manifest
 
+pipeline/            capture, sampling, observation and execution-accounting cases
 keyboard/            matched defective/corrected controls for keyboard and focus behaviour
 capture/             pages that stress capture and hydration rather than rule logic
 static/              single-page defects readable from served HTML
@@ -95,6 +98,20 @@ Project decisions and compatibility follow [GOVERNANCE.md](GOVERNANCE.md).
 Contributions follow [CONTRIBUTING.md](CONTRIBUTING.md), and sensitive reports
 follow [SECURITY.md](SECURITY.md). Third-party result publishers follow
 [PUBLISHING_RESULTS.md](PUBLISHING_RESULTS.md).
+
+### Pipeline integrity
+
+`pipeline/` turns four failure signatures into eight public synthetic cases:
+each failing execution shape has a narrowly matched control. The deep-site and
+entry-sampling cases are actual linked sites whose manifests declare `entry`
+and every `step`; the other pairs isolate zero-examined passes and flow criteria
+run without a declared task.
+
+`pipeline.json` makes the execution oracle explicit for every case: required
+status, declared state, whether that state was reached, target observability,
+examined-count boundary, error requirement and verdicts that are forbidden. A
+sampling mismatch, omitted entry, zero-examined execution or missing flow can
+therefore never be silently normalized to a pass.
 
 ### Component patterns
 
@@ -419,9 +436,9 @@ Cases come in pairs wherever it is meaningful:
 | `tp` | a scanner **should** report the listed criteria |
 | `safe` | a scanner **must not** report the criteria in `must_not_report` — flagging one of those criteria is a false positive |
 
-226 local cases: 113 `tp`, 104 negative controls and 9 guided checks. The first
-30 are the keyboard, capture and static catalog; the remaining cases
-live in ten additional family manifests loaded through `fixture-families.mjs`.
+234 local cases: 117 `tp`, 108 negative controls and 9 guided checks. The 44
+keyboard, capture and static cases are the core catalog; the remaining cases
+live in eleven additional family manifests loaded through `fixture-families.mjs`.
 
 The negative controls matter more than the positives. `keyboard/safe_roving_tabindex.html`
 is APG-correct markup in which `tabindex="-1"` is the *right* answer; a scanner

@@ -2,6 +2,7 @@
 // so a fixture is never hand-edited out of sync with the manifest.
 import fs from 'node:fs';
 import path from 'node:path';
+import './pipeline.mjs';
 
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
 
@@ -558,6 +559,7 @@ for (const g of groups) {
 // to it or a crawler never reaches those pages — they were silently absent from a
 // whole scan until this link existed.
 const EXTRA_GROUPS = [
+  { dir: 'pipeline', blurb: 'public synthetic capture, sampling, observation and execution-accounting checks with matched controls' },
   { dir: 'delivery', blurb: 'the same defect delivered many different ways — server HTML, '
       + 'client-rendered, iframes, shadow DOM, web components' },
   { dir: 'patterns', blurb: 'ARIA Authoring Practices component patterns as matched '
