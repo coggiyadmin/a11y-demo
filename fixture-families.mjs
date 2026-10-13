@@ -6,6 +6,7 @@ import path from 'node:path';
 
 export const FIXTURE_FAMILY_FILES = Object.freeze([
   'catalog.json',
+  'pipeline.json',
   'delivery.json',
   'patterns.json',
   'color-independent.json',

@@ -1,0 +1,422 @@
+{
+  "format": "cognium-a11y-pipeline-cases",
+  "format_version": "1.0.0",
+  "description": "Public synthetic pipeline-integrity cases. Expected execution fields are assertions about honest runner accounting, not WCAG conformance claims.",
+  "generated": "2026-10-13",
+  "cases": [
+    {
+      "surface": "web",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "id": "pipeline-deep_site-mismatch",
+      "pair": "deep_site",
+      "mode": "tp",
+      "path": "pipeline/deep-site/broken/index.html",
+      "entry": "pipeline/deep-site/broken/index.html",
+      "steps": [
+        "pipeline/deep-site/broken/index.html",
+        "pipeline/deep-site/broken/category.html",
+        "pipeline/deep-site/broken/results.html",
+        "pipeline/deep-site/broken/detail.html"
+      ],
+      "scope": "multi-page",
+      "journey": "navigate",
+      "method": [
+        "crawl",
+        "regression"
+      ],
+      "assertion": {
+        "kind": "sample-capture-consistency",
+        "inputs": {
+          "sampled_pages": [
+            "pipeline/deep-site/broken/index.html",
+            "pipeline/deep-site/broken/category.html",
+            "pipeline/deep-site/broken/results.html",
+            "pipeline/deep-site/broken/detail.html"
+          ],
+          "captured_pages": [
+            "pipeline/deep-site/broken/index.html",
+            "pipeline/deep-site/broken/category.html",
+            "pipeline/deep-site/broken/results.html"
+          ],
+          "evaluated_pages": [
+            "pipeline/deep-site/broken/index.html",
+            "pipeline/deep-site/broken/category.html",
+            "pipeline/deep-site/broken/results.html"
+          ]
+        },
+        "expected_execution": {
+          "status": "error",
+          "declared_state": "complete-site-sample",
+          "state_reached": false,
+          "target_observability": "not-observed",
+          "examined_count": {
+            "operator": "unavailable"
+          },
+          "error": {
+            "required": true,
+            "code": "sample-capture-mismatch"
+          },
+          "forbidden_verdicts": [
+            "pass"
+          ]
+        }
+      },
+      "notes": "The sampler selects the detail page, but capture and evaluation omit it. The run must fail closed."
+    },
+    {
+      "surface": "web",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "id": "pipeline-deep_site-control",
+      "pair": "deep_site",
+      "mode": "safe",
+      "path": "pipeline/deep-site/control/index.html",
+      "entry": "pipeline/deep-site/control/index.html",
+      "steps": [
+        "pipeline/deep-site/control/index.html",
+        "pipeline/deep-site/control/category.html",
+        "pipeline/deep-site/control/results.html",
+        "pipeline/deep-site/control/detail.html"
+      ],
+      "scope": "multi-page",
+      "journey": "navigate",
+      "method": [
+        "crawl",
+        "regression"
+      ],
+      "assertion": {
+        "kind": "sample-capture-consistency",
+        "inputs": {
+          "sampled_pages": [
+            "pipeline/deep-site/control/index.html",
+            "pipeline/deep-site/control/category.html",
+            "pipeline/deep-site/control/results.html",
+            "pipeline/deep-site/control/detail.html"
+          ],
+          "captured_pages": [
+            "pipeline/deep-site/control/index.html",
+            "pipeline/deep-site/control/category.html",
+            "pipeline/deep-site/control/results.html",
+            "pipeline/deep-site/control/detail.html"
+          ],
+          "evaluated_pages": [
+            "pipeline/deep-site/control/index.html",
+            "pipeline/deep-site/control/category.html",
+            "pipeline/deep-site/control/results.html",
+            "pipeline/deep-site/control/detail.html"
+          ]
+        },
+        "expected_execution": {
+          "status": "completed",
+          "declared_state": "complete-site-sample",
+          "state_reached": true,
+          "target_observability": "observed",
+          "examined_count": {
+            "operator": "at-least",
+            "value": 1
+          },
+          "error": {
+            "required": false,
+            "code": null
+          },
+          "forbidden_verdicts": []
+        }
+      },
+      "notes": "Every sampled page exists in both the captured and evaluated sets."
+    },
+    {
+      "surface": "web",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "id": "pipeline-entry_not_sampled",
+      "pair": "entry_not_sampled",
+      "mode": "tp",
+      "path": "pipeline/entry-sampling/broken/index.html",
+      "entry": "pipeline/entry-sampling/broken/index.html",
+      "steps": [
+        "pipeline/entry-sampling/broken/index.html",
+        "pipeline/entry-sampling/broken/results.html"
+      ],
+      "scope": "multi-page",
+      "journey": "navigate",
+      "method": [
+        "crawl",
+        "regression"
+      ],
+      "assertion": {
+        "kind": "entry-evaluated",
+        "inputs": {
+          "requested_entry": "pipeline/entry-sampling/broken/index.html",
+          "evaluated_pages": [
+            "pipeline/entry-sampling/broken/results.html"
+          ]
+        },
+        "expected_execution": {
+          "status": "error",
+          "declared_state": "entry-evaluated",
+          "state_reached": false,
+          "target_observability": "not-observed",
+          "examined_count": {
+            "operator": "unavailable"
+          },
+          "error": {
+            "required": true,
+            "code": "entry-not-evaluated"
+          },
+          "forbidden_verdicts": [
+            "pass"
+          ]
+        }
+      },
+      "notes": "The requested entry exists but is absent from the evaluated set. A site-level pass is invalid."
+    },
+    {
+      "surface": "web",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "id": "pipeline-entry_sampled-control",
+      "pair": "entry_not_sampled",
+      "mode": "safe",
+      "path": "pipeline/entry-sampling/control/index.html",
+      "entry": "pipeline/entry-sampling/control/index.html",
+      "steps": [
+        "pipeline/entry-sampling/control/index.html",
+        "pipeline/entry-sampling/control/results.html"
+      ],
+      "scope": "multi-page",
+      "journey": "navigate",
+      "method": [
+        "crawl",
+        "regression"
+      ],
+      "assertion": {
+        "kind": "entry-evaluated",
+        "inputs": {
+          "requested_entry": "pipeline/entry-sampling/control/index.html",
+          "evaluated_pages": [
+            "pipeline/entry-sampling/control/index.html",
+            "pipeline/entry-sampling/control/results.html"
+          ]
+        },
+        "expected_execution": {
+          "status": "completed",
+          "declared_state": "entry-evaluated",
+          "state_reached": true,
+          "target_observability": "observed",
+          "examined_count": {
+            "operator": "at-least",
+            "value": 1
+          },
+          "error": {
+            "required": false,
+            "code": null
+          },
+          "forbidden_verdicts": []
+        }
+      },
+      "notes": "The requested entry is explicitly present in the evaluated set."
+    },
+    {
+      "surface": "web",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "id": "pipeline-vacuous_pass",
+      "pair": "vacuous_pass",
+      "mode": "tp",
+      "path": "pipeline/vacuous/zero-examined.html",
+      "scope": "single-page",
+      "journey": "input-only",
+      "method": [
+        "runtime-dom",
+        "regression"
+      ],
+      "assertion": {
+        "kind": "non-vacuous-pass",
+        "inputs": {
+          "reported_verdict": "pass",
+          "reported_examined_count": 0
+        },
+        "expected_execution": {
+          "status": "error",
+          "declared_state": "rule-execution",
+          "state_reached": true,
+          "target_observability": "observed",
+          "examined_count": {
+            "operator": "equals",
+            "value": 0
+          },
+          "error": {
+            "required": true,
+            "code": "zero-examined"
+          },
+          "forbidden_verdicts": [
+            "pass"
+          ]
+        }
+      },
+      "notes": "A reported pass with examined_count 0 must be rejected rather than credited."
+    },
+    {
+      "surface": "web",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "id": "pipeline-observed_pass-control",
+      "pair": "vacuous_pass",
+      "mode": "safe",
+      "path": "pipeline/vacuous/observed-control.html",
+      "scope": "single-page",
+      "journey": "input-only",
+      "method": [
+        "runtime-dom",
+        "regression"
+      ],
+      "assertion": {
+        "kind": "non-vacuous-pass",
+        "inputs": {
+          "reported_verdict": "pass",
+          "reported_examined_count": 3
+        },
+        "expected_execution": {
+          "status": "completed",
+          "declared_state": "rule-execution",
+          "state_reached": true,
+          "target_observability": "observed",
+          "examined_count": {
+            "operator": "at-least",
+            "value": 1
+          },
+          "error": {
+            "required": false,
+            "code": null
+          },
+          "forbidden_verdicts": []
+        }
+      },
+      "notes": "The matched control distinguishes a real pass after three controls were examined."
+    },
+    {
+      "surface": "web",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "id": "pipeline-no_declared_flow",
+      "pair": "no_declared_flow",
+      "mode": "tp",
+      "path": "pipeline/flow/no-declaration.html",
+      "scope": "single-page",
+      "journey": "navigate",
+      "method": [
+        "state-exploration",
+        "regression"
+      ],
+      "assertion": {
+        "kind": "declared-flow-required",
+        "inputs": {
+          "flow_declared": false,
+          "flow_criteria": [
+            "3.2.3"
+          ],
+          "declared_steps": []
+        },
+        "expected_execution": {
+          "status": "unsupported",
+          "declared_state": "declared-flow",
+          "state_reached": false,
+          "target_observability": "unknown",
+          "examined_count": {
+            "operator": "unavailable"
+          },
+          "error": {
+            "required": false,
+            "code": null
+          },
+          "forbidden_verdicts": [
+            "pass"
+          ]
+        }
+      },
+      "notes": "Without a declared flow, flow-anchored criteria remain unsupported or un-run, never passed."
+    },
+    {
+      "surface": "web",
+      "ui_state": "default",
+      "input_at": [
+        "keyboard"
+      ],
+      "min_criteria": {},
+      "must_not_report": [],
+      "id": "pipeline-declared_flow-control",
+      "pair": "no_declared_flow",
+      "mode": "safe",
+      "path": "pipeline/flow/control/index.html",
+      "entry": "pipeline/flow/control/index.html",
+      "steps": [
+        "pipeline/flow/control/index.html",
+        "pipeline/flow/control/confirm.html"
+      ],
+      "scope": "multi-page",
+      "journey": "navigate",
+      "method": [
+        "state-exploration",
+        "regression"
+      ],
+      "assertion": {
+        "kind": "declared-flow-required",
+        "inputs": {
+          "flow_declared": true,
+          "flow_criteria": [
+            "3.2.3"
+          ],
+          "declared_steps": [
+            "pipeline/flow/control/index.html",
+            "pipeline/flow/control/confirm.html"
+          ]
+        },
+        "expected_execution": {
+          "status": "completed",
+          "declared_state": "declared-flow",
+          "state_reached": true,
+          "target_observability": "observed",
+          "examined_count": {
+            "operator": "at-least",
+            "value": 2
+          },
+          "error": {
+            "required": false,
+            "code": null
+          },
+          "forbidden_verdicts": []
+        }
+      },
+      "notes": "The matched control declares its entry and both task steps before evaluating the flow criterion."
+    }
+  ]
+}
