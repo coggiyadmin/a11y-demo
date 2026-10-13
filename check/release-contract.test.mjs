@@ -23,9 +23,10 @@ test('release version is synchronized across citation, changelog and notes', () 
 
 test('release notes disclose scope, gaps and claim boundaries', () => {
   const notes = read(`releases/${TAG}.md`);
-  assert.match(notes, /226 public synthetic cases/);
-  assert.match(notes, /11 fixture families/);
-  assert.match(notes, /Four documented pipeline-integrity cases remain planned/);
+  assert.match(notes, /234 public synthetic cases/);
+  assert.match(notes, /12 fixture families/);
+  assert.match(notes, /four matched pipeline-integrity pairs/i);
+  assert.match(notes, /eight repeatable human and assistive-technology protocols/i);
   assert.match(notes, /Twenty WCAG criteria without ACT or local ground truth/);
   assert.match(notes, /Seven of eighteen surfaces are represented/);
   assert.match(notes, /not WCAG certification/);
@@ -56,6 +57,10 @@ test('release builder emits reproducible metadata and valid checksums', () => {
       'benchmark-result.schema.json',
       'corpus-manifest.json',
       'corpus-manifest.schema.json',
+      'double-review.schema.json',
+      'human-result.schema.json',
+      'protocols.json',
+      'protocols.schema.json',
       'release-metadata.json',
     ];
     assert.deepEqual(fs.readdirSync(output).sort(), expectedFiles);
@@ -67,18 +72,20 @@ test('release builder emits reproducible metadata and valid checksums', () => {
     assert.equal(metadata.release.version, VERSION);
     assert.equal(metadata.release.tag, TAG);
     assert.equal(metadata.release.revision, head);
-    assert.deepEqual(metadata.corpus.counts, { families: 11, cases: 226 });
+    assert.deepEqual(metadata.corpus.counts, { families: 12, cases: 234 });
     assert.equal(metadata.corpus.format_version, '1.0.0');
     assert.equal(metadata.contracts.benchmark_result, '1.0.0');
+    assert.equal(metadata.contracts.human_protocols, '1.0.0');
+    assert.equal(metadata.contracts.human_result, '1.0.0');
+    assert.equal(metadata.contracts.double_review, '1.0.0');
     assert.equal(metadata.known_gaps.wcag_without_ground_truth, 20);
     assert.deepEqual(metadata.known_gaps.surfaces.represented, 7);
     assert.deepEqual(metadata.known_gaps.surfaces.total, 18);
-    assert.deepEqual(metadata.known_gaps.pipeline_cases_planned, [
-      'deep_site',
-      'entry_not_sampled',
-      'vacuous_pass',
-      'no_declared_flow',
-    ]);
+    assert.deepEqual(metadata.included.pipeline_integrity, {
+      cases: 8,
+      pairs: 4,
+    });
+    assert.deepEqual(metadata.included.human_protocols, { protocols: 8 });
     assert.equal(
       metadata.corpus.manifest_sha256,
       `sha256:${crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, 'corpus-manifest.json'))).digest('hex')}`,

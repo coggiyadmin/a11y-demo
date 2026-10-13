@@ -11,8 +11,8 @@ No changes yet.
 
 ### Added
 
-- Canonical `corpus-manifest.json` with stable content digests for 226 cases in
-  11 fixture families.
+- Canonical `corpus-manifest.json` with stable content digests for 234 cases in
+  12 fixture families.
 - JSON Schema contracts for the corpus manifest and benchmark-result
   interchange format.
 - Valid and intentionally invalid result examples enforced by CI.
@@ -26,12 +26,16 @@ No changes yet.
   CLI and a published-result issue form.
 - Deterministic release metadata and SHA-256 checksum assets.
 - A tag-gated release publisher, full-history privacy audit and release runbook.
+- Four broken/control pipeline-integrity pairs that test sampling, entry
+  evaluation, non-vacuous passes and declared flows.
+- Eight versioned human and assistive-technology protocols with result and
+  independent double-review schemas.
 
 ### Changed
 
 - CI installs pinned validation dependencies and validates published contracts.
 - The canonical repository is now `cogniumhq/a11y-benchmark`.
-- README corpus totals now match the 226-case manifest.
+- README and release totals now match the 234-case manifest.
 
 [Unreleased]: https://github.com/cogniumhq/a11y-benchmark/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/cogniumhq/a11y-benchmark/releases/tag/v0.1.0
