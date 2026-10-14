@@ -20,12 +20,21 @@ const TYPES = {
   '.js': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8',
   '.png': 'image/png', '.svg': 'image/svg+xml', '.csv': 'text/csv; charset=utf-8',
   '.mp4': 'video/mp4', '.mp3': 'audio/mpeg', '.vtt': 'text/vtt; charset=utf-8',
+  // Native artifacts. A browser cannot audit these, but a consumer still has to
+  // be able to retrieve them to hand to a parser.
+  '.pdf': 'application/pdf',
+  '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
 };
 
+// Every directory a fixture path can start with, plus the published contracts.
+// `check/server-contract.test.mjs` asserts this covers every path in the corpus
+// manifest: an allow-list that falls behind a new family makes those fixtures
+// unreachable, which is how the whole pipeline family went unservable.
 const PUBLIC_DIRECTORIES = new Set([
-  'act', 'capture', 'color-independent', 'delivery', 'flash', 'guided', 'journeys',
-  'keyboard', 'media', 'patterns', 'scenarios', 'schemas', 'static', 'surfaces',
-  'taxonomy', 'ui-states', 'wcag',
+  'aaa', 'act', 'capture', 'color-independent', 'delivery', 'evidence', 'flash',
+  'guided', 'journeys', 'keyboard', 'media', 'native', 'patterns', 'pipeline',
+  'protocols', 'scenarios', 'schemas', 'static', 'surfaces', 'taxonomy',
+  'ui-states', 'wcag',
 ]);
 
 const PUBLIC_ROOT_FILES = new Set([
@@ -33,7 +42,8 @@ const PUBLIC_ROOT_FILES = new Set([
   'coverage.json', 'needs-index.json', 'space-coverage.json', 'delivery.json',
   'patterns.json', 'color-independent.json', 'media.json', 'ui-states.json',
   'journeys.json', 'scenarios.json', 'surfaces.json', 'guided.json', 'flash.json',
-  'corpus-manifest.json',
+  'corpus-manifest.json', 'pipeline.json', 'aaa.json', 'native.json',
+  'surface-contracts.json', 'sources.json', 'adjudication.json',
 ]);
 
 const text = (res, status, body) => {
