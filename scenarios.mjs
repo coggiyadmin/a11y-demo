@@ -9,6 +9,7 @@
 // labels groups of people, because these pages are public and most of them are
 // deliberately broken.
 import fs from 'node:fs';
+import { interactionMethods, stateDependency } from './state-dependency.mjs';
 import path from 'node:path';
 
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
@@ -324,7 +325,8 @@ for (const s of S) {
     const file = kind === 'broken' ? `${s.id}.html` : `safe_${s.id}.html`;
     const header = `<!--\n  ${s.id} — ${kind}\n  WCAG: ${s.sc.join(', ')}\n  journey: ${s.journey}\n`
       + `  input/AT most affected: ${s.needsAt.join(', ')}\n  ${note}\n-->\n`;
-    fs.writeFileSync(path.join(DIR, file), header + page(`${s.id} — ${kind}`, `<p>${note}</p><hr>${body}`));
+    const html = header + page(`${s.id} — ${kind}`, `<p>${note}</p><hr>${body}`);
+    fs.writeFileSync(path.join(DIR, file), html);
     cases.push({
       id: `scenario-${kind === 'broken' ? s.id : 'safe_' + s.id}`,
       mode: kind === 'broken' ? 'tp' : 'safe',
@@ -332,7 +334,8 @@ for (const s of S) {
       surface: s.surface || 'web',
       journey: s.journey,
       ui_state: s.uiState || 'default',
-      method: ['runtime-dom', 'ax-tree', 'visual', 'interaction'],
+      method: ['runtime-dom', 'ax-tree', 'visual', ...interactionMethods(html)],
+      ...stateDependency(html),
       input_at: s.needsAt,
       user_needs: s.needs || [],
       min_criteria: kind === 'broken' ? Object.fromEntries(s.sc.map((x) => [x, 1])) : {},

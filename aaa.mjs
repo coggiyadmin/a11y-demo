@@ -21,6 +21,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { stateDependency } from './state-dependency.mjs';
+
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
 const DIR = path.join(ROOT, 'aaa');
 
@@ -442,6 +444,9 @@ managers work on this form, and pasting is allowed.</p>
   {
     id: 'no_timing', sc: '2.2.3', journey: 'session', ui_state: 'timed-out',
     input_at: ['keyboard', 'switch'], method: ['interaction', 'state-exploration'],
+    // The control proves a timer never fires, which can only be confirmed by
+    // waiting. Its matched defect carries a script; the control carries none.
+    state_dependency: 'temporal',
     needs: ['memory-support', 'low-effort-interaction', 'task-guidance', 'forgiving-interface'],
     defect: 'The form expires after a fixed interval and discards what was typed. The content is '
       + 'not a real-time event and the limit is not essential, so timing is not required at all.',
@@ -529,6 +534,9 @@ document.getElementById('expire').addEventListener('click', function () {
   {
     id: 'focus_not_obscured_enhanced', sc: '2.4.12', journey: 'navigate', ui_state: 'default',
     input_at: ['keyboard', 'switch', 'magnifier'], method: ['interaction', 'visual'],
+    // No script and no :focus rule: the dependency is on focus being driven,
+    // which nothing in the markup can show.
+    state_dependency: 'focus',
     needs: ['focus-support', 'visual-clarity', 'alternative-input', 'hands-free-switch'],
     defect: 'A sticky footer covers part of each control as it receives focus, so no part of the '
       + 'focused component is guaranteed visible.',
@@ -767,6 +775,12 @@ for (const pair of PAIRS) {
     method: pair.method,
     user_needs: pair.needs,
     standard: ['wcag22'],
+    // An explicit declaration wins; otherwise derive it from the artifact.
+    // Some dependencies -- focus, waiting -- leave no trace in the markup and
+    // must be stated by hand.
+    ...(pair.state_dependency
+      ? { state_dependency: pair.state_dependency }
+      : stateDependency(pair.broken)),
   };
 
   const header = (kind) => `<!--\n  WCAG ${row.sc} ${row.name} (AAA)\n  lane: ${row.lane}\n`

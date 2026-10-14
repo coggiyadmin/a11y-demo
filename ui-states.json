@@ -16,9 +16,7 @@
       "ui_state": "loading",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -41,9 +39,7 @@
       "ui_state": "loading",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -66,9 +62,7 @@
       "ui_state": "empty",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -92,9 +86,7 @@
       "ui_state": "empty",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -118,9 +110,7 @@
       "ui_state": "invalid",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -144,9 +134,7 @@
       "ui_state": "invalid",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -170,9 +158,7 @@
       "ui_state": "corrected",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -195,9 +181,7 @@
       "ui_state": "corrected",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -220,9 +204,7 @@
       "ui_state": "submitted",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -247,9 +229,10 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "state-exploration",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "script",
       "input_at": [
         "keyboard",
         "sr-nvda",
@@ -272,9 +255,7 @@
       "ui_state": "error",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -299,9 +280,10 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "state-exploration",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "script",
       "input_at": [
         "keyboard",
         "sr-nvda",
@@ -324,9 +306,7 @@
       "ui_state": "offline",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -350,9 +330,7 @@
       "ui_state": "offline",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -376,9 +354,7 @@
       "ui_state": "permission-denied",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -402,9 +378,7 @@
       "ui_state": "permission-denied",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -428,9 +402,7 @@
       "ui_state": "timed-out",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -454,9 +426,7 @@
       "ui_state": "timed-out",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -480,9 +450,7 @@
       "ui_state": "busy",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",
@@ -505,9 +473,7 @@
       "ui_state": "busy",
       "method": [
         "runtime-dom",
-        "ax-tree",
-        "state-exploration",
-        "interaction"
+        "ax-tree"
       ],
       "input_at": [
         "keyboard",

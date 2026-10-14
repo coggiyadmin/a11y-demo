@@ -12,6 +12,7 @@
 // These are also the states a crawler rarely reaches on a real site: you cannot get to
 // `timed-out` or `permission-denied` by following links.
 import fs from 'node:fs';
+import { interactionMethods, stateDependency } from './state-dependency.mjs';
 import path from 'node:path';
 
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
@@ -181,8 +182,8 @@ for (const st of STATES) {
   for (const [kind, body, note] of [['broken', st.broken, st.brokenNote], ['correct', st.correct, st.correctNote]]) {
     const file = kind === 'broken' ? `${st.id}.html` : `safe_${st.id}.html`;
     const header = `<!--\n  Seat selection — ${st.id} (${kind})\n  WCAG: ${st.sc.join(', ')}\n  ${note}\n-->\n`;
-    fs.writeFileSync(path.join(DIR, file),
-      header + page(`Seat selection — ${st.id} (${kind})`, `<p>${note}</p><hr>${body}`));
+    const html = header + page(`Seat selection — ${st.id} (${kind})`, `<p>${note}</p><hr>${body}`);
+    fs.writeFileSync(path.join(DIR, file), html);
     cases.push({
       id: `state-${kind === 'broken' ? st.id : 'safe_' + st.id}`,
       mode: kind === 'broken' ? 'tp' : 'safe',
@@ -194,7 +195,11 @@ for (const st of STATES) {
       journey: ['empty', 'error', 'offline', 'permission-denied', 'timed-out']
         .includes(st.id) ? 'edge-states' : 'form-lifecycle',
       ui_state: st.id,
-      method: ['runtime-dom', 'ax-tree', 'state-exploration', 'interaction'],
+      // Claimed only when the generated page actually needs driving. Blanket
+      // interaction on a page that already renders its state turns a real
+      // engine gap into an apparent harness limitation.
+      method: ['runtime-dom', 'ax-tree', ...interactionMethods(html)],
+      ...stateDependency(html),
       input_at: ['keyboard', 'sr-nvda', 'sr-voiceover-safari'],
       min_criteria: kind === 'broken' ? Object.fromEntries(st.sc.map((s) => [s, 1])) : {},
       must_not_report: kind === 'correct' ? st.sc : [],

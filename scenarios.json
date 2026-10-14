@@ -17,8 +17,10 @@
         "runtime-dom",
         "ax-tree",
         "visual",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "handler",
       "input_at": [
         "keyboard",
         "switch"
@@ -46,8 +48,10 @@
         "runtime-dom",
         "ax-tree",
         "visual",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "handler",
       "input_at": [
         "keyboard",
         "switch"
@@ -75,8 +79,10 @@
         "runtime-dom",
         "ax-tree",
         "visual",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "handler",
       "input_at": [
         "keyboard"
       ],
@@ -99,8 +105,10 @@
         "runtime-dom",
         "ax-tree",
         "visual",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "handler",
       "input_at": [
         "keyboard"
       ],
@@ -122,8 +130,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "keyboard",
@@ -148,8 +155,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "keyboard",
@@ -174,8 +180,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "keyboard",
@@ -200,8 +205,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "keyboard",
@@ -226,8 +230,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "keyboard",
@@ -252,8 +255,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "keyboard",
@@ -278,8 +280,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "sr-nvda"
@@ -307,8 +308,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "sr-nvda"
@@ -336,8 +336,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "sr-nvda",
@@ -362,8 +361,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "sr-nvda",
@@ -388,8 +386,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "magnifier"
@@ -415,8 +412,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "magnifier"
@@ -445,6 +441,7 @@
         "visual",
         "interaction"
       ],
+      "state_dependency": "media-query",
       "input_at": [
         "forced-colors"
       ],
@@ -473,6 +470,7 @@
         "visual",
         "interaction"
       ],
+      "state_dependency": "media-query",
       "input_at": [
         "forced-colors"
       ],
@@ -498,8 +496,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "touch"
@@ -526,8 +523,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "touch"
@@ -554,8 +550,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "sr-nvda"
@@ -581,8 +576,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "sr-nvda"
@@ -608,8 +602,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "voice-control"
@@ -636,8 +629,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "voice-control"
@@ -664,8 +656,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "keyboard",
@@ -695,8 +686,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "keyboard",
@@ -726,8 +716,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "touch",
@@ -756,8 +745,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "touch",
@@ -787,8 +775,10 @@
         "runtime-dom",
         "ax-tree",
         "visual",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "handler",
       "input_at": [
         "pointer",
         "touch"
@@ -817,8 +807,10 @@
         "runtime-dom",
         "ax-tree",
         "visual",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "handler",
       "input_at": [
         "pointer",
         "touch"
@@ -847,8 +839,10 @@
         "runtime-dom",
         "ax-tree",
         "visual",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "handler",
       "input_at": [
         "keyboard",
         "sr-nvda"
@@ -877,8 +871,10 @@
         "runtime-dom",
         "ax-tree",
         "visual",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "handler",
       "input_at": [
         "keyboard",
         "sr-nvda"
@@ -907,8 +903,10 @@
         "runtime-dom",
         "ax-tree",
         "visual",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "handler",
       "input_at": [
         "keyboard",
         "sr-nvda"
@@ -937,8 +935,10 @@
         "runtime-dom",
         "ax-tree",
         "visual",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "handler",
       "input_at": [
         "keyboard",
         "sr-nvda"
@@ -966,8 +966,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "keyboard",
@@ -996,8 +995,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "keyboard",
@@ -1027,8 +1025,10 @@
         "runtime-dom",
         "ax-tree",
         "visual",
-        "interaction"
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "handler",
       "input_at": [
         "keyboard",
         "sr-nvda"
@@ -1052,8 +1052,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "keyboard",
@@ -1078,8 +1077,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "touch"
@@ -1107,8 +1105,7 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction"
+        "visual"
       ],
       "input_at": [
         "touch"

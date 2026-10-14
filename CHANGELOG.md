@@ -55,6 +55,25 @@ machine-readable manifest and schema versions are recorded with every release.
 
 ### Fixed
 
+- 53 fixtures declared `interaction` or `state-exploration` while shipping a
+  page already rendered in the state they were about, with no script and no
+  event handler. That metadata produced a wrong diagnosis: of 60 known-defect
+  cases no engine detected, 40 are pre-rendered, so they looked like a harness
+  limitation when the engines had seen the defect exactly as intended. Cases
+  claiming interaction fell from 100 to 47, and each now declares *why* via
+  `state_dependency` (#51).
+- `ui-states.mjs` and `scenarios.mjs` blanket-assigned `interaction` to every
+  case in their family. Both now derive it from the generated artifact.
+
+### Added
+
+- `state-dependency.mjs` and `check/state-dependency.test.mjs`. A reason the
+  markup can demonstrate must be demonstrated; `focus`, `temporal`,
+  `runner-behaviour` and `steps` leave no trace by design and are declared by
+  hand, and a test asserts detection never invents one.
+
+### Fixed
+
 - Scoring credited an engine for silence. The corrected-control false-positive
   rate counted every assertion in its denominator, including criteria the
   engine has no rule for, so a product implementing nothing scored a perfect

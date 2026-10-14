@@ -474,6 +474,7 @@
       "standard": [
         "wcag22"
       ],
+      "state_dependency": "temporal",
       "id": "aaa-no_timing",
       "mode": "tp",
       "path": "aaa/no_timing.html",
@@ -506,6 +507,7 @@
       "standard": [
         "wcag22"
       ],
+      "state_dependency": "temporal",
       "id": "aaa-safe_no_timing",
       "mode": "safe",
       "path": "aaa/safe_no_timing.html",
@@ -538,6 +540,7 @@
       "standard": [
         "wcag22"
       ],
+      "state_dependency": "script",
       "id": "aaa-re_authenticating",
       "mode": "tp",
       "path": "aaa/re_authenticating.html",
@@ -570,6 +573,7 @@
       "standard": [
         "wcag22"
       ],
+      "state_dependency": "script",
       "id": "aaa-safe_re_authenticating",
       "mode": "safe",
       "path": "aaa/safe_re_authenticating.html",
@@ -603,6 +607,7 @@
       "standard": [
         "wcag22"
       ],
+      "state_dependency": "focus",
       "id": "aaa-focus_not_obscured_enhanced",
       "mode": "tp",
       "path": "aaa/focus_not_obscured_enhanced.html",
@@ -636,6 +641,7 @@
       "standard": [
         "wcag22"
       ],
+      "state_dependency": "focus",
       "id": "aaa-safe_focus_not_obscured_enhanced",
       "mode": "safe",
       "path": "aaa/safe_focus_not_obscured_enhanced.html",
@@ -669,6 +675,7 @@
       "standard": [
         "wcag22"
       ],
+      "state_dependency": "css-state",
       "id": "aaa-focus_appearance",
       "mode": "tp",
       "path": "aaa/focus_appearance.html",
@@ -702,6 +709,7 @@
       "standard": [
         "wcag22"
       ],
+      "state_dependency": "css-state",
       "id": "aaa-safe_focus_appearance",
       "mode": "safe",
       "path": "aaa/safe_focus_appearance.html",
@@ -736,6 +744,7 @@
       "standard": [
         "wcag22"
       ],
+      "state_dependency": "script",
       "id": "aaa-concurrent_input",
       "mode": "tp",
       "path": "aaa/concurrent_input.html",
@@ -770,6 +779,7 @@
       "standard": [
         "wcag22"
       ],
+      "state_dependency": "script",
       "id": "aaa-safe_concurrent_input",
       "mode": "safe",
       "path": "aaa/safe_concurrent_input.html",
@@ -802,6 +812,7 @@
       "standard": [
         "wcag22"
       ],
+      "state_dependency": "script",
       "id": "aaa-error_prevention_all",
       "mode": "tp",
       "path": "aaa/error_prevention_all.html",
@@ -834,6 +845,7 @@
       "standard": [
         "wcag22"
       ],
+      "state_dependency": "script",
       "id": "aaa-safe_error_prevention_all",
       "mode": "safe",
       "path": "aaa/safe_error_prevention_all.html",
