@@ -17,12 +17,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "aaa-accessible_auth_enhanced",
@@ -32,12 +33,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "aaa-concurrent_input",
@@ -47,12 +49,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "aaa-error_prevention_all",
@@ -62,12 +65,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "aaa-focus_appearance",
@@ -77,12 +81,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "aaa-focus_not_obscured_enhanced",
@@ -92,12 +97,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "aaa-help",
@@ -107,12 +113,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "aaa-identify_purpose",
@@ -122,12 +129,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "aaa-location",
@@ -137,12 +145,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "aaa-no_timing",
@@ -152,12 +161,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "aaa-re_authenticating",
@@ -167,12 +177,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "aaa-section_headings",
@@ -182,12 +193,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "aaa-visual_presentation",
@@ -197,12 +209,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:1bfa6acacbac968b494373f2d31d11781e0c850a418148f81c369828d86c0b69",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
-      ]
+      ],
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
     },
     {
       "case_id": "delivery-shadow_dom_closed",
@@ -1100,176 +1113,176 @@
       "case_id": "scenario-disabled_state",
       "criterion": "1.4.3",
       "outcome": "same-defect-other-criterion",
-      "rationale": "Same single treatment as color-disabled_state: the grey that makes colour the sole indicator is also the grey that fails contrast. One defect, two criteria.",
+      "rationale": "Same single treatment as color-disabled_state: the grey that makes colour the sole indicator is also the grey that fails contrast. One defect, two criteria. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "scenarios",
-      "family_sha256": "sha256:9b4504cb52f3b91f53bdcdb13613f12bf650e4d67584ce961faf7c14ce17d2c3",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:cd8d11c484d76db4eb2116772b9a4ed6f3cdd786530ebe1b9e0a9efe53698c64",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 6
     },
     {
       "case_id": "scenario-disabled_state",
       "criterion": "1.4.6",
       "outcome": "same-defect-other-criterion",
-      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks.",
+      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "scenarios",
-      "family_sha256": "sha256:9b4504cb52f3b91f53bdcdb13613f12bf650e4d67584ce961faf7c14ce17d2c3",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:cd8d11c484d76db4eb2116772b9a4ed6f3cdd786530ebe1b9e0a9efe53698c64",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 2
     },
     {
       "case_id": "scenario-dragging_required",
       "criterion": "2.1.1",
       "outcome": "weak-evidence",
-      "rationale": "A single engine reported this and five did not. One engine mapping a rule to an extra criterion is that engine making a mapping choice, not a demonstrated property of the fixture. Re-review if more engines agree.",
+      "rationale": "A single engine reported this and five did not. One engine mapping a rule to an extra criterion is that engine making a mapping choice, not a demonstrated property of the fixture. Re-review if more engines agree. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "scenarios",
-      "family_sha256": "sha256:9b4504cb52f3b91f53bdcdb13613f12bf650e4d67584ce961faf7c14ce17d2c3",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:cd8d11c484d76db4eb2116772b9a4ed6f3cdd786530ebe1b9e0a9efe53698c64",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 1
     },
     {
       "case_id": "scenario-dragging_required",
       "criterion": "2.4.7",
       "outcome": "weak-evidence",
-      "rationale": "A single engine reported this and five did not. One engine mapping a rule to an extra criterion is that engine making a mapping choice, not a demonstrated property of the fixture. Re-review if more engines agree.",
+      "rationale": "A single engine reported this and five did not. One engine mapping a rule to an extra criterion is that engine making a mapping choice, not a demonstrated property of the fixture. Re-review if more engines agree. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "scenarios",
-      "family_sha256": "sha256:9b4504cb52f3b91f53bdcdb13613f12bf650e4d67584ce961faf7c14ce17d2c3",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:cd8d11c484d76db4eb2116772b9a4ed6f3cdd786530ebe1b9e0a9efe53698c64",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 1
     },
     {
       "case_id": "scenario-dragging_required",
       "criterion": "3.2.1",
       "outcome": "weak-evidence",
-      "rationale": "A single engine reported this and five did not. One engine mapping a rule to an extra criterion is that engine making a mapping choice, not a demonstrated property of the fixture. Re-review if more engines agree.",
+      "rationale": "A single engine reported this and five did not. One engine mapping a rule to an extra criterion is that engine making a mapping choice, not a demonstrated property of the fixture. Re-review if more engines agree. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "scenarios",
-      "family_sha256": "sha256:9b4504cb52f3b91f53bdcdb13613f12bf650e4d67584ce961faf7c14ce17d2c3",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:cd8d11c484d76db4eb2116772b9a4ed6f3cdd786530ebe1b9e0a9efe53698c64",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 1
     },
     {
       "case_id": "scenario-overlay_focus_trap",
       "criterion": "2.1.1",
       "outcome": "weak-evidence",
-      "rationale": "A single engine reported this and five did not. One engine mapping a rule to an extra criterion is that engine making a mapping choice, not a demonstrated property of the fixture. Re-review if more engines agree.",
+      "rationale": "A single engine reported this and five did not. One engine mapping a rule to an extra criterion is that engine making a mapping choice, not a demonstrated property of the fixture. Re-review if more engines agree. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "scenarios",
-      "family_sha256": "sha256:9b4504cb52f3b91f53bdcdb13613f12bf650e4d67584ce961faf7c14ce17d2c3",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:cd8d11c484d76db4eb2116772b9a4ed6f3cdd786530ebe1b9e0a9efe53698c64",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 1
     },
     {
       "case_id": "scenario-overlay_focus_trap",
       "criterion": "4.1.2",
       "outcome": "same-defect-other-criterion",
-      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks.",
+      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "scenarios",
-      "family_sha256": "sha256:9b4504cb52f3b91f53bdcdb13613f12bf650e4d67584ce961faf7c14ce17d2c3",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:cd8d11c484d76db4eb2116772b9a4ed6f3cdd786530ebe1b9e0a9efe53698c64",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 2
     },
     {
       "case_id": "state-busy",
       "criterion": "3.2.2",
       "outcome": "same-defect-other-criterion",
-      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks.",
+      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "ui-states",
-      "family_sha256": "sha256:5a130757af00e0bd5e2ac806b0dc114c3e50a2ddbea83d6b9c43a83aa339519f",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:b44c2f8afa454faefb9cd6a780771e7f4e352085c1001768b015fd429e29d91d",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 2
     },
     {
       "case_id": "state-invalid",
       "criterion": "1.4.6",
       "outcome": "same-defect-other-criterion",
-      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks.",
+      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "ui-states",
-      "family_sha256": "sha256:5a130757af00e0bd5e2ac806b0dc114c3e50a2ddbea83d6b9c43a83aa339519f",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:b44c2f8afa454faefb9cd6a780771e7f4e352085c1001768b015fd429e29d91d",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 2
     },
     {
       "case_id": "state-invalid",
       "criterion": "3.2.2",
       "outcome": "same-defect-other-criterion",
-      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks.",
+      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "ui-states",
-      "family_sha256": "sha256:5a130757af00e0bd5e2ac806b0dc114c3e50a2ddbea83d6b9c43a83aa339519f",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:b44c2f8afa454faefb9cd6a780771e7f4e352085c1001768b015fd429e29d91d",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 2
     },
     {
       "case_id": "state-offline",
       "criterion": "1.4.3",
       "outcome": "same-defect-other-criterion",
-      "rationale": "The offline banner greys the unavailable controls. One treatment satisfying more than one criterion.",
+      "rationale": "The offline banner greys the unavailable controls. One treatment satisfying more than one criterion. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "ui-states",
-      "family_sha256": "sha256:5a130757af00e0bd5e2ac806b0dc114c3e50a2ddbea83d6b9c43a83aa339519f",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:b44c2f8afa454faefb9cd6a780771e7f4e352085c1001768b015fd429e29d91d",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 4
     },
     {
       "case_id": "state-offline",
       "criterion": "1.4.6",
       "outcome": "weak-evidence",
-      "rationale": "A single engine reported this and five did not. One engine mapping a rule to an extra criterion is that engine making a mapping choice, not a demonstrated property of the fixture. Re-review if more engines agree.",
+      "rationale": "A single engine reported this and five did not. One engine mapping a rule to an extra criterion is that engine making a mapping choice, not a demonstrated property of the fixture. Re-review if more engines agree. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "ui-states",
-      "family_sha256": "sha256:5a130757af00e0bd5e2ac806b0dc114c3e50a2ddbea83d6b9c43a83aa339519f",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:b44c2f8afa454faefb9cd6a780771e7f4e352085c1001768b015fd429e29d91d",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 1
     },
     {
       "case_id": "state-timed-out",
       "criterion": "1.4.3",
       "outcome": "same-defect-other-criterion",
-      "rationale": "The timed-out state greys the expired content. That grey is the same property the declared criteria describe, not an additional fault introduced into the broken page.",
+      "rationale": "The timed-out state greys the expired content. That grey is the same property the declared criteria describe, not an additional fault introduced into the broken page. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "ui-states",
-      "family_sha256": "sha256:5a130757af00e0bd5e2ac806b0dc114c3e50a2ddbea83d6b9c43a83aa339519f",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:b44c2f8afa454faefb9cd6a780771e7f4e352085c1001768b015fd429e29d91d",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 6
     },
     {
       "case_id": "state-timed-out",
       "criterion": "1.4.6",
       "outcome": "same-defect-other-criterion",
-      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks.",
+      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "ui-states",
-      "family_sha256": "sha256:5a130757af00e0bd5e2ac806b0dc114c3e50a2ddbea83d6b9c43a83aa339519f",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:b44c2f8afa454faefb9cd6a780771e7f4e352085c1001768b015fd429e29d91d",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 2
     },
     {
       "case_id": "state-timed-out",
       "criterion": "2.2.4",
       "outcome": "same-defect-other-criterion",
-      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks.",
+      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "ui-states",
-      "family_sha256": "sha256:5a130757af00e0bd5e2ac806b0dc114c3e50a2ddbea83d6b9c43a83aa339519f",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:b44c2f8afa454faefb9cd6a780771e7f4e352085c1001768b015fd429e29d91d",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 2
     },
     {
       "case_id": "state-timed-out",
       "criterion": "3.2.5",
       "outcome": "same-defect-other-criterion",
-      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks.",
+      "rationale": "The declared defect and this criterion are satisfied by the same markup or the same visual treatment, so the pair still isolates one change. The ground truth understates what that change breaks. Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixtures and their ground truth did not.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "ui-states",
-      "family_sha256": "sha256:5a130757af00e0bd5e2ac806b0dc114c3e50a2ddbea83d6b9c43a83aa339519f",
-      "reviewed_on": "2026-10-13",
+      "family_sha256": "sha256:b44c2f8afa454faefb9cd6a780771e7f4e352085c1001768b015fd429e29d91d",
+      "reviewed_on": "2026-10-14",
       "engines_agreeing": 2
     },
     {

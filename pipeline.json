@@ -337,6 +337,7 @@
         "state-exploration",
         "regression"
       ],
+      "state_dependency": "runner-behaviour",
       "assertion": {
         "kind": "declared-flow-required",
         "inputs": {

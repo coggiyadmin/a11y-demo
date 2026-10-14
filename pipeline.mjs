@@ -252,6 +252,9 @@ const cases = [
     scope: 'single-page',
     journey: 'navigate',
     method: ['state-exploration', 'regression'],
+    // The assertion is about what the runner does when no flow was declared,
+    // not about anything in the page.
+    state_dependency: 'runner-behaviour',
     assertion: {
       kind: 'declared-flow-required',
       inputs: { flow_declared: false, flow_criteria: ['3.2.3'], declared_steps: [] },
