@@ -18,6 +18,28 @@ machine-readable manifest and schema versions are recorded with every release.
   server test proved the server refuses what it should refuse; nothing proved
   it serves what it should serve, which is how an allow-list fell three
   families behind without failing a check.
+- `surface-epub_no_metadata` was a confounded pair. It is meant to isolate
+  missing EPUB package metadata (1.3.1), but its broken page also carried an
+  image with no alternative that its control had. All six engines in a baseline
+  run detected that undeclared 1.1.1 defect and nothing on the control, while
+  the declared 1.3.1 went unreported by everyone. The broken page now carries
+  the same alternative as its control, so the pair differs only in the metadata
+  and the chapter heading — both 1.3.1 (#48).
+- Three adjudication decisions corrected. An earlier blanket decision treated
+  the whole `patterns` family as `correct-pipeline-dependent`; per-case review
+  against six engines shows `patterns-table` is `correct-manual-only` and
+  `patterns-breadcrumb` and `patterns-media-captions` are
+  `correct-unimplemented`, none of which depend on state at all.
+- `check/ingest-contract.test.mjs` compared the working-tree manifest against
+  HEAD, so any uncommitted manifest change failed a test about git plumbing. It
+  now reads HEAD's manifest independently, and additionally asserts the digest
+  is revision-sensitive.
+
+### Added
+
+- Reviewed outcomes for the 13 static-parse assertions that six engines missed,
+  each with a public source: eight `correct-unimplemented`, three
+  `correct-pipeline-dependent`, two `correct-manual-only` (#47).
 
 ### Fixed
 
