@@ -24,9 +24,45 @@
     "decisions": {
       "type": "array",
       "items": { "$ref": "#/$defs/decision" }
+    },
+    "undeclared_findings": {
+      "type": "array",
+      "description": "Reviewed decisions about criteria engines report on a broken page but not on its control, which the case does not declare. A different question from an undetected assertion: there the corpus may be wrong about what a tool should find, here the pair may be measuring more than one thing.",
+      "items": { "$ref": "#/$defs/undeclared" }
     }
   },
   "$defs": {
+    "undeclared": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["case_id", "criterion", "outcome", "rationale", "reviewer", "family", "family_sha256", "reviewed_on", "engines_agreeing"],
+      "properties": {
+        "case_id": { "type": "string", "minLength": 1 },
+        "criterion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "outcome": {
+          "enum": ["same-defect-other-criterion", "separate-defect-confound", "intentional-multiple-defects", "weak-evidence"],
+          "description": "same-defect-other-criterion: one defect that satisfies more than one criterion; the ground truth is incomplete, not the fixture. separate-defect-confound: an unrelated defect that makes the pair measure the wrong thing; the fixture must change. intentional-multiple-defects: the case is about a producer emitting many defects. weak-evidence: too few engines agree to act on."
+        },
+        "rationale": { "type": "string", "minLength": 40 },
+        "reviewer": { "type": "string", "minLength": 1 },
+        "family": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "family_sha256": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+        "reviewed_on": { "type": "string", "format": "date" },
+        "engines_agreeing": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "How many engines reported this criterion on the broken page and not on its control. One engine is its own mapping choice; several is a property of the fixture."
+        },
+        "remedy": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "description": "Calling a pair confounded requires saying what to change.",
+          "if": { "properties": { "outcome": { "const": "separate-defect-confound" } }, "required": ["outcome"] },
+          "then": { "properties": { "remedy": {} }, "required": ["remedy"] }
+        }
+      ]
+    },
     "decision": {
       "type": "object",
       "additionalProperties": false,

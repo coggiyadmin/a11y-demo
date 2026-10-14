@@ -98,6 +98,87 @@ export function partitionDecisions(adjudication, manifest) {
   return { current, stale };
 }
 
+/**
+ * Criteria engines report on a broken page but not on its matched control.
+ *
+ * A pair is meant to isolate one criterion: the control differs only in what
+ * that criterion requires. When engines agree that something else is wrong with
+ * the broken page and right with the control, the pair is measuring more than
+ * it declares -- and a tool that detects the undeclared defect looks like it
+ * detected nothing.
+ *
+ * `noiseThreshold` drops criteria a tool reports on most of the corpus. Those
+ * are the tool's own baseline, not a property of any fixture: one engine
+ * reported a target-size failure on 214 of 248 pages.
+ */
+export function undeclaredFindings(corpus, results, { noiseThreshold = 0.5 } = {}) {
+  const cases = [...corpus.cases.values()];
+  const byTool = new Map();
+
+  for (const result of results) {
+    const tool = `${result.run.tool.name} ${result.run.tool.version}`;
+    if (!byTool.has(tool)) byTool.set(tool, new Map());
+    const rows = byTool.get(tool);
+    for (const execution of result.executions) {
+      if (execution.status !== 'completed') continue;
+      rows.set(
+        execution.case_id,
+        new Set((execution.outcomes ?? [])
+          .filter((outcome) => outcome.verdict === 'fail' && outcome.findings > 0)
+          .map((outcome) => outcome.criterion)),
+      );
+    }
+  }
+
+  // Per tool, the criteria it reports almost everywhere.
+  const noise = new Map();
+  for (const [tool, rows] of byTool) {
+    const frequency = new Map();
+    for (const criteria of rows.values()) {
+      for (const criterion of criteria) frequency.set(criterion, (frequency.get(criterion) ?? 0) + 1);
+    }
+    noise.set(tool, new Set([...frequency]
+      .filter(([, count]) => count > rows.size * noiseThreshold)
+      .map(([criterion]) => criterion)));
+  }
+
+  const findings = [];
+  for (const broken of cases) {
+    if (broken.mode !== 'tp') continue;
+    const file = broken.path.split('/').pop();
+    const control = cases.find((row) => row.mode === 'safe' && row.path.endsWith(`safe_${file}`));
+    if (!control) continue;
+
+    const declared = new Set(Object.keys(broken.min_criteria ?? {}));
+    const agreeing = new Map();
+
+    for (const [tool, rows] of byTool) {
+      const onBroken = rows.get(broken.id);
+      const onControl = rows.get(control.id);
+      if (!onBroken || !onControl) continue;
+      for (const criterion of onBroken) {
+        if (declared.has(criterion)) continue;
+        if (noise.get(tool).has(criterion)) continue;
+        if (onControl.has(criterion)) continue;
+        agreeing.set(criterion, (agreeing.get(criterion) ?? 0) + 1);
+      }
+    }
+
+    for (const [criterion, count] of [...agreeing].sort((a, b) => b[1] - a[1])) {
+      findings.push({
+        case_id: broken.id,
+        control_id: control.id,
+        family: broken.family,
+        criterion,
+        declared: [...declared].sort(),
+        engines_agreeing: count,
+      });
+    }
+  }
+
+  return findings.sort((a, b) => b.engines_agreeing - a.engines_agreeing || a.case_id.localeCompare(b.case_id));
+}
+
 export function reconcile({ corpus, manifest, adjudication, results }) {
   const silent = silentAssertions(corpus, results);
   const { current, stale } = partitionDecisions(adjudication, manifest);
@@ -118,7 +199,15 @@ export function reconcile({ corpus, manifest, adjudication, results }) {
     (decision) => !silentKeys.has(`${decision.case_id}|${decision.criterion}`),
   );
 
-  return { silent, adjudicated, awaiting, stale, superseded };
+  const undeclared = undeclaredFindings(corpus, results);
+  const reviewedUndeclared = new Map(
+    (adjudication.undeclared_findings ?? []).map((row) => [`${row.case_id}|${row.criterion}`, row]),
+  );
+  const undeclaredAwaiting = undeclared.filter(
+    (row) => !reviewedUndeclared.has(`${row.case_id}|${row.criterion}`),
+  );
+
+  return { silent, adjudicated, awaiting, stale, superseded, undeclared, undeclaredAwaiting };
 }
 
 function render(report, results) {
@@ -181,6 +270,20 @@ function render(report, results) {
     lines.push('');
   }
 
+  if (report.undeclared.length > 0) {
+    lines.push(`pairs reporting an undeclared criterion   ${report.undeclared.length}`);
+    lines.push(`  already reviewed                        ${report.undeclared.length - report.undeclaredAwaiting.length}`);
+    lines.push(`  awaiting review                         ${report.undeclaredAwaiting.length}`);
+    for (const row of report.undeclaredAwaiting.slice(0, 10)) {
+      lines.push(`    ${row.case_id} ${row.criterion} (${row.engines_agreeing} engine(s))`);
+    }
+    if (report.undeclaredAwaiting.length > 10) {
+      lines.push(`    ... ${report.undeclaredAwaiting.length - 10} more`);
+    }
+    lines.push('  A pair isolates one criterion. Agreement here means it measures more than one.');
+    lines.push('');
+  }
+
   lines.push('Two engines agreeing on silence flags a question. It does not settle one.');
   lines.push('A decision needs a reviewer and a public source; see adjudication.json.');
 
@@ -204,7 +307,7 @@ function main() {
 
   // Non-zero while questions remain open, so a review backlog is visible to CI
   // rather than silently accumulating.
-  process.exit(report.awaiting.length > 0 ? 1 : 0);
+  process.exit(report.awaiting.length > 0 || report.undeclaredAwaiting.length > 0 ? 1 : 0);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) main();

@@ -5,7 +5,7 @@ import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
 
-import { partitionDecisions, reconcile, silentAssertions } from '../adjudicate.mjs';
+import { partitionDecisions, reconcile, silentAssertions, undeclaredFindings } from '../adjudicate.mjs';
 import { loadCorpus } from './scoring.mjs';
 
 const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
@@ -205,4 +205,98 @@ test('the backlog is a question, not a verdict', () => {
   for (const row of report.awaiting) {
     assert.equal(row.outcome, undefined, 'the reconciler must not decide an outcome');
   }
+});
+
+// --- undeclared findings (#48) ----------------------------------------------
+
+test('the undeclared-findings records satisfy the schema', () => {
+  const ajv = new Ajv2020({ allErrors: true, strict: true });
+  ajv.addFormat('date', /^\d{4}-\d{2}-\d{2}$/);
+  const validate = ajv.compile(readJson('schemas/adjudication.schema.json'));
+  assert.equal(validate(adjudication), true, JSON.stringify(validate.errors?.slice(0, 3), null, 2));
+  assert.ok(adjudication.undeclared_findings.length > 0);
+});
+
+test('every undeclared finding names a real pair and an undeclared criterion', () => {
+  for (const row of adjudication.undeclared_findings) {
+    const fixture = corpus.cases.get(row.case_id);
+    assert.ok(fixture, `${row.case_id} is not in the corpus`);
+    assert.equal(fixture.mode, 'tp', `${row.case_id} is not a defect case`);
+    assert.equal(
+      Object.keys(fixture.min_criteria ?? {}).includes(row.criterion),
+      false,
+      `${row.case_id} declares ${row.criterion}, so it is not an undeclared finding`,
+    );
+    assert.equal(row.family, fixture.family);
+    assert.ok(row.engines_agreeing >= 1);
+  }
+});
+
+test('calling a pair confounded requires naming the remedy', () => {
+  for (const row of adjudication.undeclared_findings) {
+    if (row.outcome !== 'separate-defect-confound') continue;
+    assert.ok(row.remedy, `${row.case_id} is confounded with no remedy`);
+    assert.ok(row.remedy.length > 40);
+  }
+});
+
+test('a single engine is never enough to conclude something about a pair', () => {
+  // One engine mapping a rule to an extra criterion is that engine's choice,
+  // not a demonstrated property of the pair. `intentional-multiple-defects` is
+  // exempt: it states what the fixture is for, which engine count cannot
+  // establish or refute.
+  const derived = ['separate-defect-confound', 'same-defect-other-criterion'];
+  for (const row of adjudication.undeclared_findings) {
+    if (row.engines_agreeing > 1) continue;
+    assert.equal(
+      derived.includes(row.outcome),
+      false,
+      `${row.case_id} ${row.criterion} concluded ${row.outcome} from one engine`,
+    );
+  }
+});
+
+test('the detector finds nothing on a corpus every engine agrees about', () => {
+  // A pair where both pages report the same criteria is not confounded.
+  const fixture = [...corpus.cases.values()].find((row) => row.mode === 'tp' && row.path.includes('/'));
+  const file = fixture.path.split('/').pop();
+  const control = [...corpus.cases.values()].find((row) => row.mode === 'safe' && row.path.endsWith(`safe_${file}`));
+  if (!control) return;
+
+  const same = (id) => ({
+    case_id: id, case_path: 'f.html', status: 'completed', declared_state: 'default',
+    state_reached: true, target_observability: 'observed',
+    outcomes: [{ criterion: '9.9.9', native_rule_id: 'x', verdict: 'fail', findings: 1, examined_count: 1, evidence: [{ type: 'manual-note', note: 'n' }] }],
+  });
+
+  const found = undeclaredFindings(corpus, [resultWith([same(fixture.id), same(control.id)])]);
+  assert.equal(
+    found.some((row) => row.case_id === fixture.id && row.criterion === '9.9.9'),
+    false,
+    'a criterion reported on both pages is not an undeclared finding',
+  );
+});
+
+test('a criterion reported on almost every page is treated as engine noise', () => {
+  // One engine reported a target-size failure on 214 of 248 pages. That is its
+  // own baseline, not a property of any fixture.
+  const cases = [...corpus.cases.values()].filter((row) => ['tp', 'safe'].includes(row.mode));
+  const executions = cases.map((row) => ({
+    case_id: row.id, case_path: 'f.html', status: 'completed', declared_state: 'default',
+    state_reached: true, target_observability: 'observed',
+    outcomes: [{ criterion: '2.5.5', native_rule_id: 'noisy', verdict: 'fail', findings: 1, examined_count: 1, evidence: [{ type: 'manual-note', note: 'n' }] }],
+  }));
+  // Drop the controls so 2.5.5 appears only on broken pages, yet still on most
+  // of the corpus: without the noise filter this would look like 100 confounds.
+  const brokenOnly = executions.filter((row) => corpus.cases.get(row.case_id).mode === 'tp');
+  const found = undeclaredFindings(corpus, [resultWith([...brokenOnly])]);
+  assert.equal(found.some((row) => row.criterion === '2.5.5'), false, '2.5.5 must be filtered as noise');
+});
+
+test('reconcile surfaces the undeclared backlog alongside the silent one', () => {
+  const report = reconcile({ corpus, manifest, adjudication, results: [resultWith([])] });
+  assert.ok(Array.isArray(report.undeclared));
+  assert.ok(Array.isArray(report.undeclaredAwaiting));
+  // With no findings in an empty run, nothing is awaiting.
+  assert.equal(report.undeclared.length, 0);
 });
