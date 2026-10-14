@@ -5,6 +5,18 @@ machine-readable manifest and schema versions are recorded with every release.
 
 ## Unreleased
 
+### Added
+
+- An undeclared-findings lane in `adjudication.json`, recording criteria
+  engines report on a broken page but not on its control. A pair isolates one
+  criterion; agreement here means it measures more than one. 43 findings across
+  23 pairs reviewed: 21 one-defect-several-criteria, 15 weak evidence, 6
+  intentional, 1 genuine confound (#48).
+- `undeclaredFindings()` in `adjudicate.mjs`, so the scan is repeatable from
+  any baseline rather than a one-off. It drops criteria a tool reports on more
+  than half the corpus as that tool's own baseline, and never concludes a
+  property of a pair from a single engine.
+
 ### Fixed
 
 - `serve.mjs` could not serve 38 of 270 fixtures. Its directory allow-list

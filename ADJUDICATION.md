@@ -105,6 +105,55 @@ The remaining 147 are an honest backlog. **96 of them were evaluated by an
 engine that then declined to report them**, which is a stronger signal than
 silence from an engine that never looked, and is where review should start.
 
+## Undeclared findings
+
+A second question, with its own records. The first asks why nothing detected a
+declared assertion. This one asks why engines detected something the case does
+*not* declare.
+
+A pair is meant to isolate one criterion: the control differs only in what that
+criterion requires. When engines agree that something else is wrong with the
+broken page and right with its control, the pair measures more than it claims —
+and a tool detecting the undeclared defect looks like it detected nothing.
+
+```sh
+node adjudicate.mjs result-one.json result-two.json   # reports both backlogs
+```
+
+| Outcome | Means |
+|---|---|
+| `same-defect-other-criterion` | one defect satisfying several criteria; the ground truth is incomplete, not the fixture |
+| `separate-defect-confound` | an unrelated defect; the fixture must change, and the record must say how |
+| `intentional-multiple-defects` | the case is about a producer emitting many faults at once |
+| `weak-evidence` | too few engines agree to conclude anything |
+
+Two filters keep this honest. A criterion a tool reports on more than half the
+corpus is dropped as that tool's own baseline — one engine reported a
+target-size failure on **214 of 248 pages**, which says nothing about any
+fixture. And a single engine can never establish `separate-defect-confound` or
+`same-defect-other-criterion`: one engine mapping a rule to an extra criterion
+is a mapping choice, not a property of the pair.
+
+### Current state
+
+43 findings across 23 pairs, from the six-engine baseline:
+
+```
+same-defect-other-criterion   21
+weak-evidence                 15
+intentional-multiple-defects   6
+separate-defect-confound       1
+```
+
+Most are one visual treatment satisfying several criteria. Greying a disabled
+control removes the non-colour cue 1.4.1 is about *and* falls below the 1.4.3
+threshold — six engines agree, and no second defect was introduced. The pair
+still isolates one change; the ground truth understates what that change
+breaks.
+
+The single confound was `surface-epub_no_metadata`, whose broken page carried
+an image with no alternative that its control had. Fixed.
+
 ## External sources assessed
 
 ### GOV.UK accessibility tool audit
