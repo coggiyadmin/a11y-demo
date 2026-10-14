@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
@@ -102,8 +103,22 @@ test('an execution for a case outside the corpus promotes nothing', () => {
 // --- ground-truth resolution ------------------------------------------------
 
 test('the content digest is resolved from the manifest at the declared revision', () => {
-  const head = corpusContentDigest(readJson('corpus-manifest.json'));
-  assert.equal(contentDigestAtRevision('HEAD'), head);
+  // Read HEAD's manifest independently rather than the working tree: an
+  // uncommitted manifest change is normal during development and must not
+  // fail a test about git plumbing.
+  const committed = execFileSync('git', ['show', 'HEAD:corpus-manifest.json'], {
+    cwd: ROOT, encoding: 'utf8',
+  });
+  const digest = contentDigestAtRevision('HEAD');
+  assert.match(digest, /^sha256:[a-f0-9]{64}$/);
+  assert.equal(digest, corpusContentDigest(JSON.parse(committed)));
+});
+
+test('the content digest is revision-sensitive', () => {
+  // v0.1.0 held 234 cases; master holds more. If the digest did not move
+  // between them it would not be expiring anything.
+  const old = contentDigestAtRevision('0105c659d9fe7e85119c190910b2c53985f83374');
+  assert.notEqual(old, contentDigestAtRevision('HEAD'));
 });
 
 test('an unknown revision fails closed rather than guessing', () => {

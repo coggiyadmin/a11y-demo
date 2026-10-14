@@ -1,6 +1,6 @@
 {
   "description": "Functional-need index. For each need: the fixtures that exercise it and the criteria they touch. `shared_benefit` lists criteria serving more than one need — those are the highest-leverage fixes, and a criterion-first report cannot show them. Each need also carries its evidence maturity: represented, executable, executed or verified, on the same vocabulary as space-coverage.json.",
-  "generated": "2026-10-13",
+  "generated": "2026-10-14",
   "maturity_states": [
     "represented",
     "executable",

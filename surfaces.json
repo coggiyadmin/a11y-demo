@@ -19,7 +19,7 @@
     "immersive",
     "support"
   ],
-  "generated": "2026-10-13",
+  "generated": "2026-10-14",
   "counts": {
     "pairs": 5,
     "cases": 10
@@ -203,7 +203,7 @@
         "1.3.1"
       ],
       "expected_outcome": "pass",
-      "notes": "schema.org accessibility metadata declared, and the content document carries real structure and alternatives."
+      "notes": "schema.org accessibility metadata declared, and the content document marks its chapter as a heading rather than a paragraph."
     },
     {
       "id": "surface-authoring_generates_bad_markup",

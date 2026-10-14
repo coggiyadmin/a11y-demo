@@ -70,9 +70,9 @@ const CASES = [
   &lt;dc:title&gt;Travel Guide&lt;/dc:title&gt;
 &lt;/metadata&gt;</code></pre>
 <h2>Content document</h2>
-<p>Chapter 1</p><img src="../pixel.png">`,
-    correctNote: 'schema.org accessibility metadata declared, and the content document carries '
-      + 'real structure and alternatives.',
+<p>Chapter 1</p><img src="../pixel.png" alt="Map of the old town, with the station marked.">`,
+    correctNote: 'schema.org accessibility metadata declared, and the content document marks its '
+      + 'chapter as a heading rather than a paragraph.',
     correct: `<h2>package.opf</h2>
 <pre><code>&lt;metadata&gt;
   &lt;dc:title&gt;Travel Guide&lt;/dc:title&gt;

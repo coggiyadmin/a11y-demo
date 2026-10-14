@@ -205,6 +205,63 @@
       ]
     },
     {
+      "case_id": "delivery-shadow_dom_closed",
+      "criterion": "1.1.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "Same closed shadow root. The image and its missing alternative are not visible to an in-page script, so the silence measures capture reach rather than rule logic.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "delivery",
+      "family_sha256": "sha256:de7ec5de77ab65b92f45d7f82e978c8fcb42f09ef7f3bb1aaeb04eaf4f0334eb",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "Pa11y/HTML_CodeSniffer 10.0.0",
+        "IBM Equal Access 4.0.34",
+        "Lighthouse 13.5.0",
+        "Siteimprove Alfa 0.119.0",
+        "QualWeb 0.9.5"
+      ]
+    },
+    {
+      "case_id": "delivery-shadow_dom_closed",
+      "criterion": "2.1.1",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+      "rationale": "The defect lives inside a closed shadow root, which is unreachable from an in-page script by construction. That is what this delivery variant exists to measure. A runner with DevTools-level access could reach it; every engine here injects a page script and cannot.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "delivery",
+      "family_sha256": "sha256:de7ec5de77ab65b92f45d7f82e978c8fcb42f09ef7f3bb1aaeb04eaf4f0334eb",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "Pa11y/HTML_CodeSniffer 10.0.0",
+        "IBM Equal Access 4.0.34",
+        "Lighthouse 13.5.0",
+        "Siteimprove Alfa 0.119.0",
+        "QualWeb 0.9.5"
+      ]
+    },
+    {
+      "case_id": "keyboard-focus_obscured",
+      "criterion": "2.4.11",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html",
+      "rationale": "A sticky bar covers the focused control. The defect exists only while a control has focus, so it needs a focus walk and a geometry comparison. A single page load never enters that state.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "core",
+      "family_sha256": "sha256:754a48b398c520fa446740f37791d1305252a6ead498b368af1afee3e439f476",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "Pa11y/HTML_CodeSniffer 10.0.0",
+        "IBM Equal Access 4.0.34",
+        "Lighthouse 13.5.0",
+        "Siteimprove Alfa 0.119.0",
+        "QualWeb 0.9.5"
+      ]
+    },
+    {
       "case_id": "patterns-accordion",
       "criterion": "1.3.1",
       "outcome": "correct-pipeline-dependent",
@@ -255,18 +312,22 @@
     {
       "case_id": "patterns-breadcrumb",
       "criterion": "1.3.1",
-      "outcome": "correct-pipeline-dependent",
-      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
-      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html",
+      "rationale": "A breadcrumb trail with no navigation landmark and no current-page indication. The markup is fully present in the delivered page and the check is mechanical; no engine consulted ships a rule for breadcrumb structure.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "patterns",
       "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
       "reviewed_on": "2026-10-13",
       "engines_consulted": [
         "axe-core 4.14.0",
-        "HTML_CodeSniffer 2.5.1"
+        "Pa11y/HTML_CodeSniffer 10.0.0",
+        "IBM Equal Access 4.0.34",
+        "Lighthouse 13.5.0",
+        "Siteimprove Alfa 0.119.0",
+        "QualWeb 0.9.5"
       ],
-      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+      "notes": "Corrects an earlier blanket patterns-family decision. Nothing here depends on state."
     },
     {
       "case_id": "patterns-breadcrumb",
@@ -479,18 +540,22 @@
     {
       "case_id": "patterns-media-captions",
       "criterion": "1.2.2",
-      "outcome": "correct-pipeline-dependent",
-      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
-      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html",
+      "rationale": "A video element with no track element and no transcript. The absence of a caption track is mechanically detectable from the delivered markup, as the fixture note itself states, and no engine consulted reported it. Caption quality stays a human judgement and is not asserted here.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "patterns",
       "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
       "reviewed_on": "2026-10-13",
       "engines_consulted": [
         "axe-core 4.14.0",
-        "HTML_CodeSniffer 2.5.1"
+        "Pa11y/HTML_CodeSniffer 10.0.0",
+        "IBM Equal Access 4.0.34",
+        "Lighthouse 13.5.0",
+        "Siteimprove Alfa 0.119.0",
+        "QualWeb 0.9.5"
       ],
-      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+      "notes": "Corrects an earlier blanket patterns-family decision."
     },
     {
       "case_id": "patterns-media-captions",
@@ -639,18 +704,22 @@
     {
       "case_id": "patterns-table",
       "criterion": "1.3.1",
-      "outcome": "correct-pipeline-dependent",
-      "source": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
-      "rationale": "APG widget defects live in keyboard behaviour and in state these engines never drove. axe documents that it does not test hidden regions and that activating them requires a test harness, so a static pass cannot reach the defect.",
+      "outcome": "correct-manual-only",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html",
+      "rationale": "Tabular data laid out in divs. Deciding that a div grid is semantically a table, and therefore that header association is missing, requires reading the content. An engine can audit a table that exists; it cannot infer one that should exist.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "patterns",
       "family_sha256": "sha256:20a25cebcda60dffc32115abb280b1c98eb5f0c3c4afcfc0a8500ef202c17ff8",
       "reviewed_on": "2026-10-13",
       "engines_consulted": [
         "axe-core 4.14.0",
-        "HTML_CodeSniffer 2.5.1"
+        "Pa11y/HTML_CodeSniffer 10.0.0",
+        "IBM Equal Access 4.0.34",
+        "Lighthouse 13.5.0",
+        "Siteimprove Alfa 0.119.0",
+        "QualWeb 0.9.5"
       ],
-      "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+      "notes": "Corrects an earlier blanket decision that treated the whole patterns family as pipeline-dependent. This case needs no state driving at all; it needs a judgement about meaning."
     },
     {
       "case_id": "patterns-tabs",
@@ -731,6 +800,101 @@
         "HTML_CodeSniffer 2.5.1"
       ],
       "notes": "Re-adjudicate once a state-driving harness is part of the baseline."
+    },
+    {
+      "case_id": "static-ambiguous_link_purpose",
+      "criterion": "2.4.4",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html",
+      "rationale": "Generic link text with no disambiguating context. Detecting a fixed set of generic phrases is mechanical and no engine consulted does it; judging whether the surrounding context resolves the purpose is not.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "core",
+      "family_sha256": "sha256:754a48b398c520fa446740f37791d1305252a6ead498b368af1afee3e439f476",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "Pa11y/HTML_CodeSniffer 10.0.0",
+        "IBM Equal Access 4.0.34",
+        "Lighthouse 13.5.0",
+        "Siteimprove Alfa 0.119.0",
+        "QualWeb 0.9.5"
+      ]
+    },
+    {
+      "case_id": "static-input_purpose_missing",
+      "criterion": "1.3.5",
+      "outcome": "correct-unimplemented",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html",
+      "rationale": "The inputs collect a name and an email and carry no autocomplete token, which is what the criterion requires. Engines check that an autocomplete value is valid, not that one is present, because deciding an input collects information about the user needs an understanding of the form.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "core",
+      "family_sha256": "sha256:754a48b398c520fa446740f37791d1305252a6ead498b368af1afee3e439f476",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "Pa11y/HTML_CodeSniffer 10.0.0",
+        "IBM Equal Access 4.0.34",
+        "Lighthouse 13.5.0",
+        "Siteimprove Alfa 0.119.0",
+        "QualWeb 0.9.5"
+      ]
+    },
+    {
+      "case_id": "static-vague_heading_and_label",
+      "criterion": "2.4.6",
+      "outcome": "correct-manual-only",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html",
+      "rationale": "Whether a heading or label describes its topic is a judgement about the content and its audience. No parse decides it, and an engine that tried would be guessing.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "core",
+      "family_sha256": "sha256:754a48b398c520fa446740f37791d1305252a6ead498b368af1afee3e439f476",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "Pa11y/HTML_CodeSniffer 10.0.0",
+        "IBM Equal Access 4.0.34",
+        "Lighthouse 13.5.0",
+        "Siteimprove Alfa 0.119.0",
+        "QualWeb 0.9.5"
+      ]
+    },
+    {
+      "case_id": "surface-email_contrast_darkmode",
+      "criterion": "1.4.3",
+      "outcome": "correct-pipeline-dependent",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "rationale": "The contrast failure appears only under a dark colour scheme. Every engine ran under the default light scheme, so the failing rendering was never produced.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "surfaces",
+      "family_sha256": "sha256:bc589557e4d094cfcf94a66acf9d82bde46d4bc537bbeec0e390a0b7d24e28a3",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "Pa11y/HTML_CodeSniffer 10.0.0",
+        "IBM Equal Access 4.0.34",
+        "Lighthouse 13.5.0",
+        "Siteimprove Alfa 0.119.0",
+        "QualWeb 0.9.5"
+      ]
+    },
+    {
+      "case_id": "surface-epub_no_metadata",
+      "criterion": "1.3.1",
+      "outcome": "correct-manual-only",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html",
+      "rationale": "This case is labelled a proxy: the real artifact is an EPUB package document, and the fixture renders an OPF fragment as text. No HTML engine parses an OPF shown inside a pre element, and none should be expected to.",
+      "reviewer": "maintainer review, a11y-benchmark",
+      "family": "surfaces",
+      "family_sha256": "sha256:bc589557e4d094cfcf94a66acf9d82bde46d4bc537bbeec0e390a0b7d24e28a3",
+      "reviewed_on": "2026-10-13",
+      "engines_consulted": [
+        "axe-core 4.14.0",
+        "Pa11y/HTML_CodeSniffer 10.0.0",
+        "IBM Equal Access 4.0.34",
+        "Lighthouse 13.5.0",
+        "Siteimprove Alfa 0.119.0",
+        "QualWeb 0.9.5"
+      ]
     }
   ]
 }
