@@ -1,9 +1,9 @@
 {
   "description": "Remaining scenario types at their honest unit. Several target an input mode rather than a criterion family: label_in_name is the defect voice control is uniquely blocked by, dragging_required the one switch access is.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "counts": {
-    "scenarios": 20,
-    "cases": 40
+    "scenarios": 21,
+    "cases": 42
   },
   "cases": [
     {
@@ -82,7 +82,7 @@
         "interaction",
         "state-exploration"
       ],
-      "state_dependency": "handler",
+      "state_dependency": "script",
       "input_at": [
         "keyboard"
       ],
@@ -92,7 +92,7 @@
       },
       "must_not_report": [],
       "expected_outcome": "fail",
-      "notes": "A popover opens but focus stays behind it, and Tab cycles through the page underneath while the popover covers it. Nothing traps, nothing restores."
+      "notes": "Fare rules opens a positioned popover beside the trigger, but the popover is last in the DOM and focus stays behind it: the next Tab walks through every link on the page before it reaches the popover, and Close drops focus to the document."
     },
     {
       "id": "scenario-safe_overlay_focus_trap",
@@ -108,7 +108,7 @@
         "interaction",
         "state-exploration"
       ],
-      "state_dependency": "handler",
+      "state_dependency": "script",
       "input_at": [
         "keyboard"
       ],
@@ -118,7 +118,7 @@
         "2.4.3"
       ],
       "expected_outcome": "pass",
-      "notes": "Native dialog: focus moves in, the background is inert, Esc closes, and focus returns to the trigger."
+      "notes": "The same popover, inserted straight after its trigger: opening it moves focus into it, Escape or Close dismisses it, and focus returns to the trigger."
     },
     {
       "id": "scenario-async_validation",
@@ -656,8 +656,11 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual"
+        "visual",
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "script",
       "input_at": [
         "keyboard",
         "touch",
@@ -669,12 +672,11 @@
         "constrained-use"
       ],
       "min_criteria": {
-        "2.5.7": 1,
-        "2.5.1": 1
+        "2.5.7": 1
       },
       "must_not_report": [],
       "expected_outcome": "fail",
-      "notes": "Reordering requires a drag. No single-pointer alternative, so it is impossible with a switch, difficult with reduced pointer precision, and difficult one-handed."
+      "notes": "Reordering the trip requires dragging a handle. The handles also respond to the arrow keys, so the keyboard can do it, but a single tap or click does nothing: there is no way to reorder with a single pointer and no dragging."
     },
     {
       "id": "scenario-safe_dragging_required",
@@ -686,8 +688,11 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual"
+        "visual",
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "script",
       "input_at": [
         "keyboard",
         "touch",
@@ -700,11 +705,72 @@
       ],
       "min_criteria": {},
       "must_not_report": [
-        "2.5.7",
+        "2.5.7"
+      ],
+      "expected_outcome": "pass",
+      "notes": "The same drag handles and arrow keys, plus Up and Down buttons on every row, so the same reordering takes one tap or click and no dragging."
+    },
+    {
+      "id": "scenario-swipe_required",
+      "mode": "tp",
+      "path": "scenarios/swipe_required.html",
+      "surface": "web",
+      "journey": "input-only",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction",
+        "state-exploration"
+      ],
+      "state_dependency": "script",
+      "input_at": [
+        "touch",
+        "switch"
+      ],
+      "user_needs": [
+        "error-tolerant-pointer",
+        "hands-free-switch",
+        "constrained-use"
+      ],
+      "min_criteria": {
+        "2.5.1": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "Changing fare needs a horizontal swipe on the card: the direction of the pointer path picks next or previous. The arrow keys also work, but a single tap or click does nothing, so there is no single-pointer way to do it."
+    },
+    {
+      "id": "scenario-safe_swipe_required",
+      "mode": "safe",
+      "path": "scenarios/safe_swipe_required.html",
+      "surface": "web",
+      "journey": "input-only",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual",
+        "interaction",
+        "state-exploration"
+      ],
+      "state_dependency": "script",
+      "input_at": [
+        "touch",
+        "switch"
+      ],
+      "user_needs": [
+        "error-tolerant-pointer",
+        "hands-free-switch",
+        "constrained-use"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
         "2.5.1"
       ],
       "expected_outcome": "pass",
-      "notes": "Buttons provide the same reordering without any dragging."
+      "notes": "The same swipe and arrow keys, plus Previous and Next buttons, so a single tap or click changes fare."
     },
     {
       "id": "scenario-touch_targets",
@@ -1077,8 +1143,11 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual"
+        "visual",
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "script",
       "input_at": [
         "touch"
       ],
@@ -1093,7 +1162,7 @@
       },
       "must_not_report": [],
       "expected_outcome": "fail",
-      "notes": "Shake-to-undo with no alternative. Impossible on a mounted device and difficult when precise device movement is unavailable."
+      "notes": "Shaking the device undoes the last seat change, and shaking is the only way to undo it. No control does the same, and the motion response cannot be turned off, so a device on a mount cannot undo and an accidental jolt can."
     },
     {
       "id": "scenario-safe_motion_actuation",
@@ -1105,8 +1174,11 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual"
+        "visual",
+        "interaction",
+        "state-exploration"
       ],
+      "state_dependency": "script",
       "input_at": [
         "touch"
       ],
@@ -1121,7 +1193,7 @@
         "2.5.4"
       ],
       "expected_outcome": "pass",
-      "notes": "A control does the same thing, and the motion shortcut can be disabled."
+      "notes": "An Undo button does the same thing without motion, and the shake response can be turned off."
     }
   ]
 }

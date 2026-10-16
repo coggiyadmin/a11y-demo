@@ -5,6 +5,42 @@ machine-readable manifest and schema versions are recorded with every release.
 
 ## Unreleased
 
+### Fixed
+
+- Three scenario pages did not contain their declared defect (#54):
+  - `scenario-overlay_focus_trap` (2.4.3): the "popover" was an unpositioned
+    block visible at load that its button did not change. It is now a
+    positioned layer the button opens, placed at the end of the DOM with focus
+    left on the trigger, so the next Tab passes every control behind it (F85),
+    and Close drops focus to the document. Close is now a real button, so the
+    page no longer also fails 2.1.1 and 4.1.2. The corrected page inserts the
+    popover after its trigger, moves focus in, and returns it on Escape or
+    Close.
+  - `scenario-dragging_required` (2.5.7): `draggable="true"` items with no
+    listener could not be dragged at all. The handles now reorder the list by
+    dragging and from the keyboard, so only a single-pointer path is missing.
+    The corrected page adds Up and Down buttons.
+  - `scenario-motion_actuation` (2.5.4): "shake to undo" existed only as text.
+    A `devicemotion` listener now undoes the last change, with no control and
+    no way to turn it off. The corrected page adds both.
+- `check/scenario-interactions.mjs` drives all three pairs.
+
+### Added
+
+- `scenario-swipe_required` and its corrected control (2.5.1). A fare card
+  changed by a horizontal swipe, whose direction decides the result: a real
+  path-based gesture. The arrow keys also work, so 2.1.1 holds; only the
+  corrected page has a single-pointer path (Previous and Next buttons). It
+  keeps Pointer Gestures from losing its only ground truth when 2.5.1 moves off
+  `dragging_required` (#54).
+
+### Changed (ground truth)
+
+- `scenario-dragging_required` no longer asserts 2.5.1. Pointer Gestures covers
+  path-based and multipoint gestures; its Understanding document places
+  dragging under 2.5.7. **Migration:** a 2.5.1 report on this page was
+  previously a detection and is now unasserted (#54).
+
 ### Added
 
 - An undeclared-findings lane in `adjudication.json`, recording criteria

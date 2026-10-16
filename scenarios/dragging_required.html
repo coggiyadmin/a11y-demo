@@ -1,9 +1,9 @@
 <!--
   dragging_required — broken
-  WCAG: 2.5.7, 2.5.1
+  WCAG: 2.5.7
   journey: transfer
   input/AT most affected: keyboard, touch, switch
-  Reordering requires a drag. No single-pointer alternative, so it is impossible with a switch, difficult with reduced pointer precision, and difficult one-handed.
+  Reordering the trip requires dragging a handle. The handles also respond to the arrow keys, so the keyboard can do it, but a single tap or click does nothing: there is no way to reorder with a single pointer and no dragging.
 -->
 <!doctype html>
 <html lang="en">
@@ -14,6 +14,50 @@
 <link rel="stylesheet" href="../fixture.css">
 </head>
 <body><main><h1>dragging_required — broken</h1>
-<p>Reordering requires a drag. No single-pointer alternative, so it is impossible with a switch, difficult with reduced pointer precision, and difficult one-handed.</p><hr><ul><li draggable="true">Outbound</li><li draggable="true">Return</li></ul>
-<p>Drag to reorder.</p>
+<p>Reordering the trip requires dragging a handle. The handles also respond to the arrow keys, so the keyboard can do it, but a single tap or click does nothing: there is no way to reorder with a single pointer and no dragging.</p><hr><p id="reorder-help">Drag a handle to change the order. From the keyboard, focus a handle and press the Up or Down arrow.</p>
+<style>.legs{list-style:none;padding:0}.legs li{display:flex;align-items:center;gap:.5rem;border:1px solid #767676;margin:.25rem 0;padding:.25rem .5rem;background:#fff}.legs .handle{touch-action:none;cursor:grab}</style>
+<ul id="legs" class="legs">
+<li data-name="Outbound"><button type="button" class="handle" aria-describedby="reorder-help">Move Outbound</button> Outbound</li>
+<li data-name="Hotel transfer"><button type="button" class="handle" aria-describedby="reorder-help">Move Hotel transfer</button> Hotel transfer</li>
+<li data-name="Return"><button type="button" class="handle" aria-describedby="reorder-help">Move Return</button> Return</li>
+</ul>
+<p id="order-status" role="status"></p>
+<script>
+var list = document.getElementById('legs');
+var dragging = null;
+function announce() {
+  document.getElementById('order-status').textContent = 'Order: '
+    + Array.from(list.children, function (li) { return li.dataset.name; }).join(', ') + '.';
+}
+list.addEventListener('pointerdown', function (event) {
+  var handle = event.target.closest('.handle');
+  if (!handle) return;
+  dragging = handle.closest('li');
+  handle.setPointerCapture(event.pointerId);
+});
+list.addEventListener('pointermove', function (event) {
+  if (!dragging) return;
+  var over = document.elementFromPoint(event.clientX, event.clientY);
+  var li = over && over.closest('#legs li');
+  if (!li || li === dragging) return;
+  var box = li.getBoundingClientRect();
+  list.insertBefore(dragging, event.clientY < box.top + box.height / 2 ? li : li.nextSibling);
+});
+list.addEventListener('pointerup', function () {
+  if (!dragging) return;
+  dragging = null;
+  announce();
+});
+list.addEventListener('keydown', function (event) {
+  var handle = event.target.closest('.handle');
+  if (!handle) return;
+  var li = handle.closest('li');
+  if (event.key === 'ArrowUp' && li.previousElementSibling) list.insertBefore(li, li.previousElementSibling);
+  else if (event.key === 'ArrowDown' && li.nextElementSibling) list.insertBefore(li.nextElementSibling, li);
+  else return;
+  event.preventDefault();
+  handle.focus();
+  announce();
+});
+</script>
 </main><p><a href="../index.html">Back to the index</a></p></body></html>

@@ -1,6 +1,6 @@
 {
   "description": "Functional-need index. For each need: the fixtures that exercise it and the criteria they touch. `shared_benefit` lists criteria serving more than one need — those are the highest-leverage fixes, and a criterion-first report cannot show them. Each need also carries its evidence maturity: represented, executable, executed or verified, on the same vocabulary as space-coverage.json.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "maturity_states": [
     "represented",
     "executable",
@@ -838,7 +838,6 @@
         "2.4.3",
         "2.4.5",
         "2.4.7",
-        "2.5.1",
         "2.5.2",
         "2.5.3",
         "2.5.4",
@@ -986,9 +985,9 @@
       "label": "Error-tolerant pointer input",
       "group": "input-and-control",
       "scenarios": 4,
-      "cases": 62,
-      "tp": 36,
-      "safe": 26,
+      "cases": 64,
+      "tp": 37,
+      "safe": 27,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1066,6 +1065,8 @@
         "journeys/consent/correct/index.html",
         "scenarios/dragging_required.html",
         "scenarios/safe_dragging_required.html",
+        "scenarios/swipe_required.html",
+        "scenarios/safe_swipe_required.html",
         "scenarios/touch_targets.html",
         "scenarios/safe_touch_targets.html",
         "scenarios/pointer_cancellation.html",
@@ -1083,9 +1084,9 @@
       "label": "Hands-free and switch operation",
       "group": "input-and-control",
       "scenarios": 3,
-      "cases": 64,
-      "tp": 37,
-      "safe": 27,
+      "cases": 66,
+      "tp": 38,
+      "safe": 28,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1168,6 +1169,8 @@
         "scenarios/safe_orientation_lock.html",
         "scenarios/dragging_required.html",
         "scenarios/safe_dragging_required.html",
+        "scenarios/swipe_required.html",
+        "scenarios/safe_swipe_required.html",
         "scenarios/motion_actuation.html",
         "scenarios/safe_motion_actuation.html",
         "surfaces/chatbot_transcript.html",
@@ -2083,7 +2086,6 @@
         "2.2.5",
         "2.2.6",
         "2.4.7",
-        "2.5.1",
         "2.5.2",
         "2.5.5",
         "2.5.6",
@@ -2140,9 +2142,9 @@
       "label": "Constrained-use support",
       "group": "context-and-environment",
       "scenarios": 4,
-      "cases": 8,
-      "tp": 4,
-      "safe": 4,
+      "cases": 10,
+      "tp": 5,
+      "safe": 5,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -2160,6 +2162,8 @@
       "fixtures": [
         "scenarios/dragging_required.html",
         "scenarios/safe_dragging_required.html",
+        "scenarios/swipe_required.html",
+        "scenarios/safe_swipe_required.html",
         "scenarios/touch_targets.html",
         "scenarios/safe_touch_targets.html",
         "scenarios/pointer_cancellation.html",
@@ -2666,16 +2670,6 @@
       ]
     },
     {
-      "sc": "2.5.1",
-      "needs": [
-        "alternative-input",
-        "constrained-use",
-        "error-tolerant-pointer",
-        "forgiving-interface",
-        "hands-free-switch"
-      ]
-    },
-    {
       "sc": "2.5.4",
       "needs": [
         "alternative-input",
@@ -2947,6 +2941,14 @@
         "alternative-input",
         "non-voice-alternative",
         "nonvisual-access"
+      ]
+    },
+    {
+      "sc": "2.5.1",
+      "needs": [
+        "constrained-use",
+        "error-tolerant-pointer",
+        "hands-free-switch"
       ]
     },
     {

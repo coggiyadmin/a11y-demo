@@ -48,28 +48,86 @@ const S = [
   },
   {
     // NOT 2.1.2. A keyboard trap is focus that cannot be moved AWAY from a component.
-    // This page's defect is the opposite — focus never moves INTO the popover and the
-    // background stays reachable behind it. That is focus management (2.4.3), and
-    // claiming 2.1.2 made a correct pass look like a gap.
+    // This page's defect is the opposite: focus never moves INTO the popover.
+    //
+    // #54: the popover used to be an unpositioned block, visible at load, that the
+    // button did not change -- there was no overlay whose focus could be lost. It is
+    // now a real positioned layer the button opens, sitting visually under the
+    // trigger but placed at the END of the DOM. Focus stays on the trigger, so the
+    // next Tab goes through every control behind it before reaching the popover:
+    // F85 (a dialog not adjacent to its trigger in the navigation order) under 2.4.3.
+    // Closing it drops focus to the document, the second half of the same defect.
+    // Close is a real button, so the page no longer also fails 2.1.1 and 4.1.2.
     id: 'overlay_focus_trap', journey: 'overlay', sc: ['2.4.3'],
     needsAt: ['keyboard'],
-    brokenNote: 'A popover opens but focus stays behind it, and Tab cycles through the page '
-      + 'underneath while the popover covers it. Nothing traps, nothing restores.',
-    // Open at load. Previously hidden until clicked, which meant a scan that does not
-    // interact found no focus cycle to observe and the fixture tested nothing.
-    broken: `<button type="button" onclick="document.getElementById('po').hidden=false">Fare rules</button>
-<div id="po" style="border:2px solid #30556e;padding:1rem">
+    brokenNote: 'Fare rules opens a positioned popover beside the trigger, but the popover is '
+      + 'last in the DOM and focus stays behind it: the next Tab walks through every link on '
+      + 'the page before it reaches the popover, and Close drops focus to the document.',
+    broken: `<button type="button" id="fare-open" aria-controls="po">Fare rules</button>
+<p>Economy Light, London to Paris, one cabin bag.</p>
+<p>Seat selection and checked bags can be added before check-in.</p>
+<p>Your fare is held for 20 minutes.</p>
+<p>Prices include taxes and airport charges.</p>
+<p>Name changes are not permitted on this fare.</p>
+<p><a href="#seat">Choose a seat</a> <a href="#bags">Add bags</a></p>
+<p><a href="#after">Continue to payment</a></p>
+<style>.popover{position:absolute;z-index:10;width:min(20rem,calc(100vw - 2rem));background:#fff;border:2px solid #30556e;padding:0 1rem;box-shadow:0 4px 12px rgba(0,0,0,.25)}</style>
+<div id="po" class="popover" role="dialog" aria-labelledby="po-title" hidden>
+  <h2 id="po-title">Fare rules</h2>
   <p>Changes permitted for a fee.</p>
-  <div class="btn" onclick="document.getElementById('po').hidden=true">Close</div>
+  <button type="button" id="fare-close">Close</button>
 </div>
-<p><a href="#after">A link behind the popover</a></p>`,
-    correctNote: 'Native dialog: focus moves in, the background is inert, Esc closes, and '
-      + 'focus returns to the trigger.',
-    correct: `<button type="button" onclick="document.getElementById('po2').showModal()">Fare rules</button>
-<dialog id="po2" aria-labelledby="pt"><h2 id="pt">Fare rules</h2>
-<p>Changes permitted for a fee.</p>
-<form method="dialog"><button type="submit">Close</button></form></dialog>
-<p><a href="#after">A link behind the dialog</a></p>`,
+<script>
+var trigger = document.getElementById('fare-open');
+var popover = document.getElementById('po');
+trigger.addEventListener('click', function () {
+  var r = trigger.getBoundingClientRect();
+  popover.style.top = (r.bottom + scrollY + 4) + 'px';
+  popover.style.left = (r.left + scrollX) + 'px';
+  popover.hidden = false;
+  // focus is left on the trigger
+});
+document.getElementById('fare-close').addEventListener('click', function () {
+  popover.hidden = true;
+  // and is not returned to it
+});
+</script>`,
+    correctNote: 'The same popover, inserted straight after its trigger: opening it moves focus '
+      + 'into it, Escape or Close dismisses it, and focus returns to the trigger.',
+    correct: `<button type="button" id="fare-open" aria-controls="po">Fare rules</button>
+<style>.popover{position:absolute;z-index:10;width:min(20rem,calc(100vw - 2rem));background:#fff;border:2px solid #30556e;padding:0 1rem;box-shadow:0 4px 12px rgba(0,0,0,.25)}</style>
+<div id="po" class="popover" role="dialog" aria-labelledby="po-title" hidden>
+  <h2 id="po-title">Fare rules</h2>
+  <p>Changes permitted for a fee.</p>
+  <button type="button" id="fare-close">Close</button>
+</div>
+<p>Economy Light, London to Paris, one cabin bag.</p>
+<p>Seat selection and checked bags can be added before check-in.</p>
+<p>Your fare is held for 20 minutes.</p>
+<p>Prices include taxes and airport charges.</p>
+<p>Name changes are not permitted on this fare.</p>
+<p><a href="#seat">Choose a seat</a> <a href="#bags">Add bags</a></p>
+<p><a href="#after">Continue to payment</a></p>
+<script>
+var trigger = document.getElementById('fare-open');
+var popover = document.getElementById('po');
+var closeButton = document.getElementById('fare-close');
+function dismiss() {
+  popover.hidden = true;
+  trigger.focus();
+}
+trigger.addEventListener('click', function () {
+  var r = trigger.getBoundingClientRect();
+  popover.style.top = (r.bottom + scrollY + 4) + 'px';
+  popover.style.left = (r.left + scrollX) + 'px';
+  popover.hidden = false;
+  closeButton.focus();
+});
+closeButton.addEventListener('click', dismiss);
+popover.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') dismiss();
+});
+</script>`,
   },
   {
     id: 'async_validation', journey: 'async', sc: ['4.1.3', '3.3.1'],
@@ -206,16 +264,202 @@ body::after{content:"Please rotate your device"}}</style>
     correct: `<button type="button">Search flights</button>`,
   },
   {
-    id: 'dragging_required', journey: 'transfer', sc: ['2.5.7', '2.5.1'],
+    // #54: the list items used to be draggable="true" with no listener and no script,
+    // so nothing could be dragged. The handles now really reorder the list by
+    // dragging, and are ALSO operable from the keyboard (arrow keys), so 2.1.1 holds
+    // and the only thing missing is a single-pointer way to do it -- 2.5.7, whose
+    // Understanding document is explicit that a keyboard alternative does not
+    // satisfy it. 2.5.1 is dropped: it covers path-based and multipoint gestures,
+    // and its Understanding document places free-form dragging under 2.5.7.
+    id: 'dragging_required', journey: 'transfer', sc: ['2.5.7'],
     needsAt: ['keyboard', 'touch', 'switch'], needs: ['error-tolerant-pointer', 'hands-free-switch', 'constrained-use'],
-    brokenNote: 'Reordering requires a drag. No single-pointer alternative, so it is impossible '
-      + 'with a switch, difficult with reduced pointer precision, and difficult one-handed.',
-    broken: `<ul><li draggable="true">Outbound</li><li draggable="true">Return</li></ul>
-<p>Drag to reorder.</p>`,
-    correctNote: 'Buttons provide the same reordering without any dragging.',
-    correct: `<ul><li>Outbound <button type="button" aria-label="Move Outbound down">Down</button></li>
-<li>Return <button type="button" aria-label="Move Return up">Up</button></li></ul>
-<p>Drag to reorder, or use the buttons.</p>`,
+    brokenNote: 'Reordering the trip requires dragging a handle. The handles also respond to the '
+      + 'arrow keys, so the keyboard can do it, but a single tap or click does nothing: there is '
+      + 'no way to reorder with a single pointer and no dragging.',
+    broken: `<p id="reorder-help">Drag a handle to change the order. From the keyboard, focus a handle and press the Up or Down arrow.</p>
+<style>.legs{list-style:none;padding:0}.legs li{display:flex;align-items:center;gap:.5rem;border:1px solid #767676;margin:.25rem 0;padding:.25rem .5rem;background:#fff}.legs .handle{touch-action:none;cursor:grab}</style>
+<ul id="legs" class="legs">
+<li data-name="Outbound"><button type="button" class="handle" aria-describedby="reorder-help">Move Outbound</button> Outbound</li>
+<li data-name="Hotel transfer"><button type="button" class="handle" aria-describedby="reorder-help">Move Hotel transfer</button> Hotel transfer</li>
+<li data-name="Return"><button type="button" class="handle" aria-describedby="reorder-help">Move Return</button> Return</li>
+</ul>
+<p id="order-status" role="status"></p>
+<script>
+var list = document.getElementById('legs');
+var dragging = null;
+function announce() {
+  document.getElementById('order-status').textContent = 'Order: '
+    + Array.from(list.children, function (li) { return li.dataset.name; }).join(', ') + '.';
+}
+list.addEventListener('pointerdown', function (event) {
+  var handle = event.target.closest('.handle');
+  if (!handle) return;
+  dragging = handle.closest('li');
+  handle.setPointerCapture(event.pointerId);
+});
+list.addEventListener('pointermove', function (event) {
+  if (!dragging) return;
+  var over = document.elementFromPoint(event.clientX, event.clientY);
+  var li = over && over.closest('#legs li');
+  if (!li || li === dragging) return;
+  var box = li.getBoundingClientRect();
+  list.insertBefore(dragging, event.clientY < box.top + box.height / 2 ? li : li.nextSibling);
+});
+list.addEventListener('pointerup', function () {
+  if (!dragging) return;
+  dragging = null;
+  announce();
+});
+list.addEventListener('keydown', function (event) {
+  var handle = event.target.closest('.handle');
+  if (!handle) return;
+  var li = handle.closest('li');
+  if (event.key === 'ArrowUp' && li.previousElementSibling) list.insertBefore(li, li.previousElementSibling);
+  else if (event.key === 'ArrowDown' && li.nextElementSibling) list.insertBefore(li.nextElementSibling, li);
+  else return;
+  event.preventDefault();
+  handle.focus();
+  announce();
+});
+</script>`,
+    correctNote: 'The same drag handles and arrow keys, plus Up and Down buttons on every row, so '
+      + 'the same reordering takes one tap or click and no dragging.',
+    correct: `<p id="reorder-help">Drag a handle to change the order. From the keyboard, focus a handle and press the Up or Down arrow.</p>
+<style>.legs{list-style:none;padding:0}.legs li{display:flex;align-items:center;gap:.5rem;border:1px solid #767676;margin:.25rem 0;padding:.25rem .5rem;background:#fff}.legs .handle{touch-action:none;cursor:grab}</style>
+<ul id="legs" class="legs">
+<li data-name="Outbound"><button type="button" class="handle" aria-describedby="reorder-help">Move Outbound</button> Outbound <button type="button" class="up">Up</button><button type="button" class="down">Down</button></li>
+<li data-name="Hotel transfer"><button type="button" class="handle" aria-describedby="reorder-help">Move Hotel transfer</button> Hotel transfer <button type="button" class="up">Up</button><button type="button" class="down">Down</button></li>
+<li data-name="Return"><button type="button" class="handle" aria-describedby="reorder-help">Move Return</button> Return <button type="button" class="up">Up</button><button type="button" class="down">Down</button></li>
+</ul>
+<p id="order-status" role="status"></p>
+<script>
+var list = document.getElementById('legs');
+var dragging = null;
+function announce() {
+  document.getElementById('order-status').textContent = 'Order: '
+    + Array.from(list.children, function (li) { return li.dataset.name; }).join(', ') + '.';
+}
+function move(li, direction) {
+  if (direction < 0 && li.previousElementSibling) list.insertBefore(li, li.previousElementSibling);
+  else if (direction > 0 && li.nextElementSibling) list.insertBefore(li.nextElementSibling, li);
+  else return false;
+  announce();
+  return true;
+}
+list.addEventListener('pointerdown', function (event) {
+  var handle = event.target.closest('.handle');
+  if (!handle) return;
+  dragging = handle.closest('li');
+  handle.setPointerCapture(event.pointerId);
+});
+list.addEventListener('pointermove', function (event) {
+  if (!dragging) return;
+  var over = document.elementFromPoint(event.clientX, event.clientY);
+  var li = over && over.closest('#legs li');
+  if (!li || li === dragging) return;
+  var box = li.getBoundingClientRect();
+  list.insertBefore(dragging, event.clientY < box.top + box.height / 2 ? li : li.nextSibling);
+});
+list.addEventListener('pointerup', function () {
+  if (!dragging) return;
+  dragging = null;
+  announce();
+});
+list.addEventListener('keydown', function (event) {
+  var handle = event.target.closest('.handle');
+  if (!handle) return;
+  var direction = event.key === 'ArrowUp' ? -1 : event.key === 'ArrowDown' ? 1 : 0;
+  if (!direction) return;
+  event.preventDefault();
+  move(handle.closest('li'), direction);
+  handle.focus();
+});
+list.addEventListener('click', function (event) {
+  var button = event.target.closest('.up, .down');
+  if (!button) return;
+  move(button.closest('li'), button.classList.contains('up') ? -1 : 1);
+  button.focus();
+});
+</script>`,
+  },
+  {
+    // Added with #54. Dropping 2.5.1 from dragging_required (dragging is 2.5.7)
+    // would have left Pointer Gestures with no ground truth at all, so it gets a
+    // case that really is path-based: a swipe, whose DIRECTION decides the result.
+    // The card also answers the arrow keys, so 2.1.1 holds and the only thing
+    // missing is a single-pointer way to change fare.
+    id: 'swipe_required', journey: 'input-only', sc: ['2.5.1'],
+    needsAt: ['touch', 'switch'], needs: ['error-tolerant-pointer', 'hands-free-switch', 'constrained-use'],
+    brokenNote: 'Changing fare needs a horizontal swipe on the card: the direction of the pointer '
+      + 'path picks next or previous. The arrow keys also work, but a single tap or click does '
+      + 'nothing, so there is no single-pointer way to do it.',
+    broken: `<p id="swipe-help">Swipe left or right on the card to see another fare. From the keyboard, focus the card and press the Left or Right arrow.</p>
+<style>.fares{touch-action:pan-y;user-select:none;border:2px solid #30556e;padding:0 1rem}</style>
+<section id="fares" class="fares" tabindex="0" aria-label="Fares" aria-describedby="swipe-help">
+<p id="fare" aria-live="polite">Economy Light, GBP 89 (1 of 3)</p>
+</section>
+<script>
+var fares = ['Economy Light, GBP 89', 'Economy, GBP 119', 'Premium, GBP 249'];
+var index = 0;
+var startX = null;
+var card = document.getElementById('fares');
+function show(step) {
+  index = (index + step + fares.length) % fares.length;
+  document.getElementById('fare').textContent = fares[index] + ' (' + (index + 1) + ' of ' + fares.length + ')';
+}
+card.addEventListener('pointerdown', function (event) {
+  startX = event.clientX;
+  card.setPointerCapture(event.pointerId);
+});
+card.addEventListener('pointerup', function (event) {
+  if (startX === null) return;
+  var dx = event.clientX - startX;
+  startX = null;
+  if (Math.abs(dx) > 40) show(dx < 0 ? 1 : -1);
+});
+card.addEventListener('keydown', function (event) {
+  if (event.key === 'ArrowRight') show(1);
+  else if (event.key === 'ArrowLeft') show(-1);
+  else return;
+  event.preventDefault();
+});
+</script>`,
+    correctNote: 'The same swipe and arrow keys, plus Previous and Next buttons, so a single tap '
+      + 'or click changes fare.',
+    correct: `<p id="swipe-help">Swipe left or right on the card to see another fare. From the keyboard, focus the card and press the Left or Right arrow.</p>
+<style>.fares{touch-action:pan-y;user-select:none;border:2px solid #30556e;padding:0 1rem}</style>
+<section id="fares" class="fares" tabindex="0" aria-label="Fares" aria-describedby="swipe-help">
+<p id="fare" aria-live="polite">Economy Light, GBP 89 (1 of 3)</p>
+</section>
+<p><button type="button" id="fare-prev">Previous fare</button> <button type="button" id="fare-next">Next fare</button></p>
+<script>
+var fares = ['Economy Light, GBP 89', 'Economy, GBP 119', 'Premium, GBP 249'];
+var index = 0;
+var startX = null;
+var card = document.getElementById('fares');
+function show(step) {
+  index = (index + step + fares.length) % fares.length;
+  document.getElementById('fare').textContent = fares[index] + ' (' + (index + 1) + ' of ' + fares.length + ')';
+}
+card.addEventListener('pointerdown', function (event) {
+  startX = event.clientX;
+  card.setPointerCapture(event.pointerId);
+});
+card.addEventListener('pointerup', function (event) {
+  if (startX === null) return;
+  var dx = event.clientX - startX;
+  startX = null;
+  if (Math.abs(dx) > 40) show(dx < 0 ? 1 : -1);
+});
+card.addEventListener('keydown', function (event) {
+  if (event.key === 'ArrowRight') show(1);
+  else if (event.key === 'ArrowLeft') show(-1);
+  else return;
+  event.preventDefault();
+});
+document.getElementById('fare-prev').addEventListener('click', function () { show(-1); });
+document.getElementById('fare-next').addEventListener('click', function () { show(1); });
+</script>`,
   },
   {
     id: 'touch_targets', journey: 'input-only', sc: ['2.5.8', '2.5.5'],
@@ -305,14 +549,50 @@ body::after{content:"Please rotate your device"}}</style>
 <p id="dz">Seat selection opens 24 hours before departure.</p>`,
   },
   {
+    // #54: "shake to undo" used to exist only as text, with no devicemotion listener
+    // and no script, so nothing on the page responded to motion. The page now really
+    // undoes the last change when the device is shaken, and offers no control that
+    // does the same and no way to turn the motion response off: both halves of 2.5.4.
     id: 'motion_actuation', journey: 'input-only', sc: ['2.5.4'],
     needsAt: ['touch'], needs: ['error-tolerant-pointer', 'hands-free-switch', 'constrained-use', 'environmental-resilience'],
-    brokenNote: 'Shake-to-undo with no alternative. Impossible on a mounted device and difficult '
-      + 'when precise device movement is unavailable.',
-    broken: `<p>Shake your device to undo the last change.</p>`,
-    correctNote: 'A control does the same thing, and the motion shortcut can be disabled.',
-    correct: `<button type="button">Undo last change</button>
-<p>You can also shake your device, or turn that off in Settings.</p>`,
+    brokenNote: 'Shaking the device undoes the last seat change, and shaking is the only way to '
+      + 'undo it. No control does the same, and the motion response cannot be turned off, so a '
+      + 'device on a mount cannot undo and an accidental jolt can.',
+    broken: `<p id="seat-status" role="status">Seat 14A selected (changed from 12C).</p>
+<p>Shake your device to undo the last change.</p>
+<script>
+var undone = false;
+function undo() {
+  if (undone) return;
+  undone = true;
+  document.getElementById('seat-status').textContent = 'Seat change undone: seat 12C selected.';
+}
+addEventListener('devicemotion', function (event) {
+  var a = event.acceleration;
+  if (!a || a.x === null) return;
+  if (Math.hypot(a.x, a.y || 0, a.z || 0) > 15) undo();
+});
+</script>`,
+    correctNote: 'An Undo button does the same thing without motion, and the shake response can '
+      + 'be turned off.',
+    correct: `<p id="seat-status" role="status">Seat 14A selected (changed from 12C).</p>
+<button type="button" id="undo">Undo last change</button>
+<p><input type="checkbox" id="shake" checked> <label for="shake">Also undo when I shake my device</label></p>
+<script>
+var undone = false;
+function undo() {
+  if (undone) return;
+  undone = true;
+  document.getElementById('seat-status').textContent = 'Seat change undone: seat 12C selected.';
+}
+document.getElementById('undo').addEventListener('click', undo);
+addEventListener('devicemotion', function (event) {
+  if (!document.getElementById('shake').checked) return;
+  var a = event.acceleration;
+  if (!a || a.x === null) return;
+  if (Math.hypot(a.x, a.y || 0, a.z || 0) > 15) undo();
+});
+</script>`,
   },
 ];
 

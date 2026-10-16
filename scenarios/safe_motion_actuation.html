@@ -3,7 +3,7 @@
   WCAG: 2.5.4
   journey: input-only
   input/AT most affected: touch
-  A control does the same thing, and the motion shortcut can be disabled.
+  An Undo button does the same thing without motion, and the shake response can be turned off.
 -->
 <!doctype html>
 <html lang="en">
@@ -14,6 +14,22 @@
 <link rel="stylesheet" href="../fixture.css">
 </head>
 <body><main><h1>motion_actuation — correct</h1>
-<p>A control does the same thing, and the motion shortcut can be disabled.</p><hr><button type="button">Undo last change</button>
-<p>You can also shake your device, or turn that off in Settings.</p>
+<p>An Undo button does the same thing without motion, and the shake response can be turned off.</p><hr><p id="seat-status" role="status">Seat 14A selected (changed from 12C).</p>
+<button type="button" id="undo">Undo last change</button>
+<p><input type="checkbox" id="shake" checked> <label for="shake">Also undo when I shake my device</label></p>
+<script>
+var undone = false;
+function undo() {
+  if (undone) return;
+  undone = true;
+  document.getElementById('seat-status').textContent = 'Seat change undone: seat 12C selected.';
+}
+document.getElementById('undo').addEventListener('click', undo);
+addEventListener('devicemotion', function (event) {
+  if (!document.getElementById('shake').checked) return;
+  var a = event.acceleration;
+  if (!a || a.x === null) return;
+  if (Math.hypot(a.x, a.y || 0, a.z || 0) > 15) undo();
+});
+</script>
 </main><p><a href="../index.html">Back to the index</a></p></body></html>

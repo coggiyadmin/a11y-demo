@@ -3,7 +3,7 @@
   WCAG: 2.4.3
   journey: overlay
   input/AT most affected: keyboard
-  A popover opens but focus stays behind it, and Tab cycles through the page underneath while the popover covers it. Nothing traps, nothing restores.
+  Fare rules opens a positioned popover beside the trigger, but the popover is last in the DOM and focus stays behind it: the next Tab walks through every link on the page before it reaches the popover, and Close drops focus to the document.
 -->
 <!doctype html>
 <html lang="en">
@@ -14,10 +14,33 @@
 <link rel="stylesheet" href="../fixture.css">
 </head>
 <body><main><h1>overlay_focus_trap — broken</h1>
-<p>A popover opens but focus stays behind it, and Tab cycles through the page underneath while the popover covers it. Nothing traps, nothing restores.</p><hr><button type="button" onclick="document.getElementById('po').hidden=false">Fare rules</button>
-<div id="po" style="border:2px solid #30556e;padding:1rem">
+<p>Fare rules opens a positioned popover beside the trigger, but the popover is last in the DOM and focus stays behind it: the next Tab walks through every link on the page before it reaches the popover, and Close drops focus to the document.</p><hr><button type="button" id="fare-open" aria-controls="po">Fare rules</button>
+<p>Economy Light, London to Paris, one cabin bag.</p>
+<p>Seat selection and checked bags can be added before check-in.</p>
+<p>Your fare is held for 20 minutes.</p>
+<p>Prices include taxes and airport charges.</p>
+<p>Name changes are not permitted on this fare.</p>
+<p><a href="#seat">Choose a seat</a> <a href="#bags">Add bags</a></p>
+<p><a href="#after">Continue to payment</a></p>
+<style>.popover{position:absolute;z-index:10;width:min(20rem,calc(100vw - 2rem));background:#fff;border:2px solid #30556e;padding:0 1rem;box-shadow:0 4px 12px rgba(0,0,0,.25)}</style>
+<div id="po" class="popover" role="dialog" aria-labelledby="po-title" hidden>
+  <h2 id="po-title">Fare rules</h2>
   <p>Changes permitted for a fee.</p>
-  <div class="btn" onclick="document.getElementById('po').hidden=true">Close</div>
+  <button type="button" id="fare-close">Close</button>
 </div>
-<p><a href="#after">A link behind the popover</a></p>
+<script>
+var trigger = document.getElementById('fare-open');
+var popover = document.getElementById('po');
+trigger.addEventListener('click', function () {
+  var r = trigger.getBoundingClientRect();
+  popover.style.top = (r.bottom + scrollY + 4) + 'px';
+  popover.style.left = (r.left + scrollX) + 'px';
+  popover.hidden = false;
+  // focus is left on the trigger
+});
+document.getElementById('fare-close').addEventListener('click', function () {
+  popover.hidden = true;
+  // and is not returned to it
+});
+</script>
 </main><p><a href="../index.html">Back to the index</a></p></body></html>

@@ -54,7 +54,7 @@ sc,name,level,since,principle,guideline,act_rules,act_failed,act_passed,act_inap
 2.4.11,Focus Not Obscured (Minimum),AA,2.2,Operable,2.4 Navigable,0,0,0,0,keyboard/focus_obscured.html,keyboard/safe_focus_not_obscured.html,,local only
 2.4.12,Focus Not Obscured (Enhanced),AAA,2.2,Operable,2.4 Navigable,0,0,0,0,aaa/focus_not_obscured_enhanced.html,aaa/safe_focus_not_obscured_enhanced.html,,local only
 2.4.13,Focus Appearance,AAA,2.2,Operable,2.4 Navigable,0,0,0,0,aaa/focus_appearance.html,aaa/safe_focus_appearance.html,,local only
-2.5.1,Pointer Gestures,A,2.1,Operable,2.5 Input Modalities,0,0,0,0,scenarios/dragging_required.html,scenarios/safe_dragging_required.html,,local only
+2.5.1,Pointer Gestures,A,2.1,Operable,2.5 Input Modalities,0,0,0,0,scenarios/swipe_required.html,scenarios/safe_swipe_required.html,,local only
 2.5.2,Pointer Cancellation,A,2.1,Operable,2.5 Input Modalities,0,0,0,0,scenarios/pointer_cancellation.html,scenarios/safe_pointer_cancellation.html,,local only
 2.5.3,Label in Name,A,2.1,Operable,2.5 Input Modalities,2,17,18,6,scenarios/label_in_name.html,scenarios/safe_label_in_name.html,,ACT + local
 2.5.4,Motion Actuation,A,2.1,Operable,2.5 Input Modalities,2,2,7,2,scenarios/motion_actuation.html,scenarios/safe_motion_actuation.html,,ACT + local
