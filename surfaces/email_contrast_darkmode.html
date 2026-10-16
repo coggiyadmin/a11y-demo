@@ -2,8 +2,8 @@
   email_contrast_darkmode — broken
   surface: email
   standard: WCAG 2.2
-  WCAG: 1.4.3, 1.4.1
-  Text colour set but no background colour. In a client that applies a dark background the dark text becomes unreadable — a contrast failure that only exists in combination with the reading environment.
+  WCAG: 1.4.3
+  An HTML email that declares dark-scheme support. Its dark stylesheet darkens the message background to #121212 but the inline text colour stays #333, so under prefers-color-scheme: dark the message is 1.48:1. In the light scheme it is 12.6:1.
 -->
 <!doctype html>
 <html lang="en">
@@ -12,7 +12,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>email_contrast_darkmode — broken</title>
 <link rel="stylesheet" href="../fixture.css">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
 </head>
 <body><main><h1>email_contrast_darkmode — broken</h1>
-<p>Text colour set but no background colour. In a client that applies a dark background the dark text becomes unreadable — a contrast failure that only exists in combination with the reading environment.</p><hr><div style="color:#333"><p>Your flight leaves at 08:40.</p></div>
+<p>An HTML email that declares dark-scheme support. Its dark stylesheet darkens the message background to #121212 but the inline text colour stays #333, so under prefers-color-scheme: dark the message is 1.48:1. In the light scheme it is 12.6:1.</p><hr><style>
+.mail{padding:1rem}
+@media (prefers-color-scheme: dark){.mail{background:#121212}}
+</style>
+<div class="mail" style="color:#333"><p>Your flight leaves at 08:40.</p></div>
 </main><p><a href="../index.html">Back to the index</a></p></body></html>

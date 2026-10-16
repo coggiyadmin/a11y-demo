@@ -879,7 +879,7 @@
       "rationale": "The contrast failure appears only under a dark colour scheme. Every engine ran under the default light scheme, so the failing rendering was never produced.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "surfaces",
-      "family_sha256": "sha256:bc589557e4d094cfcf94a66acf9d82bde46d4bc537bbeec0e390a0b7d24e28a3",
+      "family_sha256": "sha256:7b9f5d83ed0494fbf20d49ff6ac32d3faf4e1e8092741b4ff37ba1c9c1232119",
       "reviewed_on": "2026-10-13",
       "engines_consulted": [
         "axe-core 4.14.0",
@@ -888,7 +888,8 @@
         "Lighthouse 13.5.0",
         "Siteimprove Alfa 0.119.0",
         "QualWeb 0.9.5"
-      ]
+      ],
+      "notes": "Re-pinned in a contributor pull request for #55 after the page was redesigned. The rationale was previously stronger than the page: the old fixture had no dark-scheme stylesheet, so no dark rendering existed to be driven. The email now declares light and dark support and its prefers-color-scheme: dark rule leaves #333 text on #121212 (1.48:1), so the failure does appear only under a dark colour scheme, as this decision says. The assertion (1.4.3) is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "surface-epub_no_metadata",
@@ -898,7 +899,7 @@
       "rationale": "This case is labelled a proxy: the real artifact is an EPUB package document, and the fixture renders an OPF fragment as text. No HTML engine parses an OPF shown inside a pre element, and none should be expected to.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "surfaces",
-      "family_sha256": "sha256:bc589557e4d094cfcf94a66acf9d82bde46d4bc537bbeec0e390a0b7d24e28a3",
+      "family_sha256": "sha256:7b9f5d83ed0494fbf20d49ff6ac32d3faf4e1e8092741b4ff37ba1c9c1232119",
       "reviewed_on": "2026-10-13",
       "engines_consulted": [
         "axe-core 4.14.0",
@@ -907,7 +908,8 @@
         "Lighthouse 13.5.0",
         "Siteimprove Alfa 0.119.0",
         "QualWeb 0.9.5"
-      ]
+      ],
+      "notes": "Re-pinned in a contributor pull request for #55: another case in the surfaces family changed, this fixture and its min_criteria did not. The judgement is unchanged; the re-pin awaits maintainer confirmation."
     }
   ],
   "undeclared_findings": [

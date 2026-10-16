@@ -5,6 +5,42 @@ machine-readable manifest and schema versions are recorded with every release.
 
 ## Unreleased
 
+### Fixed
+
+- `surface-email_contrast_darkmode` did not fail 1.4.3 as rendered: it set
+  only a text colour (#333 on the body's #fff, 12.6:1) and relied on a mail
+  client's dark background that no browser rendering produces. The email now
+  declares light and dark support and ships a `prefers-color-scheme: dark`
+  rule that darkens the message background while the inline text stays #333,
+  1.48:1 in the dark scheme. The corrected email sets foreground and
+  background together in both schemes (15.3:1 dark). Both cases now declare
+  `state_dependency: "media-query"` (#55).
+
+### Added
+
+- `scenario-icon_button_contrast` and its corrected control (1.4.11). An
+  icon-only search button whose icon, the only visual sign of the control, is
+  1.67:1 against the page; the control draws it at 7:1. It keeps Non-text
+  Contrast from losing its only defect case when `forced_colors` is
+  relabelled (#55).
+
+### Changed (ground truth)
+
+- `scenario-forced_colors` is relabelled from a 1.4.1/1.4.11 fail to a pass
+  and is now a `safe` case asserting `must_not_report: ["1.4.1", "1.4.11"]`.
+  As authored the selected item is a 7.5:1 fill (a lightness difference) on
+  items that are not UI components, and WCAG 2.2 has no criterion, failure
+  technique or ACT rule for content that does not survive a user's
+  forced-colours theme. The page is unchanged and kept as a forced-colours
+  robustness scenario.
+- `surface-email_contrast_darkmode` no longer asserts 1.4.1: nothing on the
+  page carries information by colour.
+- **Migration:** reports of 1.4.1 or 1.4.11 on `scenario-forced_colors` were
+  previously detections and are now false positives; a 1.4.1 report on
+  `surface-email_contrast_darkmode` is now unasserted. The two `surfaces`
+  adjudication decisions are re-pinned to the new family digest with a note;
+  their judgements are unchanged (#55).
+
 ### Added
 
 - An undeclared-findings lane in `adjudication.json`, recording criteria

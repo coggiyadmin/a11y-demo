@@ -1,9 +1,9 @@
 {
   "description": "Remaining scenario types at their honest unit. Several target an input mode rather than a criterion family: label_in_name is the defect voice control is uniquely blocked by, dragging_required the one switch access is.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "counts": {
-    "scenarios": 20,
-    "cases": 40
+    "scenarios": 21,
+    "cases": 42
   },
   "cases": [
     {
@@ -430,7 +430,7 @@
     },
     {
       "id": "scenario-forced_colors",
-      "mode": "tp",
+      "mode": "safe",
       "path": "scenarios/forced_colors.html",
       "surface": "web",
       "journey": "theming",
@@ -449,13 +449,13 @@
         "contrast-adaptation",
         "visual-clarity"
       ],
-      "min_criteria": {
-        "1.4.1": 1,
-        "1.4.11": 1
-      },
-      "must_not_report": [],
-      "expected_outcome": "fail",
-      "notes": "State shown with a background image and a hard-coded colour, both discarded in forced-colors mode — so the selected item becomes indistinguishable."
+      "min_criteria": {},
+      "must_not_report": [
+        "1.4.1",
+        "1.4.11"
+      ],
+      "expected_outcome": "pass",
+      "notes": "The selected class is shown by a background fill and white text, which a forced-colours palette replaces, so the selection disappears in that mode. As authored it is a 7.5:1 fill, a lightness difference, on items that are not UI components. Expected outcome under WCAG 2.2: pass for 1.4.1 and 1.4.11 — WCAG 2.2 has no criterion for surviving a forced-colours theme. Kept as a robustness scenario."
     },
     {
       "id": "scenario-safe_forced_colors",
@@ -485,6 +485,58 @@
       ],
       "expected_outcome": "pass",
       "notes": "Uses system colours and a non-colour cue, so the state survives forced colours."
+    },
+    {
+      "id": "scenario-icon_button_contrast",
+      "mode": "tp",
+      "path": "scenarios/icon_button_contrast.html",
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual"
+      ],
+      "input_at": [
+        "magnifier"
+      ],
+      "user_needs": [
+        "visual-clarity",
+        "contrast-adaptation"
+      ],
+      "min_criteria": {
+        "1.4.11": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "notes": "A search button shown only as a magnifier icon drawn in #c8c8c8 on white (1.67:1), with no border or fill. The icon is the only visual sign the control is there, and it is under the 3:1 that 1.4.11 requires."
+    },
+    {
+      "id": "scenario-safe_icon_button_contrast",
+      "mode": "safe",
+      "path": "scenarios/safe_icon_button_contrast.html",
+      "surface": "web",
+      "journey": "navigate",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "visual"
+      ],
+      "input_at": [
+        "magnifier"
+      ],
+      "user_needs": [
+        "visual-clarity",
+        "contrast-adaptation"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "1.4.11"
+      ],
+      "expected_outcome": "pass",
+      "notes": "The same icon drawn in #595959, 7:1 against white."
     },
     {
       "id": "scenario-orientation_lock",

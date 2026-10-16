@@ -266,8 +266,8 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "color-independent/error_color_only.html color-independent/status_color_only.html color-independent/link_color_only.html color-independent/chart_series_color_only.html color-independent/selection_color_only.html color-independent/disabled_state.html color-independent/required_color_only.html scenarios/forced_colors.html scenarios/disabled_state.html surfaces/email_contrast_darkmode.html",
-    "local_safe": "color-independent/safe_error_color_only.html color-independent/safe_status_color_only.html color-independent/safe_link_color_only.html color-independent/safe_chart_series_color_only.html color-independent/safe_selection_color_only.html color-independent/safe_disabled_state.html color-independent/safe_required_color_only.html scenarios/safe_forced_colors.html scenarios/safe_disabled_state.html surfaces/safe_email_contrast_darkmode.html",
+    "local_tp": "color-independent/error_color_only.html color-independent/status_color_only.html color-independent/link_color_only.html color-independent/chart_series_color_only.html color-independent/selection_color_only.html color-independent/disabled_state.html color-independent/required_color_only.html scenarios/disabled_state.html",
+    "local_safe": "color-independent/safe_error_color_only.html color-independent/safe_status_color_only.html color-independent/safe_link_color_only.html color-independent/safe_chart_series_color_only.html color-independent/safe_selection_color_only.html color-independent/safe_disabled_state.html color-independent/safe_required_color_only.html scenarios/forced_colors.html scenarios/safe_forced_colors.html scenarios/safe_disabled_state.html",
     "guided": "",
     "ground_truth": "local only"
   },
@@ -426,8 +426,8 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "scenarios/forced_colors.html",
-    "local_safe": "scenarios/safe_forced_colors.html",
+    "local_tp": "scenarios/icon_button_contrast.html",
+    "local_safe": "scenarios/forced_colors.html scenarios/safe_forced_colors.html scenarios/safe_icon_button_contrast.html",
     "guided": "",
     "ground_truth": "local only"
   },

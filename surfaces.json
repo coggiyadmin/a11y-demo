@@ -19,7 +19,7 @@
     "immersive",
     "support"
   ],
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "counts": {
     "pairs": 5,
     "cases": 10
@@ -97,8 +97,10 @@
       "method": [
         "static-source",
         "runtime-dom",
-        "document-parse"
+        "document-parse",
+        "interaction"
       ],
+      "state_dependency": "media-query",
       "input_at": [
         "keyboard",
         "sr-nvda"
@@ -108,12 +110,11 @@
         "contrast-adaptation"
       ],
       "min_criteria": {
-        "1.4.3": 1,
-        "1.4.1": 1
+        "1.4.3": 1
       },
       "must_not_report": [],
       "expected_outcome": "fail",
-      "notes": "Text colour set but no background colour. In a client that applies a dark background the dark text becomes unreadable — a contrast failure that only exists in combination with the reading environment."
+      "notes": "An HTML email that declares dark-scheme support. Its dark stylesheet darkens the message background to #121212 but the inline text colour stays #333, so under prefers-color-scheme: dark the message is 1.48:1. In the light scheme it is 12.6:1."
     },
     {
       "id": "surface-safe_email_contrast_darkmode",
@@ -127,8 +128,10 @@
       "method": [
         "static-source",
         "runtime-dom",
-        "document-parse"
+        "document-parse",
+        "interaction"
       ],
+      "state_dependency": "media-query",
       "input_at": [
         "keyboard",
         "sr-nvda"
@@ -139,11 +142,10 @@
       ],
       "min_criteria": {},
       "must_not_report": [
-        "1.4.3",
-        "1.4.1"
+        "1.4.3"
       ],
       "expected_outcome": "pass",
-      "notes": "Foreground and background both set, so the pair is under the author’s control."
+      "notes": "The same email, with foreground and background set together in both schemes, so the dark rendering is 15.3:1."
     },
     {
       "id": "surface-epub_no_metadata",
