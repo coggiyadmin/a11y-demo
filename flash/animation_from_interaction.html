@@ -2,10 +2,10 @@
   animation_from_interaction — broken
   WCAG: 2.3.3
   expected outcome: fail
-  SAFETY: nothing flashes on load. Motion starts only on a button press, stops after
-  3 seconds, and is disabled under prefers-reduced-motion. The keyframes are in the
-  document while dormant, so the defect is detectable without playing it.
-  A large parallax translation triggered by interaction, with no prefers-reduced-motion guard. 2.3.3 is about motion sickness rather than seizures, and the absence of the guard is machine-detectable — no judgement needed.
+  SAFETY: nothing flashes. Motion starts only on a button press and lasts 0.6 seconds.
+  It deliberately does NOT honour prefers-reduced-motion: that is this page's 2.3.3
+  defect, and a motion warning sits above the button.
+  A large parallax translation triggered by a button press that runs even when the system asks to reduce motion: no prefers-reduced-motion guard in the CSS or the script. 2.3.3 is about motion from interaction rather than seizures; the motion is a single 0.6s slide and nothing flashes.
 -->
 <!doctype html>
 <html lang="en">
@@ -16,20 +16,20 @@
 <link rel="stylesheet" href="../fixture.css">
 <style>
 @keyframes slide { from { transform: translateX(-60vw) scale(1.4) } to { transform:none } }
-#stage.run { animation: slide 0.6s ease-out; }
+/* !important: beats the scaffolding's blanket reduced-motion stop in fixture.css,
+   which would otherwise supply the guard this page deliberately lacks */
+#stage.run { animation: slide 0.6s ease-out 1 !important; }
 #stage { height:30vh; background:#30556e; color:#fff; padding:1rem }
 /* no prefers-reduced-motion rule: that IS the defect */
 </style>
 </head>
 <body><main><h1>animation_from_interaction — broken</h1>
-<p>A large parallax translation triggered by interaction, with no prefers-reduced-motion guard. 2.3.3 is about motion sickness rather than seizures, and the absence of the guard is machine-detectable — no judgement needed.</p><hr><div id="stage">Seat map</div><button type="button" id="go">Trigger parallax</button>
+<p>A large parallax translation triggered by a button press that runs even when the system asks to reduce motion: no prefers-reduced-motion guard in the CSS or the script. 2.3.3 is about motion from interaction rather than seizures; the motion is a single 0.6s slide and nothing flashes.</p><hr><div role="note" style="border:3px solid #a11;padding:0 1rem;margin:1rem 0"><p><strong>Motion warning.</strong>
+  Pressing the button slides a large panel across the screen for 0.6 seconds, even if your
+  system is set to reduce motion. Nothing flashes.</p></div>
+<div id="stage">Seat map</div><button type="button" id="go">Trigger parallax</button>
 <script>
 document.getElementById('go').addEventListener('click', function () {
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.getElementById('note').textContent =
-      'Not started: your system is set to reduce motion.';
-    return;
-  }
   var el = document.getElementById('stage');
   el.classList.add('run');
   setTimeout(function () { el.classList.remove('run'); }, 3000);

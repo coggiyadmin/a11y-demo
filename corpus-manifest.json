@@ -6,7 +6,7 @@
     "id": "cogniumhq/a11y-benchmark",
     "default_branch": "master"
   },
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "counts": {
     "families": 14,
     "cases": 270
@@ -59,7 +59,7 @@
       "id": "flash",
       "file": "flash.json",
       "case_count": 10,
-      "content_sha256": "sha256:b6e37f52b8af258cd2deb85f11ba950869c3a6bb9f2698725430dc0e563fced9"
+      "content_sha256": "sha256:a0990f888f499151b2849f40f9382a47014cf176ba5c7ee132658092d4061482"
     },
     {
       "id": "color-independent",
