@@ -3,7 +3,7 @@
   WCAG: 1.4.1
   check: error-color-only
   needs: color-independent, nonvisual-access
-  Shape and text carry the status; colour is redundant reinforcement.
+  The same colours, plus shape and the status in words, so colour is redundant reinforcement.
 -->
 <!doctype html>
 <html lang="en">
@@ -16,10 +16,12 @@
 <body>
 <main>
 <h1>status_color_only — correct</h1>
-<p>Shape and text carry the status; colour is redundant reinforcement.</p><hr><style>.dot{display:inline-block;width:14px;height:14px}
-.on{background:#1a6b1a;border-radius:50%}.off{background:#a11;clip-path:polygon(50% 0,100% 100%,0 100%)}</style>
-<ul><li><span class="dot on" aria-hidden="true"></span> BA117 — On time</li>
-<li><span class="dot off" aria-hidden="true"></span> BA118 — Cancelled</li></ul>
+<p>The same colours, plus shape and the status in words, so colour is redundant reinforcement.</p><hr><style>.dot{display:inline-block;width:14px;height:14px}
+.on{background:#2e7d32;border-radius:50%}.off{background:#c62828;clip-path:polygon(50% 0,100% 100%,0 100%)}</style>
+<p>Key: <span class="dot on" aria-hidden="true"></span> on time · <span class="dot off" aria-hidden="true"></span> cancelled</p>
+<ul><li><span class="dot on" aria-hidden="true"></span> BA117 to Paris, 08:40 — On time</li>
+<li><span class="dot off" aria-hidden="true"></span> BA118 to Rome, 09:15 — Cancelled</li>
+<li><span class="dot on" aria-hidden="true"></span> BA119 to Madrid, 10:05 — On time</li></ul>
 </main>
 <p><a href="../index.html">Back to the index</a></p>
 </body>

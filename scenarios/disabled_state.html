@@ -3,7 +3,7 @@
   WCAG: 4.1.2, 1.4.1
   journey: form-lifecycle
   input/AT most affected: keyboard, sr-nvda
-  A control that looks unavailable but is not marked disabled, so it is still focusable and activatable and its state is conveyed by colour alone.
+  Taken seats look different from free ones only by fill hue — peach instead of blue at 1.05:1 — and are not marked disabled, so they are still focusable and operable. The state is conveyed by colour alone and is not exposed.
 -->
 <!doctype html>
 <html lang="en">
@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="../fixture.css">
 </head>
 <body><main><h1>disabled_state — broken</h1>
-<p>A control that looks unavailable but is not marked disabled, so it is still focusable and activatable and its state is conveyed by colour alone.</p><hr><style>.off{background:#eee;color:#aaa}</style>
-<button type="button" class="off" onclick="void 0">Select seat</button>
+<p>Taken seats look different from free ones only by fill hue — peach instead of blue at 1.05:1 — and are not marked disabled, so they are still focusable and operable. The state is conveyed by colour alone and is not exposed.</p><hr><style>.seat{background:#cfe0f7;color:#1a1a1a;border:1px solid #767676}.seat.taken{background:#f7d2bd}</style>
+<p>Blue seats are free; peach seats are taken.</p>
+<p><button type="button" class="seat">14A</button><button type="button" class="seat taken">14B</button><button type="button" class="seat">14C</button></p>
 </main><p><a href="../index.html">Back to the index</a></p></body></html>

@@ -3,7 +3,7 @@
   WCAG: 1.4.1, 3.3.1
   check: error-color-only
   needs: color-independent, nonvisual-access, language-clarity
-  The only signal that this field is wrong is that its border and message turned red. Remove colour and the page says nothing is wrong.
+  The email field is in error (aria-invalid="true"), and the only thing that shows it is a red border where the valid field has a grey one of almost the same lightness (1.13:1). No text says what is wrong. Remove colour and the page says nothing is wrong.
 -->
 <!doctype html>
 <html lang="en">
@@ -16,9 +16,9 @@
 <body>
 <main>
 <h1>error_color_only — broken</h1>
-<p>The only signal that this field is wrong is that its border and message turned red. Remove colour and the page says nothing is wrong.</p><hr><style>.bad{border:2px solid #d00}.msg{color:#d00}</style>
-<form><label for="a1">Email</label><input id="a1" class="bad" value="not-an-email">
-<p class="msg">not-an-email</p></form>
+<p>The email field is in error (aria-invalid="true"), and the only thing that shows it is a red border where the valid field has a grey one of almost the same lightness (1.13:1). No text says what is wrong. Remove colour and the page says nothing is wrong.</p><hr><style>.in{border:2px solid #767676}.in.bad{border-color:#d00}</style>
+<form><p><label for="n1">Name</label><input id="n1" class="in" value="Alex Example"></p>
+<p><label for="a1">Email</label><input id="a1" class="in bad" value="not-an-email" aria-invalid="true"></p></form>
 </main>
 <p><a href="../index.html">Back to the index</a></p>
 </body>

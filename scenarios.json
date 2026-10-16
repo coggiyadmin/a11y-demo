@@ -1,6 +1,6 @@
 {
   "description": "Remaining scenario types at their honest unit. Several target an input mode rather than a criterion family: label_in_name is the defect voice control is uniquely blocked by, dragging_required the one switch access is.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "counts": {
     "scenarios": 20,
     "cases": 40
@@ -1024,11 +1024,8 @@
       "method": [
         "runtime-dom",
         "ax-tree",
-        "visual",
-        "interaction",
-        "state-exploration"
+        "visual"
       ],
-      "state_dependency": "handler",
       "input_at": [
         "keyboard",
         "sr-nvda"
@@ -1040,7 +1037,7 @@
       },
       "must_not_report": [],
       "expected_outcome": "fail",
-      "notes": "A control that looks unavailable but is not marked disabled, so it is still focusable and activatable and its state is conveyed by colour alone."
+      "notes": "Taken seats look different from free ones only by fill hue — peach instead of blue at 1.05:1 — and are not marked disabled, so they are still focusable and operable. The state is conveyed by colour alone and is not exposed."
     },
     {
       "id": "scenario-safe_disabled_state",
@@ -1065,7 +1062,7 @@
         "1.4.1"
       ],
       "expected_outcome": "pass",
-      "notes": "Genuinely disabled, with the reason available in text."
+      "notes": "The taken seat is genuinely disabled, crossed out and labelled \"taken\", so the state is exposed and does not depend on hue."
     },
     {
       "id": "scenario-motion_actuation",

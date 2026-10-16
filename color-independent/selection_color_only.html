@@ -3,7 +3,7 @@
   WCAG: 1.4.1, 4.1.2
   check: interactive-states
   needs: color-independent, nonvisual-access
-  The selected seat class is shown by background colour alone — no text, no checkmark, no aria-pressed or aria-selected.
+  Two toggle buttons for seat class. The selected one differs only in fill hue, light blue against light grey at 1.22:1, with the same border and text — and no aria-pressed, so the state is not exposed either.
 -->
 <!doctype html>
 <html lang="en">
@@ -16,8 +16,9 @@
 <body>
 <main>
 <h1>selection_color_only — broken</h1>
-<p>The selected seat class is shown by background colour alone — no text, no checkmark, no aria-pressed or aria-selected.</p><hr><style>.opt{border:1px solid #999}.sel{background:#2a6ebb;color:#fff}</style>
-<div><span class="opt sel">Economy</span> <span class="opt">Business</span></div>
+<p>Two toggle buttons for seat class. The selected one differs only in fill hue, light blue against light grey at 1.22:1, with the same border and text — and no aria-pressed, so the state is not exposed either.</p><hr><style>.opt{background:#e6e6e6;color:#1a1a1a;border:1px solid #767676}.opt.sel{background:#bcd3f5}</style>
+<div><button type="button" class="opt sel" onclick="document.querySelectorAll('.opt').forEach(function(b){b.classList.toggle('sel',b===this)},this)">Economy</button>
+<button type="button" class="opt" onclick="document.querySelectorAll('.opt').forEach(function(b){b.classList.toggle('sel',b===this)},this)">Business</button></div>
 </main>
 <p><a href="../index.html">Back to the index</a></p>
 </body>

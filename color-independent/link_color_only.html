@@ -3,7 +3,7 @@
   WCAG: 1.4.1
   check: link-color-only
   needs: color-independent, visual-clarity
-  A link inside a paragraph, distinguished from surrounding text only by colour. WCAG needs a second cue, or 3:1 contrast against the surrounding text plus a cue on hover and focus.
+  A link inside a paragraph, told apart from the surrounding text only by hue: 2.21:1 against the text, below the 3:1 that G183 and F73 accept, with no underline or other non-colour cue.
 -->
 <!doctype html>
 <html lang="en">
@@ -16,7 +16,7 @@
 <body>
 <main>
 <h1>link_color_only — broken</h1>
-<p>A link inside a paragraph, distinguished from surrounding text only by colour. WCAG needs a second cue, or 3:1 contrast against the surrounding text plus a cue on hover and focus.</p><hr><style>.ln{color:#2a6ebb;text-decoration:none}</style>
+<p>A link inside a paragraph, told apart from the surrounding text only by hue: 2.21:1 against the text, below the 3:1 that G183 and F73 accept, with no underline or other non-colour cue.</p><hr><style>.ln,.ln:hover{color:#1d4f9e;text-decoration:none}</style>
 <p>Baggage limits are listed in the <a href="#f" class="ln">fare conditions</a> for your ticket.</p>
 </main>
 <p><a href="../index.html">Back to the index</a></p>

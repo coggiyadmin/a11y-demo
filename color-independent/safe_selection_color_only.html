@@ -3,7 +3,7 @@
   WCAG: 1.4.1, 4.1.2
   check: interactive-states
   needs: color-independent, nonvisual-access
-  aria-pressed carries the state programmatically and a checkmark carries it visually, so neither colour nor sight alone is required.
+  The same fills, plus aria-pressed carrying the state programmatically and a checkmark carrying it visually.
 -->
 <!doctype html>
 <html lang="en">
@@ -16,9 +16,9 @@
 <body>
 <main>
 <h1>selection_color_only — correct</h1>
-<p>aria-pressed carries the state programmatically and a checkmark carries it visually, so neither colour nor sight alone is required.</p><hr><style>.opt{border:1px solid #767676}.sel{background:#1c4e7a;color:#fff}</style>
-<button type="button" class="opt sel" aria-pressed="true"><span aria-hidden="true">✓ </span>Economy</button>
-<button type="button" class="opt" aria-pressed="false">Business</button>
+<p>The same fills, plus aria-pressed carrying the state programmatically and a checkmark carrying it visually.</p><hr><style>.opt{background:#e6e6e6;color:#1a1a1a;border:1px solid #767676}.opt[aria-pressed="true"]{background:#bcd3f5}.opt .tick{visibility:hidden}.opt[aria-pressed="true"] .tick{visibility:visible}</style>
+<div><button type="button" class="opt" aria-pressed="true" onclick="document.querySelectorAll('.opt').forEach(function(b){b.setAttribute('aria-pressed',String(b===this))},this)"><span class="tick" aria-hidden="true">✓ </span>Economy</button>
+<button type="button" class="opt" aria-pressed="false" onclick="document.querySelectorAll('.opt').forEach(function(b){b.setAttribute('aria-pressed',String(b===this))},this)"><span class="tick" aria-hidden="true">✓ </span>Business</button></div>
 </main>
 <p><a href="../index.html">Back to the index</a></p>
 </body>
