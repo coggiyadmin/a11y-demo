@@ -1,6 +1,6 @@
 {
   "description": "Remaining scenario types at their honest unit. Several target an input mode rather than a criterion family: label_in_name is the defect voice control is uniquely blocked by, dragging_required the one switch access is.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "counts": {
     "scenarios": 20,
     "cases": 40
@@ -762,7 +762,7 @@
         "2.5.5"
       ],
       "expected_outcome": "pass",
-      "notes": "At least 24x24 with spacing between targets."
+      "notes": "At least 44x44 with spacing between targets, which clears 2.5.5 (44 by 44) as well as 2.5.8 (24 by 24)."
     },
     {
       "id": "scenario-pointer_cancellation",

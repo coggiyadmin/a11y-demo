@@ -1,6 +1,6 @@
 {
   "description": "Maturity of the enumerated test space. A represented value is named by at least one fixture; executable means a route to evidence exists; executed and verified require a current record in the evidence ledger. The states are strictly nested and a value can never be counted in a state it has not reached.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "cases": 270,
   "maturity_states": [
     "represented",
@@ -8,7 +8,7 @@
     "executed",
     "verified"
   ],
-  "corpus_content_digest": "sha256:34dd669114986ed000b88c3430a77df45e6fabdb4bcbbc9ee10e884f9feafc57",
+  "corpus_content_digest": "sha256:fd98aad85594e9616ae2cfc304fee98a4a805e0ef481ce7c55719bb3c41fcd7e",
   "evidence": {
     "records": 72,
     "current": 0,

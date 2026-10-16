@@ -17,13 +17,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: other aaa pairs changed, this fixture and its min_criteria did not. The judgement is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "aaa-accessible_auth_enhanced",
@@ -33,13 +33,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: other aaa pairs changed, this fixture and its min_criteria did not. The judgement is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "aaa-concurrent_input",
@@ -49,13 +49,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: other aaa pairs changed, this fixture and its min_criteria did not. The judgement is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "aaa-error_prevention_all",
@@ -65,13 +65,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: other aaa pairs changed, this fixture and its min_criteria did not. The judgement is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "aaa-focus_appearance",
@@ -81,13 +81,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: other aaa pairs changed, this fixture and its min_criteria did not. The judgement is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "aaa-focus_not_obscured_enhanced",
@@ -97,13 +97,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: only the corrected control changed, reserving footer space for the Back link as well. The assertion (2.4.12 on the broken page) is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "aaa-help",
@@ -113,13 +113,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: other aaa pairs changed, this fixture and its min_criteria did not. The judgement is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "aaa-identify_purpose",
@@ -129,13 +129,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: other aaa pairs changed, this fixture and its min_criteria did not. The judgement is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "aaa-location",
@@ -145,13 +145,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: other aaa pairs changed, this fixture and its min_criteria did not. The judgement is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "aaa-no_timing",
@@ -161,13 +161,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: other aaa pairs changed, this fixture and its min_criteria did not. The judgement is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "aaa-re_authenticating",
@@ -177,13 +177,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: other aaa pairs changed, this fixture and its min_criteria did not. The judgement is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "aaa-section_headings",
@@ -193,13 +193,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: other aaa pairs changed, this fixture and its min_criteria did not. The judgement is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "aaa-visual_presentation",
@@ -209,13 +209,13 @@
       "rationale": "The assertion follows the Understanding document for this AAA criterion. Neither engine consulted evaluated a single AAA criterion anywhere on the corpus, so the silence reflects engine scope rather than a defect in the fixture.",
       "reviewer": "maintainer review, a11y-benchmark",
       "family": "aaa",
-      "family_sha256": "sha256:4fd46f596d2db36a4f445cd86b9353d05fcf008d2ee9c7da378f75d8cede659a",
+      "family_sha256": "sha256:bb59900d22adcfad1774831b2063629e9afc1ee6a40041c9d10ff8395348046c",
       "reviewed_on": "2026-10-14",
       "engines_consulted": [
         "axe-core 4.14.0",
         "HTML_CodeSniffer 2.5.1"
       ],
-      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged."
+      "notes": "Re-pinned after a metadata-only change to the family: the method list and state_dependency moved, the fixture and its min_criteria did not. The judgement this decision records is about the assertion, which is unchanged. Re-pinned in a contributor pull request for #56: the broken page now lifts fixture.css's 70ch caps so its lines really exceed 80 characters, the unsupported colour claim is removed, and the control is narrowed to about 72 characters per line. The assertion (1.4.8 on the broken page) is unchanged; the re-pin awaits maintainer confirmation."
     },
     {
       "case_id": "delivery-shadow_dom_closed",
