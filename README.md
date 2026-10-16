@@ -126,6 +126,7 @@ keyboard/            matched defective/corrected controls for keyboard and focus
 capture/             pages that stress capture and hydration rather than rule logic
 static/              single-page defects readable from served HTML
 delivery/            ONE constant defect, delivered eleven different ways
+wiring/              ONE constant defect, with its handler attached four different ways
 patterns/            APG component patterns as matched broken/correct pairs
 taxonomy/            the enumerated test space
 aaa/                 matched pairs for the automatable and stateful WCAG AAA criteria
@@ -134,6 +135,7 @@ surface-contracts.json  native artifact format, harness and standard per unrepre
 evidence/            the execution and verification evidence ledger
 starter/             copy-and-fill kit for publishing a result bundle
 delivery.mjs         regenerates the delivery matrix
+wiring.mjs           regenerates the event-wiring matrix
 patterns.mjs         regenerates the pattern pairs
 taxonomy.mjs         regenerates the taxonomy
 aaa.mjs              regenerates the AAA classification and its fixture pairs

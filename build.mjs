@@ -580,6 +580,8 @@ const EXTRA_GROUPS = [
       + 'against and a slot for evidence \u2014 every one expects cannot-tell' },
   { dir: 'aaa', blurb: 'the WCAG AAA criteria that are decidable from markup or by driving the '
       + 'page, as matched broken/corrected pairs \u2014 not a conformance claim about any site' },
+  { dir: 'wiring', blurb: 'ONE constant defect — a div acting as a button — with the click handler '
+      + 'attached four ways, because a corpus that only writes onclick is easier than the web' },
   { dir: 'flash', blurb: 'flash and seizure thresholds \u2014 SEIZURE WARNING: these can produce '
       + 'flashing light. Nothing flashes on load; each needs a button press and stops after 3s' },
 ];

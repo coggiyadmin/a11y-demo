@@ -1,0 +1,275 @@
+{
+  "description": "One constant defect — a div acting as a button with no tabindex, role or key handler — with the click handler attached four different ways. Holding the defect constant means a scanner that reports one wiring and not another has a coverage gap in how it detects interactivity, not a rule error.",
+  "boundary": "Every case here is genuinely interactive. A div with no handler anywhere has no functionality, so 2.1.1 does not apply to it and reporting it would be a false positive; no such case is shipped. Each control repeats its defect’s wiring so the pair isolates the element rather than the attachment.",
+  "generated": "2026-10-16",
+  "counts": {
+    "wirings": 4,
+    "cases": 8
+  },
+  "cases": [
+    {
+      "id": "wiring-inline_attribute",
+      "mode": "tp",
+      "path": "wiring/inline_attribute.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "interaction"
+      ],
+      "state_dependency": "script",
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "switch"
+      ],
+      "user_needs": [
+        "nonvisual-access",
+        "alternative-input",
+        "hands-free-switch",
+        "text-and-tactile"
+      ],
+      "min_criteria": {
+        "2.1.1": 1,
+        "4.1.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "wiring": "inline_attribute",
+      "notes": "A div acting as a button, handler in an inline attribute. Keyboard users cannot reach or operate it."
+    },
+    {
+      "id": "wiring-safe_inline_attribute",
+      "mode": "safe",
+      "path": "wiring/safe_inline_attribute.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "interaction"
+      ],
+      "state_dependency": "script",
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "switch"
+      ],
+      "user_needs": [
+        "nonvisual-access",
+        "alternative-input",
+        "hands-free-switch",
+        "text-and-tactile"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1",
+        "4.1.2"
+      ],
+      "expected_outcome": "pass",
+      "wiring": "inline_attribute",
+      "notes": "Matched control: a real button, handler in an inline attribute. Same wiring as its defect, so the pair isolates the element and not the attachment. A control that flags this is a false positive."
+    },
+    {
+      "id": "wiring-element_listener",
+      "mode": "tp",
+      "path": "wiring/element_listener.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "interaction"
+      ],
+      "state_dependency": "script",
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "switch"
+      ],
+      "user_needs": [
+        "nonvisual-access",
+        "alternative-input",
+        "hands-free-switch",
+        "text-and-tactile"
+      ],
+      "min_criteria": {
+        "2.1.1": 1,
+        "4.1.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "wiring": "element_listener",
+      "notes": "A div acting as a button, handler attached with addEventListener. Keyboard users cannot reach or operate it."
+    },
+    {
+      "id": "wiring-safe_element_listener",
+      "mode": "safe",
+      "path": "wiring/safe_element_listener.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "interaction"
+      ],
+      "state_dependency": "script",
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "switch"
+      ],
+      "user_needs": [
+        "nonvisual-access",
+        "alternative-input",
+        "hands-free-switch",
+        "text-and-tactile"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1",
+        "4.1.2"
+      ],
+      "expected_outcome": "pass",
+      "wiring": "element_listener",
+      "notes": "Matched control: a real button, handler attached with addEventListener. Same wiring as its defect, so the pair isolates the element and not the attachment. A control that flags this is a false positive."
+    },
+    {
+      "id": "wiring-delegated_ancestor",
+      "mode": "tp",
+      "path": "wiring/delegated_ancestor.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "interaction"
+      ],
+      "state_dependency": "script",
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "switch"
+      ],
+      "user_needs": [
+        "nonvisual-access",
+        "alternative-input",
+        "hands-free-switch",
+        "text-and-tactile"
+      ],
+      "min_criteria": {
+        "2.1.1": 1,
+        "4.1.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "wiring": "delegated_ancestor",
+      "notes": "A div acting as a button, handler delegated to an ancestor. Keyboard users cannot reach or operate it."
+    },
+    {
+      "id": "wiring-safe_delegated_ancestor",
+      "mode": "safe",
+      "path": "wiring/safe_delegated_ancestor.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "interaction"
+      ],
+      "state_dependency": "script",
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "switch"
+      ],
+      "user_needs": [
+        "nonvisual-access",
+        "alternative-input",
+        "hands-free-switch",
+        "text-and-tactile"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1",
+        "4.1.2"
+      ],
+      "expected_outcome": "pass",
+      "wiring": "delegated_ancestor",
+      "notes": "Matched control: a real button, handler delegated to an ancestor. Same wiring as its defect, so the pair isolates the element and not the attachment. A control that flags this is a false positive."
+    },
+    {
+      "id": "wiring-pointer_only",
+      "mode": "tp",
+      "path": "wiring/pointer_only.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "interaction"
+      ],
+      "state_dependency": "script",
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "switch"
+      ],
+      "user_needs": [
+        "nonvisual-access",
+        "alternative-input",
+        "hands-free-switch",
+        "text-and-tactile"
+      ],
+      "min_criteria": {
+        "2.1.1": 1,
+        "4.1.2": 1
+      },
+      "must_not_report": [],
+      "expected_outcome": "fail",
+      "wiring": "pointer_only",
+      "notes": "A div acting as a button, handler bound to pointer events only. Keyboard users cannot reach or operate it."
+    },
+    {
+      "id": "wiring-safe_pointer_only",
+      "mode": "safe",
+      "path": "wiring/safe_pointer_only.html",
+      "surface": "web",
+      "journey": "form-lifecycle",
+      "ui_state": "default",
+      "method": [
+        "runtime-dom",
+        "ax-tree",
+        "interaction"
+      ],
+      "state_dependency": "script",
+      "input_at": [
+        "keyboard",
+        "sr-nvda",
+        "switch"
+      ],
+      "user_needs": [
+        "nonvisual-access",
+        "alternative-input",
+        "hands-free-switch",
+        "text-and-tactile"
+      ],
+      "min_criteria": {},
+      "must_not_report": [
+        "2.1.1",
+        "4.1.2"
+      ],
+      "expected_outcome": "pass",
+      "wiring": "pointer_only",
+      "notes": "Matched control. Corrected by binding click rather than pointerdown, as well as using a real button. Unlike the other pairs this one varies the binding too, because a button bound only to pointerdown is still unreachable from the keyboard. A control that flags this is a false positive."
+    }
+  ]
+}

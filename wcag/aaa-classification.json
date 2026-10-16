@@ -1,7 +1,7 @@
 {
   "description": "Reviewed evidence-lane classification for the twenty WCAG 2.2 AAA criteria that had no ground truth. Each entry records the lane, the public source for the requirement, and why the lane was chosen.",
   "boundary": "Classification and fixture coverage are not conformance. No count here supports a claim that a site conforms at AAA.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "lanes": {
     "automated-static": "decidable from the delivered markup or computed style",
     "stateful-interaction": "decidable only by driving the page into a declared state",

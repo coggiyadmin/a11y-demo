@@ -2,7 +2,7 @@
   "format": "cognium-a11y-pipeline-cases",
   "format_version": "1.0.0",
   "description": "Public synthetic pipeline-integrity cases. Expected execution fields are assertions about honest runner accounting, not WCAG conformance claims.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "cases": [
     {
       "surface": "web",

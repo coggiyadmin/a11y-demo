@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>event-wiring fixtures</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+.control { display: inline-block; background: #0b4f8a; color: #fff;
+  padding: 0.9em 1.6em; border-radius: 4px; font-weight: 700; cursor: pointer; }
+</style>
+</head>
+<body>
+<main>
+<h1>event-wiring fixtures</h1>
+<p>One constant defect — a div acting as a button, not keyboard operable — with the click
+     handler attached four different ways. A scanner that reports the inline case and not the
+     delegated one has a wiring coverage gap, not a rule bug, and this matrix says which.</p>
+     <ul><li><a href="inline_attribute.html">handler in an inline attribute</a> ·
+       <a href="safe_inline_attribute.html">corrected control</a></li>
+<li><a href="element_listener.html">handler attached with addEventListener</a> ·
+       <a href="safe_element_listener.html">corrected control</a></li>
+<li><a href="delegated_ancestor.html">handler delegated to an ancestor</a> ·
+       <a href="safe_delegated_ancestor.html">corrected control</a></li>
+<li><a href="pointer_only.html">handler bound to pointer events only</a> ·
+       <a href="safe_pointer_only.html">corrected control</a></li></ul>
+<p id="state" role="status">Not yet activated.</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+<script>
+
+</script>
+</body>
+</html>

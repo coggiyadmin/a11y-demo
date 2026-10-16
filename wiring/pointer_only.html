@@ -1,0 +1,32 @@
+<!--
+  pointer_only — broken
+  constant defect: a div acting as a button, not keyboard operable
+  varied: handler bound to pointer events only
+  Bound to pointerdown rather than click. A pointer user activates it; a keyboard user cannot, because no key press ever becomes a pointer event.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>handler bound to pointer events only — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+.control { display: inline-block; background: #0b4f8a; color: #fff;
+  padding: 0.9em 1.6em; border-radius: 4px; font-weight: 700; cursor: pointer; }
+</style>
+</head>
+<body>
+<main>
+<h1>handler bound to pointer events only — broken</h1>
+<p>Bound to pointerdown rather than click. A pointer user activates it; a keyboard user cannot, because no key press ever becomes a pointer event.</p><hr>
+<div class="control" id="target">Search flights</div>
+<p id="state" role="status">Not yet activated.</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+<script>
+function activate() { document.getElementById('state').textContent = 'Activated.'; }
+document.getElementById('target').addEventListener('pointerdown', activate);
+</script>
+</body>
+</html>

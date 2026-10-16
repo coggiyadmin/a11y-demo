@@ -1,6 +1,6 @@
 {
   "description": "Functional-need index. For each need: the fixtures that exercise it and the criteria they touch. `shared_benefit` lists criteria serving more than one need — those are the highest-leverage fixes, and a criterion-first report cannot show them. Each need also carries its evidence maturity: represented, executable, executed or verified, on the same vocabulary as space-coverage.json.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "maturity_states": [
     "represented",
     "executable",
@@ -13,9 +13,9 @@
       "label": "Non-visual operation",
       "group": "visual-presentation",
       "scenarios": 10,
-      "cases": 183,
-      "tp": 91,
-      "safe": 83,
+      "cases": 191,
+      "tp": 95,
+      "safe": 87,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -243,7 +243,15 @@
         "native/pdf/untagged.pdf",
         "native/pdf/safe_tagged.pdf",
         "native/docx/unstructured.docx",
-        "native/docx/safe_structured.docx"
+        "native/docx/safe_structured.docx",
+        "wiring/inline_attribute.html",
+        "wiring/safe_inline_attribute.html",
+        "wiring/element_listener.html",
+        "wiring/safe_element_listener.html",
+        "wiring/delegated_ancestor.html",
+        "wiring/safe_delegated_ancestor.html",
+        "wiring/pointer_only.html",
+        "wiring/safe_pointer_only.html"
       ]
     },
     {
@@ -629,9 +637,9 @@
       "label": "Text and tactile access",
       "group": "combined-access",
       "scenarios": 6,
-      "cases": 140,
-      "tp": 71,
-      "safe": 64,
+      "cases": 148,
+      "tp": 75,
+      "safe": 68,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -802,7 +810,15 @@
         "native/pdf/untagged.pdf",
         "native/pdf/safe_tagged.pdf",
         "native/docx/unstructured.docx",
-        "native/docx/safe_structured.docx"
+        "native/docx/safe_structured.docx",
+        "wiring/inline_attribute.html",
+        "wiring/safe_inline_attribute.html",
+        "wiring/element_listener.html",
+        "wiring/safe_element_listener.html",
+        "wiring/delegated_ancestor.html",
+        "wiring/safe_delegated_ancestor.html",
+        "wiring/pointer_only.html",
+        "wiring/safe_pointer_only.html"
       ]
     },
     {
@@ -810,9 +826,9 @@
       "label": "Alternative input access",
       "group": "input-and-control",
       "scenarios": 8,
-      "cases": 120,
-      "tp": 64,
-      "safe": 55,
+      "cases": 128,
+      "tp": 68,
+      "safe": 59,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -978,7 +994,15 @@
         "aaa/focus_appearance.html",
         "aaa/safe_focus_appearance.html",
         "aaa/concurrent_input.html",
-        "aaa/safe_concurrent_input.html"
+        "aaa/safe_concurrent_input.html",
+        "wiring/inline_attribute.html",
+        "wiring/safe_inline_attribute.html",
+        "wiring/element_listener.html",
+        "wiring/safe_element_listener.html",
+        "wiring/delegated_ancestor.html",
+        "wiring/safe_delegated_ancestor.html",
+        "wiring/pointer_only.html",
+        "wiring/safe_pointer_only.html"
       ]
     },
     {
@@ -986,9 +1010,9 @@
       "label": "Error-tolerant pointer input",
       "group": "input-and-control",
       "scenarios": 4,
-      "cases": 62,
-      "tp": 36,
-      "safe": 26,
+      "cases": 70,
+      "tp": 40,
+      "safe": 30,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1075,7 +1099,15 @@
         "surfaces/chatbot_transcript.html",
         "surfaces/safe_chatbot_transcript.html",
         "aaa/concurrent_input.html",
-        "aaa/safe_concurrent_input.html"
+        "aaa/safe_concurrent_input.html",
+        "wiring/inline_attribute.html",
+        "wiring/safe_inline_attribute.html",
+        "wiring/element_listener.html",
+        "wiring/safe_element_listener.html",
+        "wiring/delegated_ancestor.html",
+        "wiring/safe_delegated_ancestor.html",
+        "wiring/pointer_only.html",
+        "wiring/safe_pointer_only.html"
       ]
     },
     {
@@ -1083,9 +1115,9 @@
       "label": "Hands-free and switch operation",
       "group": "input-and-control",
       "scenarios": 3,
-      "cases": 64,
-      "tp": 37,
-      "safe": 27,
+      "cases": 72,
+      "tp": 41,
+      "safe": 31,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1175,7 +1207,15 @@
         "aaa/focus_not_obscured_enhanced.html",
         "aaa/safe_focus_not_obscured_enhanced.html",
         "aaa/concurrent_input.html",
-        "aaa/safe_concurrent_input.html"
+        "aaa/safe_concurrent_input.html",
+        "wiring/inline_attribute.html",
+        "wiring/safe_inline_attribute.html",
+        "wiring/element_listener.html",
+        "wiring/safe_element_listener.html",
+        "wiring/delegated_ancestor.html",
+        "wiring/safe_delegated_ancestor.html",
+        "wiring/pointer_only.html",
+        "wiring/safe_pointer_only.html"
       ]
     },
     {
@@ -1236,9 +1276,9 @@
       "label": "Non-voice alternatives",
       "group": "voice-alternatives",
       "scenarios": 3,
-      "cases": 68,
-      "tp": 39,
-      "safe": 29,
+      "cases": 76,
+      "tp": 43,
+      "safe": 33,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1328,7 +1368,15 @@
         "surfaces/chatbot_transcript.html",
         "surfaces/safe_chatbot_transcript.html",
         "aaa/accessible_auth_enhanced.html",
-        "aaa/safe_accessible_auth_enhanced.html"
+        "aaa/safe_accessible_auth_enhanced.html",
+        "wiring/inline_attribute.html",
+        "wiring/safe_inline_attribute.html",
+        "wiring/element_listener.html",
+        "wiring/safe_element_listener.html",
+        "wiring/delegated_ancestor.html",
+        "wiring/safe_delegated_ancestor.html",
+        "wiring/pointer_only.html",
+        "wiring/safe_pointer_only.html"
       ]
     },
     {
@@ -1803,9 +1851,9 @@
       "label": "Task guidance and recovery",
       "group": "comprehension-and-task",
       "scenarios": 5,
-      "cases": 129,
-      "tp": 64,
-      "safe": 64,
+      "cases": 137,
+      "tp": 68,
+      "safe": 68,
       "maturity": "executable",
       "represented": true,
       "executable": true,
@@ -1976,7 +2024,15 @@
         "native/pdf/untagged.pdf",
         "native/pdf/safe_tagged.pdf",
         "native/docx/unstructured.docx",
-        "native/docx/safe_structured.docx"
+        "native/docx/safe_structured.docx",
+        "wiring/inline_attribute.html",
+        "wiring/safe_inline_attribute.html",
+        "wiring/element_listener.html",
+        "wiring/safe_element_listener.html",
+        "wiring/delegated_ancestor.html",
+        "wiring/safe_delegated_ancestor.html",
+        "wiring/pointer_only.html",
+        "wiring/safe_pointer_only.html"
       ]
     },
     {

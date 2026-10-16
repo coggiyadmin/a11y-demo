@@ -34,7 +34,7 @@ const PUBLIC_DIRECTORIES = new Set([
   'aaa', 'act', 'capture', 'color-independent', 'delivery', 'evidence', 'flash',
   'guided', 'journeys', 'keyboard', 'media', 'native', 'patterns', 'pipeline',
   'protocols', 'scenarios', 'schemas', 'static', 'surfaces', 'taxonomy',
-  'ui-states', 'wcag',
+  'ui-states', 'wcag', 'wiring',
 ]);
 
 const PUBLIC_ROOT_FILES = new Set([
@@ -43,7 +43,7 @@ const PUBLIC_ROOT_FILES = new Set([
   'patterns.json', 'color-independent.json', 'media.json', 'ui-states.json',
   'journeys.json', 'scenarios.json', 'surfaces.json', 'guided.json', 'flash.json',
   'corpus-manifest.json', 'pipeline.json', 'aaa.json', 'native.json',
-  'surface-contracts.json', 'sources.json', 'adjudication.json',
+  'surface-contracts.json', 'sources.json', 'adjudication.json', 'wiring.json',
 ]);
 
 const text = (res, status, body) => {
