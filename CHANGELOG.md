@@ -7,6 +7,20 @@ machine-readable manifest and schema versions are recorded with every release.
 
 ### Added
 
+- A `wiring` family: one constant defect — a div acting as a button, not
+  keyboard operable — with the click handler attached four ways (inline
+  attribute, `addEventListener`, delegated to an ancestor, pointer-events
+  only), each with a matched control. Every case is genuinely interactive and
+  verified by driving it in a browser: pointer activates it, keyboard does not,
+  and each control is reachable and operable.
+- The family exists because every pre-existing keyboard fixture wires its
+  defect with an inline `onclick`, the one form a scanner can read from markup.
+  Measured against one product, the inline case was reported and the same
+  defect attached by listener or delegation was reported by nothing — so the
+  corpus was easier than the web.
+
+### Added
+
 - An undeclared-findings lane in `adjudication.json`, recording criteria
   engines report on a broken page but not on its control. A pair isolates one
   criterion; agreement here means it measures more than one. 43 findings across

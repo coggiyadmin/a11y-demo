@@ -1,0 +1,36 @@
+<!--
+  delegated_ancestor — broken
+  constant defect: a div acting as a button, not keyboard operable
+  varied: handler delegated to an ancestor
+  The listener sits on a container and dispatches on the event target. This is how every mainstream framework attaches behaviour, so it is the common case on the real web, and the element itself carries no listener at all.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>handler delegated to an ancestor — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+.control { display: inline-block; background: #0b4f8a; color: #fff;
+  padding: 0.9em 1.6em; border-radius: 4px; font-weight: 700; cursor: pointer; }
+</style>
+</head>
+<body>
+<main>
+<h1>handler delegated to an ancestor — broken</h1>
+<p>The listener sits on a container and dispatches on the event target. This is how every mainstream framework attaches behaviour, so it is the common case on the real web, and the element itself carries no listener at all.</p><hr>
+<div id="shell">
+<div class="control" id="target" data-action="search">Search flights</div>
+</div>
+<p id="state" role="status">Not yet activated.</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+<script>
+function activate() { document.getElementById('state').textContent = 'Activated.'; }
+document.getElementById('shell').addEventListener('click', function (event) {
+  if (event.target.closest('[data-action="search"]')) activate();
+});
+</script>
+</body>
+</html>

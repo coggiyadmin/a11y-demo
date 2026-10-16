@@ -1,7 +1,7 @@
 {
   "description": "Native artifact contracts for the surfaces this corpus does not cover with web content. Each contract fixes the artifact format, the parser or execution harness, the applicable standard, and the boundary between what software can decide and what requires physical evaluation.",
   "boundary": "A contract is a specification, not coverage. A surface with a contract and no artifact is still unrepresented, and space-coverage.json reports it as such. Proxy representations are labelled and excluded from native coverage.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "statuses": {
     "specified": "the contract exists; no artifact ships yet",
     "partial": "some artifacts ship; the surface is not complete",

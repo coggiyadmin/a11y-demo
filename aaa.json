@@ -1,7 +1,7 @@
 {
   "description": "Matched broken/corrected pairs for the WCAG AAA criteria whose evidence is machine-readable or reachable by driving the page. Criteria requiring human judgement are carried as guided checks instead of fabricated automated assertions.",
   "boundary": "Single-purpose fixtures, not a sampled site. AAA coverage here is not an AAA conformance claim about any website; whole-site conformance is judged under WCAG-EM.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "counts": {
     "pairs": 13,
     "cases": 26

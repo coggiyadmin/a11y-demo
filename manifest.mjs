@@ -19,6 +19,7 @@ const FAMILIES = [
   ['guided', 'guided.json'],
   ['aaa', 'aaa.json'],
   ['native', 'native.json'],
+  ['wiring', 'wiring.json'],
 ];
 
 function canonicalContentDigest(document) {

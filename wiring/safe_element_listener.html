@@ -1,0 +1,32 @@
+<!--
+  element_listener — correct
+  constant defect: a div acting as a button, not keyboard operable
+  varied: handler attached with addEventListener
+  The same behaviour attached from script. Nothing in the markup says the element is interactive; a scanner must either read listeners from the browser or infer it.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>handler attached with addEventListener — correct</title>
+<link rel="stylesheet" href="../fixture.css">
+<style>
+.control { display: inline-block; background: #0b4f8a; color: #fff;
+  padding: 0.9em 1.6em; border-radius: 4px; font-weight: 700; cursor: pointer; }
+</style>
+</head>
+<body>
+<main>
+<h1>handler attached with addEventListener — correct</h1>
+<p>The same behaviour attached from script. Nothing in the markup says the element is interactive; a scanner must either read listeners from the browser or infer it.</p><hr>
+<button class="control" type="button" id="target">Search flights</button>
+<p id="state" role="status">Not yet activated.</p>
+</main>
+<p><a href="../index.html">Back to the index</a></p>
+<script>
+function activate() { document.getElementById('state').textContent = 'Activated.'; }
+document.getElementById('target').addEventListener('click', activate);
+</script>
+</body>
+</html>
