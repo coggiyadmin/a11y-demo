@@ -5,6 +5,27 @@ machine-readable manifest and schema versions are recorded with every release.
 
 ## Unreleased
 
+### Fixed
+
+- `flash-animation_from_interaction` passed its declared 2.3.3 failure: the
+  shared gate refused to start under reduced motion and `fixture.css` zeroes
+  every animation there, so the page honoured the preference twice over. The
+  broken page now honours neither (a no-preference gate, and an `!important`
+  rule so the scaffolding's blanket stop does not supply the guard the page
+  lacks). It never flashes, is a single 0.6s slide behind the same button, and
+  now carries a motion warning. Every flashing page keeps every safety gate;
+  the corrected page is unchanged (#56).
+
+### Changed (ground truth)
+
+- `flash-three_flashes_exactly` is relabelled from a 2.3.2 fail to a boundary
+  pass and is now a `safe` case asserting `must_not_report: ["2.3.1",
+  "2.3.2"]`. 2.3.2 fails content that flashes *more* than three times in any
+  one second; exactly three passes both criteria. The page now plays one burst
+  of six opposing transitions inside 5/6 s and stops, so no window of any
+  alignment holds more than three flashes. **Migration:** a 2.3.2 report on
+  this page was previously a detection and is now a false positive (#56).
+
 ### Added
 
 - An undeclared-findings lane in `adjudication.json`, recording criteria

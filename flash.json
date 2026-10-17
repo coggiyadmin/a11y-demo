@@ -1,13 +1,14 @@
 {
-  "description": "Flash and seizure thresholds. Every fixture is gated: no motion on load, stops after 3 seconds, disabled under prefers-reduced-motion. The keyframes remain in the document while dormant so the defect is detectable without playing it.",
+  "description": "Flash and seizure thresholds. Every fixture is gated: no motion on load, stops after 3 seconds, disabled under prefers-reduced-motion -- except the broken animation_from_interaction, a non-flashing 0.6s slide whose 2.3.3 defect is ignoring that preference. The keyframes remain in the document while dormant so the defect is detectable without playing it.",
   "safety": "A fixture that genuinely violates 2.3.1 can trigger a seizure. Nothing here autoplays. Do not remove the gating.",
   "threshold_note": "2.3.1 permits content at or below 3 flashes per second, OR under both the general and red flash thresholds. The general threshold is defined over the visual field, which depends on screen size and viewing distance — not knowable from the page. Area-dependent cases are therefore cannot-tell.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "counts": {
     "pairs": 5,
     "cases": 10,
-    "machine_decidable": 4,
-    "cannot_tell": 1
+    "machine_decidable": 3,
+    "cannot_tell": 1,
+    "boundary_pass": 1
   },
   "cases": [
     {
@@ -180,7 +181,7 @@
     },
     {
       "id": "flash-three_flashes_exactly",
-      "mode": "tp",
+      "mode": "safe",
       "path": "flash/three_flashes_exactly.html",
       "surface": "web",
       "journey": "display-adapt",
@@ -197,14 +198,15 @@
       "user_needs": [
         "flash-safety"
       ],
-      "min_criteria": {
-        "2.3.2": 1
-      },
-      "must_not_report": [],
-      "expected_outcome": "fail",
-      "confidence": "probable",
+      "min_criteria": {},
+      "must_not_report": [
+        "2.3.1",
+        "2.3.2"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
       "safety": "gated — no motion on load, stops after 3s, honours prefers-reduced-motion",
-      "notes": "Three high-contrast flashes in one second. This passes 2.3.1, which allows up to three per second — and fails 2.3.2 (AAA), which allows no more than three flashes in any one-second period with no threshold exemption at all. A corpus that only tests Level A never distinguishes the two."
+      "notes": "Exactly three high-contrast flashes — six opposing transitions in one burst of under a second — then nothing. 2.3.1 allows up to three flashes in any one second and 2.3.2 fails only MORE than three, so this is the boundary and passes both. A tool that reports either criterion here is counting the limit as exceeded."
     },
     {
       "id": "flash-safe_three_flashes_exactly",
@@ -227,6 +229,7 @@
       ],
       "min_criteria": {},
       "must_not_report": [
+        "2.3.1",
         "2.3.2"
       ],
       "expected_outcome": "pass",
@@ -260,8 +263,8 @@
       "must_not_report": [],
       "expected_outcome": "fail",
       "confidence": "definite",
-      "safety": "gated — no motion on load, stops after 3s, honours prefers-reduced-motion",
-      "notes": "A large parallax translation triggered by interaction, with no prefers-reduced-motion guard. 2.3.3 is about motion sickness rather than seizures, and the absence of the guard is machine-detectable — no judgement needed."
+      "safety": "gated — no flashing, no motion on load, a single 0.6s slide on a button press; ignores prefers-reduced-motion by design (the 2.3.3 defect), with a motion warning",
+      "notes": "A large parallax translation triggered by a button press that runs even when the system asks to reduce motion: no prefers-reduced-motion guard in the CSS or the script. 2.3.3 is about motion from interaction rather than seizures; the motion is a single 0.6s slide and nothing flashes."
     },
     {
       "id": "flash-safe_animation_from_interaction",

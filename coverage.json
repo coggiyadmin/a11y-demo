@@ -635,7 +635,7 @@
     "act_passed": 0,
     "act_inapplicable": 0,
     "local_tp": "flash/flash_10hz_large_area.html flash/red_flash.html",
-    "local_safe": "flash/safe_flash_10hz_large_area.html flash/safe_red_flash.html flash/safe_flash_small_area.html",
+    "local_safe": "flash/safe_flash_10hz_large_area.html flash/safe_red_flash.html flash/safe_flash_small_area.html flash/three_flashes_exactly.html flash/safe_three_flashes_exactly.html",
     "guided": "",
     "ground_truth": "local only"
   },
@@ -650,8 +650,8 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "flash/flash_10hz_large_area.html flash/three_flashes_exactly.html",
-    "local_safe": "flash/safe_flash_10hz_large_area.html flash/safe_three_flashes_exactly.html",
+    "local_tp": "flash/flash_10hz_large_area.html",
+    "local_safe": "flash/safe_flash_10hz_large_area.html flash/three_flashes_exactly.html flash/safe_three_flashes_exactly.html",
     "guided": "",
     "ground_truth": "local only"
   },

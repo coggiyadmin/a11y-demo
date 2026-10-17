@@ -12,7 +12,9 @@
   <h2 style="margin-top:0">Seizure warning</h2>
   <p>Pages linked below can produce flashing light. <strong>Nothing flashes on load.</strong>
      Each one needs a button press, stops after 3 seconds, and does nothing at all if your
-     system is set to reduce motion.</p>
+     system is set to reduce motion — except the broken
+     <code>animation_from_interaction</code>, whose defect is ignoring that setting. It does
+     not flash: it slides a panel for 0.6 seconds, and warns before its button.</p>
   <p>If flashing content may be unsafe for you or you are unsure, you can still test these: the
      keyframes and timings are in the page source whether or not they are playing.</p>
 </div>
@@ -33,8 +35,8 @@
   <a href="safe_flash_small_area.html">corrected</a> — 2.3.1 —
   <em>cannot-tell</em></li>
 <li><a href="three_flashes_exactly.html">three_flashes_exactly</a> ·
-  <a href="safe_three_flashes_exactly.html">corrected</a> — 2.3.2 —
-  <em>fail</em></li>
+  <a href="safe_three_flashes_exactly.html">corrected</a> — 2.3.1, 2.3.2 —
+  <em>pass</em></li>
 <li><a href="animation_from_interaction.html">animation_from_interaction</a> ·
   <a href="safe_animation_from_interaction.html">corrected</a> — 2.3.3 —
   <em>fail</em></li></ul>
