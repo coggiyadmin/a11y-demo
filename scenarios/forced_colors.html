@@ -3,7 +3,7 @@
   WCAG: 1.4.1, 1.4.11
   journey: theming
   input/AT most affected: forced-colors
-  State shown with a background image and a hard-coded colour, both discarded in forced-colors mode — so the selected item becomes indistinguishable.
+  The selected class is shown by a background fill and white text, which a forced-colours palette replaces, so the selection disappears in that mode. As authored it is a 7.5:1 fill, a lightness difference, on items that are not UI components. Expected outcome under WCAG 2.2: pass for 1.4.1 and 1.4.11 — WCAG 2.2 has no criterion for surviving a forced-colours theme. Kept as a robustness scenario.
 -->
 <!doctype html>
 <html lang="en">
@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="../fixture.css">
 </head>
 <body><main><h1>forced_colors — broken</h1>
-<p>State shown with a background image and a hard-coded colour, both discarded in forced-colors mode — so the selected item becomes indistinguishable.</p><hr><style>.sel{background:#30556e;color:#fff}
+<p>The selected class is shown by a background fill and white text, which a forced-colours palette replaces, so the selection disappears in that mode. As authored it is a 7.5:1 fill, a lightness difference, on items that are not UI components. Expected outcome under WCAG 2.2: pass for 1.4.1 and 1.4.11 — WCAG 2.2 has no criterion for surviving a forced-colours theme. Kept as a robustness scenario.</p><hr><style>.sel{background:#30556e;color:#fff}
 @media (forced-colors: active){.sel{background:#30556e}}</style>
 <ul><li class="sel">Economy</li><li>Business</li></ul>
 </main><p><a href="../index.html">Back to the index</a></p></body></html>

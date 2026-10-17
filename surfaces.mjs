@@ -49,14 +49,35 @@ const CASES = [
 </td></tr></table>`,
   },
   {
+    // #55: the page used to set only a text colour and rely on "a client that
+    // applies a dark background" -- a client the page is never rendered in. As
+    // rendered it was #333 on the body's #fff, 12.6:1, and F24 is satisfied when an
+    // ancestor sets the background. The email now ships the dark-scheme stylesheet
+    // real HTML email uses: it declares light and dark support and, under
+    // prefers-color-scheme: dark, darkens the message background while the inline
+    // text colour stays #333 -- 1.48:1, a 1.4.3 failure in a presentation the
+    // author supplies. 1.4.1 is dropped: no information here is carried by colour.
     id: 'email_contrast_darkmode', surface: 'email', standard: 'WCAG 2.2',
-    sc: ['1.4.3', '1.4.1'], needs: ['visual-clarity', 'contrast-adaptation'],
-    brokenNote: 'Text colour set but no background colour. In a client that applies a dark '
-      + 'background the dark text becomes unreadable — a contrast failure that only exists '
-      + 'in combination with the reading environment.',
-    broken: `<div style="color:#333"><p>Your flight leaves at 08:40.</p></div>`,
-    correctNote: 'Foreground and background both set, so the pair is under the author’s control.',
-    correct: `<div style="color:#1a1a1a;background:#ffffff"><p>Your flight leaves at 08:40.</p></div>`,
+    sc: ['1.4.3'], needs: ['visual-clarity', 'contrast-adaptation'],
+    stateDependency: 'media-query',
+    head: `
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">`,
+    brokenNote: 'An HTML email that declares dark-scheme support. Its dark stylesheet darkens the '
+      + 'message background to #121212 but the inline text colour stays #333, so under '
+      + 'prefers-color-scheme: dark the message is 1.48:1. In the light scheme it is 12.6:1.',
+    broken: `<style>
+.mail{padding:1rem}
+@media (prefers-color-scheme: dark){.mail{background:#121212}}
+</style>
+<div class="mail" style="color:#333"><p>Your flight leaves at 08:40.</p></div>`,
+    correctNote: 'The same email, with foreground and background set together in both schemes, '
+      + 'so the dark rendering is 15.3:1.',
+    correct: `<style>
+.mail{padding:1rem;color:#1a1a1a;background:#fff}
+@media (prefers-color-scheme: dark){.mail{color:#e8e8e8;background:#121212}}
+</style>
+<div class="mail"><p>Your flight leaves at 08:40.</p></div>`,
   },
   {
     id: 'epub_no_metadata', surface: 'epub', standard: 'EPUB Accessibility 1.1',
@@ -151,7 +172,7 @@ for (const c of CASES) {
   for (const [kind, body, note] of [['broken', c.broken, c.brokenNote], ['correct', c.correct, c.correctNote]]) {
     const file = kind === 'broken' ? `${c.id}.html` : `safe_${c.id}.html`;
     const header = `<!--\n  ${c.id} — ${kind}\n  surface: ${c.surface}\n  standard: ${c.standard}\n  WCAG: ${c.sc.join(', ')}\n  ${note}\n-->\n`;
-    fs.writeFileSync(path.join(DIR, file), header + page(`${c.id} — ${kind}`, `<p>${note}</p><hr>${body}`));
+    fs.writeFileSync(path.join(DIR, file), header + page(`${c.id} — ${kind}`, `<p>${note}</p><hr>${body}`, c.head || ''));
     cases.push({
       id: `surface-${kind === 'broken' ? c.id : 'safe_' + c.id}`,
       mode: kind === 'broken' ? 'tp' : 'safe',
@@ -162,7 +183,9 @@ for (const c of CASES) {
       ...(PROXY_FOR[c.surface] ? { proxy_for: PROXY_FOR[c.surface] } : {}),
       journey: 'navigate',
       ui_state: 'default',
-      method: ['static-source', 'runtime-dom', 'document-parse'],
+      // A defect that exists only under a display preference must be driven there.
+      method: ['static-source', 'runtime-dom', 'document-parse', ...(c.stateDependency ? ['interaction'] : [])],
+      ...(c.stateDependency ? { state_dependency: c.stateDependency } : {}),
       input_at: ['keyboard', 'sr-nvda'],
       user_needs: c.needs,
       min_criteria: kind === 'broken' ? Object.fromEntries(c.sc.map((s) => [s, 1])) : {},
