@@ -3,7 +3,7 @@
   WCAG: 2.4.3
   journey: overlay
   input/AT most affected: keyboard
-  Native dialog: focus moves in, the background is inert, Esc closes, and focus returns to the trigger.
+  The same popover, inserted straight after its trigger: opening it moves focus into it, Escape or Close dismisses it, and focus returns to the trigger.
 -->
 <!doctype html>
 <html lang="en">
@@ -14,9 +14,38 @@
 <link rel="stylesheet" href="../fixture.css">
 </head>
 <body><main><h1>overlay_focus_trap — correct</h1>
-<p>Native dialog: focus moves in, the background is inert, Esc closes, and focus returns to the trigger.</p><hr><button type="button" onclick="document.getElementById('po2').showModal()">Fare rules</button>
-<dialog id="po2" aria-labelledby="pt"><h2 id="pt">Fare rules</h2>
-<p>Changes permitted for a fee.</p>
-<form method="dialog"><button type="submit">Close</button></form></dialog>
-<p><a href="#after">A link behind the dialog</a></p>
+<p>The same popover, inserted straight after its trigger: opening it moves focus into it, Escape or Close dismisses it, and focus returns to the trigger.</p><hr><button type="button" id="fare-open" aria-controls="po">Fare rules</button>
+<style>.popover{position:absolute;z-index:10;width:min(20rem,calc(100vw - 2rem));background:#fff;border:2px solid #30556e;padding:0 1rem;box-shadow:0 4px 12px rgba(0,0,0,.25)}</style>
+<div id="po" class="popover" role="dialog" aria-labelledby="po-title" hidden>
+  <h2 id="po-title">Fare rules</h2>
+  <p>Changes permitted for a fee.</p>
+  <button type="button" id="fare-close">Close</button>
+</div>
+<p>Economy Light, London to Paris, one cabin bag.</p>
+<p>Seat selection and checked bags can be added before check-in.</p>
+<p>Your fare is held for 20 minutes.</p>
+<p>Prices include taxes and airport charges.</p>
+<p>Name changes are not permitted on this fare.</p>
+<p><a href="#seat">Choose a seat</a> <a href="#bags">Add bags</a></p>
+<p><a href="#after">Continue to payment</a></p>
+<script>
+var trigger = document.getElementById('fare-open');
+var popover = document.getElementById('po');
+var closeButton = document.getElementById('fare-close');
+function dismiss() {
+  popover.hidden = true;
+  trigger.focus();
+}
+trigger.addEventListener('click', function () {
+  var r = trigger.getBoundingClientRect();
+  popover.style.top = (r.bottom + scrollY + 4) + 'px';
+  popover.style.left = (r.left + scrollX) + 'px';
+  popover.hidden = false;
+  closeButton.focus();
+});
+closeButton.addEventListener('click', dismiss);
+popover.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') dismiss();
+});
+</script>
 </main><p><a href="../index.html">Back to the index</a></p></body></html>

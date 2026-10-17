@@ -100,7 +100,76 @@ try {
     await corrected.close();
   }
 
-  console.log('5 A/AA scenario pairs passed browser interaction contracts');
+  // #54: the overlay is opened by its trigger, and the defect is where focus goes.
+  {
+    const page = await open('scenarios/overlay_focus_trap.html');
+    assert.equal(await page.locator('#po').isHidden(), true, 'the popover must start closed');
+    await page.locator('#fare-open').click();
+    assert.equal(await page.locator('#po').isVisible(), true, 'the trigger must open the popover');
+    assert.equal(await page.evaluate(() => document.activeElement.id), 'fare-open',
+      'broken popover must leave focus on its trigger');
+    await page.keyboard.press('Tab');
+    assert.equal(await page.evaluate(() => document.getElementById('po').contains(document.activeElement)), false,
+      'the next Tab must land behind the popover, not in it');
+    await page.close();
+  }
+
+  {
+    const page = await open('scenarios/safe_overlay_focus_trap.html');
+    await page.locator('#fare-open').click();
+    assert.equal(await page.evaluate(() => document.activeElement.id), 'fare-close',
+      'corrected popover must move focus into itself');
+    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('#po').isHidden(), true);
+    assert.equal(await page.evaluate(() => document.activeElement.id), 'fare-open',
+      'dismissing must return focus to the trigger');
+    await page.close();
+  }
+
+  // #54: dragging really reorders; only the corrected page has a single-pointer path.
+  for (const [file, singlePointer] of [['dragging_required', false], ['safe_dragging_required', true]]) {
+    const page = await open(`scenarios/${file}.html`);
+    const order = () => page.evaluate(() => [...document.querySelectorAll('#legs li')].map((li) => li.dataset.name).join('|'));
+    const start = await order();
+    const handle = await page.locator('#legs li:first-child .handle').boundingBox();
+    const last = await page.locator('#legs li:last-child').boundingBox();
+    await page.mouse.move(handle.x + 5, handle.y + 5);
+    await page.mouse.down();
+    await page.mouse.move(last.x + 20, last.y + last.height - 2, { steps: 8 });
+    await page.mouse.up();
+    assert.notEqual(await order(), start, `${file}: dragging a handle must reorder the list`);
+    assert.equal(await page.locator('#legs .up, #legs .down').count() > 0, singlePointer,
+      `${file}: single-pointer reorder controls ${singlePointer ? 'must' : 'must not'} exist`);
+    await page.close();
+  }
+
+  // #54: 2.5.1 moved off dragging_required onto a real path-based gesture.
+  for (const [file, singlePointer] of [['swipe_required', false], ['safe_swipe_required', true]]) {
+    const page = await open(`scenarios/${file}.html`);
+    const card = await page.locator('#fares').boundingBox();
+    await page.locator('#fares').click();
+    assert.match(await page.locator('#fare').innerText(), /1 of 3/, `${file}: a tap must not change fare`);
+    await page.mouse.move(card.x + card.width - 20, card.y + card.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(card.x + 20, card.y + card.height / 2, { steps: 8 });
+    await page.mouse.up();
+    assert.match(await page.locator('#fare').innerText(), /2 of 3/, `${file}: a leftward swipe must advance`);
+    assert.equal(await page.locator('#fare-next').count() === 1, singlePointer,
+      `${file}: a single-pointer control ${singlePointer ? 'must' : 'must not'} exist`);
+    await page.close();
+  }
+
+  // #54: a real devicemotion listener; only the corrected page offers a control and an off switch.
+  for (const [file, alternative] of [['motion_actuation', false], ['safe_motion_actuation', true]]) {
+    const page = await open(`scenarios/${file}.html`);
+    await page.evaluate(() => dispatchEvent(new DeviceMotionEvent('devicemotion', { acceleration: { x: 20, y: 0, z: 0 } })));
+    assert.match(await page.locator('#seat-status').innerText(), /undone/, `${file}: shaking must undo`);
+    assert.equal(await page.locator('#undo').count() === 1, alternative,
+      `${file}: an Undo control ${alternative ? 'must' : 'must not'} exist`);
+    await page.close();
+  }
+
+  console.log('9 scenario pairs passed browser interaction contracts');
 } finally {
   await browser.close();
 }

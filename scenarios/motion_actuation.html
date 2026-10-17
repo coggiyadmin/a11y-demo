@@ -3,7 +3,7 @@
   WCAG: 2.5.4
   journey: input-only
   input/AT most affected: touch
-  Shake-to-undo with no alternative. Impossible on a mounted device and difficult when precise device movement is unavailable.
+  Shaking the device undoes the last seat change, and shaking is the only way to undo it. No control does the same, and the motion response cannot be turned off, so a device on a mount cannot undo and an accidental jolt can.
 -->
 <!doctype html>
 <html lang="en">
@@ -14,5 +14,19 @@
 <link rel="stylesheet" href="../fixture.css">
 </head>
 <body><main><h1>motion_actuation — broken</h1>
-<p>Shake-to-undo with no alternative. Impossible on a mounted device and difficult when precise device movement is unavailable.</p><hr><p>Shake your device to undo the last change.</p>
+<p>Shaking the device undoes the last seat change, and shaking is the only way to undo it. No control does the same, and the motion response cannot be turned off, so a device on a mount cannot undo and an accidental jolt can.</p><hr><p id="seat-status" role="status">Seat 14A selected (changed from 12C).</p>
+<p>Shake your device to undo the last change.</p>
+<script>
+var undone = false;
+function undo() {
+  if (undone) return;
+  undone = true;
+  document.getElementById('seat-status').textContent = 'Seat change undone: seat 12C selected.';
+}
+addEventListener('devicemotion', function (event) {
+  var a = event.acceleration;
+  if (!a || a.x === null) return;
+  if (Math.hypot(a.x, a.y || 0, a.z || 0) > 15) undo();
+});
+</script>
 </main><p><a href="../index.html">Back to the index</a></p></body></html>

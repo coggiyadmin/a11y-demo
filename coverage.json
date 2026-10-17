@@ -890,8 +890,8 @@
     "act_failed": 0,
     "act_passed": 0,
     "act_inapplicable": 0,
-    "local_tp": "scenarios/dragging_required.html",
-    "local_safe": "scenarios/safe_dragging_required.html",
+    "local_tp": "scenarios/swipe_required.html",
+    "local_safe": "scenarios/safe_swipe_required.html",
     "guided": "",
     "ground_truth": "local only"
   },

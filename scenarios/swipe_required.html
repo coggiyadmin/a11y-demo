@@ -1,0 +1,48 @@
+<!--
+  swipe_required — broken
+  WCAG: 2.5.1
+  journey: input-only
+  input/AT most affected: touch, switch
+  Changing fare needs a horizontal swipe on the card: the direction of the pointer path picks next or previous. The arrow keys also work, but a single tap or click does nothing, so there is no single-pointer way to do it.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>swipe_required — broken</title>
+<link rel="stylesheet" href="../fixture.css">
+</head>
+<body><main><h1>swipe_required — broken</h1>
+<p>Changing fare needs a horizontal swipe on the card: the direction of the pointer path picks next or previous. The arrow keys also work, but a single tap or click does nothing, so there is no single-pointer way to do it.</p><hr><p id="swipe-help">Swipe left or right on the card to see another fare. From the keyboard, focus the card and press the Left or Right arrow.</p>
+<style>.fares{touch-action:pan-y;user-select:none;border:2px solid #30556e;padding:0 1rem}</style>
+<section id="fares" class="fares" tabindex="0" aria-label="Fares" aria-describedby="swipe-help">
+<p id="fare" aria-live="polite">Economy Light, GBP 89 (1 of 3)</p>
+</section>
+<script>
+var fares = ['Economy Light, GBP 89', 'Economy, GBP 119', 'Premium, GBP 249'];
+var index = 0;
+var startX = null;
+var card = document.getElementById('fares');
+function show(step) {
+  index = (index + step + fares.length) % fares.length;
+  document.getElementById('fare').textContent = fares[index] + ' (' + (index + 1) + ' of ' + fares.length + ')';
+}
+card.addEventListener('pointerdown', function (event) {
+  startX = event.clientX;
+  card.setPointerCapture(event.pointerId);
+});
+card.addEventListener('pointerup', function (event) {
+  if (startX === null) return;
+  var dx = event.clientX - startX;
+  startX = null;
+  if (Math.abs(dx) > 40) show(dx < 0 ? 1 : -1);
+});
+card.addEventListener('keydown', function (event) {
+  if (event.key === 'ArrowRight') show(1);
+  else if (event.key === 'ArrowLeft') show(-1);
+  else return;
+  event.preventDefault();
+});
+</script>
+</main><p><a href="../index.html">Back to the index</a></p></body></html>
