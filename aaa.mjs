@@ -234,42 +234,46 @@ const PAIRS = [
     id: 'visual_presentation', sc: '1.4.8', journey: 'display-adapt', ui_state: 'default',
     input_at: ['keyboard', 'magnifier'], method: ['visual', 'runtime-dom'],
     needs: ['visual-clarity', 'reading-support', 'language-clarity', 'forgiving-interface'],
-    defect: 'Text is fully justified, lines run well past 80 characters, line spacing is below '
-      + '1.5 within paragraphs, paragraph spacing is below 1.5 times line spacing, and the page '
-      + 'forces its own foreground and background colours.',
+    // #56: two claims did not hold once fixture.css applied. Its 70ch max-width on
+    // body and p capped the "120ch" lines below 80 characters, so the broken page
+    // now lifts both caps. And author-set colours do not stop a user selecting
+    // their own -- browsers override them (G156) and no failure technique covers
+    // it -- so the colour claim and the colour rules are gone from the pair.
+    defect: 'Text is fully justified, lines run well past 80 characters at a desktop width, '
+      + 'line spacing is below 1.5 within paragraphs, and paragraph spacing is below 1.5 times '
+      + 'line spacing.',
     broken: page('Release notes', `<main>
 <h1>Release notes</h1>
-<p>Every paragraph below is set in a block wider than eighty characters, justified to both
-margins, with line spacing under 1.5 and almost no space between paragraphs. The colours are
-fixed by the page rather than left to the reader.</p>
+<p>Every paragraph here is set in a block wider than eighty characters, justified to both
+margins, with line spacing under 1.5 and almost no space between paragraphs.</p>
 <p>Justification opens rivers of white space that run down the block, and tight leading makes
 it easy to lose your place when returning to the start of the next line. Both effects are
 worse for readers who track lines slowly.</p>
 </main>` + back, {
-      style: `main { max-width: none; }
+      style: `/* lift fixture.css's 70ch caps on body and p, so lines run the full width */
+body, main { max-width: none; }
 main p {
   text-align: justify;
   line-height: 1.1;
-  margin-block-end: 0.2em;
-  width: 120ch;
-  color: #222;
-  background: #fff;
+  margin-block: 0.2em;
+  max-width: none;
 }`,
     }),
     corrected: page('Release notes', `<main>
 <h1>Release notes</h1>
-<p>Every paragraph below is set in a block wider than eighty characters, justified to both
-margins, with line spacing under 1.5 and almost no space between paragraphs. The colours are
-fixed by the page rather than left to the reader.</p>
+<p>Every paragraph here is set in a block wider than eighty characters, justified to both
+margins, with line spacing under 1.5 and almost no space between paragraphs.</p>
 <p>Justification opens rivers of white space that run down the block, and tight leading makes
 it easy to lose your place when returning to the start of the next line. Both effects are
 worse for readers who track lines slowly.</p>
 </main>` + back, {
+      // 50ch, not 70ch: with a proportional font 70ch measured 87-92 characters per
+      // line, so the control itself ran past 1.4.8's 80; 50ch measures 69-71 (#56).
       style: `main p {
   text-align: start;
   line-height: 1.6;
   margin-block-end: 2.4em;
-  max-width: 70ch;
+  max-width: 50ch;
 }`,
     }),
   },
@@ -569,9 +573,11 @@ ${Array.from({ length: 12 }, (_, i) => `<p><button type="button">Option ${i + 1}
   background: #1d3f72;
   color: #fff;
 }
-/* Reserve the footer's height, and keep the scrolled-to control clear of it. */
-main { padding-block-end: 6em; }
-main button { scroll-margin-block-end: 7em; }`,
+/* Reserve the footer's height below EVERYTHING focusable -- the Back link after
+   main included -- and keep any scrolled-to control clear of it. Reserving it
+   only for main left the Back link entirely under the footer when focused (#56). */
+body { padding-block-end: 7em; }
+a, button { scroll-margin-block-end: 7em; }`,
     }),
   },
   {

@@ -21,9 +21,11 @@
   background: #1d3f72;
   color: #fff;
 }
-/* Reserve the footer's height, and keep the scrolled-to control clear of it. */
-main { padding-block-end: 6em; }
-main button { scroll-margin-block-end: 7em; }
+/* Reserve the footer's height below EVERYTHING focusable -- the Back link after
+   main included -- and keep any scrolled-to control clear of it. Reserving it
+   only for main left the Back link entirely under the footer when focused (#56). */
+body { padding-block-end: 7em; }
+a, button { scroll-margin-block-end: 7em; }
 </style>
 </head>
 <body>

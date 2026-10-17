@@ -3,7 +3,7 @@
   lane: automated-static
   source: https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html
   this page: broken
-  defect: Text is fully justified, lines run well past 80 characters, line spacing is below 1.5 within paragraphs, paragraph spacing is below 1.5 times line spacing, and the page forces its own foreground and background colours.
+  defect: Text is fully justified, lines run well past 80 characters at a desktop width, line spacing is below 1.5 within paragraphs, and paragraph spacing is below 1.5 times line spacing.
 -->
 <!doctype html>
 <html lang="en">
@@ -13,23 +13,21 @@
 <title>Release notes</title>
 <link rel="stylesheet" href="../fixture.css">
 <style>
-main { max-width: none; }
+/* lift fixture.css's 70ch caps on body and p, so lines run the full width */
+body, main { max-width: none; }
 main p {
   text-align: justify;
   line-height: 1.1;
-  margin-block-end: 0.2em;
-  width: 120ch;
-  color: #222;
-  background: #fff;
+  margin-block: 0.2em;
+  max-width: none;
 }
 </style>
 </head>
 <body>
 <main>
 <h1>Release notes</h1>
-<p>Every paragraph below is set in a block wider than eighty characters, justified to both
-margins, with line spacing under 1.5 and almost no space between paragraphs. The colours are
-fixed by the page rather than left to the reader.</p>
+<p>Every paragraph here is set in a block wider than eighty characters, justified to both
+margins, with line spacing under 1.5 and almost no space between paragraphs.</p>
 <p>Justification opens rivers of white space that run down the block, and tight leading makes
 it easy to lose your place when returning to the start of the next line. Both effects are
 worse for readers who track lines slowly.</p>

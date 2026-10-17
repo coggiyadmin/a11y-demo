@@ -228,8 +228,11 @@ body::after{content:"Please rotate your device"}}</style>
     // Measured: the engine was correctly passing it.
     broken: `<style>.ic{display:inline-block;width:16px;height:16px;min-width:0;min-height:0;padding:0;margin:0;background:#30556e}</style>
 <a href="#a" class="ic" aria-label="Seat map"></a><a href="#b" class="ic" aria-label="Baggage"></a>`,
-    correctNote: 'At least 24x24 with spacing between targets.',
-    correct: `<style>.ic2{display:inline-block;width:24px;height:24px;margin:4px;background:#30556e}</style>
+    // 44x44, not 24x24 (#56). The pair declares 2.5.5 (AAA, 44 by 44) as well as
+    // 2.5.8 (AA, 24 by 24), and its control has to satisfy both.
+    correctNote: 'At least 44x44 with spacing between targets, which clears 2.5.5 (44 by 44) '
+      + 'as well as 2.5.8 (24 by 24).',
+    correct: `<style>.ic2{display:inline-block;width:44px;height:44px;margin:4px;background:#30556e}</style>
 <a href="#a" class="ic2" aria-label="Seat map"></a><a href="#b" class="ic2" aria-label="Baggage"></a>`,
   },
   {
