@@ -42,8 +42,8 @@
     "act_failed": 2,
     "act_passed": 2,
     "act_inapplicable": 2,
-    "local_tp": "patterns/media-captions.html media/video_no_captions.html media/captions_unlabelled_track.html",
-    "local_safe": "patterns/safe_media-captions.html media/safe_video_no_captions.html media/safe_captions_present_but_poor.html media/safe_captions_unlabelled_track.html",
+    "local_tp": "patterns/media-captions.html media/video_no_captions.html",
+    "local_safe": "patterns/safe_media-captions.html media/safe_video_no_captions.html media/safe_captions_present_but_poor.html media/captions_unlabelled_track.html media/safe_captions_unlabelled_track.html",
     "guided": "guided/caption_quality.html",
     "ground_truth": "ACT + local"
   },

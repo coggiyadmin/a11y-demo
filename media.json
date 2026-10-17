@@ -1,11 +1,12 @@
 {
   "description": "Media and captions. Includes cases whose honest automated outcome is cannot-tell rather than pass or fail — presence of a caption track is not conformance.",
-  "generated": "2026-10-14",
+  "generated": "2026-10-16",
   "counts": {
     "pairs": 8,
     "cases": 16,
-    "definite_fail": 6,
-    "cannot_tell": 2
+    "definite_fail": 5,
+    "cannot_tell": 2,
+    "pass": 1
   },
   "cases": [
     {
@@ -30,7 +31,7 @@
       "must_not_report": [],
       "expected_outcome": "fail",
       "confidence": "definite",
-      "notes": "Prerecorded video with spoken dialogue and no caption track at all. The absence of a track is machine-detectable, so this is a definite fail rather than a judgement call."
+      "notes": "Prerecorded synchronized media — the clip has an audio track for its full nine seconds — and no caption track at all. The absence of a track on a video with audio is machine-detectable, so this is a definite fail rather than a judgement call."
     },
     {
       "id": "media-safe_video_no_captions",
@@ -345,7 +346,7 @@
     },
     {
       "id": "media-captions_unlabelled_track",
-      "mode": "tp",
+      "mode": "safe",
       "path": "media/captions_unlabelled_track.html",
       "surface": "media",
       "journey": "media-player",
@@ -359,13 +360,13 @@
         "keyboard",
         "pointer"
       ],
-      "min_criteria": {
-        "1.2.2": 1
-      },
-      "must_not_report": [],
-      "expected_outcome": "fail",
-      "confidence": "probable",
-      "notes": "A track element with no srclang and no label, so a player cannot present a meaningful caption choice and a user cannot tell what language they would get."
+      "min_criteria": {},
+      "must_not_report": [
+        "1.2.2"
+      ],
+      "expected_outcome": "pass",
+      "confidence": "definite",
+      "notes": "A caption track with no srclang and no label. Captions ARE provided — the track is kind=\"captions\", loads, and is offered by the player — so 1.2.2 is satisfied. The missing language and label make the caption menu less helpful, which is an authoring best practice (HTML requires srclang only for subtitles), not a WCAG 2.2 failure. Expected outcome: pass; reporting 1.2.2 here is a false positive."
     },
     {
       "id": "media-safe_captions_unlabelled_track",

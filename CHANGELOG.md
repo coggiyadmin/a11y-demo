@@ -5,6 +5,26 @@ machine-readable manifest and schema versions are recorded with every release.
 
 ## Unreleased
 
+### Fixed
+
+- `media-video_no_captions` did not contain its declared 1.2.2 defect.
+  `flight-info.mp4` was a video-only stream, and 1.2.2 asks for captions for
+  the audio in synchronized media, so the case was inapplicable rather than
+  failing. The clip is now 9 seconds with a generated audio track (no recorded
+  voice; the ffmpeg command is in `media.mjs`), which also makes the other
+  caption cases that share it applicable (#54).
+
+### Changed (ground truth)
+
+- `media-captions_unlabelled_track` is relabelled from a 1.2.2 fail to a pass
+  and is now a `safe` case asserting `must_not_report: ["1.2.2"]`. Its page
+  provides captions — a `kind="captions"` track the player offers — and HTML
+  requires `srclang` only for subtitles; a missing language or label is an
+  authoring best practice no WCAG 2.2 criterion covers. **Migration:** a run
+  that reported 1.2.2 on this page was previously credited with a detection and
+  is now a false positive; results scored against the old manifest are not
+  comparable for this case (#54).
+
 ### Added
 
 - An undeclared-findings lane in `adjudication.json`, recording criteria
