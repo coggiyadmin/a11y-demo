@@ -3,7 +3,7 @@
   WCAG: 1.4.1
   check: placeholder-contrast
   needs: color-independent, contrast-adaptation, task-guidance
-  A button that is unavailable looks greyed out but is not marked disabled, so the state exists only as a colour change.
+  A row of seats where the taken ones are unavailable (disabled) but look different only by fill hue — peach instead of blue at 1.05:1, same border and text. The key names the colours, so where hue cannot be told apart every seat looks free.
 -->
 <!doctype html>
 <html lang="en">
@@ -16,8 +16,9 @@
 <body>
 <main>
 <h1>disabled_state — broken</h1>
-<p>A button that is unavailable looks greyed out but is not marked disabled, so the state exists only as a colour change.</p><hr><style>.gray{background:#ddd;color:#aaa;border:1px solid #ddd}</style>
-<button type="button" class="gray">Continue</button>
+<p>A row of seats where the taken ones are unavailable (disabled) but look different only by fill hue — peach instead of blue at 1.05:1, same border and text. The key names the colours, so where hue cannot be told apart every seat looks free.</p><hr><style>.seat{background:#cfe0f7;color:#1a1a1a;border:1px solid #767676}.seat.taken{background:#f7d2bd}</style>
+<p>Blue seats are free; peach seats are taken.</p>
+<p><button type="button" class="seat">12A</button><button type="button" class="seat taken" disabled>12B</button><button type="button" class="seat taken" disabled>12C</button><button type="button" class="seat">12D</button></p>
 </main>
 <p><a href="../index.html">Back to the index</a></p>
 </body>

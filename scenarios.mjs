@@ -294,15 +294,25 @@ body::after{content:"Please rotate your device"}}</style>
 <p id="travel-date-error-safe" role="alert">Use DD/MM/YYYY, for example 31/12/2026.</p>`,
   },
   {
+    // #55: this used to be one grey, enabled button with nothing to compare it with
+    // -- a 1.4.3 contrast defect, which tools report under 1.4.3, not a 1.4.1 one.
+    // Now the taken seats differ from the free ones only in fill hue (1.05:1, same
+    // border, same text): 1.4.1. And they are NOT disabled -- still focusable and
+    // operable -- so the unavailable state the page shows is not exposed: 4.1.2.
+    // The defect is rendered at load; nothing needs driving.
     id: 'disabled_state', journey: 'form-lifecycle', uiState: 'disabled', sc: ['4.1.2', '1.4.1'],
     needsAt: ['keyboard', 'sr-nvda'],
-    brokenNote: 'A control that looks unavailable but is not marked disabled, so it is still '
-      + 'focusable and activatable and its state is conveyed by colour alone.',
-    broken: `<style>.off{background:#eee;color:#aaa}</style>
-<button type="button" class="off" onclick="void 0">Select seat</button>`,
-    correctNote: 'Genuinely disabled, with the reason available in text.',
-    correct: `<button type="button" disabled aria-describedby="dz">Select seat</button>
-<p id="dz">Seat selection opens 24 hours before departure.</p>`,
+    brokenNote: 'Taken seats look different from free ones only by fill hue — peach instead of '
+      + 'blue at 1.05:1 — and are not marked disabled, so they are still focusable and operable. '
+      + 'The state is conveyed by colour alone and is not exposed.',
+    broken: `<style>.seat{background:#cfe0f7;color:#1a1a1a;border:1px solid #767676}.seat.taken{background:#f7d2bd}</style>
+<p>Blue seats are free; peach seats are taken.</p>
+<p><button type="button" class="seat">14A</button><button type="button" class="seat taken">14B</button><button type="button" class="seat">14C</button></p>`,
+    correctNote: 'The taken seat is genuinely disabled, crossed out and labelled "taken", so the '
+      + 'state is exposed and does not depend on hue.',
+    correct: `<style>.seat{background:#cfe0f7;color:#1a1a1a;border:1px solid #767676}.seat.taken{background:#f7d2bd;text-decoration:line-through}</style>
+<p>Free seats show their number; taken seats are crossed out and marked "taken".</p>
+<p><button type="button" class="seat">14A</button><button type="button" class="seat taken" disabled>14B taken</button><button type="button" class="seat">14C</button></p>`,
   },
   {
     id: 'motion_actuation', journey: 'input-only', sc: ['2.5.4'],
